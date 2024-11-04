@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import locBG from "../assets/location-bg.png";
 import Properties from "../components/Properties";
+import HomeHero from "../components/HomeHero";
 
 
 const locations = [
@@ -27,6 +28,7 @@ const Home = () => {
   const locationsProp = ['All', 'Goa', 'Mussourie', 'Dehradun', 'Manali']
   return (
     <>
+      <HomeHero/>
       <section id="browse-by-location" className="bg-blue-50 pt-2 pb-8">
         <div className="lg:mx-24">
           <h1 className="text-4xl font-bold my-6">
