@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import locBG from "../assets/location-bg.png";
 import Properties from "../components/Properties";
 import HomeHero from "../components/HomeHero";
+import Testimonials from "../components/Testimonials";
 
 
 const locations = [
@@ -107,6 +108,9 @@ const Home = () => {
             </div>
           </div>
         </div>
+      </section>
+      <section id="testimonial">
+        <Testimonials/>
       </section>
     </>
   );
