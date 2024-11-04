@@ -19,7 +19,7 @@ const HomeHero = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 2000); // Change every 5 seconds
+    }, 5000); // Change every 5 seconds
     return () => clearInterval(interval); // Cleanup on component unmount
   }, []);
 
