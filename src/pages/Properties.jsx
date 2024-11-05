@@ -40,7 +40,6 @@ const Properties = () => {
   return (
     <div className="py-32 bg-gradient-to-r from-blue-900 via-gray-800 to-blue-900">
       <div className="max-w-6xl mx-auto text-center">
-        
         <h2 className="text-4xl font-extrabold text-white mb-4">
           Checkout Our <span className="text-[#F77706]"> Properties </span>
         </h2>
@@ -56,31 +55,34 @@ const Properties = () => {
               key={index}
               className="flex bg-gradient-to-r from-[#1E3A8A] to-[#001F4D] rounded-lg shadow-lg overflow-hidden"
             >
-              <div className="flex-1">
-                <img
-                  src={property.img}
-                  alt={property.title}
-                  className="object-cover h-96 w-96"
-                />
-              </div>
-              <div className="flex-1 p-6 flex flex-row justify-between">
+              {/* fisrt section */}
+              <div className=" flex flex-row justify-between">
                 <div>
+                  <img
+                    src={property.img}
+                    alt={property.title}
+                    className="object-cover h-72 w-72"
+                  />
+                </div>
+                {/* second section */}
+                <div className="p-8 flex flex-col items-center h-full ">
                   <h2 className="text-2xl font-bold text-white mb-2">
                     {property.title}
                   </h2>
                   <p className="text-gray-200 mb-4">{property.description}</p>
-                  <div className="flex items-center space-x-4">
-                    <span className="bg-gray-100 rounded-full px-3 py-1 text-sm text-[#012258]">
+                  <div className="flex  space-x-4">
+                    <span className="bg-gray-100 rounded-full px-3 py-1 text-sm text-[#012258] font-semibold">
                       {property.duration}
                     </span>
-                    <span className="bg-gray-100 rounded-full px-3 py-1 text-sm text-[#012258]">
+                    <span className="bg-gray-100 rounded-full px-3 py-1 text-sm text-[#012258] font-semibold">
                       pax: {property.pax}
                     </span>
-                    <span className="bg-gray-100 rounded-full px-3 py-1 text-sm text-[#012258]">
+                    <span className="bg-gray-100 rounded-full px-3 py-1 text-sm text-[#012258] font-semibold">
                       {property.location}
                     </span>
                   </div>
                 </div>
+                {/* third section */}
                 <div className="mt-6 bg-[#F77706] text-white rounded-lg p-4 flex flex-col items-center">
                   <div className="flex items-center space-x-2 mb-2">
                     <span>({property.reviews} reviews)</span>

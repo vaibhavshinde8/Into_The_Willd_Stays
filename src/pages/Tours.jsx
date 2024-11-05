@@ -1,5 +1,4 @@
 import { BedDouble, Boxes, Plane } from "lucide-react";
-import React from "react";
 
 const packages = [
   {
@@ -65,8 +64,8 @@ const packages = [
 ];
 const Tours = () => {
   return (
-    <>
-      <div className="lg:pt-24 pt-32 text-white">
+    <div className="bg-gradient-to-r from-blue-900 via-gray-800 to-blue-900">
+      <div className="lg:pt-24 pt-32 text-white ">
         <div className='bg-[url("https://sundaysforever.com/static/media/Barlowscottageimg14.9e6859ced0b73fc2614d.jpg")] bg-cover bg-center bg-fixed lg:py-24 py-16 flex flex-col items-center lg:gap-4'>
           <h1 className="lg:text-4xl text-xl font-bold">
             Welcome To our Tour Packages
@@ -156,7 +155,7 @@ const Tours = () => {
           ))}
         </div>
       </section>
-    </>
+    </div>
   );
 };
 
