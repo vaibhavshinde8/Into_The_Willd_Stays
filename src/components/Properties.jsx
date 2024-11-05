@@ -32,6 +32,15 @@ const propertiesData = [
     bathroom: 2,
     guest: 6,
   },
+  {
+    name: "Ritz Carton & Resorts",
+    imgURL: Image1,
+    price: 115000,
+    location: "Goa",
+    bedroom: 4,
+    bathroom: 2,
+    guest: 6,
+  },
 ];
 
 const Properties = ({ selectedLocation = "All" }) => {
