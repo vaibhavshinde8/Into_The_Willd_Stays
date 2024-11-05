@@ -36,7 +36,7 @@ export default function Navbar() {
               Properties
             </Link>
             <Link
-              to="/tour"
+              to="/tours"
               className="text-gray-200 hover:text-primary px-3 py-2 text-lg transition duration-300"
             >
               Tour
@@ -94,7 +94,7 @@ export default function Navbar() {
               Properties
             </Link>
             <Link
-              to="/tour"
+              to="/tours"
               className="block text-gray-200 hover:text-primary px-3 py-2 rounded-md text-base font-medium transition duration-300"
             >
               Tour

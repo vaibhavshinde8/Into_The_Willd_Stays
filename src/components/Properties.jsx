@@ -50,7 +50,7 @@ const Properties = ({ selectedLocation = "All" }) => {
       : propertiesData.filter((data) => data.location === selectedLocation);
 
   return (
-    <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 my-6">
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 my-6">
       {filteredProperty.map((places) => (
         <div
           className="relative bg-[#012258] text-white rounded-lg shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-3 duration-300 overflow-hidden"
