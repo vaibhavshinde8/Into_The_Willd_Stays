@@ -1,4 +1,3 @@
-import locBG from "../assets/location-bg.png";
 import Image1 from "../assets/homehero1.png";
 
 const locations = [
@@ -18,34 +17,26 @@ const locations = [
 
 const LocationSection = () => {
   return (
-    <div
-      // id="browse-by-location"
-      className="bg-gradient-to-r from-blue-200 via-blue-600 to-blue-200 pt-8 pb-12"
-    >
+    <div className="bg-gradient-to-r from-blue-900 via-gray-800 to-blue-900 pt-8 pb-12 lg:px-32">
       <div className="lg:mx-24">
-        <h1 className="text-4xl lg:text-5xl font-bold mb-6 text-center pb-12  ">
+        <h1 className="text-4xl text-white lg:text-5xl font-bold mb-6 text-center pb-12">
           Browse By <span className="text-[#F77706]">Location</span>
         </h1>
+
         <div className="flex flex-wrap justify-center gap-6 lg:gap-12">
           {locations.map((place, index) => (
             <div
               key={index}
-              className="w-[160px] lg:w-[220px] rounded-lg border-4 border-dashed border-gray-400 hover:shadow-2xl hover:border-[#F77706] transition duration-300 ease-in-out transform hover:scale-105"
+              className="w-[160px] h-[160px] lg:w-[220px] lg:h-[220px] rounded-full border-4 border-dashed border-gray-400 hover:shadow-2xl hover:border-[#F77706] transition duration-300 ease-in-out transform hover:scale-105 flex items-center justify-center"
             >
-              <div className="rounded-lg overflow-hidden p-1 relative bg-gradient-to-br from-[#1E40AF] to-[#6366F1]">
+              <div className="rounded-full overflow-hidden p-1 relative bg-gradient-to-br from-[#1E40AF] to-[#6366F1] w-full h-full flex items-center justify-center">
                 <img
-                  className="object-cover w-full h-full rounded-lg"
+                  className="object-cover w-full h-full rounded-full"
                   src={place.imgUrl}
                   alt={place.name}
                 />
-                <div
-                  className="flex rounded-full absolute left-0 bottom-0 text-center w-full h-full justify-center items-end bg-no-repeat bg-center text-white text-lg font-semibold"
-                  // style={{
-                  //   backgroundImage: `url(${locBG})`,
-                  //   backgroundSize: "cover",
-                  // }}
-                >
-                  <p className="bg-black/60 w-full py-2 rounded-b-lg">
+                <div className="absolute inset-0 flex items-end justify-center bg-black/20 rounded-full">
+                  <p className="w-full py-2 text-center text-white text-lg font-semibold">
                     {place.name}
                   </p>
                 </div>

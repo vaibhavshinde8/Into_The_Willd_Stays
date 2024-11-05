@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
-import logo from "../assets/hgtv-logo.png"; // Replace with the actual path to your logo
+import logo from "../assets/IntotheWildStaysLogo.png"; // Replace with the actual path to your logo
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,13 +11,13 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed w-full z-50 bg-transparent transition-all font-ethereal duration-300">
+    <nav className="fixed w-full z-50 bg-gradient-to-b from-[#000000] to-transparent transition-all font-ethereal duration-300 pt-8">
       <div className="mx-auto px-4 sm:px-6 lg:px-16">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link to="/" className="flex items-center">
-              <img src={logo} alt="Into the Wild Logo" className="h-10" />
+              <img src={logo} alt="Into the Wild Logo" className="h-32" />
             </Link>
           </div>
 
