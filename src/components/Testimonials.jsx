@@ -1,4 +1,3 @@
-import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -53,7 +52,10 @@ const testData = [
 
 const Testimonials = () => {
   return (
-    <>
+    <div className="bg-gradient-to-r from-blue-900 via-gray-800 to-blue-900">
+      <h1 className="text-4xl text-white lg:text-5xl font-bold mb-6 text-center pb-12">
+       <span className="text-[#F77706]">Testimonials</span>
+      </h1>
       <Swiper
         slidesPerView={1}
         spaceBetween={10}
@@ -75,23 +77,29 @@ const Testimonials = () => {
           },
         }}
         modules={[Pagination]}
-        className="mySwiper"
+        className="mySwiper "
       >
         {testData.map((testimon) => (
           <SwiperSlide>
-            <div className='flex flex-col items-center px-4 py-10 bg-gradient-to-b from-[#012258] to-[#000000] text-white rounded-lg '>
-              <img className='w-[130px] h-[130px] rounded-[50%]' src={testimon.img} alt="" />
-              <div className='flex flex-col gap-2'>
+            <div className="flex flex-col items-center px-4 py-10 bg-gradient-to-b from-[#012258] to-[#000000] text-white rounded-lg ">
+              <img
+                className="w-[130px] h-[130px] rounded-[50%]"
+                src={testimon.img}
+                alt=""
+              />
+              <div className="flex flex-col gap-2">
                 <p>{testimon.review}</p>
-                <h1 className='text-xl font-bold text-[#F77706]'>{testimon.name}</h1>
+                <h1 className="text-xl font-bold text-[#F77706]">
+                  {testimon.name}
+                </h1>
                 <h2>{testimon.address}</h2>
               </div>
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
-    </>
-  )
+    </div>
+  );
 }
 
 export default Testimonials
