@@ -20,7 +20,7 @@ const Footer = () => {
           {/* About Section */}
           <div>
             <h3 className="text-white text-lg font-semibold mb-4">
-              LuxStay Hotels
+              IntoTheWildsStays
             </h3>
             <p className="text-sm mb-4">
               Experience luxury and comfort at our premium locations worldwide.
@@ -133,7 +133,7 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-sm">
-              © 2024 LuxStay Hotels. All rights reserved.
+              © 2024 IntoTheWildsStays. All rights reserved.
             </div>
             <div className="flex space-x-6 text-sm">
               Designed and Developed by House Of Marktech

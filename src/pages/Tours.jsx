@@ -126,20 +126,6 @@ const Tours = () => {
                     {tourpack.activities}+ Activities
                   </h3>
                 </div>
-                {/* <div className="hidden lg:flex gap-2 mt-4 text-sm">
-              <h2 className="flex items-center gap-1 border-r-2 border-white pr-2">
-                <MdOutlineBedroomParent />
-                {tourpack.bedroom} Bedrooms
-              </h2>
-              <h2 className="flex items-center gap-1 border-r-2 border-white pr-2">
-                <MdOutlineBathroom />
-                {tourpack.bathroom} Bathrooms
-              </h2>
-              <h2 className="flex items-center gap-1">
-                <IoPeople />
-                {tourpack.guest} Guests
-              </h2>
-            </div> */}
               </div>
               <div className="p-4 flex items-center justify-between bg-gradient-to-b from-[#012258] to-[#000000] rounded-b-lg">
                 <h4 className="text-lg">
