@@ -38,99 +38,85 @@ const properties = [
 
 const Properties = () => {
   return (
-    <section className="properties py-12" id="properties">
-      <div className="container mx-auto px-4">
-        <p className="section-subtitle text-center text-gray-500">
-          Popular Properties
-        </p>
-
-        <h2 className="h2 section-title text-3xl font-bold text-center mb-6">
-          Checkout Our Properties
+    <div className="py-32 bg-gradient-to-r from-blue-900 via-gray-800 to-blue-900">
+      <div className="max-w-6xl mx-auto text-center">
+        
+        <h2 className="text-4xl font-extrabold text-white mb-4">
+          Checkout Our <span className="text-[#F77706]"> Properties </span>
         </h2>
-
-        <p className="section-text text-center mb-12">
+        <p className="mb-8 text-white">
           Fusce hic augue velit wisi quibusdam pariatur, iusto primis, nec nemo,
           rutrum. Vestibulum cumque laudantium. Sit ornare mollitia tenetur,
           aptent.
         </p>
 
-        <ul className="properties-list flex flex-col gap-6 mb-12">
+        <ul className="flex flex-col gap-6 ">
           {properties.map((property, index) => (
             <li
               key={index}
-              className="property-card border border-gray-300 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300 ease-in-out"
+              className="flex bg-gradient-to-r from-[#1E3A8A] to-[#001F4D] rounded-lg shadow-lg overflow-hidden"
             >
-              <div className="flex flex-col sm:flex-row">
-                <figure className="card-banner sm:w-1/3">
-                  <img
-                    src={property.img}
-                    alt={property.title}
-                    className="w-full h-48 sm:h-full object-cover"
-                    loading="lazy"
-                  />
-                </figure>
-
-                <div className="card-content p-4 sm:w-2/3 flex flex-col justify-between">
-                  <div>
-                    <h3 className="h3 card-title text-xl font-semibold mb-2">
-                      {property.title}
-                    </h3>
-                    <p className="card-text text-gray-600 mb-4">
-                      {property.description}
-                    </p>
-
-                    <ul className="card-meta-list flex flex-wrap justify-between mb-4">
-                      <li className="card-meta-item flex items-center">
-                        <ion-icon name="time" className="mr-2"></ion-icon>
-                        <p className="text">{property.duration}</p>
-                      </li>
-                      <li className="card-meta-item flex items-center">
-                        <ion-icon name="people" className="mr-2"></ion-icon>
-                        <p className="text">pax: {property.pax}</p>
-                      </li>
-                      <li className="card-meta-item flex items-center">
-                        <ion-icon name="location" className="mr-2"></ion-icon>
-                        <p className="text">{property.location}</p>
-                      </li>
-                    </ul>
+              <div className="flex-1">
+                <img
+                  src={property.img}
+                  alt={property.title}
+                  className="object-cover h-96 w-96"
+                />
+              </div>
+              <div className="flex-1 p-6 flex flex-row justify-between">
+                <div>
+                  <h2 className="text-2xl font-bold text-white mb-2">
+                    {property.title}
+                  </h2>
+                  <p className="text-gray-200 mb-4">{property.description}</p>
+                  <div className="flex items-center space-x-4">
+                    <span className="bg-gray-100 rounded-full px-3 py-1 text-sm text-[#012258]">
+                      {property.duration}
+                    </span>
+                    <span className="bg-gray-100 rounded-full px-3 py-1 text-sm text-[#012258]">
+                      pax: {property.pax}
+                    </span>
+                    <span className="bg-gray-100 rounded-full px-3 py-1 text-sm text-[#012258]">
+                      {property.location}
+                    </span>
                   </div>
-
-                  <div className="card-price border-t border-gray-300 pt-4">
-                    <div className="wrapper flex justify-between items-center mb-2">
-                      <p className="reviews text-gray-500">
-                        ({property.reviews} reviews)
-                      </p>
-                      <div className="card-rating flex items-center">
-                        {[...Array(5)].map((_, i) => (
-                          <ion-icon
-                            key={i}
-                            name="star"
-                            className="text-yellow-500"
-                          ></ion-icon>
-                        ))}
-                      </div>
+                </div>
+                <div className="mt-6 bg-[#F77706] text-white rounded-lg p-4 flex flex-col items-center">
+                  <div className="flex items-center space-x-2 mb-2">
+                    <span>({property.reviews} reviews)</span>
+                    <div className="flex">
+                      {[...Array(5)].map((_, i) => (
+                        <span
+                          key={i}
+                          className={
+                            i < Math.round(property.reviews / 5)
+                              ? "text-yellow-400"
+                              : "text-gray-400"
+                          }
+                        >
+                          ★
+                        </span>
+                      ))}
                     </div>
-
-                    <p className="price text-2xl font-bold">
-                      {property.price}
-                      <span className="text-gray-500"> / per person</span>
-                    </p>
-
-                    <button className="btn btn-secondary mt-4 w-full py-2 bg-[#F77706] text-white font-semibold rounded hover:bg-[#F59E00] transition duration-300">
-                      Book Now
-                    </button>
                   </div>
+                  <div className="text-4xl font-bold mb-1">
+                    {property.price}
+                  </div>
+                  <span className="text-sm">/ per person</span>
+                  <button className="mt-4 px-4 py-2 border border-white rounded-full hover:bg-white hover:text-[#012258] transition">
+                    BOOK NOW
+                  </button>
                 </div>
               </div>
             </li>
           ))}
         </ul>
 
-        <button className="btn btn-primary mt-4 w-full py-2 bg-blue-600 text-white font-semibold rounded hover:bg-blue-700 transition duration-300">
+        <button className="mt-8 px-6 py-3 bg-[#F77706] text-white rounded-md hover:bg-white hover:text-[#012258] transition-colors">
           View All Properties
         </button>
       </div>
-    </section>
+    </div>
   );
 };
 
