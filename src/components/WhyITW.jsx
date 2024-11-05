@@ -29,12 +29,12 @@ const WhyITW = () => {
 
   return (
     <motion.div
-      className="bg-gradient-to-r from-blue-200 via-blue-600 to-blue-200 p-8 shadow-md min-h-screen py-20"
+      className="bg-gradient-to-r from-blue-900 via-gray-800 to-blue-900 p-8 shadow-md min-h-screen py-20"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }} // Fade in effect for the entire section
     >
-      <h1 className="text-4xl lg:text-5xl font-bold mb-6 text-center pb-12">
+      <h1 className="text-4xl text-white lg:text-5xl font-bold mb-6 text-center pb-12">
         Why <span className="text-[#F77706]">Into The Wild?</span>
       </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

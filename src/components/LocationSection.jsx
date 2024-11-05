@@ -1,4 +1,4 @@
-import locBG from "../assets/location-bg.png";
+// import locBG from "../assets/location-bg.png";
 import Image1 from "../assets/homehero1.png";
 
 const locations = [
@@ -20,12 +20,13 @@ const LocationSection = () => {
   return (
     <div
       // id="browse-by-location"
-      className="bg-gradient-to-r from-blue-200 via-blue-600 to-blue-200 pt-8 pb-12"
+      className="bg-gradient-to-r from-blue-900 via-gray-800 to-blue-900 pt-8 pb-12"
     >
       <div className="lg:mx-24">
-        <h1 className="text-4xl lg:text-5xl font-bold mb-6 text-center pb-12  ">
+        <h1 className="text-4xl text-white lg:text-5xl font-bold mb-6 text-center pb-12">
           Browse By <span className="text-[#F77706]">Location</span>
-        </h1>
+        </h1>{" "}
+      
         <div className="flex flex-wrap justify-center gap-6 lg:gap-12">
           {locations.map((place, index) => (
             <div

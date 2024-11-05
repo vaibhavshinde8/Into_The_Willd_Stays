@@ -2,7 +2,7 @@ const GuestExperience = () => {
   return (
     <div
       // id="guest-exp "
-      className="bg-gradient-to-r from-blue-200 via-blue-600 to-blue-200 min-h-[100vh] py-36"
+      className="bg-gradient-to-r from-blue-900 via-gray-800 to-blue-900 min-h-[100vh] py-36"
     >
       <div className="my-12 mx-4 lg:mx-24">
         <div className="flex flex-col-reverse lg:flex-row gap-8 justify-around items-center text-center">

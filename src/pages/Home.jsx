@@ -3,6 +3,7 @@ import LocationSection from "../components/LocationSection";
 import GuestExperience from "../components/GuestExperience";
 import MostViewedProperties from "../components/MostViewedProperties";
 import WhyITW from './../components/WhyITW';
+import GalleryAndReviews from "../components/GalleryAndReviews";
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
       <LocationSection />
       <GuestExperience />
       <MostViewedProperties />
+      <GalleryAndReviews/>
       <WhyITW/>
     </>
   );
