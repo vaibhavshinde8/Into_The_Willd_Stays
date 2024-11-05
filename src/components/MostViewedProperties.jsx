@@ -8,10 +8,10 @@ const MostViewedProperties = () => {
   return (
     <section
       id="property-most"
-      className="min-h-[100vh] bg-gradient-to-r from-[#01173F] via-[#012258] to-[#02367D] text-white py-12"
+      className="min-h-[100vh] bg-gradient-to-r from-blue-200 via-blue-600 to-blue-200 text-white py-12"
     >
       <div className="mx-2 lg:mx-24">
-        <h1 className="text-4xl lg:text-5xl font-bold mb-6 text-center">
+        <h1 className="text-4xl lg:text-5xl font-bold mb-6 text-center pb-12">
           Most Viewed <span className="text-[#F77706]">Properties</span>
         </h1>
         <div>

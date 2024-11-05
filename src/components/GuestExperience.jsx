@@ -1,28 +1,28 @@
-
 const GuestExperience = () => {
   return (
-    <section id="guest-exp">
-      <div className="my-12 mx-2">
-        <div className="flex flex-col-reverse lg:flex-row gap-4 justify-around items-center text-center">
-          <div className="flex flex-col gap-4 bg-blue-100 p-8 lg:ml-16 rounded-lg lg:w-[550px] lg:h-[350px] justify-center">
-            <h1 className="text-4xl font-bold">
-              Guest <span className="text-primary">Experience</span>
+    <div
+      // id="guest-exp "
+      className="bg-gradient-to-r from-blue-200 via-blue-600 to-blue-200 min-h-[100vh] py-36"
+    >
+      <div className="my-12 mx-4 lg:mx-24">
+        <div className="flex flex-col-reverse lg:flex-row gap-8 justify-around items-center text-center">
+          <div className="flex flex-col gap-6 p-8 bg-gradient-to-r from-[#001F4D] to-[#1E3A8A] rounded-2xl shadow-xl lg:w-[550px] lg:h-[380px] text-white">
+            <h1 className="text-4xl font-bold tracking-tight">
+              Guest <span className="text-[#F77706]">Experience</span>
             </h1>
-            <h4 className="lg:text-lg">
+            <h4 className="lg:text-lg text-gray-300 leading-relaxed">
               At Sundays Forever, our primary goal is to provide our guests with
               an exceptional experience that they will cherish forever. We
-              understand that luxury is not just about lavish amenities, but
-              also about the feeling of being pampered and cared for. Our team
-              is dedicated to tailoring every aspect of their stay to their
-              preferences, including personalized services and bespoke
-              experiences. We are committed to elevating the guest experience to
-              new heights and take pride in creating memories that last a
-              lifetime.
+              understand that luxury is not just about lavish amenities but also
+              about the feeling of being pampered and cared for. Our team is
+              dedicated to tailoring every aspect of their stay, including
+              personalized services and bespoke experiences. We pride ourselves
+              on creating memories that last a lifetime.
             </h4>
           </div>
-          <div>
+          <div className="shadow-2xl rounded-xl overflow-hidden">
             <iframe
-              className="lg:w-[630px] lg:h-[500px] rounded-lg"
+              className="w-full lg:w-[630px] lg:h-[500px] rounded-lg transition-transform transform hover:scale-105"
               width="400"
               height="315"
               src="https://www.youtube.com/embed/bx-cd1TL3BY?si=H3e2THm1emot4sEI"
@@ -35,7 +35,7 @@ const GuestExperience = () => {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
