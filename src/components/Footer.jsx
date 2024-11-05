@@ -1,16 +1,15 @@
-
-import { 
-  Facebook, 
-  Twitter, 
-  Instagram, 
-  Linkedin, 
-  Phone, 
-  Mail, 
+import {
+  Facebook,
+  Twitter,
+  Instagram,
+  Linkedin,
+  Phone,
+  Mail,
   MapPin,
   CreditCard,
   Shield,
-  Clock
-} from 'lucide-react';
+  Clock,
+} from "lucide-react";
 
 const Footer = () => {
   return (
@@ -20,9 +19,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* About Section */}
           <div>
-            <h3 className="text-white text-lg font-semibold mb-4">LuxStay Hotels</h3>
+            <h3 className="text-white text-lg font-semibold mb-4">
+              LuxStay Hotels
+            </h3>
             <p className="text-sm mb-4">
-              Experience luxury and comfort at our premium locations worldwide. 
+              Experience luxury and comfort at our premium locations worldwide.
               Book your perfect stay with us today.
             </p>
             <div className="flex space-x-4">
@@ -43,20 +44,47 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-white text-lg font-semibold mb-4">Quick Links</h3>
+            <h3 className="text-white text-lg font-semibold mb-4">
+              Quick Links
+            </h3>
             <ul className="space-y-2 text-sm">
-              <li><a href="#" className="hover:text-white transition-colors">About Us</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Our Locations</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Special Offers</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Book Now</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Blog</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Gift Cards</a></li>
+              <li>
+                <a href="#" className="hover:text-white transition-colors">
+                  About Us
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-white transition-colors">
+                  Contact Us
+                </a>
+              </li>
+
+              <li>
+                {" "}
+                <a href="#" className="hover:text-white transition-colors">
+                  Cookie Policy
+                </a>
+              </li>
+              <li>
+                {" "}
+                <a href="#" className="hover:text-white transition-colors">
+                  Privacy Policy
+                </a>
+              </li>
+              <li>
+                {" "}
+                <a href="#" className="hover:text-white transition-colors">
+                  Terms of Service
+                </a>
+              </li>
             </ul>
           </div>
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-white text-lg font-semibold mb-4">Contact Us</h3>
+            <h3 className="text-white text-lg font-semibold mb-4">
+              Contact Us
+            </h3>
             <ul className="space-y-4 text-sm">
               <li className="flex items-center space-x-3">
                 <Phone size={16} />
@@ -68,14 +96,20 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-3">
                 <MapPin size={16} />
-                <span>123 Luxury Ave, Suite 100<br />New York, NY 10001</span>
+                <span>
+                  123 Luxury Ave, Suite 100
+                  <br />
+                  New York, NY 10001
+                </span>
               </li>
             </ul>
           </div>
 
           {/* Why Choose Us */}
           <div>
-            <h3 className="text-white text-lg font-semibold mb-4">Why Choose Us</h3>
+            <h3 className="text-white text-lg font-semibold mb-4">
+              Why Choose Us
+            </h3>
             <ul className="space-y-4 text-sm">
               <li className="flex items-center space-x-3">
                 <CreditCard size={16} />
@@ -102,15 +136,13 @@ const Footer = () => {
               © 2024 LuxStay Hotels. All rights reserved.
             </div>
             <div className="flex space-x-6 text-sm">
-              <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-              <a href="#" className="hover:text-white transition-colors">Cookie Policy</a>
+              Designed and Developed by House Of Marktech
             </div>
           </div>
         </div>
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

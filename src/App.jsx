@@ -8,7 +8,6 @@ function App() {
     <>
       <Navbar/>
       <div>
-
         <Outlet/>
       </div>
       <Footer/>
