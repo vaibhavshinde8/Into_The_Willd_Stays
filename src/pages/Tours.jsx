@@ -77,32 +77,32 @@ const Tours = () => {
       </div>
       <section className="py-8 lg:px-32 mx-2">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {packages.map((places) => (
+          {packages.map((tourpack) => (
             <div
               className="relative bg-[#012258] text-white rounded-lg shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-3 duration-300 overflow-hidden"
-              key={places.name}
+              key={tourpack.name}
             >
               <div className="relative">
                 <img
                   className="rounded-t-lg h-72 w-full object-cover transition-transform transform hover:scale-105 duration-300"
-                  src={places.imgURL}
-                  alt={places.name}
+                  src={tourpack.imgURL}
+                  alt={tourpack.name}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#00000099] to-transparent rounded-t-lg"></div>
               </div>
               <div className="p-4 flex flex-col gap-3">
                 <h2 className="font-bold text-[#F77706] lg:text-xl">
-                  {places.name}
+                  {tourpack.name}
                 </h2>
                 <div className="flex gap-2">
                   <h3 className="border-r-2 border-secondry pr-2">
-                    {places.des1}
+                    {tourpack.des1}
                   </h3>
                   <h3 className="border-r-2 border-secondry pr-2">
-                    {places.des2}
+                    {tourpack.des2}
                   </h3>
                   <h3 className="border-r-2 border-secondry pr-2">
-                    {places.des3}
+                    {tourpack.des3}
                   </h3>
                 </div>
                 <div className="flex gap-4">
@@ -110,41 +110,27 @@ const Tours = () => {
                     <span className="text-[#F77706]">
                       <Plane />
                     </span>
-                    {places.flight} Flights
+                    {tourpack.flight} Flights
                   </h3>
                   <h3 className="flex gap-1 items-center">
                     <span className="text-secondry">
                       <BedDouble />
                     </span>
-                    {places.hotel} Hotel
+                    {tourpack.hotel} Hotel
                   </h3>
                   <h3 className="flex gap-1 items-center">
                     <span className="text-secondry">
                       <Boxes />
                     </span>
-                    {places.activities}+ Activities
+                    {tourpack.activities}+ Activities
                   </h3>
                 </div>
-                {/* <div className="hidden lg:flex gap-2 mt-4 text-sm">
-              <h2 className="flex items-center gap-1 border-r-2 border-white pr-2">
-                <MdOutlineBedroomParent />
-                {places.bedroom} Bedrooms
-              </h2>
-              <h2 className="flex items-center gap-1 border-r-2 border-white pr-2">
-                <MdOutlineBathroom />
-                {places.bathroom} Bathrooms
-              </h2>
-              <h2 className="flex items-center gap-1">
-                <IoPeople />
-                {places.guest} Guests
-              </h2>
-            </div> */}
               </div>
               <div className="p-4 flex items-center justify-between bg-gradient-to-b from-[#012258] to-[#000000] rounded-b-lg">
                 <h4 className="text-lg">
                   From Rs.{" "}
                   <span className="text-[#F77706] font-bold">
-                    {places.price}
+                    {tourpack.price}
                   </span>
                 </h4>
                 <button className="border-2 border-[#F77706] text-[#F77706] px-4 py-1 rounded-lg font-bold hover:bg-[#F77706] hover:text-[#FFFFFF] transition-colors duration-300">

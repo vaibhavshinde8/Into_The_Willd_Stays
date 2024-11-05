@@ -12,9 +12,9 @@ const TourBanner = () => {
             IntoTheWildsStays
           </span>
         </h2>
-        <button className="px-4 py-2 lg:px-16 hover:bg-black font-bold rounded-lg bg-secondry">
+        <a href="/tours" className="px-4 py-2 lg:px-16 hover:bg-black font-bold rounded-lg bg-secondry transition duration-300 ease-in">
           Explore more
-        </button>
+          </a>
       </div>
     </div>
   );
