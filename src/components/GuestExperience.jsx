@@ -2,9 +2,9 @@ const GuestExperience = () => {
   return (
     <div
       // id="guest-exp "
-      className="bg-gradient-to-r from-blue-900 via-gray-800 to-blue-900 min-h-[100vh] py-36"
+      className="bg-gradient-to-r from-blue-900 via-gray-800 to-blue-900 min-h-[100vh] py-36 lg:px-32"
     >
-      <div className="my-12 mx-4 lg:mx-24">
+      <div className="my-12 mx-4 ">
         <div className="flex flex-col-reverse lg:flex-row gap-8 justify-around items-center text-center">
           <div className="flex flex-col gap-6 p-8 bg-gradient-to-r from-[#001F4D] to-[#1E3A8A] rounded-2xl shadow-xl lg:w-[550px] lg:h-[380px] text-white">
             <h1 className="text-4xl font-bold tracking-tight">

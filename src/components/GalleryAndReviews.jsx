@@ -39,7 +39,7 @@ const content = [
 
 const GalleryAndReviews = () => {
   return (
-    <div className="gallery-reviews p-6 bg-gradient-to-r from-blue-900 via-gray-800 to-blue-900 text-white min-h-">
+    <div className="gallery-reviews p-6 lg:px-32 bg-gradient-to-r from-blue-900 via-gray-800 to-blue-900 text-white min-h-">
       <h1 className="text-4xl text-white lg:text-5xl font-bold mb-6 text-center pb-12">
         Guest <span className="text-[#F77706]">Diaries</span>
       </h1>
