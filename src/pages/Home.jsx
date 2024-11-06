@@ -5,7 +5,7 @@ import MostViewedProperties from "../components/MostViewedProperties";
 import WhyITW from './../components/WhyITW';
 import GalleryAndReviews from "../components/GalleryAndReviews";
 import Testimonials from "../components/Testimonials";
-import TourBanner from "../components/TourBanner";
+import PropertiesBanner from './../components/PropertiesBanner';
 
 const Home = () => {
   return (
@@ -17,7 +17,7 @@ const Home = () => {
       <GalleryAndReviews/>
       <WhyITW/>
       <Testimonials/>
-      <TourBanner/>
+      <PropertiesBanner/>
     </>
   );
 };

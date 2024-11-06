@@ -5,15 +5,7 @@ import { IoPeople } from "react-icons/io5";
 import Image1 from "../assets/homehero1.png";
 
 const propertiesData = [
-  {
-    name: "Royal Cottage Villa",
-    imgURL: Image1,
-    price: 18000,
-    location: "Dehradun",
-    bedroom: 4,
-    bathroom: 2,
-    guest: 6,
-  },
+ 
   {
     name: "The Lalit Rooms & Spa",
     imgURL: Image1,
