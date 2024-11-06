@@ -1,21 +1,21 @@
 import { useState } from "react";
-import { FaChevronDown } from "react-icons/fa"; // For a dropdown arrow icon
-import { BsFillPersonFill } from "react-icons/bs"; // For a person icon in the price filter
-import PropTypes from "prop-types"; // Import PropTypes for props validation
+import { FaChevronDown } from "react-icons/fa";
+import { BsFillPersonFill } from "react-icons/bs";
+import PropTypes from "prop-types";
 
 const SidebarFilter = ({ onFilterChange, properties }) => {
   const [selectedLocation, setSelectedLocation] = useState("");
-  const [selectedPriceRange, setSelectedPriceRange] = useState([0, 18000]); // Default to the first price range
+  const [selectedPriceRange, setSelectedPriceRange] = useState([0, 40000]);
 
   SidebarFilter.propTypes = {
     onFilterChange: PropTypes.func.isRequired,
-    properties: PropTypes.array.isRequired, // Ensure that properties is passed as an array
+    properties: PropTypes.array.isRequired,
   };
 
   const handleLocationChange = (e) => {
-    const selectedLocation = e.target.value;
-    setSelectedLocation(selectedLocation);
-    onFilterChange({ location: selectedLocation, price: selectedPriceRange });
+    const location = e.target.value;
+    setSelectedLocation(location);
+    onFilterChange({ location, price: selectedPriceRange });
   };
 
   const handlePriceRangeChange = (range) => {
@@ -30,44 +30,37 @@ const SidebarFilter = ({ onFilterChange, properties }) => {
     { label: "₹30000 - ₹40000", range: [30000, 40000] },
   ];
 
-  // Extract unique locations from properties
-  const locations =
-    properties && properties.length > 0
-      ? [...new Set(properties.map((property) => property.location.city))]
-      : [];
+  const locations = Array.from(
+    new Set(properties.map((property) => property.location))
+  );
 
   return (
-    <div className="sidebar-filter p-6 bg-gradient-to-r from-[#43A181] to-[#3C8D99] rounded-3xl shadow-2xl border border-[#E1E1E1] ">
-      <h2 className="text-3xl sm:text-4xl font-extrabold text-[#091F3C] mb-4">
-        Checkout Our <span className="text-[#ffffff]">Properties</span>
-      </h2>
-      <p className="mb-8 text-[#091F3C] text-sm sm:text-base">
-        Fusce hic augue velit wisi quibusdam pariatur, iusto primis, nec nemo,
-        rutrum. Vestibulum cumque laudantium. Sit ornare mollitia tenetur,
-        aptent.
+    <div className="sidebar-filter p-4 bg-white rounded-lg shadow-md w-64">
+      
+      <p className="text-gray-600 text-sm mb-6">
+        Filter properties by location and price range.
       </p>
-
       {/* Filter by Location */}
-      <div className="filter-location mb-8">
-        <h4 className="font-medium text-white mb-2">Location</h4>
+      <div className="filter-location mb-6">
+        <h4 className="text-gray-700 font-medium mb-2">Location</h4>
         <select
           value={selectedLocation}
           onChange={handleLocationChange}
-          className="w-full px-5 py-3 bg-[#F0F0F0] text-[#091F3C] border border-[#E1E1E1] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#43A181] transition duration-300 ease-in-out"
+          className="w-full px-3 py-2 border rounded text-gray-800"
         >
           <option value="">All Locations</option>
-          <option value="Rishikesh">Rishikesh</option>
-          <option value="Mussoorie">Mussoorie</option>
-          <option value="Dehradun">Dehradun</option>
+          {locations.map((city, index) => (
+            <option key={index} value={city}>
+              {city}
+            </option>
+          ))}
         </select>
-        <FaChevronDown className="absolute right-4 top-12 text-[#43A181] opacity-70 transition duration-300 ease-in-out" />
+        <FaChevronDown className="absolute right-4 top-12 text-gray-500" />
       </div>
-
       {/* Filter by Price */}
-      <div className="filter-price mb-8">
-        <h4 className="font-medium text-white mb-2">Price Range</h4>
-        <div className="flex flex-col space-y-3 mb-4">
-          {/* Render price range buttons dynamically */}
+      <div className="filter-price mb-6">
+        <h4 className="text-gray-700 font-medium mb-2">Price Range</h4>
+        <div className="flex flex-col space-y-2 mb-4">
           {priceRanges.map(({ label, range }) => (
             <button
               key={label}
@@ -75,19 +68,19 @@ const SidebarFilter = ({ onFilterChange, properties }) => {
               className={`${
                 selectedPriceRange[0] === range[0] &&
                 selectedPriceRange[1] === range[1]
-                  ? "bg-[#091F3C] text-white"
-                  : "bg-[#E1E1E1] text-[#091F3C]"
-              } px-6 py-2 rounded-full transition-all duration-300 transform hover:scale-105`}
+                  ? "bg-gray-800 text-white"
+                  : "bg-gray-200 text-gray-800"
+              } px-4 py-2 rounded transition duration-150`}
             >
               {label}
             </button>
           ))}
         </div>
-        <div className="flex items-center justify-between">
-          <span className="text-white font-medium">
+        <div className="flex items-center justify-between text-gray-800">
+          <span className="font-medium">
             Price: ₹{selectedPriceRange[0]} - ₹{selectedPriceRange[1]}
           </span>
-          <BsFillPersonFill className="text-[#43A181] ml-2" />
+          <BsFillPersonFill className="text-gray-500" />
         </div>
       </div>
     </div>

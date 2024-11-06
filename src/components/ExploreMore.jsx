@@ -1,24 +1,24 @@
 // ExploreMore.jsx
 import TourCard from "./TourCard";
 import Image1 from "../assets/homehero2.png"; // Replace with actual path to the placeholder image
+import Amenities from './Amenities';
 
 const cafes = [
   {
-    title: "Guatavita and Salt Cathedral - Group tour and daily departure",
-    rating: 377,
-    price: "₹9,485",
+    title: "Guatavita and Salt Cathedral",
+    description:
+      "A scenic tour exploring the enchanting Guatavita lake and historic Salt Cathedral.",
     image: Image1,
   },
   {
-    title: "Private Tour City Tour Bogota + Monserrate (+5Hrs)",
-    rating: 599,
-    price: "₹5,171",
+    title: "Private Bogota City Tour + Monserrate",
+    description:
+      "An exclusive tour covering Bogota's highlights including Monserrate mountain.",
     image: Image1,
   },
   {
-    title: "La Candelaria, Monserrate and Museums Bogotá Private City Tour",
-    rating: 1071,
-    price: "₹5,777",
+    title: "La Candelaria and Museums",
+    description: "Discover Bogota’s cultural gems on this private city tour.",
     image: Image1,
   },
 ];
@@ -26,20 +26,20 @@ const cafes = [
 const temples = [
   {
     title: "Sun Temple Tour",
-    rating: 289,
-    price: "₹8,400",
+    description:
+      "Visit the ancient Sun Temple and learn about its historical significance.",
     image: Image1,
   },
   {
-    title: "Temple of the Sacred Heart - Full Day Tour",
-    rating: 325,
-    price: "₹7,950",
+    title: "Temple of the Sacred Heart",
+    description:
+      "A full-day tour to explore the magnificent Sacred Heart Temple.",
     image: Image1,
   },
   {
-    title: "Guided Temple Visit with Historical Insights",
-    rating: 450,
-    price: "₹6,200",
+    title: "Guided Temple Visit",
+    description:
+      "A comprehensive tour offering historical insights into ancient temples.",
     image: Image1,
   },
 ];
@@ -47,26 +47,28 @@ const temples = [
 const adventures = [
   {
     title: "Mountain Trek Adventure",
-    rating: 522,
-    price: "₹10,000",
+    description:
+      "A thrilling mountain trek offering breathtaking views and a challenging hike.",
     image: Image1,
   },
   {
     title: "River Rafting Expedition",
-    rating: 400,
-    price: "₹9,200",
+    description:
+      "Experience the rush of river rafting in beautiful surroundings.",
     image: Image1,
   },
   {
     title: "Paragliding over Valleys",
-    rating: 320,
-    price: "₹15,000",
+    description:
+      "Soar over stunning valleys in this unforgettable paragliding experience.",
     image: Image1,
   },
 ];
 
+
 const ExploreMore = () => (
   <div className="container bg-gradient-to-r from-[#43A181] via-[#ffffff] to-[#43A181] w-[100vw] min-h-[100vh] px-4 py-32 text-center ">
+  <Amenities/>
     <h1 className="text-4xl font-extrabold text-[#091F3C] my-6">
       Rishikesh Is Great For
     </h1>

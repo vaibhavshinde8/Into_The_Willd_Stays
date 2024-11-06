@@ -4,6 +4,8 @@ import SidebarFilter from "../components/SidebarFilter";
 import Image1 from "../assets/homehero.png";
 import TourBanner from "./../components/TourBanner";
 import GalleryAndReviews from "../components/GalleryAndReviews";
+import { FaMapMarkerAlt } from "react-icons/fa"; // Import location icon
+
 
 // Properties data
 const properties = [
@@ -12,11 +14,7 @@ const properties = [
     name: "Rishikesh Riverside Retreat",
     description:
       "A peaceful riverside stay in the heart of Rishikesh, surrounded by nature. Ideal for spiritual seekers and adventure lovers alike.",
-    location: {
-      city: "Rishikesh",
-      state: "Uttarakhand",
-      country: "India",
-    },
+    location: "Rishikesh",
     rating: 4.7,
     reviews: 30,
     price: 18000,
@@ -30,11 +28,7 @@ const properties = [
     name: "Mussoorie Hilltop Haven",
     description:
       "Stay in a charming hilltop cottage with breathtaking views of Mussoorie's misty mountains and serene surroundings.",
-    location: {
-      city: "Mussoorie",
-      state: "Uttarakhand",
-      country: "India",
-    },
+    location: "Mussoorie",
     rating: 4.6,
     reviews: 50,
     price: 30000,
@@ -48,11 +42,7 @@ const properties = [
     name: "Dehradun Valley Escape",
     description:
       "A tranquil retreat located in the lush green valleys of Dehradun, perfect for unwinding and enjoying the scenic beauty.",
-    location: {
-      city: "Dehradun",
-      state: "Uttarakhand",
-      country: "India",
-    },
+    location: "Dehradun",
     rating: 4.8,
     reviews: 40,
     price: 40000,
@@ -71,8 +61,7 @@ const Properties = () => {
 
     if (location) {
       filtered = filtered.filter(
-        (property) =>
-          property.location.city.toLowerCase() === location.toLowerCase()
+        (property) => property.location.toLowerCase() === location.toLowerCase()
       );
     }
 
@@ -84,13 +73,18 @@ const Properties = () => {
   };
 
   return (
-    <div>
-      <div className="flex flex-col sm:flex-row gap-8 py-32 px-8 bg-white">
+    <div className="py-32 flex-col text-center lg:px-32  ">
+      <h2 className="text-3xl sm:text-4xl  font-extrabold text-[#091F3C] mb-4 ">
+        <span className="text-[#000000]">Checkout Our</span> Properties
+      </h2>{" "}
+      <div className="flex flex-col sm:flex-row gap-8  py-12  px-8 bg-white">
         {/* Sidebar */}
         <div className="w-full sm:w-1/4">
-          <SidebarFilter onFilterChange={handleFilterChange} />
+          <SidebarFilter
+            onFilterChange={handleFilterChange}
+            properties={properties}
+          />
         </div>
-
         {/* Properties List */}
         <div className="w-full sm:w-3/4 max-w-6xl mx-auto text-center">
           <ul className="flex flex-col gap-6">
@@ -115,11 +109,13 @@ const Properties = () => {
                   </h2>
                   <p className="text-[#000000] mb-4">{property.description}</p>
                   <div className="flex flex-wrap space-x-2 mb-4 justify-center sm:justify-start">
-                    <span className="bg-[#43A181] rounded-full px-3 py-1 text-sm text-white font-semibold">
+                    {/* <span className="bg-[#43A181] rounded-full px-3 py-1 text-sm text-white font-semibold">
                       {property.location.city}, {property.location.state}
-                    </span>
-                    <span className="bg-[#43A181] rounded-full px-3 py-1 text-sm text-white font-semibold">
-                      {property.location.country}
+                    </span> */}
+                    <span className="flex items-center bg-[#43A181] rounded-full px-3 py-1 text-sm text-white font-semibold">
+                      <FaMapMarkerAlt className="mr-1" />{" "}
+                      {/* Add the location icon */}
+                      {property.location}
                     </span>
                   </div>
                   <div className="text-sm text-gray-600">
@@ -167,7 +163,7 @@ const Properties = () => {
                     to={property.exploremoreRoute}
                     className="mt-2 px-4 py-2 border border-white rounded-full hover:bg-[#43A181] hover:text-white transition whitespace-nowrap"
                   >
-                   Explore More
+                    Explore More
                   </Link>
                 </div>
               </li>
