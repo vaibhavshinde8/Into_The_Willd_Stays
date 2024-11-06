@@ -56,7 +56,7 @@ const amenityData = [
 const Amenities = () => {
   return (
     <>
-      <div id="amenities" className="pt-28">
+      <div id="amenities" className="">
         <div className="bg-[url('https://sundaysforever.com/static/media/Barlowscottageimg14.9e6859ced0b73fc2614d.jpg')] bg-cover bg-center bg-fixed lg:py-24 py-16 flex flex-col items-center lg:gap-4 text-white">
             <h1 className="text-6xl before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-green-400 relative inline-block"><span className="relative">Amenities</span></h1>
         </div>
