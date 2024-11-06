@@ -4,6 +4,7 @@ import Home from "../pages/Home";
 import Properties from "../pages/Properties"; // Make sure this path is correct
 import Tours from "../pages/Tours";
 import ExploreMore from '../components/ExploreMore';
+import Amenities from './../components/Amenities';
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: "/exploremore",
         element: <ExploreMore />,
+      },
+      {
+        path: "/amenities",
+        element: <Amenities />,
       },
     ],
   },
