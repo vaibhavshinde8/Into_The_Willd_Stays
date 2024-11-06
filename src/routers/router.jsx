@@ -3,6 +3,7 @@ import App from "../App";
 import Home from "../pages/Home";
 import Properties from "../pages/Properties"; // Make sure this path is correct
 import Tours from "../pages/Tours";
+import ExploreMore from '../components/ExploreMore';
 
 const router = createBrowserRouter([
   {
@@ -18,9 +19,13 @@ const router = createBrowserRouter([
         element: <Properties />,
       },
       {
-        path: '/tours',
-        element: <Tours/>
-      }
+        path: "/tours",
+        element: <Tours />,
+      },
+      {
+        path: "/exploremore",
+        element: <ExploreMore />,
+      },
     ],
   },
 ]);

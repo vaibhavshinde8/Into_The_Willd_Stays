@@ -1,9 +1,11 @@
 import { useState } from "react";
-import SidebarFilter from "../components/SidebarFilter"; // Import the SidebarFilter
+import { Link } from "react-router-dom"; // Import Link for navigation
+import SidebarFilter from "../components/SidebarFilter";
 import Image1 from "../assets/homehero.png";
 import TourBanner from "./../components/TourBanner";
 import GalleryAndReviews from "../components/GalleryAndReviews";
 
+// Properties data
 const properties = [
   {
     imgURL: Image1,
@@ -21,6 +23,7 @@ const properties = [
     bedroom: 4,
     bathroom: 2,
     guest: 6,
+    exploremoreRoute: "/exploremore",
   },
   {
     imgURL: Image1,
@@ -38,6 +41,7 @@ const properties = [
     bedroom: 3,
     bathroom: 2,
     guest: 4,
+    exploremoreRoute: "/exploremore",
   },
   {
     imgURL: Image1,
@@ -55,9 +59,9 @@ const properties = [
     bedroom: 5,
     bathroom: 3,
     guest: 8,
+    exploremoreRoute: "/exploremore",
   },
 ];
-
 
 const Properties = () => {
   const [filteredProperties, setFilteredProperties] = useState(properties);
@@ -65,7 +69,6 @@ const Properties = () => {
   const handleFilterChange = ({ location, price }) => {
     let filtered = properties;
 
-    // Filter by Location
     if (location) {
       filtered = filtered.filter(
         (property) =>
@@ -73,7 +76,6 @@ const Properties = () => {
       );
     }
 
-    // Filter by Price
     filtered = filtered.filter((property) => {
       return property.price >= price[0] && property.price <= price[1];
     });
@@ -161,13 +163,19 @@ const Properties = () => {
                   <button className="mt-4 px-4 py-2 border border-white rounded-full hover:bg-[#43A181] hover:text-white transition whitespace-nowrap">
                     Book now!
                   </button>
+                  <Link
+                    to={property.exploremoreRoute}
+                    className="mt-2 px-4 py-2 border border-white rounded-full hover:bg-[#43A181] hover:text-white transition whitespace-nowrap"
+                  >
+                   Explore More
+                  </Link>
                 </div>
               </li>
             ))}
           </ul>
         </div>
       </div>
-      <GalleryAndReviews/>
+      <GalleryAndReviews />
       <TourBanner />
     </div>
   );
