@@ -75,6 +75,36 @@ const Tours = () => {
           </h3>
         </div>
       </div>
+      <section id="trending-loc" className="py-8 lg:px-32 mx-2 mt-12 text-white">
+        <div>
+          <div className="ml-2 flex flex-col gap-2 lg:gap-4">
+            <h1 className="text-2xl font-bold lg:text-4xl"><span className="text-secondry font-bold">Top</span> Trending Destinations</h1>
+            <h3 className="lg:text-2xl">Explore the hottest travel spots around the globe.</h3>
+          </div>
+          <div className="grid grid-cols-3 gap-4 lg:gap-0 lg:grid-cols-5 justify-center mt-8">
+            <div className="flex flex-col items-center gap-2 hover:scale-105 hover:text-secondry transition duration-300 ease-in cursor-pointer">
+              <img className="w-48 h-48 object-cover rounded-xl" src="https://media.easemytrip.com/media/Deal/DL638119942080443457/SightSeeing/SightSeeingVA75On.jpg" alt="" />
+              <h1 className="text-xl font-bold">Europe</h1>
+            </div>
+            <div className="flex flex-col items-center gap-2 hover:scale-105 hover:text-secondry transition duration-300 ease-in cursor-pointer">
+              <img className="w-48 h-48 object-cover rounded-xl" src="https://media.easemytrip.com/media/Deal/DL637368468102333885/SightSeeing/SightSeeingvjlMBK.jpg" alt="" />
+              <h1 className="text-xl font-bold">Dubai</h1>
+            </div>
+            <div className="flex flex-col items-center gap-2 hover:scale-105 hover:text-secondry transition duration-300 ease-in cursor-pointer">
+              <img className="w-48 h-48 object-cover rounded-xl" src="https://media.easemytrip.com/media/Deal/DL638358400913851278/SightSeeing/SightSeeingHahHXG.jpg" alt="" />
+              <h1 className="text-xl font-bold">Andaman</h1>
+            </div>
+            <div className="flex flex-col items-center gap-2 hover:scale-105 hover:text-secondry transition duration-300 ease-in cursor-pointer">
+              <img className="w-48 h-48 object-cover rounded-xl" src="https://media.easemytrip.com/media/Deal/DL638091404735824102/SightSeeing/SightSeeingKnIUMg.jpg" alt="" />
+              <h1 className="text-xl font-bold">Australia</h1>
+            </div>
+            <div className="flex flex-col items-center gap-2 hover:scale-105 hover:text-secondry transition duration-300 ease-in cursor-pointer">
+              <img className="w-48 h-48 object-cover rounded-xl" src="https://media.easemytrip.com/media/Deal/DL638345495967417412/SightSeeing/SightSeeingvBYqJa.jpg" alt="" />
+              <h1 className="text-xl font-bold">Spain</h1>
+            </div>
+          </div>
+        </div>
+      </section>
       <section className="py-8 lg:px-32 mx-2">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {packages.map((tourpack) => (
