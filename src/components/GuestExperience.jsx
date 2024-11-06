@@ -1,6 +1,6 @@
 const GuestExperience = () => {
   return (
-    <div className="bg-white min-h-[100vh] py-36 lg:px-32">
+    <div className="bg-white min-h-[100vh] py-4 lg:px-32">
       <div className="my-12 mx-4">
         <div className="flex flex-col-reverse lg:flex-row gap-8 justify-around items-center text-center">
           <div className="flex flex-col gap-6 p-8 bg-gradient-to-r from-[#091F3C] to-[#43A181] rounded-2xl shadow-xl lg:w-[550px] lg:h-[380px] text-white">
