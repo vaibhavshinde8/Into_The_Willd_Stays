@@ -6,6 +6,9 @@ export default {
       colors: {
         primary: '#012258',
         secondry: '#F77706'
+      },
+      fontFamily: {
+        primaryF: ["Caveat", "serif"]
       }
     },
   },

@@ -42,24 +42,24 @@ const HomeHero = () => {
         <div className="w-full flex flex-col items-center text-center px-4 space-y-8">
           {/* Heading */}
           <motion.h1
-            className="text-5xl md:text-7xl font-bold mb-6 tracking-wider text-white"
+            className="text-5xl md:text-7xl font-bold font-primaryF mb-6 tracking-wider text-white"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            Into the Wild
+            Into the Wild Stays
           </motion.h1>
 
           {/* Search Section */}
           <motion.div
-            className="bg-white bg-opacity-90 p-6 rounded-3xl shadow-2xl flex justify-center space-x-4"
+            className="bg-white bg-opacity-20 p-6 rounded-lg shadow-2xl flex justify-center space-x-4"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.5 }}
           >
             {/* Location */}
             <div className="relative w-1/4">
-              <label className="text-gray-600 font-semibold mb-1 text-sm block">
+              <label className="text-white font-semibold mb-1 text-sm block">
                 Location
               </label>
               <button
@@ -90,7 +90,7 @@ const HomeHero = () => {
 
             {/* Check-In */}
             <div className="w-1/5">
-              <label className="text-gray-600 font-semibold mb-1 text-sm block">
+              <label className="text-white font-semibold mb-1 text-sm block">
                 Check In
               </label>
               <input
@@ -103,7 +103,7 @@ const HomeHero = () => {
 
             {/* Check-Out */}
             <div className="w-1/5">
-              <label className="text-gray-600 font-semibold mb-1 text-sm block">
+              <label className="text-white font-semibold mb-1 text-sm block">
                 Check Out
               </label>
               <input
@@ -116,7 +116,7 @@ const HomeHero = () => {
 
             {/* Adults */}
             <div className="w-1/6">
-              <label className="text-gray-600 font-semibold mb-1 text-sm block">
+              <label className="text-white font-semibold mb-1 text-sm block">
                 Adults
               </label>
               <input
@@ -130,7 +130,7 @@ const HomeHero = () => {
 
             {/* Children */}
             <div className="w-1/6">
-              <label className="text-gray-600 font-semibold mb-1 text-sm block">
+              <label className="text-white font-semibold mb-1 text-sm block">
                 Children
               </label>
               <input
