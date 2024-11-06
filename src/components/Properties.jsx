@@ -53,7 +53,7 @@ const Properties = ({ selectedLocation = "All" }) => {
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 my-6">
       {filteredProperty.map((places) => (
         <div
-          className="relative bg-[#012258] text-white rounded-lg shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-3 duration-300 overflow-hidden"
+          className="relative bg-[#091F3C] text-white rounded-lg shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-3 duration-300 overflow-hidden"
           key={places.name}
         >
           <div className="relative">
@@ -65,11 +65,11 @@ const Properties = ({ selectedLocation = "All" }) => {
             <div className="absolute inset-0 bg-gradient-to-t from-[#00000099] to-transparent rounded-t-lg"></div>
           </div>
           <div className="p-4">
-            <h2 className="font-bold text-[#F77706] lg:text-xl">
+            <h2 className="font-bold text-[#43A181] lg:text-xl">
               {places.name}
             </h2>
             <h3 className="flex gap-1 items-center text-white mt-1">
-              <span className="text-[#F77706]">
+              <span className="text-[#43A181]">
                 <IoLocationOutline />
               </span>
               {places.location}
@@ -89,13 +89,13 @@ const Properties = ({ selectedLocation = "All" }) => {
               </h2>
             </div>
           </div>
-          <div className="p-4 flex items-center justify-between bg-gradient-to-b from-[#012258] to-[#000000] rounded-b-lg">
+          <div className="p-4 flex items-center justify-between bg-gradient-to-b from-[#091F3C] to-[#000000] rounded-b-lg">
             <h4 className="text-lg">
               From Rs.{" "}
-              <span className="text-[#F77706] font-bold">{places.price}</span>
+              <span className="text-[#43A181] font-bold">{places.price}</span>
               /Night
             </h4>
-            <button className="border-2 border-[#F77706] text-[#F77706] px-4 py-1 rounded-lg font-bold hover:bg-[#F77706] hover:text-[#FFFFFF] transition-colors duration-300">
+            <button className="border-2 border-[#43A181] text-[#43A181] px-4 py-1 rounded-lg font-bold hover:bg-[#43A181] hover:text-white transition-colors duration-300">
               Book Now
             </button>
           </div>

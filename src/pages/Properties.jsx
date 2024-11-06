@@ -38,12 +38,12 @@ const properties = [
 
 const Properties = () => {
   return (
-    <div className="py-32 px-8 bg-gradient-to-r from-blue-900 via-gray-800 to-blue-900">
+    <div className="py-32 px-8 bg-white">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-4xl font-extrabold text-white mb-4">
-          Checkout Our <span className="text-[#F77706]"> Properties </span>
+        <h2 className="text-4xl font-extrabold text-[#091F3C] mb-4">
+          Checkout Our <span className="text-[#43A181]">Properties</span>
         </h2>
-        <p className="mb-8 text-white">
+        <p className="mb-8 text-[#091F3C]">
           Fusce hic augue velit wisi quibusdam pariatur, iusto primis, nec nemo,
           rutrum. Vestibulum cumque laudantium. Sit ornare mollitia tenetur,
           aptent.
@@ -53,7 +53,7 @@ const Properties = () => {
           {properties.map((property, index) => (
             <li
               key={index}
-              className="flex flex-col sm:flex-row bg-gradient-to-r from-[#1E3A8A] to-[#001F4D] rounded-lg shadow-lg overflow-hidden"
+              className="flex flex-col sm:flex-row bg-white border border-[#091F3C] rounded-lg shadow-lg overflow-hidden"
             >
               {/* First section (Image) */}
               <div className="flex-shrink-0 w-full sm:w-[30%]">
@@ -65,26 +65,26 @@ const Properties = () => {
               </div>
 
               {/* Second section (Details) */}
-              <div className="flex-grow p-4 w-full sm:w-[50%] flex flex-col justify-between items-center">
-                <h2 className="text-xl sm:text-2xl font-bold text-white mb-2">
+              <div className="flex-grow p-4 w-full sm:w-[40%] flex flex-col justify-between items-center">
+                <h2 className="text-xl sm:text-2xl font-bold text-[#091F3C] mb-2">
                   {property.title}
                 </h2>
-                <p className="text-gray-200 mb-4">{property.description}</p>
+                <p className="text-[#000000] mb-4">{property.description}</p>
                 <div className="flex flex-wrap space-x-2 mb-4">
-                  <span className="bg-gray-100 rounded-full px-3 py-1 text-sm text-[#012258] font-semibold">
+                  <span className="bg-[#43A181] rounded-full px-3 py-1 text-sm text-white font-semibold">
                     {property.duration}
                   </span>
-                  <span className="bg-gray-100 rounded-full px-3 py-1 text-sm text-[#012258] font-semibold">
+                  <span className="bg-[#43A181] rounded-full px-3 py-1 text-sm text-white font-semibold">
                     pax: {property.pax}
                   </span>
-                  <span className="bg-gray-100 rounded-full px-3 py-1 text-sm text-[#012258] font-semibold">
+                  <span className="bg-[#43A181] rounded-full px-3 py-1 text-sm text-white font-semibold">
                     {property.location}
                   </span>
                 </div>
               </div>
 
               {/* Third section (Reviews & Price) */}
-              <div className="flex-shrink-0 w-full sm:w-[20%] p-4 py-8 bg-[#F77706] text-white flex flex-col items-center">
+              <div className="flex-shrink-0 w-full sm:w-[30%] p-4 py-8 bg-[#091F3C] text-white flex flex-col items-center">
                 <div className="flex flex-col items-center mb-2">
                   <span>({property.reviews} reviews)</span>
                   <div className="flex">
@@ -106,7 +106,7 @@ const Properties = () => {
                   {property.price}
                 </div>
                 <span className="text-sm">/ per person</span>
-                <button className="mt-4 px-4 py-2 border border-white rounded-full hover:bg-white hover:text-[#012258] transition whitespace-nowrap">
+                <button className="mt-4 px-4 py-2 border border-white rounded-full hover:bg-[#43A181] hover:text-white transition whitespace-nowrap">
                   Book now!
                 </button>
               </div>
@@ -114,7 +114,7 @@ const Properties = () => {
           ))}
         </ul>
 
-        <button className="mt-8 px-6 py-3 bg-[#F77706] text-white rounded-md hover:bg-white hover:text-[#012258] transition-colors">
+        <button className="mt-8 px-6 py-3 bg-[#43A181] text-white rounded-md hover:bg-[#091F3C] hover:text-white transition-colors">
           View All Properties
         </button>
       </div>

@@ -39,7 +39,7 @@ const content = [
 
 const GalleryAndReviews = () => {
   return (
-    <div className="gallery-reviews p-6 lg:px-32 bg-gradient-to-r from-blue-900 via-gray-800 to-blue-900 text-white min-h-">
+    <div className="gallery-reviews p-6 lg:px-32 bg-gradient-to-r from-[#ffffff] via-[#43A181] to-[#ffffff] text-white min-h-[60vh]">
       <h1 className="text-4xl text-white lg:text-5xl font-bold mb-6 text-center pb-12">
         Guest <span className="text-[#F77706]">Diaries</span>
       </h1>
@@ -47,7 +47,7 @@ const GalleryAndReviews = () => {
         {content.map((item, index) => (
           <div
             key={index}
-            className="card bg-transparent rounded-xl  overflow-hidden"
+            className="card bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-3 duration-300"
           >
             {item.type === "image" ? (
               <>
@@ -57,11 +57,11 @@ const GalleryAndReviews = () => {
                     alt={
                       item.caption ? item.caption : `Gallery item ${index + 1}`
                     }
-                    className="w-full h-[300px] object-cover rounded-xl"
+                    className="w-full h-[300px] object-cover rounded-xl transition-transform transform hover:scale-105 duration-300"
                   />
                   {item.caption && (
-                    <div className="absolute inset-0 flex items-end justify-center  rounded-xl">
-                      <p className="text-center  w-full bg-black bg-opacity-20 text-white text-lg p-3">
+                    <div className="absolute inset-0 flex items-end justify-center rounded-xl">
+                      <p className="text-center w-full bg-black bg-opacity-40 text-white text-lg p-3">
                         {item.caption}
                       </p>
                     </div>
@@ -70,11 +70,11 @@ const GalleryAndReviews = () => {
               </>
             ) : (
               <div className="p-8 py-16">
-                <p className="font-bold text-[#F77706] text-lg">
+                <p className="font-bold text-[#43A181] text-lg">
                   {item.author}
                 </p>
-                <p className="text-gray-400">{item.location}</p>
-                <p className="italic text-gray-300 mt-2">{item.review}</p>
+                <p className="text-[#091F3C]">{item.location}</p>
+                <p className="italic text-gray-600 mt-2">{item.review}</p>
               </div>
             )}
           </div>

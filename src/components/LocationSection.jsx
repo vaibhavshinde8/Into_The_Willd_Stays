@@ -17,19 +17,19 @@ const locations = [
 
 const LocationSection = () => {
   return (
-    <div className="bg-gradient-to-r from-blue-900 via-gray-800 to-blue-900 pt-8 pb-12 lg:px-32">
+    <div className="bg-white pt-8 pb-12 lg:px-32">
       <div className="lg:mx-24">
-        <h1 className="text-4xl text-white lg:text-5xl font-bold mb-6 text-center pb-12">
-          Browse By <span className="text-[#F77706]">Location</span>
+        <h1 className="text-4xl lg:text-5xl font-bold mb-6 text-center text-[#091F3C] pb-12">
+          Browse By <span className="text-[#43A181]">Location</span>
         </h1>
 
         <div className="flex flex-wrap justify-center gap-6 lg:gap-12">
           {locations.map((place, index) => (
             <div
               key={index}
-              className="w-[160px] h-[160px] lg:w-[220px] lg:h-[220px] rounded-full border-4 border-dashed border-gray-400 hover:shadow-2xl hover:border-[#F77706] transition duration-300 ease-in-out transform hover:scale-105 flex items-center justify-center"
+              className="w-[160px] h-[160px] lg:w-[220px] lg:h-[220px] rounded-full border-4 border-dashed border-[#091F3C] hover:shadow-2xl hover:border-[#43A181] transition duration-300 ease-in-out transform hover:scale-105 flex items-center justify-center"
             >
-              <div className="rounded-full overflow-hidden p-1 relative bg-gradient-to-br from-[#1E40AF] to-[#6366F1] w-full h-full flex items-center justify-center">
+              <div className="rounded-full overflow-hidden p-1 relative bg-gradient-to-br from-[#43A181] to-[#091F3C] w-full h-full flex items-center justify-center">
                 <img
                   className="object-cover w-full h-full rounded-full"
                   src={place.imgUrl}

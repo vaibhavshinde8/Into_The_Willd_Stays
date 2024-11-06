@@ -13,7 +13,7 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-gray-300">
+    <footer className="bg-[#0A192F] text-[#D1D1D1]">
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -27,16 +27,28 @@ const Footer = () => {
               Book your perfect stay with us today.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="hover:text-white transition-colors">
+              <a
+                href="#"
+                className="text-[#F77706] hover:text-white transition-colors"
+              >
                 <Facebook size={20} />
               </a>
-              <a href="#" className="hover:text-white transition-colors">
+              <a
+                href="#"
+                className="text-[#1DA1F2] hover:text-white transition-colors"
+              >
                 <Twitter size={20} />
               </a>
-              <a href="#" className="hover:text-white transition-colors">
+              <a
+                href="#"
+                className="text-[#E4405F] hover:text-white transition-colors"
+              >
                 <Instagram size={20} />
               </a>
-              <a href="#" className="hover:text-white transition-colors">
+              <a
+                href="#"
+                className="text-[#0077B5] hover:text-white transition-colors"
+              >
                 <Linkedin size={20} />
               </a>
             </div>
@@ -49,31 +61,27 @@ const Footer = () => {
             </h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <a href="#" className="hover:text-[#F77706] transition-colors">
                   About Us
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <a href="#" className="hover:text-[#F77706] transition-colors">
                   Contact Us
                 </a>
               </li>
-
               <li>
-                {" "}
-                <a href="#" className="hover:text-white transition-colors">
+                <a href="#" className="hover:text-[#F77706] transition-colors">
                   Cookie Policy
                 </a>
               </li>
               <li>
-                {" "}
-                <a href="#" className="hover:text-white transition-colors">
+                <a href="#" className="hover:text-[#F77706] transition-colors">
                   Privacy Policy
                 </a>
               </li>
               <li>
-                {" "}
-                <a href="#" className="hover:text-white transition-colors">
+                <a href="#" className="hover:text-[#F77706] transition-colors">
                   Terms of Service
                 </a>
               </li>
@@ -129,13 +137,13 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-gray-800">
+      <div className="border-t border-[#1E2A47]">
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-sm">
               © 2024 IntoTheWildsStays. All rights reserved.
             </div>
-            <div className="flex space-x-6 text-sm">
+            <div className="flex space-x-6 text-sm text-[#F77706]">
               Designed and Developed by House Of Marktech
             </div>
           </div>
