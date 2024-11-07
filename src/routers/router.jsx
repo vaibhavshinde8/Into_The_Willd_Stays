@@ -5,6 +5,7 @@ import Properties from "../pages/Properties"; // Make sure this path is correct
 import Tours from "../pages/Tours";
 import ExploreMore from '../components/ExploreMore';
 import Amenities from './../components/Amenities';
+import ContactUs from "../pages/ContactUs";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
       {
         path: "/tours",
         element: <Tours />,
+      },
+      {
+        path: '/contact-us',
+        element: <ContactUs/>
       },
       {
         path: "/exploremore",
