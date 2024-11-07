@@ -251,6 +251,10 @@ const Tours = () => {
       </section>
 
       <section id="tour-slider" className="py-8">
+        <div className="lg:mx-40 mx-2 flex flex-col gap-2">
+          <h1 className="lg:text-4xl text-2xl font-bold"><span className="text-blue-700 font-bold">Explore</span> The Hidden Gems</h1>
+          <h2 className="lg:text-xl text-lg">Tap into the untapped tourist spots for amazing vacations.</h2>
+        </div>
         <div className="lg:w-[80%] lg:mx-auto">
           <Swiper
             spaceBetween={30}
@@ -263,7 +267,7 @@ const Tours = () => {
               clickable: true,
             }}
             modules={[Autoplay, Pagination]}
-            className="mySwiper rounded-lg"
+            className="mySwiper rounded-lg !pt-3 lg:!pt-5"
           >
             {hiddenGems.map((val) => (
               <SwiperSlide className="rounded-lg">
