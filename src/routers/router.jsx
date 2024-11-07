@@ -6,6 +6,7 @@ import Tours from "../pages/Tours";
 import ExploreMore from '../components/ExploreMore';
 import Amenities from './../components/Amenities';
 import ContactUs from "../pages/ContactUs";
+import AboutUs from './../pages/AboutUs';
 
 const router = createBrowserRouter([
   {
@@ -25,8 +26,8 @@ const router = createBrowserRouter([
         element: <Tours />,
       },
       {
-        path: '/contact-us',
-        element: <ContactUs/>
+        path: "/contact-us",
+        element: <ContactUs />,
       },
       {
         path: "/exploremore",
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: "/amenities",
         element: <Amenities />,
+      },
+      {
+        path: "/about-us",
+        element: <AboutUs />,
       },
     ],
   },

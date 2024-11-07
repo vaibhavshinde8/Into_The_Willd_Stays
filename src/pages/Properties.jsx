@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { Link } from "react-router-dom"; // Import Link for navigation
+import { Link } from "react-router-dom"; 
 import SidebarFilter from "../components/SidebarFilter";
 import Image1 from "../assets/homehero.png";
 import TourBanner from "./../components/TourBanner";
 import GalleryAndReviews from "../components/GalleryAndReviews";
-import { FaMapMarkerAlt } from "react-icons/fa"; // Import location icon
+import { FaMapMarkerAlt } from "react-icons/fa";
 
 
 // Properties data
@@ -73,11 +73,14 @@ const Properties = () => {
   };
 
   return (
-    <div className="py-32 flex-col text-center lg:px-32  ">
-      <h2 className="text-3xl sm:text-4xl  font-extrabold text-[#091F3C] mb-4 ">
-        <span className="text-[#000000]">Checkout Our</span> Properties
-      </h2>{" "}
-      <div className="flex flex-col sm:flex-row gap-8  py-12  px-8 bg-white">
+    <div className="py-32 flex-col text-center   ">
+      <div className="bg-[url('https://images.trvl-media.com/lodging/109000000/108380000/108370800/108370765/28b3dc50.jpg?impolicy=resizecrop&rw=1200&ra=fit')] bg-cover bg-center bg-fixed lg:py-24 py-16 flex flex-col items-center lg:gap-4 text-white">
+        <h1 className="text-6xl before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-[#091F3C] relative inline-block">
+          <span className="relative">Checkout Our Properties</span>
+        </h1>
+      </div>
+
+      <div className="flex flex-col sm:flex-row gap-8  py-12  lg:px-32 px-8 bg-white">
         {/* Sidebar */}
         <div className="w-full sm:w-1/4">
           <SidebarFilter
