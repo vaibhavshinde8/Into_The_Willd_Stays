@@ -1,4 +1,4 @@
-import { Mails, Navigation, PhoneCall } from "lucide-react";
+import { Mails, Navigation, PhoneCall, Send } from "lucide-react";
 import React from "react";
 
 const ContactUs = () => {
@@ -26,6 +26,31 @@ const ContactUs = () => {
                 <span className="border-2 p-3 border-black hover:bg-secondry rounded-[50%]"><Mails size={40}/></span>
                 <h1 className="text-2xl lg:text-3xl font-bold">Email Us</h1>
                 <p className="text-lg"><a href="mailto:intothewilds@gmail.com">intothewildstays@outlook.com</a></p>
+            </div>
+        </div>
+
+        <div id="contact-form" className="lg:mx-16 my-16 mx-4 flex flex-col justify-center lg:flex-row gap-8">
+            <div>
+            <iframe className="w-[400px] lg:w-[600px] rounded-lg" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3440.2820180231606!2d78.23708687502547!3d30.428106300292047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3908df71bc0af0cd%3A0x1ef9ca2fc507b5cc!2sInto%20The%20Wild%20Stays!5e0!3m2!1sen!2sin!4v1730969960183!5m2!1sen!2sin" height="450" style={{border:0}} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div>
+                <h1 className="text-2xl font-bold text-secondry">Have any questions?</h1>
+                <h2>Call us to book a meetup or send us email for services</h2>
+                <form action="" className="flex flex-col gap-4 mt-4">
+                    <div className="flex flex-col">
+                        <label className="text-lg" htmlFor="name">Name</label>
+                        <input className="border-2 px-2 py-1 rounded-md" type="text" name="name" id="name" value={name} />
+                    </div>
+                    <div className="flex flex-col">
+                        <label className="text-lg" htmlFor="email">Email</label>
+                        <input className="border-2 px-2 py-1 rounded-md" type="email" name="email" id="email" />
+                    </div>
+                    <div className="flex flex-col">
+                        <label className="text-lg" htmlFor="message">Message</label>
+                        <textarea className="border-2 px-2 py-1 rounded-md" name="message" id="message" cols="30" rows="5"></textarea>
+                    </div>
+                    <button className="border-2 lg:py-2 py-1 px-8 bg-gradient-to-r from-green-200 to-green-400 rounded-md lg:text-xl flex items-center justify-center gap-1">Send <Send/></button>
+                </form>
             </div>
         </div>
       </div>
