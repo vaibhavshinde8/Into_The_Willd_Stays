@@ -5,8 +5,8 @@ const AboutUs = () => {
     <div className="min-h-[100vh] pt-32">
       {/* Hero Section with Background Image */}
       <div className="bg-[url('https://images.trvl-media.com/lodging/109000000/108380000/108370800/108370765/28b3dc50.jpg?impolicy=resizecrop&rw=1200&ra=fit')] bg-cover bg-center bg-fixed lg:py-24 py-16 flex flex-col items-center lg:gap-4 text-white">
-        <h1 className="text-6xl before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-[#091F3C] relative inline-block">
-          <span className="relative">About Us</span>
+        <h1 className="lg:text-7xl text-5xl before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-[#091F3C] relative inline-block">
+          <span className="relative font-primaryF">About Us</span>
         </h1>
       </div>
       {/* Content Section */}
@@ -14,7 +14,7 @@ const AboutUs = () => {
         <div className="my-12 mx-4">
           <div className="flex flex-col-reverse lg:flex-row gap-8 justify-around items-center text-center">
             {/* Text Section */}
-            <div className="flex flex-col gap-6 p-8 bg-gradient-to-r from-[#091F3C] to-[#43A181] shadow-xl lg:w-[550px] lg:h-[420px] text-white">
+            <div className="flex flex-col rounded-lg gap-6 p-8 bg-gradient-to-r from-[#091F3C] to-[#43A181] shadow-xl lg:w-[550px] lg:h-[420px] text-white">
               <h1 className="text-4xl font-bold tracking-tight">
                 Our <span className="text-[#43A181]">Story</span>
               </h1>
@@ -27,11 +27,11 @@ const AboutUs = () => {
             </div>
 
             {/* image Section */}
-            <div className="shadow-2xl overflow-hidden">
+            <div className="shadow-2xl overflow-hidden rounded-lg">
               <img
                 src={Image1}
                 alt="Founder"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover rounded-lg"
               />
             </div>
           </div>
@@ -108,7 +108,7 @@ const AboutUs = () => {
           <img
             src={Image1}
             alt="Founder"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover rounded-lg"
           />
         </div>
 

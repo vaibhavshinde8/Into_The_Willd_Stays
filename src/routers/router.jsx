@@ -7,6 +7,7 @@ import ExploreMore from '../components/ExploreMore';
 import Amenities from './../components/Amenities';
 import ContactUs from "../pages/ContactUs";
 import AboutUs from './../pages/AboutUs';
+import Blogs from "../pages/Blogs";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
       {
         path: "/about-us",
         element: <AboutUs />,
+      },
+      {
+        path: "/blogs",
+        element: <Blogs/>,
       },
     ],
   },

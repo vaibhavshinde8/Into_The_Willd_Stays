@@ -10,11 +10,13 @@ import {
   Shield,
   Clock,
 } from "lucide-react";
+import footerImg from "../assets/footer-img.png";
 
 const Footer = () => {
   return (
     <footer className="bg-[#0A192F] text-[#D1D1D1]">
       {/* Main Footer Content */}
+      <div className="relative lg:bottom-[13px] bottom-1"><img className="invert object-cover" src={footerImg} alt="" /></div>
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* About Section */}
