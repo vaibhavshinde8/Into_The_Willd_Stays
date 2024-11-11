@@ -7,7 +7,6 @@ import GalleryAndReviews from "../components/GalleryAndReviews";
 import { FaMapMarkerAlt } from "react-icons/fa";
 
 
-// Properties data
 const properties = [
   {
     imgURL: Image1,

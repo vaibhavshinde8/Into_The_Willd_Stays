@@ -67,7 +67,7 @@ const adventures = [
 
 
 const ExploreMore = () => (
-  <div className="container bg-gradient-to-r from-[#43A181] via-[#ffffff] to-[#43A181] w-[100vw] min-h-[100vh] px-4 py-32 text-center ">
+  <div className="container  w-[100vw] min-h-[100vh] px-4 py-32 text-center ">
   <Amenities/>
     <h1 className="text-4xl font-extrabold text-[#091F3C] my-6">
       Rishikesh Is Great For
