@@ -82,15 +82,15 @@ const Testimonials = () => {
       >
         {testData.map((testimon, index) => (
           <SwiperSlide key={index}>
-            <div className="flex flex-col items-center px-4 py-10 bg-gray-200 text-black rounded-lg shadow-lg">
+            <div className="flex flex-col items-center px-4 py-10 bg-gradient-to-b from-green-200 to-green-400 text-black rounded-lg shadow-lg">
               <img
-                className="w-[130px] h-[130px] rounded-[50%] border-4 border-[#43A181] shadow-lg"
+                className="w-[130px] h-[130px] rounded-[50%] border-4 border-dashed border-[#43A181] shadow-lg"
                 src={testimon.img}
                 alt={testimon.name}
               />
               <div className="flex flex-col gap-2 mt-4">
                 <p className="text-base text-[#091F3C]">{testimon.review}</p>
-                <h1 className="text-xl font-bold text-[#43A181]">
+                <h1 className="text-xl font-bold text-primary">
                   {testimon.name}
                 </h1>
                 <h2 className="text-sm text-[#091F3C]">{testimon.address}</h2>
