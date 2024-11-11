@@ -2,6 +2,7 @@
 import TourCard from "./TourCard";
 import Image1 from "../assets/homehero2.png"; // Replace with actual path to the placeholder image
 import Amenities from './Amenities';
+import Property1 from "./property-pages/Property1";
 
 const cafes = [
   {
