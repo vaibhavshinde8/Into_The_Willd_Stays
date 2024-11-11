@@ -24,7 +24,7 @@ const HomeHero = () => {
   }, []);
 
   return (
-    <div className="relative flex items-center justify-center h-[100vh] bg-gradient-to-b from-blue-900 to-gray-800 overflow-hidden">
+    <div className="relative flex items-center justify-center h-screen bg-gradient-to-b from-blue-900 to-gray-800 overflow-hidden">
       {/* Background Image */}
       <img
         src={images[currentImageIndex]}
@@ -42,7 +42,7 @@ const HomeHero = () => {
         <div className="w-full flex flex-col items-center text-center px-4 space-y-8">
           {/* Heading */}
           <motion.h1
-            className="text-5xl md:text-7xl font-bold font-primaryF mb-6 tracking-wider text-white"
+            className="text-8xl sm:text-8xl md:text-8xl font-bold font-primaryF mb-4 tracking-wider text-white"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -50,126 +50,114 @@ const HomeHero = () => {
             Into the Wild Stays
           </motion.h1>
 
-          {/* Search Section */}
-          <motion.div
-            className="bg-white bg-opacity-20 p-6 rounded-lg shadow-2xl flex justify-center space-x-4"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.5 }}
-          >
-            {/* Location */}
-            <div className="relative w-1/4">
-              <label className="text-white font-semibold mb-1 text-sm block">
-                Location
-              </label>
+          {/* Search Section (Hidden on small screens) */}
+          {window.innerWidth >= 768 && (
+            <motion.div
+              className="hidden md:flex bg-white bg-opacity-20 p-6 rounded-lg shadow-2xl justify-center space-x-4 w-full max-w-5xl"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.5 }}
+            >
+              {/* Location */}
+              <div className="relative w-1/4">
+                <label className="text-white font-semibold mb-1 text-sm block">
+                  Location
+                </label>
+                <button
+                  className="w-full border border-gray-300 rounded-full p-2 bg-white text-gray-800 shadow-sm hover:shadow-md transition-all"
+                  onClick={() => setShowLocationDropdown(!showLocationDropdown)}
+                >
+                  {location || "Select a location"}
+                </button>
+                {showLocationDropdown && (
+                  <div className="absolute mt-2 w-full bg-white border border-gray-300 rounded-lg shadow-lg z-20">
+                    {["Beach", "Mountain", "City", "Desert", "Forest"].map(
+                      (loc) => (
+                        <div
+                          key={loc}
+                          className="px-4 py-2 hover:bg-gray-200 cursor-pointer text-sm"
+                          onClick={() => {
+                            setLocation(loc);
+                            setShowLocationDropdown(false);
+                          }}
+                        >
+                          {loc}
+                        </div>
+                      )
+                    )}
+                  </div>
+                )}
+              </div>
+
+              {/* Check-In */}
+              <div className="w-1/5">
+                <label className="text-white font-semibold mb-1 text-sm block">
+                  Check In
+                </label>
+                <input
+                  type="date"
+                  value={checkIn}
+                  onChange={(e) => setCheckIn(e.target.value)}
+                  className="w-full border border-gray-300 rounded-full p-2 shadow-sm focus:ring-2 focus:ring-blue-300"
+                />
+              </div>
+
+              {/* Check-Out */}
+              <div className="w-1/5">
+                <label className="text-white font-semibold mb-1 text-sm block">
+                  Check Out
+                </label>
+                <input
+                  type="date"
+                  value={checkOut}
+                  onChange={(e) => setCheckOut(e.target.value)}
+                  className="w-full border border-gray-300 rounded-full p-2 shadow-sm focus:ring-2 focus:ring-blue-300"
+                />
+              </div>
+
+              {/* Adults */}
+              <div className="w-1/6">
+                <label className="text-white font-semibold mb-1 text-sm block">
+                  Adults
+                </label>
+                <input
+                  type="number"
+                  min="1"
+                  value={adultGuests}
+                  onChange={(e) => setAdultGuests(Number(e.target.value))}
+                  className="w-full border border-gray-300 rounded-full p-2 shadow-sm"
+                />
+              </div>
+
+              {/* Children */}
+              <div className="w-1/6">
+                <label className="text-white font-semibold mb-1 text-sm block">
+                  Children
+                </label>
+                <input
+                  type="number"
+                  min="0"
+                  value={childGuests}
+                  onChange={(e) => setChildGuests(Number(e.target.value))}
+                  className="w-full border border-gray-300 rounded-full p-2 shadow-sm"
+                />
+              </div>
               <button
-                className="w-full border border-gray-300 rounded-full p-2 bg-white text-gray-800 shadow-sm hover:shadow-md transition-all"
-                onClick={() => setShowLocationDropdown(!showLocationDropdown)}
+                className="bg-gradient-to-r from-green-500 to-teal-500 text-white font-semibold py-3 px-8 rounded-full shadow-md hover:shadow-lg hover:scale-105 transform transition-all duration-300 ease-out mt-4"
+                onClick={() => {
+                  alert(
+                    `Searching: Location=${location}, Check In=${checkIn}, Check Out=${checkOut}, Adults=${adultGuests}, Children=${childGuests}`
+                  );
+                }}
               >
-                {location || "Select a location"}
-              </button>
-              {showLocationDropdown && (
-                <div className="absolute mt-2 w-full bg-white border border-gray-300 rounded-lg shadow-lg z-20">
-                  {["Beach", "Mountain", "City", "Desert", "Forest"].map(
-                    (loc) => (
-                      <div
-                        key={loc}
-                        className="px-4 py-2 hover:bg-gray-200 cursor-pointer text-sm"
-                        onClick={() => {
-                          setLocation(loc);
-                          setShowLocationDropdown(false);
-                        }}
-                      >
-                        {loc}
-                      </div>
-                    )
-                  )}
+                <div className="flex items-center justify-center space-x-2">
+                  <span>Search</span>
                 </div>
-              )}
-            </div>
-
-            {/* Check-In */}
-            <div className="w-1/5">
-              <label className="text-white font-semibold mb-1 text-sm block">
-                Check In
-              </label>
-              <input
-                type="date"
-                value={checkIn}
-                onChange={(e) => setCheckIn(e.target.value)}
-                className="w-full border border-gray-300 rounded-full p-2 shadow-sm focus:ring-2 focus:ring-blue-300"
-              />
-            </div>
-
-            {/* Check-Out */}
-            <div className="w-1/5">
-              <label className="text-white font-semibold mb-1 text-sm block">
-                Check Out
-              </label>
-              <input
-                type="date"
-                value={checkOut}
-                onChange={(e) => setCheckOut(e.target.value)}
-                className="w-full border border-gray-300 rounded-full p-2 shadow-sm focus:ring-2 focus:ring-blue-300"
-              />
-            </div>
-
-            {/* Adults */}
-            <div className="w-1/6">
-              <label className="text-white font-semibold mb-1 text-sm block">
-                Adults
-              </label>
-              <input
-                type="number"
-                min="1"
-                value={adultGuests}
-                onChange={(e) => setAdultGuests(Number(e.target.value))}
-                className="w-full border border-gray-300 rounded-full p-2 shadow-sm"
-              />
-            </div>
-
-            {/* Children */}
-            <div className="w-1/6">
-              <label className="text-white font-semibold mb-1 text-sm block">
-                Children
-              </label>
-              <input
-                type="number"
-                min="0"
-                value={childGuests}
-                onChange={(e) => setChildGuests(Number(e.target.value))}
-                className="w-full border border-gray-300 rounded-full p-2 shadow-sm"
-              />
-            </div>
-          </motion.div>
+              </button>
+            </motion.div>
+          )}
 
           {/* Search Button */}
-          <button
-            className="bg-gradient-to-r from-green-500 to-teal-500 text-white font-semibold py-3 px-8 rounded-full shadow-md hover:shadow-lg hover:scale-105 transform transition-all duration-300 ease-out"
-            onClick={() => {
-              alert(
-                `Searching: Location=${location}, Check In=${checkIn}, Check Out=${checkOut}, Adults=${adultGuests}, Children=${childGuests}`
-              );
-            }}
-          >
-            <div className="flex items-center justify-center space-x-2">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5 animate-pulse"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2M9 5a7 7 0 016 3.287M4.75 19.287a7 7 0 0110.5 0M6 17v.01M18 17v.01"
-                />
-              </svg>
-              <span>Search</span>
-            </div>
-          </button>
         </div>
       </motion.div>
     </div>
