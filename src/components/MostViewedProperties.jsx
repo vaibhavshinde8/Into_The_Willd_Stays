@@ -1,9 +1,9 @@
 import { useState } from "react";
-import Properties from "../components/Properties";
+import PropertiesCard from "./PropertiesCard";
 
 const MostViewedProperties = () => {
   const [selectedLocation, setSelectedLocation] = useState("All");
-  const locationsProp = ["All", "Goa", "Mussourie", "Dehradun", "Manali"];
+  const locationsProp = ["All", "Rishikesh", "Mussoorie", "Dehradun"];
 
   return (
     <section
@@ -16,22 +16,22 @@ const MostViewedProperties = () => {
         </h1>
         <div>
           <div className="flex flex-wrap gap-2 lg:gap-4 justify-center mb-4">
-            {locationsProp.map((property) => (
+            {locationsProp.map((location) => (
               <button
-                key={property}
+                key={location}
                 className={`text-lg lg:text-xl font-semibold px-4 py-2 rounded transition-all duration-300 ease-in-out ${
-                  selectedLocation === property
+                  selectedLocation === location
                     ? "text-[#FFFFFF] border-b-4 border-[#43A181] bg-[#091F3C] shadow-lg"
                     : "text-[#091F3C] hover:bg-[#43A181] hover:text-white"
                 }`}
-                onClick={() => setSelectedLocation(property)}
+                onClick={() => setSelectedLocation(location)}
               >
-                {property}
+                {location}
               </button>
             ))}
           </div>
           <div>
-            <Properties selectedLocation={selectedLocation} />
+            <PropertiesCard selectedLocation={selectedLocation} />
           </div>
         </div>
       </div>
