@@ -110,7 +110,7 @@ const hiddenGems = [
 ];
 const Tours = () => {
   return (
-    <div className="bg-gradient-to-r from-green-100 to-green-200">
+    <div className="">
       <div className="lg:pt-24 pt-32 text-white ">
         <div className='bg-[url("https://sundaysforever.com/static/media/Barlowscottageimg14.9e6859ced0b73fc2614d.jpg")] bg-cover bg-center bg-fixed lg:py-24 py-16 flex flex-col items-center lg:gap-6 gap-4'>
           <h1 className="lg:text-7xl text-4xl before:block before:absolute before:-inset-1 before:-skew-y-2 before:bg-[#091F3C] relative inline-block">

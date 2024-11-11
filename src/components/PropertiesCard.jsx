@@ -1,10 +1,13 @@
 import PropTypes from "prop-types";
-import { IoLocationOutline } from "react-icons/io5";
+// import { IoLocationOutline } from "react-icons/io5";
 import { MdOutlineBedroomParent, MdOutlineBathroom } from "react-icons/md";
+import { FaMapMarkerAlt } from "react-icons/fa";
+
 import { IoPeople } from "react-icons/io5";
 import Image1 from "../assets/homehero1.png";
+import { Link } from "react-router-dom"; 
 
-// Use the updated properties data provided
+
 const properties = [
   {
     imgURL: Image1,
@@ -57,52 +60,74 @@ const PropertiesCard = ({ selectedLocation = "All" }) => {
       : properties.filter((property) => property.location === selectedLocation);
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 my-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-8 mx-4 sm:mx-0 max-w-6xl ">
       {filteredProperties.map((property) => (
         <div
-          className="relative bg-[#091F3C] text-white rounded-lg shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-3 duration-300 overflow-hidden"
           key={property.name}
+          className="relative bg-white text-gray-900 rounded-lg shadow-lg border border-gray-200 hover:shadow-2xl transform transition-all duration-300 hover:scale-105 overflow-hidden"
         >
+          {/* Image Section */}
           <div className="relative">
             <img
               className="rounded-t-lg h-72 w-full object-cover transition-transform transform hover:scale-105 duration-300"
               src={property.imgURL}
               alt={property.name}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#00000099] to-transparent rounded-t-lg"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent rounded-t-lg opacity-60"></div>
           </div>
-          <div className="p-4">
-            <h2 className="font-bold text-[#43A181] lg:text-xl">
+
+          {/* Property Details Section */}
+          <div className="p-6 space-y-4">
+            <h2 className="font-bold text-[#091F3C] text-2xl">
               {property.name}
             </h2>
-            <h3 className="flex gap-1 items-center text-#161616 mt-1">
-              <span className="text-primary">
-                <IoLocationOutline />
+            <div className="flex flex-wrap space-x-2 mb-4 justify-center sm:justify-start">
+              {/* <span className="bg-[#43A181] rounded-full px-3 py-1 text-sm text-white font-semibold">
+                      {property.location.city}, {property.location.state}
+                    </span> */}
+              <span className="flex items-center bg-[#43A181] rounded-full px-3 py-1 text-sm text-white font-semibold">
+                <FaMapMarkerAlt className="mr-1" />{" "}
+                {/* Add the location icon */}
+                {property.location}
               </span>
-              {property.location}
-            </h3>
-            <div className="hidden lg:flex gap-2 mt-4 text-sm">
-              <h2 className="flex items-center gap-1 border-r-2 border-primary pr-2">
+            </div>
+
+            <div className="flex gap-2 mt-4 text-gray-600 text-sm">
+              <div className="flex items-center gap-1">
                 <MdOutlineBedroomParent />
-                {property.bedroom} Bedrooms
-              </h2>
-              <h2 className="flex items-center gap-1 border-r-2 border-primary pr-2">
+                {property.bedroom} Bedroom{property.bedroom > 1 ? "s" : ""}
+              </div>
+              <div className="flex items-center gap-1">
                 <MdOutlineBathroom />
-                {property.bathroom} Bathrooms
-              </h2>
-              <h2 className="flex items-center gap-1">
+                {property.bathroom} Bathroom{property.bathroom > 1 ? "s" : ""}
+              </div>
+              <div className="flex items-center gap-1">
                 <IoPeople />
-                {property.guest} Guests
-              </h2>
+                {property.guest} Guest{property.guest > 1 ? "s" : ""}
+              </div>
+            </div>
+
+            <div className="flex items-center justify-between mt-4">
+              <h4 className="text-lg font-semibold text-gray-800">
+                From ₹
+                <span className="text-[#43A181] font-bold">
+                  {property.price}
+                </span>
+                /Night
+              </h4>
+              <span className="text-sm text-gray-400">(per person)</span>
             </div>
           </div>
-          <div className="p-4 flex items-center justify-between bg-gradient-to-b from-green-500 to-green-800 rounded-b-lg">
-            <h4 className="text-lg">
-              From Rs.{" "}
-              <span className="text-[#43A181] font-bold">{property.price}</span>
-              /Night
-            </h4>
-            <button className="border-2 border-primary text-primary px-4 py-1 rounded-lg font-bold hover:bg-primary hover:text-white transition-colors duration-300">
+
+          {/* Price and Booking Section */}
+          <div className="flex items-center justify-between px-6 py-4 bg-[#091F3C] rounded-b-lg text-white">
+            <Link
+              to={property.exploremoreRoute}
+              className="px-4 py-2 border border-white rounded-full hover:bg-white hover:text-[#43A181] transition-colors duration-300 font-medium"
+            >
+              Explore More
+            </Link>
+            <button className="bg-white text-[#091F3C] px-4 py-2 rounded-lg font-bold hover:bg-gray-100 transition-colors duration-300">
               Book Now
             </button>
           </div>
