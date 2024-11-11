@@ -1,4 +1,17 @@
 import { BedDouble, Boxes, Plane } from "lucide-react";
+import cambodia from "../assets/cambodia.png";
+import egypt from "../assets/egypt.jpg";
+import jamaica from "../assets/jamaica.png";
+import jordan from "../assets/jordan.jpg";
+import morocco from "../assets/morocco.png";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+// import '../components/TestiSwiper.css';
+import { Autoplay, Pagination } from "swiper/modules";
 
 const packages = [
   {
@@ -62,44 +75,109 @@ const packages = [
     price: 210000,
   },
 ];
+
+const hiddenGems = [
+  {
+    title: "Enchanting",
+    name: "Jamaica Holiday Package",
+    price: 125000,
+    imgUrls: jamaica,
+  },
+  {
+    title: "Discovering",
+    name: "Jordan Holiday Package",
+    price: 125000,
+    imgUrls: cambodia,
+  },
+  {
+    title: "Amazing Destination",
+    name: "Morocco Holiday Package",
+    price: 125000,
+    imgUrls: morocco,
+  },
+  {
+    title: "Pyramids Solace",
+    name: "Egypt Holiday Package",
+    price: 125000,
+    imgUrls: jamaica,
+  },
+  {
+    title: "Enchanting",
+    name: "Cambodia Holiday Package",
+    price: 125000,
+    imgUrls: cambodia,
+  },
+];
 const Tours = () => {
   return (
-    <div className="bg-gradient-to-r from-blue-900 via-gray-800 to-blue-900">
+    <div className="bg-gradient-to-r from-green-100 to-green-200">
       <div className="lg:pt-24 pt-32 text-white ">
-        <div className='bg-[url("https://sundaysforever.com/static/media/Barlowscottageimg14.9e6859ced0b73fc2614d.jpg")] bg-cover bg-center bg-fixed lg:py-24 py-16 flex flex-col items-center lg:gap-4'>
-          <h1 className="lg:text-4xl text-xl font-bold">
-            Welcome To our Tour Packages
+        <div className='bg-[url("https://sundaysforever.com/static/media/Barlowscottageimg14.9e6859ced0b73fc2614d.jpg")] bg-cover bg-center bg-fixed lg:py-24 py-16 flex flex-col items-center lg:gap-6 gap-4'>
+          <h1 className="lg:text-7xl text-4xl before:block before:absolute before:-inset-1 before:-skew-y-2 before:bg-[#091F3C] relative inline-block">
+            <span className="relative font-primaryF">
+              Welcome To our Tour Packages
+            </span>
           </h1>
-          <h3 className="lg:text-3xl">
-            Here we provide the topmost featured Tour plans
+          <h3 className="lg:text-6xl text-2xl text-center font-primaryF before:block before:absolute before:-inset-1 before:-skew-y-2 before:bg-[#091F3C] relative inline-block">
+            <span className="relative font-primaryF">
+              Here we provide the topmost featured Tour plans.
+            </span>
           </h3>
         </div>
       </div>
-      <section id="trending-loc" className="py-8 lg:px-32 mx-2 mt-12 text-white">
+      <section
+        id="trending-loc"
+        className="py-8 lg:px-32 mx-2 mt-12 text-black"
+      >
         <div>
           <div className="ml-2 flex flex-col gap-2 lg:gap-4">
-            <h1 className="text-2xl font-bold lg:text-4xl"><span className="text-secondry font-bold">Top</span> Trending Destinations</h1>
-            <h3 className="lg:text-2xl">Explore the hottest travel spots around the globe.</h3>
+            <h1 className="text-2xl font-bold lg:text-4xl">
+              <span className="text-secondry font-bold">Top</span> Trending
+              Destinations
+            </h1>
+            <h3 className="lg:text-2xl">
+              Explore the hottest travel spots around the globe.
+            </h3>
           </div>
           <div className="grid grid-cols-3 gap-4 lg:gap-0 lg:grid-cols-5 justify-center mt-8">
             <div className="flex flex-col items-center gap-2 hover:scale-105 hover:text-secondry transition duration-300 ease-in cursor-pointer">
-              <img className="w-48 h-48 object-cover rounded-xl" src="https://media.easemytrip.com/media/Deal/DL638119942080443457/SightSeeing/SightSeeingVA75On.jpg" alt="" />
+              <img
+                className="w-48 h-48 object-cover rounded-xl"
+                src="https://media.easemytrip.com/media/Deal/DL638119942080443457/SightSeeing/SightSeeingVA75On.jpg"
+                alt=""
+              />
               <h1 className="text-xl font-bold">Europe</h1>
             </div>
             <div className="flex flex-col items-center gap-2 hover:scale-105 hover:text-secondry transition duration-300 ease-in cursor-pointer">
-              <img className="w-48 h-48 object-cover rounded-xl" src="https://media.easemytrip.com/media/Deal/DL637368468102333885/SightSeeing/SightSeeingvjlMBK.jpg" alt="" />
+              <img
+                className="w-48 h-48 object-cover rounded-xl"
+                src="https://media.easemytrip.com/media/Deal/DL637368468102333885/SightSeeing/SightSeeingvjlMBK.jpg"
+                alt=""
+              />
               <h1 className="text-xl font-bold">Dubai</h1>
             </div>
             <div className="flex flex-col items-center gap-2 hover:scale-105 hover:text-secondry transition duration-300 ease-in cursor-pointer">
-              <img className="w-48 h-48 object-cover rounded-xl" src="https://media.easemytrip.com/media/Deal/DL638358400913851278/SightSeeing/SightSeeingHahHXG.jpg" alt="" />
+              <img
+                className="w-48 h-48 object-cover rounded-xl"
+                src="https://media.easemytrip.com/media/Deal/DL638358400913851278/SightSeeing/SightSeeingHahHXG.jpg"
+                alt=""
+              />
               <h1 className="text-xl font-bold">Andaman</h1>
             </div>
             <div className="flex flex-col items-center gap-2 hover:scale-105 hover:text-secondry transition duration-300 ease-in cursor-pointer">
-              <img className="w-48 h-48 object-cover rounded-xl" src="https://media.easemytrip.com/media/Deal/DL638091404735824102/SightSeeing/SightSeeingKnIUMg.jpg" alt="" />
+              <img
+                className="w-48 h-48 object-cover rounded-xl"
+                src="https://media.easemytrip.com/media/Deal/DL638091404735824102/SightSeeing/SightSeeingKnIUMg.jpg"
+                alt=""
+              />
               <h1 className="text-xl font-bold">Australia</h1>
             </div>
             <div className="flex flex-col items-center gap-2 hover:scale-105 hover:text-secondry transition duration-300 ease-in cursor-pointer">
-              <img className="w-48 h-48 object-cover rounded-xl" src="https://media.easemytrip.com/media/Deal/DL638345495967417412/SightSeeing/SightSeeingvBYqJa.jpg" alt="" />
+              <img
+                className="w-48 h-48 object-cover rounded-xl"
+                src="https://media.easemytrip.com/media/Deal/DL638345495967417412/SightSeeing/SightSeeingvBYqJa.jpg"
+                alt=""
+              />
               <h1 className="text-xl font-bold">Spain</h1>
             </div>
           </div>
@@ -109,7 +187,7 @@ const Tours = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {packages.map((tourpack) => (
             <div
-              className="relative bg-[#012258] text-white rounded-lg shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-3 duration-300 overflow-hidden"
+              className="relative bg-gradient-to-b from-green-200 to-green-400 text-white rounded-lg shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-3 duration-300 overflow-hidden"
               key={tourpack.name}
             >
               <div className="relative">
@@ -121,54 +199,112 @@ const Tours = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#00000099] to-transparent rounded-t-lg"></div>
               </div>
               <div className="p-4 flex flex-col gap-3">
-                <h2 className="font-bold text-[#F77706] lg:text-xl">
+                <h2 className="font-bold text-primary lg:text-xl">
                   {tourpack.name}
                 </h2>
                 <div className="flex gap-2">
-                  <h3 className="border-r-2 border-secondry pr-2">
+                  <h3 className="border-r-2 border-primary pr-2">
                     {tourpack.des1}
                   </h3>
-                  <h3 className="border-r-2 border-secondry pr-2">
+                  <h3 className="border-r-2 border-primary pr-2">
                     {tourpack.des2}
                   </h3>
-                  <h3 className="border-r-2 border-secondry pr-2">
+                  <h3 className="border-r-2 border-primary pr-2">
                     {tourpack.des3}
                   </h3>
                 </div>
                 <div className="flex gap-4">
                   <h3 className="flex gap-1 items-center text-white mt-1">
-                    <span className="text-[#F77706]">
+                    <span className="text-primary">
                       <Plane />
                     </span>
                     {tourpack.flight} Flights
                   </h3>
                   <h3 className="flex gap-1 items-center">
-                    <span className="text-secondry">
+                    <span className="text-primary">
                       <BedDouble />
                     </span>
                     {tourpack.hotel} Hotel
                   </h3>
                   <h3 className="flex gap-1 items-center">
-                    <span className="text-secondry">
+                    <span className="text-primary">
                       <Boxes />
                     </span>
                     {tourpack.activities}+ Activities
                   </h3>
                 </div>
               </div>
-              <div className="p-4 flex items-center justify-between bg-gradient-to-b from-[#012258] to-[#000000] rounded-b-lg">
+              <div className="p-4 flex items-center justify-between bg-gradient-to-b from-green-400 to-green-900 rounded-b-lg">
                 <h4 className="text-lg">
                   From Rs.{" "}
-                  <span className="text-[#F77706] font-bold">
+                  <span className="text-primary font-bold">
                     {tourpack.price}
                   </span>
                 </h4>
-                <button className="border-2 border-[#F77706] text-[#F77706] px-4 py-1 rounded-lg font-bold hover:bg-[#F77706] hover:text-[#FFFFFF] transition-colors duration-300">
+                <button className="border-2 border-primary text-primary px-4 py-1 rounded-lg font-bold hover:bg-primary hover:text-[#FFFFFF] transition-colors duration-300">
                   Book Now
                 </button>
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section id="tour-slider" className="py-8">
+        <div className="lg:mx-40 mx-2 flex flex-col gap-2">
+          <h1 className="lg:text-4xl text-2xl font-bold"><span className="text-blue-700 font-bold">Explore</span> The Hidden Gems</h1>
+          <h2 className="lg:text-xl text-lg">Tap into the untapped tourist spots for amazing vacations.</h2>
+        </div>
+        <div className="lg:w-[80%] lg:mx-auto">
+          <Swiper
+            spaceBetween={30}
+            centeredSlides={true}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
+            pagination={{
+              clickable: true,
+            }}
+            modules={[Autoplay, Pagination]}
+            className="mySwiper rounded-lg !pt-3 lg:!pt-5"
+          >
+            {hiddenGems.map((val) => (
+              <SwiperSlide className="rounded-lg">
+                <div className="rounded-lg text-white">
+                  <img
+                    className="w-[100%] h-[350px] object-cover rounded-lg before:content before:w-full before:h-full "
+                    src={val.imgUrls}
+                    alt={val.name}
+                  />
+                  <div className="absolute lg:bottom-10 bottom-8 left-3 lg:left-8 flex flex-col items-center gap-4">
+                    <h2 className="lg:text-5xl text-3xl before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-gradient-to-r before:from-blue-700 before:to-blue-950 relative inline-block">
+                      <span className="relative font-primaryF">
+                        {val.title}
+                      </span>
+                    </h2>
+                    <h1 className="lg:text-4xl text-2xl font-bold before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-gradient-to-r before:from-blue-700 before:to-blue-950 relative inline-block">
+                      <span className="relative">{val.name}</span>
+                    </h1>
+                    <h3 className="lg:text-2xl text-sm before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-gradient-to-r before:from-blue-700 before:to-blue-950 relative inline-block">
+                      <span className="relative">
+                        Starting From Rs.{val.price}
+                      </span>
+                    </h3>
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+
+            {/* <SwiperSlide>Slide 2</SwiperSlide>
+        <SwiperSlide>Slide 3</SwiperSlide>
+        <SwiperSlide>Slide 4</SwiperSlide>
+        <SwiperSlide>Slide 5</SwiperSlide>
+        <SwiperSlide>Slide 6</SwiperSlide>
+        <SwiperSlide>Slide 7</SwiperSlide>
+        <SwiperSlide>Slide 8</SwiperSlide>
+        <SwiperSlide>Slide 9</SwiperSlide> */}
+          </Swiper>
         </div>
       </section>
     </div>

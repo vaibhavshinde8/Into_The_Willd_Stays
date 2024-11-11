@@ -75,18 +75,18 @@ const PropertiesCard = ({ selectedLocation = "All" }) => {
             <h2 className="font-bold text-[#43A181] lg:text-xl">
               {property.name}
             </h2>
-            <h3 className="flex gap-1 items-center text-white mt-1">
-              <span className="text-[#43A181]">
+            <h3 className="flex gap-1 items-center text-#161616 mt-1">
+              <span className="text-primary">
                 <IoLocationOutline />
               </span>
               {property.location}
             </h3>
             <div className="hidden lg:flex gap-2 mt-4 text-sm">
-              <h2 className="flex items-center gap-1 border-r-2 border-white pr-2">
+              <h2 className="flex items-center gap-1 border-r-2 border-primary pr-2">
                 <MdOutlineBedroomParent />
                 {property.bedroom} Bedrooms
               </h2>
-              <h2 className="flex items-center gap-1 border-r-2 border-white pr-2">
+              <h2 className="flex items-center gap-1 border-r-2 border-primary pr-2">
                 <MdOutlineBathroom />
                 {property.bathroom} Bathrooms
               </h2>
@@ -96,13 +96,13 @@ const PropertiesCard = ({ selectedLocation = "All" }) => {
               </h2>
             </div>
           </div>
-          <div className="p-4 flex items-center justify-between bg-gradient-to-b from-[#091F3C] to-[#000000] rounded-b-lg">
+          <div className="p-4 flex items-center justify-between bg-gradient-to-b from-green-500 to-green-800 rounded-b-lg">
             <h4 className="text-lg">
               From Rs.{" "}
               <span className="text-[#43A181] font-bold">{property.price}</span>
               /Night
             </h4>
-            <button className="border-2 border-[#43A181] text-[#43A181] px-4 py-1 rounded-lg font-bold hover:bg-[#43A181] hover:text-white transition-colors duration-300">
+            <button className="border-2 border-primary text-primary px-4 py-1 rounded-lg font-bold hover:bg-primary hover:text-white transition-colors duration-300">
               Book Now
             </button>
           </div>
