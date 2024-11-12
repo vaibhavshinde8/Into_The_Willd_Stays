@@ -55,31 +55,37 @@ const amenityData = [
 ]
 
 const Amenities = () => {
-  return (
-    <>
-      <div  className="">
-        <div className="bg-[url('https://sundaysforever.com/static/media/Barlowscottageimg14.9e6859ced0b73fc2614d.jpg')] bg-cover bg-center bg-fixed lg:py-24 py-16 flex flex-col items-center lg:gap-4 text-white">
-            <h1 className="text-6xl before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-green-400 relative inline-block"><span className="relative">Amenities</span></h1>
-        </div>
+    return (
+      <>
         <div>
-            <Property1/>
-        </div>
-        <div className="lg:mx-28 my-8">
-            <div className="grid lg:grid-cols-3 grid-cols-1">
-                {amenityData.map((card) => (
-                    <div className="w-[400px] mx-auto my-8 rounded-lg bg-gradient-to-r from-green-100 to-green-300 shadow-lg shadow-[#091f3ccc] hover:shadow-xl hover:shadow-[#091f3ccc] cursor-pointer transition-transform hover:-translate-y-2 duration-300">
-                        <img className="rounded-t-lg" src={card.imgURL} alt="" />
-                        <div className="flex flex-col items-center gap-2 px-6 py-4">
-                            <h1 className="text-xl lg:text-2xl font-bold">{card.name}</h1>
-                            <p className="text-center">{card.info}</p>
-                        </div>
-                    </div>
-                ))}
+          <div className="bg-[url('https://sundaysforever.com/static/media/Barlowscottageimg14.9e6859ced0b73fc2614d.jpg')] bg-cover bg-center bg-fixed lg:py-24 py-16 flex flex-col items-center lg:gap-4 text-white">
+            <h1 className="text-6xl before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-green-400 relative inline-block">
+              <span className="relative">Welcome</span>
+            </h1>
+          </div>
+          <div>
+            <Property1 />
+          </div>
+          <div className="lg:mx-28 my-8 px-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {amenityData.map((card, index) => (
+                <div
+                  key={index}
+                  className="w-full max-w-[400px] mx-auto my-8 rounded-lg bg-gradient-to-r from-green-100 to-green-300 shadow-lg shadow-[#091f3ccc] hover:shadow-xl hover:shadow-[#091f3ccc] cursor-pointer transition-all hover:-translate-y-2 duration-300"
+                >
+                  <img className="rounded-t-lg" src={card.imgURL} alt={card.name} />
+                  <div className="flex flex-col items-center gap-2 px-6 py-4">
+                    <h1 className="text-xl lg:text-2xl font-bold">{card.name}</h1>
+                    <p className="text-center">{card.info}</p>
+                  </div>
+                </div>
+              ))}
             </div>
+          </div>
         </div>
-      </div>
-    </>
-  );
-};
+      </>
+    );
+  };
+  
 
 export default Amenities;
