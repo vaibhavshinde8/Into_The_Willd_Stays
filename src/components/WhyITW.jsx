@@ -42,7 +42,7 @@ const WhyITW = () => {
       transition={{ duration: 0.5 }} // Fade in effect for the entire section
     >
       <h1 className="text-4xl text-black lg:text-5xl font-extrabold mb-6 text-center pb-12">
-        Why <span className="text-[#F77706]">Into The Wild?</span>
+        Why <span className="text-[#F77706]">Into The Wilds?</span>
       </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {data.map((item, index) => (
