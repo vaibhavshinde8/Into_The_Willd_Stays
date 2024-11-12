@@ -55,12 +55,12 @@ const Property1 = () => {
         </div>
       </div>
       <div>
-        <div className="flex gap-4 mt-4">
+        <div className="grid grid-cols-2 lg:grid-cols-6 gap-4 mt-4">
           <h2 className="flex gap-2 items-center border-2 p-3 rounded-lg">
             <CookingPot /> Superb breakfast
           </h2>
           <h2 className="flex gap-2 items-center border-2 p-3 rounded-lg">
-            <BiSwim /> Outdoor Swimming pool
+            <BiSwim className="text-3xl"/> Outdoor Swimming pool
           </h2>
           <h2 className="flex gap-2 items-center border-2 p-3 rounded-lg">
             <Soup /> 2 Restaurents

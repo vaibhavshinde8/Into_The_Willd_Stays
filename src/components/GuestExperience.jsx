@@ -1,4 +1,13 @@
+import { useEffect, useRef } from "react";
+import guestExp from "../assets/guest-exp.mp4";
+
 const GuestExperience = () => {
+  const videoRef = useRef(null)
+
+  useEffect(() => {
+    videoRef ? videoRef.current.volume = 0.15 : ''
+  }, [])
+
   return (
     <div className="bg-white min-h-[100vh] py-4 lg:px-32">
       <div className="my-12 mx-4">
@@ -18,17 +27,7 @@ const GuestExperience = () => {
             </h4>
           </div>
           <div className="shadow-2xl rounded-xl overflow-hidden">
-            <iframe
-              className="w-full lg:w-[630px] lg:h-[500px] rounded-lg transition-transform transform hover:scale-105 border-4 border-[#091F3C]"
-              width="400"
-              height="315"
-              src="https://www.youtube.com/embed/bx-cd1TL3BY?si=H3e2THm1emot4sEI"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-            ></iframe>
+            <video ref={videoRef} className="lg:w-[550px] lg:h-[500px] h-[380px] w-[390px] object-cover" src={guestExp} controls autoPlay muted volume={.3}></video>
           </div>
         </div>
       </div>
