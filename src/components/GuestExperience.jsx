@@ -17,13 +17,7 @@ const GuestExperience = () => {
               Guest <span className="text-[#43A181]">Experience</span>
             </h1>
             <h4 className="lg:text-lg text-gray-100 leading-relaxed">
-              At Sundays Forever, our primary goal is to provide our guests with
-              an exceptional experience that they will cherish forever. We
-              understand that luxury is not just about lavish amenities but also
-              about the feeling of being pampered and cared for. Our team is
-              dedicated to tailoring every aspect of their stay, including
-              personalized services and bespoke experiences. We pride ourselves
-              on creating memories that last a lifetime.
+            Into The Wilds Stays was the perfect escape from city life. The views of the majestic Himalayas right from our room were breathtaking. The staff was incredibly warm and attentive, making us feel at home. We loved the bonfire under the starlit sky, surrounded by the sounds of nature. If you’re looking for tranquility and an authentic Himalayan experience, this place is a must-visit!
             </h4>
           </div>
           <div className="shadow-2xl rounded-xl overflow-hidden">

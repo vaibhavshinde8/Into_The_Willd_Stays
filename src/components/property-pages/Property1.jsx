@@ -165,6 +165,7 @@ const Property1 = () => {
         </div>
       </div>
       <div>
+        
         <Testimonials />
       </div>
     </div>

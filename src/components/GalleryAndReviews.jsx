@@ -1,10 +1,13 @@
 import Image1 from "../assets/homehero1.png";
+import Image2 from "../assets/guestdiary/img-1.jpeg";
+import Image3 from "../assets/guestdiary/img-2.jpg";
+import Image4 from "../assets/guestdiary/img-3.jpeg";
 
 // Sample data for the gallery and reviews
 const content = [
   {
     type: "image",
-    imgSrc: Image1,
+    imgSrc: Image2,
     caption: "Take a deep breath and find peace among the peaks",
   },
   {
@@ -15,7 +18,7 @@ const content = [
   },
   {
     type: "image",
-    imgSrc: Image1,
+    imgSrc: Image3,
     caption: "Mountain views that will take your breath away",
   },
   {
@@ -26,7 +29,7 @@ const content = [
   },
   {
     type: "image",
-    imgSrc: Image1,
+    imgSrc: Image4,
     caption: "Take a deep breath and find peace among the peaks",
   },
   {

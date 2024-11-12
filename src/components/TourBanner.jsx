@@ -1,10 +1,10 @@
-import Image1 from "../assets/homehero.png";
+import Img1 from "../assets/tourbanner.jpg";
 
 const TourBanner = () => {
   return (
     <div className="py-8 text-white">
       <div
-        style={{ backgroundImage: `url(${Image1})` }}
+        style={{ backgroundImage: `url(${Img1})` }}
         className="flex flex-col gap-6 lg:gap-8 items-start lg:mx-16 mx-4 lg:py-16 py-10 px-6 lg:pl-20 bg-fixed bg-cover bg-center rounded-lg shadow-lg backdrop-blur-md"
       >
         <h1 className="lg:text-5xl text-3xl font-extrabold text-white tracking-wide leading-tight text-shadow-md">

@@ -1,4 +1,4 @@
-import Image1 from "../assets/homehero.png";
+import Image1 from "../assets/tourbanner.jpg";
 
 const PropertiesBanner = () => {
   return (
@@ -12,7 +12,7 @@ const PropertiesBanner = () => {
         </h1>
         <h2 className="text-lg lg:text-2xl text-white mb-4 font-semibold opacity-80">
           Explore the best stays and experience luxury, All in{" "}
-          <span className="text-[#F77706] font-extrabold text-shadow-lg">
+          <span className="text-primary font-extrabold text-shadow-lg">
             IntoTheWildsStays
           </span>
         </h2>
