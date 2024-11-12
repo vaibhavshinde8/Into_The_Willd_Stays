@@ -16,7 +16,9 @@ const Footer = () => {
   return (
     <footer className="bg-[#000000] text-[#D1D1D1]">
       {/* Main Footer Content */}
-      <div className="relative lg:bottom-[13px] bottom-1"><img className="invert object-cover" src={footerImg} alt="" /></div>
+      <div className="relative lg:bottom-[13px] bottom-1">
+        <img className="invert object-cover" src={footerImg} alt="" />
+      </div>
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* About Section */}
@@ -31,27 +33,27 @@ const Footer = () => {
             <div className="flex space-x-4">
               <a
                 href="#"
-                className="text-[#F77706] hover:text-white transition-colors"
+                className="text-[#F77706] hover:text-white hover:scale-110 duration-300 ease-in-out transition-colors"
               >
-                <Facebook size={20} />
+                <Facebook size={25} />
               </a>
               <a
                 href="#"
-                className="text-[#1DA1F2] hover:text-white transition-colors"
+                className="text-[#1DA1F2] hover:text-white hover:scale-110 duration-300 ease-in-out transition-colors"
               >
-                <Twitter size={20} />
+                <Twitter size={25} />
               </a>
               <a
                 href="#"
-                className="text-[#E4405F] hover:text-white transition-colors"
+                className="text-[#E4405F] hover:text-white hover:scale-110 duration-300 ease-in-out transition-colors"
               >
-                <Instagram size={20} />
+                <Instagram size={25} />
               </a>
               <a
                 href="#"
-                className="text-[#0077B5] hover:text-white transition-colors"
+                className="text-[#0077B5] hover:text-white hover:scale-110 duration-300 ease-in-out transition-colors"
               >
-                <Linkedin size={20} />
+                <Linkedin size={25} />
               </a>
             </div>
           </div>
@@ -63,12 +65,12 @@ const Footer = () => {
             </h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#" className="hover:text-[#F77706] transition-colors">
+                <a href="/about-us" className="hover:text-[#F77706] transition-colors">
                   About Us
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-[#F77706] transition-colors">
+                <a href="/contact-us" className="hover:text-[#F77706] transition-colors">
                   Contact Us
                 </a>
               </li>
@@ -106,11 +108,13 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-3">
                 <MapPin size={16} />
-                <span>
-                  123 Luxury Ave, Suite 100
-                  <br />
-                  New York, NY 10001
-                </span>
+                <a href="https://maps.app.goo.gl/CYRuJceg1CpEw5nR7" target="_blank">
+                  <span>
+                    Into The Wild Stays
+                    <br />
+                    near Eco Park Dhanolti
+                  </span>
+                </a>
               </li>
             </ul>
           </div>

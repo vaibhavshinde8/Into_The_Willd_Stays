@@ -113,12 +113,12 @@ const Tours = () => {
     <div className="">
       <div className="lg:pt-24 pt-32 text-white ">
         <div className='bg-[url("https://sundaysforever.com/static/media/Barlowscottageimg14.9e6859ced0b73fc2614d.jpg")] bg-cover bg-center bg-fixed lg:py-24 py-16 flex flex-col items-center lg:gap-6 gap-4'>
-          <h1 className="lg:text-7xl text-4xl before:block before:absolute before:-inset-1 before:-skew-y-2 before:bg-[#091F3C] relative inline-block">
+          <h1 className="lg:text-7xl text-4xl before:block before:absolute before:-inset-1 before:-skew-y-2 before:bg-gradient-to-r from-green-500 to-green-700 relative inline-block">
             <span className="relative font-primaryF">
               Welcome To our Tour Packages
             </span>
           </h1>
-          <h3 className="lg:text-6xl text-2xl text-center font-primaryF before:block before:absolute before:-inset-1 before:-skew-y-2 before:bg-[#091F3C] relative inline-block">
+          <h3 className="lg:text-6xl text-2xl text-center font-primaryF before:block before:absolute before:-inset-1 before:-skew-y-2 before:bg-gradient-to-r from-green-500 to-green-700 relative inline-block">
             <span className="relative font-primaryF">
               Here we provide the topmost featured Tour plans.
             </span>
