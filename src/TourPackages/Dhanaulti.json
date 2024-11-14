@@ -16,7 +16,7 @@
       "payment_policy": {
         "advance_payment": "50% of the total cost to be paid after confirmation",
         "full_payment_deadline": "10 days before travel",
-        "immediate_full_payment": "If booked within 10 days of travel date, 100% payment required upon confirmation",
+        "immediate_full_payment": "100% payment required within 10 days of travel date",
         "GST": "All prices exclude GST"
       },
       "rules": {
