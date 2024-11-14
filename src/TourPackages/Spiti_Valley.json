@@ -131,7 +131,9 @@
       "final_payment_due": "7 days before trip departure",
       "payment_methods": [
         "UPI Transfer: 9761966485@ybl",
-        "Account Transfer: Into TheWild Stays, Account Number 50200067998212, IFSC HDFC0008139"
+        "Account Transfer: Into TheWild Stays", 
+        "Account Number: 50200067998212", 
+        "IFSC: HDFC0008139"
       ]
     }
   }

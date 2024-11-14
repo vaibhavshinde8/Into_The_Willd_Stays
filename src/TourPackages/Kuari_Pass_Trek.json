@@ -1,5 +1,5 @@
 {
-    "trek_name": "Kuari Pass Trek (Lord Curzon Trail)",
+    "trip_name": "Kuari Pass Trek (Lord Curzon Trail)",
     "contact": "+91-9761966485",
     "duration": "5N 6D",
     "itinerary": {
@@ -73,9 +73,6 @@
         "ifsc_code": "HDFC0008139"
       },
       "whatsapp_contact": "+91-9761966485"
-    },
-    "social_media_links": [
-      "icons or links for social media handles"
-    ]
+    }
   }
   
