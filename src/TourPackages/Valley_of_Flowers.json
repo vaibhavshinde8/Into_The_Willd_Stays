@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "trip_name": "FOUR TREKS IN ONE TRIP",
   "valley_of_flowers": {
     "title": "VALLEY OFFLOWERS",
@@ -22,6 +23,135 @@
         "entry_time": "7:00am",
         "exit_time": "5:00pm",
         "note": "Staying is not allowed at Valley of Flowers buffer zone."
+=======
+    "trip_name": "FOUR TREKS IN ONE TRIP",
+    "valley_of_flowers": {
+      "title": "VALLEY OF FLOWERS",
+      "subtitle": "God’s own garden",
+      "contact_number": "+91-9761966485",
+      "content": {
+        "about": "About Valley of Flowers",
+        "location": "Where is Valley of Flowers located?",
+        "how_to_reach": "How to reach Valley of Flowers?",
+        "highlights": "Trip Highlights!",
+        "basic_information": "Basic Information",
+        "itinerary": "Travel Itinerary",
+        "inclusion_exclusion": "Inclusion/Exclusion",
+        "payment_methods": "Payment Methods",
+        "gallery": "Trip Gallery"
+      },
+      "complete_guide": {
+        "flora_and_fauna": "With magnificent mountains serving as its backdrop and meandering streams flowing inside it, Valley of Flowers is also bestowed with bountiful wildlife species.",
+        "history": "Discovered back in the year 1931 by three British Mountaineers, Valley of Flowers has been declared a World Heritage Site by UNESCO.",
+        "entry_exit_time": {
+          "entry_time": "7:00am",
+          "exit_time": "5:00pm",
+          "note": "Staying is not allowed at Valley of Flowers buffer zone."
+        }
+      },
+      "location": {
+        "place": "Valley of Flowers",
+        "district": "Chamoli, Uttarakhand",
+        "trek_start": "Govindghat"
+      },
+      "how_to_get_there": {
+        "from_rishikesh": "Govindghat lies on the Rishikesh Badrinath highway, 272 km from Rishikesh, with a drive of at least 12 hours.",
+        "scenic_drive": "The journey passes through Panch Prayag and along the Alaknanda River.",
+        "transportation": {
+          "by_air": "Reach Dehradun/IGI Delhi and proceed to Rishikesh and Govindghat.",
+          "by_train": "Rishikesh to Govindghat by shared taxi or government bus.",
+          "by_road": "ISBT Kashmiri Gate to Rishikesh (Govt. buses), Rishikesh to Govindghat (shared taxi or local bus)."
+        }
+      },
+      "trip_highlights": [
+        "2 Treks in one Trip.",
+        "Trek to Hemkunt Sahib, the highest Gurudwara in the world.",
+        "Trek to the Valley of Flowers, UNESCO World Heritage Site.",
+        "Witness over 600 species of alpine flowers.",
+        "1 Night stay at Auli, Ski destination of India.",
+        "Travel via the Holy Confluences of River Ganga."
+      ],
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "description": "Rishikesh to Joshimath (Drive 290kms)"
+        },
+        {
+          "day": "Day 2",
+          "description": "Joshimath to Ghangaria via Govindghat (Drive 28kms + Trek 10kms)"
+        },
+        {
+          "day": "Day 3",
+          "description": "Ghangaria to Hemkunt Sahib & Back to Ghangaria (Trek 6kms)"
+        },
+        {
+          "day": "Day 4",
+          "description": "Ghangaria to Valley of Flowers and back to Ghangaria (Trek 5kms)"
+        },
+        {
+          "day": "Day 5",
+          "description": "Ghangaria to Joshimath via Badrinath"
+        },
+        {
+          "day": "Day 6",
+          "description": "Reach Rishikesh in the evening (Drive 289kms)"
+        }
+      ],
+      "basic_information": {
+        "history": "The Valley of Flowers was discovered in 1931 by British mountaineers.",
+        "weather": "Moderate to cool",
+        "location": "Chamoli Garhwal, near Nanda Devi National Park",
+        "entry_fees": {
+          "indians": {
+            "3_day_pass": 150,
+            "extra_day": 50
+          },
+          "foreigners": {
+            "3_day_pass": 650,
+            "extra_day": 250
+          }
+        },
+        "hire_mule": 1000,
+        "helicopter_ride": 3500,
+        "duration": "6 Days",
+        "max_altitude": "14,400 feet",
+        "difficulty_level": "Easy to moderate",
+        "start_end": "Delhi"
+      },
+      "best_time_to_visit": {
+        "june": "Snow begins to melt, and various flowers bloom.",
+        "july": "A colorful carpet of flowers covers the valley.",
+        "august": "The valley blooms with numerous varieties of flowers."
+      },
+      "things_to_carry": [
+        "45–50-liter Rucksack bag",
+        "Trek pants & full-sleeve T-shirts",
+        "Fleece/woolen sweater",
+        "Down Jacket & raincoat",
+        "Socks (3-4 pairs)",
+        "Trek shoes",
+        "Medicine & toiletries",
+        "Authentic government ID (Aadhar card)"
+      ],
+      "inclusions": [
+        "Accommodation at Auli (1 night) and Ghangaria (3 nights)",
+        "Meals: Breakfast, Lunch, Dinner (12 total)",
+        "Transport: Pickup and drop from Delhi"
+      ],
+      "exclusions": [
+        "Travel insurance",
+        "GST (5%)",
+        "Entry or view point tickets",
+        "Food during transit",
+        "Backpack offloading charges"
+      ],
+      "payment_methods": {
+        "price_per_person": "₹7500 (5N/6D)",
+        "account_name": "INTO THE WILD STAYS",
+        "account_number": "50200067998212",
+        "ifsc_code": "HDFC0000590",
+        "whatsapp_number": "+91-9761966485"
+>>>>>>> d29864e66b88c9dadcc8325e3faecdffd6b4fba7
       }
     },
     "location": {

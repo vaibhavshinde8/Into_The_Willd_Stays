@@ -90,51 +90,20 @@
       "Hikkim",
       "Chitkul",
       "Key Monastery",
-      "Chicham Bridge"
+      "Chandratal Lake",
+      "Nako Lake",
+      "Dhankar Monastery"
     ],
     "inclusions": [
-      "Transportation from Delhi to Shimla in Volvo bus",
-      "Tempo traveller/Innova transportation from Shimla to Kaza and back",
-      "Accommodation on double/triple sharing basis",
-      "Meal Plan: MAP (Breakfast & Dinner) from Day 2 Dinner to Day 8 Breakfast",
-      "Trip lead present at all times",
-      "All required permits",
-      "First Aid Kits, Oxygen Cylinders, Infrared Thermometer, Oximeter"
+      "Transport from Delhi",
+      "All stays (hotels, homestays, camps)",
+      "Breakfast & dinner"
     ],
     "exclusions": [
-      "Personal nature expenses",
-      "Additional accommodation/food due to travel delays",
-      "Costs due to flight cancellations, landslides, roadblocks, and natural calamities",
-      "Any services not specified in inclusions"
-    ],
-    "trip_prices": {
-      "occupancy_type": {
-        "triple_sharing": {
-          "price": 17999,
-          "gst": "5%"
-        },
-        "dual_sharing": {
-          "price": 20999,
-          "gst": "5%"
-        }
-      }
-    },
-    "hotels_homestays": {
-      "Narkanda": "Hotel Snowflakes",
-      "Kalpa": "Hotel White Nest / Farm Villa Homestay",
-      "Tabo": "Tabo Coffee House / Tenzin Homestay",
-      "Kaza": "Nyingma House",
-      "Rakchham": "Hotel Rupinview (Chitkul)"
-    },
-    "booking_process": {
-      "deposit": 5000,
-      "final_payment_due": "7 days before trip departure",
-      "payment_methods": [
-        "UPI Transfer: 9761966485@ybl",
-        "Account Transfer: Into TheWild Stays", 
-        "Account Number: 50200067998212", 
-        "IFSC: HDFC0008139"
-      ]
-    }
+      "Personal expenses",
+      "Travel Insurance",
+      "5% GST",
+      "Lunch"
+    ]
   }
   
