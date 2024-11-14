@@ -1,0 +1,81 @@
+{
+    "trek_name": "Kuari Pass Trek (Lord Curzon Trail)",
+    "contact": "+91-9761966485",
+    "duration": "5N 6D",
+    "itinerary": {
+      "day_01": {
+        "title": "RISHIKESH TO KARCHI VIA JOSHIMATH",
+        "drive": "275kms",
+        "time": "10-12 Hours",
+        "description": "Welcome to Joshimath, an important pilgrimage destination in Uttarakhand. Check into your homestay at Karchi and spend the day exploring the village at your own pace."
+      },
+      "day_02": {
+        "title": "KARCHI TO GULLING TOP VIA TUGASI",
+        "trek_distance": "4km",
+        "duration": "5-6 Hrs",
+        "elevation": "9600 ft",
+        "description": "Start your trek from Karchi, passing through Tugasi village with views of the Dhauladhar Range. Camp overnight at Gulling Top."
+      },
+      "day_03": {
+        "title": "GULLING TOP TO KHULLARA TOP",
+        "trek_distance": "6km",
+        "duration": "6 Hrs",
+        "elevation": "11,075 ft",
+        "description": "Continue through oak, rhododendron, and walnut forests, enjoying views of the Pir Panjal and Shivalik Ranges. Overnight stay at Khullara Top."
+      },
+      "day_04": {
+        "title": "TREK FROM KHULLARA TOP TO KUARI PASS AND DESCEND",
+        "trek_distance": "12km",
+        "duration": "8-10 Hours",
+        "elevation": "12,516 ft",
+        "description": "Trek to Kuari Pass with views of Nanda Devi, Kamet, and Trishul. Return to Khullara Top for an overnight stay."
+      },
+      "day_05": {
+        "title": "DOWNHILL TREK FROM KHULLARA TOP TO KARCHI",
+        "trek_distance": "11km",
+        "duration": "8-10 Hours",
+        "elevation": "6,716 ft",
+        "description": "Descend towards Karchi Village, through Alpine and Mossy Oak forests. Overnight stay at a homestay in Karchi."
+      },
+      "day_06": {
+        "title": "TREK DOWN TO KARCHI FROM KHULLARA TOP",
+        "description": "End the trek with a downhill journey to Karchi Village."
+      }
+    },
+    "inclusions": [
+      "3 Nights of tented accommodation on twin sharing and 2 nights in a guest house at Karchi on multi sharing.",
+      "Vegetarian meals during the trek from Dinner on Day 1 to tea and coffee on Day 6.",
+      "Transport (optional): Rishikesh to Karchi and return for an additional 1600 INR.",
+      "Trek equipment: Sleeping bag, tents, kitchen tent, dining tent, toilet tent.",
+      "Amenities: All utensils, sleeping mattresses, crampons, gaiters for snow.",
+      "Health & Safety: First aid kit, oxygen cylinders, stretchers, oxi-meters, BP machines.",
+      "Permits: Forest permits and camping permission fee.",
+      "Trek crew: High-altitude chef, helpers, trek leader, guides, and support team.",
+      "Porters and mules for trekking equipment, ration, and supplies."
+    ],
+    "exclusions": [
+      "GST 5% (mandatory)",
+      "Meals/accommodation outside of the itinerary.",
+      "Bus/airfare to/from trek start/end point.",
+      "Personal medical expenses and personal services (e.g., laundry, phone calls, liquor, mineral water).",
+      "Camera fees for still/video.",
+      "Monument/entrance fees (if any).",
+      "Offload charges for private baggage: 400 INR per day if paid online, or 2200 INR at base camp (maximum bag weight: 10kg).",
+      "Emergency evacuation charges.",
+      "Any additional services not mentioned in inclusions."
+    ],
+    "price_per_person": "9,499 INR",
+    "payment_methods": {
+      "upi_transfer": "9761966485@ybl",
+      "bank_transfer": {
+        "account_name": "Into the Wild Stays",
+        "account_number": "50200067998212",
+        "ifsc_code": "HDFC0008139"
+      },
+      "whatsapp_contact": "+91-9761966485"
+    },
+    "social_media_links": [
+      "icons or links for social media handles"
+    ]
+  }
+  

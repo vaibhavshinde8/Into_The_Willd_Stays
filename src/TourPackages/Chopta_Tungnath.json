@@ -1,0 +1,78 @@
+{
+    "trip": "Chopta Tungnath",
+    "contact": "+919761966485/8279706889",
+    "short_itinerary": {
+      "day_0": "Noida to Chopta | Overnight Journey",
+      "day_1": "Devprayag Sangam | Chopta Arrival",
+      "day_2": "Trek to Chandrashila via Tungnath Mahadev Temple",
+      "day_3": "Drive to Sari Village | Trek to Deoriatal | Depart for Noida",
+      "day_4": "Reach Noida | Trip Ends"
+    },
+    "detailed_itinerary": {
+      "day_0": {
+        "title": "Noida to Chopta | Overnight Journey",
+        "description": "Assemble at boarding point in Noida - Noida Electronic City metro station gate no. 1. Start an overnight journey to Chopta and socialize with your co-travellers."
+      },
+      "day_1": {
+        "title": "Devprayag Sangam | Chopta Arrival",
+        "description": "Enroute Chopta, stop at Devprayag in early morning to witness the confluence of Bhagirathi & Alaknanda rivers. Halt around Rudraprayag for breakfast. Arrive in Chopta, check-in, go for a forest walk, enjoy bonfire and snacks. Dinner and overnight stay in camps/hotel."
+      },
+      "day_2": {
+        "title": "Trek to Chandrashila via Tungnath Mahadev Temple",
+        "description": "Wake up for sunrise, post-breakfast drive to trek starting point. Trek to Tungnath, the highest temple dedicated to Lord Shiva, then to Chandrashila Peak at 13,000 ft (weather permitting). Return to Chopta, leisure time. Dinner and overnight stay in camps/hotel."
+      },
+      "day_3": {
+        "title": "Drive to Sari Village | Trek to Deoriatal | Depart for Noida",
+        "description": "Post-breakfast drive to Sari Village, then trek to Deoriatal Lake. After lunch, start return journey to Noida, with a halt at Rishikesh to explore (if time permits)."
+      },
+      "day_4": {
+        "title": "Noida Arrival | Trip Ends",
+        "description": "Reach Noida early morning with memories and experiences."
+      }
+    },
+    "inclusions": [
+      "Transportation from Noida to Noida - Noida electronic City metro station gate no. 1",
+      "Accommodation on Sharing Basis: Swiss Camps/Homestay",
+      "Experienced Trip Captain/Trek Guide",
+      "Bonfire (if weather permits) and local explorations as per itinerary",
+      "Veg Meals: Dinner (2), Breakfast (2), Evening Snacks (2), starting from Evening Snacks on Day 1 to Breakfast on Day 3",
+      "Driver allowances, toll taxes, parking, state taxes"
+    ],
+    "exclusions": [
+      "Any extra meals apart from the ones mentioned under inclusions",
+      "Travel Insurance, items of personal nature like porterage, tips, laundry, etc.",
+      "Any entry fees, extra expenses for optional activities, room heaters, or tickets, unless quoted in Inclusions",
+      "Cost of snow-chained or 4*4 Vehicle if needed due to heavy snowfall",
+      "Any other costing involved due to circumstances like natural calamity, weather conditions, riots, roadblocks, landslides or any other forced circumstances out of our control",
+      "GST (5%) extra",
+      "Anything not mentioned in the inclusions"
+    ],
+    "prices": {
+      "quad_sharing": {
+        "price_per_person": "INR 6,499",
+        "gst": "5%"
+      },
+      "triple_sharing": {
+        "price_per_person": "INR 6,999",
+        "gst": "5%"
+      },
+      "dual_sharing": {
+        "price_per_person": "INR 7,499",
+        "gst": "5%"
+      }
+    },
+    "booking_process": {
+      "reservation_fee": "INR 3150 per head",
+      "balance_payment": "Remaining amount at least 7 days before trip departure",
+      "payment_methods": {
+        "upi_transfer": "9761966485@ybl",
+        "account_details": {
+          "account_name": "Into TheWild Stays",
+          "account_number": "50200067998212",
+          "ifsc": "HDFC0008139"
+        },
+        "contact_number": "9761966485"
+      }
+    }
+  }
+  
