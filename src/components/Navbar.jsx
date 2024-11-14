@@ -59,6 +59,12 @@ export default function Navbar() {
             >
               Contact Us
             </Link>
+            <Link
+              to="/login"
+              className="text-gray-200 hover:text-primary px-3 py-2 text-lg transition duration-300"
+            >
+            Login
+            </Link>
           </div>
 
           {/* Mobile menu button */}
