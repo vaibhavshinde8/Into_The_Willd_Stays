@@ -1,13 +1,8 @@
 // api.js
 
-
-// Function to handle login
 export const loginUser = async (email, password) => {
   try {
-    const apiUrl = process.env.REACT_APP_API_URL; // Accessing env variable
-
-    // Debugging log
-    // console.log("API URL in React:", process.env.REACT_APP_API_URL);
+    const apiUrl = "http://localhost:8080/api/auth";
     console.log("Using API URL:", apiUrl);
 
     const response = await fetch(`${apiUrl}/login`, {
@@ -27,11 +22,9 @@ export const loginUser = async (email, password) => {
   }
 };
 
-// Function to handle user registration
 export const registerUser = async (name, email, password) => {
   try {
-    const apiUrl = process.env.REACT_APP_API_URL; // Accessing env variable
-    console.log("Using API URL:", apiUrl); // Log the URL for debugging
+    const apiUrl = "http://localhost:8080/api/auth";
 
     const response = await fetch(`${apiUrl}/register`, {
       method: "POST",
