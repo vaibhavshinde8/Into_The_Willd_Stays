@@ -8,6 +8,8 @@ import Amenities from './../components/Amenities';
 import ContactUs from "../pages/ContactUs";
 import AboutUs from './../pages/AboutUs';
 import Blogs from "../pages/Blogs";
+import Login from './../components/Login';
+import Register from './../components/Register';
 
 const router = createBrowserRouter([
   {
@@ -44,7 +46,15 @@ const router = createBrowserRouter([
       },
       {
         path: "/blogs",
-        element: <Blogs/>,
+        element: <Blogs />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/register",
+        element: <Register />,
       },
     ],
   },
