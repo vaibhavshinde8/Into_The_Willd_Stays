@@ -1,0 +1,58 @@
+{
+    "organization": "Into the Wild Stays",
+    "location": "Dhanaulti",
+    "registration_number": "011616N",
+    "contact_details": {
+      "phone": "+91-9958838557",
+      "website": "www.intothewildstays.com",
+      "address": "Intothewild Stays, Near Eco Park, Dhanaulti, Uttarakhand",
+      "google_reviews": "Check us on Google",
+      "social_media": "@intothewildstays"
+    },
+    "stay_option": {
+      "type": "Artistic Cottages",
+      "sharing": "Quad",
+      "price_per_person_per_night": 1850,
+      "payment_policy": {
+        "advance_payment": "50% of the total cost to be paid after confirmation",
+        "full_payment_deadline": "10 days before travel",
+        "immediate_full_payment": "If booked within 10 days of travel date, 100% payment required upon confirmation",
+        "GST": "All prices exclude GST"
+      },
+      "rules": {
+        "music_restrictions": "Music allowed only till 10 PM due to proximity to reserve forest",
+        "damage_policy": "Any property damage will be charged",
+        "bonfire_policy": "Bonfire is chargeable if not included in the booking package",
+        "heater_charge": 299
+      }
+    },
+    "meal_options": {
+      "included_meals": "Any 2 meals (Breakfast/Lunch/Dinner)",
+      "breakfast_options": ["Alu puri", "Aloo/Pyaz paratha", "Bread toast + Tea & coffee"],
+      "lunch_menu": ["Jeera aalu", "Daal tadka", "Raita", "Rice", "Chapati", "Pickle"],
+      "dinner_menu": ["Kadhai paneer/Shahee paneer", "Chicken curry", "Daal tadka", "Rice", "Chapati", "Pickle"],
+      "note": "Non-veg meals incur an additional charge"
+    },
+    "activities": {
+      "day_1": {
+        "morning": "Surkanda Mata Temple via Ropeway",
+        "afternoon": ["Kanatal adventure activities", "Jungle safari", "Trekking"],
+        "evening": ["Sunset view from the resort", "Visit Dhanaulti Eco Park (50 meters away)"]
+      },
+      "day_2": {
+        "morning_to_evening": [
+          "Explore Tehri Lake (Asia's largest man-made lake)",
+          "Seasonal waterfall visit",
+          "Adventure activities at the lake (parasailing, jet skiing, speed boat, banana ride)"
+        ]
+      },
+      "additional_activities": ["Nature walk tracks near the cottage for Exercise and Yoga"]
+    },
+    "additional_services": {
+      "transport": "Cab/Traveler services available on request",
+      "bonfire": "Complementary for groups of 8+",
+      "addons": "Music till 10 PM",
+      "heater": "299 per heater"
+    }
+  }
+  
