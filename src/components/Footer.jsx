@@ -32,7 +32,7 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a
-                href="#"
+                href=" https://www.facebook.com/profile.php?id=61557269590045"
                 className="text-[#F77706] hover:text-white hover:scale-110 duration-300 ease-in-out transition-colors"
               >
                 <Facebook size={25} />
@@ -44,7 +44,7 @@ const Footer = () => {
                 <Twitter size={25} />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/intothewildstays/profilecard/?igsh=cGt4dTRvenNvZ25h"
                 className="text-[#E4405F] hover:text-white hover:scale-110 duration-300 ease-in-out transition-colors"
               >
                 <Instagram size={25} />
@@ -100,11 +100,11 @@ const Footer = () => {
             <ul className="space-y-4 text-sm">
               <li className="flex items-center space-x-3">
                 <Phone size={16} />
-                <span>+1 (555) 123-4567</span>
+                <span> +919761966485, +919958838557</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail size={16} />
-                <span>bookings@luxstay.com</span>
+                <a href="mailto:intothewildstays@gmail.com">intothewildstays@gmail.com</a>
               </li>
               <li className="flex items-center space-x-3">
                 <MapPin size={16} />
