@@ -92,7 +92,9 @@ const ContactUs = () => {
             </span>
             <h1 className="text-2xl lg:text-3xl font-bold">Call Us Anytime</h1>
             <p className="text-lg">
-              <a href="tel:7089249053">+91-7089249053</a>
+              <a href="tel:9761966485">+91-9761966485</a>
+              <br />
+              <a href="tel:9958838557">+91-9958838557</a>
             </p>
           </div>
           <div className="border-2 border-green-400 cursor-pointer flex flex-col bg-gradient-to-b from-green-200 to-green-400 items-center text-center gap-6 py-12 px-4 rounded-lg shadow-lg hover:-translate-y-2 duration-300 ease-out hover:shadow-xl shadow-black">
