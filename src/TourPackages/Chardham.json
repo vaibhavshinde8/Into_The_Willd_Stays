@@ -1,217 +1,216 @@
 {
-    "package_details": {
-      "name": "CHARDHAM Yatra Package from Haridwar",
-      "contact_number": "+91-9761966485",
-      "children_policy": {
-        "below_5_years": "Complimentary",
-        "5_to_10_years": "Without extra bed, meals cost important to pay",
-        "above_10_years_extra_adult": "With extra bed sharing room, charge extra bed with meals",
-        "age_proof_required": "Yes, carry the age proof for verification"
+  "packageDetails": {
+    "name": "CHARDHAM Yatra Package from Haridwar",
+    "contactNumber": "+91-9761966485",
+    "childrenPolicy": {
+      "below5Years": "Complimentary",
+      "5to10Years": "Without extra bed, meals cost important to pay",
+      "above10Years": "With extra bed sharing room, charge extra bed with meals",
+      "ageProofRequired": "Yes, carry the age proof for verification"
+    },
+    "tripCost": {
+      "passengerCount": 4,
+      "deluxe": {
+        "perPaxWithKIA": "Rs. 33,000",
+        "perPaxWithMAP": "Rs. 33,000"
+      }
+    },
+    "deluxeHotelAccommodation": [
+      {
+        "location": "Barkot",
+        "nightsStay": 2,
+        "hotels": [
+          "Hotel R.D Residency",
+          "Hotel Parkash",
+          "Hotel Buddhi",
+          "Hotel Archna"
+        ]
       },
-      "trip_cost": {
-        "passenger_count": 4,
-        "deluxe": {
-          "per_pax_with_KIA": "Rs. 33,000",
-          "per_pax_with_MAP": "Rs. 33,000"
-        }
+      {
+        "location": "Srinagar/Joshimath",
+        "nightsStay": 1,
+        "hotels": [
+          "Hotel Aasirvaad",
+          "Hotel Krishna",
+          "Hotel Dev Ganga",
+          "Kamla Cottage",
+          "Hotel Devansh"
+        ]
       },
-      "deluxe_hotel_accommodation": [
-        {
-          "location": "Barkot",
-          "nights_stay": 2,
-          "hotels": [
-            "Hotel R.D Residency",
-            "Hotel Parkash",
-            "Hotel Buddhi",
-            "Hotel Archna"
-          ]
-        },
-        {
-          "location": "Srinagar/Joshimath",
-          "nights_stay": 1,
-          "hotels": [
-            "Hotel Aasirvaad",
-            "Hotel Krishna",
-            "Hotel Dev Ganga",
-            "Kamla Cottage",
-            "Hotel Devansh"
-          ]
-        },
-        {
-          "location": "Uttarkashi/Harshil",
-          "nights_stay": 1,
-          "hotels": [
-            "Hotel Mount View",
-            "Namami Ganga",
-            "Dev Bhoomi",
-            "Hotel Ganga Puttar",
-            "Hotel Avtar"
-          ]
-        },
-        {
-          "location": "Guptkashi/Chopta",
-          "nights_stay": 2,
-          "hotels": [
-            "Hotel Prabhakar",
-            "Hotel Radhey Krishna",
-            "Badri Valley Inn"
-          ]
-        },
-        {
-          "location": "Badrinath/Joshimath",
-          "nights_stay": 3,
-          "hotels": [
-            "Hotel Valley In",
-            "Annexy"
-          ]
-        }
+      {
+        "location": "Uttarkashi/Harshil",
+        "nightsStay": 1,
+        "hotels": [
+          "Hotel Mount View",
+          "Namami Ganga",
+          "Dev Bhoomi",
+          "Hotel Ganga Puttar",
+          "Hotel Avtar"
+        ]
+      },
+      {
+        "location": "Guptkashi/Chopta",
+        "nightsStay": 2,
+        "hotels": [
+          "Hotel Prabhakar",
+          "Hotel Radhey Krishna",
+          "Badri Valley Inn"
+        ]
+      },
+      {
+        "location": "Badrinath/Joshimath",
+        "nightsStay": 3,
+        "hotels": [
+          "Hotel Valley In",
+          "Annexy"
+        ]
+      }
+    ]
+  },
+  "itinerary": [
+    {
+      "day": 1,
+      "from": "Haridwar",
+      "to": "Barkot",
+      "distance": "179Kms",
+      "duration": "6-7 hrs",
+      "activities": "Arrive Haridwar and drive to Barkot. Check-in to hotel/camp and relax.",
+      "meals": "Dinner"
+    },
+    {
+      "day": 2,
+      "from": "Barkot",
+      "to": "Yamunotri",
+      "distance": "34Kms by road",
+      "activities": "Drive to Jankichatti/Phoolchatti, trek to Yamunotri. Perform pooja, bath in Jamunabai-kund, return to Barkot.",
+      "meals": "Breakfast, Dinner",
+      "sightseeing": [
+        "Yamunotri Temple",
+        "Surya Kund",
+        "Divya-Shila"
       ]
     },
-    "itinerary": [
-      {
-        "day": 1,
-        "from": "Haridwar",
-        "to": "Barkot",
-        "distance": "179Kms",
-        "duration": "6-7 hrs",
-        "activities": "Arrive Haridwar and drive to Barkot. Check-in to hotel/camp and relax.",
-        "meals": "Dinner"
-      },
-      {
-        "day": 2,
-        "from": "Barkot",
-        "to": "Yamunotri",
-        "distance": "34Kms by road",
-        "activities": "Drive to Jankichatti/Phoolchatti, trek to Yamunotri. Perform pooja, bath in Jamunabai-kund, return to Barkot.",
-        "meals": "Breakfast, Dinner",
-        "sightseeing": [
-          "Yamunotri Temple",
-          "Surya Kund",
-          "Divya-Shila"
-        ]
-      },
-      {
-        "day": 3,
-        "from": "Barkot",
-        "to": "Uttarkashi",
-        "distance": "104Kms",
-        "duration": "3 hrs",
-        "activities": "Drive to Maneri. Visit Vishwanath Temple.",
-        "meals": "Breakfast, Dinner",
-        "sightseeing": [
-          "Vishwanath Temple",
-          "Panchanan Mahadev",
-          "Shiv Guffa"
-        ]
-      },
-      {
-        "day": 4,
-        "from": "Uttarkashi",
-        "to": "Gangotri",
-        "distance": "82Kms",
-        "duration": "2 hrs",
-        "activities": "Drive to Gangotri. Visit Gangotri Temple and Submerged Shivling.",
-        "meals": "Breakfast, Dinner",
-        "sightseeing": [
-          "Gangotri Temple",
-          "Submerged Shivling",
-          "Kedar Ganga Sangam"
-        ]
-      },
-      {
-        "day": 5,
-        "from": "Uttarkashi",
-        "to": "Guptkashi",
-        "distance": "214Kms",
-        "duration": "7-8 hrs",
-        "activities": "Drive to Guptkashi. Visit Ardh Narishwar Temple.",
-        "meals": "Breakfast, Dinner",
-        "sightseeing": [
-          "Ardh Narishwar Temple"
-        ]
-      },
-      {
-        "day": 6,
-        "from": "Guptkashi",
-        "to": "Kedarnath",
-        "distance": "30Kms drive, 20Kms Trek one side",
-        "activities": "Drive to Sonprayag. Trek to Kedarnath, visit Kedarnath Temple.",
-        "meals": "Breakfast",
-        "sightseeing": [
-          "Gauri Kund",
-          "Kedarnath Temple",
-          "JagadGuru Adi Shankaracharya"
-        ]
-      },
-      {
-        "day": 7,
-        "from": "Kedarnath",
-        "to": "Sonprayag",
-        "activities": "Trek down from Kedarnath to Sonprayag. Drive to Chopta.",
-        "meals": "Dinner"
-      },
-      {
-        "day": 8,
-        "from": "Chopta",
-        "to": "Joshimath",
-        "distance": "186Kms",
-        "duration": "6-7 hrs",
-        "activities": "Drive to Pandukeshwar and check-in to hotel.",
-        "meals": "Breakfast, Dinner"
-      },
-      {
-        "day": 9,
-        "from": "Joshimath",
-        "to": "Badrinath",
-        "distance": "164Kms",
-        "duration": "7 hrs",
-        "activities": "Drive to Badrinath. Visit Badrinath Temple and nearby attractions.",
-        "meals": "Breakfast, Dinner",
-        "sightseeing": [
-          "Badrinath Temple",
-          "TaptKund",
-          "NaradKund",
-          "BrahamaKapal",
-          "Mana Village",
-          "Sarasvati River",
-          "Bhim Pool"
-        ]
-      },
-      {
-        "day": 10,
-        "from": "Srinagar",
-        "to": "Haridwar",
-        "distance": "137Kms",
-        "duration": "6-7 hrs",
-        "activities": "Drive to Rishikesh and then to Haridwar for departure.",
-        "meals": "Breakfast"
-      }
-    ],
-    "exclusions": [
-      "Air Fare / Train Fare",
-      "Personal Expenses like laundry, telephone calls, tips, liquor, boating & joy rides",
-      "Additional sightseeing or usage of vehicle not mentioned in the itinerary",
-      "Monuments entrance fees",
-      "Surcharge if applicable",
-      "Any cost arising due to natural calamities like landslides, road blocks",
-      "Room Heater charges as per the hotel"
-    ],
-    "inclusions": [
-      "Neat, clean, hygienic accommodation on double/quad sharing",
-      "All breakfast & dinner (mix of north and south Indian menu)",
-      "Surface transportation by Dezire, Bolero, Innova, Tempo Traveller, and Mini Bus",
-      "All interstate taxes, permits, parking, road tax, toll taxes, and fuel charges",
-      "All government applicable taxes and service charges"
-    ],
-    "important_notes": [
-      "Carry original Voter ID/Passport, Aadhar Card for all travelers",
-      "For booking helicopter tickets, provide weight, age, name, and Aadhar card",
-      "Base category of rooms in all hotels",
-      "Hotels are subject to availability",
-      "Due to hills area and long journey, morning starting time should be 8 am",
-      "Carry winter clothes for Kedarnath, Badrinath, and Yamunotri",
-      "Carry action shoes for Yatra and raincoat",
-      "Cash is important for local services like Dolly Palky and Horse"
-    ]
-  }
-  
+    {
+      "day": 3,
+      "from": "Barkot",
+      "to": "Uttarkashi",
+      "distance": "104Kms",
+      "duration": "3 hrs",
+      "activities": "Drive to Maneri. Visit Vishwanath Temple.",
+      "meals": "Breakfast, Dinner",
+      "sightseeing": [
+        "Vishwanath Temple",
+        "Panchanan Mahadev",
+        "Shiv Guffa"
+      ]
+    },
+    {
+      "day": 4,
+      "from": "Uttarkashi",
+      "to": "Gangotri",
+      "distance": "82Kms",
+      "duration": "2 hrs",
+      "activities": "Drive to Gangotri. Visit Gangotri Temple and Submerged Shivling.",
+      "meals": "Breakfast, Dinner",
+      "sightseeing": [
+        "Gangotri Temple",
+        "Submerged Shivling",
+        "Kedar Ganga Sangam"
+      ]
+    },
+    {
+      "day": 5,
+      "from": "Uttarkashi",
+      "to": "Guptkashi",
+      "distance": "214Kms",
+      "duration": "7-8 hrs",
+      "activities": "Drive to Guptkashi. Visit Ardh Narishwar Temple.",
+      "meals": "Breakfast, Dinner",
+      "sightseeing": [
+        "Ardh Narishwar Temple"
+      ]
+    },
+    {
+      "day": 6,
+      "from": "Guptkashi",
+      "to": "Kedarnath",
+      "distance": "30Kms drive, 20Kms Trek one side",
+      "activities": "Drive to Sonprayag. Trek to Kedarnath, visit Kedarnath Temple.",
+      "meals": "Breakfast",
+      "sightseeing": [
+        "Gauri Kund",
+        "Kedarnath Temple",
+        "JagadGuru Adi Shankaracharya"
+      ]
+    },
+    {
+      "day": 7,
+      "from": "Kedarnath",
+      "to": "Sonprayag",
+      "activities": "Trek down from Kedarnath to Sonprayag. Drive to Chopta.",
+      "meals": "Dinner"
+    },
+    {
+      "day": 8,
+      "from": "Chopta",
+      "to": "Joshimath",
+      "distance": "186Kms",
+      "duration": "6-7 hrs",
+      "activities": "Drive to Pandukeshwar and check-in to hotel.",
+      "meals": "Breakfast, Dinner"
+    },
+    {
+      "day": 9,
+      "from": "Joshimath",
+      "to": "Badrinath",
+      "distance": "164Kms",
+      "duration": "7 hrs",
+      "activities": "Drive to Badrinath. Visit Badrinath Temple and nearby attractions.",
+      "meals": "Breakfast, Dinner",
+      "sightseeing": [
+        "Badrinath Temple",
+        "TaptKund",
+        "NaradKund",
+        "BrahamaKapal",
+        "Mana Village",
+        "Sarasvati River",
+        "Bhim Pool"
+      ]
+    },
+    {
+      "day": 10,
+      "from": "Srinagar",
+      "to": "Haridwar",
+      "distance": "137Kms",
+      "duration": "6-7 hrs",
+      "activities": "Drive to Rishikesh and then to Haridwar for departure.",
+      "meals": "Breakfast"
+    }
+  ],
+  "exclusions": [
+    "Air Fare / Train Fare",
+    "Personal Expenses like laundry, telephone calls, tips, liquor, boating & joy rides",
+    "Additional sightseeing or usage of vehicle not mentioned in the itinerary",
+    "Monuments entrance fees",
+    "Surcharge if applicable",
+    "Any cost arising due to natural calamities like landslides, road blocks",
+    "Room Heater charges as per the hotel"
+  ],
+  "inclusions": [
+    "Neat, clean, hygienic accommodation on double/quad sharing",
+    "All breakfast & dinner (mix of north and south Indian menu)",
+    "Surface transportation by Dezire, Bolero, Innova, Tempo Traveller, and Mini Bus",
+    "All interstate taxes, permits, parking, road tax, toll taxes, and fuel charges",
+    "All government applicable taxes and service charges"
+  ],
+  "importantNotes": [
+    "Carry original Voter ID/Passport, Aadhar Card for all travelers",
+    "For booking helicopter tickets, provide weight, age, name, and Aadhar card",
+    "Base category of rooms in all hotels",
+    "Hotels are subject to availability",
+    "Due to hills area and long journey, morning starting time should be 8 am",
+    "Carry winter clothes for Kedarnath, Badrinath, and Yamunotri",
+    "Carry action shoes for Yatra and raincoat",
+    "Cash is important for local services like Dolly Palky and Horse"
+  ]
+}
