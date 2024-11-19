@@ -1,4 +1,6 @@
-import Image1 from "../assets/homehero1.png";
+import Image1 from "../assets/itw/IMG-20240530-WA0015.jpg";
+import Image2 from "../assets/goa/goa1.jpg"
+import Image3 from "../assets/pineandtails/pnt1.jpg";
 
 const locations = [
   {
@@ -7,11 +9,11 @@ const locations = [
   },
   {
     name: "Goa",
-    imgUrl: Image1,
+    imgUrl: Image2,
   },
   {
-    name: "Mussourie",
-    imgUrl: Image1,
+    name: "tehri",
+    imgUrl: Image3,
   },
 ];
 

@@ -3,7 +3,7 @@ import PropertiesCard from "./PropertiesCard";
 
 const MostViewedProperties = () => {
   const [selectedLocation, setSelectedLocation] = useState("All");
-  const locationsProp = ["All", "Rishikesh", "Mussoorie", "Dehradun"];
+  const locationsProp = ["All", "Tehri", "Dhanoti", "Majuli"];
 
   return (
     <section

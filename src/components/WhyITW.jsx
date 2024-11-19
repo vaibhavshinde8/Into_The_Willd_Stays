@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-import Image1 from "../assets/homehero1.png";
-import Image2 from "../assets/homehero2.png";
-import Image3 from "../assets/homehero.png";
+import Image1 from "../assets/IntotheWildStaysLogo.png";
+import Image2 from "../assets/goa/goa1.jpg";
+// import Image3 from "../assets/guestdiary/img-5.jpeg";
+import Image4 from "../assets/pineandtails/pnt1.jpg";
 
 const WhyITW = () => {
   const data = [
@@ -10,7 +11,7 @@ const WhyITW = () => {
       altText: "Trusted Brand",
       title: "Trusted Brand",
       description:
-        "India's Favourite Homestays Awards - Eco-Friendly Homestay of the Year 2022.",
+        "India's Favourite Homestays  Eco-Friendly Homestay.",
     },
     {
       image: Image2,
@@ -18,15 +19,15 @@ const WhyITW = () => {
       title: "Bespoke Hospitality",
       description: "Personalized service to make your stay memorable.",
     },
+    // {
+    //   image: Image3,
+    //   altText: "High quality linens & toiletries",
+    //   title: "High-Quality Linens & Toiletries",
+    //   description:
+    //     "Enjoy premium quality linens and toiletries during your stay.",
+    // },
     {
-      image: Image3,
-      altText: "High quality linens & toiletries",
-      title: "High-Quality Linens & Toiletries",
-      description:
-        "Enjoy premium quality linens and toiletries during your stay.",
-    },
-    {
-      image: Image3,
+      image: Image4,
       altText: "High quality linens & toiletries",
       title: "High-Quality Linens & Toiletries",
       description:
