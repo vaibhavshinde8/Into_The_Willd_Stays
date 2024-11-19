@@ -5,6 +5,7 @@ import SidebarFilter from "../components/SidebarFilter";
 import Image1 from "../assets/itw/IMG-20240530-WA0015.jpg";
 import Image2 from "../assets/goa/goa1.jpg";
 import Image3 from "../assets/pineandtails/pnt1.jpg";
+import Image4 from "../assets/Sun and Sand Goa/Property Photo and videos/WhatsApp Image 2024-11-11 at 8.34.51 PM.jpeg";
 
 import TourBanner from "./../components/TourBanner";
 import GalleryAndReviews from "../components/GalleryAndReviews";
@@ -51,6 +52,20 @@ const properties = [
     // bedroom: 5,
     // bathroom: 3,
     guest: 30,
+    exploremoreRoute: "/exploremore",
+  },
+  {
+    imgURL: Image4,
+    name: "Sun and Sand Villa",
+    description:
+      "A tranquil retreat located in the lush green valleys of Dehradun, perfect for unwinding and enjoying the scenic beauty.",
+    location: "Goa",
+    rating: 4.8,
+    reviews: 40,
+    price: 1200,
+    // bedroom: 5,
+    // bathroom: 3,
+    guest: 10,
     exploremoreRoute: "/exploremore",
   },
 ];
