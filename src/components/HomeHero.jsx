@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import heroImage1 from "../assets/homehero1.png"; // Replace with the actual path to your hero image 1
-import heroImage2 from "../assets/homehero2.png"; // Replace with the actual path to your hero image 2
-import heroImage3 from "../assets/homehero.png"; // Replace with the actual path to your hero image 3
+import heroImage1 from "../assets/guestdiary/img-2.jpg"; // Replace with the actual path to your hero image 1
+import heroImage2 from "../assets/guestdiary/img-4.jpg"; // Replace with the actual path to your hero image 2
+import heroImage3 from "../assets/guestdiary/img-5.jpeg"; // Replace with the actual path to your hero image 3
 
 const images = [heroImage1, heroImage2, heroImage3];
 

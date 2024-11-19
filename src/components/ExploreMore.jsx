@@ -1,88 +1,45 @@
 import { useState } from "react";
 import TourCard from "./TourCard";
 import Image1 from "../assets/homehero2.png"; // Replace with actual path to the placeholder image
-import Amenities from './Amenities';
-import Property1 from "./property-pages/Property1";
-import { FaPlus, FaMinus, FaArrowAltCircleDown, FaArrowAltCircleUp } from "react-icons/fa";
-import BookingPolicies from "./BookingPolicies";
+import { FaArrowAltCircleDown, FaArrowAltCircleUp } from "react-icons/fa";
 
-const cafes = [
-  {
-    title: "Guatavita and Salt Cathedral",
-    description:
-      "A scenic tour exploring the enchanting Guatavita lake and historic Salt Cathedral.",
-    image: Image1,
-  },
-  {
-    title: "Private Bogota City Tour + Monserrate",
-    description:
-      "An exclusive tour covering Bogota's highlights including Monserrate mountain.",
-    image: Image1,
-  },
-  {
-    title: "La Candelaria and Museums",
-    description: "Discover Bogota’s cultural gems on this private city tour.",
-    image: Image1,
-  },
-];
-
-const temples = [
-  {
-    title: "Sun Temple Tour",
-    description:
-      "Visit the ancient Sun Temple and learn about its historical significance.",
-    image: Image1,
-  },
-  {
-    title: "Temple of the Sacred Heart",
-    description:
-      "A full-day tour to explore the magnificent Sacred Heart Temple.",
-    image: Image1,
-  },
-  {
-    title: "Guided Temple Visit",
-    description:
-      "A comprehensive tour offering historical insights into ancient temples.",
-    image: Image1,
-  },
-];
-
-const adventures = [
-  {
-    title: "Mountain Trek Adventure",
-    description:
-      "A thrilling mountain trek offering breathtaking views and a challenging hike.",
-    image: Image1,
-  },
-  {
-    title: "River Rafting Expedition",
-    description:
-      "Experience the rush of river rafting in beautiful surroundings.",
-    image: Image1,
-  },
-  {
-    title: "Paragliding over Valleys",
-    description:
-      "Soar over stunning valleys in this unforgettable paragliding experience.",
-    image: Image1,
-  },
-];
-
-// FAQ data
 const faqs = [
-  { question: "Does Hotel Sundays Forever Slice of Heaven offer any business services?", answer: "Yes, we offer a variety of business services including meeting rooms, WiFi, and conference facilities." },
-  { question: "Does Hotel Sundays Forever Slice of Heaven have free parking facility?", answer: "Yes, free parking is available for all guests." },
-  { question: "What are the popular attractions nearby Sundays Forever Slice of Heaven Hotel?", answer: "Popular attractions include the Central Park, Riverfront Walks, and City Museum." },
-  { question: "Does Hotel Sundays Forever Slice of Heaven have a restaurant?", answer: "Yes, our hotel features an on-site restaurant serving international cuisine." },
-  { question: "Is bathtub available in the rooms of Hotel Sundays Forever Slice of Heaven?", answer: "Yes, our premium rooms feature bathtubs for your comfort." },
-  { question: "Does Hotel Sundays Forever Slice of Heaven have any swimming pool?", answer: "Yes, we have an outdoor swimming pool." },
-  { question: "What are some popular amenities available in hotel Sundays Forever Slice of Heaven?", answer: "Some amenities include free WiFi, fitness center, bar, room service, and 24-hour front desk." },
-  { question: "Does Hotel Sundays Forever Slice of Heaven have any parking facility?", answer: "Yes, we provide ample parking space for all our guests." },
-  { question: "Is it possible to host events?", answer: "Yes, we have event spaces suitable for weddings, parties, and corporate events." },
-  { question: "Can I reserve the place for shoots?", answer: "Yes, you can book our facilities for photo and video shoots." },
-  { question: "What is the kitchen equipped with?", answer: "The kitchen is equipped with basic appliances like a refrigerator, microwave, stove, and cooking utensils." },
-  { question: "Will I be asked for my ID?", answer: "Yes, we require a valid ID for check-in." },
-  { question: "Are unmarried couples allowed to stay here?", answer: "Yes, unmarried couples are welcome to stay at our hotel." },
+  {
+    question: "Is Driver and/or House-Help accommodation available?",
+    answer:
+      "Driver accommodation depends upon the first come first serve basis. It is available at nominal charges. A small room or bunk bed with dinner and breakfast will be provided just nearby the property.",
+  },
+  {
+    question: "Is parking available onsite or nearby?",
+    answer:
+      "Free open parking is available onsite adjacent to our cafe. There is ample car parking for 6-7 cars at the site.",
+  },
+  {
+    question: "Is the property suitable for a day picnic?",
+    answer:
+      "Yes, the home has a garden/lawn area within the premises that could be used for outdoor picnic activities. Meals will be provided on-site at an additional charge per person, per meal. Note that the maximum capacity for an overnight stay is 12 people.",
+  },
+  {
+    question: "Is the property pet-friendly?",
+    answer:
+      "We’re happy to welcome your furry friends at the villa! Please bring a pet bed along, as pets aren’t allowed on guest beds or any linen.",
+  },
+];
+
+const bookingPolicies = [
+  "Check-in: 2 PM; Check-out: 10 AM.",
+  "Guests are requested to shut the windows and doors during the evening as the property may be prone to insects and bugs.",
+  "Guests are not allowed to spill food or drinks over the upholstery or they will be charged at checkout.",
+  "Please be mindful and keep the noise to a minimum after 10 PM.",
+  "Passport, Aadhar, Driving License, and Govt. ID are accepted as ID proof(s).",
+  "The property allows private parties or events.",
+];
+
+const cancellationPolicy = [
+  "Cancellation 12 days prior to arrival: 15% will be charged.",
+  "Cancellation 7 days prior to arrival: 50% will be charged.",
+  "Cancellation less than a week: Full retention would be applicable.",
+  "Credit/Debit card cancellations will be charged 5% extra.",
 ];
 
 const ExploreMore = () => {
@@ -98,45 +55,42 @@ const ExploreMore = () => {
 
   return (
     <div className="container w-[100vw] min-h-[100vh] px-4 py-32 text-center">
-      <Amenities />
       <h1 className="text-4xl font-extrabold text-[#091F3C] my-6">
-        Rishikesh Is Great For
+        Pine Tales: A 5BHK Valley View Private Villa
       </h1>
-
-      {/* Cultural Cafes Section */}
-      <h2 className="text-2xl font-semibold text-[#3C8D99] mb-4">
-        Cultural Cafes
-      </h2>
-      <div className="flex flex-wrap justify-center gap-6 mb-8">
-        {cafes.map((cafe, index) => (
-          <TourCard key={`cafe-${index}`} {...cafe} />
-        ))}
+      <p className="text-lg font-medium text-gray-600 mb-8">
+        Nestled near the serene Tehri Dam in Uttarakhand, Pine Tales Villa is a
+        private mountain retreat, perfect for families and friends. Offering
+        breathtaking valley views, our villa is designed for those seeking a
+        cozy escape in nature.
+      </p>
+      <div className="text-left space-y-6 mb-8 max-w-3xl mx-auto">
+        <h2 className="text-2xl font-bold text-[#3C8D99]">Property Details</h2>
+        <ul className="list-disc ml-6 space-y-2">
+          <li>Number of Rooms: 5</li>
+          <li>Guest Capacity: 2 persons per room</li>
+          <li>Maximum Capacity: 12 persons</li>
+          <li>Price Per Room: ₹3500</li>
+          <li>Total Price for 12 Persons: ₹13,500</li>
+          <li>Stay Type: 5BHK Valley View Private Villa</li>
+          <li>Location: 8CWX+WR2, New Tehri, Nawagarh, Uttarakhand 249001</li>
+          <li>Address: Pine Tales, Sursingdhar New Tehri</li>
+        </ul>
       </div>
 
-      {/* Temples Section */}
-      <h2 className="text-2xl font-semibold text-[#3C8D99] mb-4 mt-10">
-        Temples
-      </h2>
-      <div className="flex flex-wrap justify-center gap-6 mb-8">
-        {temples.map((temple, index) => (
-          <TourCard key={`temple-${index}`} {...temple} />
-        ))}
-      </div>
-
-      {/* Adventures Section */}
-      <h2 className="text-2xl font-semibold text-[#3C8D99] mb-4 mt-10">
-        Adventures
-      </h2>
-      <div className="flex flex-wrap justify-center gap-6 mb-8">
-        {adventures.map((adventure, index) => (
-          <TourCard key={`adventure-${index}`} {...adventure} />
-        ))}
+      <div className="text-left space-y-6 mb-8 max-w-3xl mx-auto">
+        <h2 className="text-2xl font-bold text-[#3C8D99]">Amenities</h2>
+        <ul className="list-disc ml-6 space-y-2">
+          <li>Free Wi-Fi</li>
+          <li>24-hour Front Desk</li>
+          <li>Room Service</li>
+          <li>Barbecue Facilities</li>
+          <li>Private Garden/Lawn Area</li>
+        </ul>
       </div>
 
       {/* FAQs Section */}
-      <h2 className="text-2xl font-semibold text-[#3C8D99] mb-6 mt-10">
-        Frequently Asked Questions
-      </h2>
+      <h2 className="text-2xl font-bold text-[#3C8D99] mb-6">FAQs</h2>
       <div className="space-y-6 mb-8 max-w-2xl mx-auto">
         {faqs.map((faq, index) => (
           <div
@@ -168,7 +122,26 @@ const ExploreMore = () => {
           </div>
         ))}
       </div>
-      <BookingPolicies />
+
+      {/* Booking Policies Section */}
+      <h2 className="text-2xl font-bold text-[#3C8D99] mb-4">
+        Booking Policies
+      </h2>
+      <ul className="list-disc ml-6 mb-8 space-y-2 text-left max-w-3xl mx-auto">
+        {bookingPolicies.map((policy, index) => (
+          <li key={`policy-${index}`}>{policy}</li>
+        ))}
+      </ul>
+
+      {/* Cancellation Policy Section */}
+      <h2 className="text-2xl font-bold text-[#3C8D99] mb-4">
+        Cancellation and Refund Policy
+      </h2>
+      <ul className="list-disc ml-6 space-y-2 text-left max-w-3xl mx-auto">
+        {cancellationPolicy.map((policy, index) => (
+          <li key={`cancel-${index}`}>{policy}</li>
+        ))}
+      </ul>
     </div>
   );
 };

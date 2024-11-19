@@ -1,16 +1,21 @@
 import { useState } from "react";
-import { loginUser } from "../api"; 
+import { loginUser } from "../api";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const navigate = useNavigate(); // Initialize useNavigate
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const data = await loginUser(email, password);
       console.log("Logged in successfully:", data);
+
+      // Navigate to admin panel and pass the user object inside state
+      navigate("/admin", { state: { user: data.user } });
     } catch (err) {
       setError("Login failed. Please check your credentials.");
     }
@@ -43,15 +48,10 @@ const Login = () => {
           Login
         </button>
       </form>
-      {error && (
-        <p className="text-red-500 text-center">{error}</p>
-      )}
+      {error && <p className="text-red-500 text-center">{error}</p>}
       <p className="text-center">
         Don't have an account?{" "}
-        <a
-          href="/register"
-          className="text-indigo-600 hover:text-indigo-900"
-        >
+        <a href="/register" className="text-indigo-600 hover:text-indigo-900">
           Register
         </a>
       </p>
@@ -60,4 +60,3 @@ const Login = () => {
 };
 
 export default Login;
-

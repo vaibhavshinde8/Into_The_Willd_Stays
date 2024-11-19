@@ -4,51 +4,70 @@ import { MdOutlineBedroomParent, MdOutlineBathroom } from "react-icons/md";
 import { FaMapMarkerAlt } from "react-icons/fa";
 
 import { IoPeople } from "react-icons/io5";
-import Image1 from "../assets/homehero1.png";
-import { Link } from "react-router-dom"; 
+// import Image1 from "../assets/homehero1.png";
 
+import Image1 from "../assets/itw/IMG-20240530-WA0015.jpg";
+import Image2 from "../assets/goa/goa1.jpg";
+import Image3 from "../assets/pineandtails/pnt1.jpg";
+import Image4 from "../assets/Sun and Sand Goa/Property Photo and videos/WhatsApp Image 2024-11-11 at 8.34.51 PM.jpeg";
+
+import { Link } from "react-router-dom";
 
 const properties = [
   {
     imgURL: Image1,
-    name: "Rishikesh Riverside Retreat",
+    name: "Pines And Tales",
     description:
-      "A peaceful riverside stay in the heart of Rishikesh, surrounded by nature. Ideal for spiritual seekers and adventure lovers alike.",
-    location: "Rishikesh",
+      "Stay Type;- 4BHK private pool, Seaview Villa, Porvorim North Goa.",
+    location: "Tehri",
     rating: 4.7,
     reviews: 30,
-    price: 18000,
-    bedroom: 4,
-    bathroom: 2,
-    guest: 6,
+    price: 1750,
+    bedroom: 5,
+    // bathroom: 2,
+    guest: 12,
     exploremoreRoute: "/exploremore",
   },
   {
-    imgURL: Image1,
-    name: "Mussoorie Hilltop Haven",
+    imgURL: Image2,
+    name: "Into the wilds",
     description:
       "Stay in a charming hilltop cottage with breathtaking views of Mussoorie's misty mountains and serene surroundings.",
-    location: "Mussoorie",
+    location: "Dhanoti",
     rating: 4.6,
     reviews: 50,
-    price: 30000,
-    bedroom: 3,
-    bathroom: 2,
-    guest: 4,
+    price: 1000,
+    bedroom: 4,
+    // bathroom: 0,
+    guest: 24,
     exploremoreRoute: "/exploremore",
   },
   {
-    imgURL: Image1,
-    name: "Dehradun Valley Escape",
+    imgURL: Image3,
+    name: "Me:nam Homestay",
     description:
       "A tranquil retreat located in the lush green valleys of Dehradun, perfect for unwinding and enjoying the scenic beauty.",
-    location: "Dehradun",
+    location: "Majuli",
     rating: 4.8,
     reviews: 40,
-    price: 40000,
-    bedroom: 5,
-    bathroom: 3,
-    guest: 8,
+    price: 3500,
+    // bedroom: 5,
+    // bathroom: 3,
+    guest: 30,
+    exploremoreRoute: "/exploremore",
+  },
+  {
+    imgURL: Image4,
+    name: "Sun and Sand Villa",
+    description:
+      "A tranquil retreat located in the lush green valleys of Dehradun, perfect for unwinding and enjoying the scenic beauty.",
+    location: "Goa",
+    rating: 4.8,
+    reviews: 40,
+    price: 1200,
+    // bedroom: 5,
+    // bathroom: 3,
+    guest: 10,
     exploremoreRoute: "/exploremore",
   },
 ];

@@ -1,19 +1,24 @@
 import { BedDouble, Boxes, Plane } from "lucide-react";
 import React from 'react';
 import cambodia from "../assets/cambodia.png";
-import egypt from "../assets/egypt.jpg";
+// import egypt from "../assets/egypt.jpg";
 import jamaica from "../assets/jamaica.png";
-import jordan from "../assets/jordan.jpg";
+// import jordan from "../assets/jordan.jpg";
 import morocco from "../assets/morocco.png";
+<<<<<<< HEAD
 import { Swiper, SwiperSlide } from "swiper/react";
 import Chardham from '../TourPackages/Chardham.json';
 import Chopta from '../TourPackages/Chopta_Tungnath.json'
+=======
+// import { Swiper, SwiperSlide } from "swiper/react";
+
+>>>>>>> 06d01029f36954444850ea27bf98a2d28af59a6f
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 // import '../components/TestiSwiper.css';
-import { Autoplay, Pagination } from "swiper/modules";
+// import { Autoplay, Pagination } from "swiper/modules";
 
 const packages = [
   {
@@ -440,11 +445,11 @@ const Tours = () => {
 
 
       <section id="tour-slider" className="py-8">
-        <div className="lg:mx-40 mx-2 flex flex-col gap-2">
+        {/* <div className="lg:mx-40 mx-2 flex flex-col gap-2">
           <h1 className="lg:text-4xl text-2xl font-bold"><span className="text-blue-700 font-bold">Explore</span> The Hidden Gems</h1>
           <h2 className="lg:text-xl text-lg">Tap into the untapped tourist spots for amazing vacations.</h2>
-        </div>
-        <div className="lg:w-[80%] lg:mx-auto">
+        </div> */}
+        {/* <div className="lg:w-[80%] lg:mx-auto">
           <Swiper
             spaceBetween={30}
             centeredSlides={true}
@@ -458,7 +463,7 @@ const Tours = () => {
             modules={[Autoplay, Pagination]}
             className="mySwiper rounded-lg !pt-3 lg:!pt-5"
           >
-            {hiddenGems.map((val) => (
+            {/* {hiddenGems.map((val) => (
               <SwiperSlide className="rounded-lg">
                 <div className="rounded-lg text-white">
                   <img
@@ -483,18 +488,11 @@ const Tours = () => {
                   </div>
                 </div>
               </SwiperSlide>
-            ))}
+            ))} */}
 
-            {/* <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide> */}
-          </Swiper>
-        </div>
+           
+          {/* </Swiper> */}
+        {/* </div>  */}
       </section>
     </div>
   );

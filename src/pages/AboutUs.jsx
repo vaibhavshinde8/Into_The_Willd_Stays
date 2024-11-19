@@ -1,4 +1,6 @@
-import Image1 from "../assets/homehero.png"
+import Image2 from "../assets/homehero.png"
+import Image1 from "../assets/profiledummy.png";
+
 
 const AboutUs = () => {
   return (
@@ -29,7 +31,7 @@ const AboutUs = () => {
             {/* image Section */}
             <div className="shadow-2xl overflow-hidden rounded-lg">
               <img
-                src={Image1}
+                src={Image2}
                 alt="Founder"
                 className="w-full h-full object-cover rounded-lg"
               />
