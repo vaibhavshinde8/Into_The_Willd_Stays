@@ -110,6 +110,14 @@ const hiddenGems = [
   },
 ];
 const Tours = () => {
+  const togglePackageDetails = (index) => {
+    if (activePackage === index) {
+      setActivePackage(null); // Close the details if the same package is clicked again
+    } else {
+      setActivePackage(index); // Open the details of the clicked package
+    }
+  };
+
   const [activePackage, setActivePackage] = React.useState(null);
   return (
     <div className="">
