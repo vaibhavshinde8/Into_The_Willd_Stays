@@ -10,6 +10,7 @@ import AboutUs from './../pages/AboutUs';
 import Blogs from "../pages/Blogs";
 import Login from './../components/Login';
 import Register from './../components/Register';
+import AdminPanel from './../Admin/AdminPanel';
 
 const router = createBrowserRouter([
   {
@@ -55,6 +56,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register />,
+      },
+      {
+        path: "/admin",
+        element: <AdminPanel />,
       },
     ],
   },
