@@ -1,5 +1,11 @@
 import { useState } from "react";
 import { FaArrowAltCircleDown, FaArrowAltCircleUp } from "react-icons/fa";
+import img1 from "../assets/Sun and Sand Goa/Property Photo and videos/WhatsApp Image 2024-11-11 at 8.34.50 PM.jpeg";
+import img2 from "../assets/Sun and Sand Goa/Property Photo and videos/WhatsApp Image 2024-11-11 at 8.34.51 PM.jpeg";
+import img3 from "../assets/Sun and Sand Goa/Property Photo and videos/WhatsApp Image 2024-11-11 at 8.34.53 PM.jpeg";
+import img4 from "../assets/Sun and Sand Goa/Property Photo and videos/WhatsApp Image 2024-11-11 at 8.34.52 PM.jpeg";
+
+const galleryImages = [img1, img2, img3, img4];
 
 const faqs = [
   {
@@ -68,6 +74,7 @@ const amenities = [
   "Consider this as a homestay in the mountains, not a typical hotel stay.",
 ];
 
+
 const ExploreMoreSAS = () => {
   const [openIndex, setOpenIndex] = useState(null);
 
@@ -91,6 +98,18 @@ const ExploreMoreSAS = () => {
         Relax by the pool, enjoy the picturesque views, and indulge in the
         ultimate comfort.
       </p>
+      <div className="mb-12">
+        <h2 className="text-3xl font-bold text-[#3C8D99] mb-6">Gallery</h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {galleryImages.map((image, index) => (
+            <div
+              key={index}
+              className="h-48 bg-cover bg-center rounded-lg shadow-lg"
+              style={{ backgroundImage: `url(${image})` }}
+            ></div>
+          ))}
+        </div>
+      </div>
 
       {/* Property Details Section */}
       <div className="text-left space-y-6 mb-12 max-w-3xl mx-auto bg-white shadow-lg p-6 rounded-lg">

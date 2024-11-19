@@ -1,5 +1,12 @@
 import { useState } from "react";
 import { FaArrowAltCircleDown, FaArrowAltCircleUp } from "react-icons/fa";
+import img1 from "../assets/pineandtails/Copy of IMG_6555.jpg";
+import img2 from "../assets/pineandtails/Copy of IMG_6567.jpg";
+import img3 from "../assets/pineandtails/Copy of IMG_6577.jpg";
+import img4 from "../assets/pineandtails/Copy of IMG_6593.jpg";
+
+const galleryImages = [img1, img2, img3, img4];
+
 
 const faqs = [
   {
@@ -40,12 +47,7 @@ const cancellationPolicy = [
   "Credit/Debit card cancellations will be charged 5% extra.",
 ];
 
-const galleryImages = [
-  "../assets/image1.jpg", // Replace with actual paths to your images
-  "../assets/image2.jpg",
-  "../assets/image3.jpg",
-  "../assets/image4.jpg",
-];
+// const galleryImages = [img1, img2, img3, img4];
 
 const ExploreMorePNT = () => {
   const [openIndex, setOpenIndex] = useState(null);

@@ -1,5 +1,11 @@
 import { useState } from "react";
 import { FaArrowAltCircleDown, FaArrowAltCircleUp } from "react-icons/fa";
+import img1 from "../assets/itw/IMG-20240530-WA0002.jpg";
+import img2 from "../assets/itw/IMG_20220124_155502.jpg";
+import img3 from "../assets/itw/IMG-20240530-WA0014.jpg";
+import img4 from "../assets/itw/IMG-20240530-WA0019.jpg";
+
+const galleryImages = [img1, img2, img3, img4];
 
 const faqs = [
   {
@@ -41,12 +47,7 @@ const cancellationPolicy = [
   "Cancellation policy for long weekends and special days: Cancellation 7 days prior to arrival: 50% will be charged.",
   "Cancellation less than a week: Full retention would be applicable.",
 ];
-const galleryImages = [
-  "../assets/image1.jpg", // Replace with actual paths to your images
-  "../assets/image2.jpg",
-  "../assets/image3.jpg",
-  "../assets/image4.jpg",
-];
+
 
 
 const ExploreMoreITW = () => {

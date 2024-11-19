@@ -5,14 +5,11 @@ import cambodia from "../assets/cambodia.png";
 import jamaica from "../assets/jamaica.png";
 // import jordan from "../assets/jordan.jpg";
 import morocco from "../assets/morocco.png";
-<<<<<<< HEAD
-import { Swiper, SwiperSlide } from "swiper/react";
+// import { Swiper, SwiperSlide } from "swiper/react";
 import Chardham from '../TourPackages/Chardham.json';
 import Chopta from '../TourPackages/Chopta_Tungnath.json'
-=======
 // import { Swiper, SwiperSlide } from "swiper/react";
 
->>>>>>> 06d01029f36954444850ea27bf98a2d28af59a6f
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";

@@ -1,5 +1,11 @@
 import { useState } from "react";
 import { FaArrowAltCircleDown, FaArrowAltCircleUp } from "react-icons/fa";
+import img1 from "../assets/majuli/Property Photo/464947394_1576137619699668_5411537306352967985_n.jpg";
+import img2 from "../assets/majuli/Property Photo/AF1QipMCIOWRYWt_LgfarzWPyC_3M2qtDYOsgVoPLCpu=s387-k-no.jfif";
+import img3 from "../assets/majuli/Property Photo/WhatsApp Image 2024-11-05 at 7.27.58 PM.jpeg";
+import img4 from "../assets/majuli/Property Photo/WhatsApp Image 2024-11-05 at 9.18.18 PM.jpeg";
+
+const galleryImages = [img1, img2, img3, img4];
 
 const faqs = [
   {
@@ -50,12 +56,7 @@ const amenities = [
   "Guests are requested to treat the home with care.",
   "Consider this as a homestay in the mountains, not a typical hotel stay.",
 ];
-const galleryImages = [
-  "../assets/image1.jpg", // Replace with actual paths to your images
-  "../assets/image2.jpg",
-  "../assets/image3.jpg",
-  "../assets/image4.jpg",
-];
+
 
 const ExploreMoreMNM = () => {
   const [openIndex, setOpenIndex] = useState(null);
