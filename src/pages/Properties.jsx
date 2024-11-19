@@ -24,7 +24,7 @@ const properties = [
     bedroom: 5,
     // bathroom: 2,
     guest: 12,
-    exploremoreRoute: "/exploremore",
+    exploremoreRoute: "/exploremorepnt",
   },
   {
     imgURL: Image2,
@@ -38,7 +38,7 @@ const properties = [
     bedroom: 4,
     // bathroom: 0,
     guest: 24,
-    exploremoreRoute: "/exploremore",
+    exploremoreRoute: "/exploremoreitw",
   },
   {
     imgURL: Image3,
@@ -52,7 +52,7 @@ const properties = [
     // bedroom: 5,
     // bathroom: 3,
     guest: 30,
-    exploremoreRoute: "/exploremore",
+    exploremoreRoute: "/exploremoremnm",
   },
   {
     imgURL: Image4,
@@ -66,7 +66,7 @@ const properties = [
     // bedroom: 5,
     // bathroom: 3,
     guest: 10,
-    exploremoreRoute: "/exploremore",
+    exploremoreRoute: "/exploremoresas",
   },
 ];
 

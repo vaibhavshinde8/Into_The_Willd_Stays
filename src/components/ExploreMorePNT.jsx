@@ -1,6 +1,4 @@
 import { useState } from "react";
-import TourCard from "./TourCard";
-import Image1 from "../assets/homehero2.png"; // Replace with actual path to the placeholder image
 import { FaArrowAltCircleDown, FaArrowAltCircleUp } from "react-icons/fa";
 
 const faqs = [
@@ -42,29 +40,52 @@ const cancellationPolicy = [
   "Credit/Debit card cancellations will be charged 5% extra.",
 ];
 
-const ExploreMore = () => {
+const galleryImages = [
+  "../assets/image1.jpg", // Replace with actual paths to your images
+  "../assets/image2.jpg",
+  "../assets/image3.jpg",
+  "../assets/image4.jpg",
+];
+
+const ExploreMorePNT = () => {
   const [openIndex, setOpenIndex] = useState(null);
 
   const toggleFaq = (index) => {
     if (openIndex === index) {
-      setOpenIndex(null); // Close the FAQ if clicked again
+      setOpenIndex(null);
     } else {
-      setOpenIndex(index); // Open the clicked FAQ
+      setOpenIndex(index);
     }
   };
 
   return (
-    <div className="container w-[100vw] min-h-[100vh] px-4 py-32 text-center">
-      <h1 className="text-4xl font-extrabold text-[#091F3C] my-6">
+    <div className="container w-full min-h-screen px-4 py-32 bg-gray-50 text-center">
+      <h1 className="text-5xl font-bold text-[#091F3C] my-6">
         Pine Tales: A 5BHK Valley View Private Villa
       </h1>
-      <p className="text-lg font-medium text-gray-600 mb-8">
+      <p className="text-lg font-medium text-gray-600 mb-12 max-w-4xl mx-auto">
         Nestled near the serene Tehri Dam in Uttarakhand, Pine Tales Villa is a
         private mountain retreat, perfect for families and friends. Offering
         breathtaking valley views, our villa is designed for those seeking a
         cozy escape in nature.
       </p>
-      <div className="text-left space-y-6 mb-8 max-w-3xl mx-auto">
+
+      {/* Gallery Section */}
+      <div className="mb-12">
+        <h2 className="text-3xl font-bold text-[#3C8D99] mb-6">Gallery</h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {galleryImages.map((image, index) => (
+            <div
+              key={index}
+              className="h-48 bg-cover bg-center rounded-lg shadow-lg"
+              style={{ backgroundImage: `url(${image})` }}
+            ></div>
+          ))}
+        </div>
+      </div>
+
+      {/* Property Details */}
+      <div className="text-left space-y-6 mb-12 max-w-3xl mx-auto bg-white shadow-lg p-6 rounded-lg">
         <h2 className="text-2xl font-bold text-[#3C8D99]">Property Details</h2>
         <ul className="list-disc ml-6 space-y-2">
           <li>Number of Rooms: 5</li>
@@ -78,24 +99,13 @@ const ExploreMore = () => {
         </ul>
       </div>
 
-      <div className="text-left space-y-6 mb-8 max-w-3xl mx-auto">
-        <h2 className="text-2xl font-bold text-[#3C8D99]">Amenities</h2>
-        <ul className="list-disc ml-6 space-y-2">
-          <li>Free Wi-Fi</li>
-          <li>24-hour Front Desk</li>
-          <li>Room Service</li>
-          <li>Barbecue Facilities</li>
-          <li>Private Garden/Lawn Area</li>
-        </ul>
-      </div>
-
       {/* FAQs Section */}
-      <h2 className="text-2xl font-bold text-[#3C8D99] mb-6">FAQs</h2>
-      <div className="space-y-6 mb-8 max-w-2xl mx-auto">
+      <h2 className="text-3xl font-bold text-[#3C8D99] mb-6">FAQs</h2>
+      <div className="space-y-6 mb-12 max-w-2xl mx-auto">
         {faqs.map((faq, index) => (
           <div
             key={`faq-${index}`}
-            className="p-4 border rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out"
+            className="p-4 border rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out bg-white"
           >
             <div
               onClick={() => toggleFaq(index)}
@@ -124,20 +134,20 @@ const ExploreMore = () => {
       </div>
 
       {/* Booking Policies Section */}
-      <h2 className="text-2xl font-bold text-[#3C8D99] mb-4">
+      <h2 className="text-3xl font-bold text-[#3C8D99] mb-6">
         Booking Policies
       </h2>
-      <ul className="list-disc ml-6 mb-8 space-y-2 text-left max-w-3xl mx-auto">
+      <ul className="list-disc ml-6 mb-12 space-y-2 text-left max-w-3xl mx-auto bg-white shadow-lg p-6 rounded-lg">
         {bookingPolicies.map((policy, index) => (
           <li key={`policy-${index}`}>{policy}</li>
         ))}
       </ul>
 
       {/* Cancellation Policy Section */}
-      <h2 className="text-2xl font-bold text-[#3C8D99] mb-4">
+      <h2 className="text-3xl font-bold text-[#3C8D99] mb-6">
         Cancellation and Refund Policy
       </h2>
-      <ul className="list-disc ml-6 space-y-2 text-left max-w-3xl mx-auto">
+      <ul className="list-disc ml-6 space-y-2 text-left max-w-3xl mx-auto bg-white shadow-lg p-6 rounded-lg">
         {cancellationPolicy.map((policy, index) => (
           <li key={`cancel-${index}`}>{policy}</li>
         ))}
@@ -146,4 +156,4 @@ const ExploreMore = () => {
   );
 };
 
-export default ExploreMore;
+export default ExploreMorePNT;

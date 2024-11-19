@@ -3,7 +3,7 @@ import App from "../App";
 import Home from "../pages/Home";
 import Properties from "../pages/Properties"; // Make sure this path is correct
 import Tours from "../pages/Tours";
-import ExploreMore from '../components/ExploreMore';
+// import ExploreMore from '../components/ExploreMore';
 import Amenities from './../components/Amenities';
 import ContactUs from "../pages/ContactUs";
 import AboutUs from './../pages/AboutUs';
@@ -11,6 +11,10 @@ import Blogs from "../pages/Blogs";
 import Login from './../components/Login';
 import Register from './../components/Register';
 import AdminPanel from './../Admin/AdminPanel';
+import ExploreMorePNT from './../components/ExploreMorePNT';
+import ExploreMoreITW from './../components/ExploreMoreITW';
+import ExploreMoreMNM from './../components/ExploreMoreMNM';
+import ExploreMoreSAS from './../components/ExploreMoreSAS';
 
 const router = createBrowserRouter([
   {
@@ -34,8 +38,20 @@ const router = createBrowserRouter([
         element: <ContactUs />,
       },
       {
-        path: "/exploremore",
-        element: <ExploreMore />,
+        path: "/exploremorepnt",
+        element: <ExploreMorePNT />,
+      },
+      {
+        path: "/exploremoreitw",
+        element: <ExploreMoreITW />,
+      },
+      {
+        path: "/exploremoremnm",
+        element: <ExploreMoreMNM />,
+      },
+      {
+        path: "/exploremoresas",
+        element: <ExploreMoreSAS />,
       },
       {
         path: "/amenities",
