@@ -1,4 +1,5 @@
 import { BedDouble, Boxes, Plane } from "lucide-react";
+import React from 'react';
 import cambodia from "../assets/cambodia.png";
 import egypt from "../assets/egypt.jpg";
 import jamaica from "../assets/jamaica.png";
@@ -109,6 +110,15 @@ const hiddenGems = [
   },
 ];
 const Tours = () => {
+  const togglePackageDetails = (index) => {
+    if (activePackage === index) {
+      setActivePackage(null); // Close the details if the same package is clicked again
+    } else {
+      setActivePackage(index); // Open the details of the clicked package
+    }
+  };
+
+  const [activePackage, setActivePackage] = React.useState(null);
   return (
     <div className="">
       <div className="lg:pt-24 pt-32 text-white ">
@@ -184,66 +194,70 @@ const Tours = () => {
         </div>
       </section>
       <section className="py-8 lg:px-32 mx-2">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {packages.map((tourpack) => (
+      <div className="grid grid-cols-1 lg:grid-cols-1 gap-6">
+          {packages.map((pkg, index) => (
             <div
+              key={index}
               className="relative bg-gradient-to-b from-green-200 to-green-400 text-white rounded-lg shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-3 duration-300 overflow-hidden"
-              key={tourpack.name}
             >
               <div className="relative">
                 <img
                   className="rounded-t-lg h-72 w-full object-cover transition-transform transform hover:scale-105 duration-300"
-                  src={tourpack.imgURL}
-                  alt={tourpack.name}
+                  src={pkg.imgURL}
+                  alt={pkg.name}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#00000099] to-transparent rounded-t-lg"></div>
               </div>
+
               <div className="p-4 flex flex-col gap-3">
-                <h2 className="font-bold text-primary lg:text-xl">
-                  {tourpack.name}
-                </h2>
-                <div className="flex gap-2">
-                  <h3 className="border-r-2 border-primary pr-2">
-                    {tourpack.des1}
-                  </h3>
-                  <h3 className="border-r-2 border-primary pr-2">
-                    {tourpack.des2}
-                  </h3>
-                  <h3 className="border-r-2 border-primary pr-2">
-                    {tourpack.des3}
-                  </h3>
+                <h2 className="font-bold text-primary lg:text-xl">{pkg.name}</h2>
+                
+                {/* Toggle Button (Arrow) */}
+                <button
+  className="mt-4 text-primary font-bold flex items-center gap-2"
+  onClick={() => togglePackageDetails(index)}
+>
+  {activePackage === index ? (
+    <>
+      
+      <span>&#9650;</span> {/* Up arrow (▲) */}
+    </>
+  ) : (
+    <>
+     
+      <span>&#9660;</span> {/* Down arrow (▼) */}
+    </>
+  )}
+</button>
+
+                {/* Conditionally Render Extra Info */}
+                {activePackage === index && (
+                  <div className="mt-4">
+                    <div className="flex gap-2">
+                  <h3 className="border-r-2 border-primary pr-2">{pkg.des1}</h3>
+                  <h3 className="border-r-2 border-primary pr-2">{pkg.des2}</h3>
+                  <h3 className="border-r-2 border-primary pr-2">{pkg.des3}</h3>
                 </div>
                 <div className="flex gap-4">
                   <h3 className="flex gap-1 items-center text-white mt-1">
-                    <span className="text-primary">
-                      <Plane />
-                    </span>
-                    {tourpack.flight} Flights
+                    <span className="text-primary"><Plane /></span> {pkg.flight} Flights
                   </h3>
                   <h3 className="flex gap-1 items-center">
-                    <span className="text-primary">
-                      <BedDouble />
-                    </span>
-                    {tourpack.hotel} Hotel
+                    <span className="text-primary"><BedDouble /></span> {pkg.hotel} Hotel
                   </h3>
                   <h3 className="flex gap-1 items-center">
-                    <span className="text-primary">
-                      <Boxes />
-                    </span>
-                    {tourpack.activities}+ Activities
+                    <span className="text-primary"><Boxes /></span> {pkg.activities}+ Activities
                   </h3>
                 </div>
-              </div>
-              <div className="p-4 flex items-center justify-between bg-gradient-to-b from-green-400 to-green-900 rounded-b-lg">
-                <h4 className="text-lg">
-                  From Rs.{" "}
-                  <span className="text-primary font-bold">
-                    {tourpack.price}
-                  </span>
-                </h4>
-                <button className="border-2 border-primary text-primary px-4 py-1 rounded-lg font-bold hover:bg-primary hover:text-[#FFFFFF] transition-colors duration-300">
-                  Book Now
-                </button>
+                    <h4 className="text-lg">
+                      From Rs.{" "}
+                      <span className="text-primary font-bold">{pkg.price}</span>
+                    </h4>
+                    <button className="border-2 border-primary text-primary px-4 py-1 rounded-lg font-bold hover:bg-primary hover:text-[#FFFFFF] transition-colors duration-300">
+                      Book Now
+                    </button>
+                  </div>
+                )}
               </div>
             </div>
           ))}
