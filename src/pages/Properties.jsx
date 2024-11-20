@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import SidebarFilter from "../components/SidebarFilter";
-// import Image1 from "../assets/homehero.png";
 import Image1 from "../assets/itw/IMG-20240530-WA0015.jpg";
 import Image2 from "../assets/goa/goa1.jpg";
 import Image3 from "../assets/pineandtails/pnt1.jpg";
