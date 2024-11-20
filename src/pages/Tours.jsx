@@ -1,7 +1,11 @@
 import ChardhamTour from "../TourPackages/ChardhamTour";
 import ChoptaTungnath from "../TourPackages/ChoptaTungnath";
 import Dhanaulti from "../TourPackages/Dhanaulti";
+import KauriPassTrek from "../TourPackages/KuariPassTrek";
 import Kedarnath from "../TourPackages/Kedarnath";
+import RishikeshKanatal from "../TourPackages/RishikeshKanatal";
+import SpitiValley from "../TourPackages/SpitiValley";
+import ValleyOfFlowers from './../TourPackages/ValleyOfFlowers';
 
 const Tours = () => {
   return (
@@ -11,6 +15,10 @@ const Tours = () => {
         <ChoptaTungnath/>
         <Dhanaulti/>
         <Kedarnath/>
+        <KauriPassTrek/>
+        <RishikeshKanatal/>
+        <SpitiValley/>
+        <ValleyOfFlowers/>
       </div>
     </div>
   );
