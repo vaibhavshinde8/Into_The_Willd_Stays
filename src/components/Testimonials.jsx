@@ -2,6 +2,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
+import vid from "../assets/Video-14.mp4";
 
 import "./TestiSwiper.css";
 
@@ -66,10 +67,13 @@ const testData = [
 
 const Testimonials = () => {
   return (
-    <div className="   py-12">
-      <h1 className="text-4xl text-white lg:text-5xl font-bold mb-6 text-center pb-12">
-        <span className="text-[#F77706]">Testimonials</span>
+    <div className="py-12 bg-gray-100">
+      {/* Section Title */}
+      <h1 className="text-4xl font-bold text-center text-[#F77706] mb-8">
+        Google Reviews
       </h1>
+
+      {/* Swiper for Reviews */}
       <Swiper
         slidesPerView={1}
         spaceBetween={10}
@@ -83,7 +87,7 @@ const Testimonials = () => {
           },
           768: {
             slidesPerView: 3,
-            spaceBetween: 40,
+            spaceBetween: 30,
           },
           1024: {
             slidesPerView: 3,
@@ -95,23 +99,43 @@ const Testimonials = () => {
       >
         {testData.map((testimon, index) => (
           <SwiperSlide key={index}>
-            <div className="flex flex-col items-center px-4 py-10 bg-gradient-to-b from-green-200 to-green-400 text-black rounded-lg shadow-lg min-h-[40vh]">
+            <div className="flex flex-col items-center bg-white p-4 shadow-md rounded-lg border border-gray-200">
+              {/* Reviewer Image */}
               {/* <img
-                className="w-[130px] h-[130px] rounded-[50%] border-4 border-dashed border-[#43A181] shadow-lg"
+                className="w-16 h-16 rounded-full border-2 border-[#F77706] shadow-sm"
                 src={testimon.img}
                 alt={testimon.name}
               /> */}
-              <div className="flex flex-col gap-2 mt-4">
-                <p className="text-base text-[#091F3C]">{testimon.review}</p>
-                <h1 className="text-xl font-bold text-primary">
+
+              {/* Review Text */}
+              <div className="mt-4 text-center">
+                <p className="text-sm text-gray-600 italic">
+                  "{testimon.review}"
+                </p>
+                <h2 className="text-lg font-semibold text-gray-800 mt-2">
                   {testimon.name}
-                </h1>
-                {/* <h2 className="text-sm text-[#091F3C]">{testimon.address}</h2> */}
+                </h2>
+                <p className="text-xs text-gray-500">{testimon.address}</p>
               </div>
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
+
+      {/* Video Section */}
+      <div className="container mt-8 px-4 flex justify-center items-center">
+        <div className=" h-[70vh] rounded-lg shadow-lg overflow-hidden">
+          <video
+            className=" h-[70vh] object-cover"
+            controls
+            autoPlay
+            muted
+            src={vid}
+          >
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
     </div>
   );
 };

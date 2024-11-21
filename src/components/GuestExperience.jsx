@@ -12,16 +12,33 @@ const GuestExperience = () => {
     <div className="bg-white min-h-[100vh] py-4 lg:px-32">
       <div className="my-12 mx-4">
         <div className="flex flex-col-reverse lg:flex-row gap-8 justify-around items-center text-center">
-          <div className="flex flex-col gap-6 p-8 bg-gradient-to-r from-[#091F3C] to-[#43A181] rounded-2xl shadow-xl lg:w-[550px] lg:h-[380px] text-white">
+          <div className="flex flex-col gap-6 p-8 bg-gradient-to-r from-[#091F3C] to-[#43A181] rounded-2xl shadow-xl lg:w-[50vw]  text-white">
             <h1 className="text-4xl font-bold tracking-tight">
-              Guest <span className="text-[#43A181]">Experience</span>
+              Our <span className="text-[#43A181]">Story</span>
             </h1>
             <h4 className="lg:text-lg text-gray-100 leading-relaxed">
-            Into The Wilds Stays was the perfect escape from city life. The views of the majestic Himalayas right from our room were breathtaking. The staff was incredibly warm and attentive, making us feel at home. We loved the bonfire under the starlit sky, surrounded by the sounds of nature. If you’re looking for tranquility and an authentic Himalayan experience, this place is a must-visit!
+              Welcome to Into the Wild Stays, At Into the Wild Stays, we strive
+              to offer more than just accommodations; we create memorable
+              escapes in nature’s embrace. Nestled in serene, offbeat locations,
+              our boutique homestays and cottages provide the perfect blend of
+              comfort, tranquility, and adventure. Our philosophy revolves
+              around crafting personalized experiences that connect our guests
+              with the beauty of the wilderness. With heartfelt hospitality and
+              thoughtful service, we ensure every stay feels like a home away
+              from home. Come, escape the chaos, and immerse yourself in the
+              unforgettable charm of *Into the Wild Stays!
             </h4>
           </div>
           <div className="shadow-2xl rounded-xl overflow-hidden">
-            <video ref={videoRef} className="lg:w-[550px] lg:h-[500px] h-[380px] w-[390px] object-cover" src={guestExp} controls autoPlay muted volume={.3}></video>
+            <video
+              ref={videoRef}
+              className="lg:w-[550px] lg:h-[500px] h-[380px] w-[390px] object-cover"
+              src={guestExp}
+              controls
+              autoPlay
+              muted
+              volume={0.3}
+            ></video>
           </div>
         </div>
       </div>

@@ -12,8 +12,21 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 
 const properties = [
   {
+    imgURL: Image2,
+    name: "Into the wilds stays",
+    description:
+      "Stay in a charming hilltop cottage with breathtaking views of Mussoorie's misty mountains and serene surroundings.",
+    location: "Dhanolti",
+    rating: 4.6,
+    reviews: 50,
+    price: 1000,
+    bedroom: 4,
+    guest: 24,
+    exploremoreRoute: "/exploremoreitw",
+  },
+  {
     imgURL: Image1,
-    name: "Pines And Tales",
+    name: " ITW : Pines And Tails",
     description:
       "Stay Type;- 4BHK private pool, Seaview Villa, Porvorim North Goa.",
     location: "Tehri",
@@ -21,49 +34,31 @@ const properties = [
     reviews: 30,
     price: 1750,
     bedroom: 5,
-    // bathroom: 2,
     guest: 12,
     exploremoreRoute: "/exploremorepnt",
   },
-  {
-    imgURL: Image2,
-    name: "Into the wilds",
-    description:
-      "Stay in a charming hilltop cottage with breathtaking views of Mussoorie's misty mountains and serene surroundings.",
-    location: "Dhanoti",
-    rating: 4.6,
-    reviews: 50,
-    price: 1000,
-    bedroom: 4,
-    // bathroom: 0,
-    guest: 24,
-    exploremoreRoute: "/exploremoreitw",
-  },
+ 
   {
     imgURL: Image3,
-    name: "Me:nam Homestay",
+    name: " ITW : Me:nam Homestay",
     description:
       "A tranquil retreat located in the lush green valleys of Dehradun, perfect for unwinding and enjoying the scenic beauty.",
     location: "Majuli",
     rating: 4.8,
     reviews: 40,
     price: 3500,
-    // bedroom: 5,
-    // bathroom: 3,
     guest: 30,
     exploremoreRoute: "/exploremoremnm",
   },
   {
     imgURL: Image4,
-    name: "Sun and Sand Villa",
+    name: " ITW : Sun and Sand Villa",
     description:
       "A tranquil retreat located in the lush green valleys of Dehradun, perfect for unwinding and enjoying the scenic beauty.",
     location: "Goa",
     rating: 4.8,
     reviews: 40,
     price: 1200,
-    // bedroom: 5,
-    // bathroom: 3,
     guest: 10,
     exploremoreRoute: "/exploremoresas",
   },
@@ -72,7 +67,7 @@ const properties = [
 const Properties = () => {
   const [filteredProperties, setFilteredProperties] = useState(properties);
 
-  const handleFilterChange = ({ location, price }) => {
+  const handleFilterChange = ({ location }) => {
     let filtered = properties;
 
     if (location) {
@@ -81,22 +76,18 @@ const Properties = () => {
       );
     }
 
-    filtered = filtered.filter((property) => {
-      return property.price >= price[0] && property.price <= price[1];
-    });
-
     setFilteredProperties(filtered);
   };
 
   return (
-    <div className="py-32 flex-col text-center   ">
+    <div className="py-32 flex-col text-center">
       <div className="bg-[url('https://images.trvl-media.com/lodging/109000000/108380000/108370800/108370765/28b3dc50.jpg?impolicy=resizecrop&rw=1200&ra=fit')] bg-cover bg-center bg-fixed lg:py-24 py-16 flex flex-col items-center lg:gap-4 text-white">
         <h1 className="lg:text-6xl text-3xl before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-gradient-to-r from-green-500 to-green-700 relative inline-block">
           <span className="relative">Checkout Our Properties</span>
         </h1>
       </div>
 
-      <div className="flex flex-col sm:flex-row gap-8  py-12  lg:px-32 px-8 bg-white">
+      <div className="flex flex-col sm:flex-row gap-8 py-12 lg:px-32 px-8 bg-white">
         {/* Sidebar */}
         <div className="w-full sm:w-1/4">
           <SidebarFilter
@@ -128,26 +119,17 @@ const Properties = () => {
                   </h2>
                   <p className="text-[#000000] mb-4">{property.description}</p>
                   <div className="flex flex-wrap space-x-2 mb-4 justify-center sm:justify-start">
-                    {/* <span className="bg-[#43A181] rounded-full px-3 py-1 text-sm text-white font-semibold">
-                      {property.location.city}, {property.location.state}
-                    </span> */}
                     <span className="flex items-center bg-[#43A181] rounded-full px-3 py-1 text-sm text-white font-semibold">
-                      <FaMapMarkerAlt className="mr-1" />{" "}
-                      {/* Add the location icon */}
+                      <FaMapMarkerAlt className="mr-1" />
                       {property.location}
                     </span>
                   </div>
                   <div className="text-sm text-gray-600">
                     <span className="mr-4">
-                      {property.bedroom}{" "}
-                      {property.bedroom > 1 ? "Bedrooms" : "Bedroom"}
-                    </span>
-                    <span className="mr-4">
-                      {property.bathroom}{" "}
-                      {property.bathroom > 1 ? "Bathrooms" : "Bathroom"}
+                      {property.bedroom} Bedroom{property.bedroom > 1 && "s"}
                     </span>
                     <span>
-                      {property.guest} {property.guest > 1 ? "Guests" : "Guest"}
+                      {property.guest} Guest{property.guest > 1 && "s"}
                     </span>
                   </div>
                 </div>
@@ -190,8 +172,7 @@ const Properties = () => {
           </ul>
         </div>
       </div>
-      <GalleryAndReviews />
-      <TourBanner />
+      <TourBanner/>
     </div>
   );
 };

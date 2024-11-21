@@ -1,8 +1,8 @@
 import {
   Facebook,
-  Twitter,
+  // Twitter,
   Instagram,
-  Linkedin,
+ 
   Phone,
   Mail,
   MapPin,
@@ -11,6 +11,7 @@ import {
   Clock,
 } from "lucide-react";
 import footerImg from "../assets/footer-img.png";
+import { FaWhatsapp } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -37,12 +38,12 @@ const Footer = () => {
               >
                 <Facebook size={25} />
               </a>
-              <a
+              {/* <a
                 href="#"
                 className="text-[#1DA1F2] hover:text-white hover:scale-110 duration-300 ease-in-out transition-colors"
               >
                 <Twitter size={25} />
-              </a>
+              </a> */}
               <a
                 href="https://www.instagram.com/intothewildstays/profilecard/?igsh=cGt4dTRvenNvZ25h"
                 className="text-[#E4405F] hover:text-white hover:scale-110 duration-300 ease-in-out transition-colors"
@@ -50,10 +51,10 @@ const Footer = () => {
                 <Instagram size={25} />
               </a>
               <a
-                href="#"
-                className="text-[#0077B5] hover:text-white hover:scale-110 duration-300 ease-in-out transition-colors"
+                href="https://wa.me/9958838557"
+                className="text-[#166924] hover:text-white hover:scale-110 duration-300 ease-in-out transition-colors"
               >
-                <Linkedin size={25} />
+                <FaWhatsapp size={25} />
               </a>
             </div>
           </div>
@@ -65,16 +66,31 @@ const Footer = () => {
             </h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="/about-us" className="hover:text-[#F77706] transition-colors">
+                <a
+                  href="/blogs"
+                  className="hover:text-[#F77706] transition-colors"
+                >
+                  Blogs
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/about-us"
+                  className="hover:text-[#F77706] transition-colors"
+                >
                   About Us
                 </a>
               </li>
+
               <li>
-                <a href="/contact-us" className="hover:text-[#F77706] transition-colors">
+                <a
+                  href="/contact-us"
+                  className="hover:text-[#F77706] transition-colors"
+                >
                   Contact Us
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <a href="#" className="hover:text-[#F77706] transition-colors">
                   Cookie Policy
                 </a>
@@ -88,7 +104,7 @@ const Footer = () => {
                 <a href="#" className="hover:text-[#F77706] transition-colors">
                   Terms of Service
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
 
@@ -104,11 +120,16 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-3">
                 <Mail size={16} />
-                <a href="mailto:intothewildstays@gmail.com">intothewildstays@gmail.com</a>
+                <a href="mailto:intothewildstays@gmail.com">
+                  intothewildstays@gmail.com
+                </a>
               </li>
               <li className="flex items-center space-x-3">
                 <MapPin size={16} />
-                <a href="https://maps.app.goo.gl/CYRuJceg1CpEw5nR7" target="_blank">
+                <a
+                  href="https://maps.app.goo.gl/CYRuJceg1CpEw5nR7"
+                  target="_blank"
+                >
                   <span>
                     Into The Wild Stays
                     <br />

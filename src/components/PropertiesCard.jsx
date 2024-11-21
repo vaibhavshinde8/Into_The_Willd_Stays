@@ -15,8 +15,21 @@ import { Link } from "react-router-dom";
 
 const properties = [
   {
+    imgURL: Image2,
+    name: "Into the wilds stays",
+    description:
+      "Stay in a charming hilltop cottage with breathtaking views of Mussoorie's misty mountains and serene surroundings.",
+    location: "Dhanolti",
+    rating: 4.6,
+    reviews: 50,
+    price: 1000,
+    bedroom: 4,
+    guest: 24,
+    exploremoreRoute: "/exploremoreitw",
+  },
+  {
     imgURL: Image1,
-    name: "Pines And Tales",
+    name: " ITW : Pines And Tails",
     description:
       "Stay Type;- 4BHK private pool, Seaview Villa, Porvorim North Goa.",
     location: "Tehri",
@@ -24,49 +37,31 @@ const properties = [
     reviews: 30,
     price: 1750,
     bedroom: 5,
-    // bathroom: 2,
     guest: 12,
     exploremoreRoute: "/exploremorepnt",
   },
-  {
-    imgURL: Image2,
-    name: "Into the wilds",
-    description:
-      "Stay in a charming hilltop cottage with breathtaking views of Mussoorie's misty mountains and serene surroundings.",
-    location: "Dhanoti",
-    rating: 4.6,
-    reviews: 50,
-    price: 1000,
-    bedroom: 4,
-    // bathroom: 0,
-    guest: 24,
-    exploremoreRoute: "/exploremoreitw",
-  },
+
   {
     imgURL: Image3,
-    name: "Me:nam Homestay",
+    name: " ITW : Me:nam Homestay",
     description:
       "A tranquil retreat located in the lush green valleys of Dehradun, perfect for unwinding and enjoying the scenic beauty.",
     location: "Majuli",
     rating: 4.8,
     reviews: 40,
     price: 3500,
-    // bedroom: 5,
-    // bathroom: 3,
     guest: 30,
-    exploremoreRoute: "/exploremorepmnm",
+    exploremoreRoute: "/exploremoremnm",
   },
   {
     imgURL: Image4,
-    name: "Sun and Sand Villa",
+    name: " ITW : Sun and Sand Villa",
     description:
       "A tranquil retreat located in the lush green valleys of Dehradun, perfect for unwinding and enjoying the scenic beauty.",
     location: "Goa",
     rating: 4.8,
     reviews: 40,
     price: 1200,
-    // bedroom: 5,
-    // bathroom: 3,
     guest: 10,
     exploremoreRoute: "/exploremoresas",
   },

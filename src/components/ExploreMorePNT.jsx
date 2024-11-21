@@ -7,7 +7,6 @@ import img4 from "../assets/pineandtails/IMG_6593.jpg";
 
 const galleryImages = [img1, img2, img3, img4];
 
-
 const faqs = [
   {
     question: "Is Driver and/or House-Help accommodation available?",
@@ -32,7 +31,7 @@ const faqs = [
 ];
 
 const bookingPolicies = [
-  "Check-in: 2 PM; Check-out: 10 AM.",
+  "Check in: 1 PM check out: 11 AM",
   "Guests are requested to shut the windows and doors during the evening as the property may be prone to insects and bugs.",
   "Guests are not allowed to spill food or drinks over the upholstery or they will be charged at checkout.",
   "Please be mindful and keep the noise to a minimum after 10 PM.",
@@ -45,6 +44,22 @@ const cancellationPolicy = [
   "Cancellation 7 days prior to arrival: 50% will be charged.",
   "Cancellation less than a week: Full retention would be applicable.",
   "Credit/Debit card cancellations will be charged 5% extra.",
+];
+
+const amenities = [
+  "Essentials",
+  "Towels and toiletries",
+  "Add-on experience",
+  "Private entrance",
+  "Serene location.",
+  "Pet friendly",
+  "In-house chef/caretaker ",
+  "Cozy linens",
+  "Bluetooth sound system ",
+  "Wi-Fi ",
+  "Private cottage ",
+  "Garden",
+  "Breakfast",
 ];
 
 // const galleryImages = [img1, img2, img3, img4];
@@ -152,6 +167,14 @@ const ExploreMorePNT = () => {
       <ul className="list-disc ml-6 space-y-2 text-left max-w-3xl mx-auto bg-white shadow-lg p-6 rounded-lg">
         {cancellationPolicy.map((policy, index) => (
           <li key={`cancel-${index}`}>{policy}</li>
+        ))}
+      </ul>
+
+      {/* Amenities Section */}
+      <h2 className="text-3xl font-bold text-[#3C8D99] mb-6">Amenities</h2>
+      <ul className="list-disc ml-6 mb-12 space-y-2 text-left max-w-3xl mx-auto bg-white shadow-lg p-6 rounded-lg">
+        {amenities.map((amenity, index) => (
+          <li key={`amenity-${index}`}>{amenity}</li>
         ))}
       </ul>
     </div>

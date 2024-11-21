@@ -31,7 +31,7 @@ const faqs = [
 ];
 
 const bookingPolicies = [
-  "Check-in: 2 PM; Check-out: 10 AM.",
+  "Check in: 1 PM check out: 11 AM",
   "Guests are requested to shut the windows and doors during the evening as the property may be prone to insects and bugs.",
   "Guests are not allowed to spill food or drinks over the upholstery or they will be charged at checkout.",
   "Please be mindful and keep the noise to a minimum after 10 PM.",
@@ -65,13 +65,19 @@ const cancellationPolicy = [
 ];
 
 const amenities = [
-  "Swimming Pool",
-  "Full payment must be made for your booking to be confirmed.",
-  "Only guests accounted for are allowed at the property.",
-  "Any damage to the property caused by guests will be charged as per the actual cost of repair or replacement.",
-  "Commercial activity is strictly prohibited.",
-  "Guests are requested to treat the home with care.",
-  "Consider this as a homestay in the mountains, not a typical hotel stay.",
+  "Essentials",
+  "Towels and toiletries",
+  "Add-on experience",
+  "Private entrance",
+  "Serene location.",
+  "Pet friendly",
+  "In-house chef/caretaker ",
+  "Cozy linens",
+  "Bluetooth sound system ",
+  "Wi-Fi ",
+  "Private cottage ",
+  "Garden",
+  "Breakfast",
 ];
 
 const ExploreMoreSAS = () => {

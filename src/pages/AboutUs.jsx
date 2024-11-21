@@ -1,34 +1,47 @@
 import Image2 from "../assets/homehero.png"
-import Image1 from "../assets/profiledummy.png";
+import ImageA from "../assets/team/AkashCoowner.jpg"
+import ImageV from "../assets/team/VikkyCoowner.jpg";
+import ImageD from "../assets/team/DeepakRanaMountainGuide.jpg"
+import ImageVa from "../assets/team/VasuMusicArtist.jpg"
+import ImageVe from "../assets/team/VeerOutdoorinstructor.jpg";
+import Image3 from "../assets/itw_rep/itwrep_page-0009.jpg";
+import Image4 from "../assets/itw_rep/itwrep_page-0010.jpg";
+import Image5 from "../assets/itw_rep/itwrep_page-0011.jpg";
+import Image6 from "../assets/itw_rep/itwrep_page-0012.jpg";
+import Image7 from "../assets/itw_rep/itwrep_page-0013.jpg";
+
 
 
 const AboutUs = () => {
   return (
     <div className="min-h-[100vh] pt-32">
-      {/* Hero Section with Background Image */}
       <div className="bg-[url('https://images.trvl-media.com/lodging/109000000/108380000/108370800/108370765/28b3dc50.jpg?impolicy=resizecrop&rw=1200&ra=fit')] bg-cover bg-center bg-fixed lg:py-24 py-16 flex flex-col items-center lg:gap-4 text-white">
         <h1 className="lg:text-7xl text-5xl before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-gradient-to-r from-green-500 to-green-700 relative inline-block">
           <span className="relative font-primaryF">About Us</span>
         </h1>
       </div>
-      {/* Content Section */}
       <div className="bg-white min-h-[100vh] py-4 lg:px-32">
         <div className="my-12 mx-4">
           <div className="flex flex-col-reverse lg:flex-row gap-8 justify-around items-center text-center">
-            {/* Text Section */}
-            <div className="flex flex-col rounded-lg gap-6 p-8 bg-gradient-to-r from-[#091F3C] to-[#43A181] shadow-xl lg:w-[550px] lg:h-[420px] text-white">
+            <div className="flex flex-col rounded-lg gap-6 p-8 bg-gradient-to-r from-[#091F3C] to-[#43A181] shadow-xl lg:w-[50vw]  text-white">
               <h1 className="text-4xl font-bold tracking-tight">
                 Our <span className="text-[#43A181]">Story</span>
               </h1>
-              <h4 className="lg:text-lg text-gray-100 leading-relaxed">
-                At Into The Wilds Stays, we believe that every getaway is an
-                opportunity to create lasting memories. Our journey began with a
-                passion for providing uniquely luxurious experiences that make
-                every guest feel at home, away from home.
-              </h4>
+              <p className="lg:text-lg text-gray-100 leading-relaxed">
+                Welcome to Into the Wild Stays, At Into the Wild Stays, we
+                strive to offer more than just accommodations; we create
+                memorable escapes in nature’s embrace. Nestled in serene,
+                offbeat locations, our boutique homestays and cottages provide
+                the perfect blend of comfort, tranquility, and adventure. Our
+                philosophy revolves around crafting personalized experiences
+                that connect our guests with the beauty of the wilderness. With
+                heartfelt hospitality and thoughtful service, we ensure every
+                stay feels like a home away from home. Come, escape the chaos,
+                and immerse yourself in the unforgettable charm of *Into the
+                Wild Stays!
+              </p>
             </div>
 
-            {/* image Section */}
             <div className="shadow-2xl overflow-hidden rounded-lg">
               <img
                 src={Image2}
@@ -39,7 +52,6 @@ const AboutUs = () => {
           </div>
         </div>
       </div>
-      {/* Why Choose Us Section */}
       <div className="text-center py-8 ">
         <h2 className="text-teal-300 text-lg font-semibold tracking-wide uppercase">
           Why Our Homestay?
@@ -103,39 +115,7 @@ const AboutUs = () => {
           ))}
         </div>
       </div>
-      {/* Founder Section */}
-      <div className="flex flex-col md:flex-row items-center bg-[#111111] p-8 shadow-2xl mt-8">
-        {/* Image Section */}
-        <div className="w-full md:w-[40vw] h-full overflow-hidden mb-4 md:mb-0 md:mr-8 shadow-lg p-4 md:p-8">
-          <img
-            src={Image1}
-            alt="Founder"
-            className="w-full h-full object-cover rounded-lg"
-          />
-        </div>
 
-        {/* Text Section */}
-        <div className="w-full md:w-[60vw] text-center md:text-left">
-          <h2 className="text-2xl md:text-4xl font-bold text-teal-300 mb-4 md:mb-2">
-            Meet Our Founder
-          </h2>
-          <p className="text-gray-300 mb-4 leading-relaxed text-sm md:text-base">
-            Priyanka has held multiple leadership roles: CEO Forbes India,
-            President Marketing at Network18, Chief Revenue & Marketing Officer
-            for the NDTV Group. Priyanka’s strength comes from over 22 years of
-            marketing and leadership experience.
-          </p>
-          <p className="text-gray-300 mb-4 text-sm md:text-base">
-            Educated at Welham Girls' School, she completed Advanced Management
-            at Harvard Business School.
-          </p>
-          <p className="text-gray-400 text-lg md:text-2xl font-semibold">
-            - Priyanka Kaul, Founder
-          </p>
-        </div>
-      </div>
-
-      {/* Our Team Section */}
       <div className="bg-[#1b1b1b] py-12   shadow-xl">
         <h2 className="text-center text-teal-400 text-lg font-semibold">
           Meet Our Team
@@ -146,24 +126,29 @@ const AboutUs = () => {
         <div className="flex flex-wrap justify-center gap-8">
           {[
             {
-              name: "Mujeeb ur Rehman",
-              role: "Financial Controller",
-              img: Image1,
+              name: "Aakash ",
+              role: " Co-Owner",
+              img: ImageA,
             },
             {
-              name: "Devesh",
-              role: "Consultant, Technology & Digital Marketing",
-              img: Image1,
+              name: "Vikky",
+              role: "Co-Owner",
+              img: ImageV,
             },
             {
-              name: "Vandana",
-              role: "Senior Consultant, Design & Technology",
-              img: Image1,
+              name: "Deepak Rana",
+              role: "Mountain Guide ",
+              img: ImageD,
             },
             {
-              name: "Ishwinder Singh",
-              role: "Consultant, Business Development",
-              img: Image1,
+              name: "Vasu",
+              role: "Music Artist",
+              img: ImageVa,
+            },
+            {
+              name: "veer",
+              role: "Outdoor Instructor",
+              img: ImageVe,
             },
           ].map((member, index) => (
             <div
@@ -183,6 +168,41 @@ const AboutUs = () => {
               <p className="text-teal-400">{member.role}</p>
             </div>
           ))}
+        </div>
+        <div className="shadow-2xl overflow-hidden rounded-lg">
+          <img
+            src={Image3}
+            alt="Founder"
+            className="w-full h-full object-cover rounded-lg"
+          />
+        </div>
+        <div className="shadow-2xl overflow-hidden rounded-lg">
+          <img
+            src={Image4}
+            alt="Founder"
+            className="w-full h-full object-cover rounded-lg"
+          />
+        </div>
+        <div className="shadow-2xl overflow-hidden rounded-lg">
+          <img
+            src={Image5}
+            alt="Founder"
+            className="w-full h-full object-cover rounded-lg"
+          />
+        </div>
+        <div className="shadow-2xl overflow-hidden rounded-lg">
+          <img
+            src={Image6}
+            alt="Founder"
+            className="w-full h-full object-cover rounded-lg"
+          />
+        </div>
+        <div className="shadow-2xl overflow-hidden rounded-lg">
+          <img
+            src={Image7}
+            alt="Founder"
+            className="w-full h-full object-cover rounded-lg"
+          />
         </div>
       </div>
     </div>

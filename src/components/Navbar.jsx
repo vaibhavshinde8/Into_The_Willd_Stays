@@ -39,7 +39,7 @@ export default function Navbar() {
               to="/tours"
               className="text-gray-200 hover:text-primary px-3 py-2 text-lg transition duration-300"
             >
-              Tour
+              Tours & Events
             </Link>
             <Link
               to="/blogs"
