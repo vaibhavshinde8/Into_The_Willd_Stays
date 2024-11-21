@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import kedarnathData from "./kedarnath_dham.json"; // Assuming the JSON file is in the same directory
 
 const Kedarnath = () => {
@@ -25,17 +25,15 @@ const Kedarnath = () => {
   };
 
   return (
-    <section className="kedarnath-tour">
+    <div className=" p-6 ">
       <div className="container">
         {/* Title */}
-        <h2 className="text-3xl font-semibold text-center text-blue-600 mb-6">
-          {title} Package
-        </h2>
+        <h2 className="text-3xl font-bold text-center mb-6">{title} Package</h2>
 
         {/* Tour Card */}
         <div className="tour-card bg-white shadow-lg rounded-lg overflow-hidden">
           {/* Basic Info */}
-          <div className="tour-card-header p-6 bg-blue-100 border-b">
+          <div className="tour-card-header bg-blue-600 text-white p-6">
             <h3 className="text-3xl font-semibold  mb-6">
               {title} - {duration}
             </h3>
@@ -45,7 +43,10 @@ const Kedarnath = () => {
             <p>
               <strong>Contact:</strong> {contact}
             </p>
-            <button onClick={toggleExpand} className="expand-btn">
+            <button
+              onClick={toggleExpand}
+              className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600"
+            >
               {isExpanded ? "▲ Collapse" : "▼ More Details"}
             </button>
           </div>
@@ -161,7 +162,7 @@ const Kedarnath = () => {
           )}
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

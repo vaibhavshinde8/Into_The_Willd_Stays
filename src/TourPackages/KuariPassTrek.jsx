@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import kauriPassData from "./kuari_pass_trek.json"; // Assuming the JSON file is in the same directory
 
 const KauriPassTrek = () => {
@@ -19,15 +19,15 @@ const KauriPassTrek = () => {
   };
 
   return (
-    <section className="kauri-pass-trek bg-gray-100 py-8">
+    <div className=" p-6 ">
       <div className="container mx-auto px-4">
         {/* Title */}
         <h2 className="text-3xl font-bold text-center mb-6">{trip_name}</h2>
 
         {/* Tour Card */}
-        <div className="bg-white shadow-lg rounded-lg p-6">
+        <div className="tour-card bg-white shadow-lg rounded-lg overflow-hidden">
           {/* Basic Info */}
-          <div className="border-b pb-4 mb-4">
+          <div className="tour-card-header bg-blue-600 text-white p-6">
             <h3 className="text-xl font-semibold mb-2">{trip_name}</h3>
             <p>
               <strong>Contact:</strong> {contact}
@@ -37,7 +37,7 @@ const KauriPassTrek = () => {
             </p>
             <button
               onClick={toggleExpand}
-              className="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
+              className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600"
             >
               {isExpanded ? "▲ Collapse Details" : "▼ More Details"}
             </button>
@@ -132,7 +132,7 @@ const KauriPassTrek = () => {
           )}
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

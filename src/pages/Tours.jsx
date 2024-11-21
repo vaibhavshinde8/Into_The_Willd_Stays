@@ -6,6 +6,7 @@ import Kedarnath from "../TourPackages/Kedarnath";
 import RishikeshKanatal from "../TourPackages/RishikeshKanatal";
 import SpitiValley from "../TourPackages/SpitiValley";
 import ValleyOfFlowers from './../TourPackages/ValleyOfFlowers';
+import TourBanner from './../components/TourBanner';
 
 const Tours = () => {
   return (
@@ -17,7 +18,7 @@ const Tours = () => {
           </h1>
         </div>
       </div>
-      <div className="p-24 bg-gray-100">
+      <div className="p-12 lg:p-32">
         <ChardhamTour />
         <ChoptaTungnath />
         <Dhanaulti />
@@ -27,6 +28,7 @@ const Tours = () => {
         <SpitiValley />
         <ValleyOfFlowers />
       </div>
+      <TourBanner/>
     </div>
   );
 };

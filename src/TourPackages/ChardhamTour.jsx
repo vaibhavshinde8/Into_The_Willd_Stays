@@ -1,5 +1,5 @@
 // ChardhamTour.js
-import  { useState } from "react";
+import { useState } from "react";
 import chardhamData from "./chardham.json"; // Assuming the JSON file is in the same directory
 
 const ChardhamTour = () => {
@@ -12,10 +12,10 @@ const ChardhamTour = () => {
   };
 
   return (
-    <section className="chardham-tour py-16 bg-gray-100">
+    <div  className=" p-6 ">
       <div className="container mx-auto px-4">
         {/* Title */}
-        <h2 className="text-3xl font-bold text-center text-blue-600 mb-8">
+        <h2 className="text-3xl font-bold text-center mb-6">
           Chardham Yatra Package
         </h2>
 
@@ -29,7 +29,7 @@ const ChardhamTour = () => {
             </p>
             <button
               onClick={toggleExpand}
-              className="mt-4 text-blue-200 hover:text-white focus:outline-none"
+              className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600"
             >
               {isExpanded ? "▲ Collapse" : "▼ More Details"}
             </button>
@@ -149,7 +149,7 @@ const ChardhamTour = () => {
           )}
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

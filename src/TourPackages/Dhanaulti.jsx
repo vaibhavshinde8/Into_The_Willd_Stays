@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import dhanaultiData from "./dhanaulti.json"; // Assuming the JSON file is in the same directory
 
 const Dhanaulti = () => {
@@ -19,17 +19,17 @@ const Dhanaulti = () => {
   };
 
   return (
-    <section className="dhanaulti-tour py-8 bg-gray-100">
+    <div className=" p-6 ">
       <div className="container mx-auto px-4">
         {/* Title */}
-        <h2 className="text-3xl font-semibold text-center text-blue-600 mb-6">
+        <h2 className="text-3xl font-bold text-center mb-6">
           {organization} - {location} Stay
         </h2>
 
         {/* Tour Card */}
         <div className="tour-card bg-white shadow-lg rounded-lg overflow-hidden">
           {/* Basic Info */}
-          <div className="tour-card-header p-6 bg-blue-100 border-b">
+          <div className="tour-card-header bg-blue-600 text-white p-6">
             <h3 className="text-2xl font-bold">{organization}</h3>
             <p className="mt-2 text-lg">
               <strong>Location:</strong> {location}
@@ -227,7 +227,7 @@ const Dhanaulti = () => {
           )}
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
