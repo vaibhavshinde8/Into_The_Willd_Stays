@@ -1,6 +1,6 @@
 // ChardhamTour.js
 import { useState } from "react";
-import chardhamData from "./chardham.json"; // Assuming the JSON file is in the same directory
+import chardhamData from "./Chardham.json";
 
 const ChardhamTour = () => {
   const [isExpanded, setIsExpanded] = useState(false);
