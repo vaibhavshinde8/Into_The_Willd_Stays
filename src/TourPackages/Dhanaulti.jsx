@@ -1,5 +1,5 @@
 import  { useState } from "react";
-import dhanaultiData from "./dhanaulti.json"; // Assuming the JSON file is in the same directory
+import dhanaultiData from "./Dhanaulti.json"; // Assuming the JSON file is in the same directory
 
 const Dhanaulti = () => {
   const [isExpanded, setIsExpanded] = useState(false);

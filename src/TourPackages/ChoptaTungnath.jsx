@@ -1,5 +1,5 @@
 import  { useState } from "react";
-import choptaTungnathData from "./chopta_tungnath.json"; // Assuming the JSON file is in the same directory
+import choptaTungnathData from "./Chopta_Tungnath.json"; // Assuming the JSON file is in the same directory
 
 const ChoptaTungnath = () => {
   const [isExpanded, setIsExpanded] = useState(false);

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import rishikeshKanatalData from "./rishikeshkanatal.json";
+import rishikeshKanatalData from "./RishikeshKanatal.json";
 
 const RishikeshKanatal = () => {
   const [isExpanded, setIsExpanded] = useState(false);

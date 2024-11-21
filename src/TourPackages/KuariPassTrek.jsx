@@ -1,5 +1,5 @@
 import  { useState } from "react";
-import kauriPassData from "./kuari_pass_trek.json"; // Assuming the JSON file is in the same directory
+import kauriPassData from "./Kuari_Pass_Trek.json"; // Assuming the JSON file is in the same directory
 
 const KauriPassTrek = () => {
   const [isExpanded, setIsExpanded] = useState(false);
