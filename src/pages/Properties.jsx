@@ -4,7 +4,7 @@ import SidebarFilter from "../components/SidebarFilter";
 import Image1 from "../assets/itw/IMG-20240530-WA0015.jpg";
 import Image2 from "../assets/goa/goa1.jpg";
 import Image3 from "../assets/pineandtails/pnt1.jpg";
-import Image4 from "../assets/Sun and Sand Goa/Property Photo and videos/WhatsApp Image 2024-11-11 at 8.34.51 PM.jpeg";
+import Image4 from "../assets/Sun and Sand Goa/Property Photo and videos/51PM.jpeg";
 
 import TourBanner from "./../components/TourBanner";
 import GalleryAndReviews from "../components/GalleryAndReviews";

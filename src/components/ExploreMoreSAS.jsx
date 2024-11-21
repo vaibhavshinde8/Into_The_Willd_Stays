@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { FaArrowAltCircleDown, FaArrowAltCircleUp } from "react-icons/fa";
-import img1 from "../assets/Sun and Sand Goa/Property Photo and videos/WhatsApp Image 2024-11-11 at 8.34.50 PM.jpeg";
-import img2 from "../assets/Sun and Sand Goa/Property Photo and videos/WhatsApp Image 2024-11-11 at 8.34.51 PM.jpeg";
-import img3 from "../assets/Sun and Sand Goa/Property Photo and videos/WhatsApp Image 2024-11-11 at 8.34.53 PM.jpeg";
-import img4 from "../assets/Sun and Sand Goa/Property Photo and videos/WhatsApp Image 2024-11-11 at 8.34.52 PM.jpeg";
+import img1 from "../assets/Sun and Sand Goa/Property Photo and videos/50PM.jpeg";
+import img2 from "../assets/Sun and Sand Goa/Property Photo and videos/51PM.jpeg";
+import img3 from "../assets/Sun and Sand Goa/Property Photo and videos/53PM.jpeg";
+import img4 from "../assets/Sun and Sand Goa/Property Photo and videos/52PM.jpeg";
 
 const galleryImages = [img1, img2, img3, img4];
 
@@ -73,7 +73,6 @@ const amenities = [
   "Guests are requested to treat the home with care.",
   "Consider this as a homestay in the mountains, not a typical hotel stay.",
 ];
-
 
 const ExploreMoreSAS = () => {
   const [openIndex, setOpenIndex] = useState(null);
