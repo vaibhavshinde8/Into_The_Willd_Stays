@@ -129,7 +129,7 @@ const PropertiesCard = ({ selectedLocation = "All" }) => {
                 </span>
                 /Night
               </h4>
-              <span className="text-sm text-gray-400">(per person)</span>
+              <span className="text-sm text-gray-400">(per cottage)</span>
             </div>
           </div>
 

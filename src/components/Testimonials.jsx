@@ -2,7 +2,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
-import vid from "../assets/Video-14.mp4";
+import vid from "../assets/guest-exp.mp4"; 
+import vid2 from "../assets/Video-822~2.mp4"; 
 
 import "./TestiSwiper.css";
 
@@ -110,7 +111,7 @@ const Testimonials = () => {
               {/* Review Text */}
               <div className="mt-4 text-center">
                 <p className="text-sm text-gray-600 italic">
-                  "{testimon.review}"
+                  {testimon.review}
                 </p>
                 <h2 className="text-lg font-semibold text-gray-800 mt-2">
                   {testimon.name}
@@ -123,14 +124,25 @@ const Testimonials = () => {
       </Swiper>
 
       {/* Video Section */}
-      <div className="container mt-8 px-4 flex justify-center items-center">
+      <div className="container mt-8 gap-4 px-4 flex justify-center items-center">
         <div className=" h-[70vh] rounded-lg shadow-lg overflow-hidden">
           <video
-            className=" h-[70vh] object-cover"
+            className="lg:w-[550px] lg:h-[500px] h-[380px] w-[390px] object-cover"
             controls
             autoPlay
             muted
             src={vid}
+          >
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div className=" h-[70vh] rounded-lg shadow-lg overflow-hidden">
+          <video
+            className="lg:w-[550px] lg:h-[500px] h-[380px] w-[390px] object-cover"
+            controls
+            autoPlay
+            muted
+            src={vid2}
           >
             Your browser does not support the video tag.
           </video>

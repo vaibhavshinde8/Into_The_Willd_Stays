@@ -7,7 +7,7 @@ import Image3 from "../assets/pineandtails/pnt1.jpg";
 import Image4 from "../assets/Sun and Sand Goa/Property Photo and videos/51PM.jpeg";
 
 import TourBanner from "./../components/TourBanner";
-import GalleryAndReviews from "../components/GalleryAndReviews";
+// import GalleryAndReviews from "../components/GalleryAndReviews";
 import { FaMapMarkerAlt } from "react-icons/fa";
 
 const properties = [
@@ -156,7 +156,9 @@ const Properties = () => {
                   <div className="text-3xl sm:text-4xl font-bold mb-1">
                     ₹{property.price}
                   </div>
-                  <span className="text-sm">/ per person</span>
+                  <span className="text-sm">/ per night</span>
+                  <span className="text-sm text-gray-400">(per cottage)</span>
+
                   <button className="mt-4 px-4 py-2 border border-white rounded-full hover:bg-[#43A181] hover:text-white transition whitespace-nowrap">
                     Book now!
                   </button>
@@ -172,7 +174,7 @@ const Properties = () => {
           </ul>
         </div>
       </div>
-      <TourBanner/>
+      <TourBanner />
     </div>
   );
 };

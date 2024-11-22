@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import guestExp from "../assets/guest-exp.mp4";
+import guestExp from "../assets/Video-14~2.mp4";
 
 const GuestExperience = () => {
   const videoRef = useRef(null)
@@ -32,13 +32,14 @@ const GuestExperience = () => {
           <div className="shadow-2xl rounded-xl overflow-hidden">
             <video
               ref={videoRef}
-              className="lg:w-[550px] lg:h-[500px] h-[380px] w-[390px] object-cover"
+              className="w-[80vw] h-[60vh] object-cover "
               src={guestExp}
               controls
               autoPlay
               muted
-              volume={0.3}
+              // volume={0.15} // Fixed volume value
             ></video>
+
           </div>
         </div>
       </div>
