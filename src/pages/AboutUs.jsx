@@ -1,16 +1,24 @@
-import Image2 from "../assets/homehero.png"
-import ImageA from "../assets/team/AkashCoowner.jpg"
+import Image2 from "../assets/itw_rep/itwrep_page-0008.jpg";
+
+
+import ImageA from "../assets/team/AkashCoowner.jpg";
 import ImageV from "../assets/team/VikkyCoowner.jpg";
-import ImageD from "../assets/team/DeepakRanaMountainGuide.jpg"
-import ImageVa from "../assets/team/VasuMusicArtist.jpg"
+import ImageD from "../assets/team/DeepakRanaMountainGuide.jpg";
+import ImageVa from "../assets/team/VasuMusicArtist.jpg";
 import ImageVe from "../assets/team/VeerOutdoorinstructor.jpg";
+import Imageanshi from "../assets/team/AnshiArt&Craftinstructor.jpg";
+import Imagearvind from "../assets/team/ArvindSeniorMountaineer.jpg";
+import Imageastha from "../assets/team/AsthaDovalCyclist.jpg";
+import Imageraghav from "../assets/team/RaghavCycling Instructor.jpg";
+import Imagesonam from "../assets/team/SonamRanaKayakinstructor.jpg";
+import Imageunk from "../assets/team/unk.jpg";
+
+
 import Image3 from "../assets/itw_rep/itwrep_page-0009.jpg";
 import Image4 from "../assets/itw_rep/itwrep_page-0010.jpg";
 import Image5 from "../assets/itw_rep/itwrep_page-0011.jpg";
 import Image6 from "../assets/itw_rep/itwrep_page-0012.jpg";
 import Image7 from "../assets/itw_rep/itwrep_page-0013.jpg";
-
-
 
 const AboutUs = () => {
   return (
@@ -22,7 +30,7 @@ const AboutUs = () => {
       </div>
       <div className="bg-white min-h-[100vh] py-4 lg:px-32">
         <div className="my-12 mx-4">
-          <div className="flex flex-col-reverse lg:flex-row gap-8 justify-around items-center text-center">
+          <div className="flex flex-col-reverse lg:flex-row gap-8 justify-around items-center text-center ">
             <div className="flex flex-col rounded-lg gap-6 p-8 bg-gradient-to-r from-[#091F3C] to-[#43A181] shadow-xl lg:w-[50vw]  text-white">
               <h1 className="text-4xl font-bold tracking-tight">
                 Our <span className="text-[#43A181]">Story</span>
@@ -52,7 +60,7 @@ const AboutUs = () => {
           </div>
         </div>
       </div>
-      <div className="text-center py-8 ">
+      <div className="text-center py-8 lg:px-32 ">
         <h2 className="text-teal-300 text-lg font-semibold tracking-wide uppercase">
           Why Our Homestay?
         </h2>
@@ -123,7 +131,7 @@ const AboutUs = () => {
         <h1 className="text-center text-3xl font-bold text-white mb-8">
           Our Team
         </h1>
-        <div className="flex flex-wrap justify-center gap-8">
+        <div className="flex flex-wrap justify-center gap-8 lg:px-48">
           {[
             {
               name: "Aakash ",
@@ -150,6 +158,36 @@ const AboutUs = () => {
               role: "Outdoor Instructor",
               img: ImageVe,
             },
+            {
+              name: "Anshi ",
+              role: " Art & Craft Instructor",
+              img: Imageanshi,
+            },
+            {
+              name: "Arvind",
+              role: "Senior Mountaineer",
+              img: Imagearvind,
+            },
+            {
+              name: "Astha Doval",
+              role: "Cyclist ",
+              img: Imageastha,
+            },
+            {
+              name: "Raghav",
+              role: "Cycling Instructor",
+              img: Imageraghav,
+            },
+            {
+              name: "Sonam Rana",
+              role: "Kayak Instructor",
+              img: Imagesonam,
+            },
+            {
+              name: "unk",
+              role: "unk",
+              img: Imageunk,
+            },
           ].map((member, index) => (
             <div
               key={index}
@@ -169,39 +207,39 @@ const AboutUs = () => {
             </div>
           ))}
         </div>
-        <div className="shadow-2xl overflow-hidden rounded-lg">
+        <div className="shadow-2xl overflow-hidden lg:p-8 bg-white">
           <img
             src={Image3}
             alt="Founder"
-            className="w-full h-full object-cover rounded-lg"
+            className="w-full h-full object-cover lg:p-8 bg-white"
           />
         </div>
-        <div className="shadow-2xl overflow-hidden rounded-lg">
+        <div className="shadow-2xl overflow-hidden lg:p-8 bg-white">
           <img
             src={Image4}
             alt="Founder"
-            className="w-full h-full object-cover rounded-lg"
+            className="w-full h-full object-cover lg:p-8 bg-white"
           />
         </div>
-        <div className="shadow-2xl overflow-hidden rounded-lg">
+        <div className="shadow-2xl overflow-hidden lg:p-8 bg-white">
           <img
             src={Image5}
             alt="Founder"
-            className="w-full h-full object-cover rounded-lg"
+            className="w-full h-full object-cover lg:p-8 bg-white"
           />
         </div>
-        <div className="shadow-2xl overflow-hidden rounded-lg">
+        <div className="shadow-2xl overflow-hidden lg:p-8 bg-white">
           <img
             src={Image6}
             alt="Founder"
-            className="w-full h-full object-cover rounded-lg"
+            className="w-full h-full object-cover lg:p-8 bg-white"
           />
         </div>
-        <div className="shadow-2xl overflow-hidden rounded-lg">
+        <div className="shadow-2xl overflow-hidden lg:p-8 bg-white">
           <img
             src={Image7}
             alt="Founder"
-            className="w-full h-full object-cover rounded-lg"
+            className="w-full h-full object-cover lg:p-8 bg-white"
           />
         </div>
       </div>

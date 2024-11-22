@@ -137,10 +137,12 @@ const PropertiesCard = ({ selectedLocation = "All" }) => {
           <div className="flex items-center justify-between px-6 py-4 bg-[#091F3C] rounded-b-lg text-white">
             <Link
               to={property.exploremoreRoute}
-              className="px-4 py-2 border border-white rounded-full hover:bg-white hover:text-[#43A181] transition-colors duration-300 font-medium"
+              onClick={() => window.scrollTo(0, 0)} // Scroll to top on click
+              className="mt-2 px-4 py-2 border border-white rounded-full hover:bg-[#43A181] hover:text-white transition whitespace-nowrap"
             >
               Explore More
             </Link>
+
             <button className="bg-white text-[#091F3C] px-4 py-2 rounded-lg font-bold hover:bg-gray-100 transition-colors duration-300">
               Book Now
             </button>

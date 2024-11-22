@@ -9,59 +9,73 @@ import "./TestiSwiper.css";
 
 const testData = [
   {
-    name: "Aarav Mehta",
+    name: "Tushar Bhagwane",
     review:
-      "The cottage is nestled in a serene location with a spectacular view. My family enjoyed the cozy ambiance and the barbecue evening was a delightful experience. The staff went above and beyond to make our stay comfortable.",
-    address: "Mall Road, Manali",
+      "I had a fantastic stay at this hotel! The rooms were spacious, clean, and well-equipped. The staff were incredibly friendly and went above and beyond. Highly recommended for a relaxing and enjoyable stay!",
+    address: "Dhanaulti, Uttarakhand",
     img: "https://sundaysforever-bucket.s3.ap-south-1.amazonaws.com/1678346878480.jpeg",
   },
   {
-    name: "Priya Sharma",
+    name: "Hrishabh Vashishtha",
     review:
-      "A charming little hideaway in the heart of Barlow’s Ganj. The rooms were clean, and the food was delicious. The staff’s warm hospitality added a special touch to our vacation.",
-    address: "Mall Road, Manali",
+      "Into the Wild is an absolute gem! The interiors are cozy, the location is stunning, and the peaceful surroundings make it a perfect retreat. Truly refreshing and rejuvenating.",
+    address: "Dhanaulti, Uttarakhand",
     img: "https://sundaysforever-bucket.s3.ap-south-1.amazonaws.com/1678346878480.jpeg",
   },
   {
-    name: "Rohan Verma",
+    name: "Manish Rathore",
     review:
-      "This cottage is perfect for a peaceful getaway. The location is fantastic, and the arranged bonfire made the evenings magical. Kudos to the staff for their attentive service and great food!",
-    address: "Mall Road, Manali",
+      "Amazing stay at Into the Wild! Spacious cottage, stunning views, and delicious food. The staff was friendly and accommodating. A perfect nature getaway!",
+    address: "Dhanaulti, Uttarakhand",
     img: "https://sundaysforever-bucket.s3.ap-south-1.amazonaws.com/1678346878480.jpeg",
   },
   {
-    name: "Ananya Gupta",
+    name: "Achyut Pandey",
     review:
-      "Tucked away in a scenic spot, this cottage exceeded our expectations. The rooms were cozy, and the barbecue dinner was a highlight. The staff was courteous and ensured our stay was memorable.",
-    address: "Mall Road, Manali",
+      "Beautiful place to spend time with family and friends. Spacious cottages and a blissful valley view from the watchtower. Highly recommended!",
+    address: "Dhanaulti, Uttarakhand",
     img: "https://sundaysforever-bucket.s3.ap-south-1.amazonaws.com/1678346878480.jpeg",
   },
   {
-    name: "Karan Singh",
+    name: "Arvind Nagar",
     review:
-      "A fantastic place to unwind with family. The cottage’s location is unbeatable, and the service was impeccable. The food, especially the barbecue, was simply amazing. Highly recommend this spot!",
-    address: "Mall Road, Manali",
+      "The location and view are worth every penny. Wonderful hospitality, and Uncle ji took great care of us like family. Will definitely come back soon!",
+    address: "Dhanaulti, Uttarakhand",
     img: "https://sundaysforever-bucket.s3.ap-south-1.amazonaws.com/1678346878480.jpeg",
   },
   {
-    name: "Meera Nair",
+    name: "Shivam Mishra",
     review:
-      "We had a wonderful time at this charming cottage. The surroundings were beautiful, and the staff’s hospitality made it even better. The food was top-notch, and the barbecue night was an unforgettable experience.",
-    address: "Mall Road, Manali",
+      "Amazing stay with stunning views from the windows. The food, especially honey chilli potatoes and momos, was delicious. Highly recommended!",
+    address: "Dhanaulti, Uttarakhand",
     img: "https://sundaysforever-bucket.s3.ap-south-1.amazonaws.com/1678346878480.jpeg",
   },
   {
-    name: "Aditya Patel",
+    name: "Anjali Sharma",
     review:
-      "This cozy cottage was the perfect escape from the city. The barbecue evening was well-organized, and the staff’s friendly demeanor made our stay even more enjoyable. Will definitely visit again!",
-    address: "Mall Road, Manali",
+      "A very beautiful and cozy cottage with an amazing mountain view. Perfect for a hill station staycation!",
+    address: "Dhanaulti, Uttarakhand",
     img: "https://sundaysforever-bucket.s3.ap-south-1.amazonaws.com/1678346878480.jpeg",
   },
   {
-    name: "Isha Kapoor",
+    name: "Rajat Sharma",
     review:
-      "An absolutely delightful place to stay. The cottage is well-maintained, and the barbecue evening was a highlight of our trip. The staff’s efforts to make us feel at home were truly appreciated.",
-    address: "Mall Road, Manali",
+      "Located near Eco Park, this stay is vibrant and spacious. Modern cottages with a close-to-nature feel. Loved the hospitality and food!",
+    address: "Dhanaulti, Uttarakhand",
+    img: "https://sundaysforever-bucket.s3.ap-south-1.amazonaws.com/1678346878480.jpeg",
+  },
+  {
+    name: "Msc Bill",
+    review:
+      "Dhanaulti is beautiful, and Into the Wild homestay is the best place to stay. Amazing rooms and services!",
+    address: "Dhanaulti, Uttarakhand",
+    img: "https://sundaysforever-bucket.s3.ap-south-1.amazonaws.com/1678346878480.jpeg",
+  },
+  {
+    name: "Vasu Agarwal",
+    review:
+      "What an amazing experience! The cottages and mesmerizing views made the New Year celebration unforgettable. Delicious food and professional staff!",
+    address: "Dhanaulti, Uttarakhand",
     img: "https://sundaysforever-bucket.s3.ap-south-1.amazonaws.com/1678346878480.jpeg",
   },
 ];
@@ -100,13 +114,8 @@ const Testimonials = () => {
       >
         {testData.map((testimon, index) => (
           <SwiperSlide key={index}>
-            <div className="flex flex-col items-center bg-white p-4 shadow-md rounded-lg border border-gray-200">
-              {/* Reviewer Image */}
-              {/* <img
-                className="w-16 h-16 rounded-full border-2 border-[#F77706] shadow-sm"
-                src={testimon.img}
-                alt={testimon.name}
-              /> */}
+            <div className="flex flex-col h-[25vh] items-center bg-white p-4 shadow-md rounded-lg border border-gray-200">
+        
 
               {/* Review Text */}
               <div className="mt-4 text-center">
@@ -116,7 +125,7 @@ const Testimonials = () => {
                 <h2 className="text-lg font-semibold text-gray-800 mt-2">
                   {testimon.name}
                 </h2>
-                <p className="text-xs text-gray-500">{testimon.address}</p>
+                {/* <p className="text-xs text-gray-500">{testimon.address}</p> */}
               </div>
             </div>
           </SwiperSlide>
