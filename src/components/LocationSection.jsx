@@ -1,6 +1,6 @@
-import Image1 from "../assets/itw/_MG_8666.jpg";
-import Image2 from "../assets/Sun and Sand Goa/Property Photo and videos/345552PM.jpeg"
-import Image3 from "../assets/pineandtails/IMG_6597.JPG";
+import Image1 from "../assets/itw/MG8666.jpg";
+import Image2 from "../assets/Sun and Sand Goa/Property Photo and videos/345552PM.jpeg";
+import Image3 from "../assets/pineandtails/IMG_6597.jpg";
 import Image4 from "../assets/majuli/Property Photo/18PM.jpeg";
 
 const locations = [
