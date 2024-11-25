@@ -9,7 +9,7 @@ import { IoPeople } from "react-icons/io5";
 import Image1 from "../assets/itw/IMG-20240530-WA0015.jpg";
 import Image2 from "../assets/pineandtails/pnt1.jpg";
 import Image3 from "../assets/majuli/majuli1.jpeg";
-import Image4 from "../assets/Sun and Sand Goa/Property Photo and videos/54PM.jpeg";
+import Image4 from "../assets/SunandSandGoa/54PM.jpeg";
 
 
 import { Link } from "react-router-dom";

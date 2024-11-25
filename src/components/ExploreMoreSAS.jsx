@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaArrowAltCircleDown, FaArrowAltCircleUp } from "react-icons/fa";
-import img1 from "../assets/Sun and Sand Goa/Property Photo and videos/50PM.jpeg";
-import img2 from "../assets/Sun and Sand Goa/Property Photo and videos/51PM.jpeg";
-import img3 from "../assets/Sun and Sand Goa/Property Photo and videos/53PM.jpeg";
-import img4 from "../assets/Sun and Sand Goa/Property Photo and videos/52PM.jpeg";
+import img1 from "../assets/SunandSandGoa/50PM.jpeg";
+import img2 from "../assets/SunandSandGoa/51PM.jpeg";
+import img3 from "../assets/SunandSandGoa/53PM.jpeg";
+import img4 from "../assets/SunandSandGoa/52PM.jpeg";
 
 const galleryImages = [img1, img2, img3, img4];
 
