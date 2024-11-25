@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { FaArrowAltCircleDown, FaArrowAltCircleUp } from "react-icons/fa";
 import img1 from "../assets/Sun and Sand Goa/Property Photo and videos/50PM.jpeg";
 import img2 from "../assets/Sun and Sand Goa/Property Photo and videos/51PM.jpeg";
@@ -91,150 +92,246 @@ const ExploreMoreSAS = () => {
     }
   };
 
+
+
+
+
   return (
-    <div className="container w-full min-h-screen px-4 py-16 bg-gray-50 text-center">
-      <h1 className="text-5xl font-bold text-[#091F3C] my-6">
-        Sun and Sand Villa
-      </h1>
-      <p className="text-lg font-medium text-gray-600 mb-12 max-w-4xl mx-auto">
-        Escape to luxury at this beautiful 4BHK private pool villa, offering
-        stunning sea views in Porvorim, North Goa. This villa is perfect for a
-        serene getaway with family and friends, combining privacy with elegance.
-        Relax by the pool, enjoy the picturesque views, and indulge in the
-        ultimate comfort.
-      </p>
-      <div className="mb-12">
-        <h2 className="text-3xl font-bold text-[#3C8D99] mb-6">Gallery</h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+    <div className="min-h-screen bg-gradient-to-br from-[#091F3C] to-[#3C8D99] px-6 lg:px-32 py-40 text-white">
+      {/* Hero Section */}
+      <motion.h1
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="text-center text-4xl font-bold tracking-wide mb-6"
+      >
+        Sunrise Alpine Stay: Premium Cottages in the Heart of Nature
+      </motion.h1>
+      <motion.p
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        className="text-center text-lg max-w-3xl mx-auto mb-12"
+      >
+        Welcome to Sunrise Alpine Stay, where luxury meets nature. Experience our premium cottages set against breathtaking mountain vistas, offering the perfect blend of comfort and natural beauty. Each stay is crafted to provide an unforgettable escape from city life.
+      </motion.p>
+
+      {/* Gallery Section */}
+      <motion.div
+        className="mb-16"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+      >
+        <h2 className="text-3xl font-bold text-center mb-8">Gallery</h2>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {galleryImages.map((image, index) => (
-            <div
+            <motion.div
               key={index}
-              className="h-48 bg-cover bg-center rounded-lg shadow-lg"
-              style={{ backgroundImage: `url(${image})` }}
-            ></div>
+              initial={{ scale: 0.8, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+              className="relative overflow-hidden rounded-lg shadow-lg"
+            >
+              <img
+                src={image}
+                alt={`Gallery ${index + 1}`}
+                className="object-cover w-full h-64 transition-transform duration-300 hover:scale-105"
+              />
+            </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
 
-      {/* Property Details Section */}
-      <div className="text-left space-y-6 mb-12 max-w-3xl mx-auto bg-white shadow-lg p-6 rounded-lg">
-        <h2 className="text-2xl font-bold text-[#3C8D99]">Property Details</h2>
-        <ul className="list-disc ml-6 space-y-2">
-          <li>Stay Type: 4BHK Private Pool, Seaview Villa</li>
-          <li>Max Capacity: 10 persons</li>
-          <li>Price: ₹11,000 - ₹16,000 per night</li>
+      {/* Property Details */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="bg-white bg-opacity-10 backdrop-blur-lg p-8 rounded-lg mb-16 shadow-xl"
+      >
+        <h2 className="text-2xl font-semibold text-center mb-4">Property Details</h2>
+        <ul className="list-disc ml-6 space-y-3">
+          <li>Cottages: 6 Premium Cottages</li>
+          <li>Guest Capacity: 4 persons per cottage</li>
+          <li>Maximum Capacity: 24 persons</li>
+          <li>Price Per Cottage: ₹5000</li>
           <li>
             Location:{" "}
-            <a
-              href="https://www.google.com/maps/place/Apartment+F102/@15.5100589,73.7715592,17z/data=!4m9!3m8!1s0x3bbfc1ba99de5c45:0xe691091bef6ce833!5m2!4m1!1i2!8m2!3d15.5100537!4d73.7741341!16s%2Fg%2F11sfpgzts2?entry=ttu&amp;g_ep=EgoyMDI0MTEwNi4wIKXMDSoASAFQAw%3D%3D"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-500 underline"
-            >
-              View on Google Maps
-            </a>
+            <a href="#" className="text-blue-300 underline">View on Google Maps</a>
           </li>
-          <li>Address: Sun N Sand, F102 Monarch Palm, Candolim, Goa 403519</li>
+          <li>Address: Sunrise Alpine Stay, Mountain View Road</li>
         </ul>
-      </div>
-
-      {/* Things to Do Section */}
-      <div className="text-left space-y-6 mb-12 max-w-3xl mx-auto bg-white shadow-lg p-6 rounded-lg">
-        <h2 className="text-2xl font-bold text-[#3C8D99]">
-          Things to Do at the Villa
-        </h2>
-        <ul className="list-disc ml-6 space-y-2">
-          <li>Enjoy the private swimming pool with stunning sea views.</li>
-          <li>Relax in the spacious garden/lawn area.</li>
-          <li>Host a private event or gathering by the poolside.</li>
-          <li>Explore the nearby Candolim beach and local markets.</li>
-          <li>
-            Take a scenic drive to explore Goa’s vibrant culture and heritage.
-          </li>
-        </ul>
-      </div>
-
-      {/* FAQs Section */}
-      <h2 className="text-3xl font-bold text-[#3C8D99] mb-6">FAQs</h2>
-      <div className="space-y-6 mb-12 max-w-2xl mx-auto">
-        {faqs.map((faq, index) => (
-          <div
-            key={`faq-${index}`}
-            className="p-4 border rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out bg-white"
-          >
-            <div
-              onClick={() => toggleFaq(index)}
-              className="cursor-pointer flex items-center justify-between text-xl font-semibold text-[#091F3C] hover:text-[#3C8D99] transition-all duration-200 ease-in-out"
-            >
-              <span>{faq.question}</span>
-              <span>
-                {openIndex === index ? (
-                  <FaArrowAltCircleUp size={20} />
-                ) : (
-                  <FaArrowAltCircleDown size={20} />
-                )}
-              </span>
-            </div>
-            <div
-              className={`mt-3 transition-all duration-300 ease-in-out ${
-                openIndex === index ? "max-h-screen" : "max-h-0 overflow-hidden"
-              }`}
-            >
-              {openIndex === index && (
-                <p className="text-gray-600 mt-2">{faq.answer}</p>
-              )}
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* Booking Policies Section */}
-      <h2 className="text-3xl font-bold text-[#3C8D99] mb-6">
-        Booking Policies
-      </h2>
-      <ul className="list-disc ml-6 mb-12 space-y-2 text-left max-w-3xl mx-auto bg-white shadow-lg p-6 rounded-lg">
-        {bookingPolicies.map((policy, index) => (
-          <li key={`policy-${index}`}>{policy}</li>
-        ))}
-      </ul>
-
-      {/* Refund & Rescheduling Policy Section */}
-      <h2 className="text-3xl font-bold text-[#3C8D99] mb-6">
-        Refund & Rescheduling Policy
-      </h2>
-      <ul className="list-disc ml-6 mb-12 space-y-2 text-left max-w-3xl mx-auto bg-white shadow-lg p-6 rounded-lg">
-        {refundAndReschedulingPolicy.map((policy, index) => (
-          <li key={`refund-policy-${index}`}>{policy}</li>
-        ))}
-      </ul>
-
-      {/* Cancellation Policy Section */}
-      <h2 className="text-3xl font-bold text-[#3C8D99] mb-6">
-        Cancellation Policy
-      </h2>
-      <ul className="list-disc ml-6 mb-12 space-y-2 text-left max-w-3xl mx-auto bg-white shadow-lg p-6 rounded-lg">
-        {cancellationPolicy.map((policy, index) => (
-          <li key={`cancellation-policy-${index}`}>{policy}</li>
-        ))}
-      </ul>
-
-      {/* Things You Need to Know Section */}
-      <h2 className="text-3xl font-bold text-[#3C8D99] mb-6">
-        Things You Need to Know
-      </h2>
-      <ul className="list-disc ml-6 mb-12 space-y-2 text-left max-w-3xl mx-auto bg-white shadow-lg p-6 rounded-lg">
-        {thingsToKnow.map((item, index) => (
-          <li key={`thing-to-know-${index}`}>{item}</li>
-        ))}
-      </ul>
+      </motion.div>
 
       {/* Amenities Section */}
-      <h2 className="text-3xl font-bold text-[#3C8D99] mb-6">Amenities</h2>
-      <ul className="list-disc ml-6 mb-12 space-y-2 text-left max-w-3xl mx-auto bg-white shadow-lg p-6 rounded-lg">
-        {amenities.map((amenity, index) => (
-          <li key={`amenity-${index}`}>{amenity}</li>
-        ))}
-      </ul>
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="mb-16"
+      >
+        <h2 className="text-3xl font-bold text-center mb-8">Amenities</h2>
+        <div className="bg-white bg-opacity-10 backdrop-blur-lg p-8 rounded-lg shadow-xl">
+          <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            {amenities.map((amenity, index) => (
+              <motion.li
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.2 }}
+                className="text-gray-300 flex items-center space-x-2"
+              >
+                <span className="inline-block w-2.5 h-2.5 bg-teal-400 rounded-full"></span>
+                <span>{amenity}</span>
+              </motion.li>
+            ))}
+          </ul>
+        </div>
+      </motion.div>
+
+      {/* FAQs Section */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="mb-16"
+      >
+        <h2 className="text-3xl font-bold text-center mb-8">FAQs</h2>
+        <div className="space-y-6">
+          {faqs.map((faq, index) => (
+            <motion.div
+              key={index}
+              initial={{ scale: 0.95, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+              className="bg-white bg-opacity-10 backdrop-blur-lg p-6 rounded-lg shadow-xl cursor-pointer"
+              onClick={() => toggleFaq(index)}
+            >
+              <div className="flex justify-between items-center">
+                <span className="text-lg font-medium">{faq.question}</span>
+                {openIndex === index ? (
+                  <FaArrowAltCircleUp className="text-xl" />
+                ) : (
+                  <FaArrowAltCircleDown className="text-xl" />
+                )}
+              </div>
+              {openIndex === index && (
+                <motion.p
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="mt-4 text-gray-300"
+                >
+                  {faq.answer}
+                </motion.p>
+              )}
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
+
+      {/* Booking Policies */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="mb-16"
+      >
+        <h2 className="text-3xl font-bold text-center mb-8">Booking Policies</h2>
+        <div className="bg-white bg-opacity-10 backdrop-blur-lg p-8 rounded-lg shadow-xl">
+          <ul className="list-disc ml-6 space-y-3">
+            {bookingPolicies.map((policy, index) => (
+              <motion.li
+                key={index}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.2 }}
+                className="text-gray-300"
+              >
+                {policy}
+              </motion.li>
+            ))}
+          </ul>
+        </div>
+      </motion.div>
+
+      {/* Cancellation Policy */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="mb-16"
+      >
+        <h2 className="text-3xl font-bold text-center mb-8">Cancellation Policy</h2>
+        <div className="bg-white bg-opacity-10 backdrop-blur-lg p-8 rounded-lg shadow-xl">
+          <ul className="list-disc ml-6 space-y-3">
+            {cancellationPolicy.map((policy, index) => (
+              <motion.li
+                key={index}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.2 }}
+                className="text-gray-300"
+              >
+                {policy}
+              </motion.li>
+            ))}
+          </ul>
+        </div>
+      </motion.div>
+
+      {/* Refund and Rescheduling Policy */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="mb-16"
+      >
+        <h2 className="text-3xl font-bold text-center mb-8">Refund and Rescheduling Policy</h2>
+        <div className="bg-white bg-opacity-10 backdrop-blur-lg p-8 rounded-lg shadow-xl">
+          <ul className="space-y-4 text-lg">
+            {refundAndReschedulingPolicy.map((policy, index) => (
+              <motion.li
+                key={index}
+                initial={{ opacity: 0, translateY: 10 }}
+                whileInView={{ opacity: 1, translateY: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.2 }}
+                className="flex items-start gap-3"
+              >
+                <span className="w-4 h-4 bg-blue-500 rounded-full flex-shrink-0"></span>
+                <span className="text-gray-300">{policy}</span>
+              </motion.li>
+            ))}
+          </ul>
+        </div>
+      </motion.div>
+
+      {/* Things to Know */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="mb-16"
+      >
+        <h2 className="text-3xl font-bold text-center mb-8">Things to Know</h2>
+        <div className="bg-white bg-opacity-10 backdrop-blur-lg p-8 rounded-lg shadow-xl">
+          <ul className="space-y-4 text-lg">
+            {thingsToKnow.map((thing, index) => (
+              <motion.li
+                key={index}
+                initial={{ opacity: 0, translateY: 10 }}
+                whileInView={{ opacity: 1, translateY: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.2 }}
+                className="flex items-start gap-3"
+              >
+                <span className="w-4 h-4 bg-green-500 rounded-full flex-shrink-0"></span>
+                <span className="text-gray-300">{thing}</span>
+              </motion.li>
+            ))}
+          </ul>
+        </div>
+      </motion.div>
     </div>
   );
 };

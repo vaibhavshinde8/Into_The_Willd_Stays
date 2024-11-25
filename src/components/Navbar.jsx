@@ -42,10 +42,10 @@ export default function Navbar() {
               Tours & Events
             </Link>
             <Link
-              to="/blogs"
+              to="/blog"
               className="text-gray-200 hover:text-primary px-3 py-2 text-lg transition duration-300"
             >
-              Blogs
+              Blog
             </Link>
             <Link
               to="/about-us"
@@ -106,10 +106,10 @@ export default function Navbar() {
               Tour
             </Link>
             <Link
-              to="/blogs"
+              to="/blog"
               className="block text-gray-200 hover:text-primary px-3 py-2 rounded-md text-base font-medium transition duration-300"
             >
-              Blogs
+              Blog
             </Link>
             <Link
               to="/about-us"

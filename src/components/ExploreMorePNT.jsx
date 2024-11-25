@@ -1,11 +1,25 @@
 import { useState } from "react";
+  import { motion } from "framer-motion";
+
 import { FaArrowAltCircleDown, FaArrowAltCircleUp } from "react-icons/fa";
 import img1 from "../assets/pineandtails/IMG_6555.jpg";
 import img2 from "../assets/pineandtails/IMG_6567.jpg";
 import img3 from "../assets/pineandtails/IMG_6577.jpg";
 import img4 from "../assets/pineandtails/IMG_6593.jpg";
 
+// Data for Gallery, FAQs, Policies, and Amenities
 const galleryImages = [img1, img2, img3, img4];
+
+const propertyDetails = {
+  rooms: 5,
+  guestCapacity: "2 persons per room",
+  maxCapacity: 12,
+  pricePerRoom: "₹3500",
+  totalPriceFor12: "₹13,500",
+  stayType: "5BHK Valley View Private Villa",
+  location: "8CWX+WR2, New Tehri, Nawagarh, Uttarakhand 249001",
+  address: "Pine Tales, Sursingdhar New Tehri",
+};
 
 const faqs = [
   {
@@ -62,8 +76,6 @@ const amenities = [
   "Breakfast",
 ];
 
-// const galleryImages = [img1, img2, img3, img4];
-
 const ExploreMorePNT = () => {
   const [openIndex, setOpenIndex] = useState(null);
 
@@ -75,108 +87,221 @@ const ExploreMorePNT = () => {
     }
   };
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   return (
-    <div className="container w-full min-h-screen px-4 py-32 bg-gray-50 text-center">
-      <h1 className="text-5xl font-bold text-[#091F3C] my-6">
+    <div className="min-h-screen bg-gradient-to-br from-[#091F3C] to-[#3C8D99] px-6 lg:px-32 py-40 text-white">
+      {/* Header Section */}
+      <motion.h1
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="text-center text-4xl font-bold tracking-wide mb-6"
+      >
         Pine Tales: A 5BHK Valley View Private Villa
-      </h1>
-      <p className="text-lg font-medium text-gray-600 mb-12 max-w-4xl mx-auto">
+      </motion.h1>
+      
+      <motion.p
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        className="text-center text-lg max-w-3xl mx-auto mb-12"
+      >
         Nestled near the serene Tehri Dam in Uttarakhand, Pine Tales Villa is a
         private mountain retreat, perfect for families and friends. Offering
         breathtaking valley views, our villa is designed for those seeking a
         cozy escape in nature.
-      </p>
+      </motion.p>
 
       {/* Gallery Section */}
-      <div className="mb-12">
-        <h2 className="text-3xl font-bold text-[#3C8D99] mb-6">Gallery</h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <motion.div
+        className="mb-16"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+      >
+        <h2 className="text-3xl font-bold text-center mb-8">Gallery</h2>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {galleryImages.map((image, index) => (
-            <div
+            <motion.div
               key={index}
-              className="h-48 bg-cover bg-center rounded-lg shadow-lg"
-              style={{ backgroundImage: `url(${image})` }}
-            ></div>
+              initial={{ scale: 0.8, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+              className="relative overflow-hidden rounded-lg shadow-lg"
+            >
+              <img
+                src={image}
+                alt={`Gallery ${index + 1}`}
+                className="object-cover w-full h-64 transition-transform duration-300 hover:scale-105"
+              />
+            </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
 
       {/* Property Details */}
-      <div className="text-left space-y-6 mb-12 max-w-3xl mx-auto bg-white shadow-lg p-6 rounded-lg">
-        <h2 className="text-2xl font-bold text-[#3C8D99]">Property Details</h2>
-        <ul className="list-disc ml-6 space-y-2">
-          <li>Number of Rooms: 5</li>
-          <li>Guest Capacity: 2 persons per room</li>
-          <li>Maximum Capacity: 12 persons</li>
-          <li>Price Per Room: ₹3500</li>
-          <li>Total Price for 12 Persons: ₹13,500</li>
-          <li>Stay Type: 5BHK Valley View Private Villa</li>
-          <li>Location: 8CWX+WR2, New Tehri, Nawagarh, Uttarakhand 249001</li>
-          <li>Address: Pine Tales, Sursingdhar New Tehri</li>
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="bg-white bg-opacity-10 backdrop-blur-lg p-8 rounded-lg mb-16 shadow-xl"
+      >
+        <h2 className="text-2xl font-semibold text-center mb-4">
+          Property Details
+        </h2>
+        <ul className="list-disc ml-6 space-y-3">
+          <li>Number of Rooms: {propertyDetails.rooms}</li>
+          <li>Guest Capacity: {propertyDetails.guestCapacity}</li>
+          <li>Maximum Capacity: {propertyDetails.maxCapacity} persons</li>
+          <li>Price Per Room: {propertyDetails.pricePerRoom}</li>
+          <li>Total Price for 12 Persons: {propertyDetails.totalPriceFor12}</li>
+          <li>Stay Type: {propertyDetails.stayType}</li>
+          <li>Location: {propertyDetails.location}</li>
+          <li>Address: {propertyDetails.address}</li>
         </ul>
-      </div>
+      </motion.div>
 
-      {/* FAQs Section */}
-      <h2 className="text-3xl font-bold text-[#3C8D99] mb-6">FAQs</h2>
-      <div className="space-y-6 mb-12 max-w-2xl mx-auto">
-        {faqs.map((faq, index) => (
-          <div
-            key={`faq-${index}`}
-            className="p-4 border rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out bg-white"
-          >
-            <div
+      {/* FAQs */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="mb-16"
+      >
+        <h2 className="text-3xl font-bold text-center mb-8">FAQs</h2>
+        <div className="space-y-6">
+          {faqs.map((faq, index) => (
+            <motion.div
+              key={index}
+              initial={{ scale: 0.95, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+              className="bg-white bg-opacity-10 backdrop-blur-lg p-6 rounded-lg shadow-xl cursor-pointer"
               onClick={() => toggleFaq(index)}
-              className="cursor-pointer flex items-center justify-between text-xl font-semibold text-[#091F3C] hover:text-[#3C8D99] transition-all duration-200 ease-in-out"
             >
-              <span>{faq.question}</span>
-              <span>
+              <div className="flex justify-between items-center">
+                <span className="text-lg font-medium">{faq.question}</span>
                 {openIndex === index ? (
-                  <FaArrowAltCircleUp size={20} />
+                  <FaArrowAltCircleUp className="text-xl" />
                 ) : (
-                  <FaArrowAltCircleDown size={20} />
+                  <FaArrowAltCircleDown className="text-xl" />
                 )}
-              </span>
-            </div>
-            <div
-              className={`mt-3 transition-all duration-300 ease-in-out ${
-                openIndex === index ? "max-h-screen" : "max-h-0 overflow-hidden"
-              }`}
-            >
+              </div>
               {openIndex === index && (
-                <p className="text-gray-600 mt-2">{faq.answer}</p>
+                <motion.p
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="mt-4 text-gray-300"
+                >
+                  {faq.answer}
+                </motion.p>
               )}
-            </div>
-          </div>
-        ))}
-      </div>
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
 
-      {/* Booking Policies Section */}
-      <h2 className="text-3xl font-bold text-[#3C8D99] mb-6">
-        Booking Policies
-      </h2>
-      <ul className="list-disc ml-6 mb-12 space-y-2 text-left max-w-3xl mx-auto bg-white shadow-lg p-6 rounded-lg">
-        {bookingPolicies.map((policy, index) => (
-          <li key={`policy-${index}`}>{policy}</li>
-        ))}
-      </ul>
+      {/* Booking Policies */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="mb-16"
+      >
+        <h2 className="text-3xl font-bold text-center mb-8">
+          Booking Policies
+        </h2>
+        <div className="bg-white bg-opacity-10 backdrop-blur-lg p-8 rounded-lg shadow-xl">
+          <ul className="list-disc ml-6 space-y-3">
+            {bookingPolicies.map((policy, index) => (
+              <motion.li
+                key={index}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.2 }}
+                className="text-gray-300"
+              >
+                {policy}
+              </motion.li>
+            ))}
+          </ul>
+        </div>
+      </motion.div>
 
-      {/* Cancellation Policy Section */}
-      <h2 className="text-3xl font-bold text-[#3C8D99] mb-6">
-        Cancellation and Refund Policy
-      </h2>
-      <ul className="list-disc ml-6 space-y-2 text-left max-w-3xl mx-auto bg-white shadow-lg p-6 rounded-lg">
-        {cancellationPolicy.map((policy, index) => (
-          <li key={`cancel-${index}`}>{policy}</li>
-        ))}
-      </ul>
+      {/* Cancellation Policy */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="mb-16"
+      >
+        <h2 className="text-3xl font-bold text-center mb-8">
+          Cancellation Policy
+        </h2>
+        <div className="bg-white bg-opacity-10 backdrop-blur-lg p-8 rounded-lg shadow-xl">
+          <ul className="list-disc ml-6 space-y-3">
+            {cancellationPolicy.map((policy, index) => (
+              <motion.li
+                key={index}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.2 }}
+                className="text-gray-300"
+              >
+                {policy}
+              </motion.li>
+            ))}
+          </ul>
+        </div>
+      </motion.div>
 
-      {/* Amenities Section */}
-      <h2 className="text-3xl font-bold text-[#3C8D99] mb-6">Amenities</h2>
-      <ul className="list-disc ml-6 mb-12 space-y-2 text-left max-w-3xl mx-auto bg-white shadow-lg p-6 rounded-lg">
-        {amenities.map((amenity, index) => (
-          <li key={`amenity-${index}`}>{amenity}</li>
-        ))}
-      </ul>
+      {/* Amenities */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="mb-16"
+      >
+        <h2 className="text-3xl font-bold text-center mb-8">Amenities</h2>
+        <div className="bg-white bg-opacity-10 backdrop-blur-lg p-8 rounded-lg shadow-xl">
+          <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            {amenities.map((amenity, index) => (
+              <motion.li
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.2 }}
+                className="text-gray-300 flex items-center space-x-2"
+              >
+                <span className="inline-block w-2.5 h-2.5 bg-teal-400 rounded-full"></span>
+                <span>{amenity}</span>
+              </motion.li>
+            ))}
+          </ul>
+        </div>
+      </motion.div>
     </div>
   );
 };

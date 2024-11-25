@@ -1,11 +1,13 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { FaArrowAltCircleDown, FaArrowAltCircleUp } from "react-icons/fa";
 import img1 from "../assets/itw/IMG-20240530-WA0002.jpg";
-import img2 from "../assets/itw/IMG_20220124_155502.jpg";
+import img2 from "../assets/itw/IMG-20240530-WA0017.jpg";
 import img3 from "../assets/itw/IMG-20240530-WA0014.jpg";
 import img4 from "../assets/itw/IMG-20240530-WA0019.jpg";
 
 const galleryImages = [img1, img2, img3, img4];
+
 
 const faqs = [
   {
@@ -64,48 +66,73 @@ const amenities = [
   "Breakfast",
 ];
 
-
 const ExploreMoreITW = () => {
   const [openIndex, setOpenIndex] = useState(null);
 
   const toggleFaq = (index) => {
-    if (openIndex === index) {
-      setOpenIndex(null);
-    } else {
-      setOpenIndex(index);
-    }
+    setOpenIndex(openIndex === index ? null : index);
   };
 
   return (
-    <div className="container w-full min-h-screen px-4 py-32 bg-gray-50 text-center">
-      <h1 className="text-5xl font-bold text-[#091F3C] my-6">
+    <div className="min-h-screen bg-gradient-to-br from-[#091F3C] to-[#3C8D99] px-6 lg:px-32 py-40 text-white">
+      <motion.h1
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="text-center text-4xl font-bold tracking-wide mb-6"
+      >
         Into The Wild: Premium Cottages near Eco Park Dhanolti
-      </h1>
-      <p className="text-lg font-medium text-gray-600 mb-12 max-w-4xl mx-auto">
+      </motion.h1>
+      <motion.p
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        className="text-center text-lg max-w-3xl mx-auto mb-12"
+      >
         Welcome to our premium cottages in Dhanolti, nestled near Mussoorie in
         one of the most serene locations close to Delhi NCR. Experience
         breathtaking valley views, fresh snowfall, and unmatched tranquility—a
         perfect weekend escape from the city. Embrace nature&apos;s beauty and
         relax in the comfort of our thoughtfully designed cottages, crafted for
         a peaceful and memorable getaway.
-      </p>
-      <div className="mb-12">
-        <h2 className="text-3xl font-bold text-[#3C8D99] mb-6">Gallery</h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      </motion.p>
+      {/* Gallery Section */}
+      <motion.div
+        className="mb-16"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+      >
+        <h2 className="text-3xl font-bold text-center mb-8">Gallery</h2>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {galleryImages.map((image, index) => (
-            <div
+            <motion.div
               key={index}
-              className="h-48 bg-cover bg-center rounded-lg shadow-lg"
-              style={{ backgroundImage: `url(${image})` }}
-            ></div>
+              initial={{ scale: 0.8, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+              className="relative overflow-hidden rounded-lg shadow-lg"
+            >
+              <img
+                src={image}
+                alt={`Gallery ${index + 1}`}
+                className="object-cover w-full h-64 transition-transform duration-300 hover:scale-105"
+              />
+            </motion.div>
           ))}
         </div>
-      </div>
-
-      {/* Property Details Section */}
-      <div className="text-left space-y-6 mb-12 max-w-3xl mx-auto bg-white shadow-lg p-6 rounded-lg">
-        <h2 className="text-2xl font-bold text-[#3C8D99]">Property Details</h2>
-        <ul className="list-disc ml-6 space-y-2">
+      </motion.div>
+      {/* Property Details */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="bg-white bg-opacity-10 backdrop-blur-lg p-8 rounded-lg mb-16 shadow-xl"
+      >
+        <h2 className="text-2xl font-semibold text-center mb-4">
+          Property Details
+        </h2>
+        <ul className="list-disc ml-6 space-y-3">
           <li>Cottages: 4 Cottages</li>
           <li>Guest Capacity: 4 persons per cottage</li>
           <li>Maximum Capacity: 24 persons</li>
@@ -113,79 +140,136 @@ const ExploreMoreITW = () => {
           <li>
             Location:{" "}
             <a
-              href="https://maps.app.goo.gl/AkzmRRrNmoKwFwFe7"
+              href="https://maps.app.goo.gl/GMdoxWp7mQPrUSF5A"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-500 underline"
+              className="text-blue-300 underline"
             >
               View on Google Maps
             </a>
           </li>
           <li>Address: Into The Wild Stays near Eco Park Dhanolti</li>
         </ul>
-      </div>
-
-      {/* FAQs Section */}
-      <h2 className="text-3xl font-bold text-[#3C8D99] mb-6">FAQs</h2>
-      <div className="space-y-6 mb-12 max-w-2xl mx-auto">
-        {faqs.map((faq, index) => (
-          <div
-            key={`faq-${index}`}
-            className="p-4 border rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out bg-white"
-          >
-            <div
+      </motion.div>
+      {/* FAQs */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="mb-16"
+      >
+        <h2 className="text-3xl font-bold text-center mb-8">FAQs</h2>
+        <div className="space-y-6">
+          {faqs.map((faq, index) => (
+            <motion.div
+              key={index}
+              initial={{ scale: 0.95, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+              className="bg-white bg-opacity-10 backdrop-blur-lg p-6 rounded-lg shadow-xl cursor-pointer"
               onClick={() => toggleFaq(index)}
-              className="cursor-pointer flex items-center justify-between text-xl font-semibold text-[#091F3C] hover:text-[#3C8D99] transition-all duration-200 ease-in-out"
             >
-              <span>{faq.question}</span>
-              <span>
+              <div className="flex justify-between items-center">
+                <span className="text-lg font-medium">{faq.question}</span>
                 {openIndex === index ? (
-                  <FaArrowAltCircleUp size={20} />
+                  <FaArrowAltCircleUp className="text-xl" />
                 ) : (
-                  <FaArrowAltCircleDown size={20} />
+                  <FaArrowAltCircleDown className="text-xl" />
                 )}
-              </span>
-            </div>
-            <div
-              className={`mt-3 transition-all duration-300 ease-in-out ${
-                openIndex === index ? "max-h-screen" : "max-h-0 overflow-hidden"
-              }`}
-            >
+              </div>
               {openIndex === index && (
-                <p className="text-gray-600 mt-2">{faq.answer}</p>
+                <motion.p
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="mt-4 text-gray-300"
+                >
+                  {faq.answer}
+                </motion.p>
               )}
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* Booking Policies Section */}
-      <h2 className="text-3xl font-bold text-[#3C8D99] mb-6">
-        Booking Policies
-      </h2>
-      <ul className="list-disc ml-6 mb-12 space-y-2 text-left max-w-3xl mx-auto bg-white shadow-lg p-6 rounded-lg">
-        {bookingPolicies.map((policy, index) => (
-          <li key={`policy-${index}`}>{policy}</li>
-        ))}
-      </ul>
-
-      {/* Cancellation Policy Section */}
-      <h2 className="text-3xl font-bold text-[#3C8D99] mb-6">
-        Cancellation and Refund Policy
-      </h2>
-      <ul className="list-disc ml-6 space-y-2 text-left max-w-3xl mx-auto bg-white shadow-lg p-6 rounded-lg">
-        {cancellationPolicy.map((policy, index) => (
-          <li key={`cancel-${index}`}>{policy}</li>
-        ))}
-      </ul>
-
-      {/* Amenities Section */}
-      <h2 className="text-3xl font-bold text-[#3C8D99] mb-6">Amenities</h2>
-      <ul className="list-disc ml-6 mb-12 space-y-2 text-left max-w-3xl mx-auto bg-white shadow-lg p-6 rounded-lg">
-        {amenities.map((amenity, index) => (
-          <li key={`amenity-${index}`}>{amenity}</li>
-        ))}
-      </ul>
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
+      {/* Additional Sections (Booking Policies, Cancellation, Amenities) */}{" "}
+      {/* Booking Policies */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="mb-16"
+      >
+        <h2 className="text-3xl font-bold text-center mb-8">
+          Booking Policies
+        </h2>
+        <div className="bg-white bg-opacity-10 backdrop-blur-lg p-8 rounded-lg shadow-xl">
+          <ul className="list-disc ml-6 space-y-3">
+            {bookingPolicies.map((policy, index) => (
+              <motion.li
+                key={index}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.2 }}
+                className="text-gray-300"
+              >
+                {policy}
+              </motion.li>
+            ))}
+          </ul>
+        </div>
+      </motion.div>
+      {/* Cancellation Policy */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="mb-16"
+      >
+        <h2 className="text-3xl font-bold text-center mb-8">
+          Cancellation Policy
+        </h2>
+        <div className="bg-white bg-opacity-10 backdrop-blur-lg p-8 rounded-lg shadow-xl">
+          <ul className="list-disc ml-6 space-y-3">
+            {cancellationPolicy.map((policy, index) => (
+              <motion.li
+                key={index}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.2 }}
+                className="text-gray-300"
+              >
+                {policy}
+              </motion.li>
+            ))}
+          </ul>
+        </div>
+      </motion.div>
+      {/* Amenities */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="mb-16"
+      >
+        <h2 className="text-3xl font-bold text-center mb-8">Amenities</h2>
+        <div className="bg-white bg-opacity-10 backdrop-blur-lg p-8 rounded-lg shadow-xl">
+          <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            {amenities.map((amenity, index) => (
+              <motion.li
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.2 }}
+                className="text-gray-300 flex items-center space-x-2"
+              >
+                <span className="inline-block w-2.5 h-2.5 bg-teal-400 rounded-full"></span>
+                <span>{amenity}</span>
+              </motion.li>
+            ))}
+          </ul>
+        </div>
+      </motion.div>
+      {/* Repeat Similar Patterns */}
     </div>
   );
 };

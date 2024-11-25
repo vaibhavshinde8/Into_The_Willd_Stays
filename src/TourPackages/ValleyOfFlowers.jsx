@@ -49,6 +49,8 @@ const ValleyOfFlowers = () => {
               {isExpanded ? "▲ Collapse Details" : "▼ More Details"}
             </button>
           </div>
+        <div className="bg-white shadow-lg rounded-lg ">
+          
 
           {/* Expandable Content */}
           {isExpanded && (
@@ -145,6 +147,7 @@ const ValleyOfFlowers = () => {
               </div>
             </div>
           )}
+        </div>
         </div>
       </div>
     </div>
