@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import Image1 from "../assets/IntotheWildStaysLogo.png";
 import Image2 from "../assets/goa/goa1.jpg";
-// import Image3 from "../assets/guestdiary/img-5.jpeg";
 import Image4 from "../assets/pineandtails/pnt1.jpg";
 
 const WhyITW = () => {
@@ -19,13 +18,7 @@ const WhyITW = () => {
       title: "Bespoke Hospitality",
       description: "Personalized service to make your stay memorable.",
     },
-    // {
-    //   image: Image3,
-    //   altText: "High quality linens & toiletries",
-    //   title: "High-Quality Linens & Toiletries",
-    //   description:
-    //     "Enjoy premium quality linens and toiletries during your stay.",
-    // },
+   
     {
       image: Image4,
       altText: "High quality linens & toiletries",

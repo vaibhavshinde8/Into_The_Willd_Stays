@@ -1,25 +1,21 @@
-import PropTypes from "prop-types";
-// import { IoLocationOutline } from "react-icons/io5";
+import React from 'react';
+import PropTypes from 'prop-types';
 import { MdOutlineBedroomParent, MdOutlineBathroom } from "react-icons/md";
 import { FaMapMarkerAlt } from "react-icons/fa";
-
 import { IoPeople } from "react-icons/io5";
-// import Image1 from "../assets/homehero1.png";
+import { Link } from "react-router-dom";
 
+// Import images (keep your existing imports)
 import Image1 from "../assets/itw/IMG-20240530-WA0015.jpg";
 import Image2 from "../assets/pineandtails/pnt1.jpg";
 import Image3 from "../assets/majuli/majuli1.jpeg";
 import Image4 from "../assets/SunandSandGoa/52PM.jpeg";
 
-
-import { Link } from "react-router-dom";
-
 const properties = [
   {
     imgURL: Image1,
     name: "Into the wilds stays",
-    description:
-      "Stay in a charming hilltop cottage with breathtaking views of Mussoorie's misty mountains and serene surroundings.",
+    description: "Stay in a charming hilltop cottage with breathtaking views of Mussoorie's misty mountains and serene surroundings.",
     location: "Dhanolti",
     rating: 4.6,
     reviews: 50,
@@ -30,9 +26,8 @@ const properties = [
   },
   {
     imgURL: Image2,
-    name: " ITW : Pines And Tails",
-    description:
-      "Stay Type;- 4BHK private pool, Seaview Villa, Porvorim North Goa.",
+    name: "ITW: Pines And Tails",
+    description: "Stay Type:- 4BHK private pool, Seaview Villa, Porvorim North Goa.",
     location: "Tehri",
     rating: 4.7,
     reviews: 30,
@@ -41,12 +36,10 @@ const properties = [
     guest: 12,
     exploremoreRoute: "/exploremorepnt",
   },
-
   {
     imgURL: Image3,
-    name: " ITW : Me:nam Homestay",
-    description:
-      "A tranquil retreat located in the lush green valleys of Dehradun, perfect for unwinding and enjoying the scenic beauty.",
+    name: "ITW: Me:nam Homestay",
+    description: "A tranquil retreat located in the lush green valleys of Dehradun, perfect for unwinding and enjoying the scenic beauty.",
     location: "Majuli",
     rating: 4.8,
     reviews: 40,
@@ -56,9 +49,8 @@ const properties = [
   },
   {
     imgURL: Image4,
-    name: " ITW : Sun and Sand Villa",
-    description:
-      "A tranquil retreat located in the lush green valleys of Dehradun, perfect for unwinding and enjoying the scenic beauty.",
+    name: "ITW: Sun and Sand Villa",
+    description: "A tranquil retreat located in the lush green valleys of Dehradun, perfect for unwinding and enjoying the scenic beauty.",
     location: "Goa",
     rating: 4.8,
     reviews: 40,
@@ -69,84 +61,67 @@ const properties = [
 ];
 
 const PropertiesCard = ({ selectedLocation = "All" }) => {
-  const filteredProperties =
+  const filteredProperties = 
     selectedLocation === "All"
       ? properties
       : properties.filter((property) => property.location === selectedLocation);
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-8 mx-4 sm:mx-0 max-w-6xl ">
-      {filteredProperties.map((property) => (
-        <div
-          key={property.name}
-          className="relative bg-white text-gray-900 rounded-lg shadow-lg border border-gray-200 hover:shadow-2xl transform transition-all duration-300 hover:scale-105 overflow-hidden"
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
+      {filteredProperties.map((property, index) => (
+        <div 
+          key={index} 
+          className="bg-white shadow-lg rounded-xl overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"
         >
           {/* Image Section */}
-          <div className="relative">
-            <img
-              className="rounded-t-lg h-72 w-full object-cover transition-transform transform hover:scale-105 duration-300"
-              src={property.imgURL}
-              alt={property.name}
+          <div className="relative h-64 w-full">
+            <img 
+              src={property.imgURL} 
+              alt={property.name} 
+              className="absolute inset-0 w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent rounded-t-lg opacity-60"></div>
+            <div className="absolute top-4 right-4 bg-white/75 px-3 py-1 rounded-full flex items-center">
+              <span className="text-yellow-500 mr-1">★</span>
+              <span className="text-gray-800">{property.rating}</span>
+              <span className="text-gray-500 ml-2">({property.reviews} reviews)</span>
+            </div>
           </div>
 
           {/* Property Details Section */}
-          <div className="p-6 space-y-4">
-            <h2 className="font-bold text-[#091F3C] text-2xl">
-              {property.name}
-            </h2>
-            <div className="flex flex-wrap space-x-2 mb-4 justify-center sm:justify-start">
-              {/* <span className="bg-[#43A181] rounded-full px-3 py-1 text-sm text-white font-semibold">
-                      {property.location.city}, {property.location.state}
-                    </span> */}
-              <span className="flex items-center bg-[#43A181] rounded-full px-3 py-1 text-sm text-white font-semibold">
-                <FaMapMarkerAlt className="mr-1" />{" "}
-                {/* Add the location icon */}
-                {property.location}
-              </span>
+          <div className="p-5">
+            <h2 className="text-xl font-bold mb-2 text-gray-800">{property.name}</h2>
+            <p className="text-gray-600 mb-4 line-clamp-2">{property.description}</p>
+
+            <div className="flex items-center text-gray-700 mb-3">
+              <FaMapMarkerAlt className="mr-2 text-[#43A181]" />
+              <span>{property.location}</span>
             </div>
 
-            <div className="flex gap-2 mt-4 text-gray-600 text-sm">
-              <div className="flex items-center gap-1">
-                <MdOutlineBedroomParent />
-                {property.bedroom} Bedroom{property.bedroom > 1 ? "s" : ""}
+            <div className="grid grid-cols-3 gap-2 mb-4 text-sm">
+              <div className="flex items-center">
+                <MdOutlineBedroomParent className="mr-1 text-[#43A181]" />
+                <span>{property.bedroom} Bedroom{property.bedroom > 1 ? 's' : ''}</span>
               </div>
-              <div className="flex items-center gap-1">
-                <MdOutlineBathroom />
-                {property.bathroom} Bathroom{property.bathroom > 1 ? "s" : ""}
-              </div>
-              <div className="flex items-center gap-1">
-                <IoPeople />
-                {property.guest} Guest{property.guest > 1 ? "s" : ""}
+              <div className="flex items-center">
+                <IoPeople className="mr-1 text-[#43A181]" />
+                <span>{property.guest} Guest{property.guest > 1 ? 's' : ''}</span>
               </div>
             </div>
 
-            <div className="flex items-center justify-between mt-4">
-              <h4 className="text-lg font-semibold text-gray-800">
-                From ₹
-                <span className="text-[#43A181] font-bold">
-                  {property.price}
-                </span>
-                /Night
-              </h4>
-              <span className="text-sm text-gray-400">(per cottage)</span>
+            {/* Price and Booking Section */}
+            <div className="flex justify-between items-center">
+              <div>
+                <span className="text-xl font-bold text-[#43A181]">₹{property.price}</span>
+                <span className="text-sm text-gray-500">/night</span>
+              </div>
+              <Link 
+                to={property.exploremoreRoute} 
+                onClick={() => window.scrollTo(0, 0)}
+                className="px-4 py-2 bg-[#43A181] text-white rounded-full hover:bg-[#2D7E63] transition"
+              >
+                Explore More
+              </Link>
             </div>
-          </div>
-
-          {/* Price and Booking Section */}
-          <div className="flex items-center justify-between px-6 py-4 bg-[#091F3C] rounded-b-lg text-white">
-            <Link
-              to={property.exploremoreRoute}
-              onClick={() => window.scrollTo(0, 0)} // Scroll to top on click
-              className="mt-2 px-4 py-2 border border-white rounded-full hover:bg-[#43A181] hover:text-white transition whitespace-nowrap"
-            >
-              Explore More
-            </Link>
-
-            <button className="bg-white text-[#091F3C] px-4 py-2 rounded-lg font-bold hover:bg-gray-100 transition-colors duration-300">
-              Book Now
-            </button>
           </div>
         </div>
       ))}
@@ -154,7 +129,6 @@ const PropertiesCard = ({ selectedLocation = "All" }) => {
   );
 };
 
-// Add prop validation
 PropertiesCard.propTypes = {
   selectedLocation: PropTypes.string,
 };

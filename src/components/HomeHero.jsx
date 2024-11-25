@@ -1,8 +1,14 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import heroImage1 from "../assets/guestdiary/img-2.jpg"; // Replace with the actual path to your hero image 1
-import heroImage2 from "../assets/guestdiary/img-4.jpg"; // Replace with the actual path to your hero image 2
-import heroImage3 from "../assets/guestdiary/img-5.jpeg"; // Replace with the actual path to your hero image 3
+import {
+  FaSearch,
+  FaMapMarkerAlt,
+  FaCalendarAlt,
+  FaUsers,
+} from "react-icons/fa";
+import heroImage1 from "../assets/guestdiary/img-2.jpg";
+import heroImage2 from "../assets/guestdiary/img-4.jpg";
+import heroImage3 from "../assets/guestdiary/img-5.jpeg";
 
 const images = [heroImage1, heroImage2, heroImage3];
 
@@ -15,67 +21,78 @@ const HomeHero = () => {
   const [showLocationDropdown, setShowLocationDropdown] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  // Change the background image every 5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 5000); // Change every 5 seconds
-    return () => clearInterval(interval); // Cleanup on component unmount
+    }, 5000);
+    return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="relative flex items-center justify-center h-screen bg-gradient-to-b from-blue-900 to-gray-800 overflow-hidden">
-      {/* Background Image */}
-      <img
-        src={images[currentImageIndex]}
-        alt="Background"
-        className="absolute inset-0 w-full h-full object-cover opacity-80 transition-opacity duration-1000"
-      />
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Animated Background */}
+      <div className="absolute inset-0 z-0">
+        {images.map((img, index) => (
+          <img
+            key={index}
+            src={img}
+            alt={`Background ${index + 1}`}
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+              index === currentImageIndex ? "opacity-100" : "opacity-0"
+            }`}
+          />
+        ))}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/80" />
+      </div>
 
-      {/* Overlay and Content */}
+      {/* Content Container */}
       <motion.div
-        className="relative flex items-center w-full h-full bg-black bg-opacity-50"
+        className="relative z-10 w-full max-w-6xl mx-auto px-4"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
       >
-        <div className="w-full flex flex-col items-center text-center px-4 space-y-8">
-          {/* Heading */}
-          <motion.h1
-            className="text-8xl sm:text-8xl md:text-8xl font-bold font-primaryF mb-4 tracking-wider text-white"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-          >
-            Into the Wild Stays
-          </motion.h1>
+        {/* Title */}
+        <motion.h1
+          className="text-3xl sm:text-5xl md:text-7xl font-bold text-white text-center mb-8 tracking-tight"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+        >
+          <span className="bg-gradient-to-r from-teal-300 to-emerald-500 bg-clip-text text-transparent">
+            Into the Wild
+          </span>{" "}
+          Stays
+        </motion.h1>
 
-          {/* Search Section (Hidden on small screens) */}
-          {window.innerWidth >= 768 && (
-            <motion.div
-              className="hidden md:flex bg-white bg-opacity-20 p-6 rounded-lg shadow-2xl justify-center space-x-4 w-full max-w-5xl"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.5 }}
-            >
-              {/* Location */}
-              <div className="relative w-1/4">
-                <label className="text-white font-semibold mb-1 text-sm block">
-                  Location
-                </label>
+        {/* Search Section */}
+        <motion.div
+          className="bg-white/20 backdrop-blur-lg rounded-3xl p-4 sm:p-6 md:p-8 shadow-2xl"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, delay: 0.5 }}
+        >
+          <div className="grid grid-cols-1 md:grid-cols-6 gap-4 items-end">
+            {/* Location */}
+            <div className="md:col-span-2 relative">
+              <label className="text-white font-semibold mb-2 flex items-center">
+                <FaMapMarkerAlt className="mr-2 text-teal-300" />
+                Location
+              </label>
+              <div className="relative">
                 <button
-                  className="w-full border border-gray-300 rounded-full p-2 bg-white text-gray-800 shadow-sm hover:shadow-md transition-all"
                   onClick={() => setShowLocationDropdown(!showLocationDropdown)}
+                  className="w-full bg-white/10 text-white py-3 px-4 rounded-xl backdrop-blur-sm border border-white/20 text-left"
                 >
-                  {location || "Select a location"}
+                  {location || "Select Location"}
                 </button>
                 {showLocationDropdown && (
-                  <div className="absolute mt-2 w-full bg-white border border-gray-300 rounded-lg shadow-lg z-20">
+                  <div className="absolute mt-2 w-full bg-white rounded-xl shadow-lg z-20 overflow-hidden">
                     {["Beach", "Mountain", "City", "Desert", "Forest"].map(
                       (loc) => (
                         <div
                           key={loc}
-                          className="px-4 py-2 hover:bg-gray-200 cursor-pointer text-sm"
+                          className="px-4 py-2 hover:bg-teal-50 cursor-pointer"
                           onClick={() => {
                             setLocation(loc);
                             setShowLocationDropdown(false);
@@ -88,77 +105,82 @@ const HomeHero = () => {
                   </div>
                 )}
               </div>
+            </div>
 
-              {/* Check-In */}
-              <div className="w-1/5">
-                <label className="text-white font-semibold mb-1 text-sm block">
-                  Check In
-                </label>
-                <input
-                  type="date"
-                  value={checkIn}
-                  onChange={(e) => setCheckIn(e.target.value)}
-                  className="w-full border border-gray-300 rounded-full p-2 shadow-sm focus:ring-2 focus:ring-blue-300"
-                />
-              </div>
+            {/* Check-In */}
+            <div className="md:col-span-1">
+              <label className="text-white font-semibold mb-2 flex items-center">
+                <FaCalendarAlt className="mr-2 text-teal-300" />
+                Check In
+              </label>
+              <input
+                type="date"
+                value={checkIn}
+                onChange={(e) => setCheckIn(e.target.value)}
+                className="w-full bg-white/10 text-white py-3 px-4 rounded-xl backdrop-blur-sm border border-white/20"
+              />
+            </div>
 
-              {/* Check-Out */}
-              <div className="w-1/5">
-                <label className="text-white font-semibold mb-1 text-sm block">
-                  Check Out
-                </label>
-                <input
-                  type="date"
-                  value={checkOut}
-                  onChange={(e) => setCheckOut(e.target.value)}
-                  className="w-full border border-gray-300 rounded-full p-2 shadow-sm focus:ring-2 focus:ring-blue-300"
-                />
-              </div>
+            {/* Check-Out */}
+            <div className="md:col-span-1">
+              <label className="text-white font-semibold mb-2 flex items-center">
+                <FaCalendarAlt className="mr-2 text-teal-300" />
+                Check Out
+              </label>
+              <input
+                type="date"
+                value={checkOut}
+                onChange={(e) => setCheckOut(e.target.value)}
+                className="w-full bg-white/10 text-white py-3 px-4 rounded-xl backdrop-blur-sm border border-white/20"
+              />
+            </div>
 
-              {/* Adults */}
-              <div className="w-1/6">
-                <label className="text-white font-semibold mb-1 text-sm block">
-                  Adults
-                </label>
-                <input
-                  type="number"
-                  min="1"
-                  value={adultGuests}
-                  onChange={(e) => setAdultGuests(Number(e.target.value))}
-                  className="w-full border border-gray-300 rounded-full p-2 shadow-sm"
-                />
+            {/* Guests */}
+            <div className="md:col-span-1">
+              <label className="text-white font-semibold mb-2 flex items-center">
+                <FaUsers className="mr-2 text-teal-300" />
+                Guests
+              </label>
+              <div className="flex space-x-2">
+                <div className="w-1/2">
+                  <input
+                    type="number"
+                    min="1"
+                    value={adultGuests}
+                    onChange={(e) => setAdultGuests(Number(e.target.value))}
+                    className="w-full bg-white/10 text-white py-3 px-4 rounded-xl backdrop-blur-sm border border-white/20 text-center"
+                    placeholder="Adults"
+                  />
+                </div>
+                <div className="w-1/2">
+                  <input
+                    type="number"
+                    min="0"
+                    value={childGuests}
+                    onChange={(e) => setChildGuests(Number(e.target.value))}
+                    className="w-full bg-white/10 text-white py-3 px-4 rounded-xl backdrop-blur-sm border border-white/20 text-center"
+                    placeholder="Children"
+                  />
+                </div>
               </div>
+            </div>
 
-              {/* Children */}
-              <div className="w-1/6">
-                <label className="text-white font-semibold mb-1 text-sm block">
-                  Children
-                </label>
-                <input
-                  type="number"
-                  min="0"
-                  value={childGuests}
-                  onChange={(e) => setChildGuests(Number(e.target.value))}
-                  className="w-full border border-gray-300 rounded-full p-2 shadow-sm"
-                />
-              </div>
+            {/* Search Button */}
+            <div className="md:col-span-1 flex items-end">
               <button
-                className="bg-gradient-to-r from-green-500 to-teal-500 text-white font-semibold py-3 px-8 rounded-full shadow-md hover:shadow-lg hover:scale-105 transform transition-all duration-300 ease-out mt-4"
+                className="w-full bg-gradient-to-r from-teal-500 to-emerald-600 text-white py-3 px-6 rounded-xl hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2"
                 onClick={() => {
                   alert(
                     `Searching: Location=${location}, Check In=${checkIn}, Check Out=${checkOut}, Adults=${adultGuests}, Children=${childGuests}`
                   );
                 }}
               >
-                <div className="flex items-center justify-center space-x-2">
-                  <span>Search</span>
-                </div>
+                <FaSearch />
+                <span>Search</span>
               </button>
-            </motion.div>
-          )}
-
-          {/* Search Button */}
-        </div>
+            </div>
+          </div>
+        </motion.div>
       </motion.div>
     </div>
   );

@@ -1,47 +1,82 @@
 import { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
+import { Play, Quote } from "lucide-react";
 import guestExp from "../assets/Video-14~2.mp4";
 
 const GuestExperience = () => {
-  const videoRef = useRef(null)
+  const videoRef = useRef(null);
 
   useEffect(() => {
-    videoRef ? videoRef.current.volume = 0.15 : ''
-  }, [])
+    if (videoRef.current) {
+      videoRef.current.volume = 0.15;
+    }
+  }, []);
 
   return (
-    <div className="bg-white min-h-[100vh] py-4 lg:px-32">
-      <div className="my-12 mx-4">
-        <div className="flex flex-col-reverse lg:flex-row gap-8 justify-around items-center text-center">
-          <div className="flex flex-col gap-6 p-8 bg-gradient-to-r from-[#091F3C] to-[#43A181] rounded-2xl shadow-xl lg:w-[50vw]  text-white">
-            <h1 className="text-4xl font-bold tracking-tight">
-              Our <span className="text-[#43A181]">Story</span>
-            </h1>
-            <h4 className="lg:text-lg text-gray-100 leading-relaxed">
-              Welcome to Into the Wild Stays, At Into the Wild Stays, we strive
-              to offer more than just accommodations; we create memorable
-              escapes in nature’s embrace. Nestled in serene, offbeat locations,
-              our boutique homestays and cottages provide the perfect blend of
-              comfort, tranquility, and adventure. Our philosophy revolves
-              around crafting personalized experiences that connect our guests
-              with the beauty of the wilderness. With heartfelt hospitality and
-              thoughtful service, we ensure every stay feels like a home away
-              from home. Come, escape the chaos, and immerse yourself in the
-              unforgettable charm of *Into the Wild Stays!
-            </h4>
-          </div>
-          <div className="shadow-2xl rounded-xl overflow-hidden">
+    <div className="bg-gradient-to-br from-gray-50 to-white min-h-screen py-16">
+      <div className="max-w-7xl mx-auto px-4">
+        <motion.div
+          className="grid lg:grid-cols-2 gap-12 items-center"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          {/* Story Section */}
+          <motion.div
+            className="bg-gradient-to-br from-[#091F3C] to-[#43A181] rounded-3xl p-8 shadow-2xl"
+            initial={{ x: -50, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            <div className="flex items-center mb-6">
+              <Quote className="text-teal-300 mr-4" size={48} />
+              <h1 className="text-4xl font-bold text-white tracking-tight">
+                Our <span className="text-teal-300">Story</span>
+              </h1>
+            </div>
+            <p className="text-lg text-gray-100 leading-relaxed space-y-4">
+              Welcome to Into the Wild Stays, where we offer more than just
+              accommodations. We create memorable escapes in nature's embrace.
+              Nestled in serene, offbeat locations, our boutique homestays and
+              cottages provide the perfect blend of comfort, tranquility, and
+              adventure.
+            </p>
+            <p className="text-lg text-gray-100 leading-relaxed mt-4">
+              Our philosophy revolves around crafting personalized experiences
+              that connect guests with the beauty of the wilderness. With
+              heartfelt hospitality and thoughtful service, we ensure every stay
+              feels like a home away from home.
+            </p>
+            <div className="mt-6 border-t border-white/20 pt-4">
+              <span className="text-sm italic text-teal-200">
+                Come, escape the chaos, and immerse yourself in the
+                unforgettable charm of Into the Wild Stays!
+              </span>
+            </div>
+          </motion.div>
+
+          {/* Video Section */}
+          <motion.div
+            className="relative group overflow-hidden rounded-3xl shadow-2xl"
+            initial={{ x: 50, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
             <video
               ref={videoRef}
-              className="w-[80vw] h-[60vh] object-cover "
+              className="w-full h-[70vh] object-cover transition-transform duration-300 group-hover:scale-105"
               src={guestExp}
               controls
               autoPlay
               muted
-              // volume={0.15} // Fixed volume value
-            ></video>
-
-          </div>
-        </div>
+            />
+            <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <div className="bg-white/30 backdrop-blur-sm p-4 rounded-full">
+                <Play className="text-white" size={48} />
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
       </div>
     </div>
   );
