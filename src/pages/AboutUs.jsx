@@ -1,5 +1,6 @@
-import Image2 from "../assets/itw_rep/itwrep_page-0008.jpg";
+import { motion } from "framer-motion";
 
+import Image2 from "../assets/itw_rep/itwrep_page-0008.jpg";
 
 import ImageA from "../assets/team/AkashCoowner.jpg";
 import ImageV from "../assets/team/VikkyCoowner.jpg";
@@ -13,7 +14,6 @@ import Imageraghav from "../assets/team/RaghavCycling Instructor.jpg";
 import Imagesonam from "../assets/team/SonamRanaKayakinstructor.jpg";
 import Imageunk from "../assets/team/unk.jpg";
 
-
 import Image3 from "../assets/itw_rep/itwrep_page-0009.jpg";
 import Image4 from "../assets/itw_rep/itwrep_page-0010.jpg";
 import Image5 from "../assets/itw_rep/itwrep_page-0011.jpg";
@@ -23,11 +23,35 @@ import Image7 from "../assets/itw_rep/itwrep_page-0013.jpg";
 const AboutUs = () => {
   return (
     <div className="min-h-[100vh] pt-32">
-      <div className="bg-[url('https://images.trvl-media.com/lodging/109000000/108380000/108370800/108370765/28b3dc50.jpg?impolicy=resizecrop&rw=1200&ra=fit')] bg-cover bg-center bg-fixed lg:py-24 py-16 flex flex-col items-center lg:gap-4 text-white">
-        <h1 className="lg:text-7xl text-5xl before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-gradient-to-r from-green-500 to-green-700 relative inline-block">
-          <span className="relative font-primaryF">About Us</span>
-        </h1>
+      <div className="relative min-h-[60vh] bg-gray-50">
+        <div className=" bg-[url('https://images.trvl-media.com/lodging/109000000/108380000/108370800/108370765/28b3dc50.jpg?impolicy=resizecrop&rw=1200&ra=fit')] absolute inset-0 bg-cover bg-center bg-fixed">
+          <div className="absolute inset-0 bg-gradient-to-b from-[#091F3C]/50 to-[#091F3C]/80" />
+        </div>
+
+        <div className="relative min-h-[60vh] max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32 flex flex-col items-center justify-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center"
+          >
+            <h1 className="relative inline-block">
+              <span className="absolute -inset-1 w-full h-full bg-gradient-to-r from-[#43A181] to-[#43A181]/80 -skew-y-3 transform origin-top-right"></span>
+              <span className="relative text-4xl md:text-5xl lg:text-7xl font-bold text-white tracking-tight">
+                About Us
+              </span>
+            </h1>
+
+            <motion.div
+              initial={{ opacity: 0, width: 0 }}
+              animate={{ opacity: 1, width: "100%" }}
+              transition={{ delay: 0.5, duration: 0.8 }}
+              className="mt-8 h-1 bg-gradient-to-r from-[#43A181] to-transparent max-w-[200px] mx-auto"
+            />
+          </motion.div>
+        </div>
       </div>
+
       <div className="bg-white min-h-[100vh] py-4 lg:px-32">
         <div className="my-12 mx-4">
           <div className="flex flex-col-reverse lg:flex-row gap-8 justify-around items-center text-center ">

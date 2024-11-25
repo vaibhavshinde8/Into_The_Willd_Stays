@@ -1,14 +1,17 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { FaMapMarkerAlt, FaBed, FaUsers, FaStar } from "react-icons/fa";
+
 import SidebarFilter from "../components/SidebarFilter";
 import Image1 from "../assets/itw/IMG-20240530-WA0015.jpg";
-import Image2 from "../assets/pineandtails/pnt1.jpg"; 
+import Image2 from "../assets/pineandtails/pnt1.jpg";
 import Image3 from "../assets/majuli/majuli1.jpeg";
 import Image4 from "../assets/Sun and Sand Goa/Property Photo and videos/54PM.jpeg";
 
 import TourBanner from "./../components/TourBanner";
 // import GalleryAndReviews from "../components/GalleryAndReviews";
-import { FaMapMarkerAlt } from "react-icons/fa";
+// import { FaMapMarkerAlt } from "react-icons/fa";
 
 const properties = [
   {
@@ -37,7 +40,7 @@ const properties = [
     guest: 12,
     exploremoreRoute: "/exploremorepnt",
   },
- 
+
   {
     imgURL: Image3,
     name: " ITW : Me:nam Homestay",
@@ -66,6 +69,7 @@ const properties = [
 
 const Properties = () => {
   const [filteredProperties, setFilteredProperties] = useState(properties);
+  const [hoveredIndex, setHoveredIndex] = useState(null);
 
   const handleFilterChange = ({ location }) => {
     let filtered = properties;
@@ -79,102 +83,163 @@ const Properties = () => {
     setFilteredProperties(filtered);
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  };
+
   return (
-    <div className="py-32 flex-col text-center">
-      <div className="bg-[url('https://images.trvl-media.com/lodging/109000000/108380000/108370800/108370765/28b3dc50.jpg?impolicy=resizecrop&rw=1200&ra=fit')] bg-cover bg-center bg-fixed lg:py-24 py-16 flex flex-col items-center lg:gap-4 text-white">
-        <h1 className="lg:text-6xl text-3xl before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-gradient-to-r from-green-500 to-green-700 relative inline-block">
-          <span className="relative">Checkout Our Properties</span>
-        </h1>
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+      {/* Hero Section */}
+      <div className="relative h-[70vh] overflow-hidden">
+        <div className="absolute inset-0 bg-[url('https://images.trvl-media.com/lodging/109000000/108380000/108370800/108370765/28b3dc50.jpg?impolicy=resizecrop&rw=1200&ra=fit')] bg-cover bg-center bg-fixed transform scale-105">
+          <div className="absolute inset-0 bg-gradient-to-b from-[#091F3C]/30 to-[#091F3C]/90 backdrop-blur-sm" />
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="relative h-full max-w-7xl mx-auto px-4 flex flex-col items-center justify-center text-center"
+        >
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
+            <span className="bg-gradient-to-r from-[#43A181] to-teal-400 bg-clip-text text-transparent">
+              Discover
+            </span>
+            <br />
+            Your Perfect Stay
+          </h1>
+          <p className="text-xl text-gray-200 max-w-2xl mb-8">
+            Explore our handpicked collection of stunning properties in
+            spectacular locations
+          </p>
+        </motion.div>
       </div>
 
-      <div className="flex flex-col sm:flex-row gap-8 py-12 lg:px-32 px-8 bg-white">
-        {/* Sidebar */}
-        <div className="w-full sm:w-1/4">
-          <SidebarFilter
-            onFilterChange={handleFilterChange}
-            properties={properties}
-          />
-        </div>
-        {/* Properties List */}
-        <div className="w-full sm:w-3/4 max-w-6xl mx-auto text-center">
-          <ul className="flex flex-col gap-6">
-            {filteredProperties.map((property, index) => (
-              <li
-                key={index}
-                className="flex flex-col sm:flex-row bg-white border border-[#091F3C] rounded-lg shadow-lg overflow-hidden"
-              >
-                {/* First section (Image) */}
-                <div className="flex-shrink-0 w-full sm:w-[30%]">
-                  <img
-                    src={property.imgURL}
-                    alt={property.name}
-                    className="object-cover h-72 w-full"
-                  />
-                </div>
+      {/* Main Content */}
+      <div className="max-w-7xl mx-auto px-4 py-16">
+        <div className="flex flex-col lg:flex-row gap-8">
+          {/* Sidebar */}
+          <div className="w-full lg:w-1/4">
+            <div className="sticky top-24">
+              <SidebarFilter
+                onFilterChange={handleFilterChange}
+                properties={properties}
+              />
+            </div>
+          </div>
 
-                {/* Second section (Details) */}
-                <div className="flex-grow p-4 w-full sm:w-[40%] flex flex-col justify-between items-center">
-                  <h2 className="text-xl sm:text-2xl font-bold text-[#091F3C] mb-2">
-                    {property.name}
-                  </h2>
-                  <p className="text-[#000000] mb-4">{property.description}</p>
-                  <div className="flex flex-wrap space-x-2 mb-4 justify-center sm:justify-start">
-                    <span className="flex items-center bg-[#43A181] rounded-full px-3 py-1 text-sm text-white font-semibold">
-                      <FaMapMarkerAlt className="mr-1" />
-                      {property.location}
-                    </span>
-                  </div>
-                  <div className="text-sm text-gray-600">
-                    <span className="mr-4">
-                      {property.bedroom} Bedroom{property.bedroom > 1 && "s"}
-                    </span>
-                    <span>
-                      {property.guest} Guest{property.guest > 1 && "s"}
-                    </span>
-                  </div>
-                </div>
+          {/* Properties List */}
+          <motion.div
+            className="w-full lg:w-3/4"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            <div className="grid gap-8">
+              {filteredProperties.map((property, index) => (
+                <motion.div
+                  key={index}
+                  variants={itemVariants}
+                  onMouseEnter={() => setHoveredIndex(index)}
+                  onMouseLeave={() => setHoveredIndex(null)}
+                  className="relative bg-white rounded-2xl overflow-hidden shadow-lg transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                >
+                  <div className="flex flex-col md:flex-row h-full">
+                    {/* Image Section */}
+                    <div className="md:w-2/5 relative overflow-hidden h-64 md:h-auto">
+                      <img
+                        src={property.imgURL}
+                        alt={property.name}
+                        className="w-full h-[50vh] object-cover transition-transform duration-700 hover:scale-110"
+                      />
+                      <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
+                        <div className="flex items-center space-x-1">
+                          <FaStar className="text-yellow-400" />
+                          <span className="font-semibold">
+                            {property.rating}
+                          </span>
+                          <span className="text-sm text-gray-600">
+                            ({property.reviews})
+                          </span>
+                        </div>
+                      </div>
+                    </div>
 
-                {/* Third section (Reviews & Price) */}
-                <div className="flex-shrink-0 w-full sm:w-[30%] p-4 py-8 bg-[#091F3C] text-white flex flex-col items-center">
-                  <div className="flex flex-col items-center mb-2">
-                    <span>({property.reviews} reviews)</span>
-                    <div className="flex">
-                      {[...Array(5)].map((_, i) => (
-                        <span
-                          key={i}
-                          className={
-                            i < Math.round(property.rating)
-                              ? "text-yellow-400"
-                              : "text-gray-400"
-                          }
-                        >
-                          ★
-                        </span>
-                      ))}
+                    {/* Content Section */}
+                    <div className="flex-1 p-6 flex flex-col justify-between">
+                      <div>
+                        <h2 className="text-2xl font-bold text-gray-800 mb-3">
+                          {property.name}
+                        </h2>
+                        <p className="text-gray-600 mb-4">
+                          {property.description}
+                        </p>
+
+                        <div className="flex flex-wrap gap-3 mb-4">
+                          <span className="flex items-center space-x-2 bg-teal-50 text-teal-700 px-3 py-1 rounded-full text-sm">
+                            <FaMapMarkerAlt className="text-teal-500" />
+                            <span>{property.location}</span>
+                          </span>
+                          <span className="flex items-center space-x-2 bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm">
+                            <FaBed className="text-blue-500" />
+                            <span>{property.bedroom} Bedrooms</span>
+                          </span>
+                          <span className="flex items-center space-x-2 bg-purple-50 text-purple-700 px-3 py-1 rounded-full text-sm">
+                            <FaUsers className="text-purple-500" />
+                            <span>{property.guest} Guests</span>
+                          </span>
+                        </div>
+                      </div>
+
+                      <div className="flex items-center justify-between mt-4">
+                        <div className="flex flex-col">
+                          <span className="text-3xl font-bold text-gray-900">
+                            ₹{property.price}
+                          </span>
+                          <span className="text-sm text-gray-500">
+                            per night
+                          </span>
+                        </div>
+
+                        <div className="flex space-x-3">
+                          <Link
+                            to={property.exploremoreRoute}
+                            onClick={() => window.scrollTo(0, 0)}
+                            className="px-6 py-2 bg-teal-50 text-teal-700 rounded-full hover:bg-teal-100 transition-colors"
+                          >
+                            Details
+                          </Link>
+                          <button className="px-6 py-2 bg-[#43A181] text-white rounded-full hover:bg-[#358268] transition-colors">
+                            Book now
+                          </button>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <div className="text-3xl sm:text-4xl font-bold mb-1">
-                    ₹{property.price}
-                  </div>
-                  <span className="text-sm">/ per night</span>
-                  <span className="text-sm text-gray-400">(per cottage)</span>
-
-                  <button className="mt-4 px-4 py-2 border border-white rounded-full hover:bg-[#43A181] hover:text-white transition whitespace-nowrap">
-                    Book now!
-                  </button>
-                  <Link
-                    to={property.exploremoreRoute}
-                    onClick={() => window.scrollTo(0, 0)} // Scroll to top on click
-                    className="mt-2 px-4 py-2 border border-white rounded-full hover:bg-[#43A181] hover:text-white transition whitespace-nowrap"
-                  >
-                    Explore More
-                  </Link>
-                </div>
-              </li>
-            ))}
-          </ul>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </div>
+
       <TourBanner />
     </div>
   );

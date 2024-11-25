@@ -1,0 +1,364 @@
+{
+  "tours": [
+    {
+      "id": 1,
+      "imageUrl": "https://wandersky.in/wp-content/uploads/2023/08/Rishikesh-Tourism-Travel-Guide-2023.jpg",
+      "name": "Rishikesh Adventure Trip",
+      "location": "Rishikesh, Uttarakhand",
+      "duration": "3 Days, 2 Nights",
+      "cost": "₹9,999 per person",
+      "itinerary": [
+        "Day 1: Arrival, check-in, and evening Ganga Aarti.",
+        "Day 2: River rafting, cliff jumping, and trekking.",
+        "Day 3: Local sightseeing and departure."
+      ],
+      "inclusions": [
+        "Accommodation in riverside camps.",
+        "Daily breakfast and dinner.",
+        "Professional guide for all activities.",
+        "Complimentary evening bonfire."
+      ],
+      "exclusions": [
+        "Transportation to and from Rishikesh.",
+        "Lunch during the trip.",
+        "Personal expenses.",
+        "Any adventure activity not mentioned in inclusions."
+      ],
+      "important_notes": [
+        "Participants must be 12 years or older for river rafting.",
+        "Please carry a valid ID for check-in.",
+        "Booking is non-refundable 48 hours prior to the trip."
+      ],
+      "contact_methods": {
+        "phone": "9958838557",
+        "email": "intothewildstays@gmail.com",
+        "whatsapp": "8762192191"
+      },
+      "rules_and_policy": [
+        "Smoking and drinking alcohol are strictly prohibited during activities.",
+        "Participants are responsible for their personal belongings.",
+        "In case of adverse weather conditions, activities may be rescheduled."
+      ]
+    },
+    {
+      "id": 2,
+      "imageUrl": "https://static.toiimg.com/photo/msid-80611280,width-96,height-65.cms",
+
+      "name": "Mussoorie Nature Escape",
+      "location": "Mussoorie, Uttarakhand",
+      "duration": "4 Days, 3 Nights",
+      "cost": "₹12,499 per person",
+      "itinerary": [
+        "Day 1: Arrival, check-in, and exploring Mall Road.",
+        "Day 2: Visit to Kempty Falls and Gun Hill.",
+        "Day 3: Trek to Lal Tibba and Camel's Back Road.",
+        "Day 4: Leisure day and departure."
+      ],
+      "inclusions": [
+        "Stay in a 3-star hotel with hill view rooms.",
+        "Daily breakfast and dinner.",
+        "Local sightseeing with a private cab.",
+        "Guided trek to Lal Tibba."
+      ],
+      "exclusions": [
+        "Travel to and from Mussoorie.",
+        "Lunch during the trip.",
+        "Entry tickets to attractions.",
+        "Tips and gratuities."
+      ],
+      "important_notes": [
+        "Check-in time is 12:00 PM, and check-out time is 11:00 AM.",
+        "Pets are not allowed in the accommodations.",
+        "Booking modifications are subject to availability."
+      ],
+      "contact_methods": {
+        "phone": "9958838557",
+        "email": "intothewildstays@gmail.com",
+        "whatsapp": "8762192191"
+      },
+      "rules_and_policy": [
+        "Maintain decorum at tourist spots and accommodations.",
+        "Follow the guide's instructions during treks and activities.",
+        "Cancellations made within 72 hours of the trip are non-refundable."
+      ]
+    },
+    {
+      "id": 3,
+      "imageUrl": "https://images.pexels.com/photos/15031440/pexels-photo-15031440.jpeg?cs=srgb&dl=pexels-alok-kumar-273007-15031440.jpg&fm=jpg",
+
+      "name": "Kedarnath Dham",
+      "location": "Kedarnath, Uttarakhand",
+      "duration": "3 Nights, 4 Days",
+      "cost": "₹10,499 per person (Triple/Quad sharing, excluding 5% GST)",
+      "itinerary": [
+        "Day 1: Delhi to Rishikesh - Overnight Journey",
+        "Day 2: Rishikesh to Sonprayag",
+        "Day 3: Sonprayag to Kedarnath",
+        "Day 4: Kedarnath to Guptkashi/Sonprayag",
+        "Day 5: Sonprayag to Delhi"
+      ],
+      "inclusions": [
+        "3-night stay in hotel/homestay/campsite.",
+        "6 meals (Day 1 - dinner; Day 2,3 - Breakfast + Dinner; Day 4 - Breakfast).",
+        "Stay on Triple/Quad sharing basis.",
+        "Trip Leader.",
+        "Transportation Delhi to Delhi by Tempo Traveler/Ertigo/Innova.",
+        "Driver allowances, toll taxes, parking charges."
+      ],
+      "exclusions": [
+        "5% GST.",
+        "Additional expenses due to travel delays.",
+        "Hot water bucket at Kedarnath (₹150/bucket).",
+        "Horse, pony, palki charges."
+      ],
+      "important_notes": [
+        "Bookings are confirmed with a deposit of ₹5,000 per person.",
+        "Remaining amount must be paid 7 days before the trip.",
+        "Trek difficulty level: Moderate. Ensure physical fitness.",
+        "Carry valid ID for check-ins and permissions.",
+        "Kedarnath trek covers approximately 17 km; proper trekking gear is recommended."
+      ],
+      "contact_methods": {
+        "phone": "+91-9761966485",
+        "email": "intothewildstays@gmail.com",
+        "whatsapp": "+91-9761966485"
+      },
+      "rules_and_policy": [
+        "Smoking and drinking alcohol are prohibited during the trip.",
+        "Participants must follow team leader instructions.",
+        "No refund is available for cancellations within 7 days of the trip.",
+        "In case of bad weather, trip modifications will be made as per safety."
+      ]
+    },
+    {
+      "id": 4,
+      "imageUrl": "https://www.thesearchingsouls.com/wp-content/uploads/2022/03/kuari-pass-trek-2.jpg",
+
+      "name": "Kuari Pass Trek (Lord Curzon Trail)",
+      "location": "Joshimath, Uttarakhand",
+      "duration": "6 Days, 5 Nights",
+      "cost": "₹9,499 per person",
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Rishikesh to Karchi via Joshimath",
+          "drive": "275 kms",
+          "time": "10-12 Hours",
+          "description": "Welcome to Joshimath, an important pilgrimage destination in Uttarakhand. Check into your homestay at Karchi and spend the day exploring the village at your own pace."
+        },
+        {
+          "day": 2,
+          "title": "Karchi to Gulling Top via Tugasi",
+          "trek_distance": "4 km",
+          "duration": "5-6 Hours",
+          "elevation": "9600 ft",
+          "description": "Start your trek from Karchi, passing through Tugasi village with views of the Dhauladhar Range. Camp overnight at Gulling Top."
+        },
+        {
+          "day": 3,
+          "title": "Gulling Top to Khullara Top",
+          "trek_distance": "6 km",
+          "duration": "6 Hours",
+          "elevation": "11,075 ft",
+          "description": "Continue through oak, rhododendron, and walnut forests, enjoying views of the Pir Panjal and Shivalik Ranges. Overnight stay at Khullara Top."
+        },
+        {
+          "day": 4,
+          "title": "Trek from Khullara Top to Kuari Pass and Descend",
+          "trek_distance": "12 km",
+          "duration": "8-10 Hours",
+          "elevation": "12,516 ft",
+          "description": "Trek to Kuari Pass with views of Nanda Devi, Kamet, and Trishul. Return to Khullara Top for an overnight stay."
+        },
+        {
+          "day": 5,
+          "title": "Downhill Trek from Khullara Top to Karchi",
+          "trek_distance": "11 km",
+          "duration": "8-10 Hours",
+          "elevation": "6,716 ft",
+          "description": "Descend towards Karchi Village, through Alpine and Mossy Oak forests. Overnight stay at a homestay in Karchi."
+        },
+        {
+          "day": 6,
+          "title": "Trek Down to Karchi from Khullara Top",
+          "description": "End the trek with a downhill journey to Karchi Village."
+        }
+      ],
+      "inclusions": [
+        "3 Nights of tented accommodation on twin sharing and 2 nights in a guest house at Karchi on multi-sharing.",
+        "Vegetarian meals during the trek from Dinner on Day 1 to tea and coffee on Day 6.",
+        "Transport (optional): Rishikesh to Karchi and return for an additional 1600 INR.",
+        "Trek equipment: Sleeping bag, tents, kitchen tent, dining tent, toilet tent.",
+        "Amenities: All utensils, sleeping mattresses, crampons, gaiters for snow.",
+        "Health & Safety: First aid kit, oxygen cylinders, stretchers, oxi-meters, BP machines.",
+        "Permits: Forest permits and camping permission fee.",
+        "Trek crew: High-altitude chef, helpers, trek leader, guides, and support team.",
+        "Porters and mules for trekking equipment, ration, and supplies."
+      ],
+      "exclusions": [
+        "GST 5% (mandatory).",
+        "Meals/accommodation outside of the itinerary.",
+        "Bus/airfare to/from trek start/end point.",
+        "Personal medical expenses and personal services (e.g., laundry, phone calls, liquor, mineral water).",
+        "Camera fees for still/video.",
+        "Monument/entrance fees (if any).",
+        "Offload charges for private baggage: 400 INR per day if paid online, or 2200 INR at base camp (maximum bag weight: 10kg).",
+        "Emergency evacuation charges.",
+        "Any additional services not mentioned in inclusions."
+      ],
+      "important_notes": [
+        "Participants must carry a valid ID for check-in.",
+        "Trek is moderate to challenging and requires basic fitness levels.",
+        "Bookings are non-refundable within 7 days of the trek start date.",
+        "Weather conditions may lead to itinerary modifications."
+      ],
+      "contact_methods": {
+        "phone": "+91-9761966485",
+        "email": "intothewildstays@gmail.com",
+        "whatsapp": "+91-9761966485",
+        "upi_transfer": "9761966485@ybl",
+        "bank_transfer": {
+          "account_name": "Into the Wild Stays",
+          "account_number": "50200067998212",
+          "ifsc_code": "HDFC0008139"
+        }
+      },
+      "rules_and_policy": [
+        "Participants must adhere to the guide's instructions during the trek.",
+        "Smoking and alcohol consumption are strictly prohibited during the trek.",
+        "Participants are responsible for their personal belongings.",
+        "In case of emergencies, additional charges for evacuation apply."
+      ]
+    },
+     {
+       "id": 5,
+       "imageUrl": "https://rishikeshdaytour.com/blog/wp-content/uploads/2021/12/Kanatal-An-Unexplored-Hamlet-in-Uttarakhand-.jpg",
+
+       "name": "Rishikesh Kanatal",
+       "location": "Rishikesh and Dhanolti, Uttarakhand",
+       "duration": "2 Nights, 3 Days",
+       "cost": "₹3,500 per person (excluding transport)",
+       "itinerary": [
+         {
+           "day": "Day 1",
+           "location": "Rishikesh",
+           "details": [
+             "Stay in Swiss Camps (Quad sharing) with attached washroom and cooler.",
+             "Activities: 16 km rafting at Shivpuri.",
+             "Meals: Breakfast (Aloo puri, Aloo paratha, Tea), Lunch (Jeera aalu, Daal tadka, Rice, Chapati), Dinner (Shahee paneer, Chicken curry, Daal tadka, Rice, Chapati), and Evening snack (Mix Pakoda with tea)."
+           ]
+         },
+         {
+           "day": "Day 2",
+           "location": "Rishikesh to Dhanolti",
+           "details": [
+             "Stay in Luxury Cottages (Quad sharing).",
+             "Sightseeing: Visit Surkanda Devi Temple, the highest point in the Dhanolti-Kanatal region.",
+             "Meals: Breakfast (Aloo puri, Aloo paratha, Bread toast, Tea & coffee), Lunch (Jeera aalu, Daal tadka, Raita, Rice, Chapati), Dinner (Kadhai paneer, Shahee paneer, Chicken curry, Daal tadka, Rice, Chapati), and Evening snack (Mix Pakoda with tea)."
+           ]
+         },
+         {
+           "day": "Day 3",
+           "location": "Dhanolti - Tehri - Delhi",
+           "details": [
+             "Music allowed until 10 PM due to reserve forest proximity.",
+             "Check-out and departure."
+           ]
+         }
+       ],
+       "inclusions": [
+         "Stay in Swiss Camps and Luxury Cottages with quad sharing.",
+         "Meals: Daily breakfast, lunch, dinner, and evening snacks.",
+         "Rafting in Rishikesh (16 km).",
+         "Sightseeing: Surkanda Devi Temple."
+       ],
+       "exclusions": [
+         "Transportation to and from Rishikesh.",
+         "Non-vegetarian meals available at an additional charge.",
+         "GST not included in the price.",
+         "Any personal expenses or activities not mentioned in inclusions."
+       ],
+       "important_notes": [
+         "Music is strictly prohibited after 10 PM near reserve forest.",
+         "Heater available at ₹299 per day.",
+         "Carry a valid ID for check-in.",
+         "Non-vegetarian meals can be added at extra cost."
+       ],
+       "contact_methods": {
+         "phone": "9958838557",
+         "email": "intothewildstays@gmail.com",
+         "whatsapp": "8762192191"
+       },
+       "rules_and_policy": [
+         "Music allowed only until 10 PM due to reserve forest proximity.",
+         "Property damage will be charged as per the current rate.",
+         "All prices exclude GST.",
+         "Booking modifications are subject to availability."
+       ]
+     },
+      {
+        "id": 6,
+        "imageUrl": "https://blog.moustachescapes.com/wp-content/uploads/2024/01/629f3b6b4d577_1654602603.jpg",
+
+        "name": "Four Treks in One Trip: Valley of Flowers",
+        "location": "Chamoli, Uttarakhand",
+        "duration": "6 Days, 5 Nights",
+        "cost": "₹7500 per person",
+        "itinerary": [
+          {
+            "day": "Day 1",
+            "description": "Rishikesh to Joshimath (Drive 290kms)"
+          },
+          {
+            "day": "Day 2",
+            "description": "Joshimath to Ghangaria via Govindghat (Drive 28kms + Trek 10kms)"
+          },
+          {
+            "day": "Day 3",
+            "description": "Ghangaria to Hemkunt Sahib & Back to Ghangaria (Trek 6kms)"
+          },
+          {
+            "day": "Day 4",
+            "description": "Ghangaria to Valley of Flowers and back to Ghangaria (Trek 5kms)"
+          },
+          {
+            "day": "Day 5",
+            "description": "Ghangaria to Joshimath via Badrinath"
+          },
+          {
+            "day": "Day 6",
+            "description": "Reach Rishikesh in the evening (Drive 289kms)"
+          }
+        ],
+        "inclusions": [
+          "Accommodation at Auli (1 night) and Ghangaria (3 nights).",
+          "Meals: Breakfast, Lunch, Dinner (12 total).",
+          "Transport: Pickup and drop from Delhi.",
+          "Guided treks to Hemkunt Sahib and Valley of Flowers."
+        ],
+        "exclusions": [
+          "Travel insurance.",
+          "GST (5%).",
+          "Entry or viewpoint tickets.",
+          "Food during transit.",
+          "Backpack offloading charges.",
+          "Helicopter ride (₹3500) and mule rental (₹1000)."
+        ],
+        "important_notes": [
+          "Entry to the Valley of Flowers is allowed from 7:00 AM to 5:00 PM only.",
+          "Staying overnight in the Valley of Flowers buffer zone is prohibited.",
+          "Booking modifications are subject to availability."
+        ],
+        "contact_methods": {
+          "phone": "+91-9761966485",
+          "email": "intothewildstays@gmail.com",
+          "whatsapp": "+91-9761966485"
+        },
+        "rules_and_policy": [
+          "Follow the guide's instructions during treks and activities.",
+          "Maintain cleanliness in the Valley of Flowers and surrounding areas.",
+          "Cancellations made within 72 hours of the trip are non-refundable."
+        ]
+      }
+  ]
+}
