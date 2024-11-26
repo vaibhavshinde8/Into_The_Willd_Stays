@@ -2,7 +2,7 @@
 
 export const loginUser = async (email, password) => {
   try {
-    const apiUrl = "http://localhost:8080/api/auth";
+    const apiUrl = "http://localhost:5000/api/v1/auth";
     console.log("Using API URL:", apiUrl);
 
     const response = await fetch(`${apiUrl}/login`, {
@@ -12,7 +12,8 @@ export const loginUser = async (email, password) => {
     });
 
     if (!response.ok) {
-      throw new Error("Login failed");
+      const errorData = await response.json();
+      throw new Error(errorData.message || "Login failed");
     }
 
     return response.json();
@@ -24,7 +25,7 @@ export const loginUser = async (email, password) => {
 
 export const registerUser = async (name, email, password) => {
   try {
-    const apiUrl = "http://localhost:8080/api/auth";
+    const apiUrl = "http://localhost:5000/api/v1/auth";
 
     const response = await fetch(`${apiUrl}/register`, {
       method: "POST",
@@ -33,7 +34,8 @@ export const registerUser = async (name, email, password) => {
     });
 
     if (!response.ok) {
-      throw new Error("Registration failed");
+      const errorData = await response.json();
+      throw new Error(errorData.message || "Registration failed");
     }
 
     return response.json();
