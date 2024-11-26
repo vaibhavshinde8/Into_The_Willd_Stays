@@ -1,13 +1,15 @@
 import { useState } from "react";
 import { registerUser } from "../api";
 import { useNavigate } from "react-router-dom";
-import { User, AtSign, Lock } from "lucide-react";
+import { User, AtSign, Lock, Key } from "lucide-react";
 
 const Register = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [otp, setOtp] = useState("");
   const [error, setError] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -15,10 +17,20 @@ const Register = () => {
     try {
       const data = await registerUser(name, email, password);
       console.log("Registered successfully:", data);
-      // Redirect to login or directly log in the user
-      navigate("/login");
+      setIsModalOpen(true); // Open OTP modal
     } catch (err) {
       setError("Registration failed. Please try again.");
+    }
+  };
+
+  const handleOtpSubmit = () => {
+    if (otp === "1234") {
+      // Mock OTP validation for demonstration
+      console.log("OTP confirmed. Account created successfully!");
+      setIsModalOpen(false);
+      navigate("/login");
+    } else {
+      setError("Invalid OTP. Please try again.");
     }
   };
 
@@ -46,10 +58,7 @@ const Register = () => {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 required
-                className="block w-full pl-10 pr-4 py-3 border border-emerald-300 rounded-lg shadow-sm 
-                text-black
-                focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 
-                transition duration-300 ease-in-out"
+                className="block w-full pl-10 pr-4 py-3 border border-emerald-300 rounded-lg shadow-sm text-black focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition duration-300 ease-in-out"
               />
             </div>
 
@@ -63,10 +72,7 @@ const Register = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="block w-full pl-10 pr-4 py-3 border border-emerald-300 rounded-lg shadow-sm 
-                text-black
-                focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 
-                transition duration-300 ease-in-out"
+                className="block w-full pl-10 pr-4 py-3 border border-emerald-300 rounded-lg shadow-sm text-black focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition duration-300 ease-in-out"
               />
             </div>
 
@@ -80,24 +86,14 @@ const Register = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
-                className="block w-full pl-10 pr-4 py-3 border border-emerald-300 rounded-lg shadow-sm 
-                text-black
-                focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 
-                transition duration-300 ease-in-out"
+                className="block w-full pl-10 pr-4 py-3 border border-emerald-300 rounded-lg shadow-sm text-black focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition duration-300 ease-in-out"
               />
             </div>
 
             <div>
               <button
                 type="submit"
-                className="w-full flex justify-center py-3 px-4 
-                border border-transparent rounded-lg shadow-sm 
-                text-base font-semibold text-white 
-                bg-gradient-to-r from-emerald-600 to-teal-600 
-                hover:from-emerald-700 hover:to-teal-700 
-                focus:outline-none focus:ring-2 focus:ring-offset-2 
-                focus:ring-teal-500 
-                transition duration-300 ease-in-out transform hover:scale-105"
+                className="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-base font-semibold text-white bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 transition duration-300 ease-in-out transform hover:scale-105"
               >
                 Create Account
               </button>
@@ -136,6 +132,44 @@ const Register = () => {
           </div>
         </div>
       </div>
+
+      {/* OTP Modal */}
+      {isModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white rounded-lg shadow-lg p-6 w-full max-w-md">
+            <h3 className="text-xl font-semibold text-gray-900 text-center mb-4">
+              Enter OTP
+            </h3>
+            <div className="relative mb-4">
+              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <Key className="h-5 w-5 text-teal-500" />
+              </div>
+              <input
+                type="text"
+                placeholder="Enter OTP"
+                value={otp}
+                onChange={(e) => setOtp(e.target.value)}
+                required
+                className="block w-full pl-10 pr-4 py-3 border border-emerald-300 rounded-lg shadow-sm text-black focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition duration-300 ease-in-out"
+              />
+            </div>
+            <div className="flex justify-between">
+              <button
+                onClick={handleOtpSubmit}
+                className="py-2 px-4 bg-teal-600 text-white rounded-lg shadow hover:bg-teal-700 transition duration-300"
+              >
+                Confirm OTP
+              </button>
+              <button
+                onClick={() => setIsModalOpen(false)}
+                className="py-2 px-4 bg-red-600 text-white rounded-lg shadow hover:bg-red-700 transition duration-300"
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
