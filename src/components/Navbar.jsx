@@ -1,14 +1,39 @@
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Menu, X, User } from "lucide-react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import logo from "../assets/IntotheWildStaysLogo.png"; // Replace with the actual path to your logo
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userData, setUserData] = useState(null);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
+  // Check token and fetch user data
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      setIsLoggedIn(true);
+      // Fetch user data
+      axios
+        .get("https://your-api-endpoint.com/user", {
+          headers: { Authorization: `Bearer ${token}` },
+        })
+        .then((response) => {
+          setUserData(response.data);
+        })
+        .catch((error) => {
+          console.error("Error fetching user data:", error);
+        });
+    } else {
+      setIsLoggedIn(false);
+      setUserData(null);
+    }
+  }, []);
 
   return (
     <nav className="fixed w-full z-50 bg-gradient-to-b from-[#000000] to-transparent transition-all font-ethereal duration-300 pt-8">
@@ -59,12 +84,40 @@ export default function Navbar() {
             >
               Contact Us
             </Link>
-            <Link
-              to="/login"
-              className="text-gray-200 hover:text-primary px-3 py-2 text-lg transition duration-300"
-            >
-            Login
-            </Link>
+
+            {/* Conditional rendering for Login/User */}
+            {!isLoggedIn ? (
+              <Link
+                to="/login"
+                className="text-gray-200 hover:text-primary px-3 py-2 text-lg transition duration-300"
+              >
+                Login
+              </Link>
+            ) : (
+              <div className="relative group">
+                <User className="h-8 w-8 text-gray-200 cursor-pointer" />
+                <div className="absolute hidden group-hover:block right-0 mt-2 bg-gray-800 text-gray-200 rounded-md shadow-lg py-2">
+                  <div className="px-4 py-2">
+                    Hello, {userData?.name || "User"}
+                  </div>
+                  <Link
+                    to="/profile"
+                    className="block px-4 py-2 hover:bg-gray-700"
+                  >
+                    Profile
+                  </Link>
+                  <button
+                    className="block w-full text-left px-4 py-2 hover:bg-gray-700"
+                    onClick={() => {
+                      localStorage.removeItem("token");
+                      setIsLoggedIn(false);
+                    }}
+                  >
+                    Logout
+                  </button>
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Mobile menu button */}
@@ -103,7 +156,7 @@ export default function Navbar() {
               to="/tours"
               className="block text-gray-200 hover:text-primary px-3 py-2 rounded-md text-base font-medium transition duration-300"
             >
-              Tour
+              Tours & Events
             </Link>
             <Link
               to="/blog"
@@ -123,6 +176,26 @@ export default function Navbar() {
             >
               Contact Us
             </Link>
+
+            {/* Conditional rendering for Login/User */}
+            {!isLoggedIn ? (
+              <Link
+                to="/login"
+                className="block text-gray-200 hover:text-primary px-3 py-2 rounded-md text-base font-medium transition duration-300"
+              >
+                Login
+              </Link>
+            ) : (
+              <button
+                className="block w-full text-left px-3 py-2 text-gray-200 hover:text-primary rounded-md text-base font-medium transition duration-300"
+                onClick={() => {
+                  localStorage.removeItem("token");
+                  setIsLoggedIn(false);
+                }}
+              >
+                User
+              </button>
+            )}
           </div>
         </div>
       )}

@@ -22,12 +22,14 @@ import Image7 from "../assets/itw_rep/itwrep_page-0013.jpg";
 
 const AboutUs = () => {
   return (
-    <div className="min-h-[100vh] pt-32">
-      <div className="relative min-h-[60vh] bg-gray-50">
-        <div className=" bg-[url('https://images.trvl-media.com/lodging/109000000/108380000/108370800/108370765/28b3dc50.jpg?impolicy=resizecrop&rw=1200&ra=fit')] absolute inset-0 bg-cover bg-center bg-fixed">
-          <div className="absolute inset-0 bg-gradient-to-b from-[#091F3C]/50 to-[#091F3C]/80" />
+    <div className="min-h-[100vh] ">
+      <div className="relative min-h-[70vh] overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 bg-[url('https://images.trvl-media.com/lodging/109000000/108380000/108370800/108370765/28b3dc50.jpg?impolicy=resizecrop&rw=1200&ra=fit')] bg-cover bg-center bg-fixed transform scale-105">
+          <div className="absolute inset-0 bg-gradient-to-b from-[#091F3C]/30 to-[#091F3C]/90 backdrop-blur-sm" />
         </div>
 
+        {/* Content Section */}
         <div className="relative min-h-[60vh] max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32 flex flex-col items-center justify-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -35,6 +37,7 @@ const AboutUs = () => {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
+            {/* Section Heading */}
             <h1 className="relative inline-block">
               <span className="absolute -inset-1 w-full h-full bg-gradient-to-r from-[#43A181] to-[#43A181]/80 -skew-y-3 transform origin-top-right"></span>
               <span className="relative text-4xl md:text-5xl lg:text-7xl font-bold text-white tracking-tight">
@@ -42,6 +45,7 @@ const AboutUs = () => {
               </span>
             </h1>
 
+            {/* Decorative Divider */}
             <motion.div
               initial={{ opacity: 0, width: 0 }}
               animate={{ opacity: 1, width: "100%" }}
