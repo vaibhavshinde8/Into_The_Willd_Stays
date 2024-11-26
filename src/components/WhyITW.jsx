@@ -9,8 +9,7 @@ const WhyITW = () => {
       image: Image1,
       altText: "Trusted Brand",
       title: "Trusted Brand",
-      description:
-        "India's Favourite Homestays  Eco-Friendly Homestay.",
+      description: "India's Favourite Homestays  Eco-Friendly Homestay.",
     },
     {
       image: Image2,
@@ -18,7 +17,7 @@ const WhyITW = () => {
       title: "Bespoke Hospitality",
       description: "Personalized service to make your stay memorable.",
     },
-   
+
     {
       image: Image4,
       altText: "High quality linens & toiletries",
