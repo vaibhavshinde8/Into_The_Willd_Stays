@@ -14,7 +14,7 @@ const Login = () => {
     try {
       const data = await loginUser(email, password);
       console.log("Logged in successfully:", data);
-      navigate("/admin", { state: { user: data.user } });
+      navigate("/user-profile", { state: { user: data.user } });
     } catch (err) {
       setError("Login failed. Please check your credentials.");
     }

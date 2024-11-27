@@ -16,6 +16,7 @@ import ExploreMoreITW from "./../components/ExploreMoreITW";
 import ExploreMoreMNM from "./../components/ExploreMoreMNM";
 import ExploreMoreSAS from "./../components/ExploreMoreSAS";
 import { BlogPost } from "./../components/BlogPost";
+import UserProfile from './../components/UserProfile';
 
 const blogs = [];
 
@@ -79,6 +80,10 @@ const router = createBrowserRouter([
       {
         path: "/admin",
         element: <AdminPanel />,
+      },
+      {
+        path: "/user-profile",
+        element: <UserProfile />,
       },
       {
         path: "/blog/:id",
