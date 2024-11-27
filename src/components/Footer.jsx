@@ -34,7 +34,7 @@ const Footer = () => {
             <div className="flex space-x-4">
               <a
                 href=" https://www.facebook.com/profile.php?id=61557269590045"
-                className="text-[#F77706] hover:text-white hover:scale-110 duration-300 ease-in-out transition-colors"
+                className="text-[#ffffff] hover:text-white hover:scale-110 duration-300 ease-in-out transition-colors"
               >
                 <Facebook size={25} />
               </a>
@@ -46,13 +46,13 @@ const Footer = () => {
               </a> */}
               <a
                 href="https://www.instagram.com/intothewildstays/profilecard/?igsh=cGt4dTRvenNvZ25h"
-                className="text-[#E4405F] hover:text-white hover:scale-110 duration-300 ease-in-out transition-colors"
+                className="text-[#ffffff] hover:text-white hover:scale-110 duration-300 ease-in-out transition-colors"
               >
                 <Instagram size={25} />
               </a>
               <a
-                href="https://wa.me/9958838557"
-                className="text-[#166924] hover:text-white hover:scale-110 duration-300 ease-in-out transition-colors"
+                href="https://wa.me/9761966485"
+                className="text-[#ffffff] hover:text-white hover:scale-110 duration-300 ease-in-out transition-colors"
               >
                 <FaWhatsapp size={25} />
               </a>

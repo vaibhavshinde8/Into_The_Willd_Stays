@@ -85,7 +85,7 @@ export default function Navbar() {
               <Instagram size={20} />
             </a>
             <a
-              href="https://wa.me/9958838557"
+              href="https://wa.me/9761966485"
               className="text-[#ffffff] hover:text-white hover:scale-110 duration-300 ease-in-out transition-colors"
             >
               <FaWhatsapp size={20} />

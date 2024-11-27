@@ -10,12 +10,12 @@ const TourBanner = () => {
         <h1 className="lg:text-5xl text-3xl font-extrabold text-white tracking-wide leading-tight text-shadow-md">
           Welcome to Our Tours Package
         </h1>
-        <h2 className="text-lg lg:text-2xl text-white mb-4 font-semibold opacity-80">
+        {/* <h2 className="text-lg lg:text-2xl text-white mb-4 font-semibold opacity-80">
           Join our community to explore the best packages, All in{" "}
           <span className="text-[#F77706] font-extrabold text-shadow-lg">
             IntoTheWildsStays
           </span>
-        </h2>
+        </h2> */}
         <a
           href="/tours"
           className="px-6 py-3 lg:px-16 hover:bg-[#091F3C] font-semibold rounded-full bg-gradient-to-r from-[#43A181] to-[#009db5] text-white transition duration-300 ease-in-out transform hover:scale-105 shadow-md hover:shadow-lg"
