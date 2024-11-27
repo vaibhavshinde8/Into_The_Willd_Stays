@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FaArrowAltCircleDown, FaArrowAltCircleUp } from "react-icons/fa";
-import img1 from "../assets/itw/IMG-20240530-WA0002.jpg";
+import img1 from "../assets/itw/IMG-20240530-WA0015.jpg";
 import img2 from "../assets/itw/IMG-20240530-WA0017.jpg";
 import img3 from "../assets/itw/IMG-20240530-WA0014.jpg";
 import img4 from "../assets/itw/IMG-20240530-WA0019.jpg";

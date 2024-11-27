@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import Image1 from "../assets/itw/MG8666.jpg";
 import Image2 from "../assets/goa/goa-ggl.jpg";
-import Image3 from "../assets/pineandtails/IMG_6597.jpg";
+import Image3 from "../assets/pineandtails/Screenshot47.png";
 import Image4 from "../assets/majuli/Property Photo/18PM.jpeg";
 
 const locations = [

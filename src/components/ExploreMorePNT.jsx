@@ -4,8 +4,8 @@ import { useState,useEffect } from "react";
 import { FaArrowAltCircleDown, FaArrowAltCircleUp } from "react-icons/fa";
 import img1 from "../assets/pineandtails/IMG_6555.jpg";
 import img2 from "../assets/pineandtails/IMG_6567.jpg";
-import img3 from "../assets/pineandtails/IMG_6577.jpg";
-import img4 from "../assets/pineandtails/IMG_6593.jpg";
+import img3 from "../assets/pineandtails/IMG_6590.jpg";
+import img4 from "../assets/pineandtails/IMG_6598.jpg";
 import { MapPin, Mountain } from "lucide-react";
 
 const containerVariants = {

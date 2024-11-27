@@ -16,13 +16,13 @@ import TourBanner from "../components/TourBanner";
 const properties = [
   {
     imgURL: Image1,
-    name: "Into the wilds stays",
+    name: "Into The Wild Stays",
     description:
       "Stay in a charming hilltop cottage with breathtaking views of Mussoorie's misty mountains and serene surroundings.",
     location: "Dhanolti",
     rating: 4.6,
     reviews: 50,
-    price: 1000,
+    price: 4000,
     bedroom: 4,
     guest: 24,
     exploremoreRoute: "/exploremoreitw",
@@ -35,7 +35,7 @@ const properties = [
     location: "Tehri",
     rating: 4.7,
     reviews: 30,
-    price: 1750,
+    price: 3500,
     bedroom: 5,
     guest: 12,
     exploremoreRoute: "/exploremorepnt",
@@ -61,7 +61,7 @@ const properties = [
     location: "Goa",
     rating: 4.8,
     reviews: 40,
-    price: 1200,
+    price: "11000-16000",
     guest: 10,
     exploremoreRoute: "/exploremoresas",
   },
@@ -106,31 +106,31 @@ const Properties = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-        {/* Hero Section */}
-        <div className="relative h-[70vh] overflow-hidden">
-          <div className="absolute inset-0 bg-[url('https://images.trvl-media.com/lodging/109000000/108380000/108370800/108370765/28b3dc50.jpg?impolicy=resizecrop&rw=1200&ra=fit')] bg-cover bg-center bg-fixed transform scale-105">
-            <div className="absolute inset-0 bg-gradient-to-b from-[#091F3C]/30 to-[#091F3C]/90 backdrop-blur-sm" />
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            className="relative h-full max-w-7xl mx-auto px-4 flex flex-col items-center justify-center text-center"
-          >
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
-              <span className="bg-gradient-to-r from-[#43A181] to-teal-400 bg-clip-text text-transparent">
-                Discover
-              </span>
-              <br />
-              Your Perfect Stay
-            </h1>
-            <p className="text-xl text-gray-200 max-w-2xl mb-8">
-              Explore our handpicked collection of stunning properties in
-              spectacular locations
-            </p>
-          </motion.div>
+      {/* Hero Section */}
+      <div className="relative h-[70vh] overflow-hidden">
+        <div className="absolute inset-0 bg-[url('https://images.trvl-media.com/lodging/109000000/108380000/108370800/108370765/28b3dc50.jpg?impolicy=resizecrop&rw=1200&ra=fit')] bg-cover bg-center bg-fixed transform scale-105">
+          <div className="absolute inset-0 bg-gradient-to-b from-[#091F3C]/30 to-[#091F3C]/90 backdrop-blur-sm" />
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="relative h-full max-w-7xl mx-auto px-4 flex flex-col items-center justify-center text-center"
+        >
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
+            <span className="bg-gradient-to-r from-[#43A181] to-teal-400 bg-clip-text text-transparent">
+              Discover
+            </span>
+            <br />
+            Your Perfect Stay
+          </h1>
+          <p className="text-xl text-gray-200 max-w-2xl mb-8">
+            Explore our handpicked collection of stunning properties in
+            spectacular locations
+          </p>
+        </motion.div>
+      </div>
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 py-16">
@@ -199,7 +199,7 @@ const Properties = () => {
                           </span>
                           <span className="flex items-center space-x-2 bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm">
                             <FaBed className="text-blue-500" />
-                            <span>{property.bedroom} Bedrooms</span>
+                            <span>{property.bedroom} Cottages</span>
                           </span>
                           <span className="flex items-center space-x-2 bg-purple-50 text-purple-700 px-3 py-1 rounded-full text-sm">
                             <FaUsers className="text-purple-500" />
@@ -214,8 +214,11 @@ const Properties = () => {
                             ₹{property.price}
                           </span>
                           <span className="text-sm text-gray-500">
-                            per night
+                            per night / Cottage
                           </span>
+                          {/* <span className="text-sm text-gray-500">
+                            per night
+                          </span> */}
                         </div>
 
                         <div className="flex space-x-3">

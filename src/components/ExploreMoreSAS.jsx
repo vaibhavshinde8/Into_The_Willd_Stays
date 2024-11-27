@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { FaArrowAltCircleDown, FaArrowAltCircleUp } from "react-icons/fa";
 import img1 from "../assets/SunandSandGoa/50PM.jpeg";
 import img2 from "../assets/SunandSandGoa/51PM.jpeg";
-import img3 from "../assets/SunandSandGoa/53PM.jpeg";
+import img3 from "../assets/SunandSandGoa/34.52PM2.jpeg";
 import img4 from "../assets/SunandSandGoa/52PM.jpeg";
 import { MapPin, Mountain } from "lucide-react";
 

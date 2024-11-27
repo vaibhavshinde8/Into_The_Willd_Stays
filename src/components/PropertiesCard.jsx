@@ -14,32 +14,36 @@ import Image4 from "../assets/SunandSandGoa/52PM.jpeg";
 const properties = [
   {
     imgURL: Image1,
-    name: "Into the wilds stays",
-    description: "Stay in a charming hilltop cottage with breathtaking views of Mussoorie's misty mountains and serene surroundings.",
+    name: "Into The Wild Stays",
+    description:
+      "Stay in a charming hilltop cottage with breathtaking views of Mussoorie's misty mountains and serene surroundings.",
     location: "Dhanolti",
     rating: 4.6,
     reviews: 50,
-    price: 1000,
+    price: 4000,
     bedroom: 4,
     guest: 24,
     exploremoreRoute: "/exploremoreitw",
   },
   {
     imgURL: Image2,
-    name: "ITW: Pines And Tails",
-    description: "Stay Type:- 4BHK private pool, Seaview Villa, Porvorim North Goa.",
+    name: " ITW : Pines And Tails",
+    description:
+      "Stay Type;- 4BHK private pool, Seaview Villa, Porvorim North Goa.",
     location: "Tehri",
     rating: 4.7,
     reviews: 30,
-    price: 1750,
+    price: 3500,
     bedroom: 5,
     guest: 12,
     exploremoreRoute: "/exploremorepnt",
   },
+
   {
     imgURL: Image3,
-    name: "ITW: Me:nam Homestay",
-    description: "A tranquil retreat located in the lush green valleys of Dehradun, perfect for unwinding and enjoying the scenic beauty.",
+    name: " ITW : Me:nam Homestay",
+    description:
+      "A tranquil retreat located in the lush green valleys of Dehradun, perfect for unwinding and enjoying the scenic beauty.",
     location: "Majuli",
     rating: 4.8,
     reviews: 40,
@@ -49,12 +53,13 @@ const properties = [
   },
   {
     imgURL: Image4,
-    name: "ITW: Sun and Sand Villa",
-    description: "A tranquil retreat located in the lush green valleys of Dehradun, perfect for unwinding and enjoying the scenic beauty.",
+    name: " ITW : Sun and Sand Villa",
+    description:
+      "A tranquil retreat located in the lush green valleys of Dehradun, perfect for unwinding and enjoying the scenic beauty.",
     location: "Goa",
     rating: 4.8,
     reviews: 40,
-    price: 1200,
+    price: "11000-16000",
     guest: 10,
     exploremoreRoute: "/exploremoresas",
   },

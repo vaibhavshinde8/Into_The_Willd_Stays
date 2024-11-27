@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FaArrowAltCircleDown, FaArrowAltCircleUp } from "react-icons/fa";
-import img1 from "../assets/majuli/Property Photo/464947394_1576137619699668_5411537306352967985_n.jpg";
-import img2 from "../assets/majuli/Property Photo/AF1QipMCIOWRYWt_LgfarzWPyC_3M2qtDYOsgVoPLCpu=s387-k-no.jfif";
-import img3 from "../assets/majuli/Property Photo/58PM.jpeg";
-import img4 from "../assets/majuli/Property Photo/18PM.jpeg";
+import img4 from "../assets/majuli/Property Photo/006.jpg";
+import img2 from "../assets/majuli/Property Photo/002.jpg";
+import img3 from "../assets/majuli/Property Photo/005.jpg";
+import img1 from "../assets/majuli/Property Photo/004.jpg";
 import { MapPin, Mountain } from "lucide-react";
 
 const containerVariants = {
@@ -109,9 +109,9 @@ const ExploreMoreMNM = () => {
     }
   };
 
-   useEffect(() => {
-     window.scrollTo(0, 0); // Scrolls to the top
-   }, []);
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scrolls to the top
+  }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#091F3C] to-[#3C8D99] px-6 lg:px-32 py-40 text-white">
