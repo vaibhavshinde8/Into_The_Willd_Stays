@@ -1,20 +1,30 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import {
-  FaSearch,
- 
+import { 
+  FaSearch, 
+  FaMapMarkerAlt, 
+  FaCalendar, 
+  FaUsers, 
+  FaRocket 
 } from "react-icons/fa";
 import heroImage1 from "../assets/guestdiary/img-2.jpg";
 import heroImage2 from "../assets/guestdiary/img-4.jpg";
 import heroImage3 from "../assets/guestdiary/img-5.jpeg";
 
 const images = [heroImage1, heroImage2, heroImage3];
+const locations = ["Dhanolti", "Goa", "Tehri", "Majuli"];
 
 const HomeHero = () => {
   const navigate = useNavigate();
-  
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [searchParams, setSearchParams] = useState({
+    location: "",
+    checkIn: "",
+    checkOut: "",
+    adults: 1,
+    children: 0,
+  });
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -24,15 +34,25 @@ const HomeHero = () => {
   }, []);
 
   const handleSearch = () => {
-    const searchParams = new URLSearchParams();
+    const params = new URLSearchParams();
+    Object.entries(searchParams).forEach(([key, value]) => {
+      if (value) params.append(key, value);
+    });
+    navigate(`/properties?${params.toString()}`);
+  };
 
-    navigate(`/properties?${searchParams.toString()}`);
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setSearchParams((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated Background */}
-      <div className="absolute inset-0 z-0">
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black pt-48 pb-8">
+      {/* Animated Background Overlay */}
+      <div className="absolute inset-0 z-0 opacity-50">
         {images.map((img, index) => (
           <img
             key={index}
@@ -43,60 +63,159 @@ const HomeHero = () => {
             }`}
           />
         ))}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/80" />
+      </div>
+
+      {/* Animated Grid Background */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute inset-0 bg-grid-white/5 opacity-50"></div>
       </div>
 
       {/* Content Container */}
       <motion.div
-        className="relative z-10 w-full max-w-6xl mx-auto px-4"
+        className="relative z-10 w-full max-w-5xl mx-auto px-4"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
       >
-        {/* Title */}
-        <motion.h1
-          className="text-3xl sm:text-5xl md:text-7xl font-bold text-white text-center mb-8 tracking-tight"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-        >
-          <span className="bg-gradient-to-r from-teal-300 to-emerald-500 bg-clip-text text-transparent">
-            Into the Wild
-          </span>{" "}
-          Stays
-        </motion.h1>
-
-        {/* Search Section */}
-        <motion.div
-          className="bg-white/20 backdrop-blur-md rounded-3xl p-4 sm:p-6 md:p-4 shadow-2xl flex flex-col items-center"
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.5 }}
-        >
-          {/* Slogan and Search Section */}
+        {/* Hero Content */}
+        <div className="grid md:grid-cols-2 gap-8 items-center">
+          {/* Left Side - Text Content */}
           <motion.div
-            className="text-center mb-8"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <p className="text-xl sm:text-2xl text-white font-medium mb-4 px-4">
-              Discover Extraordinary Escapes: Where Adventure Meets Comfort
+            <h1 className="text-4xl md:text-6xl  font-medium text-white mb-6 leading-tight">
+              <span className="bg-gradient-to-r from-cyan-400 font-extrabold to-emerald-400 bg-clip-text text-transparent">
+                Into the Wild
+              </span>
+              <br />
+              Stays
+            </h1>
+            <p className="text-xl text-gray-300 mb-8">
+              Embark on a journey of discovery with our curated travel
+              experiences. Find your perfect escape, where every destination
+              tells a story.
             </p>
+
+            {/* Unique Selling Points */}
+            <div className="space-y-4 mb-8">
+              <div className="flex items-center space-x-4">
+                <FaRocket className="text-cyan-400 text-2xl" />
+                <span className="text-white">Unique Destinations</span>
+              </div>
+              <div className="flex items-center space-x-4">
+                <FaRocket className="text-emerald-400 text-2xl" />
+                <span className="text-white">Personalized Experiences</span>
+              </div>
+            </div>
           </motion.div>
 
-          {/* Search Button */}
-          <div className="flex justify-center">
-            <button
-              className="w-auto bg-gradient-to-r from-teal-500 to-emerald-600 text-white py-3 px-6 rounded-xl hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2"
-              onClick={handleSearch}
-            >
-              <FaSearch />
-              <span>Explore Our Properties</span>
-            </button>
-          </div>
-        </motion.div>
+          {/* Right Side - Search Form */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+          >
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/10 shadow-2xl">
+              <h2 className="text-2xl text-white font-semibold mb-6 text-center">
+                Find Your Next Adventure
+              </h2>
+
+              {/* Search Form */}
+              <div className="space-y-4">
+                {/* Location */}
+                <div className="relative">
+                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <FaMapMarkerAlt className="text-gray-400" />
+                  </div>
+                  <select
+                    name="location"
+                    value={searchParams.location}
+                    onChange={handleInputChange}
+                    className="w-full pl-10 pr-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-cyan-400"
+                  >
+                    <option value="" className="text-black">
+                      Select Location
+                    </option>
+                    {locations.map((loc) => (
+                      <option key={loc} value={loc} className="text-black">
+                        {loc}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                {/* Date Inputs */}
+                <div className="grid grid-cols-2 gap-4">
+                  {/* Check-in */}
+                  <div className="relative">
+                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                      <FaCalendar className="text-gray-400" />
+                    </div>
+                    <input
+                      type="date"
+                      name="checkIn"
+                      value={searchParams.checkIn}
+                      onChange={handleInputChange}
+                      className="w-full pl-10 pr-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-cyan-400"
+                    />
+                  </div>
+
+                  {/* Check-out */}
+                  <div className="relative">
+                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                      <FaCalendar className="text-gray-400" />
+                    </div>
+                    <input
+                      type="date"
+                      name="checkOut"
+                      value={searchParams.checkOut}
+                      onChange={handleInputChange}
+                      className="w-full pl-10 pr-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-cyan-400"
+                    />
+                  </div>
+                </div>
+
+                {/* Guests */}
+                <div className="relative">
+                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <FaUsers className="text-gray-400" />
+                  </div>
+                  <select
+                    name="adults"
+                    value={searchParams.adults}
+                    onChange={handleInputChange}
+                    className="w-full pl-10 pr-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-cyan-400"
+                  >
+                    {[...Array(6)].map((_, i) => (
+                      <option key={i + 1} value={i + 1} className="text-black">
+                        {i + 1} Adult{i > 0 ? "s" : ""}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                {/* Search Button */}
+                <button
+                  onClick={handleSearch}
+                  className="w-full py-4 bg-gradient-to-r from-cyan-500 to-emerald-500 text-white rounded-xl 
+                  hover:from-cyan-600 hover:to-emerald-600 transition-all duration-300 
+                  flex items-center justify-center space-x-3 
+                  transform hover:scale-105 active:scale-95"
+                >
+                  <FaSearch />
+                  <span>Explore Destinations</span>
+                </button>
+              </div>
+            </div>
+          </motion.div>
+        </div>
       </motion.div>
+
+      {/* Decorative Elements */}
+      <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black/30 to-transparent"></div>
     </div>
   );
 };

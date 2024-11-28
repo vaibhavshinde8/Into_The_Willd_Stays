@@ -8,9 +8,18 @@
       "duration": "3 Days, 2 Nights",
       "cost": "₹9,999 per person",
       "itinerary": [
-        "Day 1: Arrival, check-in, and evening Ganga Aarti.",
-        "Day 2: River rafting, cliff jumping, and trekking.",
-        "Day 3: Local sightseeing and departure."
+        {
+          "day": "Day 1",
+          "description": "Arrival, check-in, and evening Ganga Aarti."
+        },
+        {
+          "day": "Day 2",
+          "description": "River rafting, cliff jumping, and trekking."
+        },
+        {
+          "day": "Day 3",
+          "description": "Local sightseeing and departure."
+        }
       ],
       "inclusions": [
         "Accommodation in riverside camps.",
@@ -49,10 +58,19 @@
       "duration": "4 Days, 3 Nights",
       "cost": "₹12,499 per person",
       "itinerary": [
-        "Day 1: Arrival, check-in, and exploring Mall Road.",
-        "Day 2: Visit to Kempty Falls and Gun Hill.",
-        "Day 3: Trek to Lal Tibba and Camel's Back Road.",
-        "Day 4: Leisure day and departure."
+        {
+          "day": "Day 3",
+          "description": "Arrival, check-in, and exploring Mall Road."
+        },
+        {
+          "day": "Day 3",
+          "description": " Visit to Kempty Falls and Gun Hill."
+        },
+        {
+          "day": "Day 3",
+          "description": "Trek to Lal Tibba and Camel's Back Road."
+        },
+        { "day": "Day 3", "description": "Leisure day and departure." }
       ],
       "inclusions": [
         "Stay in a 3-star hotel with hill view rooms.",
@@ -230,135 +248,135 @@
         "In case of emergencies, additional charges for evacuation apply."
       ]
     },
-     {
-       "id": 5,
-       "imageUrl": "https://rishikeshdaytour.com/blog/wp-content/uploads/2021/12/Kanatal-An-Unexplored-Hamlet-in-Uttarakhand-.jpg",
+    {
+      "id": 5,
+      "imageUrl": "https://rishikeshdaytour.com/blog/wp-content/uploads/2021/12/Kanatal-An-Unexplored-Hamlet-in-Uttarakhand-.jpg",
 
-       "name": "Rishikesh Kanatal",
-       "location": "Rishikesh and Dhanolti, Uttarakhand",
-       "duration": "2 Nights, 3 Days",
-       "cost": "₹3,500 per person (excluding transport)",
-       "itinerary": [
-         {
-           "day": "Day 1",
-           "location": "Rishikesh",
-           "details": [
-             "Stay in Swiss Camps (Quad sharing) with attached washroom and cooler.",
-             "Activities: 16 km rafting at Shivpuri.",
-             "Meals: Breakfast (Aloo puri, Aloo paratha, Tea), Lunch (Jeera aalu, Daal tadka, Rice, Chapati), Dinner (Shahee paneer, Chicken curry, Daal tadka, Rice, Chapati), and Evening snack (Mix Pakoda with tea)."
-           ]
-         },
-         {
-           "day": "Day 2",
-           "location": "Rishikesh to Dhanolti",
-           "details": [
-             "Stay in Luxury Cottages (Quad sharing).",
-             "Sightseeing: Visit Surkanda Devi Temple, the highest point in the Dhanolti-Kanatal region.",
-             "Meals: Breakfast (Aloo puri, Aloo paratha, Bread toast, Tea & coffee), Lunch (Jeera aalu, Daal tadka, Raita, Rice, Chapati), Dinner (Kadhai paneer, Shahee paneer, Chicken curry, Daal tadka, Rice, Chapati), and Evening snack (Mix Pakoda with tea)."
-           ]
-         },
-         {
-           "day": "Day 3",
-           "location": "Dhanolti - Tehri - Delhi",
-           "details": [
-             "Music allowed until 10 PM due to reserve forest proximity.",
-             "Check-out and departure."
-           ]
-         }
-       ],
-       "inclusions": [
-         "Stay in Swiss Camps and Luxury Cottages with quad sharing.",
-         "Meals: Daily breakfast, lunch, dinner, and evening snacks.",
-         "Rafting in Rishikesh (16 km).",
-         "Sightseeing: Surkanda Devi Temple."
-       ],
-       "exclusions": [
-         "Transportation to and from Rishikesh.",
-         "Non-vegetarian meals available at an additional charge.",
-         "GST not included in the price.",
-         "Any personal expenses or activities not mentioned in inclusions."
-       ],
-       "important_notes": [
-         "Music is strictly prohibited after 10 PM near reserve forest.",
-         "Heater available at ₹299 per day.",
-         "Carry a valid ID for check-in.",
-         "Non-vegetarian meals can be added at extra cost."
-       ],
-       "contact_methods": {
-         "phone": "9958838557",
-         "email": "intothewildstays@gmail.com",
-         "whatsapp": "8762192191"
-       },
-       "rules_and_policy": [
-         "Music allowed only until 10 PM due to reserve forest proximity.",
-         "Property damage will be charged as per the current rate.",
-         "All prices exclude GST.",
-         "Booking modifications are subject to availability."
-       ]
-     },
-      {
-        "id": 6,
-        "imageUrl": "https://blog.moustachescapes.com/wp-content/uploads/2024/01/629f3b6b4d577_1654602603.jpg",
-
-        "name": "Four Treks in One Trip: Valley of Flowers",
-        "location": "Chamoli, Uttarakhand",
-        "duration": "6 Days, 5 Nights",
-        "cost": "₹7500 per person",
-        "itinerary": [
-          {
-            "day": "Day 1",
-            "description": "Rishikesh to Joshimath (Drive 290kms)"
-          },
-          {
-            "day": "Day 2",
-            "description": "Joshimath to Ghangaria via Govindghat (Drive 28kms + Trek 10kms)"
-          },
-          {
-            "day": "Day 3",
-            "description": "Ghangaria to Hemkunt Sahib & Back to Ghangaria (Trek 6kms)"
-          },
-          {
-            "day": "Day 4",
-            "description": "Ghangaria to Valley of Flowers and back to Ghangaria (Trek 5kms)"
-          },
-          {
-            "day": "Day 5",
-            "description": "Ghangaria to Joshimath via Badrinath"
-          },
-          {
-            "day": "Day 6",
-            "description": "Reach Rishikesh in the evening (Drive 289kms)"
-          }
-        ],
-        "inclusions": [
-          "Accommodation at Auli (1 night) and Ghangaria (3 nights).",
-          "Meals: Breakfast, Lunch, Dinner (12 total).",
-          "Transport: Pickup and drop from Delhi.",
-          "Guided treks to Hemkunt Sahib and Valley of Flowers."
-        ],
-        "exclusions": [
-          "Travel insurance.",
-          "GST (5%).",
-          "Entry or viewpoint tickets.",
-          "Food during transit.",
-          "Backpack offloading charges.",
-          "Helicopter ride (₹3500) and mule rental (₹1000)."
-        ],
-        "important_notes": [
-          "Entry to the Valley of Flowers is allowed from 7:00 AM to 5:00 PM only.",
-          "Staying overnight in the Valley of Flowers buffer zone is prohibited.",
-          "Booking modifications are subject to availability."
-        ],
-        "contact_methods": {
-          "phone": "+91-9761966485",
-          "email": "intothewildstays@gmail.com",
-          "whatsapp": "+91-9761966485"
+      "name": "Rishikesh Kanatal",
+      "location": "Rishikesh and Dhanolti, Uttarakhand",
+      "duration": "2 Nights, 3 Days",
+      "cost": "₹3,500 per person (excluding transport)",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "description": [
+            "Rishikesh ",
+            "Stay in Swiss Camps (Quad sharing) with attached washroom and cooler.",
+            "Activities: 16 km rafting at Shivpuri.",
+            "Meals: Breakfast (Aloo puri, Aloo paratha, Tea), Lunch (Jeera aalu, Daal tadka, Rice, Chapati), Dinner (Shahee paneer, Chicken curry, Daal tadka, Rice, Chapati), and Evening snack (Mix Pakoda with tea)."
+          ]
         },
-        "rules_and_policy": [
-          "Follow the guide's instructions during treks and activities.",
-          "Maintain cleanliness in the Valley of Flowers and surrounding areas.",
-          "Cancellations made within 72 hours of the trip are non-refundable."
-        ]
-      }
+        {
+          "day": "Day 2",
+          "description": [
+            "Rishikesh to Dhanolti ",
+            "Stay in Luxury Cottages (Quad sharing).",
+            "Sightseeing: Visit Surkanda Devi Temple, the highest point in the Dhanolti-Kanatal region.",
+            "Meals: Breakfast (Aloo puri, Aloo paratha, Bread toast, Tea & coffee), Lunch (Jeera aalu, Daal tadka, Raita, Rice, Chapati), Dinner (Kadhai paneer, Shahee paneer, Chicken curry, Daal tadka, Rice, Chapati), and Evening snack (Mix Pakoda with tea)."
+          ]
+        },
+        {
+          "day": "Day 3",
+          "description": [
+            "Dhanolti - Tehri - Delhi ",
+            "Music allowed until 10 PM due to reserve forest proximity.",
+            "Check-out and departure."
+          ]
+        }
+      ],
+      "inclusions": [
+        "Stay in Swiss Camps and Luxury Cottages with quad sharing.",
+        "Meals: Daily breakfast, lunch, dinner, and evening snacks.",
+        "Rafting in Rishikesh (16 km).",
+        "Sightseeing: Surkanda Devi Temple."
+      ],
+      "exclusions": [
+        "Transportation to and from Rishikesh.",
+        "Non-vegetarian meals available at an additional charge.",
+        "GST not included in the price.",
+        "Any personal expenses or activities not mentioned in inclusions."
+      ],
+      "important_notes": [
+        "Music is strictly prohibited after 10 PM near reserve forest.",
+        "Heater available at ₹299 per day.",
+        "Carry a valid ID for check-in.",
+        "Non-vegetarian meals can be added at extra cost."
+      ],
+      "contact_methods": {
+        "phone": "9958838557",
+        "email": "intothewildstays@gmail.com",
+        "whatsapp": "8762192191"
+      },
+      "rules_and_policy": [
+        "Music allowed only until 10 PM due to reserve forest proximity.",
+        "Property damage will be charged as per the current rate.",
+        "All prices exclude GST.",
+        "Booking modifications are subject to availability."
+      ]
+    },
+    {
+      "id": 6,
+      "imageUrl": "https://blog.moustachescapes.com/wp-content/uploads/2024/01/629f3b6b4d577_1654602603.jpg",
+
+      "name": "Four Treks in One Trip: Valley of Flowers",
+      "location": "Chamoli, Uttarakhand",
+      "duration": "6 Days, 5 Nights",
+      "cost": "₹7500 per person",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "description": "Rishikesh to Joshimath (Drive 290kms)"
+        },
+        {
+          "day": "Day 2",
+          "description": "Joshimath to Ghangaria via Govindghat (Drive 28kms + Trek 10kms)"
+        },
+        {
+          "day": "Day 3",
+          "description": "Ghangaria to Hemkunt Sahib & Back to Ghangaria (Trek 6kms)"
+        },
+        {
+          "day": "Day 4",
+          "description": "Ghangaria to Valley of Flowers and back to Ghangaria (Trek 5kms)"
+        },
+        {
+          "day": "Day 5",
+          "description": "Ghangaria to Joshimath via Badrinath"
+        },
+        {
+          "day": "Day 6",
+          "description": "Reach Rishikesh in the evening (Drive 289kms)"
+        }
+      ],
+      "inclusions": [
+        "Accommodation at Auli (1 night) and Ghangaria (3 nights).",
+        "Meals: Breakfast, Lunch, Dinner (12 total).",
+        "Transport: Pickup and drop from Delhi.",
+        "Guided treks to Hemkunt Sahib and Valley of Flowers."
+      ],
+      "exclusions": [
+        "Travel insurance.",
+        "GST (5%).",
+        "Entry or viewpoint tickets.",
+        "Food during transit.",
+        "Backpack offloading charges.",
+        "Helicopter ride (₹3500) and mule rental (₹1000)."
+      ],
+      "important_notes": [
+        "Entry to the Valley of Flowers is allowed from 7:00 AM to 5:00 PM only.",
+        "Staying overnight in the Valley of Flowers buffer zone is prohibited.",
+        "Booking modifications are subject to availability."
+      ],
+      "contact_methods": {
+        "phone": "+91-9761966485",
+        "email": "intothewildstays@gmail.com",
+        "whatsapp": "+91-9761966485"
+      },
+      "rules_and_policy": [
+        "Follow the guide's instructions during treks and activities.",
+        "Maintain cleanliness in the Valley of Flowers and surrounding areas.",
+        "Cancellations made within 72 hours of the trip are non-refundable."
+      ]
+    }
   ]
 }

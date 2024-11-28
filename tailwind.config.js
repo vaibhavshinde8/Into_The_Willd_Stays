@@ -4,12 +4,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#012258',
-        secondry: '#F77706'
+        primary: "#012258",
+        secondry: "#F77706",
       },
       fontFamily: {
-        primaryF: ["Caveat", "serif"]
-      }
+        primaryF: ["Caveat", "serif"],
+        montserrat: ["Montserrat", "sans-serif"],
+      },
     },
   },
   plugins: [],

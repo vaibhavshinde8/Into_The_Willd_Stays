@@ -1,11 +1,10 @@
+import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
-import { Pagination } from "swiper/modules";
-// import vid from "../assets/guest-exp.mp4"; 
-// import vid2 from "../assets/Video-822~2.mp4"; 
+import { Pagination, EffectCreative } from "swiper/modules";
+import { Stars, ArrowLeftCircle, ArrowRightCircle, Quote } from "lucide-react";
 
-import "./TestiSwiper.css";
+import "swiper/css";
+import "swiper/css/effect-creative";
 
 const testData = [
   {
@@ -71,97 +70,145 @@ const testData = [
     address: "Dhanaulti, Uttarakhand",
     img: "https://lh3.googleusercontent.com/a/ACg8ocJFqMHTOoRlhOUZiHy71cfy-oExqTTSauzFrHgX2S5kqC6g5Q=w75-h75-p-rp-mo-br100",
   },
- 
 ];
 
-const Testimonials = () => {
-  return (
-    <div className="py-12 bg-gray-100">
-      {/* Section Title */}
-      <h1 className="text-4xl font-bold text-center text-[#F77706] mb-8">
-        Guest testimonials
-      </h1>
 
-      {/* Swiper for Reviews */}
+const Testimonials = () => {
+  const [activeSlide, setActiveSlide] = useState(0);
+  const swiperRef = useRef(null);
+
+  const handlePrev = () => {
+    if (swiperRef.current) swiperRef.current.swiper.slidePrev();
+  };
+
+  const handleNext = () => {
+    if (swiperRef.current) swiperRef.current.swiper.slideNext();
+  };
+
+  return (
+    <div className="relative bg-gradient-to-br from-[#121212] to-[#1e1e2e] py-16 overflow-hidden">
+      {/* Animated Background Particles */}
+      <div className="absolute inset-0 opacity-20 pointer-events-none">
+        {[...Array(50)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute bg-white/10 rounded-full animate-pulse"
+            style={{
+              width: `${Math.random() * 10}px`,
+              height: `${Math.random() * 10}px`,
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 5}s`,
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Section Title */}
+      <div className="relative z-10 text-center mb-12">
+        <h1 className="text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600 mb-4">
+          Testimonials
+        </h1>
+        <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+          Authentic stories from travelers who discovered their perfect retreat
+        </p>
+      </div>
+
+      {/* Navigation Controls */}
+      <div className="absolute top-1/2 transform -translate-y-1/2 z-20 w-full flex justify-between px-8">
+        <button
+          onClick={handlePrev}
+          className="text-white/50 hover:text-white transition-all"
+        >
+          <ArrowLeftCircle size={48} />
+        </button>
+        <button
+          onClick={handleNext}
+          className="text-white/50 hover:text-white transition-all"
+        >
+          <ArrowRightCircle size={48} />
+        </button>
+      </div>
+
+      {/* Testimonials Slider */}
       <Swiper
-        slidesPerView={1}
-        spaceBetween={10}
+        ref={swiperRef}
+        effect={"creative"}
+        creativeEffect={{
+          prev: {
+            shadow: true,
+            translate: ["-20%", 0, -1],
+          },
+          next: {
+            translate: ["100%", 0, 0],
+          },
+        }}
+        grabCursor={true}
+        centeredSlides={true}
+        slidesPerView={1.5}
+        spaceBetween={30}
         pagination={{
           clickable: true,
-        }}
-        breakpoints={{
-          640: {
-            slidesPerView: 2,
-            spaceBetween: 20,
-          },
-          768: {
-            slidesPerView: 3,
-            spaceBetween: 30,
-          },
-          1024: {
-            slidesPerView: 3,
-            spaceBetween: 20,
+          renderBullet: function (index, className) {
+            return `<span class="${className} bg-white/30 hover:bg-white/60"></span>`;
           },
         }}
-        modules={[Pagination]}
+        modules={[Pagination, EffectCreative]}
         className="mySwiper"
+        onSlideChange={(swiper) => setActiveSlide(swiper.activeIndex)}
+        breakpoints={{
+          640: { slidesPerView: 1.5, spaceBetween: 30 },
+          768: { slidesPerView: 2, spaceBetween: 40 },
+          1024: { slidesPerView: 3, spaceBetween: 50 },
+        }}
       >
         {testData.map((testimon, index) => (
           <SwiperSlide key={index}>
-            <div className="flex flex-col h-full min-h-[350px] w-full max-w-xs mx-auto bg-white p-6 shadow-lg rounded-xl border border-gray-100 transition-all duration-300 hover:shadow-xl">
-              <div className="flex flex-col items-center justify-center space-y-4">
-                <div className="shrink-0">
+            <div
+              className={`
+              relative rounded-2xl p-8 transition-all duration-500 
+              ${
+                index === activeSlide
+                  ? "bg-[#2a2a3f] scale-105 shadow-2xl"
+                  : "bg-[#1e1e2e] opacity-70 scale-95"
+              }
+            `}
+            >
+              <Quote
+                className="absolute top-4 left-4 text-blue-400/20"
+                size={64}
+              />
+
+              {/* Profile Section */}
+              <div className="flex flex-col items-center mb-6">
+                <div className="relative mb-4">
                   <img
                     src={testimon.img}
                     alt={`${testimon.name}'s profile`}
-                    className="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover border-4 border-blue-50 shadow-md"
+                    className="w-32 h-32 rounded-full object-cover border-4 border-blue-500/30 ring-4 ring-blue-500/20"
                   />
-                </div>
-
-                <div className="text-center space-y-2">
-                  <p className="text-sm md:text-base text-gray-600 italic px-2 min-h-[80px] flex items-center justify-center">
-                    {testimon.review}
-                  </p>
-
-                  <div>
-                    <h2 className="text-lg md:text-xl font-semibold text-gray-800">
-                      {testimon.name}
-                    </h2>
-                    {/* Uncomment and style if you want to add address */}
-                    {/* <p className="text-xs text-gray-500 mt-1">{testimon.address}</p> */}
+                  <div className="absolute bottom-0 right-0 bg-blue-500 text-white rounded-full p-1">
+                    <Stars size={20} fill="currentColor" />
                   </div>
                 </div>
+                <h2 className="text-2xl font-bold text-blue-200 mb-2">
+                  {testimon.name}
+                </h2>
+                <div className="flex space-x-1 text-yellow-400 mb-4">
+                  {[...Array(testimon.rating)].map((_, i) => (
+                    <Stars key={i} size={24} fill="currentColor" />
+                  ))}
+                </div>
               </div>
+
+              {/* Review Text */}
+              <p className="text-gray-300 text-center italic text-base min-h-[120px] flex items-center justify-center">
+                "{testimon.review}"
+              </p>
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
-
-      {/* Video Section
-      <div className="container mt-8 gap-4 px-4 flex justify-center items-center">
-        <div className=" h-[70vh] rounded-lg shadow-lg overflow-hidden">
-          <video
-            className="lg:w-[550px] lg:h-[500px] h-[380px] w-[390px] object-cover"
-            controls
-            autoPlay
-            muted
-            src={vid}
-          >
-            Your browser does not support the video tag.
-          </video>
-        </div>
-        <div className=" h-[70vh] rounded-lg shadow-lg overflow-hidden">
-          <video
-            className="lg:w-[550px] lg:h-[500px] h-[380px] w-[390px] object-cover"
-            controls
-            autoPlay
-            muted
-            src={vid2}
-          >
-            Your browser does not support the video tag.
-          </video>
-        </div>
-      </div> */}
     </div>
   );
 };

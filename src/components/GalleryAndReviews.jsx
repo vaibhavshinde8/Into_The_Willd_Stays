@@ -1,10 +1,18 @@
-// import Image1 from "../assets/homehero1.png";
+import { useState } from "react";
+import { Quote, Globe, Star, Link as LinkIcon } from "lucide-react";
 import Image2 from "../assets/guestdiary/img-1.jpeg";
 import Image3 from "../assets/guestdiary/img-2.jpg";
 import Image4 from "../assets/guestdiary/img-3.jpeg";
 
-// Sample data for the gallery and reviews
-const content = [
+const testData = [
+  {
+    type: "review",
+    name: "Tushar Bhagwane",
+    review:
+      "I had a fantastic stay at this hotel! The rooms were spacious, clean, and well-equipped. The staff were incredibly friendly and went above and beyond.",
+    location: "Dhanaulti, Uttarakhand",
+    img: "https://lh3.googleusercontent.com/a-/ALV-UjVxxwRteERrs8ChY1SwQcY-cczJTbr37ZC34xirdvxZ1V02hV0=w75-h75-p-rp-mo-br100",
+  },
   {
     type: "image",
     imgSrc: Image2,
@@ -12,9 +20,11 @@ const content = [
   },
   {
     type: "review",
-    author: "@pankaj4all2005",
-    location: "Sundays Forever Hill Top Cottage",
-    review: "Always grateful to have this lil one by my side.",
+    name: "Hrishabh Vashishtha",
+    review:
+      "Into the Wild is an absolute gem! The interiors are cozy, the location is stunning, and the peaceful surroundings make it a perfect retreat.",
+    location: "Dhanaulti, Uttarakhand",
+    img: "https://lh3.googleusercontent.com/a-/ALV-UjVVWoTorW_xMCcGxT-K1pMEkyr6BiZRst_xtZZ4nATKp6PVafjl=w75-h75-p-rp-mo-ba2-br100",
   },
   {
     type: "image",
@@ -23,65 +33,172 @@ const content = [
   },
   {
     type: "review",
-    author: "@alex_travels",
-    location: "Cozy Mountain Retreat",
-    review: "The perfect escape for a peaceful weekend!",
+    name: "Manish Rathore",
+    review:
+      "Amazing stay at Into the Wild! Spacious cottage, stunning views, and delicious food. The staff was friendly and accommodating.",
+    location: "Dhanaulti, Uttarakhand",
+    img: "https://lh3.googleusercontent.com/a-/ALV-UjWAyMr0qVH4_8n21vsJraxjHqz_wEyldxnY2MHklO0JqjjGCfsw=w75-h75-p-rp-mo-br100",
   },
   {
     type: "image",
     imgSrc: Image4,
-    caption: "Take a deep breath and find peace among the peaks",
+    caption: "Serene moments in the mountains",
   },
   {
     type: "review",
-    author: "@alex_travels",
-    location: "Cozy Mountain Retreat",
-    review: "The perfect escape for a peaceful weekend!",
+    name: "Achyut Pandey",
+    review:
+      "Beautiful place to spend time with family and friends. Spacious cottages and a blissful valley view from the watchtower.",
+    location: "Dhanaulti, Uttarakhand",
+    img: "https://lh3.googleusercontent.com/a-/ALV-UjUiPYj94ra9LMSK_zdaPBiWGKgJ4tiRClMczHtXnkUHZZ8KlkDt=w75-h75-p-rp-mo-br100",
+  },
+
+  
+  {
+    name: "Arvind Nagar",
+    review:
+      "The location and view are worth every penny. Wonderful hospitality, and Uncle ji took great care of us like family. Will definitely come back soon!",
+    address: "Dhanaulti, Uttarakhand",
+    img: "https://lh3.googleusercontent.com/a-/ALV-UjXcVgO6RVm6QTkIEvCG4fDM4693d-jm2kS5Eji3CbgzhzcTVZLy=w75-h75-p-rp-mo-ba2-br100",
+  },
+  {
+    name: "Shivam Mishra",
+    review:
+      "Amazing stay with stunning views from the windows. The food, especially honey chilli potatoes and momos, was delicious. Highly recommended!",
+    address: "Dhanaulti, Uttarakhand",
+    img: "https://lh3.googleusercontent.com/a-/ALV-UjVtHJlom4jAmFJh851wQLMKq_OWJHGUSw7S8qRq9SLF_pPd5oq2=w75-h75-p-rp-mo-br100",
+  },
+  {
+    name: "Anjali Sharma",
+    review:
+      "A very beautiful and cozy cottage with an amazing mountain view. Perfect for a hill station staycation!",
+    address: "Dhanaulti, Uttarakhand",
+    img: "https://lh3.googleusercontent.com/a/ACg8ocJ8AxiaJuwlIiaehLvnIF99LgA7h-U99sgupo9LNOEKOmlGqg=w75-h75-p-rp-mo-br100",
+  },
+  {
+    name: "Rajat Sharma",
+    review:
+      "Located near Eco Park, this stay is vibrant and spacious. Modern cottages with a close-to-nature feel. Loved the hospitality and food!",
+    address: "Dhanaulti, Uttarakhand",
+    img: "https://lh3.googleusercontent.com/a-/ALV-UjWfhfXkPNVUNWGSMayOR9RqYcyoEH8iKKWKAtHxLbqAzpNDbJ85Ow=w75-h75-p-rp-mo-ba2-br100",
+  },
+  {
+    name: "Msc Bill",
+    review:
+      "Dhanaulti is beautiful, and Into the Wild homestay is the best place to stay. Amazing rooms and services!",
+    address: "Dhanaulti, Uttarakhand",
+    img: "https://lh3.googleusercontent.com/a/ACg8ocJFqMHTOoRlhOUZiHy71cfy-oExqTTSauzFrHgX2S5kqC6g5Q=w75-h75-p-rp-mo-br100",
   },
 ];
 
 const GalleryAndReviews = () => {
+  const [activeFilter, setActiveFilter] = useState("all");
+
+  const filteredContent =
+    activeFilter === "all"
+      ? testData
+      : testData.filter((item) => item.type === activeFilter);
+
   return (
-    <div className="gallery-reviews p-6 lg:px-32 bg-gradient-to-r from-[#ffffff] via-[#43A181] to-[#ffffff] text-white min-h-[60vh]">
-      <h1 className="text-4xl text-white lg:text-5xl font-bold mb-6 text-center pb-12">
-        Guest <span className="text-[#F77706]">Diaries</span>
-      </h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {content.map((item, index) => (
-          <div
-            key={index}
-            className="card bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-3 duration-300"
-          >
-            {item.type === "image" ? (
-              <>
-                <div className="relative">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800 text-white py-16 relative overflow-hidden lg:px-32">
+      {/* Decorative Background Elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl"></div>
+      </div>
+
+      {/* Content Container */}
+      <div className="container mx-auto px-4 relative z-10">
+        {/* Header Section */}
+        <div className="text-center mb-16">
+          <div className="flex justify-center items-center space-x-4 mb-6">
+            <Globe className="w-12 h-12 text-cyan-400" />
+            <h1 className="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-600">
+              Guest Experiences
+            </h1>
+          </div>
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+            Authentic moments and memories from our travelers
+          </p>
+        </div>
+
+        {/* Filter Section */}
+        <div className="flex justify-center mb-12 space-x-4">
+          {["all", "image", "review"].map((filter) => (
+            <button
+              key={filter}
+              onClick={() => setActiveFilter(filter)}
+              className={`
+                px-6 py-3 rounded-full uppercase tracking-wider transition-all duration-300
+                ${
+                  activeFilter === filter
+                    ? "bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-xl"
+                    : "bg-gray-700/30 text-gray-300 hover:bg-gray-700/50"
+                }
+              `}
+            >
+              {filter}
+            </button>
+          ))}
+        </div>
+
+        {/* Gallery Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredContent.map((item, index) => (
+            <div
+              key={index}
+              className="group relative overflow-hidden rounded-3xl shadow-2xl border border-gray-700/50 bg-gray-800/50 backdrop-blur-xl"
+            >
+              {item.type === "image" ? (
+                <div className="relative overflow-hidden">
                   <img
                     src={item.imgSrc}
-                    alt={
-                      item.caption ? item.caption : `Gallery item ${index + 1}`
-                    }
-                    className="w-full h-[300px] object-cover rounded-xl transition-transform transform hover:scale-105 duration-300"
+                    alt={item.caption || `Gallery item ${index + 1}`}
+                    className="w-full h-[350px] object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   {item.caption && (
-                    <div className="absolute inset-0 flex items-end justify-center rounded-xl">
-                      <p className="text-center w-full bg-black bg-opacity-40 text-white text-lg p-3">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
+                      <p className="text-white text-lg font-medium">
                         {item.caption}
                       </p>
                     </div>
                   )}
                 </div>
-              </>
-            ) : (
-              <div className="p-8 py-16">
-                <p className="font-bold text-[#43A181] text-lg">
-                  {item.author}
-                </p>
-                <p className="text-[#091F3C]">{item.location}</p>
-                <p className="italic text-gray-600 mt-2">{item.review}</p>
-              </div>
-            )}
-          </div>
-        ))}
+              ) : (
+                <div className="p-8 space-y-4 h-full flex flex-col">
+                  <div className="flex items-center justify-between">
+                    <Quote className="w-8 h-8 text-cyan-400" />
+                    <div className="flex space-x-1 text-yellow-400">
+                      {[...Array(4)].map((_, i) => (
+                        <Star key={i} className="w-5 h-5 fill-current" />
+                      ))}
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-4 mb-4">
+                    <img
+                      src={item.img}
+                      alt={item.name}
+                      className="w-16 h-16 rounded-full object-cover border-2 border-cyan-400"
+                    />
+                    <div>
+                      <p className="text-xl font-semibold text-cyan-400">
+                        {item.name}
+                      </p>
+                      <p className="text-gray-300 text-sm">{item.location}</p>
+                    </div>
+                  </div>
+                  <p className="italic text-gray-400 text-lg flex-grow">
+                    "{item.review}"
+                  </p>
+                  <div className="flex items-center justify-between mt-4">
+                    <LinkIcon className="w-5 h-5 text-gray-500" />
+                    <span className="text-sm text-gray-500">Verified Stay</span>
+                  </div>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
