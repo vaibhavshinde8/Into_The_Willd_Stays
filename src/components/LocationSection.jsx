@@ -52,7 +52,7 @@ const LocationSection = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800 py-16 px-4 md:px-16 relative overflow-hidden lg:px-32">
+    <div className="min-h-screen bg-gradient-to-r from-gray-900 via-black to-gray-800 py-16 px-4 md:px-16 relative overflow-hidden lg:px-32">
       {/* Decorative Grid Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-grid-white/5 opacity-50"></div>

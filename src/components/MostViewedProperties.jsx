@@ -9,7 +9,7 @@ const MostViewedProperties = () => {
   return (
     <section
       id="property-most"
-      className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800 text-white py-16 overflow-hidden lg:px-32"
+      className="min-h-screen bg-gradient-to-r from-gray-900 via-black to-gray-800 text-white py-16 overflow-hidden lg:px-32"
     >
       <div className="container mx-auto px-4 relative">
         {/* Decorative Overlay Elements */}

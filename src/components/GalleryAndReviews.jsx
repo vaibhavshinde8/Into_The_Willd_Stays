@@ -100,7 +100,7 @@ const GalleryAndReviews = () => {
       : testData.filter((item) => item.type === activeFilter);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800 text-white py-16 relative overflow-hidden lg:px-32">
+    <div className="min-h-screen bg-gradient-to-r from-gray-900 via-black to-gray-800 text-white py-16 relative overflow-hidden lg:px-32">
       {/* Decorative Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>

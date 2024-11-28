@@ -21,7 +21,7 @@ const PropertiesBanner = () => {
   }, []);
 
   return (
-    <div className="relative min-h-[80vh] bg-gradient-to-br from-gray-900 via-black to-gray-800 overflow-hidden">
+    <div className="relative min-h-[80vh] bg-gradient-to-r from-gray-900 via-black to-gray-800 overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <div

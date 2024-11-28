@@ -81,7 +81,7 @@ const GuestExperience = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800 text-white overflow-hidden lg:px-32">
+    <div className="min-h-screen bg-gradient-to-r from-gray-900 via-black to-gray-800 text-white overflow-hidden lg:px-32">
       {/* Futuristic Story Section and Video Section Side by Side */}
       <div className="container mx-auto px-4 py-16 grid lg:grid-cols-2 gap-8">
         {/* Futuristic Story Section */}
