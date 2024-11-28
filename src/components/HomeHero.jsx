@@ -87,11 +87,11 @@ const HomeHero = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
           >
             <h1 className="text-4xl md:text-6xl  font-medium text-white mb-6 leading-tight">
-              <span className="bg-gradient-to-r from-cyan-400 font-extrabold to-emerald-400 bg-clip-text text-transparent">
-                Into the Wild
+              <span className="bg-gradient-to-r from-cyan-400 font-extrabold  to-emerald-400 bg-clip-text text-transparent">
+                INTO THE WILD
               </span>
               <br />
-              Stays
+              STAYS
             </h1>
             <p className="text-xl text-gray-300 mb-8">
               Embark on a journey of discovery with our curated travel
