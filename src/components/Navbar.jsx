@@ -162,7 +162,7 @@ export default function Navbar() {
                       Hello, {userData?.name || "User"}
                     </div>
                     <Link
-                      to="/profile"
+                      to="/user-profile"
                       className="block px-4 py-2 hover:bg-gray-700 transition duration-300"
                     >
                       Profile

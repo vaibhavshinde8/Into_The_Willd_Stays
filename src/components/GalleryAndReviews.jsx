@@ -70,7 +70,7 @@ const GalleryAndReviews = () => {
           <div className="flex justify-center items-center space-x-4 mb-6">
             <Globe className="w-12 h-12 text-cyan-400" />
             <h1 className="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-600">
-              Guest Experiences
+              Guest Testimonials
             </h1>
           </div>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">

@@ -13,6 +13,8 @@ const Login = () => {
     e.preventDefault();
     try {
       const data = await loginUser(email, password);
+      console.log("Token received:", data.token); // Add this line
+
       console.log("Logged in successfully:", data);
       localStorage.setItem("token", data.token);
       localStorage.setItem("user", JSON.stringify(data.user));
