@@ -1,5 +1,7 @@
 import  { useState } from "react";
 import axios from "axios";
+import logo from "../assets/IntotheWildStaysLogo.png";
+
 
 const BookingButton = () => {
   const [loading, setLoading] = useState(false);
@@ -18,12 +20,12 @@ const BookingButton = () => {
       const orderData = response.data; // This will contain the order id from the backend
 
       const options = {
-        key: "YOUR_RAZORPAY_KEY_ID", // Replace with your Razorpay Key ID
+        key: "rzp_test_V9EaxOrU59Dg0C", // Replace with your Razorpay Key ID
         amount: orderData.amount, // The amount in paise
         currency: "INR", // Currency
         name: "Booking Payment",
         description: "Payment for tour booking",
-        image: "https://your-logo.png", // Optional: Your company logo
+        image: logo, // Optional: Your company logo
         order_id: orderData.order.id, // Order ID from the backend
         handler: async (response) => {
           // Step 2: Send payment details to backend for verification
@@ -34,7 +36,7 @@ const BookingButton = () => {
           };
 
           const verifyResponse = await axios.post(
-            "http://localhost:5000/api/verify-payment",
+            "https://intothewilds-backend.onrender.com/api/verify-payment",
             paymentData
           );
           alert("Payment Verified");

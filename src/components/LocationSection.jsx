@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { FaMapMarkerAlt, FaCompass, FaGlobe } from "react-icons/fa";
@@ -45,11 +44,6 @@ const locations = [
 
 const LocationSection = () => {
   const navigate = useNavigate();
-  const [activeLocation, setActiveLocation] = useState(null);
-
-  const handleLocationHover = (location) => {
-    setActiveLocation(location);
-  };
 
   return (
     <div className="min-h-screen bg-gradient-to-r from-gray-900 via-black to-gray-800 py-16 px-4 md:px-16 relative overflow-hidden lg:px-32">
@@ -130,32 +124,7 @@ const LocationSection = () => {
           ))}
         </div>
 
-        {/* Active Location Details */}
-        {activeLocation && (
-          <motion.div
-            className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 
-            bg-white/20 backdrop-blur-xl rounded-2xl p-6 shadow-2xl 
-            border border-white/10 max-w-md w-full"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <h3 className="text-2xl font-bold text-white mb-4">
-              {activeLocation.name} Details
-            </h3>
-            <p className="text-gray-300 mb-4">{activeLocation.description}</p>
-            <div className="flex justify-between">
-              <div>
-                <p className="text-cyan-400 font-semibold">Elevation</p>
-                <p className="text-white">{activeLocation.elevation}</p>
-              </div>
-              <div>
-                <p className="text-emerald-400 font-semibold">Temperature</p>
-                <p className="text-white">{activeLocation.temperature}</p>
-              </div>
-            </div>
-          </motion.div>
-        )}
+        
       </div>
     </div>
   );

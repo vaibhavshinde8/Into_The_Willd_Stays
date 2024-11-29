@@ -153,12 +153,12 @@ const GuestExperience = () => {
                       </div>
 
                       {/* Video Title Overlay */}
-                      <div className="absolute top-4 left-4 bg-black/40 backdrop-blur-sm rounded-lg px-4 py-2 flex items-center space-x-2">
+                      {/* <div className="absolute top-4 left-4 bg-black/40 backdrop-blur-sm rounded-lg px-4 py-2 flex items-center space-x-2">
                         <Wifi className="w-5 h-5 text-cyan-400" />
                         <span className="text-white font-medium">
                           {video.title}
                         </span>
-                      </div>
+                      </div> */}
                     </motion.div>
                   )
               )}
