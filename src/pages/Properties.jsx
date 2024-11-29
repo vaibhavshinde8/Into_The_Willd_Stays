@@ -136,7 +136,8 @@ const Properties = () => {
             Your Perfect Stay
           </h1>
           <p className="text-xl text-gray-200 max-w-2xl mb-8">
-            Explore our handpicked collection of stunning properties in spectacular locations
+            Explore our handpicked collection of stunning properties in
+            spectacular locations
           </p>
         </motion.div>
       </div>
@@ -235,7 +236,7 @@ const Properties = () => {
                           >
                             Details
                           </Link>
-                          <BookingButton property={property}/>
+                          <BookingButton property={property} />
                           {/* <button className="px-6 py-2 bg-[#43A181] text-white rounded-full hover:bg-[#358268] transition-colors">
                             Book now
                           </button> */}
