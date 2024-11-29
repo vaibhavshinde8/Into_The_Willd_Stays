@@ -14,6 +14,8 @@ const Login = () => {
     try {
       const data = await loginUser(email, password);
       console.log("Logged in successfully:", data);
+      localStorage.setItem("token", data.token);
+      localStorage.setItem("user", JSON.stringify(data.user));
       navigate("/user-profile", { state: { user: data.user } });
     } catch (err) {
       setError("Login failed. Please check your credentials.");

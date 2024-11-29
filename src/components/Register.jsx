@@ -2,6 +2,8 @@ import { useState } from "react";
 import { registerUser } from "../api";
 import { useNavigate } from "react-router-dom";
 import { User, AtSign, Lock, Key } from "lucide-react";
+import { BASE_URL } from "../utils/baseurl";
+import axios from "axios";
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -23,12 +25,16 @@ const Register = () => {
     }
   };
 
-  const handleOtpSubmit = () => {
-    if (otp === "1234") {
-      // Mock OTP validation for demonstration
-      console.log("OTP confirmed. Account created successfully!");
-      setIsModalOpen(false);
-      navigate("/login");
+  const handleOtpSubmit = async () => {
+    console.log(email, otp);
+    if (otp) {
+      const data = await axios.post(`${BASE_URL}/auth/verify-email`, {email, otp });
+      console.log("OTP verified:", data);
+      if (data.status === 200) {
+        navigate("/login");
+      } else {
+        setError("Invalid OTP. Please try again.");
+      }
     } else {
       setError("Invalid OTP. Please try again.");
     }

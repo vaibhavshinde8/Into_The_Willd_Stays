@@ -55,10 +55,10 @@ const MostViewedProperties = () => {
                   <button
                     key={location}
                     className={`
-                      px-6 py-3 rounded-full text-sm font-medium uppercase tracking-wider transition-all duration-300 
+                      px-6 py-3 rounded-full text-sm  uppercase tracking-wider transition-all duration-300 
                       ${
                         selectedLocation === location
-                          ? "bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-xl transform -translate-y-1"
+                          ? "bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-xl font-extrabold underline underline-offset-2 transform -translate-y-1"
                           : "bg-gray-700/30 text-gray-300 hover:bg-gray-700/50"
                       }
                     `}

@@ -3,12 +3,12 @@ import { User, Mail } from "lucide-react";
 
 const UserProfile = () => {
   const location = useLocation();
-  const user = location.state?.user;
+  const user = JSON.parse(localStorage.getItem("user"));
 
   // Fallback values in case some user data is missing
   const profileData = {
     name: user?.name || "no name", // Default if name is unavailable
-    email: user?.email || "no.name@example.com", // Default if email is unavailable
+    email: user?.userEmail || "no.name@example.com", // Default if email is unavailable
   };
 
   return (

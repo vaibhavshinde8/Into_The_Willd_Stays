@@ -1,10 +1,11 @@
 // api.js
+import { BASE_URL } from "./utils/baseurl";
 export const loginUser = async (email, password) => {
   try {
     console.log("API");
     console.log("Login payload:", { email, password });
 
-    const response = await fetch(`https://intothewilds-backend.onrender.com/api/v1/auth/login`, {
+    const response = await fetch(`${BASE_URL}/auth/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
@@ -21,8 +22,7 @@ export const loginUser = async (email, password) => {
 };
 export const registerUser = async (name, email, password) => {
   try {
-    const apiUrl = "https://intothewilds-backend.onrender.com/api/v1/auth";
-    const response = await fetch(`${apiUrl}/register`, {
+    const response = await fetch(`${BASE_URL}/auth/register`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, email, password }),
