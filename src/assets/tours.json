@@ -6,7 +6,9 @@
       "name": "Rishikesh Adventure Trip",
       "location": "Rishikesh, Uttarakhand",
       "duration": "3 Days, 2 Nights",
-      "cost": "₹9,999 per person",
+      "price": "9999",
+      "checkInDate": "2024-12-01",
+      "checkOutDate": "2024-12-03",
       "itinerary": [
         {
           "day": "Day 1",
@@ -56,7 +58,9 @@
       "name": "Mussoorie Nature Escape",
       "location": "Mussoorie, Uttarakhand",
       "duration": "4 Days, 3 Nights",
-      "cost": "₹12,499 per person",
+      "price": "12499",
+      "checkInDate": "2024-12-01",
+      "checkOutDate": "2024-12-04",
       "itinerary": [
         {
           "day": "Day 1",
@@ -107,7 +111,9 @@
       "name": "Kedarnath Dham",
       "location": "Kedarnath, Uttarakhand",
       "duration": "3 Nights, 4 Days",
-      "cost": "₹10,499 per person (Triple/Quad sharing, excluding 5% GST)",
+      "price": "10499",
+      "checkInDate": "2024-12-01",
+      "checkOutDate": "2024-12-04",
       "itinerary": [
         {
           "day": "Day 1",
@@ -170,7 +176,9 @@
       "name": "Kuari Pass Trek (Lord Curzon Trail)",
       "location": "Joshimath, Uttarakhand",
       "duration": "6 Days, 5 Nights",
-      "cost": "₹9,499 per person",
+      "price": "9499",
+      "checkInDate": "2024-12-01",
+      "checkOutDate": "2024-12-06",
       "itinerary": [
         {
           "day": "Day 1",
@@ -270,7 +278,9 @@
       "name": "Rishikesh Kanatal",
       "location": "Rishikesh and Dhanolti, Uttarakhand",
       "duration": "2 Nights, 3 Days",
-      "cost": "₹3,500 per person (excluding transport)",
+      "price": "3500",
+      "checkInDate": "2024-12-01",
+      "checkOutDate": "2024-12-03",
       "itinerary": [
         {
           "day": "Day 1",
@@ -336,7 +346,9 @@
       "name": "Four Treks in One Trip: Valley of Flowers",
       "location": "Chamoli, Uttarakhand",
       "duration": "6 Days, 5 Nights",
-      "cost": "₹7500 per person",
+      "price": "7500",
+      "checkInDate": "2024-12-01",
+      "checkOutDate": "2024-12-06",
       "itinerary": [
         {
           "day": "Day 1",
