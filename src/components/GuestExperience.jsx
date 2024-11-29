@@ -1,10 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import {
-  motion,
-  AnimatePresence,
-  useScroll,
-  useTransform,
-} from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   Play,
   Pause,
@@ -21,31 +16,10 @@ import guestExp2 from "../assets/guest-exp.mp4";
 import guestExp3 from "../assets/Video-822~2.mp4";
 
 const GuestExperience = () => {
-  const containerRef = useRef(null);
-  const videoSectionRef = useRef(null);
   const videoRefs = useRef([]);
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [progress, setProgress] = useState(0);
-
-  // Scroll-based animations
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"],
-  });
-
-  // Scale and position transformations for video section
-  const videoScale = useTransform(
-    scrollYProgress,
-    [0, 0.3, 0.7, 1],
-    [0.6, 1, 1, 1]
-  );
-
-  const videoY = useTransform(
-    scrollYProgress,
-    [0, 0.3, 0.7, 1],
-    ["100%", "0%", "0%", "0%"]
-  );
 
   // Array of video sources
   const videos = [
@@ -107,20 +81,47 @@ const GuestExperience = () => {
   };
 
   return (
-    <div
-      ref={containerRef}
-      className="min-h-screen bg-gradient-to-r from-gray-900 via-black to-gray-800 text-white overflow-hidden"
-    >
-      <div className="container mx-auto px-4 py-16 grid lg:grid-cols-2 gap-8 relative">
-        {/* Video Section - Left Side with Scroll Animation */}
-        <motion.section
-          ref={videoSectionRef}
-          style={{
-            scale: videoScale,
-            y: videoY,
-          }}
-          className="sticky top-0 z-10 max-w-6xl mx-auto px-4 relative p-8 w-full"
-        >
+    <div className="min-h-screen bg-gradient-to-r from-gray-300 via-white to-gray-200  text-black overflow-hidden lg:px-32">
+      {/* Futuristic Story Section and Video Section Side by Side */}
+      <div className="container mx-auto px-4 py-16 grid lg:grid-cols-2 gap-8">
+        {/* Futuristic Story Section */}
+        <div className="max-w-5xl mx-auto  ">
+          <div className="relative p-12 text-center">
+            {/* <div className="absolute top-4 left-4 text-cyan-400 opacity-50">
+              <Compass className="w-12 h-12" />
+            </div> */}
+            {/* <div className="absolute bottom-4 right-4 text-cyan-400 opacity-50">
+              <MapPin className="w-12 h-12" />
+            </div> */}
+
+            <h2 className="text-5xl font-semibold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-cyan-800 to-blue-800">
+              Our Story
+            </h2>
+
+            <div className="max-w-4xl mx-auto text-lg leading-relaxed text-gray-800 space-y-6">
+              <p className="relative before:absolute before:-left-6  before:rounded-full">
+                Welcome to Into the Wild Stays, where we offer more than just
+                accommodations. We create memorable escapes in nature's embrace.
+                Nestled in serene, offbeat locations, our boutique homestays and
+                cottages provide the perfect blend of comfort, tranquility, and
+                adventure.
+              </p>
+              <p className="relative before:absolute ">
+                Our philosophy revolves around crafting personalized experiences
+                that connect guests with the beauty of the wilderness. With
+                heartfelt hospitality and thoughtful service, we ensure every
+                stay feels like a home away from home.
+              </p>
+              <p className="relative before:absolute before:-left-6  before:rounded-full">
+                Come, escape the chaos, and immerse yourself in the
+                unforgettable charm of Into the Wild Stays!
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Futuristic Video Section */}
+        <section className="max-w-6xl mx-auto px-4 relative p-8">
           <div className="relative overflow-hidden rounded-3xl shadow-2xl border-2 border-cyan-800/30">
             <AnimatePresence mode="wait">
               {videos.map(
@@ -159,7 +160,7 @@ const GuestExperience = () => {
             <div className="absolute inset-0 flex items-center justify-between p-4">
               <button
                 onClick={prevVideo}
-                className="bg-black/40 backdrop-blur-sm text-white p-3 rounded-full hover:bg-black/60 transition group"
+                className="bg-black/40 backdrop-blur-sm text-black p-3 rounded-full hover:bg-black/60 transition group"
               >
                 <ChevronLeft
                   size={24}
@@ -168,7 +169,7 @@ const GuestExperience = () => {
               </button>
               <button
                 onClick={togglePlay}
-                className="bg-black/40 backdrop-blur-sm text-white p-3 rounded-full hover:bg-black/60 transition group"
+                className="bg-black/40 backdrop-blur-sm text-black p-3 rounded-full hover:bg-black/60 transition group"
               >
                 {isPlaying ? (
                   <Pause
@@ -184,7 +185,7 @@ const GuestExperience = () => {
               </button>
               <button
                 onClick={nextVideo}
-                className="bg-black/40 backdrop-blur-sm text-white p-3 rounded-full hover:bg-black/60 transition group"
+                className="bg-black/40 backdrop-blur-sm text-black p-3 rounded-full hover:bg-black/60 transition group"
               >
                 <ChevronRight
                   size={24}
@@ -193,41 +194,7 @@ const GuestExperience = () => {
               </button>
             </div>
           </div>
-        </motion.section>
-
-        {/* Futuristic Story Section - Right Side */}
-        <div className="relative z-20 bg-gray-800/50 backdrop-blur-xl rounded-3xl overflow-hidden shadow-2xl border border-gray-700/50 lg:mt-[30vh] p-12">
-          <div className="absolute top-4 left-4 text-cyan-400 opacity-50">
-            <Compass className="w-12 h-12" />
-          </div>
-          <div className="absolute bottom-4 right-4 text-cyan-400 opacity-50">
-            <MapPin className="w-12 h-12" />
-          </div>
-
-          <h2 className="text-5xl font-semibold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-600">
-            Our Story
-          </h2>
-
-          <div className="max-w-4xl mx-auto text-lg leading-relaxed text-gray-200 space-y-6">
-            <p className="relative before:absolute before:-left-6 before:top-1 before:w-4 before:h-4 before:bg-cyan-500 before:rounded-full">
-              Welcome to Into the Wild Stays, where we offer more than just
-              accommodations. We create memorable escapes in nature's embrace.
-              Nestled in serene, offbeat locations, our boutique homestays and
-              cottages provide the perfect blend of comfort, tranquility, and
-              adventure.
-            </p>
-            <p className="relative before:absolute before:-left-6 before:top-1 before:w-4 before:h-4 before:bg-blue-500 before:rounded-full">
-              Our philosophy revolves around crafting personalized experiences
-              that connect guests with the beauty of the wilderness. With
-              heartfelt hospitality and thoughtful service, we ensure every stay
-              feels like a home away from home.
-            </p>
-            <p className="relative before:absolute before:-left-6 before:top-1 before:w-4 before:h-4 before:bg-cyan-500 before:rounded-full">
-              Come, escape the chaos, and immerse yourself in the unforgettable
-              charm of Into the Wild Stays!
-            </p>
-          </div>
-        </div>
+        </section>
       </div>
     </div>
   );

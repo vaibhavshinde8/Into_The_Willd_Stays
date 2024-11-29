@@ -46,7 +46,7 @@ const LocationSection = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-gray-900 via-black to-gray-800 py-16 px-4 md:px-16 relative overflow-hidden lg:px-32">
+    <div className="min-h-screen text-black bg-gradient-to-r from-gray-300 via-white to-gray-200 py-16 px-4 md:px-16 relative overflow-hidden lg:px-32">
       {/* Decorative Grid Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-grid-white/5 opacity-50"></div>
@@ -56,12 +56,12 @@ const LocationSection = () => {
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Section Title */}
         <motion.h1
-          className="text-4xl md:text-6xl text-white font-bold mb-12 text-center"
+          className="text-4xl md:text-6xl text-black font-bold mb-12 text-center"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <span className="bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-cyan-800 to-emerald-800 bg-clip-text text-transparent">
             Explore
           </span>{" "}
           Extraordinary Destinations
@@ -84,8 +84,7 @@ const LocationSection = () => {
             >
               <div
                 className="cursor-pointer transform transition-all duration-300 
-                hover:scale-105 relative overflow-hidden rounded-2xl 
-                border-2 border-transparent hover:border-cyan-400"
+                hover:scale-105 relative overflow-hidden border-2 border-transparent "
                 onClick={() => navigate(location.route)}
               >
                 {/* Location Image */}
@@ -93,7 +92,7 @@ const LocationSection = () => {
                   <img
                     src={location.imgUrl}
                     alt={location.name}
-                    className="w-full h-64 object-cover rounded-t-2xl brightness-75 group-hover:brightness-100 transition-all duration-300"
+                    className="w-full h-64 object-cover  brightness-75 group-hover:brightness-100 transition-all duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/70 opacity-75"></div>
                 </div>
@@ -101,20 +100,20 @@ const LocationSection = () => {
                 {/* Location Details */}
                 <div className="p-6 bg-white/10 backdrop-blur-xl">
                   <div className="flex justify-between items-center mb-4">
-                    <h2 className="text-2xl font-bold text-white">
+                    <h2 className="text-2xl font-bold text-black">
                       {location.name}
                     </h2>
-                    <FaMapMarkerAlt className="text-cyan-400 text-2xl" />
+                    <FaMapMarkerAlt className="text-cyan-800 text-2xl" />
                   </div>
-                  <p className="text-gray-300 mb-4">{location.description}</p>
+                  <p className="text-gray-800 mb-4">{location.description}</p>
 
-                  <div className="flex justify-between text-white">
+                  <div className="flex justify-between text-black">
                     <div className="flex items-center space-x-2">
-                      <FaGlobe className="text-emerald-400" />
+                      <FaGlobe className="text-emerald-800" />
                       <span>{location.elevation}</span>
                     </div>
                     <div className="flex items-center space-x-2">
-                      <FaCompass className="text-cyan-400" />
+                      <FaCompass className="text-cyan-800" />
                       <span>{location.temperature}</span>
                     </div>
                   </div>
@@ -123,8 +122,6 @@ const LocationSection = () => {
             </motion.div>
           ))}
         </div>
-
-        
       </div>
     </div>
   );

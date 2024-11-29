@@ -94,13 +94,13 @@ const Testimonials = () => {
   };
 
   return (
-    <div className="relative bg-gradient-to-r from-gray-900 via-black to-gray-800 py-16 overflow-hidden">
+    <div className="relative bg-gradient-to-r from-gray-300 via-white to-gray-200 py-16 overflow-hidden text-black">
       {/* Animated Background Particles */}
       <div className="absolute inset-0 opacity-20 pointer-events-none">
         {[...Array(50)].map((_, i) => (
           <div
             key={i}
-            className="absolute bg-white rounded-full animate-pulse"
+            className="absolute text-black rounded-full animate-pulse"
             style={{
               width: `${Math.random() * 4 + 1}px`,
               height: `${Math.random() * 4 + 1}px`,
@@ -115,11 +115,11 @@ const Testimonials = () => {
 
       {/* Section Title */}
       <div className="relative z-10 text-center mb-12">
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+        <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
           What Our Guests Say
         </h2>
-        <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-           Stories from travelers who discovered their perfect retreat
+        <p className="text-lg text-gray-800 max-w-2xl mx-auto">
+          Stories from travelers who discovered their perfect retreat
         </p>
       </div>
 
@@ -127,14 +127,14 @@ const Testimonials = () => {
       <div className="absolute top-1/2 transform -translate-y-1/2 z-20 w-full flex justify-between px-4">
         <button
           onClick={handlePrev}
-          className="text-white/50 hover:text-white transition-all focus:outline-none"
+          className="text-black hover:text-white transition-all focus:outline-none"
           aria-label="Previous testimonial"
         >
           <ArrowLeftCircle size={40} />
         </button>
         <button
           onClick={handleNext}
-          className="text-white/50 hover:text-white transition-all focus:outline-none"
+          className="text-black hover:text-white transition-all focus:outline-none"
           aria-label="Next testimonial"
         >
           <ArrowRightCircle size={40} />
@@ -161,7 +161,7 @@ const Testimonials = () => {
         pagination={{
           clickable: true,
           renderBullet: function (index, className) {
-            return `<span class="${className} bg-white/30 hover:bg-white/60"></span>`;
+            return `<span class="${className} text-black hover:text-black/60"></span>`;
           },
         }}
         modules={[Pagination, EffectCreative]}
@@ -177,11 +177,11 @@ const Testimonials = () => {
           <SwiperSlide key={index}>
             <div
               className={`
-              relative rounded-2xl p-8 transition-all duration-500 h-full
+              relative  p-8 transition-all duration-500 h-full
               ${
                 index === activeSlide
-                  ? "bg-gray-800 scale-105 shadow-xl"
-                  : "bg-gray-900 opacity-70 scale-95"
+                  ? "bg-gray-700 scale-105 shadow-xl"
+                  : "bg-gray-400 opacity-70 scale-95"
               }
             `}
             >
@@ -199,10 +199,10 @@ const Testimonials = () => {
                     className="w-20 h-20 rounded-full object-cover border-2 border-primary"
                   />
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-1">
+                <h3 className="text-xl font-semibold text-gray-100 mb-1">
                   {testimonial.name}
                 </h3>
-               
+
                 <div className="flex space-x-1 text-yellow-400">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <Star key={i} size={16} fill="currentColor" />
@@ -211,7 +211,7 @@ const Testimonials = () => {
               </div>
 
               {/* Review Text */}
-              <p className="text-gray-300 text-center text-sm italic min-h-[100px] flex items-center justify-center">
+              <p className="text-gray-100 text-center text-sm italic min-h-[100px] flex items-center justify-center">
                 "{testimonial.review}"
               </p>
             </div>

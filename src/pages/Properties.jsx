@@ -10,8 +10,6 @@ import Image3 from "../assets/majuli/majuli1.jpeg";
 import Image4 from "../assets/SunandSandGoa/52PM.jpeg";
 
 import TourBanner from "../components/TourBanner";
-// import GalleryAndReviews from "../components/GalleryAndReviews";
-// import { FaMapMarkerAlt } from "react-icons/fa";
 
 const properties = [
   {
@@ -40,7 +38,6 @@ const properties = [
     guest: 12,
     exploremoreRoute: "/exploremorepnt",
   },
-
   {
     imgURL: Image3,
     name: " ITW : Me:nam Homestay",
@@ -105,11 +102,11 @@ const Properties = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
       <div className="relative h-[70vh] overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://images.trvl-media.com/lodging/109000000/108380000/108370800/108370765/28b3dc50.jpg?impolicy=resizecrop&rw=1200&ra=fit')] bg-cover bg-center bg-fixed transform scale-105">
-          <div className="absolute inset-0 bg-gradient-to-b from-[#091F3C]/30 to-[#091F3C]/90 backdrop-blur-sm" />
+          <div className="absolute inset-0 bg-gradient-to-b from-gray-900/20 to-gray-900/60" />
         </div>
 
         <motion.div
@@ -119,15 +116,14 @@ const Properties = () => {
           className="relative h-full max-w-7xl mx-auto px-4 flex flex-col items-center justify-center text-center"
         >
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
-            <span className="bg-gradient-to-r from-[#43A181] to-teal-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-teal-600 to-teal-400 bg-clip-text text-transparent">
               Discover
             </span>
             <br />
             Your Perfect Stay
           </h1>
           <p className="text-xl text-gray-200 max-w-2xl mb-8">
-            Explore our handpicked collection of stunning properties in
-            spectacular locations
+            Explore our handpicked collection of stunning properties in spectacular locations
           </p>
         </motion.div>
       </div>
@@ -159,7 +155,7 @@ const Properties = () => {
                   variants={itemVariants}
                   onMouseEnter={() => setHoveredIndex(index)}
                   onMouseLeave={() => setHoveredIndex(null)}
-                  className="relative bg-white rounded-2xl overflow-hidden shadow-lg transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                  className="relative bg-white  overflow-hidden shadow-md transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
                 >
                   <div className="flex flex-col md:flex-row h-full">
                     {/* Image Section */}
@@ -169,9 +165,9 @@ const Properties = () => {
                         alt={property.name}
                         className="w-full h-[50vh] object-cover transition-transform duration-700 hover:scale-110"
                       />
-                      <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
+                      <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 ">
                         <div className="flex items-center space-x-1">
-                          <FaStar className="text-yellow-400" />
+                          <FaStar className="text-yellow-500" />
                           <span className="font-semibold">
                             {property.rating}
                           </span>
@@ -193,15 +189,15 @@ const Properties = () => {
                         </p>
 
                         <div className="flex flex-wrap gap-3 mb-4">
-                          <span className="flex items-center space-x-2 bg-teal-50 text-teal-700 px-3 py-1 rounded-full text-sm">
+                          <span className="flex items-center space-x-2 bg-teal-50 text-teal-700 px-3 py-1  text-sm">
                             <FaMapMarkerAlt className="text-teal-500" />
                             <span>{property.location}</span>
                           </span>
-                          <span className="flex items-center space-x-2 bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm">
+                          <span className="flex items-center space-x-2 bg-blue-50 text-blue-700 px-3 py-1  text-sm">
                             <FaBed className="text-blue-500" />
                             <span>{property.bedroom} Cottages</span>
                           </span>
-                          <span className="flex items-center space-x-2 bg-purple-50 text-purple-700 px-3 py-1 rounded-full text-sm">
+                          <span className="flex items-center space-x-2 bg-purple-50 text-purple-700 px-3 py-1  text-sm">
                             <FaUsers className="text-purple-500" />
                             <span>{property.guest} Guests</span>
                           </span>
@@ -216,20 +212,17 @@ const Properties = () => {
                           <span className="text-sm text-gray-500">
                             per night / Cottage
                           </span>
-                          {/* <span className="text-sm text-gray-500">
-                            per night
-                          </span> */}
                         </div>
 
                         <div className="flex space-x-3">
                           <Link
                             to={property.exploremoreRoute}
                             onClick={() => window.scrollTo(0, 0)}
-                            className="px-6 py-2 bg-teal-50 text-teal-700 rounded-full hover:bg-teal-100 transition-colors"
+                            className="px-6 py-2 bg-teal-50 text-teal-700  hover:bg-teal-100 transition-colors"
                           >
                             Details
                           </Link>
-                          <button className="px-6 py-2 bg-[#43A181] text-white rounded-full hover:bg-[#358268] transition-colors">
+                          <button className="px-6 py-2 bg-teal-600 text-white  hover:bg-teal-700 transition-colors">
                             Book now
                           </button>
                         </div>

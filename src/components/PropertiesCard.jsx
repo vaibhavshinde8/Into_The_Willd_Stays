@@ -82,10 +82,10 @@ const PropertiesCard = ({ selectedLocation = "All" }) => {
       : properties.filter((property) => property.location === selectedLocation);
 
   return (
-    <div className="bg-gradient-to-br from-[#0F2027] via-[#203A43] to-[#2C5364] min-h-screen p-8">
+    <div className="min-h-screen p-8 ">
       <div className="container mx-auto">
-        <h1 className="text-4xl font-extralight text-center text-white mb-12 tracking-wide">
-          Discover Your <span className="text-[#00FFD1]">Next Adventure</span>
+        <h1 className="text-4xl font-extralight text-center text-gray-800 mb-12 tracking-wide">
+          Discover Your <span className="text-emerald-600">Next Adventure</span>
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProperties.map((property, index) => (
@@ -108,12 +108,11 @@ const PropertiesCard = ({ selectedLocation = "All" }) => {
                 absolute inset-0 
                 ${
                   hoveredCard === index
-                    ? "bg-black/50 backdrop-blur-sm"
+                    ? "bg-black/30 backdrop-blur-sm"
                     : "bg-transparent"
                 }
                 transition-all duration-300 
-                rounded-2xl
-                flex items-center justify-center
+                                flex items-center justify-center
               `}
               >
                 {hoveredCard === index && (
@@ -127,12 +126,12 @@ const PropertiesCard = ({ selectedLocation = "All" }) => {
                       to={property.exploremoreRoute}
                       className="
                         px-6 py-3 
-                        bg-[#00FFD1] 
-                        text-black 
-                        rounded-full 
+                        bg-emerald-500 
+                        text-white 
+                         
                         flex items-center 
                         space-x-2 
-                        hover:bg-[#00B3A6]
+                        hover:bg-emerald-600
                         transition-all
                         duration-300
                         mx-auto
@@ -147,16 +146,14 @@ const PropertiesCard = ({ selectedLocation = "All" }) => {
 
               <div
                 className={`
-                bg-gradient-to-br 
-                from-[#2C3E50] 
-                to-[#3498DB] 
-                rounded-2xl 
+                bg-white 
+                
                 overflow-hidden 
-                shadow-2xl 
+                shadow-lg 
                 border-2 
                 ${
                   hoveredCard === index
-                    ? "border-[#00FFD1]"
+                    ? "border-emerald-500"
                     : "border-transparent"
                 }
                 transition-all 
@@ -185,40 +182,40 @@ const PropertiesCard = ({ selectedLocation = "All" }) => {
                       }
                     `}
                   />
-                  <div className="absolute top-4 right-4 bg-black/50 px-3 py-1 rounded-full flex items-center">
-                    <span className="text-[#00FFD1] mr-1">★</span>
+                  <div className="absolute top-4 right-4 bg-black/40 px-3 py-1  flex items-center">
+                    <span className="text-emerald-400 mr-1">★</span>
                     <span className="text-white">{property.rating}</span>
-                    <span className="text-gray-300 ml-2">
+                    <span className="text-gray-200 ml-2">
                       ({property.reviews})
                     </span>
                   </div>
                 </div>
 
                 {/* Property Details Section */}
-                <div className="p-6 text-white">
-                  <h2 className="text-2xl font-bold mb-3 text-[#00FFD1]">
+                <div className="p-6 text-gray-800">
+                  <h2 className="text-2xl font-bold mb-3 text-emerald-600">
                     {property.name}
                   </h2>
-                  <p className="text-gray-300 mb-4 line-clamp-2">
+                  <p className="text-gray-600 mb-4 line-clamp-2">
                     {property.description}
                   </p>
 
                   <div className="flex items-center mb-4">
-                    <FaMapMarkerAlt className="mr-2 text-[#00FFD1]" />
-                    <span className="text-white">{property.location}</span>
+                    <FaMapMarkerAlt className="mr-2 text-emerald-500" />
+                    <span className="text-gray-700">{property.location}</span>
                   </div>
 
                   <div className="flex justify-between mb-4">
                     <div className="flex items-center">
-                      <MdOutlineBedroomParent className="mr-1 text-[#00FFD1]" />
-                      <span>
+                      <MdOutlineBedroomParent className="mr-1 text-emerald-500" />
+                      <span className="text-gray-700">
                         {property.bedroom} Bedroom
                         {property.bedroom > 1 ? "s" : ""}
                       </span>
                     </div>
                     <div className="flex items-center">
-                      <IoPeople className="mr-1 text-[#00FFD1]" />
-                      <span>
+                      <IoPeople className="mr-1 text-emerald-500" />
+                      <span className="text-gray-700">
                         {property.guest} Guest{property.guest > 1 ? "s" : ""}
                       </span>
                     </div>
@@ -226,27 +223,17 @@ const PropertiesCard = ({ selectedLocation = "All" }) => {
 
                   {/* Tags and Price Section */}
                   <div className="flex justify-between items-center">
-                    {/* <div className="flex space-x-2">
-                      {property.tags.map((tag, idx) => (
-                        <span
-                          key={idx}
-                          
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div> */}
                     <div>
-                      <span className="text-xl font-bold text-[#00FFD1]">
+                      <span className="text-xl font-bold text-emerald-600">
                         ₹{property.price}
                       </span>
-                      <span className="text-sm text-gray-300 ml-1">/night</span>
+                      <span className="text-sm text-gray-500 ml-1">/night</span>
                     </div>
 
                     <Link
                       to={property.exploremoreRoute}
                       onClick={() => window.scrollTo(0, 0)}
-                      className="px-4 py-2 bg-[#081c16] text-white rounded-full hover:bg-[#238d6a] transition "
+                      className="px-4 py-2 bg-emerald-700 text-white  hover:bg-emerald-800 transition"
                     >
                       Explore More
                     </Link>
