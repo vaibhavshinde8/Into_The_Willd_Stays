@@ -10,6 +10,7 @@ export default {
       fontFamily: {
         primaryF: ["Caveat", "serif"],
         montserrat: ["Montserrat", "sans-serif"],
+        times: ['"Times New Roman"', "serif"], // Add Times New Roman
       },
     },
   },

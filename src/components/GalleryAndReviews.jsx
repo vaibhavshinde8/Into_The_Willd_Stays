@@ -44,51 +44,7 @@ const testData = [
     imgSrc: Image4,
     caption: "Serene moments in the mountains",
   },
-  {
-    type: "review",
-    name: "Achyut Pandey",
-    review:
-      "Beautiful place to spend time with family and friends. Spacious cottages and a blissful valley view from the watchtower.",
-    location: "Dhanaulti, Uttarakhand",
-    img: "https://lh3.googleusercontent.com/a-/ALV-UjUiPYj94ra9LMSK_zdaPBiWGKgJ4tiRClMczHtXnkUHZZ8KlkDt=w75-h75-p-rp-mo-br100",
-  },
-
   
-  {
-    name: "Arvind Nagar",
-    review:
-      "The location and view are worth every penny. Wonderful hospitality, and Uncle ji took great care of us like family. Will definitely come back soon!",
-    address: "Dhanaulti, Uttarakhand",
-    img: "https://lh3.googleusercontent.com/a-/ALV-UjXcVgO6RVm6QTkIEvCG4fDM4693d-jm2kS5Eji3CbgzhzcTVZLy=w75-h75-p-rp-mo-ba2-br100",
-  },
-  {
-    name: "Shivam Mishra",
-    review:
-      "Amazing stay with stunning views from the windows. The food, especially honey chilli potatoes and momos, was delicious. Highly recommended!",
-    address: "Dhanaulti, Uttarakhand",
-    img: "https://lh3.googleusercontent.com/a-/ALV-UjVtHJlom4jAmFJh851wQLMKq_OWJHGUSw7S8qRq9SLF_pPd5oq2=w75-h75-p-rp-mo-br100",
-  },
-  {
-    name: "Anjali Sharma",
-    review:
-      "A very beautiful and cozy cottage with an amazing mountain view. Perfect for a hill station staycation!",
-    address: "Dhanaulti, Uttarakhand",
-    img: "https://lh3.googleusercontent.com/a/ACg8ocJ8AxiaJuwlIiaehLvnIF99LgA7h-U99sgupo9LNOEKOmlGqg=w75-h75-p-rp-mo-br100",
-  },
-  {
-    name: "Rajat Sharma",
-    review:
-      "Located near Eco Park, this stay is vibrant and spacious. Modern cottages with a close-to-nature feel. Loved the hospitality and food!",
-    address: "Dhanaulti, Uttarakhand",
-    img: "https://lh3.googleusercontent.com/a-/ALV-UjWfhfXkPNVUNWGSMayOR9RqYcyoEH8iKKWKAtHxLbqAzpNDbJ85Ow=w75-h75-p-rp-mo-ba2-br100",
-  },
-  {
-    name: "Msc Bill",
-    review:
-      "Dhanaulti is beautiful, and Into the Wild homestay is the best place to stay. Amazing rooms and services!",
-    address: "Dhanaulti, Uttarakhand",
-    img: "https://lh3.googleusercontent.com/a/ACg8ocJFqMHTOoRlhOUZiHy71cfy-oExqTTSauzFrHgX2S5kqC6g5Q=w75-h75-p-rp-mo-br100",
-  },
 ];
 
 const GalleryAndReviews = () => {
@@ -114,7 +70,7 @@ const GalleryAndReviews = () => {
           <div className="flex justify-center items-center space-x-4 mb-6">
             <Globe className="w-12 h-12 text-cyan-400" />
             <h1 className="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-600">
-              Guest Experiences
+              Guest Testimonials
             </h1>
           </div>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
@@ -132,7 +88,7 @@ const GalleryAndReviews = () => {
                 px-6 py-3 rounded-full uppercase tracking-wider transition-all duration-300
                 ${
                   activeFilter === filter
-                    ? "bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-xl"
+                    ? "bg-gradient-to-r from-cyan-500 to-blue-600 font-extrabold underline underline-offset-2  text-white shadow-xl"
                     : "bg-gray-700/30 text-gray-300 hover:bg-gray-700/50"
                 }
               `}
