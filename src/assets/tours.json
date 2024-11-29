@@ -59,18 +59,18 @@
       "cost": "₹12,499 per person",
       "itinerary": [
         {
-          "day": "Day 3",
+          "day": "Day 1",
           "description": "Arrival, check-in, and exploring Mall Road."
         },
         {
-          "day": "Day 3",
+          "day": "Day 2",
           "description": " Visit to Kempty Falls and Gun Hill."
         },
         {
           "day": "Day 3",
           "description": "Trek to Lal Tibba and Camel's Back Road."
         },
-        { "day": "Day 3", "description": "Leisure day and departure." }
+        { "day": "Day 4", "description": "Leisure day and departure." }
       ],
       "inclusions": [
         "Stay in a 3-star hotel with hill view rooms.",
@@ -109,11 +109,26 @@
       "duration": "3 Nights, 4 Days",
       "cost": "₹10,499 per person (Triple/Quad sharing, excluding 5% GST)",
       "itinerary": [
-        "Day 1: Delhi to Rishikesh - Overnight Journey",
-        "Day 2: Rishikesh to Sonprayag",
-        "Day 3: Sonprayag to Kedarnath",
-        "Day 4: Kedarnath to Guptkashi/Sonprayag",
-        "Day 5: Sonprayag to Delhi"
+        {
+          "day": "Day 1",
+          "description": " Delhi to Rishikesh - Overnight Journey"
+        },
+        {
+          "day": "Day 2",
+          "description": " Rishikesh to Sonprayag"
+        },
+        {
+          "day": "Day 3",
+          "description": " Sonprayag to Kedarnath"
+        },
+        {
+          "day": "Day4",
+          "description": " Kedarnath to Guptkashi/Sonprayag"
+        },
+        {
+          "day": "Day 5",
+          "description": " Sonprayag to Delhi"
+        }
       ],
       "inclusions": [
         "3-night stay in hotel/homestay/campsite.",
@@ -158,14 +173,14 @@
       "cost": "₹9,499 per person",
       "itinerary": [
         {
-          "day": 1,
+          "day": "Day 1",
           "title": "Rishikesh to Karchi via Joshimath",
           "drive": "275 kms",
           "time": "10-12 Hours",
           "description": "Welcome to Joshimath, an important pilgrimage destination in Uttarakhand. Check into your homestay at Karchi and spend the day exploring the village at your own pace."
         },
         {
-          "day": 2,
+          "day": "Day 2",
           "title": "Karchi to Gulling Top via Tugasi",
           "trek_distance": "4 km",
           "duration": "5-6 Hours",
@@ -173,7 +188,7 @@
           "description": "Start your trek from Karchi, passing through Tugasi village with views of the Dhauladhar Range. Camp overnight at Gulling Top."
         },
         {
-          "day": 3,
+          "day": "Day 3",
           "title": "Gulling Top to Khullara Top",
           "trek_distance": "6 km",
           "duration": "6 Hours",
@@ -181,7 +196,7 @@
           "description": "Continue through oak, rhododendron, and walnut forests, enjoying views of the Pir Panjal and Shivalik Ranges. Overnight stay at Khullara Top."
         },
         {
-          "day": 4,
+          "day": "Day 4",
           "title": "Trek from Khullara Top to Kuari Pass and Descend",
           "trek_distance": "12 km",
           "duration": "8-10 Hours",
@@ -189,7 +204,7 @@
           "description": "Trek to Kuari Pass with views of Nanda Devi, Kamet, and Trishul. Return to Khullara Top for an overnight stay."
         },
         {
-          "day": 5,
+          "day": "Day 5",
           "title": "Downhill Trek from Khullara Top to Karchi",
           "trek_distance": "11 km",
           "duration": "8-10 Hours",
@@ -197,7 +212,7 @@
           "description": "Descend towards Karchi Village, through Alpine and Mossy Oak forests. Overnight stay at a homestay in Karchi."
         },
         {
-          "day": 6,
+          "day": "Day 6",
           "title": "Trek Down to Karchi from Khullara Top",
           "description": "End the trek with a downhill journey to Karchi Village."
         }

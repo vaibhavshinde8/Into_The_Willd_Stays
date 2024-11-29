@@ -2,7 +2,9 @@
 export const loginUser = async (email, password) => {
   try {
     console.log("API");
-    const response = await fetch(`http://localhost:5000/api/v1/auth/login`, {
+    console.log("Login payload:", { email, password });
+
+    const response = await fetch(`https://intothewilds-backend.onrender.com/api/v1/auth/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
@@ -19,7 +21,7 @@ export const loginUser = async (email, password) => {
 };
 export const registerUser = async (name, email, password) => {
   try {
-    const apiUrl = "http://localhost:5000/api/v1/auth";
+    const apiUrl = "https://intothewilds-backend.onrender.com/api/v1/auth";
     const response = await fetch(`${apiUrl}/register`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },

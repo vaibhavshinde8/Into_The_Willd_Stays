@@ -1,4 +1,4 @@
-import  { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import {
   ChevronDown,
@@ -11,52 +11,135 @@ import {
 } from "lucide-react";
 import toursData from "../assets/tours.json";
 
+// Modal Component
+const Modal = ({ isOpen, onClose, tour }) => {
+  if (!isOpen || !tour) return null;
+
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+      <div className="bg-white rounded-lg p-8 w-full max-w-3xl h-[80vh] overflow-y-auto text-wrap transition-all duration-300">
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 text-3xl text-white bg-black rounded-full px-4 py-2 border "
+          aria-label="Close modal"
+        >
+          ×
+        </button>
+        <h2 className="text-2xl font-semibold mb-4">{tour.name}</h2>
+        <div className="space-y-4">
+          <section>
+            <h4 className="text-xl font-semibold text-[#091F3C] mb-4">
+              Itinerary
+            </h4>
+            <div className="space-y-2 text-gray-600">
+              {tour.itinerary.map((item, index) => (
+                <div key={index} className="mb-4">
+                  <h5 className="font-bold text-lg">{item.day}</h5>
+                  <p>{item.description}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section>
+            <h4 className="text-xl font-semibold text-[#091F3C] mb-4">
+              Inclusions
+            </h4>
+            <ul className="space-y-2 text-gray-600">
+              {tour.inclusions.map((item, index) => (
+                <li key={index} className="mb-2 flex items-start">
+                  <span className="h-2 w-2 mt-2 mr-2 bg-[#43A181] rounded-full" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          <section>
+            <h4 className="text-xl font-semibold text-[#091F3C] mb-4">
+              Exclusions
+            </h4>
+            <ul className="space-y-2 text-gray-600">
+              {tour.exclusions.map((item, index) => (
+                <li key={index} className="mb-2 flex items-start">
+                  <span className="h-2 w-2 mt-2 mr-2 bg-[#43A181] rounded-full" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          <section>
+            <h4 className="text-xl font-semibold text-[#091F3C] mb-4">
+              Contact Methods
+            </h4>
+            <div className="space-y-3 text-gray-600">
+              <a
+                href={`tel:${tour.contact_methods?.phone}`}
+                className="flex items-center hover:text-[#43A181] transition-colors"
+              >
+                <Phone className="w-5 h-5 mr-3" />
+                {tour.contact_methods?.phone || "Not available"}
+              </a>
+              <a
+                href={`mailto:${tour.contact_methods?.email}`}
+                className="flex items-center hover:text-[#43A181] transition-colors"
+              >
+                <Mail className="w-5 h-5 mr-3" />
+                {tour.contact_methods?.email || "Not available"}
+              </a>
+              <a
+                href={`https://wa.me/${tour.contact_methods?.whatsapp}`}
+                className="flex items-center hover:text-[#43A181] transition-colors"
+              >
+                <MessageCircle className="w-5 h-5 mr-3" />
+                {tour.contact_methods?.whatsapp
+                  ? `+${tour.contact_methods?.whatsapp}`
+                  : "Not available"}
+              </a>
+            </div>
+          </section>
+
+          <section>
+            <h4 className="text-xl font-semibold text-[#091F3C] mb-4">
+              Rules & Policy
+            </h4>
+            <ul className="space-y-2 text-gray-600">
+              {tour.rules_and_policy.map((item, index) => (
+                <li key={index} className="mb-2 flex items-start">
+                  <span className="h-2 w-2 mt-2 mr-2 bg-[#43A181] rounded-full" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </section>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const Tours = () => {
   const [tours, setTours] = useState([]);
-  const [expandedTour, setExpandedTour] = useState(null);
+  const [selectedTour, setSelectedTour] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     setTours(toursData.tours);
   }, []);
 
-  const renderList = (data) => {
-    if (!data || data.length === 0)
-      return <p className="text-gray-400 italic">No data available</p>;
-    return data.map((item, index) => (
-      <motion.li
-        initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: index * 0.1 }}
-        key={index}
-        className="mb-2 flex items-start"
-      >
-        <span className="h-2 w-2 mt-2 mr-2 bg-[#43A181] rounded-full" />
-        {item}
-      </motion.li>
-    ));
+  const openModal = (tour) => {
+    setSelectedTour(tour);
+    setIsModalOpen(true);
   };
 
-  const renderItinerary = (itinerary) => {
-    if (!itinerary || itinerary.length === 0)
-      return <p className="text-gray-400 italic">No itinerary available</p>;
-
-    return itinerary.map((item, index) => (
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: index * 0.1 }}
-        key={index}
-        className="mb-4 relative pl-8 border-l-2 border-[#43A181]"
-      >
-        <div className="absolute left-0 -translate-x-1/2 w-4 h-4 bg-[#43A181] rounded-full" />
-        <h5 className="font-bold text-lg text-[#091F3C]">{item.day}</h5>
-        <p className="text-gray-600">{item.description}</p>
-      </motion.div>
-    ));
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedTour(null);
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 pb-32  ">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 pb-32">
       <div className="relative min-h-[70vh] overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 bg-[url('https://images.trvl-media.com/lodging/109000000/108380000/108370800/108370765/28b3dc50.jpg?impolicy=resizecrop&rw=1200&ra=fit')] bg-cover bg-center bg-fixed transform scale-105">
@@ -90,7 +173,7 @@ const Tours = () => {
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-1 gap-8 py-20">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 py-20">
         {tours.map((tour) => (
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -113,118 +196,33 @@ const Tours = () => {
                 <div className="flex flex-wrap gap-4 text-white">
                   <div className="flex items-center">
                     <MapPin className="w-4 h-4 mr-2" />
-                    <span>{tour.location || "Location not available"}</span>
+                    {tour.location}
                   </div>
                   <div className="flex items-center">
                     <Clock className="w-4 h-4 mr-2" />
-                    <span>{tour.duration || "Duration not available"}</span>
+                    {tour.duration}
                   </div>
                   <div className="flex items-center">
-                    <DollarSign className="w-4 h-4 mr-2" />
-                    <span className="text-[#43A181] font-semibold">
-                      {tour.cost || "Cost information not available"}
-                    </span>
+                    {/* <DollarSign className="w-4 h-4 mr-2" /> */}
+                    {tour.cost}
                   </div>
                 </div>
               </div>
             </div>
-
-            <div className="p-8">
-              <motion.div
-                initial={false}
-                animate={{ height: expandedTour === tour.id ? "auto" : "0" }}
-                className="overflow-hidden"
-              >
-                <div className="space-y-8">
-                  <section>
-                    <h4 className="text-xl font-semibold text-[#091F3C] mb-4">
-                      Itinerary
-                    </h4>
-                    <div className="space-y-2 text-gray-600">
-                      {renderItinerary(tour.itinerary)}
-                    </div>
-                  </section>
-
-                  <section>
-                    <h4 className="text-xl font-semibold text-[#091F3C] mb-4">
-                      Inclusions
-                    </h4>
-                    <ul className="space-y-2 text-gray-600">
-                      {renderList(tour.inclusions)}
-                    </ul>
-                  </section>
-
-                  <section>
-                    <h4 className="text-xl font-semibold text-[#091F3C] mb-4">
-                      Exclusions
-                    </h4>
-                    <ul className="space-y-2 text-gray-600">
-                      {renderList(tour.exclusions)}
-                    </ul>
-                  </section>
-
-                  <section>
-                    <h4 className="text-xl font-semibold text-[#091F3C] mb-4">
-                      Contact Methods
-                    </h4>
-                    <div className="space-y-3 text-gray-600">
-                      <a
-                        href={`tel:${tour.contact_methods?.phone}`}
-                        className="flex items-center hover:text-[#43A181] transition-colors"
-                      >
-                        <Phone className="w-5 h-5 mr-3" />
-                        {tour.contact_methods?.phone || "Not available"}
-                      </a>
-                      <a
-                        href={`mailto:${tour.contact_methods?.email}`}
-                        className="flex items-center hover:text-[#43A181] transition-colors"
-                      >
-                        <Mail className="w-5 h-5 mr-3" />
-                        {tour.contact_methods?.email || "Not available"}
-                      </a>
-                      <a
-                        href={`https://wa.me/${tour.contact_methods?.whatsapp}`}
-                        className="flex items-center hover:text-[#43A181] transition-colors"
-                      >
-                        <MessageCircle className="w-5 h-5 mr-3" />
-                        {tour.contact_methods?.whatsapp
-                          ? `+${tour.contact_methods?.whatsapp}`
-                          : "Not available"}
-                      </a>
-                    </div>
-                  </section>
-
-                  <section>
-                    <h4 className="text-xl font-semibold text-[#091F3C] mb-4">
-                      Rules & Policy
-                    </h4>
-                    <ul className="space-y-2 text-gray-600">
-                      {renderList(tour.rules_and_policy)}
-                    </ul>
-                  </section>
-                </div>
-              </motion.div>
-
+            <div className="flex items-center justify-center bg-gray-50 p-4 border-t border-gray-100">
               <button
-                onClick={() =>
-                  setExpandedTour(expandedTour === tour.id ? null : tour.id)
-                }
-                className="mt-8 w-full flex items-center justify-center gap-2 py-4 px-6 bg-[#091F3C] hover:bg-[#43A181] text-white rounded-lg transition-colors duration-300"
+                onClick={() => openModal(tour)}
+                className="bg-[#43A181] text-white px-6 py-2 rounded-full text-lg hover:bg-[#367d57] transition-all duration-300"
               >
-                <span>
-                  {expandedTour === tour.id ? "Show Less" : "Show More"}
-                </span>
-                <motion.div
-                  animate={{ rotate: expandedTour === tour.id ? 180 : 0 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <ChevronDown className="w-5 h-5" />
-                </motion.div>
+                View Details
               </button>
             </div>
           </motion.div>
         ))}
       </div>
+
+      {/* Modal */}
+      <Modal isOpen={isModalOpen} onClose={closeModal} tour={selectedTour} />
     </div>
   );
 };
