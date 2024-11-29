@@ -1,7 +1,7 @@
-import  { useState } from "react";
+import { useState } from "react";
 import { Mails, Navigation, PhoneCall, Send } from "lucide-react";
 import { motion } from "framer-motion";
-import emailjs from "emailjs-com"; // Import Email.js
+import emailjs from "emailjs-com";
 
 import TourBanner from "../components/TourBanner";
 
@@ -23,7 +23,6 @@ const ContactUs = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Replace these with your actual Email.js credentials
     const serviceID = "your_service_id";
     const templateID = "your_template_id";
     const publicKey = "your_public_key";
@@ -33,7 +32,7 @@ const ContactUs = () => {
         console.log("SUCCESS!", response.status, response.text);
         setSuccess(true);
         setIsSubmitting(false);
-        setFormData({ name: "", email: "", message: "" }); // Reset form
+        setFormData({ name: "", email: "", message: "" });
       },
       (error) => {
         console.error("FAILED...", error);
@@ -43,14 +42,13 @@ const ContactUs = () => {
   };
 
   return (
-    <div>
-      <div id="contact-us ">
+    <div className="bg-gradient-to-r from-gray-300 via-white to-gray-200 text-black">
+      <div id="contact-us">
         {/* Hero Section */}
-
         <div className="relative min-h-[70vh] overflow-hidden">
           {/* Background Image */}
           <div className="absolute inset-0 bg-[url('https://images.trvl-media.com/lodging/109000000/108380000/108370800/108370765/28b3dc50.jpg?impolicy=resizecrop&rw=1200&ra=fit')] bg-cover bg-center bg-fixed transform scale-105">
-            <div className="absolute inset-0 bg-gradient-to-b from-[#091F3C]/30 to-[#091F3C]/90 backdrop-blur-sm" />
+            <div className="absolute inset-0 bg-gradient-to-b from-[#0F2642]/70 to-[#0F2642]/90 backdrop-blur-sm" />
           </div>
 
           {/* Content Section */}
@@ -63,8 +61,8 @@ const ContactUs = () => {
             >
               {/* Section Heading */}
               <h1 className="relative inline-block">
-                <span className="absolute -inset-1 w-full h-full bg-gradient-to-r from-[#43A181] to-[#43A181]/80 -skew-y-3 transform origin-top-right"></span>
-                <span className="relative text-4xl md:text-5xl lg:text-7xl font-bold text-white tracking-tight">
+                <span className="absolute -inset-1 w-full h-full bg-gradient-to-r  from-[#43A181] to-[#43A181]/80  -skew-y-3 transform origin-top-right"></span>
+                <span className="relative text-4xl md:text-5xl lg:text-7xl text-white font-bold tracking-tight">
                   Contact Us
                 </span>
               </h1>
@@ -74,7 +72,7 @@ const ContactUs = () => {
                 initial={{ opacity: 0, width: 0 }}
                 animate={{ opacity: 1, width: "100%" }}
                 transition={{ delay: 0.5, duration: 0.8 }}
-                className="mt-8 h-1 bg-gradient-to-r from-[#43A181] to-transparent max-w-[200px] mx-auto"
+                className="mt-8 h-1 bg-gradient-to-r from-white to-transparent max-w-[200px] mx-auto"
               />
             </motion.div>
           </div>
@@ -86,10 +84,8 @@ const ContactUs = () => {
           className="lg:mx-16 my-16 mx-4 flex flex-col justify-center lg:flex-row gap-8"
         >
           {/* Contact Form */}
-          <div className="flex flex-col justify-center items-center lg:items-start">
-            <h1 className="text-2xl font-bold text-secondry">
-              Have any questions?
-            </h1>
+          <div className="flex flex-col justify-center items-center lg:items-start ">
+            <h1 className="text-2xl font-bold">Have any questions?</h1>
             <h2 className="text-lg text-center lg:text-left mt-2">
               Call us to book a meetup or send us an email for services.
             </h2>
@@ -102,7 +98,7 @@ const ContactUs = () => {
                   Name
                 </label>
                 <input
-                  className="border-2 px-4 py-2 rounded-md"
+                  className="bg-white/10 border border-black/20 bg-gray-200 p-4 px-4 py-2 text-black placeholder-white/50 focus:outline-none focus:border-white/50"
                   type="text"
                   name="name"
                   id="name"
@@ -116,7 +112,7 @@ const ContactUs = () => {
                   Email
                 </label>
                 <input
-                  className="border-2 px-4 py-2 rounded-md"
+                  className="bg-white/10 border border-black/20 bg-gray-200 p-4 px-4 py-2 text-black placeholder-white/50 focus:outline-none focus:border-white/50"
                   type="email"
                   name="email"
                   id="email"
@@ -130,7 +126,7 @@ const ContactUs = () => {
                   Message
                 </label>
                 <textarea
-                  className="border-2 px-4 py-2 rounded-md"
+                  className="bg-white/10 border border-black/20 bg-gray-200 p-4 px-4 py-2 text-black placeholder-white/50 focus:outline-none focus:border-white/50"
                   name="message"
                   id="message"
                   rows="5"
@@ -140,25 +136,26 @@ const ContactUs = () => {
                 ></textarea>
               </div>
               <button
-                className="bg-gradient-to-r from-green-200 to-green-400 border-2 lg:py-2 py-1 px-8 rounded-md text-xl text-white flex items-center justify-center gap-2 hover:shadow-xl transition-all ease-in-out"
+                className="bg-white/10 border border-black/20 bg-gray-200 p-4 lg:py-2 py-1 px-8 text-xl text-black flex items-center justify-center gap-2 hover:bg-white/20 transition-all ease-in-out"
                 type="submit"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? "Sending..." : "Send"} <Send size={20} />
               </button>
               {success && (
-                <p className="text-green-600 mt-4">
+                <p className="text-green-400 mt-4">
                   Message sent successfully!
                 </p>
               )}
             </form>
           </div>
         </div>
+
         {/* Contact Info Section */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mx-4 lg:mx-16">
           {/* Location Card */}
-          <div className="bg-gradient-to-b from-green-200 to-green-400 p-6 rounded-lg shadow-lg  ">
-            <div className="flex items-center justify-center bg-white rounded-full p-3 mb-4 shadow-md ">
+          <div className="bg-white/10 border border-black/20 bg-gray-200 p-6">
+            <div className="flex items-center justify-center border border-black/20 bg-gray-200 p-4  mb-4">
               <Navigation size={40} />
             </div>
             <h2 className="text-2xl font-semibold text-center mb-2">
@@ -171,8 +168,8 @@ const ContactUs = () => {
           </div>
 
           {/* Call Us Card */}
-          <div className="bg-gradient-to-b from-green-200 to-green-400 p-6 rounded-lg shadow-lg  ">
-            <div className="flex items-center justify-center bg-white rounded-full p-3 mb-4 shadow-md ">
+          <div className="bg-white/10 border border-black/20 bg-gray-200 p-4 p-6">
+            <div className="flex items-center justify-center border border-black/20 bg-gray-200 p-4 p-3 mb-4">
               <PhoneCall size={40} />
             </div>
             <h2 className="text-2xl font-semibold text-center mb-2">
@@ -186,8 +183,8 @@ const ContactUs = () => {
           </div>
 
           {/* Email Us Card */}
-          <div className="bg-gradient-to-b from-green-200 to-green-400 p-6 rounded-lg shadow-lg  ">
-            <div className="flex items-center justify-center bg-white rounded-full p-3 mb-4 shadow-md ">
+          <div className="bg-white/10 border border-black/20 bg-gray-200 p-4 p-6">
+            <div className="flex items-center justify-center border border-black/20 bg-gray-200 p-4 p-3 mb-4">
               <Mails size={40} />
             </div>
             <h2 className="text-2xl font-semibold text-center mb-2">

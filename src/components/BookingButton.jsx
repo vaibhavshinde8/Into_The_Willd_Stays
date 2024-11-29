@@ -96,7 +96,7 @@ const user = JSON.parse(localStorage.getItem("user"));
         disabled={loading}
         className={`
           px-6 py-3 
-          rounded-lg 
+           
           text-white 
           font-semibold 
           text-lg 
@@ -108,11 +108,7 @@ const user = JSON.parse(localStorage.getItem("user"));
           focus:outline-none 
           focus:ring-2 
           focus:ring-offset-2 
-          ${
-            loading
-              ? "bg-gray-400 cursor-not-allowed"
-              : "bg-gradient-to-r from-pink-500 to-orange-500 hover:from-pink-600 hover:to-orange-600"
-          }
+          ${loading ? "bg-[#0F2642] cursor-not-allowed" : "bg-[#0F2642]"}
         `}
       >
         {loading ? (

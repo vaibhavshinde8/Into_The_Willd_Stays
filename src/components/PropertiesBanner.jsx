@@ -72,7 +72,7 @@ const PropertiesBanner = () => {
                   href="/properties"
                   className="flex items-center space-x-3 px-8 py-4 
                     bg-emerald-800 text-white 
-                    rounded-full 
+                    
                     shadow-lg 
                     hover:bg-emerald9600 
                     transition-all 
@@ -92,7 +92,7 @@ const PropertiesBanner = () => {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="hidden md:block"
             >
-              <div className="rounded-3xl overflow-hidden shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-300">
+              <div className=" overflow-hidden shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-300">
                 <img
                   src={Image1}
                   alt="Into The Wild Stays"
@@ -109,13 +109,13 @@ const PropertiesBanner = () => {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 0.5, y: 0 }}
         transition={{ duration: 1, repeat: Infinity, repeatType: "reverse" }}
-        className="absolute bottom-10 left-10 w-32 h-32 bg-emerald-500/30 rounded-full blur-2xl"
+        className="absolute bottom-10 left-10 w-32 h-32 bg-emerald-500/30 blur-2xl"
       />
       <motion.div
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 0.5, y: 0 }}
         transition={{ duration: 1, repeat: Infinity, repeatType: "reverse" }}
-        className="absolute top-10 right-10 w-48 h-48 bg-teal-500/30 rounded-full blur-2xl"
+        className="absolute top-10 right-10 w-48 h-48 bg-teal-500/30 blur-2xl"
       />
     </div>
   );

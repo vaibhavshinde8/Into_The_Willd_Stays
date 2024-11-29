@@ -232,7 +232,7 @@ const Properties = () => {
                           <Link
                             to={property.exploremoreRoute}
                             onClick={() => window.scrollTo(0, 0)}
-                            className="px-6 py-2 bg-teal-50 text-teal-700  hover:bg-teal-100 transition-colors"
+                            className="px-6 my-4 py-2  text-black bg-gray-100  hover:bg-teal-100 transition-colors"
                           >
                             Details
                           </Link>

@@ -22,7 +22,7 @@ import Image7 from "../assets/itw_rep/itwrep_page-0013.jpg";
 
 const AboutUs = () => {
   return (
-    <div className="min-h-[100vh] ">
+    <div className="min-h-[100vh]">
       <div className="relative min-h-[70vh] overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 bg-[url('https://images.trvl-media.com/lodging/109000000/108380000/108370800/108370765/28b3dc50.jpg?impolicy=resizecrop&rw=1200&ra=fit')] bg-cover bg-center bg-fixed transform scale-105">
@@ -58,15 +58,15 @@ const AboutUs = () => {
 
       <div className="bg-white min-h-[100vh] py-4 lg:px-32">
         <div className="my-12 mx-4">
-          <div className="flex flex-col-reverse lg:flex-row gap-8 justify-around items-center text-center ">
-            <div className="flex flex-col rounded-lg gap-6 p-8 bg-gradient-to-r from-[#091F3C] to-[#43A181] shadow-xl lg:w-[50vw]  text-white">
+          <div className="flex flex-col-reverse lg:flex-row gap-8 justify-around items-center text-center">
+            <div className="flex flex-col gap-6 p-8 bg-gradient-to-r from-[#091F3C] to-[#43A181] shadow-xl lg:w-[50vw] text-white">
               <h1 className="text-4xl font-bold tracking-tight">
                 Our <span className="text-[#43A181]">Story</span>
               </h1>
               <p className="lg:text-lg text-gray-100 leading-relaxed">
                 Welcome to Into the Wild Stays, At Into the Wild Stays, we
                 strive to offer more than just accommodations; we create
-                memorable escapes in nature’s embrace. Nestled in serene,
+                memorable escapes in nature's embrace. Nestled in serene,
                 offbeat locations, our boutique homestays and cottages provide
                 the perfect blend of comfort, tranquility, and adventure. Our
                 philosophy revolves around crafting personalized experiences
@@ -78,21 +78,21 @@ const AboutUs = () => {
               </p>
             </div>
 
-            <div className="shadow-2xl overflow-hidden rounded-lg">
+            <div className="shadow-2xl overflow-hidden">
               <img
                 src={Image2}
                 alt="Founder"
-                className="w-full h-full object-cover rounded-lg"
+                className="w-full h-full object-cover"
               />
             </div>
           </div>
         </div>
       </div>
-      <div className="text-center py-8 lg:px-32 ">
+      <div className="text-center py-8 lg:px-32">
         <h2 className="text-teal-300 text-lg font-semibold tracking-wide uppercase">
           Why Our Homestay?
         </h2>
-        <h1 className="text-3xl font-bold my-4 ">Why Choose Us</h1>
+        <h1 className="text-3xl font-bold my-4">Why Choose Us</h1>
         <div className="flex flex-wrap justify-around gap-6 mt-6">
           {[
             {
@@ -140,7 +140,7 @@ const AboutUs = () => {
           ].map((reason, index) => (
             <div
               key={index}
-              className="max-w-xs p-4 bg-gray-800 rounded-lg shadow-md hover:shadow-xl transition duration-300"
+              className="max-w-xs p-4 bg-gray-800 shadow-md hover:shadow-xl transition duration-300"
             >
               <div className="flex justify-center mb-4">{reason.icon}</div>
               <h3 className="text-xl font-semibold text-teal-200">
@@ -152,7 +152,7 @@ const AboutUs = () => {
         </div>
       </div>
 
-      <div className="bg-[#1b1b1b] py-12   shadow-xl">
+      <div className="bg-[#1b1b1b] py-12 shadow-xl">
         <h2 className="text-center text-teal-400 text-lg font-semibold">
           Meet Our Team
         </h2>
@@ -219,9 +219,9 @@ const AboutUs = () => {
           ].map((member, index) => (
             <div
               key={index}
-              className="text-center mb-8 p-4 bg-[#111111] rounded-lg shadow-lg  "
+              className="text-center mb-8 p-4 bg-[#111111] shadow-lg"
             >
-              <div className="w-48 h-48 bg-gray-300 mb-4 mx-auto rounded-full overflow-hidden">
+              <div className="w-48 h-48 bg-gray-300 mb-4 mx-auto overflow-hidden">
                 <img
                   src={member.img}
                   alt={member.name}

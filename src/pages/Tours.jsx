@@ -18,10 +18,10 @@ const Modal = ({ isOpen, onClose, tour }) => {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-white rounded-lg p-8 w-full max-w-3xl h-[80vh] overflow-y-auto text-wrap transition-all duration-300">
+      <div className="bg-white p-8 w-full max-w-3xl h-[80vh] overflow-y-auto text-wrap transition-all duration-300">
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-3xl text-white bg-black rounded-full px-4 py-2 border "
+          className="absolute top-4 right-4 text-3xl text-white bg-black px-4 py-2 border"
           aria-label="Close modal"
         >
           ×
@@ -49,7 +49,7 @@ const Modal = ({ isOpen, onClose, tour }) => {
             <ul className="space-y-2 text-gray-600">
               {tour.inclusions.map((item, index) => (
                 <li key={index} className="mb-2 flex items-start">
-                  <span className="h-2 w-2 mt-2 mr-2 bg-[#43A181] rounded-full" />
+                  <span className="h-2 w-2 mt-2 mr-2 bg-[#43A181]" />
                   {item}
                 </li>
               ))}
@@ -63,7 +63,7 @@ const Modal = ({ isOpen, onClose, tour }) => {
             <ul className="space-y-2 text-gray-600">
               {tour.exclusions.map((item, index) => (
                 <li key={index} className="mb-2 flex items-start">
-                  <span className="h-2 w-2 mt-2 mr-2 bg-[#43A181] rounded-full" />
+                  <span className="h-2 w-2 mt-2 mr-2 bg-[#43A181]" />
                   {item}
                 </li>
               ))}
@@ -108,7 +108,7 @@ const Modal = ({ isOpen, onClose, tour }) => {
             <ul className="space-y-2 text-gray-600">
               {tour.rules_and_policy.map((item, index) => (
                 <li key={index} className="mb-2 flex items-start">
-                  <span className="h-2 w-2 mt-2 mr-2 bg-[#43A181] rounded-full" />
+                  <span className="h-2 w-2 mt-2 mr-2 bg-[#43A181]" />
                   {item}
                 </li>
               ))}
@@ -181,7 +181,7 @@ const Tours = () => {
             animate={{ opacity: 1, scale: 1 }}
             whileHover={{ scale: 1.02 }}
             key={tour.id}
-            className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 hover:border-[#43A181] transition-all duration-300"
+            className="bg-white overflow-hidden shadow-lg border border-gray-100 hover:border-[#43A181] transition-all duration-300"
           >
             <div className="relative group">
               <img
@@ -204,7 +204,6 @@ const Tours = () => {
                     {tour.duration}
                   </div>
                   <div className="flex items-center">
-                    {/* <DollarSign className="w-4 h-4 mr-2" /> */}
                     Rs. {tour.price} per person
                   </div>
                 </div>
@@ -213,7 +212,7 @@ const Tours = () => {
             <div className="flex items-center justify-center bg-gray-50 p-4 border-t border-gray-100">
               <button
                 onClick={() => openModal(tour)}
-                className="bg-[#43A181] text-white px-6 py-2 rounded-full text-lg hover:bg-[#367d57] transition-all duration-300"
+                className="bg-[#43A181] text-white px-6 py-2 text-lg hover:bg-[#367d57] transition-all duration-300"
               >
                 View Details
               </button>
