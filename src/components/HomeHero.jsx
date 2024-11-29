@@ -52,7 +52,7 @@ const HomeHero = () => {
   return (
     <div className="relative min-h-screen pt-64 flex flex-col justify-between overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black">
       {/* Animated Background Overlay */}
-      <div className="absolute inset-0 z-0 opacity-50">
+      <div className="absolute inset-0 z-0 opacity-100">
         {images.map((img, index) => (
           <img
             key={index}
@@ -86,7 +86,7 @@ const HomeHero = () => {
           transition={{ duration: 0.8, delay: 0.3 }}
         >
           <h1 className="text-4xl md:text-6xl font-medium text-white mb-6 leading-tight">
-            <span className="bg-gradient-to-r from-cyan-400 font-extrabold to-emerald-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-cyan-400 font-bold to-emerald-400 bg-clip-text text-transparent">
               INTO THE WILD
             </span>
             <br />
@@ -99,7 +99,7 @@ const HomeHero = () => {
           </p>
 
           {/* Unique Selling Points */}
-          <div className="flex justify-center space-x-8 mb-8">
+          {/* <div className="flex justify-center space-x-8 mb-8">
             <div className="flex items-center space-x-2">
               <FaRocket className="text-cyan-400 text-2xl" />
               <span className="text-white">Unique Destinations</span>
@@ -108,7 +108,7 @@ const HomeHero = () => {
               <FaRocket className="text-emerald-400 text-2xl" />
               <span className="text-white">Personalized Experiences</span>
             </div>
-          </div>
+          </div> */}
         </motion.div>
       </motion.div>
 
