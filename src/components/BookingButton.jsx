@@ -1,69 +1,98 @@
-import  { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { BASE_URL } from "../utils/baseurl";
+import {toast} from "react-toastify";
 import logo from "../assets/IntotheWildStaysLogo.png";
-
-
-const BookingButton = () => {
+const BookingButton = ({property,tour}) => {
+  console.log(property);
+  console.log(tour);
   const [loading, setLoading] = useState(false);
+console.log(loading,"loading");
+const token = localStorage.getItem("token");
+const user = JSON.parse(localStorage.getItem("user"));
+  const loadRazorpayScript = async () => {
+    const script = document.createElement("script");
+    script.src = "https://checkout.razorpay.com/v1/checkout.js";
+    script.async = true;
+    script.onload = () => { };
+    document.body.appendChild(script);
+  };
 
-  const handlePayment = async () => {
+  React.useEffect(() => {
+    loadRazorpayScript();
+  }, []);
+  const handleProceed = async () => {
     try {
       setLoading(true);
-      // Step 1: Call the backend to create an order
-      const response = await axios.post(
-        "https://intothewilds-backend.onrender.com/api/create-order",
-        {
-          amount: 5000, // The amount in paise (₹50.00 = 5000 paise)
-        }
-      );
-
-      const orderData = response.data; // This will contain the order id from the backend
-
-      const options = {
-        key: "rzp_test_V9EaxOrU59Dg0C", // Replace with your Razorpay Key ID
-        amount: orderData.amount, // The amount in paise
-        currency: "INR", // Currency
-        name: "Booking Payment",
-        description: "Payment for tour booking",
-        image: logo, // Optional: Your company logo
-        order_id: orderData.order.id, // Order ID from the backend
-        handler: async (response) => {
-          // Step 2: Send payment details to backend for verification
-          const paymentData = {
-            razorpay_order_id: response.razorpay_order_id,
-            razorpay_payment_id: response.razorpay_payment_id,
-            razorpay_signature: response.razorpay_signature,
-          };
-
-          const verifyResponse = await axios.post(
-            "https://intothewilds-backend.onrender.com/api/verify-payment",
-            paymentData
-          );
-          alert("Payment Verified");
-        },
-        prefill: {
-          name: "Customer Name",
-          email: "customer@example.com",
-          contact: "9999999999",
-        },
-        theme: {
-          color: "#F37254",
-        },
-      };
-
-      const razorpay = new window.Razorpay(options);
-      razorpay.open();
+      const response = await axios.post(`${BASE_URL}/booking/new-booking`, {
+        checkInDate: property?property.checkInDate:tour.checkInDate,
+        checkOutDate: property?property.checkOutDate:tour.checkOutDate,
+        amount: property?property.price:tour.price,
+        user: user._id,
+      });
+      console.log(response.data);
+      initPayment(response.data.order,response.data.booking._id);
     } catch (error) {
-      alert("Payment initiation failed. Try again!");
+      console.log(error);
+      toast.error("Failed to create booking");
     } finally {
       setLoading(false);
     }
   };
 
+  const initPayment = (data,bookingId) => {
+    const options = {
+      key: "rzp_test_S7O9aeETo3NXrl",
+      amount: data.amount,
+      currency: data.currency,
+      order_id: data.razorpayOrderId,
+      name: "Into The Wilds",
+      description: "Payment for your booking",
+      prefill: {
+        name: user.name,
+        email: user.email,
+      },
+      notes: {
+        address: "Razorpay Corporate Office",
+      },
+      theme: {
+        color: "#3399cc",
+      },
+      handler: async (response) => {
+        try {
+          console.log(response);
+          const verifyUrl = `${BASE_URL}/booking/verify-payment`;
+          const verifyData = {
+            razorpay_order_id: response.razorpay_order_id,
+            razorpay_payment_id: response.razorpay_payment_id,
+            razorpay_signature: response.razorpay_signature,
+            bookingId: bookingId,
+          };
+          try {
+            const res = await axios.post(verifyUrl, verifyData);
+            if (res.status === 200) {
+              console.log("Payment Successful");
+              toast.success("Payment Successful");
+            }
+          } catch (err) {
+            toast.error(err.response.data.message);
+          }
+        } catch (err) {
+          console.log(err);
+        }
+      },
+      theme: {
+        color: "#3399cc",
+      },
+    };
+    const rzp1 = new window.Razorpay(options);
+    rzp1.open();
+  };
+
   return (
     <div className="flex justify-center items-center p-4">
       <button
-        onClick={handlePayment}
+        onClick={handleProceed}
         disabled={loading}
         className={`
           px-6 py-3 

@@ -10,6 +10,7 @@ import {
   MessageCircle,
 } from "lucide-react";
 import toursData from "../assets/tours.json";
+import BookingButton from "../components/BookingButton";
 
 // Modal Component
 const Modal = ({ isOpen, onClose, tour }) => {
@@ -204,7 +205,7 @@ const Tours = () => {
                   </div>
                   <div className="flex items-center">
                     {/* <DollarSign className="w-4 h-4 mr-2" /> */}
-                    {tour.cost}
+                    Rs. {tour.price} per person
                   </div>
                 </div>
               </div>
@@ -216,6 +217,7 @@ const Tours = () => {
               >
                 View Details
               </button>
+              <BookingButton tour={tour} />
             </div>
           </motion.div>
         ))}

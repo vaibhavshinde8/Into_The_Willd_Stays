@@ -8,11 +8,15 @@ import Image1 from "../assets/itw/IMG-20240530-WA0015.jpg";
 import Image2 from "../assets/pineandtails/pnt1.jpg";
 import Image3 from "../assets/majuli/majuli1.jpeg";
 import Image4 from "../assets/SunandSandGoa/52PM.jpeg";
+import BookingButton from "../components/BookingButton";
 
 import TourBanner from "../components/TourBanner";
 
 const properties = [
   {
+    checkInDate: "2024-12-01",
+    checkOutDate: "2024-12-02",
+    id: 1,
     imgURL: Image1,
     name: "Into The Wild Stays",
     description:
@@ -26,6 +30,9 @@ const properties = [
     exploremoreRoute: "/exploremoreitw",
   },
   {
+    checkInDate: "2024-12-01",
+    checkOutDate: "2024-12-02",
+    id: 2,
     imgURL: Image2,
     name: " ITW : Pines And Tails",
     description:
@@ -39,6 +46,9 @@ const properties = [
     exploremoreRoute: "/exploremorepnt",
   },
   {
+    checkInDate: "2024-12-01",
+    checkOutDate: "2024-12-02",
+    id: 3,
     imgURL: Image3,
     name: " ITW : Me:nam Homestay",
     description:
@@ -51,6 +61,9 @@ const properties = [
     exploremoreRoute: "/exploremoremnm",
   },
   {
+    checkInDate: "2024-12-01",
+    checkOutDate: "2024-12-02",
+    id: 4,
     imgURL: Image4,
     name: " ITW : Sun and Sand Villa",
     description:
@@ -222,9 +235,10 @@ const Properties = () => {
                           >
                             Details
                           </Link>
-                          <button className="px-6 py-2 bg-teal-600 text-white  hover:bg-teal-700 transition-colors">
+                          <BookingButton property={property}/>
+                          {/* <button className="px-6 py-2 bg-[#43A181] text-white rounded-full hover:bg-[#358268] transition-colors">
                             Book now
-                          </button>
+                          </button> */}
                         </div>
                       </div>
                     </div>
