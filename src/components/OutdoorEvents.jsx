@@ -1,10 +1,6 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 
-const TabContent = ({
-  title,
-  children,
-
-}) => (
+const TabContent = ({ title, children }) => (
   <div className="bg-white shadow-md rounded-lg p-6">
     <h3 className="text-2xl font-bold mb-4">{title}</h3>
     {children}
