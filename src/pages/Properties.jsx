@@ -74,7 +74,7 @@ const properties = [
     reviews: 40,
     bedroom: 5,
     guest: 10,
-    price: "11000-16000",
+    price: 11000,
     exploremoreRoute: "/exploremoresas",
     tags: ["Luxury", "Beach", "Premium"],
   },
