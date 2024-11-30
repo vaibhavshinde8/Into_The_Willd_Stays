@@ -8,11 +8,12 @@ import {
   FaUsers,
   FaRocket,
 } from "react-icons/fa";
-import heroImage1 from "../assets/guestdiary/img-2.jpg";
-import heroImage2 from "../assets/guestdiary/img-4.jpg";
-import heroImage3 from "../assets/guestdiary/img-5.jpeg";
+import heroImage1 from "../assets/banner/b1.jpeg";
+import heroImage2 from "../assets/banner/b2.jpeg";
+import heroImage3 from "../assets/banner/b3.jpeg";
+import heroImage4 from "../assets/banner/b3.jpeg";
 
-const images = [heroImage1, heroImage2, heroImage3];
+const images = [heroImage1, heroImage4, heroImage3, heroImage2];
 const locations = ["Dhanolti", "Goa", "Tehri", "Majuli"];
 
 const HomeHero = () => {
