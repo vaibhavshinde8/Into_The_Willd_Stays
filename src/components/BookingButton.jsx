@@ -80,10 +80,7 @@ const user = JSON.parse(localStorage.getItem("user"));
         } catch (err) {
           console.log(err);
         }
-      },
-      theme: {
-        color: "#3399cc",
-      },
+      }
     };
     const rzp1 = new window.Razorpay(options);
     rzp1.open();
