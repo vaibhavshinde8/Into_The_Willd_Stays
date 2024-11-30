@@ -50,7 +50,7 @@ const HomeHero = () => {
   };
 
   return (
-    <div className="relative min-h-screen pt-64 flex flex-col justify-between overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black">
+    <div className="relative min-h-screen pt-64 flex flex-col justify-center items-center overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black">
       {/* Animated Background Overlay */}
       <div className="absolute inset-0 z-0 opacity-100">
         {images.map((img, index) => (
@@ -112,15 +112,15 @@ const HomeHero = () => {
         </motion.div>
       </motion.div>
 
-      {/* Search Form */}
+      {/* Search Form - Updated with plain white background and larger padding */}
       <motion.div
-        className="relative z-10 w-full bg-white/10 backdrop-blur-xl border-t border-white/10 shadow-2xl rounded-lg "
+        className="relative z-10  bg-gradient-to-r from-gray-300 via-white to-gray-200 shadow-2xl "
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.5 }}
       >
-        <div className="max-w-5xl mx-auto px-4 py-8">
-          <h2 className="text-2xl text-white font-semibold mb-6 text-center">
+        <div className="max-w-5xl mx-auto px-4 lg:px-16 py-8 ">
+          <h2 className="text-2xl text-gray-800 font-semibold mb-6 text-center">
             Find Your Next Adventure
           </h2>
 
@@ -134,13 +134,13 @@ const HomeHero = () => {
                 name="location"
                 value={searchParams.location}
                 onChange={handleInputChange}
-                className="w-full pl-10 pr-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-cyan-400"
+                className="w-full pl-10 pr-4 py-3 bg-white border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
               >
-                <option value="" className="text-black">
+                <option value="" className="text-gray-500">
                   Select Location
                 </option>
                 {locations.map((loc) => (
-                  <option key={loc} value={loc} className="text-black">
+                  <option key={loc} value={loc} className="text-gray-900">
                     {loc}
                   </option>
                 ))}
@@ -157,7 +157,7 @@ const HomeHero = () => {
                 name="checkIn"
                 value={searchParams.checkIn}
                 onChange={handleInputChange}
-                className="w-full pl-10 pr-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-cyan-400"
+                className="w-full pl-10 pr-4 py-3 bg-white border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
 
@@ -171,7 +171,7 @@ const HomeHero = () => {
                 name="checkOut"
                 value={searchParams.checkOut}
                 onChange={handleInputChange}
-                className="w-full pl-10 pr-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-cyan-400"
+                className="w-full pl-10 pr-4 py-3 bg-white border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
 
@@ -184,10 +184,10 @@ const HomeHero = () => {
                 name="adults"
                 value={searchParams.adults}
                 onChange={handleInputChange}
-                className="w-full pl-10 pr-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-cyan-400"
+                className="w-full pl-10 pr-4 py-3 bg-white border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
               >
                 {[...Array(6)].map((_, i) => (
-                  <option key={i + 1} value={i + 1} className="text-black">
+                  <option key={i + 1} value={i + 1} className="text-gray-900">
                     {i + 1} Adult{i > 0 ? "s" : ""}
                   </option>
                 ))}
@@ -197,8 +197,8 @@ const HomeHero = () => {
             {/* Search Button */}
             <button
               onClick={handleSearch}
-              className="w-full py-3 bg-gradient-to-r from-cyan-500 to-emerald-500 text-white rounded-xl 
-              hover:from-cyan-600 hover:to-emerald-600 transition-all duration-300 
+              className="w-full py-3 bg-[#0F2642] text-white 
+              hover:bg-blue-700 transition-all duration-300 
               flex items-center justify-center space-x-3 
               transform hover:scale-105 active:scale-95"
             >

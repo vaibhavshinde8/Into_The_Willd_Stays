@@ -5,6 +5,7 @@ import img4 from "../assets/majuli/Property Photo/006.jpg";
 import img2 from "../assets/majuli/Property Photo/002.jpg";
 import img3 from "../assets/majuli/Property Photo/005.jpg";
 import img1 from "../assets/majuli/Property Photo/004.jpg";
+import BookingButton from "./BookingButton";
 
 const handleBookNow = () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
@@ -127,12 +128,13 @@ const ExploreMoreMNM = () => {
           </p>
 
           <div className="flex justify-center lg:justify-start">
-            <button
+            {/* <button
               onClick={handleBookNow}
               className="px-4 py-2 sm:px-6 sm:py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors"
             >
               Book Now
-            </button>
+            </button> */}
+          <BookingButton/>
           </div>
         </div>
 

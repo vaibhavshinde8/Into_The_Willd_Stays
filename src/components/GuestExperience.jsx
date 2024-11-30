@@ -1,46 +1,47 @@
 import React, { useEffect, useRef, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import {
-  Play,
-  Pause,
-  ChevronRight,
-  ChevronLeft,
-  Compass,
-  MapPin,
-  Wifi,
-} from "lucide-react";
+  motion,
+  useScroll,
+  useTransform,
+  AnimatePresence,
+} from "framer-motion";
+import { Play, Pause, ChevronRight, ChevronLeft } from "lucide-react";
 
-// Import your videos
 import guestExp1 from "../assets/Video-14~2.mp4";
 import guestExp2 from "../assets/guest-exp.mp4";
 import guestExp3 from "../assets/Video-822~2.mp4";
 
 const GuestExperience = () => {
+  const containerRef = useRef(null);
   const videoRefs = useRef([]);
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [progress, setProgress] = useState(0);
 
-  // Array of video sources
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"],
+  });
+
+  const scale = useTransform(scrollYProgress, [0.1, 0.5], [0.6, 1.0]);
+  const height = useTransform(scrollYProgress, [0, 0.5], ["10vh", "70vh"]);
+
   const videos = [
     { src: guestExp1, title: "Wilderness Retreat" },
     { src: guestExp3, title: "Serene Landscapes" },
     { src: guestExp2, title: "Adventure Moments" },
   ];
 
-  // Progress tracking
   const handleTimeUpdate = (e) => {
     const progress = (e.target.currentTime / e.target.duration) * 100;
     setProgress(progress);
   };
 
-  // Set initial volume and event listeners
   useEffect(() => {
-    videoRefs.current.forEach((videoRef, index) => {
+    videoRefs.current.forEach((videoRef) => {
       if (videoRef) {
         videoRef.volume = 0.15;
         videoRef.addEventListener("timeupdate", handleTimeUpdate);
-        videoRef.pause();
       }
     });
 
@@ -53,27 +54,21 @@ const GuestExperience = () => {
     };
   }, []);
 
-  // Handle video play/pause
   const togglePlay = () => {
     const currentVideo = videoRefs.current[currentVideoIndex];
     if (currentVideo) {
-      if (isPlaying) {
-        currentVideo.pause();
-      } else {
-        currentVideo.play();
-      }
+      if (isPlaying) currentVideo.pause();
+      else currentVideo.play();
       setIsPlaying(!isPlaying);
     }
   };
 
-  // Navigate to next video
   const nextVideo = () => {
     setCurrentVideoIndex((prev) => (prev + 1) % videos.length);
     setIsPlaying(false);
     setProgress(0);
   };
 
-  // Navigate to previous video
   const prevVideo = () => {
     setCurrentVideoIndex((prev) => (prev - 1 + videos.length) % videos.length);
     setIsPlaying(false);
@@ -81,25 +76,96 @@ const GuestExperience = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-gray-300 via-white to-gray-200  text-black overflow-hidden lg:px-32">
-      {/* Futuristic Story Section and Video Section Side by Side */}
+    <div
+      ref={containerRef}
+      className="min-h-screen bg-gradient-to-r from-gray-300 via-white to-gray-200 p-4 lg:px-32"
+    >
       <div className="container mx-auto px-4 py-16 grid lg:grid-cols-2 gap-8">
-        {/* Futuristic Story Section */}
-        <div className="max-w-5xl mx-auto  ">
-          <div className="relative p-12 text-center">
-            {/* <div className="absolute top-4 left-4 text-cyan-400 opacity-50">
-              <Compass className="w-12 h-12" />
-            </div> */}
-            {/* <div className="absolute bottom-4 right-4 text-cyan-400 opacity-50">
-              <MapPin className="w-12 h-12" />
-            </div> */}
+        <motion.div
+          style={{ scale, height }}
+          className="relative overflow-hidden   shadow-2xl border-2 border-cyan-800/30"
+        >
+          <AnimatePresence mode="wait">
+            {videos.map(
+              (video, index) =>
+                index === currentVideoIndex && (
+                  <motion.div
+                    key={video.src}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    className="relative w-full h-full  "
+                  >
+                    <video
+                      ref={(el) => {
+                        videoRefs.current[index] = el;
+                      }}
+                      src={video.src}
+                      className="w-full h-full object-cover"
+                      onEnded={nextVideo}
+                    />
 
+                    <div className="absolute bottom-0 left-0 w-full h-1 bg-gray-700">
+                      <div
+                        className="h-full bg-gradient-to-r from-cyan-500 to-blue-600"
+                        style={{ width: `${progress}%` }}
+                      />
+                    </div>
+                  </motion.div>
+                )
+            )}
+          </AnimatePresence>
+
+          <div className="absolute inset-0 flex items-center justify-between p-4">
+            <button
+              onClick={prevVideo}
+              className="bg-black/40 backdrop-blur-sm text-black p-3 rounded-full hover:bg-black/60 transition group"
+            >
+              <ChevronLeft
+                size={24}
+                className="group-hover:scale-110 transition"
+              />
+            </button>
+            <button
+              onClick={togglePlay}
+              className="bg-black/40 backdrop-blur-sm text-black p-3 rounded-full hover:bg-black/60 transition group"
+            >
+              {isPlaying ? (
+                <Pause
+                  size={24}
+                  className="text-cyan-400 group-hover:scale-110 transition"
+                />
+              ) : (
+                <Play
+                  size={24}
+                  className="text-cyan-400 group-hover:scale-110 transition"
+                />
+              )}
+            </button>
+            <button
+              onClick={nextVideo}
+              className="bg-black/40 backdrop-blur-sm text-black p-3 rounded-full hover:bg-black/60 transition group"
+            >
+              <ChevronRight
+                size={24}
+                className="group-hover:scale-110 transition"
+              />
+            </button>
+          </div>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          className="max-w-5xl mx-auto"
+        >
+          <div className="relative px-12 lg:px-24">
             <h2 className="text-5xl font-semibold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-cyan-800 to-blue-800">
               Our Story
             </h2>
 
             <div className="max-w-4xl mx-auto text-lg leading-relaxed text-gray-800 space-y-6">
-              <p className="relative before:absolute before:-left-6  before:rounded-full">
+              <p className="relative before:absolute before:-left-6 before:rounded-full">
                 Welcome to Into the Wild Stays, where we offer more than just
                 accommodations. We create memorable escapes in nature's embrace.
                 Nestled in serene, offbeat locations, our boutique homestays and
@@ -112,89 +178,13 @@ const GuestExperience = () => {
                 heartfelt hospitality and thoughtful service, we ensure every
                 stay feels like a home away from home.
               </p>
-              <p className="relative before:absolute before:-left-6  before:rounded-full">
+              <p className="relative before:absolute before:-left-6 before:rounded-full">
                 Come, escape the chaos, and immerse yourself in the
                 unforgettable charm of Into the Wild Stays!
               </p>
             </div>
           </div>
-        </div>
-
-        {/* Futuristic Video Section */}
-        <section className="max-w-6xl mx-auto px-4 relative p-8">
-          <div className="relative overflow-hidden rounded-3xl shadow-2xl border-2 border-cyan-800/30">
-            <AnimatePresence mode="wait">
-              {videos.map(
-                (video, index) =>
-                  index === currentVideoIndex && (
-                    <motion.div
-                      key={video.src}
-                      initial={{ opacity: 0, scale: 0.95 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0.95 }}
-                      transition={{ duration: 0.5 }}
-                      className="relative"
-                    >
-                      <video
-                        ref={(el) => {
-                          videoRefs.current[index] = el;
-                        }}
-                        src={video.src}
-                        className="w-full h-[70vh] object-cover"
-                        onEnded={nextVideo}
-                      />
-
-                      {/* Futuristic Progress Bar */}
-                      <div className="absolute bottom-0 left-0 w-full h-1 bg-gray-700">
-                        <div
-                          className="h-full bg-gradient-to-r from-cyan-500 to-blue-600"
-                          style={{ width: `${progress}%` }}
-                        />
-                      </div>
-                    </motion.div>
-                  )
-              )}
-            </AnimatePresence>
-
-            {/* Futuristic Video Controls */}
-            <div className="absolute inset-0 flex items-center justify-between p-4">
-              <button
-                onClick={prevVideo}
-                className="bg-black/40 backdrop-blur-sm text-black p-3 rounded-full hover:bg-black/60 transition group"
-              >
-                <ChevronLeft
-                  size={24}
-                  className="group-hover:scale-110 transition"
-                />
-              </button>
-              <button
-                onClick={togglePlay}
-                className="bg-black/40 backdrop-blur-sm text-black p-3 rounded-full hover:bg-black/60 transition group"
-              >
-                {isPlaying ? (
-                  <Pause
-                    size={24}
-                    className="text-cyan-400 group-hover:scale-110 transition"
-                  />
-                ) : (
-                  <Play
-                    size={24}
-                    className="text-cyan-400 group-hover:scale-110 transition"
-                  />
-                )}
-              </button>
-              <button
-                onClick={nextVideo}
-                className="bg-black/40 backdrop-blur-sm text-black p-3 rounded-full hover:bg-black/60 transition group"
-              >
-                <ChevronRight
-                  size={24}
-                  className="group-hover:scale-110 transition"
-                />
-              </button>
-            </div>
-          </div>
-        </section>
+        </motion.div>
       </div>
     </div>
   );

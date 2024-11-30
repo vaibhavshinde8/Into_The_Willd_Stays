@@ -6,6 +6,7 @@ import img2 from "../assets/SunandSandGoa/51PM.jpeg";
 import img3 from "../assets/SunandSandGoa/34.52PM2.jpeg";
 import img4 from "../assets/SunandSandGoa/52PM.jpeg";
 import { MapPin, Mountain } from "lucide-react";
+import BookingButton from "./BookingButton";
 
 const containerVariants = {
   hidden: { opacity: 0, scale: 0.8 },
@@ -174,12 +175,13 @@ const ExploreMoreSAS = () => {
           </p>
 
           <div className="flex justify-center lg:justify-start">
-            <button
+            {/* <button
               onClick={handleBookNow}
               className="px-4 py-2 sm:px-6 sm:py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors"
             >
               Book Now
-            </button>
+            </button> */}
+            <BookingButton/>
           </div>
         </div>
 

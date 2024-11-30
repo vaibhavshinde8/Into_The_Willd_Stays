@@ -7,6 +7,7 @@ import img2 from "../assets/pineandtails/IMG_6567.jpg";
 import img3 from "../assets/pineandtails/IMG_6590.jpg";
 import img4 from "../assets/pineandtails/IMG_6598.jpg";
 import { MapPin, Mountain } from "lucide-react";
+import BookingButton from "./BookingButton";
 
 const containerVariants = {
   hidden: { opacity: 0, scale: 0.8 },
@@ -190,12 +191,13 @@ const ExploreMorePNT = () => {
           </p>
 
           <div className="flex justify-center lg:justify-start">
-            <button
+            {/* <button
               onClick={handleBookNow}
               className="px-4 py-2 sm:px-6 sm:py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors"
             >
               Book Now
-            </button>
+            </button> */}
+            <BookingButton/>
           </div>
         </div>
 
