@@ -222,7 +222,7 @@ const Tours = () => {
           </motion.div>
         ))}
       </div>
-      <OutdoorEvents/>
+      {/* <OutdoorEvents/> */}
 
       {/* Modal */}
       <Modal isOpen={isModalOpen} onClose={closeModal} tour={selectedTour} />
