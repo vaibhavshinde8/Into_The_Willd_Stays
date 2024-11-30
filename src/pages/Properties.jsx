@@ -16,6 +16,8 @@ const properties = [
   {
     imgURL: Image1,
     name: "Into The Wild Stays",
+    checkInDate: "2024-12-01",
+    checkOutDate: "2024-12-03",
     description:
       "Stay in a charming hilltop cottage with breathtaking views of Mussoorie's misty mountains and serene surroundings.",
     location: "Dhanolti",
@@ -30,6 +32,8 @@ const properties = [
   {
     imgURL: Image2,
     name: "ITW: Pines And Tails",
+    checkInDate: "2024-12-01",
+    checkOutDate: "2024-12-03",
     description:
       "Stay Type;- 4BHK private pool, Seaview Villa, Porvorim North Goa.",
     location: "Tehri",
@@ -44,6 +48,8 @@ const properties = [
   {
     imgURL: Image3,
     name: "ITW: Me:nam Homestay",
+    checkInDate: "2024-12-01",
+    checkOutDate: "2024-12-03",
     description:
       "A tranquil retreat located in the lush green valleys of Dehradun, perfect for unwinding and enjoying the scenic beauty.",
     location: "Majuli",
@@ -59,6 +65,8 @@ const properties = [
   {
     imgURL: Image4,
     name: "ITW: Sun and Sand Villa",
+    checkInDate: "2024-12-01",
+    checkOutDate: "2024-12-03",
     description:
       "A tranquil retreat located in the lush green valleys of Dehradun, perfect for unwinding and enjoying the scenic beauty.",
     location: "Goa",
