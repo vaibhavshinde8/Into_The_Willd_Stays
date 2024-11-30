@@ -78,7 +78,7 @@ const GuestExperience = () => {
   return (
     <div
       ref={containerRef}
-      className="min-h-screen bg-gradient-to-r from-gray-300 via-white to-gray-200 p-4 lg:px-32"
+      className="min-h-screen bg-gradient-to-r from-gray-300 via-white to-gray-200 p-4 lg:px-32 pt-32"
     >
       <div className="container mx-auto px-4 py-16 grid lg:grid-cols-2 gap-8">
         <motion.div
@@ -160,25 +160,25 @@ const GuestExperience = () => {
           className="max-w-5xl mx-auto"
         >
           <div className="relative px-12 lg:px-24">
-            <h2 className="text-5xl font-semibold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-cyan-800 to-blue-800">
+            <h2 className="text-5xl font-extrabold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-blue-900 to-cyan-800">
               Our Story
             </h2>
 
             <div className="max-w-4xl mx-auto text-lg leading-relaxed text-gray-800 space-y-6">
-              <p className="relative before:absolute before:-left-6 before:rounded-full">
+              <p className="relative font-bold">
                 Welcome to Into the Wild Stays, where we offer more than just
                 accommodations. We create memorable escapes in nature's embrace.
                 Nestled in serene, offbeat locations, our boutique homestays and
                 cottages provide the perfect blend of comfort, tranquility, and
                 adventure.
               </p>
-              <p className="relative before:absolute ">
+              <p className="relative font-bold ">
                 Our philosophy revolves around crafting personalized experiences
                 that connect guests with the beauty of the wilderness. With
                 heartfelt hospitality and thoughtful service, we ensure every
                 stay feels like a home away from home.
               </p>
-              <p className="relative before:absolute before:-left-6 before:rounded-full">
+              <p className="relative font-bold  ">
                 Come, escape the chaos, and immerse yourself in the
                 unforgettable charm of Into the Wild Stays!
               </p>

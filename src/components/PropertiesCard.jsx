@@ -90,7 +90,9 @@ const PropertiesCard = ({ selectedLocation = "All" }) => {
         <h1 className="text-4xl font-extralight text-center text-gray-800 mb-12 tracking-wide">
           Discover Your <span className="text-[#0F2642]">Next Adventure</span>
         </h1>
+        
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+        
           {filteredProperties.map((property, index) => (
             <motion.div
               key={index}

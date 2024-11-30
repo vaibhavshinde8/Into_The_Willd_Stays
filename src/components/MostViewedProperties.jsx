@@ -26,16 +26,16 @@ const MostViewedProperties = () => {
               Explore Properties
             </h1>
           </div>
-          <p className="text-xl text-gray-800 max-w-2xl mx-auto">
+          {/* <p className="text-xl text-gray-800 max-w-2xl mx-auto">
             Uncover extraordinary destinations that redefine travel experiences
-          </p>
+          </p> */}
         </div>
 
         {/* Main Content Container */}
         <div className="relative z-10">
           <div className="max-w-6xl mx-auto  backdrop-blur-xl">
             {/* Header */}
-            <div className="flex items-center justify-between p-6 border-b border-gray-700/30">
+            {/* <div className="flex items-center justify-between p-6 border-b border-gray-700/30">
               <div className="flex items-center space-x-4 text-black">
                 <Compass className="w-8 h-8" />
                 <span className="text-xl font-semibold">Destinations</span>
@@ -46,7 +46,7 @@ const MostViewedProperties = () => {
                   Curated Selection
                 </span>
               </div>
-            </div>
+            </div> */}
 
             {/* Location Filter */}
             <div className="p-6">

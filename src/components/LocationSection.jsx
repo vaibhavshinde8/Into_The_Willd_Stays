@@ -84,7 +84,7 @@ const LocationSection = () => {
             >
               <div
                 className="cursor-pointer transform transition-all duration-300 
-                hover:scale-105 relative overflow-hidden border-2 border-transparent "
+                hover:scale-105 relative overflow-hidden border-2 border-gray-400 "
                 onClick={() => navigate(location.route)}
               >
                 {/* Location Image */}

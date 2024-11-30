@@ -115,8 +115,18 @@ const Footer = () => {
             </h3>
             <ul className="space-y-4 text-sm">
               <li className="flex items-center space-x-3">
-                <Phone size={16} />
-                <span> +919761966485, +919958838557</span>
+                <div className="flex items-center space-x-2">
+                  <Phone size={16} />
+                    <a
+                      href="tel:+919761966485"
+                      className="mr-2 hover:underline"
+                    >
+                      +919761966485
+                    </a>
+                    <a href="tel:+919958838557" className="hover:underline">
+                      +919958838557
+                    </a>
+                  </div>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail size={16} />
