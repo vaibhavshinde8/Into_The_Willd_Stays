@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import toursData from "../assets/tours.json";
 import BookingButton from "../components/BookingButton";
+import OutdoorEvents from "../components/OutdoorEvents";
 
 // Modal Component
 const Modal = ({ isOpen, onClose, tour }) => {
@@ -35,8 +36,8 @@ const Modal = ({ isOpen, onClose, tour }) => {
             <div className="space-y-2 text-gray-600">
               {tour.itinerary.map((item, index) => (
                 <div key={index} className="mb-4">
-                  <h5 className="font-bold text-lg">{item.day}</h5>
-                  <p>{item.description}</p>
+                  <h5 className="font-bold text-black text-lg">{item.day}</h5>
+                  <p className="text-lg p-4">{item.description}</p>
                 </div>
               ))}
             </div>
@@ -48,8 +49,8 @@ const Modal = ({ isOpen, onClose, tour }) => {
             </h4>
             <ul className="space-y-2 text-gray-600">
               {tour.inclusions.map((item, index) => (
-                <li key={index} className="mb-2 flex items-start">
-                  <span className="h-2 w-2 mt-2 mr-2 bg-[#43A181]" />
+                <li key={index} className="mb-2 flex items-start text-lg">
+                  <span className="h-2 w-2  mt-2 mr-2 bg-[#43A181]" />
                   {item}
                 </li>
               ))}
@@ -62,7 +63,7 @@ const Modal = ({ isOpen, onClose, tour }) => {
             </h4>
             <ul className="space-y-2 text-gray-600">
               {tour.exclusions.map((item, index) => (
-                <li key={index} className="mb-2 flex items-start">
+                <li key={index} className="mb-2 flex items-start text-lg">
                   <span className="h-2 w-2 mt-2 mr-2 bg-[#43A181]" />
                   {item}
                 </li>
@@ -74,7 +75,7 @@ const Modal = ({ isOpen, onClose, tour }) => {
             <h4 className="text-xl font-semibold text-[#091F3C] mb-4">
               Contact Methods
             </h4>
-            <div className="space-y-3 text-gray-600">
+            <div className="space-y-3 text-gray-600 text-lg">
               <a
                 href={`tel:${tour.contact_methods?.phone}`}
                 className="flex items-center hover:text-[#43A181] transition-colors"
@@ -105,7 +106,7 @@ const Modal = ({ isOpen, onClose, tour }) => {
             <h4 className="text-xl font-semibold text-[#091F3C] mb-4">
               Rules & Policy
             </h4>
-            <ul className="space-y-2 text-gray-600">
+            <ul className="space-y-2 text-gray-600 text-lg">
               {tour.rules_and_policy.map((item, index) => (
                 <li key={index} className="mb-2 flex items-start">
                   <span className="h-2 w-2 mt-2 mr-2 bg-[#43A181]" />
@@ -221,6 +222,7 @@ const Tours = () => {
           </motion.div>
         ))}
       </div>
+      <OutdoorEvents/>
 
       {/* Modal */}
       <Modal isOpen={isModalOpen} onClose={closeModal} tour={selectedTour} />

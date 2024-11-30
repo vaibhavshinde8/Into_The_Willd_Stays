@@ -14,9 +14,6 @@ import TourBanner from "../components/TourBanner";
 
 const properties = [
   {
-    checkInDate: "2024-12-01",
-    checkOutDate: "2024-12-02",
-    id: 1,
     imgURL: Image1,
     name: "Into The Wild Stays",
     description:
@@ -28,13 +25,11 @@ const properties = [
     bedroom: 4,
     guest: 24,
     exploremoreRoute: "/exploremoreitw",
+    tags: ["Mountain", "Scenic", "Luxury"],
   },
   {
-    checkInDate: "2024-12-01",
-    checkOutDate: "2024-12-02",
-    id: 2,
     imgURL: Image2,
-    name: " ITW : Pines And Tails",
+    name: "ITW: Pines And Tails",
     description:
       "Stay Type;- 4BHK private pool, Seaview Villa, Porvorim North Goa.",
     location: "Tehri",
@@ -44,36 +39,36 @@ const properties = [
     bedroom: 5,
     guest: 12,
     exploremoreRoute: "/exploremorepnt",
+    tags: ["Pool", "Seaview", "Modern"],
   },
   {
-    checkInDate: "2024-12-01",
-    checkOutDate: "2024-12-02",
-    id: 3,
     imgURL: Image3,
-    name: " ITW : Me:nam Homestay",
+    name: "ITW: Me:nam Homestay",
     description:
       "A tranquil retreat located in the lush green valleys of Dehradun, perfect for unwinding and enjoying the scenic beauty.",
     location: "Majuli",
     rating: 4.8,
     reviews: 40,
     price: 3500,
+    bedroom: 5,
+
     guest: 30,
     exploremoreRoute: "/exploremoremnm",
+    tags: ["Eco", "Green", "Tranquil"],
   },
   {
-    checkInDate: "2024-12-01",
-    checkOutDate: "2024-12-02",
-    id: 4,
     imgURL: Image4,
-    name: " ITW : Sun and Sand Villa",
+    name: "ITW: Sun and Sand Villa",
     description:
       "A tranquil retreat located in the lush green valleys of Dehradun, perfect for unwinding and enjoying the scenic beauty.",
     location: "Goa",
     rating: 4.8,
     reviews: 40,
-    price: "11000-16000",
+    bedroom: 5,
     guest: 10,
+    price: "11000-16000",
     exploremoreRoute: "/exploremoresas",
+    tags: ["Luxury", "Beach", "Premium"],
   },
 ];
 

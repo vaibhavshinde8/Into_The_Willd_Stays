@@ -54,6 +54,8 @@ const properties = [
     rating: 4.8,
     reviews: 40,
     price: 3500,
+    bedroom: 5,
+
     guest: 30,
     exploremoreRoute: "/exploremoremnm",
     tags: ["Eco", "Green", "Tranquil"],
@@ -66,8 +68,9 @@ const properties = [
     location: "Goa",
     rating: 4.8,
     reviews: 40,
-    price: "11000-16000",
+    bedroom: 5,
     guest: 10,
+    price: "11000-16000",
     exploremoreRoute: "/exploremoresas",
     tags: ["Luxury", "Beach", "Premium"],
   },
@@ -85,7 +88,7 @@ const PropertiesCard = ({ selectedLocation = "All" }) => {
     <div className="min-h-screen  ">
       <div className="container mx-auto">
         <h1 className="text-4xl font-extralight text-center text-gray-800 mb-12 tracking-wide">
-          Discover Your <span className="text-emerald-600">Next Adventure</span>
+          Discover Your <span className="text-[#0F2642]">Next Adventure</span>
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
           {filteredProperties.map((property, index) => (
@@ -193,7 +196,7 @@ const PropertiesCard = ({ selectedLocation = "All" }) => {
 
                 {/* Property Details Section */}
                 <div className="p-6 text-gray-800">
-                  <h2 className="text-2xl font-bold mb-3 text-emerald-600">
+                  <h2 className="text-2xl font-bold mb-3 text-[#0F2642]">
                     {property.name}
                   </h2>
                   <p className="text-gray-600 mb-4 line-clamp-2">
@@ -224,7 +227,7 @@ const PropertiesCard = ({ selectedLocation = "All" }) => {
                   {/* Tags and Price Section */}
                   <div className="flex justify-between items-center">
                     <div>
-                      <span className="text-xl font-bold text-emerald-600">
+                      <span className="text-xl font-bold text-[#0F2642]">
                         ₹{property.price}
                       </span>
                       <span className="text-sm text-gray-500 ml-1">/night</span>
