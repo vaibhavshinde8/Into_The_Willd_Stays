@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import  { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
@@ -6,7 +6,7 @@ import {
   FaMapMarkerAlt,
   FaCalendar,
   FaUsers,
-  FaRocket,
+  // FaRocket,
 } from "react-icons/fa";
 import heroImage1 from "../assets/banner/b1.jpeg";
 import heroImage2 from "../assets/banner/b2.jpeg";

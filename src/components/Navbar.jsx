@@ -57,7 +57,14 @@ export default function Navbar() {
           <div className="flex flex-col sm:flex-row items-center sm:space-x-6 space-y-2 sm:space-y-0 text-center sm:text-left">
             <div className="flex items-center space-x-2">
               <Phone size={16} />
-              <span>+919761966485, +919958838557</span>
+              <div>
+                <a href="tel:+919761966485" className="mr-2 hover:underline">
+                  +919761966485
+                </a>
+                <a href="tel:+919958838557" className="hover:underline">
+                  +919958838557
+                </a>
+              </div>
             </div>
             <div className="flex items-center space-x-2">
               <Mail size={16} />
@@ -161,7 +168,6 @@ export default function Navbar() {
               />
               <span className="font-extrabold">Profile</span>
             </Link>
-            
           </div>
 
           {/* Mobile menu button */}
@@ -247,7 +253,6 @@ export default function Navbar() {
               />
               <span className="font-extrabold">Profile</span>
             </Link>
-
           </div>
         </div>
       )}
