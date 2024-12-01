@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { MapPin, Filter, Compass, Layers, Globe } from "lucide-react";
 import PropertiesCard from "./PropertiesCard";
+import { motion } from "framer-motion";
+
 
 const MostViewedProperties = () => {
   const [selectedLocation, setSelectedLocation] = useState("All");
@@ -20,12 +22,17 @@ const MostViewedProperties = () => {
 
         {/* Header Section */}
         <div className="text-center mb-16 relative z-10">
-          <div className="flex justify-center items-center space-x-4 mb-6">
-            {/* <Globe className="w-12 h-12 text-cyan-400" /> */}
-            <h1 className="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-800 to-blue-900">
-              Explore Properties
-            </h1>
-          </div>
+          <motion.h1
+            className="text-4xl md:text-6xl text-black font-bold mb-12 text-center"
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <span className="bg-gradient-to-r from-cyan-800 to-emerald-800 bg-clip-text text-transparent">
+              Explore
+            </span>{" "}
+            Properties
+          </motion.h1>
           {/* <p className="text-xl text-gray-800 max-w-2xl mx-auto">
             Uncover extraordinary destinations that redefine travel experiences
           </p> */}

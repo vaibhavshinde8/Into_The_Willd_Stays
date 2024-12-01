@@ -78,7 +78,7 @@ const ExploreMoreITW = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white px-4 sm:px-6 lg:px-32 py-12 sm:py-20 lg:py-40 text-black">
+    <div className="min-h-screen bg-white px-4 sm:px-6 lg:px-32 py-48 sm:py-20 lg:py-40 text-black">
       <div className="flex flex-col lg:flex-row items-center justify-between space-y-8 lg:space-y-0 lg:space-x-12">
         {/* Hero Section */}
         <div className="w-full lg:w-1/2">

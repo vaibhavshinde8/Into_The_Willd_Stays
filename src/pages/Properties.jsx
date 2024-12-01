@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { FaMapMarkerAlt, FaBed, FaUsers, FaStar } from "react-icons/fa";
@@ -95,6 +95,10 @@ const Properties = () => {
 
     setFilteredProperties(filtered);
   };
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -120,8 +124,8 @@ const Properties = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <div className="relative h-[70vh] overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.trvl-media.com/lodging/109000000/108380000/108370800/108370765/28b3dc50.jpg?impolicy=resizecrop&rw=1200&ra=fit')] bg-cover bg-center bg-fixed transform scale-105">
+      <div className="relative h-[80vh] overflow-hidden ">
+        <div className="absolute  inset-0 bg-[url('https://images.trvl-media.com/lodging/109000000/108380000/108370800/108370765/28b3dc50.jpg?impolicy=resizecrop&rw=1200&ra=fit')] bg-cover bg-center bg-fixed transform scale-105">
           <div className="absolute inset-0 bg-gradient-to-b from-gray-900/20 to-gray-900/60" />
         </div>
 
@@ -131,8 +135,8 @@ const Properties = () => {
           transition={{ duration: 1 }}
           className="relative h-full max-w-7xl mx-auto px-4 flex flex-col items-center justify-center text-center"
         >
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
-            <span className="bg-gradient-to-r from-teal-600 to-teal-400 bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 ">
+            <span className="bg-gradient-to-r from-teal-600 to-teal-400 bg-clip-text text-transparent ">
               Discover
             </span>
             <br />

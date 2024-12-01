@@ -2,6 +2,8 @@ import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, EffectCreative } from "swiper/modules";
 import { Star, ArrowLeftCircle, ArrowRightCircle, Quote } from "lucide-react";
+import { motion } from "framer-motion";
+
 
 import "swiper/css";
 import "swiper/css/effect-creative";
@@ -115,12 +117,17 @@ const Testimonials = () => {
 
       {/* Section Title */}
       <div className="relative z-10 text-center mb-12">
-        <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
-          What Our Guests Say
-        </h2>
-        <p className="text-lg text-gray-800 max-w-2xl mx-auto">
-          Stories from travelers who discovered their perfect retreat
-        </p>
+        <motion.h1
+          className="text-4xl md:text-6xl text-black font-bold mb-12 text-center"
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <span className="bg-gradient-to-r from-cyan-800 to-emerald-800 bg-clip-text text-transparent">
+            What
+          </span>{" "}
+          Our Guest Say
+        </motion.h1>
       </div>
 
       {/* Navigation Controls */}
@@ -180,8 +187,8 @@ const Testimonials = () => {
               relative  p-8 transition-all duration-500 h-full
               ${
                 index === activeSlide
-                  ? "bg-gray-700 scale-105 shadow-xl"
-                  : "bg-gray-400 opacity-70 scale-95"
+                  ? "bg-black scale-105 shadow-xl"
+                  : "bg-gray-800 opacity-70 scale-95"
               }
             `}
             >

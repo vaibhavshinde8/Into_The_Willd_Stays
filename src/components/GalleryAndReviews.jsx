@@ -3,6 +3,8 @@ import { Quote, Globe, Star, Link as LinkIcon } from "lucide-react";
 import Image2 from "../assets/guestdiary/img-1.jpeg";
 import Image3 from "../assets/guestdiary/img-2.jpg";
 import Image4 from "../assets/guestdiary/img-3.jpeg";
+import { motion } from "framer-motion";
+
 
 const testData = [
   {
@@ -68,14 +70,20 @@ const GalleryAndReviews = () => {
         {/* Header Section */}
         <div className="text-center mb-16">
           <div className="flex justify-center items-center space-x-4 mb-6">
-            {/* <Globe className="w-12 h-12 text-cyan-800" /> */}
-            <h1 className="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-800 to-blue-800">
-              Guest Testimonials
-            </h1>
-          </div>
-          <p className="text-xl text-gray-800 max-w-2xl mx-auto">
+          <motion.h1
+          className="text-4xl md:text-6xl text-black font-bold mb-12 text-center"
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <span className="bg-gradient-to-r from-cyan-800 to-emerald-800 bg-clip-text text-transparent">
+            Guest
+          </span>{" "}
+        Testimonials
+        </motion.h1>
+          {/* <p className="text-xl text-gray-800 max-w-2xl mx-auto">
             Authentic moments and memories from our travelers
-          </p>
+          </p> */}
         </div>
 
         {/* Filter Section */}
@@ -156,6 +164,7 @@ const GalleryAndReviews = () => {
           ))}
         </div>
       </div>
+    </div>
     </div>
   );
 };

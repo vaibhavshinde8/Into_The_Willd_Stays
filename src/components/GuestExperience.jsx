@@ -83,7 +83,7 @@ const GuestExperience = () => {
       <div className="container mx-auto px-4 py-16 grid lg:grid-cols-2 gap-8">
         <motion.div
           style={{ scale, height }}
-          className="relative overflow-hidden   shadow-2xl border-2 border-cyan-800/30"
+          className="relative overflow-hidden rounded-lg shadow-2xl border-2 border-cyan-800/30"
         >
           <AnimatePresence mode="wait">
             {videos.map(
@@ -94,7 +94,7 @@ const GuestExperience = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className="relative w-full h-full  "
+                    className="relative w-full h-full"
                   >
                     <video
                       ref={(el) => {
@@ -159,28 +159,53 @@ const GuestExperience = () => {
           transition={{ duration: 0.8 }}
           className="max-w-5xl mx-auto"
         >
-          <div className="relative px-12 lg:px-24">
-            <h2 className="text-5xl font-extrabold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-blue-900 to-cyan-800">
-              Our Story
-            </h2>
+          <div className="relative px-4 lg:px-8 bg-gray-200 h-[70vh] p-6 rounded-lg">
+            <motion.h1
+              className="text-4xl md:text-6xl text-black font-bold mb-12 text-center"
+              initial={{ opacity: 0, y: -50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <span className="bg-gradient-to-r from-cyan-800 to-emerald-800 bg-clip-text text-transparent">
+                Our
+              </span>{" "}
+              Story
+            </motion.h1>
 
-            <div className="max-w-4xl mx-auto text-lg leading-relaxed text-gray-800 space-y-6">
-              <p className="relative font-bold">
-                Welcome to Into the Wild Stays, where we offer more than just
-                accommodations. We create memorable escapes in nature's embrace.
-                Nestled in serene, offbeat locations, our boutique homestays and
-                cottages provide the perfect blend of comfort, tranquility, and
-                adventure.
+            <div className="max-w-4xl mx-auto text-lg leading-relaxed  text-gray-800 space-y-6">
+              <p className="relative">
+                <span className="font-extrabold text-2xl text-red-900">
+                  &gt;{" "}
+                </span>
+                <span className="font-light">
+                  Welcome to Into the Wild Stays, where we offer more than just
+                  accommodations. We create memorable escapes in nature's
+                  embrace. Nestled in serene, offbeat locations, our boutique
+                  homestays and cottages provide the perfect blend of comfort,
+                  tranquility, and adventure.
+                </span>
               </p>
-              <p className="relative font-bold ">
-                Our philosophy revolves around crafting personalized experiences
-                that connect guests with the beauty of the wilderness. With
-                heartfelt hospitality and thoughtful service, we ensure every
-                stay feels like a home away from home.
+              <p className="relative">
+                <span className="font-extrabold text-2xl text-red-900">
+                  &gt;{" "}
+                </span>
+
+                <span className="font-light">
+                  Our philosophy revolves around crafting personalized
+                  experiences that connect guests with the beauty of the
+                  wilderness. With heartfelt hospitality and thoughtful service,
+                  we ensure every stay feels like a home away from home.
+                </span>
               </p>
-              <p className="relative font-bold  ">
-                Come, escape the chaos, and immerse yourself in the
-                unforgettable charm of Into the Wild Stays!
+              <p className="relative">
+                <span className="font-extrabold text-2xl text-red-900">
+                  &gt;{" "}
+                </span>
+
+                <span className="font-light">
+                  Come, escape the chaos, and immerse yourself in the
+                  unforgettable charm of Into the Wild Stays!
+                </span>
               </p>
             </div>
           </div>

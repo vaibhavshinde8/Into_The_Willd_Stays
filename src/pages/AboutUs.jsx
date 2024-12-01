@@ -23,37 +23,28 @@ import Image7 from "../assets/itw_rep/itwrep_page-0013.jpg";
 const AboutUs = () => {
   return (
     <div className="min-h-[100vh]">
-      <div className="relative min-h-[70vh] overflow-hidden">
-        {/* Background Image */}
+      <div className="relative h-[70vh] overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://images.trvl-media.com/lodging/109000000/108380000/108370800/108370765/28b3dc50.jpg?impolicy=resizecrop&rw=1200&ra=fit')] bg-cover bg-center bg-fixed transform scale-105">
-          <div className="absolute inset-0 bg-gradient-to-b from-[#091F3C]/30 to-[#091F3C]/90 backdrop-blur-sm" />
+          <div className="absolute inset-0 bg-gradient-to-b from-gray-900/20 to-gray-900/60" />
         </div>
 
-        {/* Content Section */}
-        <div className="relative min-h-[60vh] max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32 flex flex-col items-center justify-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
-          >
-            {/* Section Heading */}
-            <h1 className="relative inline-block">
-              <span className="absolute -inset-1 w-full h-full bg-gradient-to-r from-[#43A181] to-[#43A181]/80 -skew-y-3 transform origin-top-right"></span>
-              <span className="relative text-4xl md:text-5xl lg:text-7xl font-bold text-white tracking-tight">
-                About Us
-              </span>
-            </h1>
-
-            {/* Decorative Divider */}
-            <motion.div
-              initial={{ opacity: 0, width: 0 }}
-              animate={{ opacity: 1, width: "100%" }}
-              transition={{ delay: 0.5, duration: 0.8 }}
-              className="mt-8 h-1 bg-gradient-to-r from-[#43A181] to-transparent max-w-[200px] mx-auto"
-            />
-          </motion.div>
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="relative h-full max-w-7xl mx-auto px-4 flex flex-col items-center justify-center text-center"
+        >
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
+            <span className="bg-gradient-to-r from-teal-600 to-teal-400 bg-clip-text text-transparent">
+              About Us
+            </span>
+            {/* <br />
+            Us */}
+          </h1>
+          <p className="text-xl text-gray-200 max-w-2xl mb-8">
+            Meet the Experts Turning Journeys into Joys.
+          </p>
+        </motion.div>
       </div>
 
       <div className="bg-white min-h-[100vh] py-4 lg:px-32">
@@ -89,10 +80,18 @@ const AboutUs = () => {
         </div>
       </div>
       <div className="text-center py-8 lg:px-32">
-        <h2 className="text-teal-300 text-lg font-semibold tracking-wide uppercase">
-          Why Our Homestay?
-        </h2>
-        <h1 className="text-3xl font-bold my-4">Why Choose Us</h1>
+       <motion.h1
+          className="text-4xl md:text-6xl text-black font-bold mb-12 text-center"
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <span className="bg-gradient-to-r from-cyan-800 to-emerald-800 bg-clip-text text-transparent">
+            Why
+          </span>{" "}
+          Our Homestay?
+        </motion.h1>
+        {/* <h1 className="text-3xl font-bold my-4">Why Choose Us</h1> */}
         <div className="flex flex-wrap justify-around gap-6 mt-6">
           {[
             {

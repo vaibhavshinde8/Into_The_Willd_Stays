@@ -1,4 +1,4 @@
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FaArrowAltCircleDown, FaArrowAltCircleUp } from "react-icons/fa";
 import img1 from "../assets/SunandSandGoa/50PM.jpeg";
@@ -125,18 +125,17 @@ const ExploreMoreSAS = () => {
       setOpenIndex(index);
     }
   };
- useEffect(() => {
-   window.scrollTo(0, 0); // Scrolls to the top
- }, []);
-
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scrolls to the top
+  }, []);
 
   return (
-    <div className="min-h-screen bg-white px-4 sm:px-6 lg:px-32 py-12 sm:py-20 lg:py-40 text-black">
+    <div className="min-h-screen bg-white px-4 sm:px-6 lg:px-32 py-48 sm:py-20 lg:py-40 text-black">
       <div className="flex flex-col lg:flex-row items-center justify-between space-y-8 lg:space-y-0 lg:space-x-12">
         {/* Hero Section */}
         <div className="w-full lg:w-1/2">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-4 leading-tight tracking-tight text-center lg:text-left">
-          Sunrise Alpine Stay: Premium Cottages in the Heart of Nature
+            Sun N Sand: Premium Cottages in the Heart of Nature
             <br />
             <span className="text-green-700">Goa</span>
           </h1>
@@ -168,10 +167,12 @@ const ExploreMoreSAS = () => {
           </div>
 
           <p className="text-base sm:text-lg text-gray-600 leading-relaxed mb-6 sm:mb-8 text-center lg:text-left">
-          Welcome to Sunrise Alpine Stay, where luxury meets nature. Experience
-         our premium cottages set against breathtaking mountain vistas, offering
-         the perfect blend of comfort and natural beauty. Each stay is crafted to
-         provide an unforgettable escape from city life.
+            Welcome to Sun N Sand, a serene 4BHK villa nestled in the heart of
+            Candolim, Goa Perfect for families and friends, this spacious villa
+            offers a private pool, lush garden, and stunning beach views
+            Experience the charm of Goa with the comfort and privacy of a home
+            away from home. Relax, unwind, and create unforgettable memories in
+            this idyllic coastal retreat
           </p>
 
           <div className="flex justify-center lg:justify-start">
@@ -181,7 +182,7 @@ const ExploreMoreSAS = () => {
             >
               Book Now
             </button> */}
-            <BookingButton/>
+            <BookingButton />
           </div>
         </div>
 
@@ -358,7 +359,7 @@ const ExploreMoreSAS = () => {
             <div>
               <p className="font-semibold text-gray-700">Address</p>
               <p className="text-gray-600">
-              Sunrise Alpine Stay, Mountain View Road
+                Sunrise Alpine Stay, Mountain View Road
               </p>
             </div>
           </div>
@@ -474,7 +475,6 @@ const ExploreMoreSAS = () => {
       </div>
     </div>
 
-    
     // <div className="min-h-screen bg-gradient-to-br from-[#091F3C] to-[#3C8D99] px-6 lg:px-32 py-40 text-white">
     //   <motion.button
     //     initial={{ opacity: 0, scale: 0.8 }}
@@ -487,9 +487,9 @@ const ExploreMoreSAS = () => {
     //       damping: 10,
     //     }}
     //     onClick={handleBookNow}
-    //     className="fixed bottom-6 right-6 z-50 bg-white text-green-900  
-    //              px-6 py-3 rounded-full shadow-2xl 
-    //              hover:bg-white transition-colors duration-300 
+    //     className="fixed bottom-6 right-6 z-50 bg-white text-green-900
+    //              px-6 py-3 rounded-full shadow-2xl
+    //              hover:bg-white transition-colors duration-300
     //              flex items-center space-x-2
     //              "
     //     style={{

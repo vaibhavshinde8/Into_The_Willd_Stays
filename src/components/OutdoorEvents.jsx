@@ -1,122 +1,189 @@
-import  { useState } from "react";
+import React, { useState } from "react";
+import { X } from "lucide-react";
 
-const TabContent = ({ title, children }) => (
-  <div className="bg-white shadow-md rounded-lg p-6">
-    <h3 className="text-2xl font-bold mb-4">{title}</h3>
-    {children}
-  </div>
-);
-
-const OutdoorEvents = () => {
-  const [activeTab, setActiveTab] = useState("school-camp");
+const EventModal = ({
+  isOpen,
+  onClose,
+  title,
+  details,
+  activities,
+  packageDetails,
+  placeholderImages,
+}) => {
+  if (!isOpen) return null;
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold mb-6">Events </h1>
-      <h2 className="text-2xl font-semibold mb-4">School Outdoor Events</h2>
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-4 overflow-y-auto">
+      <div className="bg-white rounded-xl w-full max-w-4xl max-h-[90vh] overflow-y-auto relative shadow-2xl">
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 z-10 bg-gray-100 rounded-full p-2 hover:bg-gray-200 transition"
+        >
+          <X className="w-6 h-6 text-gray-700" />
+        </button>
 
-      <div className="mb-4">
-        <button
-          className={`px-4 py-2 mr-2 rounded-t-lg ${
-            activeTab === "school-camp"
-              ? "bg-blue-500 text-white"
-              : "bg-gray-200"
-          }`}
-          onClick={() => setActiveTab("school-camp")}
-        >
-          School Camp
-        </button>
-        <button
-          className={`px-4 py-2 rounded-t-lg ${
-            activeTab === "dad-and-i" ? "bg-blue-500 text-white" : "bg-gray-200"
-          }`}
-          onClick={() => setActiveTab("dad-and-i")}
-        >
-          Dad & I
-        </button>
+        <div className="p-8">
+          <h2 className="text-3xl font-bold mb-6 text-center">{title}</h2>
+
+          {/* Event Details */}
+          <div className="mb-6">
+            <h3 className="text-2xl font-semibold mb-4">Event Description</h3>
+            <p className="mb-4 text-gray-700">{details}</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* Activities */}
+            <div>
+              <h4 className="text-xl font-semibold mb-3">Activities</h4>
+              <ul className="list-disc pl-5 space-y-2">
+                {activities.map((activity, index) => (
+                  <li key={index} className="text-gray-700">
+                    {activity}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Package Details */}
+            <div>
+              <h4 className="text-xl font-semibold mb-3">
+                Package Information
+              </h4>
+              {packageDetails && (
+                <div className="bg-gray-100 p-4 rounded-lg">
+                  {packageDetails.map((detail, index) => (
+                    <p key={index} className="mb-2 text-gray-700">
+                      {detail}
+                    </p>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* Placeholder Images */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
+            {placeholderImages.map((_, index) => (
+              <img
+                key={index}
+                src={`https://via.placeholder.com/300x400?text=Activity+${
+                  index + 1
+                }`}
+                alt={`Placeholder ${index + 1}`}
+                className="w-full h-60 object-cover rounded-lg"
+              />
+            ))}
+          </div>
+        </div>
       </div>
-
-      {activeTab === "school-camp" && (
-        <TabContent title="School Camp">
-          <p className="mb-4">WORKSHOP | CAMPING | OUTDOOR ACTIVITIES</p>
-          <div className="mb-4">
-            <h4 className="text-lg font-semibold mb-2">Contact Us</h4>
-            <p>+91 99588 38557 | +91 9761966485</p>
-          </div>
-          <div className="mb-4">
-            <h4 className="text-lg font-semibold mb-2">Our Objectives</h4>
-            <ul className="list-disc pl-5">
-              <li>To expose youth to nature, hardships, and hazards</li>
-              <li>
-                Build personality, character, confidence, and courage through
-                outdoor programs
-              </li>
-              <li>
-                Ensure the highest safety and professional standards in all
-                activities
-              </li>
-            </ul>
-          </div>
-          <div className="mb-4">
-            <h4 className="text-lg font-semibold mb-2">Core Values</h4>
-            <ul className="list-disc pl-5">
-              <li>Safety and Professional Excellence</li>
-              <li>Society and Participation</li>
-              <li>Achieve Excellence</li>
-              <li>Innovations</li>
-              <li>Embrace Diversity</li>
-              <li>Integrity</li>
-              <li>Environmental Sustainability</li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="text-lg font-semibold mb-2">Activities</h4>
-            <ul className="list-disc pl-5">
-              <li>Yoga & Zumba Workshop</li>
-              <li>Camping & Hiking Workshop</li>
-              <li>Art Workshop</li>
-              <li>Music Session and Bonfire</li>
-              <li>Projector Movie Night</li>
-              <li>Treasure Hunt and Fun Activities</li>
-            </ul>
-          </div>
-        </TabContent>
-      )}
-
-      {activeTab === "dad-and-i" && (
-        <TabContent title="Dad & I">
-          <p className="mb-4">BE A HERO OF YOUR KIDS</p>
-          <p className="mb-4">
-            Dads who love getting kids outside are a great source of
-            inspiration. This 2-day event at our camping site includes stay,
-            food, outdoor activities like hiking, trail walking, and some
-            adventure activities.
-          </p>
-          <div className="mb-4">
-            <h4 className="text-lg font-semibold mb-2">Event Includes</h4>
-            <ul className="list-disc pl-5">
-              <li>Camping & Trekking Workshop</li>
-              <li>Cycling Workshop</li>
-              <li>Yoga & Running Workshop</li>
-              <li>Team Bonding Activities</li>
-              <li>Live Music and Bonfire</li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="text-lg font-semibold mb-2">Package Details</h4>
-            <p>2N/3D - 6000rs per pair (Dad & Child)</p>
-            <p>3000 extra for another child</p>
-            <ul className="list-disc pl-5">
-              <li>2 night stay in camps (Alpine tent set-up)</li>
-              <li>All meals included</li>
-              <li>3 workshops, Hiking, sports activities</li>
-              <li>Special Live music with bonfire</li>
-            </ul>
-          </div>
-        </TabContent>
-      )}
     </div>
   );
 };
 
-export default OutdoorEvents;
+const EventCard = ({
+  title,
+  subtitle,
+  details,
+  activities,
+  packageDetails,
+  placeholderImages,
+}) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  return (
+    <div className="lg:px-32">
+      <div className="bg-white shadow-lg rounded-xl overflow-hidden transform transition-all hover:scale-105 ">
+        {/* Card Header with Image */}
+        <div className="relative h-64 md:h-80 bg-gray-200 flex items-center justify-center">
+          <img
+            src="https://via.placeholder.com/800x600"
+            alt={title}
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black opacity-30"></div>
+          <div className="relative z-10 text-center text-white px-4">
+            <h2 className="text-3xl font-bold mb-2">{title}</h2>
+            <p className="text-xl font-light">{subtitle}</p>
+          </div>
+        </div>
+
+        {/* Details Button */}
+        <div className="p-4 bg-gray-50">
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="w-full py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition duration-300 ease-in-out transform hover:scale-105"
+          >
+            View Event Details
+          </button>
+        </div>
+      </div>
+
+      <EventModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title={title}
+        details={details}
+        activities={activities}
+        packageDetails={packageDetails}
+        placeholderImages={placeholderImages}
+      />
+    </div>
+  );
+};
+
+const OutdoorEventsCards = () => {
+  const schoolCampDetails = {
+    title: "School Camp",
+    subtitle: "WORKSHOP | CAMPING | OUTDOOR ACTIVITIES",
+    details:
+      "An immersive outdoor experience designed to expose youth to nature, build character, and develop essential life skills through carefully crafted activities.",
+    activities: [
+      "Yoga & Zumba Workshop",
+      "Camping & Hiking Workshop",
+      "Art Workshop",
+      "Music Session and Bonfire",
+      "Projector Movie Night",
+      "Treasure Hunt and Fun Activities",
+    ],
+    packageDetails: [
+      "Contact: +91 99588 38557 | +91 9761966485",
+      "Focuses on safety, personality development, and outdoor learning",
+    ],
+    placeholderImages: [1, 2, 3, 4],
+  };
+
+  const dadAndIDetails = {
+    title: "Dad & I",
+    subtitle: "BE A HERO OF YOUR KIDS",
+    details:
+      "A unique 2-day event that brings dads and children closer through outdoor adventures, team-building activities, and memorable experiences.",
+    activities: [
+      "Camping & Trekking Workshop",
+      "Cycling Workshop",
+      "Yoga & Running Workshop",
+      "Team Bonding Activities",
+      "Live Music and Bonfire",
+    ],
+    packageDetails: [
+      "2N/3D - 6000rs per pair (Dad & Child)",
+      "3000 extra for another child",
+      "Includes stay, meals, workshops, and activities",
+    ],
+    placeholderImages: [1, 2, 3, 4],
+  };
+
+  return (
+    <div className="container mx-auto px-4 py-8">
+      <h1 className="text-4xl font-bold mb-12 text-center text-gray-800">
+        Outdoor Events
+      </h1>
+
+      <div className="grid md:grid-cols-2 gap-8">
+        <EventCard {...schoolCampDetails} />
+        <EventCard {...dadAndIDetails} />
+      </div>
+    </div>
+  );
+};
+
+export default OutdoorEventsCards;
