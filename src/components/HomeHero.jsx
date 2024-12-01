@@ -179,7 +179,7 @@ const HomeHero = () => {
             {/* Guests */}
             <div className="relative">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <FaUsers className="text-gray-400" />
+                {/* <FaUsers className="text-gray-400" /> */}
               </div>
               <select
                 name="adults"
