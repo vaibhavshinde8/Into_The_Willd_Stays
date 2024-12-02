@@ -51,7 +51,7 @@ export default function Navbar() {
 
   return (
     <nav className="fixed w-full z-50 bg-gradient-to-b from-black via-gray-900 to-transparent transition-all font-ethereal duration-300">
-      <div className="bg-[#323232] text-[#ffffff] text-xs sm:text-sm">
+      <div className="bg-[#000000] text-[#ffffff] text-xs sm:text-sm">
         <div className="max-w-7xl mx-auto px-4 py-2 flex flex-col sm:flex-row justify-between items-center space-y-2 sm:space-y-0">
           {/* Left Side: Contact Info */}
           <div className="flex flex-col sm:flex-row items-center sm:space-x-6 space-y-2 sm:space-y-0 text-center sm:text-left">
@@ -59,7 +59,7 @@ export default function Navbar() {
               <Phone size={16} />
               <div>
                 <a href="tel:+919761966485" className="mr-2 hover:underline">
-                  +919761966485
+                  +919761966485,
                 </a>
                 <a href="tel:+919958838557" className="hover:underline">
                   +919958838557
@@ -81,19 +81,19 @@ export default function Navbar() {
           <div className="flex space-x-4">
             <a
               href="https://www.facebook.com/profile.php?id=61557269590045"
-              className="text-[#ffffff] hover:text-white hover:scale-110 duration-300 ease-in-out transition-colors"
+              className="text-[#214eca] hover:text-white hover:scale-110 duration-300 ease-in-out transition-colors"
             >
               <Facebook size={20} />
             </a>
             <a
               href="https://www.instagram.com/intothewildstays/profilecard/?igsh=cGt4dTRvenNvZ25h"
-              className="text-[#ffffff] hover:text-white hover:scale-110 duration-300 ease-in-out transition-colors"
+              className="text-[#db2247] hover:text-white hover:scale-110 duration-300 ease-in-out transition-colors"
             >
               <Instagram size={20} />
             </a>
             <a
               href="https://wa.me/9761966485"
-              className="text-[#ffffff] hover:text-white hover:scale-110 duration-300 ease-in-out transition-colors"
+              className="text-[#1c9e18] hover:text-white hover:scale-110 duration-300 ease-in-out transition-colors"
             >
               <FaWhatsapp size={20} />
             </a>

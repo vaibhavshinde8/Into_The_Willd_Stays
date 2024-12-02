@@ -34,7 +34,7 @@ const Footer = () => {
             <div className="flex space-x-4">
               <a
                 href=" https://www.facebook.com/profile.php?id=61557269590045"
-                className="text-[#ffffff] hover:text-white hover:scale-110 duration-300 ease-in-out transition-colors"
+                className="text-[#214eca] hover:text-white hover:scale-110 duration-300 ease-in-out transition-colors"
               >
                 <Facebook size={25} />
               </a>
@@ -46,13 +46,13 @@ const Footer = () => {
               </a> */}
               <a
                 href="https://www.instagram.com/intothewildstays/profilecard/?igsh=cGt4dTRvenNvZ25h"
-                className="text-[#ffffff] hover:text-white hover:scale-110 duration-300 ease-in-out transition-colors"
+                className="text-[#db2247] hover:text-white hover:scale-110 duration-300 ease-in-out transition-colors"
               >
                 <Instagram size={25} />
               </a>
               <a
                 href="https://wa.me/9761966485"
-                className="text-[#ffffff] hover:text-white hover:scale-110 duration-300 ease-in-out transition-colors"
+                className="text-[#1c9e18] hover:text-white hover:scale-110 duration-300 ease-in-out transition-colors"
               >
                 <FaWhatsapp size={25} />
               </a>
@@ -117,16 +117,13 @@ const Footer = () => {
               <li className="flex items-center space-x-3">
                 <div className="flex items-center space-x-2">
                   <Phone size={16} />
-                    <a
-                      href="tel:+919761966485"
-                      className="mr-2 hover:underline"
-                    >
-                      +919761966485
-                    </a>
-                    <a href="tel:+919958838557" className="hover:underline">
-                      +919958838557
-                    </a>
-                  </div>
+                  <a href="tel:+919761966485" className="mr-2 hover:underline">
+                    +919761966485
+                  </a>
+                  <a href="tel:+919958838557" className="hover:underline">
+                    +919958838557
+                  </a>
+                </div>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail size={16} />

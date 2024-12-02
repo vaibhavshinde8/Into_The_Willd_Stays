@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { X } from "lucide-react";
+import BookingButton from "./BookingButton";
 
 const EventModal = ({
   isOpen,
@@ -14,10 +15,10 @@ const EventModal = ({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-4 overflow-y-auto">
-      <div className="bg-white rounded-xl w-full max-w-4xl max-h-[90vh] overflow-y-auto relative shadow-2xl">
+      <div className="bg-white  w-full max-w-4xl max-h-[90vh] overflow-y-auto relative shadow-2xl">
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-10 bg-gray-100 rounded-full p-2 hover:bg-gray-200 transition"
+          className="absolute top-4 right-4 z-10 bg-gray-100  p-2 hover:bg-gray-200 transition"
         >
           <X className="w-6 h-6 text-gray-700" />
         </button>
@@ -50,7 +51,7 @@ const EventModal = ({
                 Package Information
               </h4>
               {packageDetails && (
-                <div className="bg-gray-100 p-4 rounded-lg">
+                <div className="bg-gray-100 p-4 ">
                   {packageDetails.map((detail, index) => (
                     <p key={index} className="mb-2 text-gray-700">
                       {detail}
@@ -70,7 +71,7 @@ const EventModal = ({
                   index + 1
                 }`}
                 alt={`Placeholder ${index + 1}`}
-                className="w-full h-60 object-cover rounded-lg"
+                className="w-full h-60 object-cover "
               />
             ))}
           </div>
@@ -92,7 +93,7 @@ const EventCard = ({
 
   return (
     <div className="lg:px-32">
-      <div className="bg-white shadow-lg rounded-xl overflow-hidden transform transition-all hover:scale-105 ">
+      <div className="bg-white shadow-lg  overflow-hidden transform transition-all hover:scale-105 ">
         {/* Card Header with Image */}
         <div className="relative h-64 md:h-80 bg-gray-200 flex items-center justify-center">
           <img
@@ -108,13 +109,14 @@ const EventCard = ({
         </div>
 
         {/* Details Button */}
-        <div className="p-4 bg-gray-50">
+        <div className="flex flex-col justify-center items-center sm:flex-row gap-4 p-4 bg-gray-50">
           <button
             onClick={() => setIsModalOpen(true)}
-            className="w-full py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition duration-300 ease-in-out transform hover:scale-105"
+            className="px-6 my-4 py-2  text-black bg-gray-200  hover:bg-teal-100 transition-colors"
           >
             View Event Details
           </button>
+          <BookingButton className="flex-1" />
         </div>
       </div>
 
