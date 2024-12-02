@@ -1,20 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import axios from "axios";
 import { BASE_URL } from "../utils/baseurl";
-import {toast} from "react-toastify";
-import logo from "../assets/IntotheWildStaysLogo.png";
-const BookingButton = ({property,tour}) => {
+import { toast } from "react-toastify";
+
+// import logo from "../assets/IntotheWildStaysLogo.png";
+const BookingButton = ({ property, tour }) => {
   console.log(property);
   console.log(tour);
   const [loading, setLoading] = useState(false);
-console.log(loading,"loading");
-const token = localStorage.getItem("token");
-const user = JSON.parse(localStorage.getItem("user"));
+  console.log(loading, "loading");
+  const token = localStorage.getItem("token");
+  const user = JSON.parse(localStorage.getItem("user"));
   const loadRazorpayScript = async () => {
     const script = document.createElement("script");
     script.src = "https://checkout.razorpay.com/v1/checkout.js";
     script.async = true;
-    script.onload = () => { };
+    script.onload = () => {};
     document.body.appendChild(script);
   };
 
@@ -25,13 +26,13 @@ const user = JSON.parse(localStorage.getItem("user"));
     try {
       setLoading(true);
       const response = await axios.post(`${BASE_URL}/booking/new-booking`, {
-        checkInDate: property?property.checkInDate:tour.checkInDate,
-        checkOutDate: property?property.checkOutDate:tour.checkOutDate,
-        amount: property?property.price:tour.price,
+        checkInDate: property ? property.checkInDate : tour.checkInDate,
+        checkOutDate: property ? property.checkOutDate : tour.checkOutDate,
+        amount: property ? property.price : tour.price,
         user: user._id,
       });
       console.log(response.data);
-      initPayment(response.data.order,response.data.booking._id);
+      initPayment(response.data.order, response.data.booking._id);
     } catch (error) {
       console.log(error);
       toast.error("Failed to create booking");
@@ -40,7 +41,7 @@ const user = JSON.parse(localStorage.getItem("user"));
     }
   };
 
-  const initPayment = (data,bookingId) => {
+  const initPayment = (data, bookingId) => {
     const options = {
       key: "rzp_test_S7O9aeETo3NXrl",
       amount: data.amount,
@@ -80,7 +81,7 @@ const user = JSON.parse(localStorage.getItem("user"));
         } catch (err) {
           console.log(err);
         }
-      }
+      },
     };
     const rzp1 = new window.Razorpay(options);
     rzp1.open();

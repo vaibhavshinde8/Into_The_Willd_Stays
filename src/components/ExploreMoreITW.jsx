@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { MapPin, Mountain } from "lucide-react";
+// import { MapPin, Mountain } from "lucide-react"; 
 import { FaArrowAltCircleDown, FaArrowAltCircleUp } from "react-icons/fa";
 import img1 from "../assets/itw/IMG-20240530-WA0015.jpg";
 import img2 from "../assets/itw/IMG-20240530-WA0017.jpg";
@@ -8,6 +8,14 @@ import img4 from "../assets/itw/IMG-20240530-WA0019.jpg";
 import BookingButton from "./BookingButton";
 
 const galleryImages = [img1, img2, img3, img4];
+
+const property = {
+    checkInDate: "2024-12-01",
+    checkOutDate: "2024-12-03",
+    price: 4000,
+  }
+;
+
 
 const faqs = [
   {
@@ -131,7 +139,7 @@ const ExploreMoreITW = () => {
             >
               Book Now
             </a> */}
-            <BookingButton />
+            <BookingButton property = {property}/>
           </div>
         </div>
 
