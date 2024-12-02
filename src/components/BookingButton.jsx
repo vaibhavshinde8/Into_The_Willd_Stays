@@ -290,7 +290,7 @@ const BookingButton = ({ property, tour }) => {
       
       // Calculate total amount based on number of days
       const basePrice = property ? property.price : tour.price;
-      const totalAmount = basePrice * (numberOfDays+1);
+      const totalAmount = basePrice * numberOfDays;
 
       const response = await axios.post(`${BASE_URL}/booking/new-booking`, {
         checkInDate: userDetails.checkInDate,
