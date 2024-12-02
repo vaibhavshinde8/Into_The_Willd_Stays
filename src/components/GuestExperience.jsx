@@ -78,8 +78,19 @@ const GuestExperience = () => {
   return (
     <div
       ref={containerRef}
-      className="min-h-screen bg-gradient-to-r from-gray-300 via-white to-gray-200 p-4 lg:px-32 pt-32"
+      className="min-h-screen bg-gradient-to-r from-gray-300 via-white to-gray-200 p-4 lg:px-32 "
     >
+      <motion.h1
+        className="text-4xl md:text-6xl text-black font-bold  text-center"
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        <span className="bg-gradient-to-r from-cyan-800 to-emerald-800 bg-clip-text text-transparent">
+          Our
+        </span>{" "}
+        Story
+      </motion.h1>
       <div className="container mx-auto px-4 py-16 grid lg:grid-cols-2 gap-8">
         <motion.div
           style={{ scale, height }}
@@ -160,35 +171,24 @@ const GuestExperience = () => {
           className="max-w-5xl mx-auto"
         >
           <div className="relative px-4 lg:px-8  h-[70vh] p-6 rounded-lg">
-            <motion.h1
-              className="text-4xl md:text-6xl text-black font-bold mb-12 text-center"
-              initial={{ opacity: 0, y: -50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <span className="bg-gradient-to-r from-cyan-800 to-emerald-800 bg-clip-text text-transparent">
-                Our
-              </span>{" "}
-              Story
-            </motion.h1>
-
-            <div className="max-w-4xl mx-auto text-lg leading-relaxed  text-gray-800 space-y-6">
+            <div className="max-w-4xl mx-auto text-lg leading-relaxed bg-amber-50 p-2 lg:p-8 rounded-lg  text-gray-800 space-y-6">
               <p className="relative">
-                <span className="font-extrabold text-2xl text-emerald-800">
+                {/* <span className="font-extrabold text-2xl text-emerald-800">
                   &gt;{" "}
-                </span>
+                </span> */}
                 <span className="font-light">
-                  Welcome to Into the Wild Stays, where we offer more than just
-                  accommodations. We create memorable escapes in nature's
+                  <span className="font-bold text-3xl"> Welcome</span> to{" "}
+                  <span className="text-emerald-900 text-2xl">Into the Wild Stays</span>, where we offer more than
+                  just accommodations. We create memorable escapes in nature's
                   embrace. Nestled in serene, offbeat locations, our boutique
                   homestays and cottages provide the perfect blend of comfort,
                   tranquility, and adventure.
                 </span>
               </p>
               <p className="relative">
-                <span className="font-extrabold text-2xl text-emerald-800">
+                {/* <span className="font-extrabold text-2xl text-emerald-800">
                   &gt;{" "}
-                </span>
+                </span> */}
 
                 <span className="font-light">
                   Our philosophy revolves around crafting personalized
@@ -198,9 +198,9 @@ const GuestExperience = () => {
                 </span>
               </p>
               <p className="relative">
-                <span className="font-extrabold text-2xl text-emerald-800">
+                {/* <span className="font-extrabold text-2xl text-emerald-800">
                   &gt;{" "}
-                </span>
+                </span> */}
 
                 <span className="font-light">
                   Come, escape the chaos, and immerse yourself in the

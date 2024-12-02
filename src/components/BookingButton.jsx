@@ -48,6 +48,8 @@ const UserDetailsForm = ({ property, tour, onClose, onSubmit }) => {
     onSubmit(formData);
   };
 
+  
+
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
       <div className="bg-white p-8 rounded-lg shadow-xl max-w-md w-full">
@@ -182,6 +184,36 @@ const BookingButton = ({ property, tour }) => {
     // Open user details form
     setShowUserDetailsForm(true);
   };
+
+  const LoginPopup = ({ onClose, onLogin }) => {
+    return (
+      <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+        <div className="bg-white p-8 rounded-lg shadow-xl max-w-md w-full">
+          <h2 className="text-2xl font-bold mb-6 text-center">
+            Login Required
+          </h2>
+          <p className="text-center mb-6">You need to log in to proceed.</p>
+          <div className="flex justify-between space-x-4">
+            <button
+              type="button"
+              onClick={onClose}
+              className="w-full px-4 py-2 bg-gray-200 text-gray-800 rounded hover:bg-gray-300"
+            >
+              Cancel
+            </button>
+            <button
+              type="button"
+              onClick={onLogin}
+              className="w-full px-4 py-2 bg-[#0F2642] text-white rounded hover:bg-blue-700"
+            >
+              Log In
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
 
   const handleUserDetailsSubmit = async (userDetails) => {
     try {

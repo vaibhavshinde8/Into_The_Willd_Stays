@@ -17,6 +17,7 @@ const Home = () => {
       <GalleryAndReviews/>
     <InstagramGallery/>
       <Testimonials/>
+      
       <PropertiesBanner/>
     </>
   );
