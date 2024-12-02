@@ -1,38 +1,151 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import axios from "axios";
-import { toast } from "react-toastify";
-import { BASE_URL } from "../utils/baseurl";
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import { toast } from 'react-toastify';
+import { BASE_URL } from '../utils/baseurl';
 
-const LoginPopup = ({ onClose, onLogin }) => {
-  const navigate = useNavigate();
+const UserDetailsForm = ({ property, tour, onClose, onSubmit }) => {
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    phone: '',
+    age: '',
+    specialRequirements: ''
+  });
 
-  const handleLoginRedirect = () => {
-    onClose(); // Close the popup
-    navigate("/login"); // Redirect to login page
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    // Basic validation
+    if (!formData.fullName || !formData.email || !formData.phone) {
+      toast.error('Please fill in all required fields');
+      return;
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      toast.error('Please enter a valid email address');
+      return;
+    }
+
+    // Phone validation (simple check for 10 digits)
+    const phoneRegex = /^\d{10}$/;
+    if (!phoneRegex.test(formData.phone)) {
+      toast.error('Please enter a valid 10-digit phone number');
+      return;
+    }
+
+    // If all validations pass, submit the form
+    onSubmit(formData);
   };
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-      <div className="bg-white p-6 rounded-lg shadow-xl max-w-sm w-full">
-        <h2 className="text-xl font-bold mb-4 text-center">Login Required</h2>
-        <p className="text-gray-600 mb-6 text-center">
-          Please log in to proceed with your booking.
-        </p>
-        <div className="flex justify-center space-x-4">
-          <button
-            onClick={onClose}
-            className="px-4 py-2 bg-gray-200 text-gray-800 rounded hover:bg-gray-300"
-          >
-            Cancel
-          </button>
-          <button
-            onClick={handleLoginRedirect}
-            className="px-4 py-2 bg-[#0F2642] text-white rounded hover:bg-blue-700"
-          >
-            Login
-          </button>
-        </div>
+      <div className="bg-white p-8 rounded-lg shadow-xl max-w-md w-full">
+        <h2 className="text-2xl font-bold mb-6 text-center">
+          Guest Details
+        </h2>
+        <form onSubmit={handleSubmit}>
+          <div className="mb-4">
+            <label htmlFor="fullName" className="block text-gray-700 mb-2">
+              Full Name <span className="text-red-500">*</span>
+            </label>
+            <input
+              type="text"
+              id="fullName"
+              name="fullName"
+              value={formData.fullName}
+              onChange={handleChange}
+              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#0F2642]"
+              required
+            />
+          </div>
+
+          <div className="mb-4">
+            <label htmlFor="email" className="block text-gray-700 mb-2">
+              Email <span className="text-red-500">*</span>
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#0F2642]"
+              required
+            />
+          </div>
+
+          <div className="mb-4">
+            <label htmlFor="phone" className="block text-gray-700 mb-2">
+              Phone Number <span className="text-red-500">*</span>
+            </label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#0F2642]"
+              required
+            />
+          </div>
+
+          <div className="mb-4">
+            <label htmlFor="age" className="block text-gray-700 mb-2">
+              Age
+            </label>
+            <input
+              type="number"
+              id="age"
+              name="age"
+              value={formData.age}
+              onChange={handleChange}
+              min="18"
+              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#0F2642]"
+            />
+          </div>
+
+          <div className="mb-6">
+            <label htmlFor="specialRequirements" className="block text-gray-700 mb-2">
+              Special Requirements
+            </label>
+            <textarea
+              id="specialRequirements"
+              name="specialRequirements"
+              value={formData.specialRequirements}
+              onChange={handleChange}
+              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#0F2642]"
+              rows="3"
+              placeholder="Any special requests or requirements"
+            />
+          </div>
+
+          <div className="flex justify-between space-x-4">
+            <button
+              type="button"
+              onClick={onClose}
+              className="w-full px-4 py-2 bg-gray-200 text-gray-800 rounded hover:bg-gray-300"
+            >
+              Cancel
+            </button>
+            <button
+              type="submit"
+              className="w-full px-4 py-2 bg-[#0F2642] text-white rounded hover:bg-blue-700"
+            >
+              Proceed to Payment
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   );
@@ -40,6 +153,7 @@ const LoginPopup = ({ onClose, onLogin }) => {
 
 const BookingButton = ({ property, tour }) => {
   const [loading, setLoading] = useState(false);
+  const [showUserDetailsForm, setShowUserDetailsForm] = useState(false);
   const [showLoginPopup, setShowLoginPopup] = useState(false);
   const navigate = useNavigate();
 
@@ -58,13 +172,18 @@ const BookingButton = ({ property, tour }) => {
     loadRazorpayScript();
   }, []);
 
-  const handleProceed = async () => {
+  const handleProceed = () => {
     // Check if user is logged in
     if (!token || !user) {
       setShowLoginPopup(true);
       return;
     }
 
+    // Open user details form
+    setShowUserDetailsForm(true);
+  };
+
+  const handleUserDetailsSubmit = async (userDetails) => {
     try {
       setLoading(true);
       const response = await axios.post(`${BASE_URL}/booking/new-booking`, {
@@ -72,9 +191,11 @@ const BookingButton = ({ property, tour }) => {
         checkOutDate: property ? property.checkOutDate : tour.checkOutDate,
         amount: property ? property.price : tour.price,
         user: user._id,
+        userDetails: userDetails
       });
       console.log(response.data);
       initPayment(response.data.order, response.data.booking._id);
+      setShowUserDetailsForm(false);
     } catch (error) {
       console.log(error);
       toast.error("Failed to create booking");
@@ -103,7 +224,6 @@ const BookingButton = ({ property, tour }) => {
       },
       handler: async (response) => {
         try {
-          console.log(response);
           const verifyUrl = `${BASE_URL}/booking/verify-payment`;
           const verifyData = {
             razorpay_order_id: response.razorpay_order_id,
@@ -114,8 +234,9 @@ const BookingButton = ({ property, tour }) => {
           try {
             const res = await axios.post(verifyUrl, verifyData);
             if (res.status === 200) {
-              console.log("Payment Successful");
               toast.success("Payment Successful");
+              // Optional: Redirect to bookings or confirmation page
+              navigate("/bookings");
             }
           } catch (err) {
             toast.error(err.response.data.message);
@@ -182,7 +303,22 @@ const BookingButton = ({ property, tour }) => {
       </div>
 
       {showLoginPopup && (
-        <LoginPopup onClose={() => setShowLoginPopup(false)} />
+        <LoginPopup 
+          onClose={() => setShowLoginPopup(false)} 
+          onLogin={() => {
+            setShowLoginPopup(false);
+            navigate("/login");
+          }} 
+        />
+      )}
+
+      {showUserDetailsForm && (
+        <UserDetailsForm
+          property={property}
+          tour={tour}
+          onClose={() => setShowUserDetailsForm(false)}
+          onSubmit={handleUserDetailsSubmit}
+        />
       )}
     </>
   );

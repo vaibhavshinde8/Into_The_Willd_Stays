@@ -84,7 +84,7 @@ const HomeHero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
-          <h1 className="text-4xl md:text-6xl font-medium text-white mb-6 leading-tight">
+          <h1 className="text-5xl md:text-6xl font-medium text-white mb-6 leading-tight">
             <span className="bg-gradient-to-r from-cyan-400 font-bold to-emerald-400 bg-clip-text text-transparent">
               INTO THE WILD
             </span>
