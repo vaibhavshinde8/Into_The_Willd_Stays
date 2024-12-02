@@ -21,7 +21,7 @@ const PropertiesBanner = () => {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-r from-gray-300 via-white to-gray-200 overflow-hidden">
+    <div className="relative min-h-screen bg-gradient-to-r from-gray-300 via-white to-gray-200 overflow-hidden lg:px-32">
       {/* Background Image with Parallax Effect */}
       <div
         ref={parallaxRef}

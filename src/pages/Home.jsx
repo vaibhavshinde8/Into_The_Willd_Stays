@@ -4,8 +4,9 @@ import GuestExperience from "../components/GuestExperience";
 import MostViewedProperties from "../components/MostViewedProperties";
 import GalleryAndReviews from "../components/GalleryAndReviews";
 import Testimonials from "../components/Testimonials";
-import PropertiesBanner from './../components/PropertiesBanner';
+import PropertiesBanner from "./../components/PropertiesBanner";
 import InstagramGallery from "../components/InstagramGallery";
+import BlogSection from "../components/BlogSection";
 
 const Home = () => {
   return (
@@ -14,11 +15,11 @@ const Home = () => {
       <LocationSection />
       <GuestExperience />
       <MostViewedProperties />
-      <GalleryAndReviews/>
-    <InstagramGallery/>
-      <Testimonials/>
-      
-      <PropertiesBanner/>
+      <GalleryAndReviews />
+      <InstagramGallery />
+      <Testimonials />
+      <BlogSection/>
+      <PropertiesBanner />
     </>
   );
 };

@@ -10,8 +10,25 @@ const UserDetailsForm = ({ property, tour, onClose, onSubmit }) => {
     email: '',
     phone: '',
     age: '',
+    checkInDate: property ? property.checkInDate : tour.checkInDate,
+    checkOutDate: property ? property.checkOutDate : tour.checkOutDate,
     specialRequirements: ''
   });
+
+  // Calculate total days and total price
+  const calculateTotalDays = () => {
+    const checkIn = new Date(formData.checkInDate);
+    const checkOut = new Date(formData.checkOutDate);
+    const timeDiff = checkOut.getTime() - checkIn.getTime();
+    const totalDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+    return totalDays;
+  };
+
+  const calculateTotalPrice = () => {
+    const totalDays = calculateTotalDays();
+    const basePrice = property ? property.price : tour.price;
+    return totalDays * basePrice;
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -44,20 +61,34 @@ const UserDetailsForm = ({ property, tour, onClose, onSubmit }) => {
       return;
     }
 
+    // Validate dates
+    const checkIn = new Date(formData.checkInDate);
+    const checkOut = new Date(formData.checkOutDate);
+    if (checkOut <= checkIn) {
+      toast.error('Check-out date must be after check-in date');
+      return;
+    }
+
     // If all validations pass, submit the form
-    onSubmit(formData);
+    const submissionData = {
+      ...formData,
+      totalDays: calculateTotalDays(),
+      totalPrice: calculateTotalPrice()
+    };
+    onSubmit(submissionData);
   };
 
-  
-
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-      <div className="bg-white p-8 rounded-lg shadow-xl max-w-md w-full">
-        <h2 className="text-2xl font-bold mb-6 text-center">
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 p-4">
+      <div className="bg-white p-4 md:p-8 rounded-lg shadow-xl w-full max-w-2xl">
+        <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-center">
           Guest Details
         </h2>
-        <form onSubmit={handleSubmit}>
-          <div className="mb-4">
+        <form
+          onSubmit={handleSubmit}
+          className="grid grid-cols-1 md:grid-cols-2 gap-4"
+        >
+          <div className="md:col-span-2">
             <label htmlFor="fullName" className="block text-gray-700 mb-2">
               Full Name <span className="text-red-500">*</span>
             </label>
@@ -72,7 +103,7 @@ const UserDetailsForm = ({ property, tour, onClose, onSubmit }) => {
             />
           </div>
 
-          <div className="mb-4">
+          <div>
             <label htmlFor="email" className="block text-gray-700 mb-2">
               Email <span className="text-red-500">*</span>
             </label>
@@ -87,7 +118,7 @@ const UserDetailsForm = ({ property, tour, onClose, onSubmit }) => {
             />
           </div>
 
-          <div className="mb-4">
+          <div>
             <label htmlFor="phone" className="block text-gray-700 mb-2">
               Phone Number <span className="text-red-500">*</span>
             </label>
@@ -102,7 +133,7 @@ const UserDetailsForm = ({ property, tour, onClose, onSubmit }) => {
             />
           </div>
 
-          <div className="mb-4">
+          <div>
             <label htmlFor="age" className="block text-gray-700 mb-2">
               Age
             </label>
@@ -117,8 +148,11 @@ const UserDetailsForm = ({ property, tour, onClose, onSubmit }) => {
             />
           </div>
 
-          <div className="mb-6">
-            <label htmlFor="specialRequirements" className="block text-gray-700 mb-2">
+          <div className="md:col-span-2">
+            <label
+              htmlFor="specialRequirements"
+              className="block text-gray-700 mb-2"
+            >
               Special Requirements
             </label>
             <textarea
@@ -132,17 +166,53 @@ const UserDetailsForm = ({ property, tour, onClose, onSubmit }) => {
             />
           </div>
 
-          <div className="flex justify-between space-x-4">
+          <div>
+            <label htmlFor="checkInDate" className="block text-gray-700 mb-2">
+              Check-in Date
+            </label>
+            <input
+              type="date"
+              id="checkInDate"
+              name="checkInDate"
+              value={formData.checkInDate}
+              onChange={handleChange}
+              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#0F2642]"
+              required
+            />
+          </div>
+
+          <div>
+            <label htmlFor="checkOutDate" className="block text-gray-700 mb-2">
+              Check-out Date
+            </label>
+            <input
+              type="date"
+              id="checkOutDate"
+              name="checkOutDate"
+              value={formData.checkOutDate}
+              onChange={handleChange}
+              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#0F2642]"
+              required
+            />
+          </div>
+
+          <div className="md:col-span-2 mb-4 text-gray-700 text-center">
+            Total Days: {calculateTotalDays()}
+            <br />
+            Total Price: ₹{calculateTotalPrice()}
+          </div>
+
+          <div className="md:col-span-2 flex flex-col sm:flex-row justify-between space-y-2 sm:space-y-0 sm:space-x-4">
             <button
               type="button"
               onClick={onClose}
-              className="w-full px-4 py-2 bg-gray-200 text-gray-800 rounded hover:bg-gray-300"
+              className="w-full sm:w-1/2 px-4 py-2 bg-gray-200 text-gray-800 rounded hover:bg-gray-300"
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="w-full px-4 py-2 bg-[#0F2642] text-white rounded hover:bg-blue-700"
+              className="w-full sm:w-1/2 px-4 py-2 bg-[#0F2642] text-white rounded hover:bg-blue-700"
             >
               Proceed to Payment
             </button>
@@ -152,6 +222,7 @@ const UserDetailsForm = ({ property, tour, onClose, onSubmit }) => {
     </div>
   );
 };
+
 
 const BookingButton = ({ property, tour }) => {
   const [loading, setLoading] = useState(false);

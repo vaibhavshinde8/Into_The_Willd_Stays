@@ -2,6 +2,8 @@ import { CalendarDays } from "lucide-react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { useAppContext } from "../context/AppContext";
+import {  useEffect } from "react";
+
 
 const Blog = () => {
   const { blogs } = useAppContext();
@@ -10,6 +12,10 @@ const Blog = () => {
   const handleBlogClick = (blogId) => {
     navigate(`/blog/${blogId}`);
   };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
 
   return (
     <div className="container mx-auto  lg:pb-32">

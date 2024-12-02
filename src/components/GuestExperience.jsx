@@ -179,7 +179,7 @@ const GuestExperience = () => {
                 <span className="font-light">
                   <span className="font-bold text-3xl"> Welcome</span> to{" "}
                   <span className="text-emerald-900 text-2xl">Into the Wild Stays</span>, where we offer more than
-                  just accommodations. We create memorable escapes in nature's
+                  just accommodations. We create memorable escapes in nature&apos;s
                   embrace. Nestled in serene, offbeat locations, our boutique
                   homestays and cottages provide the perfect blend of comfort,
                   tranquility, and adventure.
