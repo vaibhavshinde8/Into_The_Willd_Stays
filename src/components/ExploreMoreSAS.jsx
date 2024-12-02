@@ -42,6 +42,13 @@ const handleBookNow = () => {
 
 const galleryImages = [img1, img2, img3, img4];
 
+const property = {
+    checkInDate: "2024-12-01",
+    checkOutDate: "2024-12-03",
+    price: 11000,
+  }
+;
+
 const faqs = [
   {
     question:
@@ -182,7 +189,7 @@ const ExploreMoreSAS = () => {
             >
               Book Now
             </button> */}
-            <BookingButton />
+            <BookingButton property={property} />
           </div>
         </div>
 

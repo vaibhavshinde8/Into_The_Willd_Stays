@@ -45,6 +45,13 @@ const handleBookNow = () => {
 // Data for Gallery, FAQs, Policies, and Amenities
 const galleryImages = [img1, img2, img3, img4];
 
+const property = {
+    checkInDate: "2024-12-01",
+    checkOutDate: "2024-12-03",
+    price: 3500,
+  }
+;
+
 const propertyDetails = {
   rooms: 5,
   guestCapacity: "2 persons per room",
@@ -197,7 +204,7 @@ const ExploreMorePNT = () => {
             >
               Book Now
             </button> */}
-            <BookingButton/>
+            <BookingButton property={property}/>
           </div>
         </div>
 

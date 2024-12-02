@@ -2,6 +2,7 @@ import React, { useState} from "react";
 import axios from "axios";
 import { BASE_URL } from "../utils/baseurl";
 import { toast } from "react-toastify";
+
 // import logo from "../assets/IntotheWildStaysLogo.png";
 const BookingButton = ({ property, tour }) => {
   console.log(property);
