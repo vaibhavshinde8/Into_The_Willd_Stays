@@ -13,8 +13,7 @@ const property = {
     checkInDate: "2024-12-01",
     checkOutDate: "2024-12-03",
     price: 4000,
-  }
-;
+  };
 
 
 const faqs = [

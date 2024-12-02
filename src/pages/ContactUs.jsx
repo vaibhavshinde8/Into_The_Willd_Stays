@@ -22,9 +22,9 @@ const ContactUs = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    const serviceID = "your_service_id";
-    const templateID = "your_template_id";
-    const publicKey = "your_public_key";
+    const serviceID = "service_8b79wnu";
+    const templateID = "template_434tezq";
+    const publicKey = "FU4ThIFcvqAz_SSAm";
 
     emailjs.send(serviceID, templateID, formData, publicKey).then(
       (response) => {
