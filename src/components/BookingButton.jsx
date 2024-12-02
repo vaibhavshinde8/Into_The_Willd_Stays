@@ -10,7 +10,9 @@ const UserDetailsForm = ({ property, tour, onClose, onSubmit }) => {
     email: '',
     phone: '',
     age: '',
-    specialRequirements: ''
+    specialRequirements: '',
+    checkInDate:  '',
+    checkOutDate: ''
   });
 
   const handleChange = (e) => {
@@ -25,22 +27,30 @@ const UserDetailsForm = ({ property, tour, onClose, onSubmit }) => {
     e.preventDefault();
     
     // Basic validation
-    if (!formData.fullName || !formData.email || !formData.phone) {
+    if (!formData.fullName || !formData.phone) {
       toast.error('Please fill in all required fields');
       return;
     }
 
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.email)) {
-      toast.error('Please enter a valid email address');
-      return;
-    }
+    // // Email validation
+    // const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    // if (!emailRegex.test(formData.email)) {
+    //   toast.error('Please enter a valid email address');
+    //   return;
+    // }
 
     // Phone validation (simple check for 10 digits)
     const phoneRegex = /^\d{10}$/;
     if (!phoneRegex.test(formData.phone)) {
       toast.error('Please enter a valid 10-digit phone number');
+      return;
+    }
+
+    // Check-in and check-out date validation
+    const checkIn = new Date(formData.checkInDate);
+    const checkOut = new Date(formData.checkOutDate);
+    if (checkOut <= checkIn) {
+      toast.error('Check-out date must be after check-in date');
       return;
     }
 
@@ -72,7 +82,7 @@ const UserDetailsForm = ({ property, tour, onClose, onSubmit }) => {
             />
           </div>
 
-          <div className="mb-4">
+          {/* <div className="mb-4">
             <label htmlFor="email" className="block text-gray-700 mb-2">
               Email <span className="text-red-500">*</span>
             </label>
@@ -85,7 +95,7 @@ const UserDetailsForm = ({ property, tour, onClose, onSubmit }) => {
               className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#0F2642]"
               required
             />
-          </div>
+          </div> */}
 
           <div className="mb-4">
             <label htmlFor="phone" className="block text-gray-700 mb-2">
@@ -127,8 +137,38 @@ const UserDetailsForm = ({ property, tour, onClose, onSubmit }) => {
               value={formData.specialRequirements}
               onChange={handleChange}
               className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#0F2642]"
-              rows="3"
+              rows="1"
               placeholder="Any special requests or requirements"
+            />
+          </div>
+
+          <div className="mb-4">
+            <label htmlFor="checkInDate" className="block text-gray-700 mb-2">
+              Check-in Date
+            </label>
+            <input
+              type="date"
+              id="checkInDate"
+              name="checkInDate"
+              value={formData.checkInDate}
+              onChange={handleChange}
+              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#0F2642]"
+              required
+            />
+          </div>
+
+          <div className="mb-4">
+            <label htmlFor="checkOutDate" className="block text-gray-700 mb-2">
+              Check-out Date
+            </label>
+            <input
+              type="date"
+              id="checkOutDate"
+              name="checkOutDate"
+              value={formData.checkOutDate}
+              onChange={handleChange}
+              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#0F2642]"
+              required
             />
           </div>
 
@@ -218,13 +258,23 @@ const BookingButton = ({ property, tour }) => {
   const handleUserDetailsSubmit = async (userDetails) => {
     try {
       setLoading(true);
+      // Calculate number of days between check-in and check-out
+      const checkIn = new Date(userDetails.checkInDate);
+      const checkOut = new Date(userDetails.checkOutDate);
+      const numberOfDays = Math.ceil((checkOut - checkIn) / (1000 * 60 * 60 * 24));
+      
+      // Calculate total amount based on number of days
+      const basePrice = property ? property.price : tour.price;
+      const totalAmount = basePrice * (numberOfDays+1);
+
       const response = await axios.post(`${BASE_URL}/booking/new-booking`, {
-        checkInDate: property ? property.checkInDate : tour.checkInDate,
-        checkOutDate: property ? property.checkOutDate : tour.checkOutDate,
-        amount: property ? property.price : tour.price,
+        checkInDate: userDetails.checkInDate,
+        checkOutDate: userDetails.checkOutDate,
+        amount: totalAmount,
         user: user._id,
         userDetails: userDetails
       });
+      
       console.log(response.data);
       initPayment(response.data.order, response.data.booking._id);
       setShowUserDetailsForm(false);
@@ -268,7 +318,7 @@ const BookingButton = ({ property, tour }) => {
             if (res.status === 200) {
               toast.success("Payment Successful");
               // Optional: Redirect to bookings or confirmation page
-              navigate("/bookings");
+              // navigate("/bookings");
             }
           } catch (err) {
             toast.error(err.response.data.message);
