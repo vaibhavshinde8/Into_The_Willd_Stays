@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import  { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Layers, MapPin, Compass, ArrowRight } from "lucide-react";
 import Image1 from "../assets/tourbanner.jpg";

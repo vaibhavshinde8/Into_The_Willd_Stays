@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import  { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { User, Mail, ArrowLeft, LogOut, Edit } from "lucide-react";
 
@@ -266,13 +266,13 @@ const UserProfile = () => {
             </div>
 
             {/* Edit Profile Button */}
-            <button
+            {/* <button
               onClick={() => setIsEditModalOpen(true)}
               className="w-full flex items-center justify-center bg-[#0F2642] text-white py-2 rounded-md hover:bg-[#0F2642]/90 transition-colors space-x-2"
             >
               <Edit className="w-5 h-5" />
               <span>Edit Profile</span>
-            </button>
+            </button> */}
           </div>
         </div>
       </div>

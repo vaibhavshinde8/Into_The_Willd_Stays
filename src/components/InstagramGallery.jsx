@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Heart, MessageCircle, Send, Bookmark, X } from "lucide-react";
+import { Heart, MessageCircle, Send, Bookmark, X, Menu } from "lucide-react";
 import logo from "../assets/IntotheWildStaysLogo.png";
 import Image1 from "../assets/majuli/Property Photo/18PM.jpeg";
 import Imageanshi from "../assets/team/AnshiArt&Craftinstructor.jpg";
@@ -71,9 +71,9 @@ const mockPosts = [
   },
 ];
 
-
 const InstagramGallery = () => {
   const [selectedPost, setSelectedPost] = useState(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const handlePostClick = (post) => {
     setSelectedPost(post);
@@ -83,38 +83,66 @@ const InstagramGallery = () => {
     setSelectedPost(null);
   };
 
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
   return (
-    <div className="min-h-screen p-24">
-      <div className="max-w-5xl mx-auto  ">
+    <div className="min-h-screen bg-gradient-to-r from-gray-300 via-white to-gray-200 p-4 sm:p-8 lg:p-24">
+      <div className="max-w-5xl mx-auto rounded-lg">
         {/* Profile Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="flex items-center p-8 bg-white border-b border-gray-200 rounded-t-xl shadow-sm"
+          className="flex flex-col md:flex-row items-center p-6 sm:p-10 rounded-t-lg bg-white border-b border-gray-200 shadow-sm"
         >
-          <div className="mr-8">
+          {/* Mobile Menu Toggle */}
+          <div className="md:hidden absolute top-4 right-4">
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              onClick={toggleMobileMenu}
+              className="text-gray-600"
+            >
+              <Menu size={24} />
+            </motion.button>
+          </div>
+
+          {/* Profile Picture */}
+          <div className="mb-4 md:mr-8 md:mb-0 flex justify-center w-full md:w-auto">
             <motion.img
               whileHover={{ scale: 1.1 }}
               src={mockProfileData.profilePicture}
               alt="Profile"
-              className="w-28 h-28 rounded-full border-3 border-pink-500 shadow-lg transition-transform"
+              className="w-24 h-24 sm:w-28 sm:h-28 rounded-full border-3 border-pink-500 shadow-lg transition-transform"
             />
           </div>
-          <div>
-            <div className="flex items-center mb-3">
-              <h2 className="text-3xl font-bold mr-6 text-gray-800">
+
+          {/* Profile Info */}
+          <div className="text-center md:text-left w-full md:w-auto">
+            <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start mb-3">
+              <h2 className="text-2xl sm:text-3xl font-bold mr-0 sm:mr-6 text-gray-800 mb-2 sm:mb-0">
                 {mockProfileData.username}
               </h2>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-pink-500 to-purple-500 text-white px-5 py-2 rounded-full text-sm font-semibold hover:shadow-lg transition-all"
+                onClick={() => {
+                  const instagramUrl = `https://www.instagram.com/${
+                    mockProfileData.instagramUsername ||
+                    mockProfileData.username
+                  }`;
+                  window.open(instagramUrl, "_blank", "noopener,noreferrer");
+                }}
+                className="bg-gradient-to-r from-blue-800 to-blue-700 text-white px-4 py-1 sm:px-5 sm:py-2 rounded-lg text-sm font-semibold hover:shadow-lg transition-all flex items-center"
               >
                 Follow
               </motion.button>
             </div>
-            <div className="flex space-x-6 mb-3 text-gray-700">
+
+            {/* Stats */}
+            <div className="flex justify-center md:justify-start space-x-4 sm:space-x-6 mb-3 text-gray-700">
               <span>
                 <strong>{mockProfileData.posts}</strong> posts
               </span>
@@ -125,12 +153,14 @@ const InstagramGallery = () => {
                 <strong>{mockProfileData.following}</strong> following
               </span>
             </div>
-            <div>
+
+            {/* Bio */}
+            <div className="text-center md:text-left">
               <h3 className="font-semibold text-lg text-gray-900">
                 {mockProfileData.fullName}
               </h3>
               <div
-                className="text-gray-600"
+                className="text-gray-600 text-sm sm:text-base"
                 dangerouslySetInnerHTML={{ __html: mockProfileData.bio }}
               ></div>
             </div>
@@ -142,7 +172,7 @@ const InstagramGallery = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ staggerChildren: 0.1 }}
-          className="grid grid-cols-3 gap-1  bg-white p-4"
+          className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-1 rounded-b-lg bg-white p-1 sm:p-2 md:p-4"
         >
           {mockPosts.map((post) => (
             <motion.div
@@ -151,13 +181,13 @@ const InstagramGallery = () => {
               animate={{ opacity: 1, scale: 1 }}
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
-              className="aspect-square overflow-hidden cursor-pointer relative group "
+              className="aspect-square overflow-hidden cursor-pointer relative group"
               onClick={() => handlePostClick(post)}
             >
               <img
                 src={post.imageUrl}
                 alt={`Post ${post.id}`}
-                className="w-full h-full object-cover rounded-2xl transform group-hover:scale-110 transition-transform duration-300"
+                className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300"
               />
               <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 flex items-center justify-center text-white transition-all duration-300">
                 <div className="flex space-x-4 opacity-0 group-hover:opacity-100">
@@ -186,59 +216,73 @@ const InstagramGallery = () => {
                 initial={{ scale: 0.9 }}
                 animate={{ scale: 1 }}
                 exit={{ scale: 0.9 }}
-                className="bg-white max-w-4xl w-full flex rounded-xl overflow-hidden shadow-2xl"
+                className="bg-white w-full max-w-4xl flex flex-col md:flex-row rounded-xl overflow-hidden shadow-2xl"
               >
-                <div className="w-3/5">
+                {/* Image Section */}
+                <div className="w-full md:w-3/5">
                   <motion.img
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     src={selectedPost.imageUrl}
                     alt="Selected post"
-                    className="w-full h-[80vh] object-cover"
+                    className="w-full h-64 md:h-[80vh] object-cover"
                   />
                 </div>
-                <div className="w-2/5 p-6 flex flex-col">
+
+                {/* Post Details Section */}
+                <div className="w-full md:w-2/5 p-4 md:p-6 flex flex-col">
+                  {/* Profile Header */}
                   <div className="flex items-center mb-4">
                     <img
                       src={mockProfileData.profilePicture}
                       alt="Profile"
-                      className="w-10 h-10 rounded-full mr-3 border-2 border-pink-300"
+                      className="w-8 h-8 md:w-10 md:h-10 rounded-full mr-3 border-2 border-pink-300"
                     />
-                    <span className="font-semibold text-gray-800">
+                    <span className="font-semibold text-sm md:text-base text-gray-800">
                       {mockProfileData.username}
                     </span>
                   </div>
+
+                  {/* Caption */}
                   <div className="flex-grow">
-                    <p className="text-gray-700">{selectedPost.caption}</p>
+                    <p className="text-gray-700 text-sm md:text-base">
+                      {selectedPost.caption}
+                    </p>
                   </div>
-                  <div className="flex justify-between my-4">
+
+                  {/* Action Icons */}
+                  <div className="flex justify-between my-2 md:my-4">
                     <motion.div
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.9 }}
                       className="flex space-x-4 text-gray-600"
                     >
-                      <Heart className="cursor-pointer hover:text-red-500" />
-                      <MessageCircle className="cursor-pointer hover:text-blue-500" />
-                      <Send className="cursor-pointer hover:text-green-500" />
+                      <Heart className="cursor-pointer hover:text-red-500 w-5 h-5 md:w-6 md:h-6" />
+                      <MessageCircle className="cursor-pointer hover:text-blue-500 w-5 h-5 md:w-6 md:h-6" />
+                      <Send className="cursor-pointer hover:text-green-500 w-5 h-5 md:w-6 md:h-6" />
                     </motion.div>
                     <motion.div
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.9 }}
                     >
-                      <Bookmark className="cursor-pointer text-gray-600 hover:text-yellow-500" />
+                      <Bookmark className="cursor-pointer text-gray-600 hover:text-yellow-500 w-5 h-5 md:w-6 md:h-6" />
                     </motion.div>
                   </div>
+
+                  {/* Timestamp */}
                   <div>
-                    <p className="text-gray-500 text-sm">
+                    <p className="text-gray-500 text-xs md:text-sm">
                       {selectedPost.timestamp}
                     </p>
                   </div>
+
+                  {/* Close Button */}
                   <motion.button
                     whileHover={{ rotate: 90 }}
                     onClick={closeModal}
-                    className="absolute top-4 right-4 text-gray-600 hover:text-red-500"
+                    className="absolute top-2 right-2 md:top-4 md:right-4 text-gray-600 hover:text-red-500"
                   >
-                    <X size={24} />
+                    <X size={20} md:size={24} />
                   </motion.button>
                 </div>
               </motion.div>

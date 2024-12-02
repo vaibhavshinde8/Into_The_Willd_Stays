@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import  { useEffect, useRef, useState } from "react";
 import {
   motion,
   useScroll,
@@ -159,7 +159,7 @@ const GuestExperience = () => {
           transition={{ duration: 0.8 }}
           className="max-w-5xl mx-auto"
         >
-          <div className="relative px-4 lg:px-8 bg-gray-200 h-[70vh] p-6 rounded-lg">
+          <div className="relative px-4 lg:px-8  h-[70vh] p-6 rounded-lg">
             <motion.h1
               className="text-4xl md:text-6xl text-black font-bold mb-12 text-center"
               initial={{ opacity: 0, y: -50 }}
@@ -174,7 +174,7 @@ const GuestExperience = () => {
 
             <div className="max-w-4xl mx-auto text-lg leading-relaxed  text-gray-800 space-y-6">
               <p className="relative">
-                <span className="font-extrabold text-2xl text-red-900">
+                <span className="font-extrabold text-2xl text-emerald-800">
                   &gt;{" "}
                 </span>
                 <span className="font-light">
@@ -186,7 +186,7 @@ const GuestExperience = () => {
                 </span>
               </p>
               <p className="relative">
-                <span className="font-extrabold text-2xl text-red-900">
+                <span className="font-extrabold text-2xl text-emerald-800">
                   &gt;{" "}
                 </span>
 
@@ -198,7 +198,7 @@ const GuestExperience = () => {
                 </span>
               </p>
               <p className="relative">
-                <span className="font-extrabold text-2xl text-red-900">
+                <span className="font-extrabold text-2xl text-emerald-800">
                   &gt;{" "}
                 </span>
 
