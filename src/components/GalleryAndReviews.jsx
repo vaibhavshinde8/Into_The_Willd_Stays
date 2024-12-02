@@ -5,7 +5,6 @@ import Image3 from "../assets/guestdiary/img-2.jpg";
 import Image4 from "../assets/guestdiary/img-3.jpeg";
 import { motion } from "framer-motion";
 
-
 const testData = [
   {
     type: "review",
@@ -46,7 +45,6 @@ const testData = [
     imgSrc: Image4,
     caption: "Serene moments in the mountains",
   },
-  
 ];
 
 const GalleryAndReviews = () => {
@@ -70,29 +68,26 @@ const GalleryAndReviews = () => {
         {/* Header Section */}
         <div className="text-center mb-16">
           <div className="flex justify-center items-center space-x-4 mb-6">
-          <motion.h1
-          className="text-4xl md:text-6xl text-black font-bold mb-12 text-center"
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <span className="bg-gradient-to-r from-cyan-800 to-emerald-800 bg-clip-text text-transparent">
-            Guest
-          </span>{" "}
-        Testimonials
-        </motion.h1>
-          {/* <p className="text-xl text-gray-800 max-w-2xl mx-auto">
-            Authentic moments and memories from our travelers
-          </p> */}
-        </div>
+            <motion.h1
+              className="text-4xl md:text-6xl text-black font-bold mb-12 text-center"
+              initial={{ opacity: 0, y: -50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <span className="bg-gradient-to-r from-cyan-800 to-emerald-800 bg-clip-text text-transparent">
+                Guest
+              </span>{" "}
+              Testimonials
+            </motion.h1>
+          </div>
 
-        {/* Filter Section */}
-        <div className="flex justify-center mb-12 space-x-4">
-          {["all", "image", "review"].map((filter) => (
-            <button
-              key={filter}
-              onClick={() => setActiveFilter(filter)}
-              className={`
+          {/* Filter Section */}
+          <div className="flex justify-center mb-12 space-x-4">
+            {["all", "image", "review"].map((filter) => (
+              <button
+                key={filter}
+                onClick={() => setActiveFilter(filter)}
+                className={`
                 px-6 py-3  uppercase tracking-wider transition-all duration-300
                 ${
                   activeFilter === filter
@@ -100,71 +95,73 @@ const GalleryAndReviews = () => {
                     : "bg-gray-700/30 text-white hover:bg-gray-700/50"
                 }
               `}
-            >
-              {filter}
-            </button>
-          ))}
-        </div>
+              >
+                {filter}
+              </button>
+            ))}
+          </div>
 
-        {/* Gallery Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredContent.map((item, index) => (
-            <div
-              key={index}
-              className="group relative overflow-hidden shadow-2xl border border-gray-700/50 bg-gray-800/50 backdrop-blur-xl"
-            >
-              {item.type === "image" ? (
-                <div className="relative overflow-hidden">
-                  <img
-                    src={item.imgSrc}
-                    alt={item.caption || `Gallery item ${index + 1}`}
-                    className="w-full h-[350px] object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  {item.caption && (
-                    <div className="absolute inset-0  bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
-                      <p className="text-gray-100 text-lg font-medium">
-                        {item.caption}
-                      </p>
-                    </div>
-                  )}
-                </div>
-              ) : (
-                <div className="p-8 space-y-4 h-full flex flex-col">
-                  <div className="flex items-center justify-between">
-                    <Quote className="w-8 h-8 text-cyan-800" />
-                    <div className="flex space-x-1 text-yellow-400">
-                      {[...Array(4)].map((_, i) => (
-                        <Star key={i} className="w-5 h-5 fill-current" />
-                      ))}
-                    </div>
-                  </div>
-                  <div className="flex items-center space-x-4 mb-4">
+          {/* Gallery Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredContent.map((item, index) => (
+              <div
+                key={index}
+                className="group relative overflow-hidden shadow-2xl border border-gray-700/50 bg-gray-800/50 backdrop-blur-xl"
+              >
+                {item.type === "image" ? (
+                  <div className="relative overflow-hidden">
                     <img
-                      src={item.img}
-                      alt={item.name}
-                      className="w-16 h-16 -full object-cover border-2 border-cyan-400"
+                      src={item.imgSrc}
+                      alt={item.caption || `Gallery item ${index + 1}`}
+                      className="w-full h-[350px] object-cover transition-transform duration-500 group-hover:scale-110"
                     />
-                    <div>
-                      <p className="text-xl font-semibold text-gray-100">
-                        {item.name}
-                      </p>
-                      <p className="text-gray-300 text-sm">{item.location}</p>
+                    {item.caption && (
+                      <div className="absolute inset-0  bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
+                        <p className="text-gray-100 text-lg font-medium">
+                          {item.caption}
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <div className="p-8 space-y-4 h-full flex flex-col">
+                    <div className="flex items-center justify-between">
+                      <Quote className="w-8 h-8 text-cyan-800" />
+                      <div className="flex space-x-1 text-yellow-400">
+                        {[...Array(4)].map((_, i) => (
+                          <Star key={i} className="w-5 h-5 fill-current" />
+                        ))}
+                      </div>
+                    </div>
+                    <div className="flex items-center space-x-4 mb-4">
+                      <img
+                        src={item.img}
+                        alt={item.name}
+                        className="w-16 h-16 -full object-cover border-2 border-cyan-400"
+                      />
+                      <div>
+                        <p className="text-xl font-semibold text-gray-100">
+                          {item.name}
+                        </p>
+                        <p className="text-gray-300 text-sm">{item.location}</p>
+                      </div>
+                    </div>
+                    <p className="italic text-gray-100 text-lg flex-grow">
+                      "{item.review}"
+                    </p>
+                    <div className="flex items-center justify-between mt-4">
+                      <LinkIcon className="w-5 h-5 text-gray-100" />
+                      <span className="text-sm text-gray-100">
+                        Verified Stay
+                      </span>
                     </div>
                   </div>
-                  <p className="italic text-gray-100 text-lg flex-grow">
-                    "{item.review}"
-                  </p>
-                  <div className="flex items-center justify-between mt-4">
-                    <LinkIcon className="w-5 h-5 text-gray-100" />
-                    <span className="text-sm text-gray-100">Verified Stay</span>
-                  </div>
-                </div>
-              )}
-            </div>
-          ))}
+                )}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
     </div>
   );
 };

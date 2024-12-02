@@ -137,7 +137,7 @@ const ExploreMoreSAS = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white px-4 sm:px-6 lg:px-32 py-48 sm:py-20 lg:py-40 text-black">
+    <div className="min-h-screen bg-yellow-100/50 px-4 sm:px-6 lg:px-32 py-48 sm:py-20 lg:py-40 text-black">
       <div className="flex flex-col lg:flex-row items-center justify-between space-y-8 lg:space-y-0 lg:space-x-12">
         {/* Hero Section */}
         <div className="w-full lg:w-1/2">
@@ -199,7 +199,7 @@ const ExploreMoreSAS = () => {
             {galleryImages.map((image, index) => (
               <div
                 key={index}
-                className="aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300"
+                className="aspect-square overflow-hidden  shadow-md hover:shadow-xl transition-shadow duration-300"
               >
                 <img
                   src={image}
@@ -217,7 +217,7 @@ const ExploreMoreSAS = () => {
         <h2 className="text-2xl sm:text-3xl font-bold text-center mb-6 text-gray-800 border-b border-gray-300 pb-4">
           Property Details
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
           <div className="bg-gray-100/50 p-4 rounded-lg shadow-sm flex items-center">
             <div className="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center mr-4">
               <svg

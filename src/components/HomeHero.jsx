@@ -1,4 +1,4 @@
-import  { useState, useEffect } from "react";
+import   { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
@@ -111,9 +111,9 @@ const HomeHero = () => {
             Find Your Next Adventure
           </h2> */}
 
-          <div className="grid grid-cols-1 md:grid-cols-6 gap-4 items-end">
+          <div className="grid grid-cols-2 md:grid-cols-6 gap-4 items-end">
             {/* Location */}
-            <div className="md:col-span-1">
+            <div className="md:col-span-1 col-span-2">
               <label className="block text-white mb-2 text-sm">Location</label>
               <select
                 name="location"
@@ -201,7 +201,7 @@ const HomeHero = () => {
             </div>
 
             {/* Search Button */}
-            <div className="md:col-span-1 flex items-end">
+            <div className="md:col-span-1 col-span-2 flex items-end">
               <button
                 onClick={handleSearch}
                 className="w-full py-3 bg-[#0F2642] text-white 

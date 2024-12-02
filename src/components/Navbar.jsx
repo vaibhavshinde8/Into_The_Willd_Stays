@@ -1,53 +1,15 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Menu, X, User, Phone, Mail, Facebook, Instagram } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
+import { Link } from "react-router-dom";
 import logo from "../assets/IntotheWildStaysLogo.png";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [userData, setUserData] = useState(null);
-  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
-  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
-
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-    setIsLoggedIn(false);
-    setUserData(null);
-    setIsUserMenuOpen(false);
-    navigate("/login");
-  };
-
-  // Check token and fetch user data
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (token) {
-      setIsLoggedIn(true);
-      // Fetch user data
-      axios
-        .get("https://your-api-endpoint.com/user", {
-          headers: { Authorization: `Bearer ${token}` },
-        })
-        .then((response) => {
-          setUserData(response.data);
-        })
-        .catch((error) => {
-          console.error("Error fetching user data:", error);
-          // Clear token if user data fetch fails
-          localStorage.removeItem("token");
-          setIsLoggedIn(false);
-        });
-    } else {
-      setIsLoggedIn(false);
-      setUserData(null);
-    }
-  }, []);
 
   return (
     <nav className="fixed w-full z-50 bg-gradient-to-b from-black via-gray-900 to-transparent transition-all font-ethereal duration-300">
@@ -102,10 +64,16 @@ export default function Navbar() {
       </div>
       <div className="mx-auto pt-4 px-4 sm:px-6 lg:px-16">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 flex items-center">
             <Link to="/" className="flex items-center">
-              <img src={logo} alt="Into the Wild Logo" className="h-32" />
+              <div className="relative group">
+                <img
+                  src={logo}
+                  alt="Into the Wild Logo"
+                  className="h-32 transition-transform duration-[4000ms] group-hover:rotate-[360deg]"
+                />
+               
+              </div>
             </Link>
           </div>
 
@@ -235,22 +203,22 @@ export default function Navbar() {
             <Link
               to="/user-profile"
               className="group flex items-center justify-center 
-        bg-[#0F2642] text-white 
-        px-4 py-2 
-        rounded-lg 
-        hover:bg-[#0F2642]/90 
-        transition-all duration-300 
-        shadow-md 
-        hover:shadow-lg 
-        focus:outline-none 
-        focus:ring-2 
-        focus:ring-[#0F2642]/50"
+              bg-[#0F2642] text-white 
+              px-4 py-2 
+              rounded-lg 
+              hover:bg-[#0F2642]/90 
+              transition-all duration-300 
+              shadow-md 
+              hover:shadow-lg 
+              focus:outline-none 
+              focus:ring-2 
+              focus:ring-[#0F2642]/50"
               onClick={() => setIsOpen(false)}
             >
               <User
                 className="w-5 h-5 mr-2 
-        group-hover:rotate-6 
-        transition-transform duration-300"
+              group-hover:rotate-6 
+              transition-transform duration-300"
               />
               <span className="font-extrabold">Profile</span>
             </Link>

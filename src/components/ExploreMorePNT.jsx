@@ -154,12 +154,12 @@ const ExploreMorePNT = () => {
 
 
   return (
-    <div className="min-h-screen bg-white px-4 sm:px-6 lg:px-32 py-48 sm:py-20 lg:py-40 text-black">
+    <div className="min-h-screen bg-yellow-100/50 px-4 sm:px-6 lg:px-32 py-48 sm:py-20 lg:py-40 text-black">
       <div className="flex flex-col lg:flex-row items-center justify-between space-y-8 lg:space-y-0 lg:space-x-12">
         {/* Hero Section */}
         <div className="w-full lg:w-1/2">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-4 leading-tight tracking-tight text-center lg:text-left">
-          Pine Tales: A 5BHK Valley View Private Villa
+            Pine Tales: A 5BHK Valley View Private Villa
             <br />
             <span className="text-green-700">New Tehri, Nawagarh</span>
           </h1>
@@ -191,10 +191,10 @@ const ExploreMorePNT = () => {
           </div>
 
           <p className="text-base sm:text-lg text-gray-600 leading-relaxed mb-6 sm:mb-8 text-center lg:text-left">
-         Nestled near the serene Tehri Dam in Uttarakhand, Pine Tales Villa is a
-         private mountain retreat, perfect for families and friends. Offering
-        breathtaking valley views, our villa is designed for those seeking a
-         cozy escape in nature.
+            Nestled near the serene Tehri Dam in Uttarakhand, Pine Tales Villa
+            is a private mountain retreat, perfect for families and friends.
+            Offering breathtaking valley views, our villa is designed for those
+            seeking a cozy escape in nature.
           </p>
 
           <div className="flex justify-center lg:justify-start">
@@ -204,7 +204,7 @@ const ExploreMorePNT = () => {
             >
               Book Now
             </button> */}
-            <BookingButton property={property}/>
+            <BookingButton property={property} />
           </div>
         </div>
 
@@ -214,7 +214,7 @@ const ExploreMorePNT = () => {
             {galleryImages.map((image, index) => (
               <div
                 key={index}
-                className="aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300"
+                className="aspect-square overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"
               >
                 <img
                   src={image}
@@ -232,7 +232,7 @@ const ExploreMorePNT = () => {
         <h2 className="text-2xl sm:text-3xl font-bold text-center mb-6 text-gray-800 border-b border-gray-300 pb-4">
           Property Details
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
           <div className="bg-gray-100/50 p-4 rounded-lg shadow-sm flex items-center">
             <div className="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center mr-4">
               <svg
@@ -380,9 +380,7 @@ const ExploreMorePNT = () => {
             </div>
             <div>
               <p className="font-semibold text-gray-700">Address</p>
-              <p className="text-gray-600">
-              {propertyDetails.address}
-              </p>
+              <p className="text-gray-600">{propertyDetails.address}</p>
             </div>
           </div>
         </div>
@@ -497,7 +495,6 @@ const ExploreMorePNT = () => {
       </div>
     </div>
 
-
     // <div className="min-h-screen bg-gradient-to-br from-[#091F3C] to-[#3C8D99] px-6 lg:px-32 py-40 text-white">
     //   <motion.button
     //     initial={{ opacity: 0, scale: 0.8 }}
@@ -510,9 +507,9 @@ const ExploreMorePNT = () => {
     //       damping: 10,
     //     }}
     //     onClick={handleBookNow}
-    //     className="fixed bottom-6 right-6 z-50 bg-white text-green-900  
-    //              px-6 py-3 rounded-full shadow-2xl 
-    //              hover:bg-white transition-colors duration-300 
+    //     className="fixed bottom-6 right-6 z-50 bg-white text-green-900
+    //              px-6 py-3 rounded-full shadow-2xl
+    //              hover:bg-white transition-colors duration-300
     //              flex items-center space-x-2
     //              "
     //     style={{
