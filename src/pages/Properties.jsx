@@ -2,85 +2,58 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { FaMapMarkerAlt, FaBed, FaUsers, FaStar } from "react-icons/fa";
-
 import SidebarFilter from "../components/SidebarFilter";
-import Image1 from "../assets/itw/IMG-20240530-WA0015.jpg";
-import Image2 from "../assets/pineandtails/pnt1.jpg";
-import Image3 from "../assets/majuli/majuli1.jpeg";
-import Image4 from "../assets/SunandSandGoa/52PM.jpeg";
 import BookingButton from "../components/BookingButton";
-
 import TourBanner from "../components/TourBanner";
+import axios from "axios";
+import { BASE_URL } from "../utils/baseurl";
 
-const properties = [
-  {
-    imgURL: Image1,
-    name: "Into The Wild Stays",
-    checkInDate: "2024-12-01",
-    checkOutDate: "2024-12-03",
-    description:
-      "Experience the serenity of Dhanolti, nestled in the Garhwal Himalayas, with panoramic mountain views and pristine pine forests surrounding this peaceful retreat.",
-    location: "Dhanolti",
-    rating: 4.6,
-    reviews: 50,
-    price: 4000,
-    bedroom: 4,
-    guest: 24,
-    exploremoreRoute: "/exploremoreitw",
-    tags: ["Mountain", "Scenic", "Luxury"],
-  },
-  {
-    imgURL: Image2,
-    name: "ITW: Pines And Tails",
-    checkInDate: "2024-12-01",
-    checkOutDate: "2024-12-03",
-    description:
-      "Discover the charm of Tehri, overlooking the magnificent Tehri Lake and surrounded by the majestic Himalayan peaks, offering a perfect blend of adventure and tranquility.",
-    location: "Tehri",
-    rating: 4.7,
-    reviews: 30,
-    price: 3500,
-    bedroom: 5,
-    guest: 12,
-    exploremoreRoute: "/exploremorepnt",
-    tags: ["Pool", "Seaview", "Modern"],
-  },
-  {
-    imgURL: Image3,
-    name: "ITW: Me:nam Homestay",
-    checkInDate: "2024-12-01",
-    checkOutDate: "2024-12-03",
-    description:
-      "Immerse yourself in the unique culture of Majuli, the world's largest river island, where traditional Assamese hospitality meets stunning riverside views and rich cultural heritage.",
-    location: "Majuli",
-    rating: 4.8,
-    reviews: 40,
-    price: 3500,
-    bedroom: 5,
-    guest: 30,
-    exploremoreRoute: "/exploremoremnm",
-    tags: ["Eco", "Green", "Tranquil"],
-  },
-  {
-    imgURL: Image4,
-    name: "ITW: Sun and Sand Villa",
-    checkInDate: "2024-12-01",
-    checkOutDate: "2024-12-03",
-    description:
-      "Experience the vibrant beach life of Goa with this luxurious villa, offering the perfect blend of sun, sand, and seaside relaxation along with easy access to famous beaches and nightlife.",
-    location: "Goa",
-    rating: 4.8,
-    reviews: 40,
-    bedroom: 5,
-    guest: 10,
-    price: 11000,
-    exploremoreRoute: "/exploremoresas",
-    tags: ["Luxury", "Beach", "Premium"],
-  },
-];
+const PropertyShimmer = () => (
+  <div className="bg-white shadow-md animate-pulse">
+    <div className="flex flex-col md:flex-row h-full">
+      <div className="md:w-2/5 h-64 md:h-auto bg-gray-200"></div>
+      <div className="flex-1 p-6">
+        <div className="h-8 bg-gray-200 rounded w-3/4 mb-4"></div>
+        <div className="h-4 bg-gray-200 rounded w-full mb-3"></div>
+        <div className="h-4 bg-gray-200 rounded w-5/6 mb-4"></div>
+        <div className="flex gap-3 mb-4">
+          <div className="h-8 bg-gray-200 rounded w-24"></div>
+          <div className="h-8 bg-gray-200 rounded w-24"></div>
+          <div className="h-8 bg-gray-200 rounded w-24"></div>
+        </div>
+        <div className="flex justify-between items-center mt-4">
+          <div className="h-10 bg-gray-200 rounded w-32"></div>
+          <div className="h-10 bg-gray-200 rounded w-48"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+);
 
 const Properties = () => {
-  const [filteredProperties, setFilteredProperties] = useState(properties);
+  const [filteredProperties, setFilteredProperties] = useState([]);
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [properties, setProperties] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  console.log(isLoading);
+  console.log(properties);
+  console.log(filteredProperties);
+
+  useEffect(() => {
+    const fetchProperties = async () => {
+      try {
+        setIsLoading(true);
+        const res = await axios.get(`${BASE_URL}/properties/getProperties`);
+        setProperties(res.data.properties);
+        setFilteredProperties(res.data.properties);
+      } catch (error) {
+        console.error('Error fetching properties:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    fetchProperties();
+  }, []);
 
   const handleFilterChange = ({ location }) => {
     let filtered = properties;
@@ -168,87 +141,98 @@ const Properties = () => {
             animate="visible"
           >
             <div className="grid gap-8">
-              {filteredProperties.map((property, index) => (
-                <motion.div
-                  key={index}
-                  variants={itemVariants}
-                  className="relative bg-white  overflow-hidden shadow-md transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
-                >
-                  <div className="flex flex-col md:flex-row h-full">
-                    {/* Image Section */}
-                    <div className="md:w-2/5 relative overflow-hidden h-64 md:h-auto">
-                      <img
-                        src={property.imgURL}
-                        alt={property.name}
-                        className="w-full h-[50vh] object-cover transition-transform duration-700 hover:scale-110"
-                      />
-                      <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 ">
-                        <div className="flex items-center space-x-1">
-                          <FaStar className="text-yellow-500" />
-                          <span className="font-semibold">
-                            {property.rating}
-                          </span>
-                          <span className="text-sm text-gray-600">
-                            ({property.reviews})
-                          </span>
+              {isLoading ? (
+                // Show 3 shimmer effects while loading
+                [...Array(3)].map((_, index) => (
+                  <PropertyShimmer key={index} />
+                ))
+              ) : (
+                // Show actual properties when loaded
+                filteredProperties.map((property, index) => (
+                  <motion.div
+                    key={index}
+                    variants={itemVariants}
+                    onMouseEnter={() => setHoveredIndex(index)}
+                    onMouseLeave={() => setHoveredIndex(null)}
+                    className="relative bg-white  overflow-hidden shadow-md transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                  >
+                    <div className="flex flex-col md:flex-row h-full">
+                      {/* Image Section */}
+                      <div className="md:w-2/5 relative overflow-hidden h-64 md:h-auto">
+                        <img
+                          src={property.images[0]}
+                          alt={property.name}
+                  
+                          className="w-full h-[50vh] object-cover transition-transform duration-700 hover:scale-110"
+                        />
+                        <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 ">
+                          <div className="flex items-center space-x-1">
+                            <FaStar className="text-yellow-500" />
+                            <span className="font-semibold">
+                              {property.rating}
+                            </span>
+                            <span className="text-sm text-gray-600">
+                              ({property.reviews})
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Content Section */}
+                      <div className="flex-1 p-6 flex flex-col justify-between">
+                        <div>
+                          <h2 className="text-2xl font-bold text-gray-800 mb-3">
+                            {property.name}
+                          </h2>
+                          <p className="text-gray-600 mb-4">
+                            {property.description}
+                          </p>
+
+                          <div className="flex flex-wrap gap-3 mb-4">
+                            <span className="flex items-center space-x-2 bg-teal-50 text-teal-700 px-3 py-1  text-sm">
+                              <FaMapMarkerAlt className="text-teal-500" />
+                              <span>{property.location}</span>
+                            </span>
+                            <span className="flex items-center space-x-2 bg-blue-50 text-blue-700 px-3 py-1  text-sm">
+                              <FaBed className="text-blue-500" />
+                              <span>{property.bedroom} Cottages</span>
+                            </span>
+                            <span className="flex items-center space-x-2 bg-purple-50 text-purple-700 px-3 py-1  text-sm">
+                              <FaUsers className="text-purple-500" />
+                              <span>{property.guest} Guests</span>
+                            </span>
+                          </div>
+                        </div>
+
+                        <div className="flex items-center justify-between mt-4">
+                          <div className="flex flex-col">
+                            <span className="text-3xl font-bold text-gray-900">
+                              ₹{property.price}
+                            </span>
+                            <span className="text-sm text-gray-500">
+                              per night / Cottage
+                            </span>
+                          </div>
+
+                          <div className="flex space-x-3">
+                            <Link
+                              to={`/property/${property._id}`}
+                              onClick={() => window.scrollTo(0, 0)}
+                              className="px-6 my-4 py-2  text-black bg-gray-100  hover:bg-teal-100 transition-colors"
+                            >
+                              Details
+                            </Link>
+                            <BookingButton property={property} />
+                            {/* <button className="px-6 py-2 bg-[#43A181] text-white rounded-full hover:bg-[#358268] transition-colors">
+                              Book now
+                            </button> */}
+                          </div>
                         </div>
                       </div>
                     </div>
-
-                    {/* Content Section */}
-                    <div className="flex-1 p-6 flex flex-col justify-between">
-                      <div>
-                        <h2 className="text-2xl font-bold text-gray-800 mb-3">
-                          {property.name}
-                        </h2>
-                        <p className="text-gray-600 mb-4">
-                          {property.description}
-                        </p>
-
-                        <div className="flex flex-wrap gap-3 mb-4">
-                          <span className="flex items-center space-x-2 bg-teal-50 text-teal-700 px-3 py-1  text-sm">
-                            <FaMapMarkerAlt className="text-teal-500" />
-                            <span>{property.location}</span>
-                          </span>
-                          <span className="flex items-center space-x-2 bg-blue-50 text-blue-700 px-3 py-1  text-sm">
-                            <FaBed className="text-blue-500" />
-                            <span>{property.bedroom} Cottages</span>
-                          </span>
-                          <span className="flex items-center space-x-2 bg-purple-50 text-purple-700 px-3 py-1  text-sm">
-                            <FaUsers className="text-purple-500" />
-                            <span>{property.guest} Guests</span>
-                          </span>
-                        </div>
-                      </div>
-
-                      <div className="flex items-center justify-between mt-4">
-                        <div className="flex flex-col">
-                          <span className="text-3xl font-bold text-gray-900">
-                            ₹{property.price}
-                          </span>
-                          <span className="text-sm text-gray-500">
-                            per night / Cottage
-                          </span>
-                        </div>
-
-                        <div className="flex space-x-3">
-                          <Link
-                            to={property.exploremoreRoute}
-                            onClick={() => window.scrollTo(0, 0)}
-                            className="px-6 my-4 py-2  text-black bg-gray-100  hover:bg-teal-100 transition-colors"
-                          >
-                            Details
-                          </Link>
-                          <BookingButton property={property} />
-                          {/* <button className="px-6 py-2 bg-[#43A181] text-white rounded-full hover:bg-[#358268] transition-colors">
-                            Book now
-                          </button> */}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
+                  </motion.div>
+                ))
+              )}
             </div>
           </motion.div>
         </div>

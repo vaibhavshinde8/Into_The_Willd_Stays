@@ -42,20 +42,8 @@ const router = createBrowserRouter([
         element: <ContactUs />,
       },
       {
-        path: "/exploremorepnt",
-        element: <ExploreMorePNT />,
-      },
-      {
-        path: "/exploremoreitw",
+        path: "/property/:id",
         element: <ExploreMoreITW />,
-      },
-      {
-        path: "/exploremoremnm",
-        element: <ExploreMoreMNM />,
-      },
-      {
-        path: "/exploremoresas",
-        element: <ExploreMoreSAS />,
       },
       {
         path: "/amenities",
