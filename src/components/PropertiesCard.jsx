@@ -25,7 +25,8 @@ const PropertiesCard = ({ selectedLocation = "All" }) => {
         const response = await axios.get(`${BASE_URL}/properties/getProperties`);
         setProperties(response.data.properties);
       } catch (error) {
-        toast.error("Failed to fetch properties");
+        console.log(error);
+        // toast.error("Failed to fetch properties");
       } finally {
         setLoading(false);
       }

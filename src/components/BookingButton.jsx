@@ -344,6 +344,8 @@ const BookingButton = ({ property, tour }) => {
         checkInDate: userDetails.checkInDate,
         checkOutDate: userDetails.checkOutDate,
         amount: totalAmount,
+        adults: userDetails.adults,
+        children: userDetails.children,
         user: user._id,
         userDetails: userDetails,
         property: property ? property._id : null,
