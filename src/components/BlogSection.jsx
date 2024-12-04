@@ -21,7 +21,11 @@ const BlogSection = () => {
 
         <div className="grid md:grid-cols-3 gap-8 mb-12">
           {previewBlogs.map((blog) => (
-            <div key={blog.id} className="bg-white  shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+            <Link 
+              key={blog.id} 
+              to={`/blog/${blog.id}`} 
+              className="bg-white shadow-md overflow-hidden hover:shadow-xl transition duration-300"
+            >
               <img 
                 src={blog.image} 
                 alt={blog.title}
@@ -35,7 +39,7 @@ const BlogSection = () => {
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{blog.title}</h3>
                 <p className="text-gray-600 line-clamp-2">{blog.content[0]}</p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 

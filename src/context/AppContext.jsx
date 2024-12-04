@@ -1,8 +1,14 @@
 import { createContext, useContext } from "react";
 // import Image1 from "../assets/itw/IMG-20240530-WA0015.jpg";
-import Image2 from "../assets/pineandtails/pnt1.jpg";
-import Image3 from "../assets/majuli/majuli1.jpeg";
-import Image4 from "../assets/SunandSandGoa/52PM.jpeg";
+const Image2 = "https://placehold.co/600x400/EEE/31343C/png?text=A+Snowy+Day+Hike&font=playfair";
+const Image3 =
+  "https://placehold.co/600x400/EEE/31343C/png?text=A+Hidden+Gem+for+Nature+Lovers&font=playfair"; 
+const Image4 =
+  "https://placehold.co/600x400/EEE/31343C/png?text=Adventure+Meets+Comfort&font=playfair";
+
+// import Image2 from "../assets/pineandtails/pnt1.jpg";
+// import Image3 from "../assets/majuli/majuli1.jpeg";
+// import Image4 from "../assets/SunandSandGoa/52PM.jpeg";
 
 const AppContext = createContext();
 
