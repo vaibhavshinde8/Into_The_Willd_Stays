@@ -315,7 +315,7 @@ const ExploreMoreITW = () => {
             <div>
               <p className="font-semibold text-gray-700">Address</p>
               <p className="text-gray-600">
-                Into The Wild Stays near Eco Park Dhanolti
+                Into The Wild Stays, Near Eco Park, Village Dhanolti, Tehri Garhwal District, Uttarakhand - 249145, India
               </p>
             </div>
           </div>

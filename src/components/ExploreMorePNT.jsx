@@ -1,46 +1,45 @@
 import { useState,useEffect } from "react";
-  import { motion } from "framer-motion";
+  // import { motion } from "framer-motion";
 
 import { FaArrowAltCircleDown, FaArrowAltCircleUp } from "react-icons/fa";
 import img1 from "../assets/pineandtails/IMG_6555.jpg";
 import img2 from "../assets/pineandtails/IMG_6567.jpg";
 import img3 from "../assets/pineandtails/IMG_6590.jpg";
 import img4 from "../assets/pineandtails/IMG_6598.jpg";
-import { MapPin, Mountain } from "lucide-react";
 import BookingButton from "./BookingButton";
 
-const containerVariants = {
-  hidden: { opacity: 0, scale: 0.8 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      delayChildren: 0.3,
-      staggerChildren: 0.2,
-    },
-  },
-};
+// const containerVariants = {
+//   hidden: { opacity: 0, scale: 0.8 },
+//   visible: {
+//     opacity: 1,
+//     scale: 1,
+//     transition: {
+//       delayChildren: 0.3,
+//       staggerChildren: 0.2,
+//     },
+//   },
+// };
 
-const itemVariants = {
-  hidden: { y: -50, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      type: "spring",
-      stiffness: 300,
-      damping: 10,
-    },
-  },
-};
+// const itemVariants = {
+//   hidden: { y: -50, opacity: 0 },
+//   visible: {
+//     y: 0,
+//     opacity: 1,
+//     transition: {
+//       type: "spring",
+//       stiffness: 300,
+//       damping: 10,
+//     },
+//   },
+// };
 
-const handleBookNow = () => {
-  // You can replace this with actual booking logic
-  // For now, it will scroll to the top or open a booking modal
-  window.scrollTo({ top: 0, behavior: "smooth" });
-  // Alternatively, you could trigger a booking modal
-  // openBookingModal();
-};
+// const handleBookNow = () => {
+//   // You can replace this with actual booking logic
+//   // For now, it will scroll to the top or open a booking modal
+//   window.scrollTo({ top: 0, behavior: "smooth" });
+//   // Alternatively, you could trigger a booking modal
+//   // openBookingModal();
+// };
 
 // Data for Gallery, FAQs, Policies, and Amenities
 const galleryImages = [img1, img2, img3, img4];
@@ -59,8 +58,9 @@ const propertyDetails = {
   pricePerRoom: "₹3500",
   totalPriceFor12: "₹13,500",
   stayType: "5BHK Valley View Private Villa",
-  location: "8CWX+WR2, New Tehri, Nawagarh, Uttarakhand 249001",
-  address: "Pine Tales, Sursingdhar New Tehri",
+  location: "https://maps.app.goo.gl/QMViy8f8sQa6ekhk6",
+  address:
+    "Pine Tales Villa, Near Sursingdhar Temple, Village Nawagarh, New Tehri, Uttarakhand - 249001, India",
 };
 
 const faqs = [
@@ -350,8 +350,8 @@ const ExploreMorePNT = () => {
             </div>
             <div>
               <p className="font-semibold text-gray-700">Location</p>
-              <a
-                href="https://www.google.com/maps/place/Me:nam+Homestay+(Majuli)"
+              <a //maps.app.goo.gl/K9kiE6bh4S7u9uKh9
+                href="https://maps.app.goo.gl/QMViy8f8sQa6ekhk6"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-600 hover:underline"
@@ -394,12 +394,12 @@ const ExploreMorePNT = () => {
         <ul className="list-disc ml-4 sm:ml-6 space-y-2 sm:space-y-3">
           <li>Boating: Glide along the serene Brahmaputra River.</li>
           <li>
-            Mask Making: Discover Majuli's traditional art of handmade masks.
+            Mask Making: Discover Majuli&apos;s traditional art of handmade masks.
           </li>
           <li>
             Pottery Village: Visit local artisans crafting pottery by hand.
           </li>
-          <li>Apong Making: Learn to make Apong, Assam's unique rice beer.</li>
+          <li>Apong Making: Learn to make Apong, Assam&apos;s unique rice beer.</li>
           <li>
             Weaving: Watch intricate weaving techniques by local craftsmen.
           </li>

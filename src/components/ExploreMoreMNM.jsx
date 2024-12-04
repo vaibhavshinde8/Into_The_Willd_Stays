@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { MapPin, Mountain } from "lucide-react";
 import { FaArrowAltCircleDown, FaArrowAltCircleUp } from "react-icons/fa";
 import img4 from "../assets/majuli/Property Photo/006.jpg";
 import img2 from "../assets/majuli/Property Photo/002.jpg";
@@ -7,9 +6,9 @@ import img3 from "../assets/majuli/Property Photo/005.jpg";
 import img1 from "../assets/majuli/Property Photo/004.jpg";
 import BookingButton from "./BookingButton";
 
-const handleBookNow = () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-};
+// const handleBookNow = () => {
+//   window.scrollTo({ top: 0, behavior: "smooth" });
+// };
 
 const galleryImages = [img1, img2, img3, img4];
 
@@ -125,13 +124,13 @@ const ExploreMoreMNM = () => {
           </div>
 
           <p className="text-base sm:text-lg text-gray-600 leading-relaxed mb-6 sm:mb-8 text-center lg:text-left">
-            Welcome to Me:nam Homestay, nestled on Majuli Island, the world's
-            largest river island and a cultural treasure in Assam. Run by the
-            owner herself, this homestay offers a warm, local touch, giving
-            guests an unforgettable experience. From meeting locals to exploring
-            traditional crafts and customs, Me:nam Homestay is your gateway to
-            the authentic heart of Majuli—an island rich in natural beauty,
-            vibrant festivals, and deep-rooted traditions.
+            Welcome to Me:nam Homestay, nestled on Majuli Island, the
+            world&apos;s largest river island and a cultural treasure in Assam.
+            Run by the owner herself, this homestay offers a warm, local touch,
+            giving guests an unforgettable experience. From meeting locals to
+            exploring traditional crafts and customs, Me:nam Homestay is your
+            gateway to the authentic heart of Majuli—an island rich in natural
+            beauty, vibrant festivals, and deep-rooted traditions.
           </p>
 
           <div className="flex justify-center lg:justify-start">
@@ -288,7 +287,7 @@ const ExploreMoreMNM = () => {
             <div>
               <p className="font-semibold text-gray-700">Location</p>
               <a
-                href="https://www.google.com/maps/place/Me:nam+Homestay+(Majuli)"
+                href="https://maps.app.goo.gl/2hFapb8AaZGa59717"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-600 hover:underline"
@@ -318,32 +317,19 @@ const ExploreMoreMNM = () => {
             <div>
               <p className="font-semibold text-gray-700">Address</p>
               <p className="text-gray-600">
-                Address: Jengrai Chapori Rd, Kesaikhua gaon, Moghua Chuk, Assam
-                785105
+                Me:nam Homestay,
+                <br />
+                Jengrai Chapori Road,
+                <br />
+                Kesaikhua Gaon, Moghua Chuk,
+                <br />
+                Majuli, Assam - 785105
+                <br />
+                India
               </p>
             </div>
           </div>
         </div>
-        {/* <ul className="list-disc ml-6 space-y-3">
-          <li>Stay Type: HomeStay</li>
-          <li>Max Capacity: 30 persons</li>
-          <li>Price: ₹3500 per night</li>
-          <li>
-            Location:{" "}
-            <a
-              href="https://www.google.com/maps/place/Me:nam+Homestay+(Majuli)"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-600 underline"
-            >
-              View on Google Maps
-            </a>
-          </li>
-          <li>
-            Address: Jengrai Chapori Rd, Kesaikhua gaon, Moghua Chuk, Assam
-            785105
-          </li>
-        </ul> */}
       </div>
 
       {/* Things to Do Section */}
@@ -354,12 +340,15 @@ const ExploreMoreMNM = () => {
         <ul className="list-disc ml-4 sm:ml-6 space-y-2 sm:space-y-3">
           <li>Boating: Glide along the serene Brahmaputra River.</li>
           <li>
-            Mask Making: Discover Majuli's traditional art of handmade masks.
+            Mask Making: Discover Majuli&apos;s traditional art of handmade
+            masks.
           </li>
           <li>
             Pottery Village: Visit local artisans crafting pottery by hand.
           </li>
-          <li>Apong Making: Learn to make Apong, Assam's unique rice beer.</li>
+          <li>
+            Apong Making: Learn to make Apong, Assam&apos;s unique rice beer.
+          </li>
           <li>
             Weaving: Watch intricate weaving techniques by local craftsmen.
           </li>

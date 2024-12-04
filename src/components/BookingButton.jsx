@@ -1,18 +1,18 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
-import { toast } from 'react-toastify';
-import { BASE_URL } from '../utils/baseurl';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { toast } from "react-toastify";
+import { BASE_URL } from "../utils/baseurl";
 
 const UserDetailsForm = ({ property, tour, onClose, onSubmit }) => {
   const [formData, setFormData] = useState({
-    fullName: '',
-    email: '',
-    phone: '',
-    age: '',
-    specialRequirements: '',
-    checkInDate:  '',
-    checkOutDate: ''
+    fullName: "",
+    email: "",
+    phone: "",
+    age: "",
+    specialRequirements: "",
+    checkInDate: "",
+    checkOutDate: "",
   });
 
   // Calculate total days and total price
@@ -32,18 +32,18 @@ const UserDetailsForm = ({ property, tour, onClose, onSubmit }) => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prevState => ({
+    setFormData((prevState) => ({
       ...prevState,
-      [name]: value
+      [name]: value,
     }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     // Basic validation
     if (!formData.fullName || !formData.phone) {
-      toast.error('Please fill in all required fields');
+      toast.error("Please fill in all required fields");
       return;
     }
 
@@ -57,7 +57,7 @@ const UserDetailsForm = ({ property, tour, onClose, onSubmit }) => {
     // Phone validation (simple check for 10 digits)
     const phoneRegex = /^\d{10}$/;
     if (!phoneRegex.test(formData.phone)) {
-      toast.error('Please enter a valid 10-digit phone number');
+      toast.error("Please enter a valid 10-digit phone number");
       return;
     }
 
@@ -65,7 +65,7 @@ const UserDetailsForm = ({ property, tour, onClose, onSubmit }) => {
     const checkIn = new Date(formData.checkInDate);
     const checkOut = new Date(formData.checkOutDate);
     if (checkOut <= checkIn) {
-      toast.error('Check-out date must be after check-in date');
+      toast.error("Check-out date must be after check-in date");
       return;
     }
 
@@ -73,7 +73,7 @@ const UserDetailsForm = ({ property, tour, onClose, onSubmit }) => {
     const submissionData = {
       ...formData,
       totalDays: calculateTotalDays(),
-      totalPrice: calculateTotalPrice()
+      totalPrice: calculateTotalPrice(),
     };
     onSubmit(submissionData);
   };
@@ -217,7 +217,6 @@ const UserDetailsForm = ({ property, tour, onClose, onSubmit }) => {
   );
 };
 
-
 const BookingButton = ({ property, tour }) => {
   const [loading, setLoading] = useState(false);
   const [showUserDetailsForm, setShowUserDetailsForm] = useState(false);
@@ -279,27 +278,28 @@ const BookingButton = ({ property, tour }) => {
     );
   };
 
-
   const handleUserDetailsSubmit = async (userDetails) => {
     try {
       setLoading(true);
       // Calculate number of days between check-in and check-out
       const checkIn = new Date(userDetails.checkInDate);
       const checkOut = new Date(userDetails.checkOutDate);
-      const numberOfDays = Math.ceil((checkOut - checkIn) / (1000 * 60 * 60 * 24));
-      
+      const numberOfDays = Math.ceil(
+        (checkOut - checkIn) / (1000 * 60 * 60 * 24)
+      );
+
       // Calculate total amount based on number of days
       const basePrice = property ? property.price : tour.price;
-      const totalAmount = basePrice * (numberOfDays+1);
+      const totalAmount = basePrice * numberOfDays;
 
       const response = await axios.post(`${BASE_URL}/booking/new-booking`, {
         checkInDate: userDetails.checkInDate,
         checkOutDate: userDetails.checkOutDate,
         amount: totalAmount,
         user: user._id,
-        userDetails: userDetails
+        userDetails: userDetails,
       });
-      
+
       console.log(response.data);
       initPayment(response.data.order, response.data.booking._id);
       setShowUserDetailsForm(false);
@@ -410,12 +410,12 @@ const BookingButton = ({ property, tour }) => {
       </div>
 
       {showLoginPopup && (
-        <LoginPopup 
-          onClose={() => setShowLoginPopup(false)} 
+        <LoginPopup
+          onClose={() => setShowLoginPopup(false)}
           onLogin={() => {
             setShowLoginPopup(false);
             navigate("/login");
-          }} 
+          }}
         />
       )}
 

@@ -19,7 +19,7 @@ const properties = [
     checkInDate: "2024-12-01",
     checkOutDate: "2024-12-03",
     description:
-      "Stay in a charming hilltop cottage with breathtaking views of Mussoorie's misty mountains and serene surroundings.",
+      "Experience the serenity of Dhanolti, nestled in the Garhwal Himalayas, with panoramic mountain views and pristine pine forests surrounding this peaceful retreat.",
     location: "Dhanolti",
     rating: 4.6,
     reviews: 50,
@@ -35,7 +35,7 @@ const properties = [
     checkInDate: "2024-12-01",
     checkOutDate: "2024-12-03",
     description:
-      "Stay Type;- 4BHK private pool, Seaview Villa, Porvorim North Goa.",
+      "Discover the charm of Tehri, overlooking the magnificent Tehri Lake and surrounded by the majestic Himalayan peaks, offering a perfect blend of adventure and tranquility.",
     location: "Tehri",
     rating: 4.7,
     reviews: 30,
@@ -51,13 +51,12 @@ const properties = [
     checkInDate: "2024-12-01",
     checkOutDate: "2024-12-03",
     description:
-      "A tranquil retreat located in the lush green valleys of Dehradun, perfect for unwinding and enjoying the scenic beauty.",
+      "Immerse yourself in the unique culture of Majuli, the world's largest river island, where traditional Assamese hospitality meets stunning riverside views and rich cultural heritage.",
     location: "Majuli",
     rating: 4.8,
     reviews: 40,
     price: 3500,
     bedroom: 5,
-
     guest: 30,
     exploremoreRoute: "/exploremoremnm",
     tags: ["Eco", "Green", "Tranquil"],
@@ -68,7 +67,7 @@ const properties = [
     checkInDate: "2024-12-01",
     checkOutDate: "2024-12-03",
     description:
-      "A tranquil retreat located in the lush green valleys of Dehradun, perfect for unwinding and enjoying the scenic beauty.",
+      "Experience the vibrant beach life of Goa with this luxurious villa, offering the perfect blend of sun, sand, and seaside relaxation along with easy access to famous beaches and nightlife.",
     location: "Goa",
     rating: 4.8,
     reviews: 40,
@@ -82,7 +81,6 @@ const properties = [
 
 const Properties = () => {
   const [filteredProperties, setFilteredProperties] = useState(properties);
-  const [hoveredIndex, setHoveredIndex] = useState(null);
 
   const handleFilterChange = ({ location }) => {
     let filtered = properties;
@@ -174,8 +172,6 @@ const Properties = () => {
                 <motion.div
                   key={index}
                   variants={itemVariants}
-                  onMouseEnter={() => setHoveredIndex(index)}
-                  onMouseLeave={() => setHoveredIndex(null)}
                   className="relative bg-white  overflow-hidden shadow-md transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
                 >
                   <div className="flex flex-col md:flex-row h-full">
