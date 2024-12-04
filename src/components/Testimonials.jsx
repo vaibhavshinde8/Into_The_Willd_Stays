@@ -1,8 +1,9 @@
-import  { useRef } from "react";
+import  { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
-import { Star, Quote } from "lucide-react";
+import { Star, Quote, Play, Pause } from "lucide-react";
 import { motion } from "framer-motion";
+import VideoTestimonial1 from "../assets/testimon-v-main1.mp4";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -61,6 +62,19 @@ const testData = [
 
 const Testimonials = () => {
   const swiperRef = useRef(null);
+  const videoRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const toggleVideo = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause();
+      } else {
+        videoRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
 
   return (
     <div className="bg-gradient-to-r from-gray-300 via-white to-gray-200 py-16 px-4">
@@ -110,12 +124,43 @@ const Testimonials = () => {
                 </div>
 
                 <p className="text-center text-gray-700 italic flex-grow">
-                  "{testimonial.review}"
+                  &ldquo;{testimonial.review}&rdquo;
                 </p>
               </div>
             </SwiperSlide>
           ))}
         </Swiper>
+
+        {/* Video Testimonial Section */}
+        <div className="mt-20">
+          {/* <h2 className="text-3xl font-bold text-center mb-10">
+            Featured Video Testimonial
+          </h2> */}
+          <div className="max-w-3xl mx-auto relative rounded-xl overflow-hidden shadow-2xl group">
+            <video
+              ref={videoRef}
+              className="w-full aspect-video object-cover"
+              // poster="/path-to-video-thumbnail.jpg" // Add your video thumbnail
+              src={VideoTestimonial1} // Add your video source
+            />
+            <div 
+              className="absolute inset-0 flex items-center justify-center cursor-pointer"
+              onClick={toggleVideo}
+            >
+              <div className={`w-16 h-16 rounded-full bg-white/30 backdrop-blur-sm flex items-center justify-center transition-transform hover:scale-110 ${isPlaying ? 'opacity-0 group-hover:opacity-100 transition-opacity' : ''}`}>
+                {isPlaying ? (
+                  <Pause className="w-8 h-8 text-white" />
+                ) : (
+                  <Play className="w-8 h-8 text-white ml-1" />
+                )}
+              </div>
+            </div>
+            <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent">
+              {/* <h3 className="text-white font-semibold text-xl">John Doe</h3>
+              <p className="text-gray-200">Happy Guest at Dhanaulti</p> */}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

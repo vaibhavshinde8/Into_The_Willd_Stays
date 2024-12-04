@@ -1,21 +1,22 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
-import { toast } from 'react-toastify';
-import { BASE_URL } from '../utils/baseurl';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { toast } from "react-toastify";
+import { BASE_URL } from "../utils/baseurl";
 
 const UserDetailsForm = ({ property, tour, onClose, onSubmit }) => {
   const [formData, setFormData] = useState({
-    fullName: '',
-    email: '',
-    phone: '',
-    age: '',
-    specialRequirements: '',
-    checkInDate:  '',
-    checkOutDate: ''
+    fullName: "",
+    email: "",
+    phone: "",
+    age: "",
+    specialRequirements: "",
+    checkInDate: "",
+    checkOutDate: "",
+    adults: 1,
+    children: 0
   });
 
-  // Calculate total days and total price
   const calculateTotalDays = () => {
     const checkIn = new Date(formData.checkInDate);
     const checkOut = new Date(formData.checkOutDate);
@@ -27,23 +28,35 @@ const UserDetailsForm = ({ property, tour, onClose, onSubmit }) => {
   const calculateTotalPrice = () => {
     const totalDays = calculateTotalDays();
     const basePrice = property ? property.price : tour.price;
-    return totalDays * basePrice;
+    const totalGuests = Number(formData.adults) + Number(formData.children);
+    return totalDays * basePrice * totalGuests;
   };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prevState => ({
+    
+    if ((name === 'adults' || name === 'children')) {
+      const adults = name === 'adults' ? Number(value) : Number(formData.adults);
+      const children = name === 'children' ? Number(value) : Number(formData.children);
+      
+      if (adults + children > 6) {
+        toast.error("Total number of guests cannot exceed 6");
+        return;
+      }
+    }
+
+    setFormData((prevState) => ({
       ...prevState,
-      [name]: value
+      [name]: value,
     }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     // Basic validation
     if (!formData.fullName || !formData.phone) {
-      toast.error('Please fill in all required fields');
+      toast.error("Please fill in all required fields");
       return;
     }
 
@@ -57,7 +70,7 @@ const UserDetailsForm = ({ property, tour, onClose, onSubmit }) => {
     // Phone validation (simple check for 10 digits)
     const phoneRegex = /^\d{10}$/;
     if (!phoneRegex.test(formData.phone)) {
-      toast.error('Please enter a valid 10-digit phone number');
+      toast.error("Please enter a valid 10-digit phone number");
       return;
     }
 
@@ -65,7 +78,7 @@ const UserDetailsForm = ({ property, tour, onClose, onSubmit }) => {
     const checkIn = new Date(formData.checkInDate);
     const checkOut = new Date(formData.checkOutDate);
     if (checkOut <= checkIn) {
-      toast.error('Check-out date must be after check-in date');
+      toast.error("Check-out date must be after check-in date");
       return;
     }
 
@@ -73,7 +86,7 @@ const UserDetailsForm = ({ property, tour, onClose, onSubmit }) => {
     const submissionData = {
       ...formData,
       totalDays: calculateTotalDays(),
-      totalPrice: calculateTotalPrice()
+      totalPrice: calculateTotalPrice(),
     };
     onSubmit(submissionData);
   };
@@ -148,6 +161,39 @@ const UserDetailsForm = ({ property, tour, onClose, onSubmit }) => {
             />
           </div>
 
+          <div>
+            <label htmlFor="adults" className="block text-gray-700 mb-2">
+              Number of Adults <span className="text-red-500">*</span>
+            </label>
+            <input
+              type="number"
+              id="adults"
+              name="adults"
+              value={formData.adults}
+              onChange={handleChange}
+              min="1"
+              max="6"
+              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#0F2642]"
+              required
+            />
+          </div>
+
+          <div>
+            <label htmlFor="children" className="block text-gray-700 mb-2">
+              Number of Children
+            </label>
+            <input
+              type="number"
+              id="children"
+              name="children"
+              value={formData.children}
+              onChange={handleChange}
+              min="0"
+              max="5"
+              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#0F2642]"
+            />
+          </div>
+
           <div className="md:col-span-2">
             <label
               htmlFor="specialRequirements"
@@ -217,7 +263,6 @@ const UserDetailsForm = ({ property, tour, onClose, onSubmit }) => {
   );
 };
 
-
 const BookingButton = ({ property, tour }) => {
   console.log(property);
   const [loading, setLoading] = useState(false);
@@ -280,18 +325,21 @@ const BookingButton = ({ property, tour }) => {
     );
   };
 
-
   const handleUserDetailsSubmit = async (userDetails) => {
     try {
       setLoading(true);
       // Calculate number of days between check-in and check-out
       const checkIn = new Date(userDetails.checkInDate);
       const checkOut = new Date(userDetails.checkOutDate);
-      const numberOfDays = Math.ceil((checkOut - checkIn) / (1000 * 60 * 60 * 24));
-      
-      // Calculate total amount based on number of days
+      const numberOfDays = Math.ceil(
+        (checkOut - checkIn) / (1000 * 60 * 60 * 24)
+      );
+
+      // Calculate total amount based on number of days and guests
       const basePrice = property ? property.price : tour.price;
-      const totalAmount = basePrice * numberOfDays;
+      const totalGuests = Number(userDetails.adults) + Number(userDetails.children);
+      const totalAmount = basePrice * numberOfDays * totalGuests;
+
       const response = await axios.post(`${BASE_URL}/booking/new-booking`, {
         checkInDate: userDetails.checkInDate,
         checkOutDate: userDetails.checkOutDate,
@@ -301,7 +349,7 @@ const BookingButton = ({ property, tour }) => {
         property: property ? property._id : null,
         tour: tour ? 'Tour' : null
       });
-      
+
       console.log(response.data);
       initPayment(response.data.order, response.data.booking._id);
       setShowUserDetailsForm(false);
@@ -411,12 +459,12 @@ const BookingButton = ({ property, tour }) => {
       </div>
 
       {showLoginPopup && (
-        <LoginPopup 
-          onClose={() => setShowLoginPopup(false)} 
+        <LoginPopup
+          onClose={() => setShowLoginPopup(false)}
           onLogin={() => {
             setShowLoginPopup(false);
             navigate("/login");
-          }} 
+          }}
         />
       )}
 

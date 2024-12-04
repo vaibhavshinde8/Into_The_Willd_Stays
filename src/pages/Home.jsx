@@ -16,9 +16,9 @@ const Home = () => {
       <GuestExperience />
       <MostViewedProperties />
       <GalleryAndReviews />
-      <InstagramGallery />
       <Testimonials />
       <BlogSection/>
+      <InstagramGallery />
       <PropertiesBanner />
     </>
   );

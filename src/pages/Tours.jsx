@@ -8,7 +8,7 @@ import {
   MessageCircle,
 } from "lucide-react";
 import toursData from "../assets/tours.json";
-import BookingButton from "../components/BookingButton";
+import BookingButtonTours from "../components/BookingButtonTours";
 import OutdoorEvents from "../components/OutdoorEvents";
 
 // Modal Component
@@ -204,12 +204,12 @@ const Tours = () => {
               >
                 View Details
               </button>
-              <BookingButton tour={tour} />
+              <BookingButtonTours tour={tour} />
             </div>
           </motion.div>
         ))}
       </div>
-      {/* <OutdoorEvents/> */}
+      <OutdoorEvents/>
 
       {/* Modal */}
       <Modal isOpen={isModalOpen} onClose={closeModal} tour={selectedTour} />

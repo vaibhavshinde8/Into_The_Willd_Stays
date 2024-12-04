@@ -9,76 +9,10 @@ import {
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { IoPeople } from "react-icons/io5";
 import { Link } from "react-router-dom";
-
-// Import images (keep your existing imports)
-import Image1 from "../assets/itw/IMG-20240530-WA0015.jpg";
-import Image2 from "../assets/pineandtails/pnt1.jpg";
-import Image3 from "../assets/majuli/majuli1.jpeg";
-import Image4 from "../assets/SunandSandGoa/52PM.jpeg";
 import axios from "axios";
 import { useEffect } from "react";
 import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
 import { BASE_URL } from "../utils/baseurl";
-// const properties = [
-//   {
-//     imgURL: Image1,
-//     name: "Into The Wild Stays",
-//     description:
-//       "Stay in a charming hilltop cottage with breathtaking views of Mussoorie's misty mountains and serene surroundings.",
-//     location: "Dhanolti",
-//     rating: 4.6,
-//     reviews: 50,
-//     price: 4000,
-//     bedroom: 4,
-//     guest: 24,
-//     exploremoreRoute: "/exploremoreitw",
-//     tags: ["Mountain", "Scenic", "Luxury"],
-//   },
-//   {
-//     imgURL: Image2,
-//     name: "ITW: Pines And Tails",
-//     description:
-//       "Stay Type;- 4BHK private pool, Seaview Villa, Porvorim North Goa.",
-//     location: "Tehri",
-//     rating: 4.7,
-//     reviews: 30,
-//     price: 3500,
-//     bedroom: 5,
-//     guest: 12,
-//     exploremoreRoute: "/exploremorepnt",
-//     tags: ["Pool", "Seaview", "Modern"],
-//   },
-//   {
-//     imgURL: Image3,
-//     name: "ITW: Me:nam Homestay",
-//     description:
-//       "A tranquil retreat located in the lush green valleys of Dehradun, perfect for unwinding and enjoying the scenic beauty.",
-//     location: "Majuli",
-//     rating: 4.8,
-//     reviews: 40,
-//     price: 3500,
-//     bedroom: 5,
-
-//     guest: 30,
-//     exploremoreRoute: "/exploremoremnm",
-//     tags: ["Eco", "Green", "Tranquil"],
-//   },
-//   {
-//     imgURL: Image4,
-//     name: "ITW: Sun and Sand Villa",
-//     description:
-//       "A tranquil retreat located in the lush green valleys of Dehradun, perfect for unwinding and enjoying the scenic beauty.",
-//     location: "Goa",
-//     rating: 4.8,
-//     reviews: 40,
-//     bedroom: 5,
-//     guest: 10,
-//     price: "11000-16000",
-//     exploremoreRoute: "/exploremoresas",
-//     tags: ["Luxury", "Beach", "Premium"],
-//   },
-// ];
 
 const PropertiesCard = ({ selectedLocation = "All" }) => {
   const [hoveredCard, setHoveredCard] = useState(null);
