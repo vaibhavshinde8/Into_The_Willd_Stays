@@ -97,9 +97,9 @@ const UserDetailsForm = ({ property, tour, onClose, onSubmit }) => {
   };
 
   return (
-    <div className="fixed inset-0  bg-black bg-opacity-50 flex justify-center items-center z-50 p-4">
-      <div className="bg-white p-4 md:p-8 rounded-lg shadow-xl w-full max-w-2xl">
-        <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-center">
+    <div className="fixed inset-0  overflow-y-auto bg-black bg-opacity-50 flex justify-center items-center z-50 pt-32">
+      <div className="bg-white p-4 md:p-8 rounded-lg shadow-xl w-full max-w-2xl ">
+        <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-center pt-32">
           Guest Details
         </h2>
         <form
