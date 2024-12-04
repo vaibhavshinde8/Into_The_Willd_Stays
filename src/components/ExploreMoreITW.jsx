@@ -1,80 +1,27 @@
 import { useState, useEffect } from "react";
 // import { MapPin, Mountain } from "lucide-react"; 
 import { FaArrowAltCircleDown, FaArrowAltCircleUp } from "react-icons/fa";
-import img1 from "../assets/itw/IMG-20240530-WA0015.jpg";
-import img2 from "../assets/itw/IMG-20240530-WA0017.jpg";
-import img3 from "../assets/itw/IMG-20240530-WA0014.jpg";
-import img4 from "../assets/itw/IMG-20240530-WA0019.jpg";
 import BookingButton from "./BookingButton";
-
-const galleryImages = [img1, img2, img3, img4];
-
-const property = {
-    checkInDate: "2024-12-01",
-    checkOutDate: "2024-12-03",
-    price: 4000,
-  };
-
-
-const faqs = [
-  {
-    question: "Is Driver and/or House-Help accommodation available?",
-    answer:
-      "Driver accommodation depends upon the first come first serve basis. It is available at nominal charges. A small room or bunk bed with dinner and breakfast will be provided just nearby the property.",
-  },
-  {
-    question: "Is parking available onsite or nearby?",
-    answer:
-      "Free open parking is available onsite adjacent to our Cafe. There is ample car parking for 6-7 cars at the site.",
-  },
-  {
-    question: "Is the property suitable for a day picnic?",
-    answer:
-      "Yes, the home has a garden/lawn area within the premises that could be used for outdoor picnic activities. Meals will be provided on-site at an additional charge per person, per meal. Please note that the maximum capacity for an overnight stay is 4 people.",
-  },
-  {
-    question: "Is the property pet-friendly?",
-    answer:
-      "We're happy to welcome your furry friends at Into the Wild Stays! Please bring a pet bed along, as pets aren't allowed on guest beds or any linen. Enjoy a comfortable stay for you and your pet in the heart of nature!",
-  },
-];
-
-const bookingPolicies = [
-  "Check in: 1 PM check out: 11 AM",
-  "Guests are requested to shut the windows and doors during the evening as the property may be prone to insects and bugs.",
-  "Guests are not allowed to spill food or drinks over the upholstery or they will be charged at checkout.",
-  "Please be mindful and keep the noise to a minimum after 10 PM.",
-  "Passport, Aadhar, Driving License, and Govt. ID are accepted as ID proof(s).",
-  "The property allows private parties or events.",
-];
-
-const cancellationPolicy = [
-  "Cancellation 12 days prior to arrival: 15% will be charged.",
-  "Cancellation 7 days prior to arrival: 50% will be charged.",
-  "Cancellation less than a week: Full retention would be applicable.",
-  "Credit/Debit card cancellations will be charged 5% extra.",
-  "Cancellation policy for long weekends and special days: Cancellation 7 days prior to arrival: 50% will be charged.",
-  "Cancellation less than a week: Full retention would be applicable.",
-];
-
-const amenities = [
-  "Essentials",
-  "Towels and toiletries",
-  "Add-on experience",
-  "Private entrance",
-  "Serene location.",
-  "Pet friendly",
-  "In-house chef/caretaker ",
-  "Cozy linens",
-  "Bluetooth sound system ",
-  "Wi-Fi ",
-  "Private cottage ",
-  "Garden",
-  "Breakfast",
-];
+import { useParams } from "react-router-dom";
+import axios from "axios";
+import { BASE_URL } from "../utils/baseurl";
 
 const ExploreMoreITW = () => {
   const [openIndex, setOpenIndex] = useState(null);
+  const [property, setProperty] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const { id } = useParams();
+  useEffect(() => {
+    const fetchProperty = async () => {
+      try {
+        const res = await axios.get(`${BASE_URL}/properties/getPropertyById/${id}`);
+        setProperty(res.data.property);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchProperty();
+  }, [id]);
 
   const toggleFaq = (index) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -83,6 +30,43 @@ const ExploreMoreITW = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-yellow-100/50 px-4 sm:px-6 lg:px-32 py-48 sm:py-20 lg:py-40">
+        <div className="animate-pulse space-y-8">
+          {/* Hero Section Skeleton */}
+          <div className="flex flex-col lg:flex-row items-center justify-between space-y-8 lg:space-y-0 lg:space-x-12">
+            <div className="w-full lg:w-1/2">
+              <div className="h-12 bg-gray-200 rounded-lg mb-4"></div>
+              <div className="h-8 bg-gray-200 rounded-lg mb-4 w-3/4"></div>
+              <div className="space-y-3">
+                <div className="h-4 bg-gray-200 rounded w-full"></div>
+                <div className="h-4 bg-gray-200 rounded w-5/6"></div>
+                <div className="h-4 bg-gray-200 rounded w-4/6"></div>
+              </div>
+            </div>
+            
+            {/* Gallery Skeleton */}
+            <div className="w-full lg:w-1/2">
+              <div className="grid grid-cols-2 gap-4">
+                {[1, 2, 3, 4].map((i) => (
+                  <div key={i} className="aspect-square bg-gray-200 rounded-lg"></div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Property Details Skeleton */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            {[1, 2, 3, 4, 5, 6].map((i) => (
+              <div key={i} className="h-24 bg-gray-200 rounded-lg"></div>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-yellow-100/50 px-4 sm:px-6 lg:px-32 py-48 sm:py-20 lg:py-40 text-black">
@@ -119,7 +103,7 @@ const ExploreMoreITW = () => {
                 />
               </svg>
               <span className="text-base sm:text-xl text-gray-700 font-medium">
-                Dhanolti, Mussoorie
+                {property?.location}, Mussoorie
               </span>
             </div>
           </div>
@@ -145,14 +129,14 @@ const ExploreMoreITW = () => {
         {/* Gallery Section */}
         <div className="w-full lg:w-1/2">
           <div className="grid grid-cols-2 gap-4 max-w-2xl mx-auto">
-            {galleryImages.map((image, index) => (
+            {property?.images.map((image, index) => (
               <div
                 key={index}
                 className="aspect-square overflow-hidden  shadow-md hover:shadow-xl transition-shadow duration-300"
               >
                 <img
                   src={image}
-                  alt={`Gallery image ${index + 1}`}
+                  alt={`Gallery image ${image}`}
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
               </div>
@@ -186,7 +170,7 @@ const ExploreMoreITW = () => {
             </div>
             <div>
               <p className="font-semibold text-gray-700">Cottages</p>
-              <p className="text-gray-600">4 Cottages</p>
+              <p className="text-gray-600">{property?.bedroom} Cottages</p>
             </div>
           </div>
 
@@ -209,7 +193,7 @@ const ExploreMoreITW = () => {
             </div>
             <div>
               <p className="font-semibold text-gray-700">Guest Capacity</p>
-              <p className="text-gray-600">4 persons per cottage</p>
+              <p className="text-gray-600">{property?.guest} persons per cottage</p>
             </div>
           </div>
 
@@ -232,7 +216,7 @@ const ExploreMoreITW = () => {
             </div>
             <div>
               <p className="font-semibold text-gray-700">Maximum Capacity</p>
-              <p className="text-gray-600">24 persons</p>
+              <p className="text-gray-600">{property?.guest} persons</p>
             </div>
           </div>
 
@@ -255,7 +239,7 @@ const ExploreMoreITW = () => {
             </div>
             <div>
               <p className="font-semibold text-gray-700">Price Per Cottage</p>
-              <p className="text-gray-600">₹4000</p>
+              <p className="text-gray-600">₹{property?.price}</p>
             </div>
           </div>
 
@@ -315,7 +299,7 @@ const ExploreMoreITW = () => {
             <div>
               <p className="font-semibold text-gray-700">Address</p>
               <p className="text-gray-600">
-                Into The Wild Stays near Eco Park Dhanolti
+                Into The Wild Stays near Eco Park {property?.location}
               </p>
             </div>
           </div>
@@ -329,7 +313,7 @@ const ExploreMoreITW = () => {
         </h2>
         <div className="bg-white bg-opacity-10 backdrop-blur-lg p-6 sm:p-8 rounded-lg shadow-xl">
           <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-            {amenities.map((amenity, index) => (
+            {property?.amenities.map((amenity, index) => (
               <li
                 key={index}
                 className="text-black flex items-center space-x-2"
@@ -348,7 +332,7 @@ const ExploreMoreITW = () => {
           FAQs
         </h2>
         <div className="space-y-4 sm:space-y-6">
-          {faqs.map((faq, index) => (
+          {property?.faqs.map((faq, index) => (
             <div
               key={index}
               className="bg-white bg-opacity-10 backdrop-blur-lg p-4 sm:p-6 rounded-lg shadow-xl cursor-pointer transition-all duration-300 hover:shadow-2xl"
@@ -381,7 +365,7 @@ const ExploreMoreITW = () => {
         </h2>
         <div className="bg-white bg-opacity-10 backdrop-blur-lg p-6 sm:p-8 rounded-lg shadow-xl">
           <ul className="list-disc ml-4 sm:ml-6 space-y-2 sm:space-y-3">
-            {bookingPolicies.map((policy, index) => (
+            {property?.bookingPolicies.map((policy, index) => (
               <li key={index} className="text-black text-sm sm:text-base">
                 {policy}
               </li>
@@ -397,7 +381,7 @@ const ExploreMoreITW = () => {
         </h2>
         <div className="bg-white bg-opacity-10 backdrop-blur-lg p-6 sm:p-8 rounded-lg shadow-xl">
           <ul className="list-disc ml-4 sm:ml-6 space-y-2 sm:space-y-3">
-            {cancellationPolicy.map((policy, index) => (
+            {property?.cancellationPolicy.map((policy, index) => (
               <li key={index} className="text-black text-sm sm:text-base">
                 {policy}
               </li>

@@ -219,6 +219,7 @@ const UserDetailsForm = ({ property, tour, onClose, onSubmit }) => {
 
 
 const BookingButton = ({ property, tour }) => {
+  console.log(property);
   const [loading, setLoading] = useState(false);
   const [showUserDetailsForm, setShowUserDetailsForm] = useState(false);
   const [showLoginPopup, setShowLoginPopup] = useState(false);
@@ -291,13 +292,14 @@ const BookingButton = ({ property, tour }) => {
       // Calculate total amount based on number of days
       const basePrice = property ? property.price : tour.price;
       const totalAmount = basePrice * numberOfDays;
-
       const response = await axios.post(`${BASE_URL}/booking/new-booking`, {
         checkInDate: userDetails.checkInDate,
         checkOutDate: userDetails.checkOutDate,
         amount: totalAmount,
         user: user._id,
-        userDetails: userDetails
+        userDetails: userDetails,
+        property: property ? property._id : null,
+        tour: tour ? 'Tour' : null
       });
       
       console.log(response.data);
@@ -305,7 +307,7 @@ const BookingButton = ({ property, tour }) => {
       setShowUserDetailsForm(false);
     } catch (error) {
       console.log(error);
-      toast.error("Failed to create booking");
+      toast.error(error.response.data.message);
     } finally {
       setLoading(false);
     }
@@ -342,8 +344,7 @@ const BookingButton = ({ property, tour }) => {
             const res = await axios.post(verifyUrl, verifyData);
             if (res.status === 200) {
               toast.success("Payment Successful");
-              // Optional: Redirect to bookings or confirmation page
-              // navigate("/bookings");
+              window.location.reload();
             }
           } catch (err) {
             toast.error(err.response.data.message);
