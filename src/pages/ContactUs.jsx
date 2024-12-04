@@ -8,6 +8,7 @@ const ContactUs = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -31,7 +32,7 @@ const ContactUs = () => {
         console.log("SUCCESS!", response.status, response.text);
         setSuccess(true);
         setIsSubmitting(false);
-        setFormData({ name: "", email: "", message: "" });
+        setFormData({ name: "", email: "", phone: "", message: "" });
       },
       (error) => {
         console.error("FAILED...", error);
@@ -61,7 +62,7 @@ const ContactUs = () => {
             Us */}
           </h1>
           <p className="text-xl text-gray-200 max-w-2xl mb-8">
-          Let's start a conversation
+          Let&apos;s start a conversation
           </p>
         </motion.div>
       </div>
@@ -155,6 +156,25 @@ const ContactUs = () => {
                   required
                   className="w-full px-3 py-2 border border-black focus:outline-none focus:ring-1 focus:ring-black"
                   placeholder="Enter your email"
+                />
+              </div>
+
+              <div>
+                <label
+                  htmlFor="phone"
+                  className="block uppercase text-xs font-bold mb-2"
+                >
+                  Phone
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full px-3 py-2 border border-black focus:outline-none focus:ring-1 focus:ring-black"
+                  placeholder="Enter your phone number"
                 />
               </div>
 

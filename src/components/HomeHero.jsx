@@ -119,7 +119,7 @@ const HomeHero = () => {
                 name="location"
                 value={searchParams.location}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 bg-white border border-gray-300 text-gray-900  focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full h-[46px] px-4 py-3 bg-white border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
               >
                 <option value="" className="text-gray-500">
                   Select Location
@@ -144,7 +144,7 @@ const HomeHero = () => {
                   name="checkIn"
                   value={searchParams.checkIn}
                   onChange={handleInputChange}
-                  className="w-full pl-10 pr-4 py-3 bg-white border border-gray-300 text-gray-900  focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full h-[46px] pl-10 pr-4 py-3 bg-white border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
             </div>
@@ -161,7 +161,7 @@ const HomeHero = () => {
                   name="checkOut"
                   value={searchParams.checkOut}
                   onChange={handleInputChange}
-                  className="w-full pl-10 pr-4 py-3 bg-white border border-gray-300 text-gray-900  focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full h-[46px] pl-10 pr-4 py-3 bg-white border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
             </div>
@@ -173,7 +173,7 @@ const HomeHero = () => {
                 name="adults"
                 value={searchParams.adults}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 bg-white border border-gray-300 text-gray-900  focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full h-[46px] px-4 py-3 bg-white border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
               >
                 {[...Array(9)].map((_, i) => (
                   <option key={i + 1} value={i + 1} className="text-gray-900">
@@ -190,7 +190,7 @@ const HomeHero = () => {
                 name="children"
                 value={searchParams.children}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 bg-white border border-gray-300 text-gray-900  focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full h-[46px] px-4 py-3 bg-white border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
               >
                 {[...Array(9)].map((_, i) => (
                   <option key={i} value={i} className="text-gray-900">
@@ -204,10 +204,10 @@ const HomeHero = () => {
             <div className="md:col-span-1 col-span-2 flex items-end">
               <button
                 onClick={handleSearch}
-                className="w-full py-3 bg-[#0F2642] text-white 
-          hover:bg-blue-700 transition-all duration-300 
+                className="w-full h-[50px] py-3 bg-[#0F2642] text-white border border-white
+          hover:bg-[#0F2642]
           flex items-center justify-center space-x-3 
-           transform hover:scale-105 active:scale-95"
+           "
               >
                 <FaSearch />
                 <span>Explore</span>

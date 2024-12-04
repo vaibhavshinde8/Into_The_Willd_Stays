@@ -13,6 +13,8 @@ const UserDetailsForm = ({ property, tour, onClose, onSubmit }) => {
     specialRequirements: "",
     checkInDate: "",
     checkOutDate: "",
+    adults: 1,
+    children: 0
   });
 
   // Calculate total days and total price
@@ -27,11 +29,23 @@ const UserDetailsForm = ({ property, tour, onClose, onSubmit }) => {
   const calculateTotalPrice = () => {
     const totalDays = calculateTotalDays();
     const basePrice = property ? property.price : tour.price;
-    return totalDays * basePrice;
+    const totalGuests = Number(formData.adults) + Number(formData.children);
+    return totalDays * basePrice * totalGuests;
   };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    
+    if ((name === 'adults' || name === 'children')) {
+      const adults = name === 'adults' ? Number(value) : Number(formData.adults);
+      const children = name === 'children' ? Number(value) : Number(formData.children);
+      
+      if (adults + children > 6) {
+        toast.error("Total number of guests cannot exceed 6");
+        return;
+      }
+    }
+
     setFormData((prevState) => ({
       ...prevState,
       [name]: value,
@@ -144,6 +158,39 @@ const UserDetailsForm = ({ property, tour, onClose, onSubmit }) => {
               value={formData.age}
               onChange={handleChange}
               min="18"
+              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#0F2642]"
+            />
+          </div>
+
+          <div>
+            <label htmlFor="adults" className="block text-gray-700 mb-2">
+              Number of Adults <span className="text-red-500">*</span>
+            </label>
+            <input
+              type="number"
+              id="adults"
+              name="adults"
+              value={formData.adults}
+              onChange={handleChange}
+              min="1"
+              max="6"
+              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#0F2642]"
+              required
+            />
+          </div>
+
+          <div>
+            <label htmlFor="children" className="block text-gray-700 mb-2">
+              Number of Children
+            </label>
+            <input
+              type="number"
+              id="children"
+              name="children"
+              value={formData.children}
+              onChange={handleChange}
+              min="0"
+              max="5"
               className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#0F2642]"
             />
           </div>
@@ -288,9 +335,10 @@ const BookingButton = ({ property, tour }) => {
         (checkOut - checkIn) / (1000 * 60 * 60 * 24)
       );
 
-      // Calculate total amount based on number of days
+      // Calculate total amount based on number of days and guests
       const basePrice = property ? property.price : tour.price;
-      const totalAmount = basePrice * numberOfDays;
+      const totalGuests = Number(userDetails.adults) + Number(userDetails.children);
+      const totalAmount = basePrice * numberOfDays * totalGuests;
 
       const response = await axios.post(`${BASE_URL}/booking/new-booking`, {
         checkInDate: userDetails.checkInDate,
