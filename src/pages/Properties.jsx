@@ -185,7 +185,9 @@ const Properties = () => {
                             {property.name}
                           </h2>
                           <p className="text-gray-600 mb-4">
-                            {property.description}
+                            {property?.description?.length > 250 
+                              ? `${property.description.substring(0, 250)}...` 
+                              : property?.description}
                           </p>
 
                           <div className="flex flex-wrap gap-3 mb-4">

@@ -75,10 +75,10 @@ const ExploreMoreITW = () => {
         <div className="w-full lg:w-1/2">
           <div className="mb-6 sm:mb-8">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-4 leading-tight tracking-tight">
-              Into The Wild:
+              {property?.name}
               <br />
-              <span className="text-green-700">Premium Cottages</span> near Eco
-              Park Dhanolti
+              {/* <span className="text-green-700">Premium Cottages</span> near Eco
+              Park Dhanolti */}
             </h1>
 
             <div className="flex items-center space-x-3 mb-4 sm:mb-6">
@@ -103,16 +103,17 @@ const ExploreMoreITW = () => {
                 />
               </svg>
               <span className="text-base sm:text-xl text-gray-700 font-medium">
-                {property?.location}, Mussoorie
+                {property?.location}
               </span>
             </div>
           </div>
 
           <p className="text-base sm:text-lg text-gray-600 leading-relaxed mb-6 sm:mb-8">
-            Discover our premium cottages nestled near Mussoorie in one of the
+          {property.description}
+            {/* Discover our premium cottages nestled near Mussoorie in one of the
             most serene locations close to Delhi NCR. Experience breathtaking
             valley views, fresh snowfall, and unmatched tranquility—a perfect
-            weekend escape from the city.
+            weekend escape from the city. */}
           </p>
 
           <div className="flex justify-start">
@@ -193,7 +194,7 @@ const ExploreMoreITW = () => {
             </div>
             <div>
               <p className="font-semibold text-gray-700">Guest Capacity</p>
-              <p className="text-gray-600">{property?.guest} persons per cottage</p>
+              <p className="text-gray-600">{property?.guestCapacity} persons per cottage</p>
             </div>
           </div>
 
@@ -216,7 +217,7 @@ const ExploreMoreITW = () => {
             </div>
             <div>
               <p className="font-semibold text-gray-700">Maximum Capacity</p>
-              <p className="text-gray-600">{property?.guest} persons</p>
+              <p className="text-gray-600">{property?.maximumCapacity} persons</p>
             </div>
           </div>
 
@@ -269,7 +270,7 @@ const ExploreMoreITW = () => {
             <div>
               <p className="font-semibold text-gray-700">Location</p>
               <a
-                href="https://maps.app.goo.gl/GMdoxWp7mQPrUSF5A"
+                href={property?.locationlink}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-600 hover:underline"
@@ -299,7 +300,7 @@ const ExploreMoreITW = () => {
             <div>
               <p className="font-semibold text-gray-700">Address</p>
               <p className="text-gray-600">
-                Into The Wild Stays near Eco Park {property?.location}
+               {property.address}
               </p>
             </div>
           </div>

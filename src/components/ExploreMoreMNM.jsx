@@ -318,13 +318,9 @@ const ExploreMoreMNM = () => {
               <p className="font-semibold text-gray-700">Address</p>
               <p className="text-gray-600">
                 Me:nam Homestay,
-                <br />
                 Jengrai Chapori Road,
-                <br />
                 Kesaikhua Gaon, Moghua Chuk,
-                <br />
                 Majuli, Assam - 785105
-                <br />
                 India
               </p>
             </div>
