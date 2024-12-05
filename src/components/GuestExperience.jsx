@@ -170,8 +170,8 @@ const GuestExperience = () => {
           transition={{ duration: 0.8 }}
           className="max-w-5xl mx-auto"
         >
-          <div className="relative px-4 lg:px-8  h-[70vh] p-6 rounded-lg">
-            <div className="max-w-4xl mx-auto text-lg leading-relaxed bg-amber-50 p-2 lg:p-8 rounded-lg  text-gray-800 space-y-6">
+          <div className="relative px-4 lg:px-8  h-[90vh] p-6 rounded-lg">
+            <div className="max-w-4xl mx-auto text-md leading-relaxed bg-amber-50 p-2 lg:p-8 rounded-lg  text-gray-800 space-y-6">
               <p className="relative">
                 {/* <span className="font-extrabold text-2xl text-emerald-800">
                   &gt;{" "}
