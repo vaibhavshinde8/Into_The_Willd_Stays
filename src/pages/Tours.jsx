@@ -140,7 +140,7 @@ const Tours = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 pb-32">
-      <div className="relative h-[70vh] overflow-hidden">
+      <div className="relative h-[70vh] overflow-hidden pt-8">
         <div className="absolute inset-0 bg-[url('https://images.trvl-media.com/lodging/109000000/108380000/108370800/108370765/28b3dc50.jpg?impolicy=resizecrop&rw=1200&ra=fit')] bg-cover bg-center bg-fixed transform scale-105">
           <div className="absolute inset-0 bg-gradient-to-b from-gray-900/20 to-gray-900/60" />
         </div>
@@ -169,7 +169,7 @@ const Tours = () => {
             animate={{ opacity: 1, scale: 1 }}
             whileHover={{ scale: 1.02 }}
             key={tour.id}
-            className="bg-white overflow-hidden shadow-lg border border-gray-100 hover:border-[#43A181] transition-all duration-300"
+            className="bg-white overflow-hidden  p-4 shadow-lg border border-gray-100 hover:border-[#43A181] transition-all duration-300"
           >
             <div className="relative group">
               <img
@@ -209,7 +209,7 @@ const Tours = () => {
           </motion.div>
         ))}
       </div>
-      <OutdoorEvents/>
+      <OutdoorEvents />
 
       {/* Modal */}
       <Modal isOpen={isModalOpen} onClose={closeModal} tour={selectedTour} />

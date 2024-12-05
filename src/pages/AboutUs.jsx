@@ -210,11 +210,6 @@ const AboutUs = () => {
               role: "Kayak Instructor",
               img: Imagesonam,
             },
-            {
-              name: "unk",
-              role: "unk",
-              img: Imageunk,
-            },
           ].map((member, index) => (
             <div
               key={index}
