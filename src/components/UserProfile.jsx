@@ -1,4 +1,4 @@
-import  { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { User, Mail, ArrowLeft, LogOut, Edit } from "lucide-react";
 
@@ -11,7 +11,6 @@ const EditProfileModal = ({ isOpen, onClose, user, onSave }) => {
     dob: user.dob || "",
     gender: user.gender || "",
   });
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -180,7 +179,7 @@ const UserProfile = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
-
+  const localUser = JSON.parse(localStorage.getItem("user"));
   // Check for user authentication
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
@@ -206,6 +205,7 @@ const UserProfile = () => {
   const handleLogout = () => {
     // Remove user from localStorage
     localStorage.removeItem("user");
+    localStorage.removeItem("token");
 
     // Redirect to login page
     navigate("/login", { replace: true });
@@ -244,11 +244,20 @@ const UserProfile = () => {
             {/* Profile Header */}
             <div className="flex flex-col items-center space-y-4">
               <div className="bg-[#0F2642]/10 text-[#0F2642] rounded-full w-24 h-24 flex items-center justify-center">
-                <User className="w-16 h-16" />
+                {user.avatar || localUser.avatar ? (
+                  <img
+                    src={user.avatar || localUser.avatar}
+                    alt="User Avatar"
+                    className="w-20 h-20 rounded-full object-cover"
+                  />
+                ) : (
+                  <User className="w-16 h-16" />
+                )}
               </div>
+
               <div className="text-center">
                 <h2 className="text-2xl font-bold text-[#0F2642]">
-                  {user.name}
+                  {user.name || localUser.name}
                 </h2>
                 <p className="text-[#0F2642]/70 text-sm">Registered User</p>
               </div>
@@ -259,8 +268,17 @@ const UserProfile = () => {
               <div className="flex items-center space-x-3">
                 <Mail className="w-6 h-6 text-[#0F2642]/70" />
                 <div>
-                  <p className="text-sm text-[#0F2642]/70">Email Address</p>
-                  <p className="font-medium text-[#0F2642]">{user.userEmail}</p>
+                  {user.userEmail || localUser.email ? (
+                    <>
+                    <p className="text-sm text-[#0F2642]/70">Email Address</p>
+                    <p className="font-medium text-[#0F2642]">{user.userEmail || localUser.email}</p>
+                    </>
+                  ) : (
+                    <>
+                    <p className="text-sm text-[#0F2642]/70">Phone Number</p>
+                    <p className="font-medium text-[#0F2642]">{user.phone || localUser.phone}</p>
+                    </>
+                  )}
                 </div>
               </div>
             </div>

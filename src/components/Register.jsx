@@ -1,40 +1,70 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { registerUser } from "../api";
 import { useNavigate } from "react-router-dom";
 import { User, AtSign, Lock, Key } from "lucide-react";
 import { BASE_URL } from "../utils/baseurl";
 import axios from "axios";
+import { Link } from "react-router-dom";
+import { GoogleLogin } from '@react-oauth/google';
+import { toast } from "react-toastify";
+import { googleSignup } from "../api";
+
 
 const Register = () => {
   const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+  const [emailorphone, setEmailorphone] = useState("");
   const [password, setPassword] = useState("");
   const [otp, setOtp] = useState("");
   const [error, setError] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [showSuccessDialog, setShowSuccessDialog] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const data = await registerUser(name, email, password);
-      console.log("Registered successfully:", data);
+      setIsLoading(true);
+      const data = await registerUser(name, emailorphone, password);
+      // console.log("Registered successfully:", data);
+      
       setIsModalOpen(true); // Open OTP modal
     } catch (err) {
       setError("Registration failed. Please try again.");
     }
+    setIsLoading(false);
   };
 
+  const handleGoogleSignup = async (response) => {
+    // console.log(response);
+      const res = await googleSignup(response);
+      toast.success(res.data.message);
+      localStorage.setItem("token",res.data.token);
+      localStorage.setItem("user",JSON.stringify(res.data.user));
+      setShowSuccessDialog(true);
+      setTimeout(() => {
+        setShowSuccessDialog(false);
+        navigate("/");
+      }, 2000);
+  }
   const handleOtpSubmit = async () => {
-    console.log(email, otp);
+    // console.log(emailorphone, otp);
     if (otp) {
-      const data = await axios.post(`${BASE_URL}/auth/verify-email`, {email, otp });
-      console.log("OTP verified:", data);
+      setIsLoading(true);
+      const data = await axios.post(`${BASE_URL}/auth/verify-email`, { emailorphone, otp });
+      // console.log("OTP verified:", data);
+      localStorage.setItem("token",data.data.token);
+      localStorage.setItem("user",JSON.stringify(data.data.user));
       if (data.status === 200) {
-        navigate("/login");
+        setShowSuccessDialog(true);
+        setTimeout(() => {
+          setShowSuccessDialog(false);
+          navigate("/");
+        }, 2000);
       } else {
         setError("Invalid OTP. Please try again.");
       }
+      setIsLoading(false);
     } else {
       setError("Invalid OTP. Please try again.");
     }
@@ -73,10 +103,9 @@ const Register = () => {
                 <AtSign className="h-5 w-5 text-teal-500" />
               </div>
               <input
-                type="email"
-                placeholder="Email address"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Email address or phone number"
+                value={emailorphone}
+                onChange={(e) => setEmailorphone(e.target.value)}
                 required
                 className="block w-full pl-10 pr-4 py-3 border border-emerald-300 rounded-lg shadow-sm text-black focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition duration-300 ease-in-out"
               />
@@ -104,6 +133,22 @@ const Register = () => {
                 Create Account
               </button>
             </div>
+            <div className="mt-4 flex justify-center">
+              <GoogleLogin
+                onSuccess={(response) => {
+                  handleGoogleSignup(response);
+                }}
+                onError={() => {
+                  toast.error("Login failed");
+                  // console.log("Login failed");
+                }}
+                useOneTap
+                type="standard"
+                text="continue_with"
+                theme="dark"
+                shape='square'
+              />
+            </div>
           </form>
 
           {error && (
@@ -127,13 +172,13 @@ const Register = () => {
             </div>
 
             <div className="mt-4">
-              <a
-                href="/login"
+              <Link
+                to="/login"
                 className="font-medium text-teal-600 hover:text-teal-500 
                 transition duration-300 ease-in-out hover:underline"
               >
                 Sign in to your account
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -172,6 +217,35 @@ const Register = () => {
               >
                 Cancel
               </button>
+            </div>
+          </div>
+        </div>
+      )}
+      {showSuccessDialog && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white p-8 rounded-2xl shadow-2xl text-center max-w-sm w-full">
+            <div className="flex justify-center mb-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-16 w-16 text-emerald-500"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                <polyline points="22 4 12 14.01 9 11.01" />
+              </svg>
+            </div>
+            <h2 className="text-2xl font-bold text-emerald-900 mb-2">
+              Signup Successful!
+            </h2>
+            <p className="text-emerald-700 mb-4">Start Booking</p>
+            <div className="w-full bg-emerald-100 h-1 rounded-full overflow-hidden">
+              <div
+                className="bg-emerald-500 h-full animate-countdown"
+                style={{ animationDuration: "2s" }}
+              ></div>
             </div>
           </div>
         </div>

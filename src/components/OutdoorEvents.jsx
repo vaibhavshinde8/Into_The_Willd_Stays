@@ -48,7 +48,7 @@ const ContactModal = ({ isOpen, onClose }) => {
 
     emailjs.send(serviceID, templateID, formData, publicKey).then(
       (response) => {
-        console.log("SUCCESS!", response.status, response.text);
+        // console.log("SUCCESS!", response.status, response.text);
         setSuccess(true);
         setIsSubmitting(false);
         setFormData({ name: "", email: "", phone: "", message: "" });

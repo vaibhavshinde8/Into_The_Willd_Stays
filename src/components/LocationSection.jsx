@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaMapMarkerAlt, FaCompass, FaGlobe } from "react-icons/fa";
 
@@ -44,6 +45,7 @@ const locations = [
 
 const LocationSection = () => {
   const navigate = useNavigate();
+  const [activeLocation, setActiveLocation] = useState(null);
 
   return (
     <div className="min-h-screen text-black bg-gradient-to-r from-gray-300 via-white to-gray-200 py-16 px-4 md:px-16 relative overflow-hidden lg:px-32">

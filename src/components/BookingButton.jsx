@@ -264,7 +264,7 @@ const UserDetailsForm = ({ property, tour, onClose, onSubmit }) => {
 };
 
 const BookingButton = ({ property, tour }) => {
-  console.log(property);
+  // console.log(property);
   const [loading, setLoading] = useState(false);
   const [showUserDetailsForm, setShowUserDetailsForm] = useState(false);
   const [showLoginPopup, setShowLoginPopup] = useState(false);
@@ -354,11 +354,11 @@ const BookingButton = ({ property, tour }) => {
         tour: tour ? 'Tour' : null
       });
 
-      console.log(response.data);
+      // console.log(response.data);
       initPayment(response.data.order, response.data.booking._id);
       setShowUserDetailsForm(false);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       toast.error(error.response.data.message);
     } finally {
       setLoading(false);
@@ -402,7 +402,7 @@ const BookingButton = ({ property, tour }) => {
             toast.error(err.response.data.message);
           }
         } catch (err) {
-          console.log(err);
+          // console.log(err);
         }
       },
     };

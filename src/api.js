@@ -1,14 +1,16 @@
 // api.js
+import axios from "axios";
 import { BASE_URL } from "./utils/baseurl";
-export const loginUser = async (email, password) => {
+import { toast } from "react-toastify";
+export const loginUser = async (emailorphone  , password) => {
   try {
-    console.log("API");
-    console.log("Login payload:", { email, password });
+    // console.log("API");
+    // console.log("Login payload:", { emailorphone, password });
 
     const response = await fetch(`${BASE_URL}/auth/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, password }),
+      body: JSON.stringify({ emailorphone, password }),
     });
     if (!response.ok) {
       const errorData = await response.json();
@@ -20,12 +22,12 @@ export const loginUser = async (email, password) => {
     throw error;
   }
 };
-export const registerUser = async (name, email, password) => {
+export const registerUser = async (name, emailorphone, password) => {
   try {
     const response = await fetch(`${BASE_URL}/auth/register`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, email, password }),
+      body: JSON.stringify({ name, emailorphone, password }),
     });
     if (!response.ok) {
       const errorData = await response.json();
@@ -37,3 +39,17 @@ export const registerUser = async (name, email, password) => {
     throw error;
   }
 };
+
+export const googleSignup=async(response)=>{
+  try{
+    const res=await axios.post(`${BASE_URL}/auth/google-signup`,response);
+    // console.log(res);
+    if(res.status===201||res.status===200){
+      return res;
+    }
+  }catch(err){
+    // console.log(err);
+    toast.error(err.response.data.message);
+    throw err;
+  }
+}

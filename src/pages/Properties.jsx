@@ -35,9 +35,6 @@ const Properties = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [properties, setProperties] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  console.log(isLoading);
-  console.log(properties);
-  console.log(filteredProperties);
 
   useEffect(() => {
     const fetchProperties = async () => {
