@@ -97,162 +97,189 @@ const UserDetailsForm = ({ property, tour, onClose, onSubmit }) => {
   };
 
   return (
-    <div className="fixed inset-0  overflow-y-auto bg-black bg-opacity-50 flex justify-center items-center z-50 pt-32">
-      <div className="bg-white p-4 md:p-8 rounded-lg shadow-xl w-full max-w-2xl ">
-        <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-center pt-32">
-          Guest Details
-        </h2>
-        <form
-          onSubmit={handleSubmit}
-          className="grid grid-cols-1 md:grid-cols-2 gap-4"
-        >
-          <div className="md:col-span-2">
-            <label htmlFor="fullName" className="block text-gray-700 mb-2">
-              Lead Contact Person <span className="text-red-500">*</span>
-            </label>
-            <input
-              type="text"
-              id="fullName"
-              name="fullName"
-              value={formData.fullName}
-              onChange={handleChange}
-              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#0F2642]"
-              required
-            />
+    <div className="fixed inset-0 bg-black/70 z-[9999] overflow-y-auto">
+      <div className="min-h-screen flex items-center justify-center p-4">
+        <div className="bg-white w-full max-w-4xl rounded-lg relative">
+          {/* Close button */}
+          <button
+            onClick={onClose}
+            className="absolute right-4 top-4 text-gray-500 hover:text-gray-700 z-50 bg-white rounded-full p-2 shadow-lg"
+          >
+            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+
+          {/* Header */}
+          <div className="bg-[#0F2642] text-white p-6 rounded-t-lg">
+            <h2 className="text-2xl font-bold text-center">
+              Book Your {tour ? 'Tour' : 'Stay'}
+            </h2>
+            {tour && (
+              <p className="text-center mt-2 text-gray-200">
+                {tour.name} - {tour.location}
+              </p>
+            )}
           </div>
 
-          <div>
-            <label htmlFor="phone" className="block text-gray-700 mb-2">
-              Phone Number <span className="text-red-500">*</span>
-            </label>
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              value={formData.phone}
-              onChange={handleChange}
-              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#0F2642]"
-              required
-            />
-          </div>
-
-          {tour && (
-            <>
-              <div>
-                <label htmlFor="startDate" className="block text-gray-700 mb-2">
-                  Start Date <span className="text-red-500">*</span>
-                </label>
-                <input
-                  type="date"
-                  id="startDate"
-                  name="startDate"
-                  value={formData.startDate}
-                  onChange={handleChange}
-                  className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#0F2642]"
-                  required
-                />
-              </div>
-
-              <div>
-                <label
-                  htmlFor="numberOfTourists"
-                  className="block text-gray-700 mb-2"
-                >
-                  Number of Tourists <span className="text-red-500">*</span>
-                </label>
-                <input
-                  type="number"
-                  id="numberOfTourists"
-                  name="numberOfTourists"
-                  min="1"
-                  value={formData.numberOfTourists}
-                  onChange={handleNumberOfTouristsChange}
-                  className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#0F2642]"
-                  required
-                />
-              </div>
-
-              <div className="md:col-span-2">
-                <h3 className="text-lg font-semibold mb-3">Tourist Details</h3>
-                {formData.touristDetails.map((tourist, index) => (
-                  <div key={index} className="grid grid-cols-2 gap-4 mb-4">
+          {/* Form Content */}
+          <div className="p-6 overflow-y-auto max-h-[70vh]">
+            <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Lead Contact Section */}
+              <div className="bg-gray-50 p-4 rounded-lg">
+                <h3 className="font-semibold text-lg mb-4 text-gray-800">Lead Contact Details</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="fullName" className="block text-gray-700 mb-2">
+                      Full Name <span className="text-red-500">*</span>
+                    </label>
                     <input
                       type="text"
-                      placeholder={`Tourist ${index + 1} Name`}
-                      value={tourist.name}
-                      onChange={(e) =>
-                        handleTouristDetailsChange(
-                          index,
-                          "name",
-                          e.target.value
-                        )
-                      }
-                      className="px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#0F2642]"
-                      required
-                    />
-                    <input
-                      type="number"
-                      placeholder="Age"
-                      value={tourist.age}
-                      onChange={(e) =>
-                        handleTouristDetailsChange(index, "age", e.target.value)
-                      }
-                      className="px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#0F2642]"
+                      id="fullName"
+                      name="fullName"
+                      value={formData.fullName}
+                      onChange={handleChange}
+                      className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#0F2642]"
                       required
                     />
                   </div>
-                ))}
+                  <div>
+                    <label htmlFor="phone" className="block text-gray-700 mb-2">
+                      Phone Number <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#0F2642]"
+                      required
+                    />
+                  </div>
+                </div>
               </div>
-            </>
-          )}
 
-          <div className="md:col-span-2">
-            <label
-              htmlFor="specialRequirements"
-              className="block text-gray-700 mb-2"
-            >
-              Special Requirements
-            </label>
-            <textarea
-              id="specialRequirements"
-              name="specialRequirements"
-              value={formData.specialRequirements}
-              onChange={handleChange}
-              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#0F2642]"
-              rows="2"
-              placeholder="Any special requests or requirements"
-            />
-          </div>
-
-          <div className="md:col-span-2">
-            <div className="text-right mb-4">
-              <p className="text-xl font-bold">
-                Total Amount: ₹{calculateTotalPrice()}
-              </p>
+              {/* Tour Specific Fields */}
               {tour && (
-                <p className="text-sm text-gray-600">
-                  (₹{tour.price} × {formData.numberOfTourists} tourists)
-                </p>
-              )}
-            </div>
-          </div>
+                <div className="bg-gray-50 p-4 rounded-lg">
+                  <h3 className="font-semibold text-lg mb-4 text-gray-800">Tour Details</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label htmlFor="startDate" className="block text-gray-700 mb-2">
+                        Start Date <span className="text-red-500">*</span>
+                      </label>
+                      <input
+                        type="date"
+                        id="startDate"
+                        name="startDate"
+                        value={formData.startDate}
+                        onChange={handleChange}
+                        className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#0F2642]"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="numberOfTourists" className="block text-gray-700 mb-2">
+                        Number of Tourists <span className="text-red-500">*</span>
+                      </label>
+                      <input
+                        type="number"
+                        id="numberOfTourists"
+                        name="numberOfTourists"
+                        min="1"
+                        value={formData.numberOfTourists}
+                        onChange={handleNumberOfTouristsChange}
+                        className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#0F2642]"
+                        required
+                      />
+                    </div>
+                  </div>
 
-          <div className="md:col-span-2 flex justify-between space-x-4">
-            <button
-              type="button"
-              onClick={onClose}
-              className="w-full sm:w-1/2 px-4 py-2 bg-gray-200 text-gray-800 rounded hover:bg-gray-300"
-            >
-              Cancel
-            </button>
-            <button
-              type="submit"
-              className="w-full sm:w-1/2 px-4 py-2 bg-[#0F2642] text-white rounded hover:bg-blue-700"
-            >
-              Proceed to Payment
-            </button>
+                  {/* Tourist Details */}
+                  <div className="mt-4">
+                    <h3 className="font-semibold text-lg mb-4 text-gray-800">Tourist Details</h3>
+                    {formData.touristDetails.map((tourist, index) => (
+                      <div key={index} className="grid grid-cols-2 gap-4 mb-4 p-4 border rounded-lg">
+                        <div>
+                          <label className="block text-gray-700 mb-2">
+                            Tourist {index + 1} Name <span className="text-red-500">*</span>
+                          </label>
+                          <input
+                            type="text"
+                            value={tourist.name}
+                            onChange={(e) => handleTouristDetailsChange(index, "name", e.target.value)}
+                            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#0F2642]"
+                            required
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-gray-700 mb-2">
+                            Age <span className="text-red-500">*</span>
+                          </label>
+                          <input
+                            type="number"
+                            value={tourist.age}
+                            onChange={(e) => handleTouristDetailsChange(index, "age", e.target.value)}
+                            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#0F2642]"
+                            required
+                          />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Special Requirements */}
+              <div className="bg-gray-50 p-4 rounded-lg">
+                <label htmlFor="specialRequirements" className="block text-gray-700 mb-2">
+                  Special Requirements
+                </label>
+                <textarea
+                  id="specialRequirements"
+                  name="specialRequirements"
+                  value={formData.specialRequirements}
+                  onChange={handleChange}
+                  className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#0F2642]"
+                  rows="3"
+                  placeholder="Any special requests or requirements"
+                />
+              </div>
+
+              {/* Price Summary */}
+              <div className="bg-gray-50 p-4 rounded-lg">
+                <div className="text-right">
+                  <p className="text-2xl font-bold text-[#0F2642]">
+                    Total Amount: ₹{calculateTotalPrice()}
+                  </p>
+                  {tour && (
+                    <p className="text-sm text-gray-600">
+                      (₹{tour.price} × {formData.numberOfTourists} tourists)
+                    </p>
+                  )}
+                </div>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="flex justify-end space-x-4 pt-4">
+                <button
+                  type="button"
+                  onClick={onClose}
+                  className="px-6 py-3 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300 transition-colors"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  className="px-6 py-3 bg-[#0F2642] text-white rounded-md hover:bg-[#1a3b66] transition-colors"
+                >
+                  Proceed to Payment
+                </button>
+              </div>
+            </form>
           </div>
-        </form>
+        </div>
       </div>
     </div>
   );

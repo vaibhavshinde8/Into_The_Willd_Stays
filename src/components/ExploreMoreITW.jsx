@@ -193,7 +193,9 @@ const ExploreMoreITW = () => {
             </div>
             <div>
               <p className="font-semibold text-gray-700">Guest Capacity</p>
-              <p className="text-gray-600">{property?.guest} persons per cottage</p>
+              <p className="text-gray-600">
+                {property?.guest} persons per cottage
+              </p>
             </div>
           </div>
 
@@ -299,7 +301,8 @@ const ExploreMoreITW = () => {
             <div>
               <p className="font-semibold text-gray-700">Address</p>
               <p className="text-gray-600">
-                Into The Wild Stays near Eco Park {property?.location}
+                {/* Into The Wild Stays near Eco Park */}
+                {property?.location}
               </p>
             </div>
           </div>
