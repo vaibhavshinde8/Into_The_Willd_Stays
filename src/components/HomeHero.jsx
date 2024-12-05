@@ -62,7 +62,7 @@ const HomeHero = () => {
             }`}
           />
         ))}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/70" />
       </div>
 
       {/* Animated Grid Background */}
@@ -85,7 +85,7 @@ const HomeHero = () => {
           transition={{ duration: 0.8, delay: 0.3 }}
         >
           <h1 className="text-5xl md:text-6xl font-medium text-white mb-6 leading-tight">
-            <span className="bg-gradient-to-r from-cyan-400 font-bold to-emerald-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-cyan-300 font-bold to-emerald-300 bg-clip-text text-transparent">
               INTO THE WILD
             </span>
             <br />
