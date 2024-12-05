@@ -17,6 +17,7 @@ import ExploreMoreMNM from "./../components/ExploreMoreMNM";
 import ExploreMoreSAS from "./../components/ExploreMoreSAS";
 import { BlogPost } from "./../components/BlogPost";
 import UserProfile from './../components/UserProfile';
+import Events from "../pages/Events";
 
 const blogs = [];
 
@@ -76,6 +77,10 @@ const router = createBrowserRouter([
       {
         path: "/blog/:id",
         element: <BlogPost blogs={blogs} />,
+      },
+      {
+        path: "/events",
+        element: <Events />,
       },
     ],
   },

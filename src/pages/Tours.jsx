@@ -1,15 +1,8 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import {
-  MapPin,
-  Clock,
-  Phone,
-  Mail,
-  MessageCircle,
-} from "lucide-react";
+import { MapPin, Clock, Phone, Mail, MessageCircle } from "lucide-react";
 import toursData from "../assets/tours.json";
 import BookingButtonTours from "../components/BookingButtonTours";
-import OutdoorEvents from "../components/OutdoorEvents";
 
 // Modal Component
 const Modal = ({ isOpen, onClose, tour }) => {
@@ -153,7 +146,7 @@ const Tours = () => {
         >
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
             <span className="bg-gradient-to-r from-teal-600 to-teal-400 bg-clip-text text-transparent">
-              Tours and Events
+              Tours
             </span>
           </h1>
           <p className="text-xl text-gray-200 max-w-2xl mb-8">
@@ -182,7 +175,6 @@ const Tours = () => {
                 <h3 className="text-3xl font-bold text-white mb-2">
                   {tour.name}
                 </h3>
-                {/* hello */}
                 <div className="flex flex-wrap gap-4 text-white">
                   <div className="flex items-center">
                     <MapPin className="w-4 h-4 mr-2" />
@@ -210,7 +202,6 @@ const Tours = () => {
           </motion.div>
         ))}
       </div>
-      <OutdoorEvents />
 
       {/* Modal */}
       <Modal isOpen={isModalOpen} onClose={closeModal} tour={selectedTour} />
