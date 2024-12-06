@@ -16,7 +16,7 @@ const UserDetailsForm = ({ property, tour, onClose, onSubmit }) => {
     adults: 1,
     children: 0
   });
-
+// hello
   const calculateTotalDays = () => {
     const checkIn = new Date(formData.checkInDate);
     const checkOut = new Date(formData.checkOutDate);
