@@ -1,10 +1,15 @@
-import  { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AtSign, Lock, Loader2 } from "lucide-react";
 import { loginUser } from "../api";
-
+import { Link } from "react-router-dom";
+import axios from "axios";
+import { toast } from "react-toastify";
+import { BASE_URL } from "../utils/baseurl";
+import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
+import { googleSignup } from "../api";
 const Login = () => {
-  const [email, setEmail] = useState("");
+  const [emailorphone, setEmailorphone] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -17,14 +22,12 @@ const Login = () => {
     setIsLoading(true);
 
     try {
-      const data = await loginUser(email, password);
+      const data = await loginUser(emailorphone, password);
       localStorage.setItem("token", data.token);
       localStorage.setItem("user", JSON.stringify(data.user));
-
       // Show success dialog
       setIsLoading(false);
       setShowSuccessDialog(true);
-
       // Automatically navigate to booking page after 2 seconds
       setTimeout(() => {
         setShowSuccessDialog(false);
@@ -35,9 +38,25 @@ const Login = () => {
       setError("Login failed. Please check your credentials.");
     }
   };
+   
+  const handleGoogleLogin = async (response) => {
+      setIsLoading(true);
+      const res=await googleSignup(response);
+      console.log(res);
+      toast.success(res.data.message);
+      localStorage.setItem("token",res.data.token);
+      localStorage.setItem("user",JSON.stringify(res.data.user));
+      setIsLoading(false);
+      setShowSuccessDialog(true);
+      setTimeout(() => {
+        setShowSuccessDialog(false);
+        navigate("/", { state: { user: res.data.user } });
+      }, 2000);
+     setIsLoading(false);
+  }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 flex items-center justify-center px-4 py-8 relative">
+    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 flex items-center justify-center px-4 py-6 relative">
       {/* Login Form */}
       <div className="w-full max-w-md bg-white shadow-2xl rounded-2xl overflow-hidden border border-emerald-100">
         <div className="p-8">
@@ -56,10 +75,9 @@ const Login = () => {
                 <AtSign className="h-5 w-5 text-teal-500" />
               </div>
               <input
-                type="email"
-                placeholder="Email address"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Email address or phone number"
+                value={emailorphone}
+                onChange={(e) => setEmailorphone(e.target.value)}
                 required
                 disabled={isLoading}
                 className="block w-full pl-10 pr-4 py-3 border border-emerald-300 rounded-lg shadow-sm 
@@ -68,7 +86,6 @@ const Login = () => {
                 transition duration-300 ease-in-out"
               />
             </div>
-
             <div className="relative">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                 <Lock className="h-5 w-5 text-teal-500" />
@@ -108,6 +125,23 @@ const Login = () => {
                 )}
               </button>
             </div>
+
+            {/* Google Login Custom Button */}
+            <div className="mt-4 flex justify-center">
+              <GoogleLogin
+                onSuccess={(response) => {
+                  handleGoogleLogin(response);
+                }}
+                onError={() => {
+                  console.log("Login failed");
+                }}
+                useOneTap
+                type="standard"
+                text="continue_with"
+                theme="dark"
+                shape='square'
+              />
+            </div>
           </form>
 
           {error && (
@@ -117,6 +151,7 @@ const Login = () => {
               </p>
             </div>
           )}
+
           <div className="mt-6 text-center">
             <div className="relative">
               <div className="absolute inset-0 flex items-center">
@@ -130,13 +165,13 @@ const Login = () => {
             </div>
 
             <div className="mt-4">
-              <a
-                href="/register"
+              <Link
+                to="/register"
                 className="font-medium text-teal-600 hover:text-teal-500 
                 transition duration-300 ease-in-out hover:underline"
               >
                 Create an account
-              </a>
+              </Link>
             </div>
           </div>
         </div>

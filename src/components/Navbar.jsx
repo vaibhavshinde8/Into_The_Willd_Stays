@@ -163,6 +163,8 @@ export default function Navbar() {
     setIsOpen(!isOpen);
   };
 
+  const token = localStorage.getItem("token");
+
   return (
     <nav
       className={`w-full z-50 bg-white shadow-md transition-all font-ethereal duration-300 fixed ${
@@ -300,7 +302,11 @@ export default function Navbar() {
                 group-hover:rotate-6 
                 transition-transform duration-300"
               />
-              <span className="font-semibold">Profile</span>
+              {token ? (
+                <span className="font-extrabold">Profile</span>
+              ) : (
+                <span className="font-extrabold">Login</span>
+              )}
             </Link>
           </div>
 
@@ -409,8 +415,17 @@ export default function Navbar() {
                   transition-all duration-300"
                   onClick={() => setIsOpen(false)}
                 >
-                  <User className="w-5 h-5 mr-2" />
-                  <span className="font-semibold">Profile</span>
+                  {token ? (
+                    <>
+                      <User className="w-5 h-5 mr-2" />
+                      <span className="font-semibold">Profile</span>
+                    </>
+                  ) : (
+                    <>
+                      <User className="w-5 h-5 mr-2" />
+                      <span className="font-semibold">Login</span>
+                    </>
+                  )}
                 </Link>
               </motion.div>
             </motion.div>

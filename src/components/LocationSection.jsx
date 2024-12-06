@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+>>>>>>> 4f5ef2a1208cb73c1e3d93190baa6acc42ce2c08
 import { motion } from "framer-motion";
 import { FaMapMarkerAlt, FaCompass, FaGlobe } from "react-icons/fa";
 
@@ -38,6 +43,12 @@ const locations = [
 ];
 
 const LocationSection = () => {
+<<<<<<< HEAD
+=======
+  const navigate = useNavigate();
+  const [activeLocation, setActiveLocation] = useState(null);
+
+>>>>>>> 4f5ef2a1208cb73c1e3d93190baa6acc42ce2c08
   return (
     <div className=" text-black bg-gradient-to-br from-blue-100 to-cyan-100 py-16 px-4 md:px-16 relative overflow-hidden lg:px-32">
       <div className="absolute inset-0 backdrop-blur-sm bg-white/30 rounded-3xl"></div>
