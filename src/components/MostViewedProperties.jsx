@@ -3,7 +3,6 @@ import { MapPin, Filter, Compass, Layers, Globe } from "lucide-react";
 import PropertiesCard from "./PropertiesCard";
 import { motion } from "framer-motion";
 
-
 const MostViewedProperties = () => {
   const [selectedLocation, setSelectedLocation] = useState("All");
   const locationsProp = ["All", "Dhanolti", "Tehri", "Majuli", "Goa"];
@@ -11,15 +10,11 @@ const MostViewedProperties = () => {
   return (
     <section
       id="property-most"
-      className="min-h-screen bg-gradient-to-r from-gray-300 via-white to-gray-200  text-black py-16 overflow-hidden lg:px-32"
+      className="min-h-screen bg-gradient-to-br from-blue-100 to-cyan-100 text-black py-16 overflow-hidden lg:px-32 relative"
     >
-      <div className="container mx-auto px-4 relative">
-        {/* Decorative Overlay Elements */}
-        {/* <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
-          <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-cyan-500/10  blur-3xl"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600/10  blur-3xl"></div>
-        </div> */}
+      <div className="absolute inset-0 backdrop-blur-sm bg-white/30 rounded-3xl"></div>
 
+      <div className="container mx-auto relative">
         {/* Header Section */}
         <div className="text-center mb-16 relative z-10">
           <motion.h1
@@ -33,51 +28,37 @@ const MostViewedProperties = () => {
             </span>{" "}
             Properties
           </motion.h1>
-          {/* <p className="text-xl text-gray-800 max-w-2xl mx-auto">
-            Uncover extraordinary destinations that redefine travel experiences
-          </p> */}
         </div>
 
         {/* Main Content Container */}
         <div className="relative z-10">
-          <div className="max-w-6xl mx-auto  backdrop-blur-xl">
-            {/* Header */}
-            {/* <div className="flex items-center justify-between p-6 border-b border-gray-700/30">
-              <div className="flex items-center space-x-4 text-black">
-                <Compass className="w-8 h-8" />
-                <span className="text-xl font-semibold">Destinations</span>
-              </div>
-              <div className="flex items-center space-x-3 text-gray-800">
-                <Layers className="w-6 h-6" />
-                <span className="text-sm uppercase tracking-wider">
-                  Curated Selection
-                </span>
-              </div>
-            </div> */}
-
+          <div className=" mx-auto ">
             {/* Location Filter */}
-            <div className="p-6">
-              <div className="flex flex-wrap gap-3 justify-center mb-8">
+            <div className="p-8">
+              <div className="flex flex-wrap gap-4 justify-center mb-8">
                 {locationsProp.map((location) => (
-                  <button
+                  <motion.button
                     key={location}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
                     className={`
-                      px-6 py-3  text-sm  uppercase tracking-wider transition-all duration-300 
+                      px-8 py-3 text-sm font-semibold uppercase tracking-wider transition-all duration-300 
+                      rounded-full shadow-md hover:shadow-xl
                       ${
                         selectedLocation === location
-                          ? "bg-[#0F2642] text-white shadow-xl font-extrabold underline underline-offset-2 transform -translate-y-1"
-                          : "bg-gray-700/30 text-gray-800 hover:bg-gray-700/50"
+                          ? "bg-[#0F2642] text-white font-extrabold transform -translate-y-1 border-2 border-white/50"
+                          : "bg-white/90 text-gray-800 hover:bg-[#0F2642] hover:text-white border border-gray-200"
                       }
                     `}
                     onClick={() => setSelectedLocation(location)}
                   >
                     {location}
-                  </button>
+                  </motion.button>
                 ))}
               </div>
 
               {/* Properties Card Section */}
-              <div className="mt-8">
+              <div className="mt-12 bg-white/50 p-6 rounded-2xl">
                 <PropertiesCard selectedLocation={selectedLocation} />
               </div>
             </div>

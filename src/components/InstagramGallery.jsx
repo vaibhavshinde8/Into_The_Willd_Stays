@@ -88,7 +88,7 @@ const InstagramGallery = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-gray-300 via-white to-gray-200 p-4 sm:p-8 lg:p-24">
+    <div className="min-h-screen bg-blue-100/50 p-4 sm:p-8 lg:p-24">
       <div className="max-w-5xl mx-auto rounded-lg">
         {/* Profile Header */}
         <motion.div

@@ -1,5 +1,8 @@
+<<<<<<< HEAD
+=======
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+>>>>>>> 4f5ef2a1208cb73c1e3d93190baa6acc42ce2c08
 import { motion } from "framer-motion";
 import { FaMapMarkerAlt, FaCompass, FaGlobe } from "react-icons/fa";
 
@@ -12,7 +15,6 @@ const locations = [
   {
     name: "Dhanolti",
     imgUrl: Image1,
-    route: "/exploremoreitw",
     description: "Serene mountain retreat nestled in the Himalayas",
     temperature: "15°C",
     elevation: "2,200m",
@@ -20,7 +22,6 @@ const locations = [
   {
     name: "Goa",
     imgUrl: Image2,
-    route: "/exploremoresas",
     description: "Vibrant coastal paradise with pristine beaches",
     temperature: "28°C",
     elevation: "Sea Level",
@@ -28,7 +29,6 @@ const locations = [
   {
     name: "Tehri",
     imgUrl: Image3,
-    route: "/exploremorepnt",
     description: "Scenic hill station with breathtaking landscapes",
     temperature: "20°C",
     elevation: "1,600m",
@@ -36,7 +36,6 @@ const locations = [
   {
     name: "Majuli",
     imgUrl: Image4,
-    route: "/exploremoremnm",
     description: "Unique river island with rich cultural heritage",
     temperature: "25°C",
     elevation: "90m",
@@ -44,19 +43,17 @@ const locations = [
 ];
 
 const LocationSection = () => {
+<<<<<<< HEAD
+=======
   const navigate = useNavigate();
   const [activeLocation, setActiveLocation] = useState(null);
 
+>>>>>>> 4f5ef2a1208cb73c1e3d93190baa6acc42ce2c08
   return (
-    <div className="min-h-screen text-black bg-gradient-to-r from-gray-300 via-white to-gray-200 py-16 px-4 md:px-16 relative overflow-hidden lg:px-32">
-      {/* Decorative Grid Background */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-0 bg-grid-white/5 opacity-50"></div>
-      </div>
+    <div className=" text-black bg-gradient-to-br from-blue-100 to-cyan-100 py-16 px-4 md:px-16 relative overflow-hidden lg:px-32">
+      <div className="absolute inset-0 backdrop-blur-sm bg-white/30 rounded-3xl"></div>
 
-      {/* Content Container */}
       <div className="relative z-10 max-w-7xl mx-auto">
-        {/* Section Title */}
         <motion.h1
           className="text-4xl md:text-6xl text-black font-bold mb-12 text-center"
           initial={{ opacity: 0, y: -50 }}
@@ -69,7 +66,6 @@ const LocationSection = () => {
           Extraordinary Destinations
         </motion.h1>
 
-        {/* Locations Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {locations.map((location, index) => (
             <motion.div
@@ -81,35 +77,37 @@ const LocationSection = () => {
                 delay: index * 0.2,
               }}
               className="relative group"
-              onMouseEnter={() => handleLocationHover(location)}
-              onMouseLeave={() => setActiveLocation(null)}
             >
-              <div
-                className="cursor-pointer transform transition-all duration-300 
-                hover:scale-105 relative overflow-hidden border-2 border-gray-400 "
-                onClick={() => navigate(location.route)}
-              >
-                {/* Location Image */}
-                <div className="relative">
+              <div className="relative w-64 h-64 mx-auto">
+                <div className="w-full h-full rounded-full overflow-hidden border-4 border-white/50">
                   <img
                     src={location.imgUrl}
                     alt={location.name}
-                    className="w-full h-64 object-cover  brightness-75 group-hover:brightness-100 transition-all duration-300"
+                    className="w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/70 opacity-75"></div>
+                  <div className="absolute bottom-8 left-0 right-0 text-center">
+                    <h3 className="text-2xl font-bold text-white drop-shadow-lg">
+                      {location.name}
+                    </h3>
+                  </div>
                 </div>
 
-                {/* Location Details */}
-                <div className="p-6 bg-white/10 backdrop-blur-xl">
-                  <div className="flex justify-between items-center mb-4">
-                    <h2 className="text-2xl font-bold text-black">
+                {/* Hover Details */}
+                <div
+                  className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-72 p-4 bg-white/90 backdrop-blur-md rounded-xl 
+                  shadow-xl opacity-0 group-hover:opacity-100 group-hover:-translate-y-20 transition-all duration-300 pointer-events-none"
+                >
+                  <div className="flex justify-between items-center mb-2">
+                    <h2 className="text-xl font-bold text-gray-800">
                       {location.name}
                     </h2>
-                    <FaMapMarkerAlt className="text-cyan-800 text-2xl" />
+                    <FaMapMarkerAlt className="text-cyan-800 text-xl" />
                   </div>
-                  <p className="text-gray-800 mb-4">{location.description}</p>
+                  <p className="text-gray-700 text-sm mb-3">
+                    {location.description}
+                  </p>
 
-                  <div className="flex justify-between text-black">
+                  <div className="flex justify-between text-gray-700 text-sm">
                     <div className="flex items-center space-x-2">
                       <FaGlobe className="text-emerald-800" />
                       <span>{location.elevation}</span>

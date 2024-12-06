@@ -9,8 +9,8 @@ const Modal = ({ isOpen, onClose, tour }) => {
   if (!isOpen || !tour) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-white p-8 w-full max-w-3xl h-[80vh] overflow-y-auto text-wrap transition-all duration-300">
+    <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center z-50">
+      <div className="bg-white/90 backdrop-blur-md p-8 w-full max-w-3xl h-[80vh] overflow-y-auto text-wrap transition-all duration-300 rounded-2xl">
         <button
           onClick={onClose}
           className="absolute top-4 right-4 text-3xl text-white bg-black px-4 py-2 border"
@@ -162,7 +162,7 @@ const Tours = () => {
             animate={{ opacity: 1, scale: 1 }}
             whileHover={{ scale: 1.02 }}
             key={tour.id}
-            className="bg-white overflow-hidden  p-4 shadow-lg border border-gray-100 hover:border-[#43A181] transition-all duration-300"
+            className="bg-white/90 backdrop-blur-sm overflow-hidden rounded-2xl p-4 shadow-lg border border-gray-100 hover:border-[#43A181] transition-all duration-300"
           >
             <div className="relative group">
               <img
@@ -193,7 +193,7 @@ const Tours = () => {
             <div className="flex items-center justify-center bg-gray-50 p-4 border-t border-gray-100">
               <button
                 onClick={() => openModal(tour)}
-                className="bg-[#43A181] text-white px-6 py-2 text-lg hover:bg-[#367d57] transition-all duration-300"
+                className="bg-[#43A181] text-white px-6 py-2 text-lg hover:bg-[#367d57] transition-all duration-300 rounded-full"
               >
                 View Details
               </button>

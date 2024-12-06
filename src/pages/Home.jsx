@@ -37,7 +37,7 @@ const Home = () => {
       <MostViewedProperties />
       <GalleryAndReviews />
       <Testimonials />
-      <BlogSection/>
+      <BlogSection />
       <InstagramGallery />
       <PropertiesBanner />
     </>

@@ -6,12 +6,15 @@ import {
   FaCalendar,
   // FaRocket,
 } from "react-icons/fa";
-import heroImage1 from "../assets/banner/b1.jpeg";
-import heroImage2 from "../assets/banner/b2.jpeg";
-import heroImage3 from "../assets/banner/b3.jpeg";
-import heroImage4 from "../assets/banner/b3.jpeg";
+import heroImage1 from "../assets/guestdiary/img-2.jpg";
+import heroImage2 from "../assets/banner/b1.jpeg";
+import heroImage3 from "../assets/guestdiary/img-1.jpeg";
+import heroImage4 from "../assets/banner/b4.jpeg";
+import heroImage5 from "../assets/banner/b3.jpeg";
+// import heroImage2 from "../assets/banner/b2.jpeg";
+// import heroImage5 from "../assets/guestdiary/img-3.jpeg";
 
-const images = [heroImage1, heroImage4, heroImage3, heroImage2];
+const images = [heroImage1, heroImage2, heroImage3, heroImage4, heroImage5];
 const locations = ["Dhanolti", "Goa", "Tehri", "Majuli"];
 
 const HomeHero = () => {
@@ -57,17 +60,17 @@ const HomeHero = () => {
             key={index}
             src={img}
             alt={`Background ${index + 1}`}
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 rounded-b-3xl ${
               index === currentImageIndex ? "opacity-100" : "opacity-0"
             }`}
           />
         ))}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/70 rounded-b-3xl" />
       </div>
 
       {/* Animated Grid Background */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-0 bg-grid-white/5 opacity-50"></div>
+        <div className="absolute inset-0 bg-grid-white/5 opacity-50 rounded-b-3xl"></div>
       </div>
 
       {/* Content Container */}
@@ -101,12 +104,12 @@ const HomeHero = () => {
 
       {/* Search Form - Updated with plain white background and larger padding */}
       <motion.div
-        className="relative z-10 shadow-2xl "
+        className="relative z-10 shadow-2xl rounded-3xl"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.5 }}
       >
-        <div className="container mx-auto px-4 lg:px-8 py-16">
+        <div className="container mx-auto px-4 lg:px-8 py-16 rounded-3xl">
           {/* <h2 className="text-3xl text-white font-bold mb-8 text-center">
             Find Your Next Adventure
           </h2> */}
@@ -119,7 +122,7 @@ const HomeHero = () => {
                 name="location"
                 value={searchParams.location}
                 onChange={handleInputChange}
-                className="w-full h-[46px] px-4 py-3 bg-white border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full h-[46px] px-4 py-3 bg-white border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-3xl"
               >
                 <option value="" className="text-gray-500">
                   Select Location
@@ -144,7 +147,7 @@ const HomeHero = () => {
                   name="checkIn"
                   value={searchParams.checkIn}
                   onChange={handleInputChange}
-                  className="w-full h-[46px] pl-10 pr-4 py-3 bg-white border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full h-[46px] pl-10 pr-4 py-3 bg-white border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-3xl"
                 />
               </div>
             </div>
@@ -161,7 +164,7 @@ const HomeHero = () => {
                   name="checkOut"
                   value={searchParams.checkOut}
                   onChange={handleInputChange}
-                  className="w-full h-[46px] pl-10 pr-4 py-3 bg-white border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full h-[46px] pl-10 pr-4 py-3 bg-white border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-3xl"
                 />
               </div>
             </div>
@@ -173,7 +176,7 @@ const HomeHero = () => {
                 name="adults"
                 value={searchParams.adults}
                 onChange={handleInputChange}
-                className="w-full h-[46px] px-4 py-3 bg-white border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full h-[46px] px-4 py-3 bg-white border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-3xl"
               >
                 {[...Array(9)].map((_, i) => (
                   <option key={i + 1} value={i + 1} className="text-gray-900">
@@ -190,7 +193,7 @@ const HomeHero = () => {
                 name="children"
                 value={searchParams.children}
                 onChange={handleInputChange}
-                className="w-full h-[46px] px-4 py-3 bg-white border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full h-[46px] px-4 py-3 bg-white border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-3xl"
               >
                 {[...Array(9)].map((_, i) => (
                   <option key={i} value={i} className="text-gray-900">
@@ -207,7 +210,7 @@ const HomeHero = () => {
                 className="w-full h-[50px] py-3 bg-[#0F2642] text-white border border-white
           hover:bg-[#0F2642]
           flex items-center justify-center space-x-3 
-           "
+          rounded-3xl"
               >
                 <FaSearch />
                 <span>Explore</span>
@@ -217,7 +220,7 @@ const HomeHero = () => {
         </div>
       </motion.div>
       {/* Decorative Elements */}
-      <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black/30 to-transparent"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black/30 to-transparent "></div>
     </div>
   );
 };
