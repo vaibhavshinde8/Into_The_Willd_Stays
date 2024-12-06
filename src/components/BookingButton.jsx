@@ -340,7 +340,7 @@ const BookingButton = ({ property, tour }) => {
       const totalGuests = Number(userDetails.adults) + Number(userDetails.children);
       const guestCapacity=property?.guestCapacity;
       const roomBooked=Math.ceil(totalGuests/guestCapacity);
-      const totalAmount = basePrice * roomBooked*numberOfDays;
+      const totalAmount = basePrice * roomBooked*numberOfDays * 0.2;
 
       const response = await axios.post(`${BASE_URL}/booking/new-booking`, {
         checkInDate: userDetails.checkInDate,
