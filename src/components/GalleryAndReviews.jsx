@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Quote, Globe, Star, Link as LinkIcon } from "lucide-react";
+import { Quote, Star, Link as LinkIcon } from "lucide-react";
 import Image2 from "../assets/guestdiary/img-1.jpeg";
 import Image3 from "../assets/guestdiary/img-2.jpg";
 import Image4 from "../assets/guestdiary/img-3.jpeg";
@@ -21,7 +21,7 @@ const testData = [
   },
   {
     type: "review",
-    name: "Hrishabh Vashishtha",
+    name: "Hrishabh Vashishtha", 
     review:
       "Into the Wild is an absolute gem! The interiors are cozy, the location is stunning, and the peaceful surroundings make it a perfect retreat.",
     location: "Dhanaulti, Uttarakhand",
@@ -56,110 +56,119 @@ const GalleryAndReviews = () => {
       : testData.filter((item) => item.type === activeFilter);
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-gray-300 via-white to-gray-200 text-black py-16 relative overflow-hidden lg:px-32">
-      {/* Decorative Background Elements */}
-      {/* <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-800/10 -full blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-800/10 -full blur-3xl"></div>
-      </div> */}
+    <div className="min-h-screen bg-gradient-to-br from-blue-100 to-cyan-100 py-20 relative overflow-hidden lg:px-32">
+      <div className="absolute inset-0 backdrop-blur-md bg-white/40"></div>
 
-      {/* Content Container */}
-      <div className="container mx-auto px-4 relative z-10">
-        {/* Header Section */}
-        <div className="text-center mb-16">
-          <div className="flex justify-center items-center space-x-4 mb-6">
-            <motion.h1
-              className="text-4xl md:text-6xl text-black font-bold mb-12 text-center"
-              initial={{ opacity: 0, y: -50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <span className="bg-gradient-to-r from-cyan-800 to-emerald-800 bg-clip-text text-transparent">
-                Guest
-              </span>{" "}
-              Testimonials
-            </motion.h1>
-          </div>
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="text-center mb-20">
+          <motion.h1
+            className="text-5xl md:text-6xl font-bold mb-6"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <span className="bg-gradient-to-r from-cyan-800 to-emerald-800 bg-clip-text text-transparent">
+              Guest <span className="text-black">Diary</span>
+            </span>
+          </motion.h1>
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+            Discover what our guests have to say about their memorable
+            experiences with us
+          </p>
+        </div>
 
-          {/* Filter Section */}
-          <div className="flex justify-center mb-12 space-x-4">
-            {["all", "image", "review"].map((filter) => (
-              <button
-                key={filter}
-                onClick={() => setActiveFilter(filter)}
-                className={`
-                px-6 py-3  uppercase tracking-wider transition-all duration-300
+        <div className="flex justify-center mb-16 space-x-6">
+          {["all", "image", "review"].map((filter) => (
+            <motion.button
+              key={filter}
+              onClick={() => setActiveFilter(filter)}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className={`
+                px-8 py-3 rounded-full text-sm font-semibold uppercase tracking-wider transition-all duration-300
                 ${
                   activeFilter === filter
-                    ? "bg-[#0F2642] font-extrabold underline underline-offset-2  text-white shadow-xl"
-                    : "bg-gray-700/30 text-white hover:bg-gray-700/50"
+                    ? "bg-[#0F2642] text-white shadow-lg transform -translate-y-1"
+                    : "bg-white/80 text-gray-700 hover:bg-[#0F2642] hover:text-white border border-[#0F2642]/20"
                 }
               `}
-              >
-                {filter}
-              </button>
-            ))}
-          </div>
+            >
+              {filter}
+            </motion.button>
+          ))}
+        </div>
 
-          {/* Gallery Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredContent.map((item, index) => (
-              <div
-                key={index}
-                className="group relative overflow-hidden shadow-2xl border border-gray-700/50 bg-gray-800/50 backdrop-blur-xl"
-              >
-                {item.type === "image" ? (
-                  <div className="relative overflow-hidden">
-                    <img
-                      src={item.imgSrc}
-                      alt={item.caption || `Gallery item ${index + 1}`}
-                      className="w-full h-[350px] object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
-                    {item.caption && (
-                      <div className="absolute inset-0  bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
-                        <p className="text-gray-100 text-lg font-medium">
-                          {item.caption}
-                        </p>
-                      </div>
-                    )}
-                  </div>
-                ) : (
-                  <div className="p-8 space-y-4 h-full flex flex-col">
-                    <div className="flex items-center justify-between">
-                      <Quote className="w-8 h-8 text-cyan-800" />
-                      <div className="flex space-x-1 text-yellow-400">
-                        {[...Array(4)].map((_, i) => (
-                          <Star key={i} className="w-5 h-5 fill-current" />
-                        ))}
-                      </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+          {filteredContent.map((item, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="group relative overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
+            >
+              {item.type === "image" ? (
+                <div className="relative overflow-hidden rounded-3xl h-[450px]">
+                  <img
+                    src={item.imgSrc}
+                    alt={item.caption || `Gallery item ${index + 1}`}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent group-hover:from-black/90 transition-all duration-300">
+                    <div className="absolute bottom-0 left-0 right-0 p-8 transform translate-y-6 group-hover:translate-y-0 transition-transform duration-300">
+                      <p className="text-white text-xl font-semibold leading-relaxed">
+                        {item.caption}
+                      </p>
                     </div>
+                  </div>
+                </div>
+              ) : (
+                <div className="p-8 h-[450px] flex flex-col bg-gradient-to-br from-white/95 to-white/90 backdrop-blur-xl rounded-3xl border-2 border-[#0F2642]/10 hover:border-[#0F2642]/30 transition-all duration-300">
+                  <div className="flex items-center justify-between mb-6">
+                    <Quote className="w-12 h-12 text-[#0F2642] opacity-80" />
+                    <div className="flex space-x-1 text-amber-400">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-5 h-5 fill-current" />
+                      ))}
+                    </div>
+                  </div>
+
+                  <p className="italic text-gray-700 text-lg flex-grow leading-relaxed mb-6">
+                    &ldquo;{item.review}&rdquo;
+                  </p>
+
+                  <div className="mt-auto">
                     <div className="flex items-center space-x-4 mb-4">
                       <img
                         src={item.img}
                         alt={item.name}
-                        className="w-16 h-16 -full object-cover border-2 border-cyan-400"
+                        className="w-16 h-16 rounded-full object-cover ring-4 ring-[#0F2642]/10 shadow-lg"
                       />
                       <div>
-                        <p className="text-xl font-semibold text-gray-100">
+                        <p className="text-xl font-semibold text-gray-800">
                           {item.name}
                         </p>
-                        <p className="text-gray-300 text-sm">{item.location}</p>
+                        <div className="flex items-center text-[#0F2642] text-sm mt-1">
+                          <LinkIcon className="w-4 h-4 mr-2" />
+                          {item.location}
+                        </div>
                       </div>
                     </div>
-                    <p className="italic text-gray-100 text-lg flex-grow">
-                      "{item.review}"
-                    </p>
-                    <div className="flex items-center justify-between mt-4">
-                      <LinkIcon className="w-5 h-5 text-gray-100" />
-                      <span className="text-sm text-gray-100">
+
+                    <div className="flex items-center justify-between pt-4 border-t border-[#0F2642]/10">
+                      <span className="text-sm font-medium text-[#0F2642] flex items-center">
+                        <LinkIcon className="w-4 h-4 mr-2" />
                         Verified Stay
+                      </span>
+                      <span className="text-sm text-gray-500">
+                        {new Date().toLocaleDateString()}
                       </span>
                     </div>
                   </div>
-                )}
-              </div>
-            ))}
-          </div>
+                </div>
+              )}
+            </motion.div>
+          ))}
         </div>
       </div>
     </div>

@@ -1,4 +1,4 @@
-import  { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import { Star, Quote, Play, Pause } from "lucide-react";
@@ -77,10 +77,10 @@ const Testimonials = () => {
   };
 
   return (
-    <div className="bg-gradient-to-r from-gray-300 via-white to-gray-200 py-16 px-4">
+    <div className="bg-gradient-to-br from-blue-50 to-blue-100 py-20 px-6 rounded-3xl">
       <div className="max-w-6xl mx-auto">
         <motion.h1
-          className="text-4xl md:text-6xl text-black font-bold mb-12 text-center"
+          className="text-4xl md:text-6xl font-bold mb-16 text-center"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -103,27 +103,29 @@ const Testimonials = () => {
             768: { slidesPerView: 2, spaceBetween: 30 },
             1024: { slidesPerView: 3, spaceBetween: 40 },
           }}
+          className="pb-12"
         >
           {testData.map((testimonial, index) => (
             <SwiperSlide key={index}>
-              <div className="bg-gray-100 p-6 rounded-lg shadow-md h-full flex flex-col">
-                <Quote className="text-gray-300 mb-4" size={40} />
+              <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 h-full flex flex-col border border-[#0F2642]/10">
+                <Quote className="text-[#0F2642]/20 mb-6" size={40} />
 
-                <div className="flex flex-col items-center mb-4">
+                <div className="flex flex-col items-center mb-6">
                   <img
                     src={testimonial.img}
                     alt={`${testimonial.name}'s profile`}
-                    className="w-16 h-16 rounded-full object-cover mb-3"
+                    className="w-20 h-20 rounded-full object-cover mb-4 border-4 border-[#0F2642]/10 shadow-md"
                   />
-                  <h3 className="text-lg font-semibold">{testimonial.name}</h3>
-                  <div className="flex space-x-1 text-yellow-500 mt-1">
+                  <h3 className="text-xl font-semibold text-[#0F2642]">{testimonial.name}</h3>
+                  <p className="text-sm text-gray-500 mt-1">{testimonial.address}</p>
+                  <div className="flex space-x-1 text-[#0F2642] mt-2">
                     {[...Array(testimonial.rating)].map((_, i) => (
                       <Star key={i} size={16} fill="currentColor" />
                     ))}
                   </div>
                 </div>
 
-                <p className="text-center text-gray-700 italic flex-grow">
+                <p className="text-center text-gray-700 italic flex-grow leading-relaxed">
                   &ldquo;{testimonial.review}&rdquo;
                 </p>
               </div>
@@ -131,33 +133,30 @@ const Testimonials = () => {
           ))}
         </Swiper>
 
-        {/* Video Testimonial Section */}
-        <div className="mt-20">
-          {/* <h2 className="text-3xl font-bold text-center mb-10">
-            Featured Video Testimonial
-          </h2> */}
-          <div className="max-w-3xl mx-auto relative rounded-xl overflow-hidden shadow-2xl group">
+        <div className="mt-24">
+          <div className="max-w-4xl mx-auto relative rounded-3xl overflow-hidden shadow-2xl group">
             <video
               ref={videoRef}
               className="w-full aspect-video object-cover"
-              // poster="/path-to-video-thumbnail.jpg" // Add your video thumbnail
-              src={VideoTestimonial1} // Add your video source
+              src={VideoTestimonial1}
             />
-            <div 
-              className="absolute inset-0 flex items-center justify-center cursor-pointer"
+            <div
+              className="absolute inset-0 flex items-center justify-center cursor-pointer bg-[#0F2642]/10 group-hover:bg-[#0F2642]/20 transition-all duration-300"
               onClick={toggleVideo}
             >
-              <div className={`w-16 h-16 rounded-full bg-white/30 backdrop-blur-sm flex items-center justify-center transition-transform hover:scale-110 ${isPlaying ? 'opacity-0 group-hover:opacity-100 transition-opacity' : ''}`}>
+              <div
+                className={`w-20 h-20 rounded-full bg-[#0F2642]/80 backdrop-blur-sm flex items-center justify-center transition-all duration-300 hover:scale-110 hover:bg-[#0F2642] ${
+                  isPlaying ? "opacity-0 group-hover:opacity-100" : ""
+                }`}
+              >
                 {isPlaying ? (
-                  <Pause className="w-8 h-8 text-white" />
+                  <Pause className="w-10 h-10 text-white" />
                 ) : (
-                  <Play className="w-8 h-8 text-white ml-1" />
+                  <Play className="w-10 h-10 text-white ml-1" />
                 )}
               </div>
             </div>
-            <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent">
-              {/* <h3 className="text-white font-semibold text-xl">John Doe</h3>
-              <p className="text-gray-200">Happy Guest at Dhanaulti</p> */}
+            <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-[#0F2642]/90 to-transparent">
             </div>
           </div>
         </div>

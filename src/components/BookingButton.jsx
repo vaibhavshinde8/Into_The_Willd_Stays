@@ -60,13 +60,6 @@ const UserDetailsForm = ({ property, tour, onClose, onSubmit }) => {
       return;
     }
 
-    // // Email validation
-    // const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    // if (!emailRegex.test(formData.email)) {
-    //   toast.error('Please enter a valid email address');
-    //   return;
-    // }
-
     // Phone validation (simple check for 10 digits)
     const phoneRegex = /^\d{10}$/;
     if (!phoneRegex.test(formData.phone)) {
@@ -92,17 +85,17 @@ const UserDetailsForm = ({ property, tour, onClose, onSubmit }) => {
   };
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 p-4">
-      <div className="bg-white p-4 md:p-8 rounded-lg shadow-xl w-full max-w-2xl">
-        <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-center">
+    <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex justify-center items-center z-50 p-4">
+      <div className="bg-white/90 p-6 md:p-8 rounded-2xl shadow-2xl w-full max-w-2xl border border-gray-200">
+        <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8 text-center bg-gradient-to-r from-[#0F2642] to-blue-600 bg-clip-text text-transparent">
           Guest Details
         </h2>
         <form
           onSubmit={handleSubmit}
-          className="grid grid-cols-1 md:grid-cols-2 gap-4"
+          className="grid grid-cols-1 md:grid-cols-2 gap-6"
         >
           <div className="md:col-span-2">
-            <label htmlFor="fullName" className="block text-gray-700 mb-2">
+            <label htmlFor="fullName" className="block text-gray-700 mb-2 font-medium">
               Full Name <span className="text-red-500">*</span>
             </label>
             <input
@@ -111,28 +104,13 @@ const UserDetailsForm = ({ property, tour, onClose, onSubmit }) => {
               name="fullName"
               value={formData.fullName}
               onChange={handleChange}
-              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#0F2642]"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0F2642] focus:border-transparent transition duration-200"
               required
             />
           </div>
 
-          {/* <div className="mb-4">
-            <label htmlFor="email" className="block text-gray-700 mb-2">
-              Email <span className="text-red-500">*</span>
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#0F2642]"
-              required
-            />
-          </div> */}
-
           <div>
-            <label htmlFor="phone" className="block text-gray-700 mb-2">
+            <label htmlFor="phone" className="block text-gray-700 mb-2 font-medium">
               Phone Number <span className="text-red-500">*</span>
             </label>
             <input
@@ -141,13 +119,13 @@ const UserDetailsForm = ({ property, tour, onClose, onSubmit }) => {
               name="phone"
               value={formData.phone}
               onChange={handleChange}
-              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#0F2642]"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0F2642] focus:border-transparent transition duration-200"
               required
             />
           </div>
 
           <div>
-            <label htmlFor="age" className="block text-gray-700 mb-2">
+            <label htmlFor="age" className="block text-gray-700 mb-2 font-medium">
               Age
             </label>
             <input
@@ -157,12 +135,12 @@ const UserDetailsForm = ({ property, tour, onClose, onSubmit }) => {
               value={formData.age}
               onChange={handleChange}
               min="18"
-              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#0F2642]"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0F2642] focus:border-transparent transition duration-200"
             />
           </div>
 
           <div>
-            <label htmlFor="adults" className="block text-gray-700 mb-2">
+            <label htmlFor="adults" className="block text-gray-700 mb-2 font-medium">
               Number of Adults <span className="text-red-500">*</span>
             </label>
             <input
@@ -173,13 +151,13 @@ const UserDetailsForm = ({ property, tour, onClose, onSubmit }) => {
               onChange={handleChange}
               min="1"
               max="6"
-              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#0F2642]"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0F2642] focus:border-transparent transition duration-200"
               required
             />
           </div>
 
           <div>
-            <label htmlFor="children" className="block text-gray-700 mb-2">
+            <label htmlFor="children" className="block text-gray-700 mb-2 font-medium">
               Number of Children
             </label>
             <input
@@ -190,14 +168,14 @@ const UserDetailsForm = ({ property, tour, onClose, onSubmit }) => {
               onChange={handleChange}
               min="0"
               max="5"
-              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#0F2642]"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0F2642] focus:border-transparent transition duration-200"
             />
           </div>
 
           <div className="md:col-span-2">
             <label
               htmlFor="specialRequirements"
-              className="block text-gray-700 mb-2"
+              className="block text-gray-700 mb-2 font-medium"
             >
               Special Requirements
             </label>
@@ -206,14 +184,14 @@ const UserDetailsForm = ({ property, tour, onClose, onSubmit }) => {
               name="specialRequirements"
               value={formData.specialRequirements}
               onChange={handleChange}
-              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#0F2642]"
-              rows="1"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0F2642] focus:border-transparent transition duration-200"
+              rows="2"
               placeholder="Any special requests or requirements"
             />
           </div>
 
-          <div className="mb-4">
-            <label htmlFor="checkInDate" className="block text-gray-700 mb-2">
+          <div>
+            <label htmlFor="checkInDate" className="block text-gray-700 mb-2 font-medium">
               Check-in Date
             </label>
             <input
@@ -222,13 +200,13 @@ const UserDetailsForm = ({ property, tour, onClose, onSubmit }) => {
               name="checkInDate"
               value={formData.checkInDate}
               onChange={handleChange}
-              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#0F2642]"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0F2642] focus:border-transparent transition duration-200"
               required
             />
           </div>
 
-          <div className="mb-4">
-            <label htmlFor="checkOutDate" className="block text-gray-700 mb-2">
+          <div>
+            <label htmlFor="checkOutDate" className="block text-gray-700 mb-2 font-medium">
               Check-out Date
             </label>
             <input
@@ -237,22 +215,22 @@ const UserDetailsForm = ({ property, tour, onClose, onSubmit }) => {
               name="checkOutDate"
               value={formData.checkOutDate}
               onChange={handleChange}
-              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#0F2642]"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0F2642] focus:border-transparent transition duration-200"
               required
             />
           </div>
 
-          <div className="flex justify-between space-x-4">
+          <div className="md:col-span-2 flex justify-between space-x-4 mt-4">
             <button
               type="button"
               onClick={onClose}
-              className="w-full sm:w-1/2 px-4 py-2 bg-gray-200 text-gray-800 rounded hover:bg-gray-300"
+              className="w-full sm:w-1/2 px-6 py-3 bg-gray-100 text-gray-800 rounded-xl hover:bg-gray-200 transition duration-200 font-medium"
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="w-full sm:w-1/2 px-4 py-2 bg-[#0F2642] text-white rounded hover:bg-blue-700"
+              className="w-full sm:w-1/2 px-6 py-3 bg-[#0F2642] text-white rounded-xl hover:bg-[#1a3b66] transition duration-200 font-medium"
             >
               Proceed to Payment
             </button>
@@ -298,24 +276,24 @@ const BookingButton = ({ property, tour }) => {
 
   const LoginPopup = ({ onClose, onLogin }) => {
     return (
-      <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-        <div className="bg-white p-8 rounded-lg shadow-xl max-w-md w-full">
-          <h2 className="text-2xl font-bold mb-6 text-center">
+      <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex justify-center items-center z-50">
+        <div className="bg-white/90 p-8 rounded-2xl shadow-2xl max-w-md w-full border border-gray-200">
+          <h2 className="text-2xl font-bold mb-6 text-center bg-gradient-to-r from-[#0F2642] to-blue-600 bg-clip-text text-transparent">
             Login Required
           </h2>
-          <p className="text-center mb-6">You need to log in to proceed.</p>
+          <p className="text-center mb-8 text-gray-600">You need to log in to proceed.</p>
           <div className="flex justify-between space-x-4">
             <button
               type="button"
               onClick={onClose}
-              className="w-full px-4 py-2 bg-gray-200 text-gray-800 rounded hover:bg-gray-300"
+              className="w-full px-6 py-3 bg-gray-100 text-gray-800 rounded-xl hover:bg-gray-200 transition duration-200 font-medium"
             >
               Cancel
             </button>
             <button
               type="button"
               onClick={onLogin}
-              className="w-full px-4 py-2 bg-[#0F2642] text-white rounded hover:bg-blue-700"
+              className="w-full px-6 py-3 bg-[#0F2642] text-white rounded-xl hover:bg-[#1a3b66] transition duration-200 font-medium"
             >
               Log In
             </button>
@@ -412,12 +390,12 @@ const BookingButton = ({ property, tour }) => {
 
   return (
     <>
-      <div className="flex justify-center items-center p-4">
+      <div className="flex justify-center items-center p-2">
         <button
           onClick={handleProceed}
           disabled={loading}
           className={`
-            px-6 py-3 
+            px-8 py-4
             text-white 
             font-semibold 
             text-lg 
@@ -429,7 +407,9 @@ const BookingButton = ({ property, tour }) => {
             focus:outline-none 
             focus:ring-2 
             focus:ring-offset-2 
-            ${loading ? "bg-[#0F2642] cursor-not-allowed" : "bg-[#0F2642]"}
+            rounded-xl
+            transform hover:scale-105
+            ${loading ? "bg-[#0F2642]/80 cursor-not-allowed" : "bg-[#0F2642] hover:bg-[#1a3b66]"}
           `}
         >
           {loading ? (

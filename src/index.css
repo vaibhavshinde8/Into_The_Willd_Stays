@@ -7,7 +7,7 @@
 @tailwind utilities;
 
 * {
-  font-family: "Times New Roman", serif;
+  font-family: "montserrat", sans-serif;
   /* font-weight: 400; */
   /* font-style: normal; */
 }

@@ -61,7 +61,7 @@ const GuestExperience = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-gray-300 via-white to-gray-200 py-12 px-4 md:px-8 lg:px-16">
+    <div className="min-h-screen bg-gradient-to-br from-blue-100 to-cyan-100 py-12 px-4 md:px-8 lg:px-16">
       <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-12">
         <span className="bg-gradient-to-r from-cyan-800 to-emerald-800 bg-clip-text text-transparent">
           Our <span className="text-black">Story</span>
@@ -70,7 +70,7 @@ const GuestExperience = () => {
 
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-stretch">
         {/* Content Section */}
-        <div className="bg-white/90 p-8 md:p-10 rounded-3xl shadow-sm backdrop-blur-sm border border-gray-100 hover:shadow-md transition-all duration-300">
+        <div className="bg-white/80 backdrop-blur-xl p-8 md:p-10 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 border border-white/50">
           <div className="space-y-8 text-gray-800 h-full flex flex-col justify-between">
             <div className="space-y-6">
               <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-emerald-900 to-emerald-700 bg-clip-text text-transparent mb-6">
@@ -104,7 +104,7 @@ const GuestExperience = () => {
         </div>
 
         {/* Video Player Section */}
-        <div className="relative w-full h-[500px] md:h-[600px] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(8,_112,_184,_0.15)] border-2 border-cyan-800/20 hover:shadow-[0_20px_50px_rgba(8,_112,_184,_0.25)] transition-all duration-300">
+        <div className="relative w-full h-[500px] md:h-[600px] rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-sm bg-white/30">
           <div className="h-full">
             <video
               ref={(el) => {
