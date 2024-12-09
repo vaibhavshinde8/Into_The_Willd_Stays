@@ -2,11 +2,15 @@ import { useParams } from "react-router-dom";
 import { MapPin, Clock, Phone, Mail, MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
 import toursData from "../assets/tours.json";
+import { useEffect } from "react";
 
 const ToursDetail = () => {
   const { id } = useParams();
   const tour = toursData.tours.find((t) => t.id === parseInt(id));
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   if (!tour) {
     return <div>Tour not found</div>;
   }
@@ -52,7 +56,9 @@ const ToursDetail = () => {
         <div className="space-y-16">
           {/* Itinerary */}
           <section>
-            <h2 className="text-3xl font-bold text-[#0F2642] mb-8">Itinerary</h2>
+            <h2 className="text-3xl font-bold text-[#0F2642] mb-8">
+              Itinerary
+            </h2>
             <div className="space-y-6">
               {tour.itinerary.map((item, index) => (
                 <motion.div
@@ -63,8 +69,12 @@ const ToursDetail = () => {
                   key={index}
                   className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
                 >
-                  <h3 className="font-bold text-[#0F2642] text-2xl mb-4">{item.day}</h3>
-                  <p className="text-lg leading-relaxed text-gray-700">{item.description}</p>
+                  <h3 className="font-bold text-[#0F2642] text-2xl mb-4">
+                    {item.day}
+                  </h3>
+                  <p className="text-lg leading-relaxed text-gray-700">
+                    {item.description}
+                  </p>
                 </motion.div>
               ))}
             </div>
@@ -73,7 +83,9 @@ const ToursDetail = () => {
           {/* Inclusions & Exclusions */}
           <div className="grid md:grid-cols-2 gap-12">
             <section>
-              <h2 className="text-3xl font-bold text-[#0F2642] mb-8">Inclusions</h2>
+              <h2 className="text-3xl font-bold text-[#0F2642] mb-8">
+                Inclusions
+              </h2>
               <div className="space-y-4">
                 {tour.inclusions.map((item, index) => (
                   <motion.div
@@ -92,7 +104,9 @@ const ToursDetail = () => {
             </section>
 
             <section>
-              <h2 className="text-3xl font-bold text-[#0F2642] mb-8">Exclusions</h2>
+              <h2 className="text-3xl font-bold text-[#0F2642] mb-8">
+                Exclusions
+              </h2>
               <div className="space-y-4">
                 {tour.exclusions.map((item, index) => (
                   <motion.div
@@ -113,21 +127,27 @@ const ToursDetail = () => {
 
           {/* Contact Methods */}
           <section>
-            <h2 className="text-3xl font-bold text-[#0F2642] mb-8">Contact Methods</h2>
+            <h2 className="text-3xl font-bold text-[#0F2642] mb-8">
+              Contact Methods
+            </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <a
                 href={`tel:${tour.contact_methods?.phone}`}
                 className="flex items-center space-x-4 bg-blue-50/80 backdrop-blur-sm p-6 rounded-2xl hover:shadow-lg hover:scale-105 transition-all duration-300"
               >
                 <Phone className="w-6 h-6 text-blue-600" />
-                <span className="text-lg text-gray-700">{tour.contact_methods?.phone || "Not available"}</span>
+                <span className="text-lg text-gray-700">
+                  {tour.contact_methods?.phone || "Not available"}
+                </span>
               </a>
               <a
                 href={`mailto:${tour.contact_methods?.email}`}
                 className="flex items-center space-x-4 bg-purple-50/80 backdrop-blur-sm p-6 rounded-2xl hover:shadow-lg hover:scale-105 transition-all duration-300"
               >
                 <Mail className="w-6 h-6 text-purple-600" />
-                <span className="text-lg text-gray-700">{tour.contact_methods?.email || "Not available"}</span>
+                <span className="text-lg text-gray-700">
+                  {tour.contact_methods?.email || "Not available"}
+                </span>
               </a>
               <a
                 href={`https://wa.me/${tour.contact_methods?.whatsapp}`}
@@ -135,7 +155,9 @@ const ToursDetail = () => {
               >
                 <MessageCircle className="w-6 h-6 text-green-600" />
                 <span className="text-lg text-gray-700">
-                  {tour.contact_methods?.whatsapp ? `+${tour.contact_methods?.whatsapp}` : "Not available"}
+                  {tour.contact_methods?.whatsapp
+                    ? `+${tour.contact_methods?.whatsapp}`
+                    : "Not available"}
                 </span>
               </a>
             </div>
@@ -143,7 +165,9 @@ const ToursDetail = () => {
 
           {/* Rules & Policy */}
           <section>
-            <h2 className="text-3xl font-bold text-[#0F2642] mb-8">Rules & Policy</h2>
+            <h2 className="text-3xl font-bold text-[#0F2642] mb-8">
+              Rules & Policy
+            </h2>
             <div className="grid gap-4">
               {tour.rules_and_policy.map((item, index) => (
                 <motion.div
@@ -166,4 +190,4 @@ const ToursDetail = () => {
   );
 };
 
-export default ToursDetail; 
+export default ToursDetail;

@@ -395,27 +395,30 @@ const BookingButton = ({ property, tour }) => {
           onClick={handleProceed}
           disabled={loading}
           className={`
-            px-8 py-4
-            text-white 
-            font-semibold 
-            text-lg 
-            transition-all 
-            duration-300 
-            ease-in-out 
-            shadow-lg 
-            hover:shadow-xl 
-            focus:outline-none 
-            focus:ring-2 
-            focus:ring-offset-2 
-            rounded-xl
-            transform hover:scale-105
-            ${loading ? "bg-[#0F2642]/80 cursor-not-allowed" : "bg-[#0F2642] hover:bg-[#1a3b66]"}
+            relative
+            px-6 py-2.5
+            text-white
+            font-medium
+            text-base
+            overflow-hidden
+            rounded-lg
+            group
+            bg-gradient-to-r
+            from-[#0F2642]
+            to-[#1a3b66]
+            hover:from-[#1a3b66]
+            hover:to-[#0F2642]
+            transition-all
+            duration-300
+            ease-out
+            ${loading ? "opacity-70 cursor-not-allowed" : ""}
           `}
         >
+          <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
           {loading ? (
             <div className="flex items-center">
               <svg
-                className="animate-spin h-5 w-5 mr-3"
+                className="animate-spin h-4 w-4 mr-2"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"

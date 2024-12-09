@@ -43,7 +43,7 @@ const Blog = () => {
             transition={{ delay: 0.8, duration: 1 }}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-4 sm:mb-6 lg:mb-8 leading-tight"
           >
-            {/* Our <br /> */}
+            Our <br />
             <span className="bg-gradient-to-r from-teal-400 to-teal-500 bg-clip-text text-transparent">
               Blogs
             </span>
@@ -60,7 +60,7 @@ const Blog = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 py-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
           {blogs.map((blog, index) => (
             <motion.div
               key={blog.id}

@@ -1,4 +1,12 @@
 import { motion } from "framer-motion";
+import {
+  ArrowRight,
+  Users,
+  Home,
+  Mountain,
+  Music,
+  Palette,
+} from "lucide-react";
 
 import Image2 from "../assets/itw_rep/itwrep_page-0008.jpg";
 
@@ -12,7 +20,6 @@ import Imagearvind from "../assets/team/ArvindSeniorMountaineer.jpg";
 import Imageastha from "../assets/team/AsthaDovalCyclist.jpg";
 import Imageraghav from "../assets/team/RaghavCycling Instructor.jpg";
 import Imagesonam from "../assets/team/SonamRanaKayakinstructor.jpg";
-import Imageunk from "../assets/team/unk.jpg";
 
 import Image3 from "../assets/itw_rep/itwrep_page-0009.jpg";
 import Image4 from "../assets/itw_rep/itwrep_page-0010.jpg";
@@ -22,247 +29,212 @@ import Image7 from "../assets/itw_rep/itwrep_page-0013.jpg";
 
 const AboutUs = () => {
   return (
-    <div className="min-h-[100vh]">
-      <div className="relative h-[70vh] overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.trvl-media.com/lodging/109000000/108380000/108370800/108370765/28b3dc50.jpg?impolicy=resizecrop&rw=1200&ra=fit')] bg-cover bg-center bg-fixed transform scale-105">
-          <div className="absolute inset-0 bg-gradient-to-b from-gray-900/20 to-gray-900/60" />
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-teal-50/30 to-blue-50/30">
+      {/* Hero Section */}
+      <div className="relative h-[90vh] overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-[url('https://images.trvl-media.com/lodging/109000000/108380000/108370800/108370765/28b3dc50.jpg?impolicy=resizecrop&rw=1200&ra=fit')] bg-cover bg-center bg-fixed" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0F2642]/40 via-[#0F2642]/60 to-[#0F2642]/80 backdrop-blur-[2px]" />
         </div>
 
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className="relative h-full max-w-7xl mx-auto px-4 flex flex-col items-center justify-center text-center"
+          transition={{ duration: 1.2, ease: "easeOut" }}
+          className="relative h-full max-w-7xl mx-auto px-6 flex flex-col items-center justify-center text-center"
         >
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
-            <span className="bg-gradient-to-r from-teal-600 to-teal-400 bg-clip-text text-transparent">
+          <motion.span
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.8 }}
+            className="text-teal-400 text-lg md:text-xl font-medium tracking-wider mb-4"
+          >
+            WELCOME TO INTO THE WILD STAYS
+          </motion.span>
+          <motion.h1
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.8, duration: 1 }}
+            className="text-5xl sm:text-6xl md:text-7xl font-bold text-white mb-6"
+          >
+            {/* Turning <br /> */}
+            <span className="bg-gradient-to-r from-teal-400 to-teal-500 bg-clip-text text-transparent">
               About Us
             </span>
-            {/* <br />
-            Us */}
-          </h1>
-          <p className="text-xl text-gray-200 max-w-2xl mb-8">
-            Meet the Experts Turning Journeys into Joys.
-          </p>
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.2, duration: 0.8 }}
+            className="text-xl text-gray-200 max-w-2xl"
+          >
+            Meet the passionate team behind your extraordinary experiences
+          </motion.p>
         </motion.div>
       </div>
 
-      <div className="bg-white min-h-[100vh] py-4 lg:px-32">
-        <div className="my-12 mx-4">
-          <div className="flex flex-col-reverse lg:flex-row gap-8 justify-around items-center text-center">
-            <div className="flex flex-col gap-6 p-8 bg-gradient-to-r from-[#091F3C] to-[#43A181] shadow-xl lg:w-[50vw] text-white">
-              <h1 className="text-4xl font-bold tracking-tight">
-                Our <span className="text-[#43A181]">Story</span>
-              </h1>
-              <p className="lg:text-lg text-gray-100 leading-relaxed">
-                Welcome to Into the Wild Stays, At Into the Wild Stays, we
-                strive to offer more than just accommodations; we create
-                memorable escapes in nature's embrace. Nestled in serene,
-                offbeat locations, our boutique homestays and cottages provide
-                the perfect blend of comfort, tranquility, and adventure. Our
-                philosophy revolves around crafting personalized experiences
-                that connect our guests with the beauty of the wilderness. With
-                heartfelt hospitality and thoughtful service, we ensure every
-                stay feels like a home away from home. Come, escape the chaos,
-                and immerse yourself in the unforgettable charm of *Into the
-                Wild Stays!
-              </p>
+      {/* Story Section */}
+      <div className="max-w-7xl mx-auto px-6 py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="space-y-8"
+          >
+            <div className="space-y-4">
+              <span className="text-teal-600 font-medium">OUR STORY</span>
+              <h2 className="text-4xl lg:text-5xl font-bold text-[#0F2642]">
+                Creating Memories in Nature&apos;s Embrace
+              </h2>
             </div>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              Welcome to Into the Wild Stays, At Into the Wild Stays, we strive
+              to offer more than just accommodations; we create memorable
+              escapes in nature's embrace. Nestled in serene, offbeat locations,
+              our boutique homestays and cottages provide the perfect blend of
+              comfort, tranquility, and adventure. Our philosophy revolves
+              around crafting personalized experiences that connect our guests
+              with the beauty of the wilderness. With heartfelt hospitality and
+              thoughtful service, we ensure every stay feels like a home away
+              from home. Come, escape the chaos, and immerse yourself in the
+              unforgettable charm of Into the Wild Stays!
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {[
+                {
+                  icon: <Home className="w-6 h-6" />,
+                  text: "Boutique Homestays",
+                },
+                {
+                  icon: <Mountain className="w-6 h-6" />,
+                  text: "Adventure Experiences",
+                },
+                { icon: <Users className="w-6 h-6" />, text: "Expert Guides" },
+                {
+                  icon: <Palette className="w-6 h-6" />,
+                  text: "Cultural Immersion",
+                },
+              ].map((item, index) => (
+                <div
+                  key={index}
+                  className="flex items-center gap-3 text-[#0F2642]"
+                >
+                  <div className="p-2 bg-teal-100 rounded-lg">{item.icon}</div>
+                  <span className="font-medium">{item.text}</span>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="relative"
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-teal-500 to-blue-500 transform rotate-6 rounded-3xl" />
+            <img
+              src={Image2}
+              alt="Our Story"
+              className="relative rounded-3xl shadow-xl"
+            />
+          </motion.div>
+        </div>
+      </div>
 
-            <div className="shadow-2xl overflow-hidden">
-              <img
-                src={Image2}
-                alt="Founder"
-                className="w-full h-full object-cover"
-              />
-            </div>
+      {/* Team Section */}
+      <div className="bg-[#0F2642] py-24">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16 space-y-4">
+            <motion.span
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              className="text-teal-400 font-medium"
+            >
+              OUR TEAM
+            </motion.span>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-4xl lg:text-5xl font-bold text-white"
+            >
+              Meet the Experts
+            </motion.h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            {[
+              { name: "Aakash", role: "Co-Owner", img: ImageA },
+              { name: "Vikky", role: "Co-Owner", img: ImageV },
+              { name: "Deepak Rana", role: "Mountain Guide", img: ImageD },
+              { name: "Vasu", role: "Music Artist", img: ImageVa },
+              { name: "Veer", role: "Outdoor Instructor", img: ImageVe },
+              {
+                name: "Anshi",
+                role: "Art & Craft Instructor",
+                img: Imageanshi,
+              },
+              { name: "Arvind", role: "Senior Mountaineer", img: Imagearvind },
+              { name: "Astha Doval", role: "Cyclist", img: Imageastha },
+              { name: "Raghav", role: "Cycling Instructor", img: Imageraghav },
+              { name: "Sonam Rana", role: "Kayak Instructor", img: Imagesonam },
+            ].map((member, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="group relative overflow-hidden rounded-2xl bg-white/5 backdrop-blur-sm"
+              >
+                <div className="aspect-square overflow-hidden">
+                  <img
+                    src={member.img}
+                    alt={member.name}
+                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                  />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <h3 className="text-xl font-bold text-white">
+                      {member.name}
+                    </h3>
+                    <p className="text-teal-400">{member.role}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </div>
-      <div className="text-center py-8 lg:px-32">
-       <motion.h1
-          className="text-4xl md:text-6xl text-black font-bold mb-12 text-center"
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <span className="bg-gradient-to-r from-cyan-800 to-emerald-800 bg-clip-text text-transparent">
-            Why
-          </span>{" "}
-          Our Homestay?
-        </motion.h1>
-        {/* <h1 className="text-3xl font-bold my-4">Why Choose Us</h1> */}
-        <div className="flex flex-wrap justify-around gap-6 mt-6">
-          {[
-            {
-              title: "Live Amidst Nature",
-              description:
-                "Experience nature in its fullest glory to refresh yourself.",
-              icon: (
-                <svg
-                  className="w-10 h-10 text-green-400"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 18a8 8 0 110-16 8 8 0 010 16z" />
-                </svg>
-              ),
-            },
-            {
-              title: "Heritage Homestay",
-              description:
-                "Experience the charm of Kerala heritage preserved through the ages.",
-              icon: (
-                <svg
-                  className="w-10 h-10 text-yellow-400"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M12 2L2 12h4v8h8v-8h4L12 2z" />
-                </svg>
-              ),
-            },
-            {
-              title: "Family Friendly",
-              description:
-                "The calm and comfortable environment will make your family feel at home.",
-              icon: (
-                <svg
-                  className="w-10 h-10 text-blue-400"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M12 4a8 8 0 100 16 8 8 0 000-16zm0 14a6 6 0 110-12 6 6 0 010 12z" />
-                </svg>
-              ),
-            },
-          ].map((reason, index) => (
-            <div
-              key={index}
-              className="max-w-xs p-4 bg-gray-800 shadow-md hover:shadow-xl transition duration-300"
-            >
-              <div className="flex justify-center mb-4">{reason.icon}</div>
-              <h3 className="text-xl font-semibold text-teal-200">
-                {reason.title}
-              </h3>
-              <p className="text-gray-300 mt-2">{reason.description}</p>
-            </div>
-          ))}
-        </div>
-      </div>
 
-      <div className="bg-[#1b1b1b] py-12 shadow-xl">
-        <h2 className="text-center text-teal-400 text-lg font-semibold">
-          Meet Our Team
-        </h2>
-        <h1 className="text-center text-3xl font-bold text-white mb-8">
-          Our Team
-        </h1>
-        <div className="flex flex-wrap justify-center gap-8 lg:px-48">
-          {[
-            {
-              name: "Aakash ",
-              role: " Co-Owner",
-              img: ImageA,
-            },
-            {
-              name: "Vikky",
-              role: "Co-Owner",
-              img: ImageV,
-            },
-            {
-              name: "Deepak Rana",
-              role: "Mountain Guide ",
-              img: ImageD,
-            },
-            {
-              name: "Vasu",
-              role: "Music Artist",
-              img: ImageVa,
-            },
-            {
-              name: "veer",
-              role: "Outdoor Instructor",
-              img: ImageVe,
-            },
-            {
-              name: "Anshi ",
-              role: " Art & Craft Instructor",
-              img: Imageanshi,
-            },
-            {
-              name: "Arvind",
-              role: "Senior Mountaineer",
-              img: Imagearvind,
-            },
-            {
-              name: "Astha Doval",
-              role: "Cyclist ",
-              img: Imageastha,
-            },
-            {
-              name: "Raghav",
-              role: "Cycling Instructor",
-              img: Imageraghav,
-            },
-            {
-              name: "Sonam Rana",
-              role: "Kayak Instructor",
-              img: Imagesonam,
-            },
-          ].map((member, index) => (
-            <div
-              key={index}
-              className="text-center mb-8 p-4 bg-[#111111] shadow-lg"
-            >
-              <div className="w-48 h-48 bg-gray-300 mb-4 mx-auto overflow-hidden">
+      {/* Gallery Section */}
+      <div className="py-24 bg-gradient-to-br from-gray-50 via-teal-50/30 to-blue-50/30">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {[Image3, Image4, Image5, Image6, Image7].map((image, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className={`rounded-3xl overflow-hidden shadow-xl ${
+                  index === 0 ? "md:col-span-2" : ""
+                }`}
+              >
                 <img
-                  src={member.img}
-                  alt={member.name}
-                  className="w-full h-full object-cover"
+                  src={image}
+                  alt={`Gallery ${index + 1}`}
+                  className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
                 />
-              </div>
-              <h3 className="text-lg font-semibold text-white">
-                {member.name}
-              </h3>
-              <p className="text-teal-400">{member.role}</p>
-            </div>
-          ))}
-        </div>
-        <div className="shadow-2xl overflow-hidden lg:p-8 bg-white">
-          <img
-            src={Image3}
-            alt="Founder"
-            className="w-full h-full object-cover lg:p-8 bg-white"
-          />
-        </div>
-        <div className="shadow-2xl overflow-hidden lg:p-8 bg-white">
-          <img
-            src={Image4}
-            alt="Founder"
-            className="w-full h-full object-cover lg:p-8 bg-white"
-          />
-        </div>
-        <div className="shadow-2xl overflow-hidden lg:p-8 bg-white">
-          <img
-            src={Image5}
-            alt="Founder"
-            className="w-full h-full object-cover lg:p-8 bg-white"
-          />
-        </div>
-        <div className="shadow-2xl overflow-hidden lg:p-8 bg-white">
-          <img
-            src={Image6}
-            alt="Founder"
-            className="w-full h-full object-cover lg:p-8 bg-white"
-          />
-        </div>
-        <div className="shadow-2xl overflow-hidden lg:p-8 bg-white">
-          <img
-            src={Image7}
-            alt="Founder"
-            className="w-full h-full object-cover lg:p-8 bg-white"
-          />
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

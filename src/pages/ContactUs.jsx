@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Mails, Navigation, PhoneCall, Send } from "lucide-react";
 import emailjs from "emailjs-com";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
+
 
 
 const ContactUs = () => {
@@ -18,6 +20,10 @@ const ContactUs = () => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
+
+   useEffect(() => {
+     window.scrollTo(0, 0);
+   }, []);
 
   const sendEmail = (e) => {
     e.preventDefault();
