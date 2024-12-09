@@ -18,6 +18,8 @@ import ExploreMoreITW from "./../components/ExploreMoreITW";
 import { BlogPost } from "./../components/BlogPost";
 import UserProfile from './../components/UserProfile';
 import Events from "../pages/Events";
+import EventDetail from "../pages/EventDetail";
+import ToursDetail from "../pages/ToursDetail";
 
 const blogs = [];
 
@@ -37,6 +39,10 @@ const router = createBrowserRouter([
       {
         path: "/tours",
         element: <Tours />,
+      },
+      {
+        path: "/tours/:id",
+        element: <ToursDetail />,
       },
       {
         path: "/contact-us",
@@ -81,6 +87,10 @@ const router = createBrowserRouter([
       {
         path: "/events",
         element: <Events />,
+      },
+      {
+        path: "/events/:id",
+        element: <EventDetail />
       },
     ],
   },

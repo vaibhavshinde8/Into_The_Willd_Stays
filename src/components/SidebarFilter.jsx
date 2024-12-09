@@ -16,7 +16,7 @@ const SidebarFilter = ({ onFilterChange, properties }) => {
   ).sort(); // Sort locations alphabetically
 
   return (
-    <div className="sidebar-filter p-6 bg-white  shadow-lg w-full sm:w-72 sticky top-4">
+    <div className="sidebar-filter p-6 bg-white rounded-lg shadow-lg w-full sm:w-72 sticky top-4">
       <div className="border-b pb-4 mb-6">
         <h3 className="text-xl font-semibold text-black mb-2">Filters</h3>
         <p className="text-gray-700 text-sm">Refine your search by location</p>
@@ -37,7 +37,7 @@ const SidebarFilter = ({ onFilterChange, properties }) => {
               className={`
                 w-full text-left px-4 py-2.5 
                 transition-all duration-200 ease-in-out
-                hover:bg-gray-100 
+                hover:bg-gray-100 rounded-lg
                 ${
                   selectedLocation === city
                     ? "bg-gray-800 text-white hover:bg-gray-700"
@@ -83,7 +83,7 @@ const SidebarFilter = ({ onFilterChange, properties }) => {
             setSelectedLocation("");
             onFilterChange({ location: "" });
           }}
-          className="mt-4 text-sm text-gray-500 hover:text-gray-700 flex items-center gap-1"
+          className="mt-4 text-sm text-gray-500 hover:text-gray-700 flex items-center gap-1 rounded-md"
         >
           Reset all filters
         </button>

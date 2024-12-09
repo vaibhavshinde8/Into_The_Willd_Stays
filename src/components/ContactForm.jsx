@@ -1,12 +1,8 @@
 import { useState } from "react";
-import { Mails, Navigation, PhoneCall, Send } from "lucide-react";
+import { X, Send } from "lucide-react";
 import emailjs from "emailjs-com";
-import { motion } from "framer-motion";
-import { useEffect } from "react";
 
-
-
-const ContactUs = () => {
+const ContactForm = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -21,10 +17,6 @@ const ContactUs = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-   useEffect(() => {
-     window.scrollTo(0, 0);
-   }, []);
-
   const sendEmail = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -35,7 +27,7 @@ const ContactUs = () => {
 
     emailjs.send(serviceID, templateID, formData, publicKey).then(
       (response) => {
-        // console.log("SUCCESS!", response.status, response.text);
+        console.log("SUCCESS!", response.status, response.text);
         setSuccess(true);
         setIsSubmitting(false);
         setFormData({ name: "", email: "", phone: "", message: "" });
@@ -47,84 +39,22 @@ const ContactUs = () => {
     );
   };
 
+  if (!isOpen) return null;
+
   return (
-    <div className="min-h-screen bg-white">
-      <div className="relative h-[70vh] overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.trvl-media.com/lodging/109000000/108380000/108370800/108370765/28b3dc50.jpg?impolicy=resizecrop&rw=1200&ra=fit')] bg-cover bg-center bg-fixed transform scale-105">
-          <div className="absolute inset-0 bg-gradient-to-b from-gray-900/20 to-gray-900/60" />
-        </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className="relative h-full max-w-7xl mx-auto px-4 flex flex-col items-center justify-center text-center"
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-4 overflow-y-auto">
+      <div className="bg-white w-full max-w-4xl max-h-[90vh] overflow-y-auto relative shadow-2xl">
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 z-10 bg-gray-100 p-2 hover:bg-gray-200 transition"
         >
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
-            <span className="bg-gradient-to-r from-teal-600 to-teal-400 bg-clip-text text-transparent">
-              Contact Us
-            </span>
-            {/* <br />
-            Us */}
-          </h1>
-          <p className="text-xl text-gray-200 max-w-2xl mb-8">
-          Let&apos;s start a conversation
-          </p>
-        </motion.div>
-      </div>
+          <X className="w-6 h-6 text-gray-700" />
+        </button>
 
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 border border-black">
-          {/* Information Card Section */}
-          <div className="border-b lg:border-b-0 lg:border-r border-black p-8">
-            <h2 className="text-3xl font-bold mb-6 uppercase tracking-tight">
-              Contact Information
-            </h2>
-            <div className="space-y-6">
-              {/* Location */}
-              <div className="flex items-start space-x-4 border-b border-black pb-4">
-                <Navigation className="w-6 h-6 mt-1" />
-                <div>
-                  <h3 className="font-semibold text-lg">Location</h3>
-                  <p className="text-sm">
-                    IntoTheWildsStays, House no-4 Mussoorie Dhanaulti Road,
-                    Village Nali Kala, Dehradun-248001 Uttarakhand
-                  </p>
-                </div>
-              </div>
-
-              {/* Phone */}
-              <div className="flex items-start space-x-4 border-b border-black pb-4">
-                <PhoneCall className="w-6 h-6 mt-1" />
-                <div>
-                  <h3 className="font-semibold text-lg">Phone</h3>
-                  <p className="text-sm">
-                    <a href="tel:+919761966485">+91-9761966485</a>
-                    <br />
-                    <a href="tel:+919958838557">+91-9958838557</a>
-                  </p>
-                </div>
-              </div>
-
-              {/* Email */}
-              <div className="flex items-start space-x-4">
-                <Mails className="w-6 h-6 mt-1" />
-                <div>
-                  <h3 className="font-semibold text-lg">Email</h3>
-                  <p className="text-sm">
-                    <a href="mailto:intothewildstays@outlook.com">
-                      intothewildstays@outlook.com
-                    </a>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Contact Form Section */}
+        <div className="grid grid-cols-1 border border-black">
           <div className="p-8">
             <h2 className="text-3xl font-bold mb-6 uppercase tracking-tight">
-              Send a Message
+              Talk to us
             </h2>
             <form onSubmit={sendEmail} className="space-y-6">
               <div>
@@ -225,4 +155,4 @@ const ContactUs = () => {
   );
 };
 
-export default ContactUs;
+export default ContactForm; 

@@ -1,0 +1,67 @@
+export const eventData = [
+  {
+    id: 1,
+    name: "School Camp",
+    location: "Rishikesh, Uttarakhand",
+    duration: "2 Days, 1 Night",
+    price: "6000",
+    imageUrl: "/src/assets/Outdoorevents/schoolcampbanner.png",
+    description:
+      "An immersive outdoor experience designed to expose youth to nature, build character, and develop essential life skills.",
+    activities: [
+      "Yoga & Zumba Workshop",
+      "Camping & Hiking Workshop",
+      "Art Workshop",
+      "Music Session and Bonfire",
+      "Projector Movie Night",
+      "Treasure Hunt and Fun Activities",
+    ],
+    packageDetails: [
+      "All meals included",
+      "Professional instructors",
+      "Safety equipment provided",
+      "Accommodation in tents",
+      "First aid facilities",
+    ],
+    galleryImages: [
+      "/src/assets/Outdoorevents/oe1.jpeg",
+      "/src/assets/Outdoorevents/oe2.jpeg",
+      "/src/assets/Outdoorevents/oe3.jpeg",
+      "/src/assets/Outdoorevents/oe4.jpeg",
+      "/src/assets/Outdoorevents/oe5.jpeg",
+      "/src/assets/Outdoorevents/oe6.jpeg",
+      "/src/assets/Outdoorevents/oe7.jpeg",
+    ],
+  },
+  {
+    id: 2,
+    name: "Dad & I",
+    location: "Rishikesh, Uttarakhand",
+    duration: "2 Days, 1 Night",
+    price: "6000",
+    imageUrl: "/src/assets/Outdoorevents/dadnibanner.png",
+    description:
+      "A unique 2-day event that brings dads and children closer through outdoor adventures, team-building activities, and memorable experiences.",
+    activities: [
+      "Camping & Trekking Workshop",
+      "Cycling Workshop",
+      "Yoga & Running Workshop",
+      "Team Bonding Activities",
+      "Live Music and Bonfire",
+    ],
+    packageDetails: [
+      "2N/3D - 6000rs per pair (Dad & Child)",
+      "3000 extra for another child",
+      "Includes stay, meals, workshops, and activities",
+    ],
+    galleryImages: [
+      "/src/assets/Outdoorevents/oe8.jpeg",
+      "/src/assets/Outdoorevents/oe9.jpeg",
+      "/src/assets/Outdoorevents/oe10.jpeg",
+      "/src/assets/Outdoorevents/oe11.jpeg",
+      "/src/assets/Outdoorevents/oe12.jpeg",
+      "/src/assets/Outdoorevents/oe13.jpeg",
+      "/src/assets/Outdoorevents/oe14.jpeg",
+    ],
+  },
+]; 
