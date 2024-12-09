@@ -316,7 +316,7 @@ const Events = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 pb-32">
       <div className="relative h-[70vh] overflow-hidden pt-8">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1472653431158-6364773b2a56')] bg-cover bg-center bg-fixed transform scale-105">
+        <div className="absolute inset-0 bg-[url('https://images.trvl-media.com/lodging/109000000/108380000/108370800/108370765/28b3dc50.jpg?impolicy=resizecrop&rw=1200&ra=fit')] bg-cover bg-center bg-fixed transform scale-105">
           <div className="absolute inset-0 bg-gradient-to-b from-gray-900/20 to-gray-900/60" />
         </div>
 
@@ -391,8 +391,15 @@ const Events = () => {
       </div>
 
       {/* Modals */}
-      <EventModal isOpen={isModalOpen} onClose={closeModal} event={selectedEvent} />
-      <ContactModal isOpen={isContactModalOpen} onClose={() => setIsContactModalOpen(false)} />
+      <EventModal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        event={selectedEvent}
+      />
+      <ContactModal
+        isOpen={isContactModalOpen}
+        onClose={() => setIsContactModalOpen(false)}
+      />
     </div>
   );
 };

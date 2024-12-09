@@ -87,14 +87,14 @@ const HomeHero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
-          <h1 className="text-5xl md:text-6xl font-medium text-white mb-6 leading-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
             <span className="bg-gradient-to-r from-cyan-300 font-bold to-emerald-300 bg-clip-text text-transparent">
               INTO THE WILD
             </span>
             <br />
             STAYS
           </h1>
-          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl md:text-2xl text-white mb-8 max-w-2xl mx-auto">
             Embark on a journey of discovery with our curated travel
             experiences. Find your perfect escape, where every destination tells
             a story.
