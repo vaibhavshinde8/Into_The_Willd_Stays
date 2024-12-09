@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-=======
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
->>>>>>> 4f5ef2a1208cb73c1e3d93190baa6acc42ce2c08
 import { motion } from "framer-motion";
 import { FaMapMarkerAlt, FaCompass, FaGlobe } from "react-icons/fa";
 

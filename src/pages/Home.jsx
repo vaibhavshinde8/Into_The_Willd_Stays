@@ -16,7 +16,7 @@ const Home = () => {
   if(!token){
       useGoogleOneTapLogin({
         onSuccess: async (credentialResponse) => {
-          const res=await googleSignup(credentialResponse);
+        const res=await googleSignup(credentialResponse);
         localStorage.setItem("token",res.data.token);
         localStorage.setItem("user",JSON.stringify(res.data.user));
         toast.success(res.data.message);
@@ -25,7 +25,8 @@ const Home = () => {
       onError: () => {
           toast.error("Login failed.");
         },
-      }
+        prompt: 'select_account',
+      },
     );
   }
   return (
