@@ -28,15 +28,15 @@ export const registerUser = async (name, emailorphone, password) => {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, emailorphone, password }),
-    });
+    }); 
     if (!response.ok) {
       const errorData = await response.json();
-      throw new Error(errorData.message || "Registration failed");
+      toast.error(errorData.error);
     }
     return response.json();
   } catch (error) {
     console.error("Error during registration:", error);
-    throw error;
+    toast.error(error.message);
   }
 };
 

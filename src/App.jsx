@@ -9,12 +9,12 @@ import { GoogleOAuthProvider} from '@react-oauth/google';
 function App() {
   return (
     <AppProvider>
-      <GoogleOAuthProvider clientId="134448973901-5i5v9air5pmirrcelodj5uhqoo707ccb.apps.googleusercontent.com">
+      <GoogleOAuthProvider clientId="583840559736-ahcbg2qkaqtmcl34tg8f1m5b1fip0nb3.apps.googleusercontent.com">
       <Navbar />
       <div>
         <Outlet />
       </div>
-      <Footer />
+      <Footer />  
       </GoogleOAuthProvider>
       <FloatingWhatsappIcon/>
     </AppProvider>
