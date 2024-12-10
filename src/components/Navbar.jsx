@@ -11,20 +11,26 @@ import { motion, AnimatePresence } from "framer-motion";
 const PropertyListingModal = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
     name: "",
-    email: "", 
+    email: "",
     phone: "",
     message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [currentStep, setCurrentStep] = useState(1);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const sendEmail = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
+    if (currentStep !== 3) {
+      setCurrentStep(curr => curr + 1);
+      return;
+    }
+
     setIsSubmitting(true);
 
     const serviceID = "service_8b79wnu";
@@ -37,6 +43,7 @@ const PropertyListingModal = ({ isOpen, onClose }) => {
         setSuccess(true);
         setIsSubmitting(false);
         setFormData({ name: "", email: "", phone: "", message: "" });
+        setTimeout(() => onClose(), 2000);
       },
       (error) => {
         console.error("FAILED...", error);
@@ -47,98 +54,193 @@ const PropertyListingModal = ({ isOpen, onClose }) => {
 
   if (!isOpen) return null;
 
+  const steps = [
+    {
+      title: "Personal Details",
+      icon: "👤"
+    },
+    {
+      title: "Contact Info",
+      icon: "📞"
+    },
+    {
+      title: "Property Details",
+      icon: "🏠"
+    }
+  ];
+
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-white p-8 rounded-lg max-w-md w-full max-h-[90vh] overflow-y-auto">
-        <div className="flex justify-between items-center mb-6">
-          <h2 className="text-2xl font-bold">List Your Property</h2>
-          <button onClick={onClose} className="text-gray-500 hover:text-gray-700">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4"
+    >
+      <motion.div 
+        initial={{ scale: 0.9, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        exit={{ scale: 0.9, opacity: 0 }}
+        className="bg-white rounded-2xl max-w-2xl w-full overflow-hidden shadow-2xl"
+      >
+        {/* Header */}
+        <div className="bg-gradient-to-r from-[#0F2642] to-[#1a3b66] p-6 relative">
+          <button 
+            onClick={onClose} 
+            className="absolute right-4 top-4 text-white/80 hover:text-white transition-colors"
+          >
             <X className="w-6 h-6" />
           </button>
+          <h2 className="text-3xl font-bold text-white mb-2">List Your Property</h2>
+          <p className="text-white/80">Join our network of exclusive properties</p>
+          
+          {/* Progress Steps */}
+          <div className="flex justify-between mt-6 relative">
+            {steps.map((step, index) => (
+              <div key={index} className="flex flex-col items-center z-10">
+                <div className={`w-10 h-10 rounded-full flex items-center justify-center text-xl
+                  ${currentStep > index ? 'bg-green-500' : currentStep === index + 1 ? 'bg-yellow-400' : 'bg-white/30'}
+                  transition-all duration-300`}>
+                  {step.icon}
+                </div>
+                <span className="text-white/90 text-sm mt-2">{step.title}</span>
+              </div>
+            ))}
+            {/* Progress Line */}
+            <div className="absolute top-5 left-0 h-0.5 bg-white/30 w-full -z-0">
+              <div 
+                className="h-full bg-green-500 transition-all duration-500"
+                style={{ width: `${((currentStep - 1) / (steps.length - 1)) * 100}%` }}
+              />
+            </div>
+          </div>
         </div>
 
-        <form onSubmit={sendEmail} className="space-y-6">
-          <div>
-            <label htmlFor="name" className="block uppercase text-xs font-bold mb-2">
-              Name
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleInputChange}
-              required
-              className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#0F2642]"
-              placeholder="Enter your name"
-            />
-          </div>
+        {/* Form Content */}
+        <form onSubmit={handleSubmit} className="p-6 space-y-6">
+          <AnimatePresence mode="wait">
+            {currentStep === 1 && (
+              <motion.div
+                key="step1"
+                initial={{ x: 20, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: -20, opacity: 0 }}
+                className="space-y-4"
+              >
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#0F2642] focus:border-transparent transition-all"
+                    placeholder="John Doe"
+                    required
+                  />
+                </div>
+              </motion.div>
+            )}
 
-          <div>
-            <label htmlFor="email" className="block uppercase text-xs font-bold mb-2">
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleInputChange}
-              required
-              className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#0F2642]"
-              placeholder="Enter your email"
-            />
-          </div>
+            {currentStep === 2 && (
+              <motion.div
+                key="step2"
+                initial={{ x: 20, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: -20, opacity: 0 }}
+                className="space-y-4"
+              >
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#0F2642] focus:border-transparent transition-all"
+                    placeholder="john@example.com"
+                    required
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#0F2642] focus:border-transparent transition-all"
+                    placeholder="+1 (555) 000-0000"
+                    required
+                  />
+                </div>
+              </motion.div>
+            )}
 
-          <div>
-            <label htmlFor="phone" className="block uppercase text-xs font-bold mb-2">
-              Phone
-            </label>
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              value={formData.phone}
-              onChange={handleInputChange}
-              required
-              className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#0F2642]"
-              placeholder="Enter your phone number"
-            />
-          </div>
+            {currentStep === 3 && (
+              <motion.div
+                key="step3"
+                initial={{ x: 20, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: -20, opacity: 0 }}
+                className="space-y-4"
+              >
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Property Details</label>
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    rows="4"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#0F2642] focus:border-transparent transition-all"
+                    placeholder="Tell us about your property..."
+                    required
+                  ></textarea>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
 
-          <div>
-            <label htmlFor="message" className="block uppercase text-xs font-bold mb-2">
-              Property Details
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              value={formData.message}
-              onChange={handleInputChange}
-              required
-              rows="5"
-              className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#0F2642]"
-              placeholder="Describe your property"
-            ></textarea>
+          <div className="flex justify-between pt-4">
+            {currentStep > 1 && (
+              <button
+                type="button"
+                onClick={() => setCurrentStep(curr => curr - 1)}
+                className="px-6 py-2 text-[#0F2642] border-2 border-[#0F2642] rounded-lg hover:bg-gray-50 transition-colors"
+              >
+                Previous
+              </button>
+            )}
+            {currentStep < 3 ? (
+              <button
+                type="submit"
+                className="ml-auto px-6 py-2 bg-[#0F2642] text-white rounded-lg hover:bg-[#0F2642]/90 transition-colors"
+              >
+                Next
+              </button>
+            ) : (
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="ml-auto px-6 py-2 bg-[#0F2642] text-white rounded-lg hover:bg-[#0F2642]/90 transition-colors flex items-center"
+              >
+                {isSubmitting ? "Submitting..." : "Submit Property"}
+                <Send className="w-4 h-4 ml-2" />
+              </button>
+            )}
           </div>
-
-          <button
-            type="submit"
-            disabled={isSubmitting}
-            className="w-full bg-[#0F2642] text-white py-3 rounded hover:bg-[#0F2642]/90 transition duration-300 flex items-center justify-center space-x-2"
-          >
-            {isSubmitting ? "Sending..." : "Submit Property"}
-            <Send className="w-4 h-4 ml-2" />
-          </button>
 
           {success && (
-            <p className="text-center text-green-600 mt-4">
-              Message sent successfully
-            </p>
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="text-center text-green-600 bg-green-50 p-4 rounded-lg"
+            >
+              Your property has been submitted successfully! We'll contact you soon.
+            </motion.div>
           )}
         </form>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 

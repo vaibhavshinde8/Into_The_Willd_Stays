@@ -9,7 +9,7 @@ const PropertiesBanner = () => {
       <div
         className="absolute inset-0 z-0 "
         style={{
-          backgroundImage: `url(${Image1})`,
+          backgroundImage: `url('https://plus.unsplash.com/premium_photo-1687960117069-567a456fe5f3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`,
           backgroundPosition: "center",
           backgroundSize: "cover",
           filter: "brightness(0.8)",

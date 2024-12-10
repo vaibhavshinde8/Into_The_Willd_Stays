@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 
 const ListYourProperties = () => {
   return (
-    <section className="py-24 bg-gradient-to-br from-gray-50 via-teal-50/30 to-blue-50/30 lg:px-32 lg:py-32">
-      <div className="container mx-auto px-6">
+    <section className="py-24 bg-gradient-to-br from-gray-50 via-teal-50/30 to-blue-50/30 lg:py-32">
+      <div className="container mx-auto px-12 lg:px-32 ">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           {/* Left content */}
           <motion.div 

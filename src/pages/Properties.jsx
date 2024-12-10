@@ -175,34 +175,38 @@ const Properties = () => {
             {/* Check-in */}
             <div className="md:col-span-1">
               <label className="block text-gray-700 mb-2 text-sm">Check-in</label>
-              <div className="relative">
+              <div className="relative cursor-pointer" onClick={() => document.getElementById('check-in-date').showPicker()}>
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                   <FaCalendar className="text-gray-400" />
                 </div>
                 <input
+                  id="check-in-date"
                   type="date"
                   name="checkIn"
                   value={searchParams.checkIn}
                   onChange={handleInputChange}
-                  className="w-full h-[46px] pl-10 pr-4 py-3 bg-white border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-3xl"
+                  className="w-full h-[46px] pl-10 pr-4 py-3 bg-white border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-3xl cursor-pointer"
                 />
+                <div className="absolute inset-0" onClick={() => document.getElementById('check-in-date').showPicker()}></div>
               </div>
             </div>
 
             {/* Check-out */}
             <div className="md:col-span-1">
               <label className="block text-gray-700 mb-2 text-sm">Check-out</label>
-              <div className="relative">
+              <div className="relative cursor-pointer" onClick={() => document.getElementById('check-out-date').showPicker()}>
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                   <FaCalendar className="text-gray-400" />
                 </div>
                 <input
+                  id="check-out-date"
                   type="date"
                   name="checkOut"
                   value={searchParams.checkOut}
                   onChange={handleInputChange}
-                  className="w-full h-[46px] pl-10 pr-4 py-3 bg-white border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-3xl"
+                  className="w-full h-[46px] pl-10 pr-4 py-3 bg-white border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-3xl cursor-pointer"
                 />
+                <div className="absolute inset-0" onClick={() => document.getElementById('check-out-date').showPicker()}></div>
               </div>
             </div>
 

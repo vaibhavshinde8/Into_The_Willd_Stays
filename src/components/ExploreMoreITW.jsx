@@ -10,6 +10,7 @@ const ExploreMoreITW = () => {
   const [openIndex, setOpenIndex] = useState(null);
   const [property, setProperty] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [activeSection, setActiveSection] = useState('amenities');
   const { id } = useParams();
 
   useEffect(() => {
@@ -30,8 +31,39 @@ const ExploreMoreITW = () => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const yOffset = -100; // Offset to account for sticky header
+      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({top: y, behavior: 'smooth'});
+      setActiveSection(sectionId);
+    }
+  };
+
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ['amenities', 'location', 'policies', 'faqs'];
+      let current = 'amenities';
+      
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= 150) {
+            current = section;
+          }
+        }
+      }
+      setActiveSection(current);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   if (loading) {
@@ -118,19 +150,38 @@ const ExploreMoreITW = () => {
             </div>
 
             {/* Booking Card for Mobile/Tablet */}
-            <div className="lg:hidden mb-8">
+            <div className="lg:hidden mb-8 w-full">
               <motion.div
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                className="bg-white p-6 rounded-xl shadow-lg"
+                className="bg-white p-8 rounded-xl shadow-lg max-w-md mx-auto"
               >
-                <div className="flex flex-col items-center">
-                  <div className="flex items-center gap-2 mb-2">
-                    <FaRupeeSign className="text-green-500 text-2xl" />
-                    <span className="text-3xl font-bold">{property?.price}</span>
+                <div className="flex flex-col items-center space-y-4">
+                  <div className="flex items-center justify-center gap-2">
+                    <FaRupeeSign className="text-green-500 text-3xl" />
+                    <span className="text-4xl font-bold">{property?.price}</span>
                   </div>
-                  <span className="text-gray-500 font-medium mb-4">per night</span>
-                  <BookingButton property={property} />
+                  
+                  <span className="text-gray-500 font-medium">per night</span>
+                  
+                  <div className="w-full">
+                    <BookingButton property={property} />
+                  </div>
+
+                  <div className="text-sm text-gray-600 space-y-3 w-full">
+                    <p className="flex items-center gap-2">
+                      <span className="text-gray-400">•</span>
+                      20% token amount required for booking
+                    </p>
+                    <p className="flex items-center gap-2">
+                      <span className="text-gray-400">•</span>
+                      Balance payment at check-in
+                    </p>
+                    <p className="flex items-center gap-2 text-red-500">
+                      <span>•</span>
+                      Token amount non-refundable on cancellation
+                    </p>
+                  </div>
                 </div>
               </motion.div>
             </div>
@@ -176,8 +227,38 @@ const ExploreMoreITW = () => {
             <p>{property?.description}</p>
           </div>
 
+          {/* Sticky Navigation */}
+          <div className="sticky top-20 z-50 bg-white shadow-md rounded-lg mb-8">
+            <div className="flex justify-between px-4 py-3 overflow-x-auto">
+              <button 
+                onClick={() => scrollToSection('amenities')}
+                className={`px-4 py-2 whitespace-nowrap ${activeSection === 'amenities' ? 'text-blue-500 border-b-2 border-blue-500' : 'text-gray-600'}`}
+              >
+                Amenities
+              </button>
+              <button 
+                onClick={() => scrollToSection('location')}
+                className={`px-4 py-2 whitespace-nowrap ${activeSection === 'location' ? 'text-blue-500 border-b-2 border-blue-500' : 'text-gray-600'}`}
+              >
+                Location
+              </button>
+              <button 
+                onClick={() => scrollToSection('policies')}
+                className={`px-4 py-2 whitespace-nowrap ${activeSection === 'policies' ? 'text-blue-500 border-b-2 border-blue-500' : 'text-gray-600'}`}
+              >
+                Policies
+              </button>
+              <button 
+                onClick={() => scrollToSection('faqs')}
+                className={`px-4 py-2 whitespace-nowrap ${activeSection === 'faqs' ? 'text-blue-500 border-b-2 border-blue-500' : 'text-gray-600'}`}
+              >
+                FAQs
+              </button>
+            </div>
+          </div>
+
           {/* Amenities Grid */}
-          <div className="mb-12">
+          <div id="amenities" className="mb-12">
             <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
               <FaWifi className="text-blue-500" />
               Amenities
@@ -202,22 +283,41 @@ const ExploreMoreITW = () => {
           <motion.div
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            className="bg-white p-6 rounded-xl shadow-lg sticky top-24"
+            className="bg-white p-8 rounded-xl shadow-lg sticky top-24 w-full max-w-md mx-auto"
           >
-            <div className="flex flex-col items-center mb-6">
-              <div className="flex items-center gap-2 mb-2">
-                <FaRupeeSign className="text-green-500 text-2xl" />
-                <span className="text-3xl font-bold">{property?.price}</span>
+            <div className="flex flex-col items-stretch space-y-6">
+              <div className="flex justify-center items-center gap-2">
+                <FaRupeeSign className="text-green-500 text-3xl" />
+                <span className="text-4xl font-bold">{property?.price}</span>
               </div>
-              <span className="text-gray-500 font-medium mb-4">per night</span>
-              <BookingButton property={property} />
+              
+              <span className="text-gray-500 font-medium text-center">per night</span>
+              
+              <div className="pt-4">
+                <BookingButton property={property} />
+              </div>
+              <div className="space-y-3 text-sm text-gray-600">
+                <p className="flex items-center gap-2">
+                  <span className="text-green-500">•</span>
+                  20% token amount required for booking
+                </p>
+                <p className="flex items-center gap-2">
+                  <span className="text-green-500">•</span>
+                  Balance payment at check-in
+                </p>
+                <p className="flex items-center gap-2 text-red-500">
+                  <span>•</span>
+                  Token amount non-refundable on cancellation
+                </p>
+              </div>
+
             </div>
           </motion.div>
         </div>
       </div>
 
       {/* Location Section */}
-      <div className="mt-12 mb-8 bg-white rounded-xl shadow-sm p-6">
+      <div id="location" className="mt-12 mb-8 bg-white rounded-xl shadow-sm p-6">
         <a
           href={property?.locationlink}
           target="_blank"
@@ -230,7 +330,7 @@ const ExploreMoreITW = () => {
       </div>
 
       {/* Policies Section */}
-      <div className="mt-16 grid md:grid-cols-2 gap-12">
+      <div id="policies" className="mt-16 grid md:grid-cols-2 gap-12">
         <div>
           <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
             <FaBook className="text-blue-500" />
@@ -262,7 +362,7 @@ const ExploreMoreITW = () => {
       </div>
 
       {/* FAQs Accordion */}
-      <div className="mt-16 mb-12">
+      <div id="faqs" className="mt-16 mb-12">
         <h2 className="text-3xl font-bold mb-8 flex items-center gap-3">
           <FaQuestionCircle className="text-blue-500" />
           Frequently Asked Questions

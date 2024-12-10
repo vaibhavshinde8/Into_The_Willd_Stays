@@ -1,15 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Mails, Navigation, PhoneCall, Send } from "lucide-react";
 import emailjs from "emailjs-com";
 import { motion } from "framer-motion";
-import { useEffect } from "react";
-
-
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
+    email: "", 
     phone: "",
     message: "",
   });
@@ -21,9 +18,9 @@ const ContactUs = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-   useEffect(() => {
-     window.scrollTo(0, 0);
-   }, []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -35,7 +32,6 @@ const ContactUs = () => {
 
     emailjs.send(serviceID, templateID, formData, publicKey).then(
       (response) => {
-        // console.log("SUCCESS!", response.status, response.text);
         setSuccess(true);
         setIsSubmitting(false);
         setFormData({ name: "", email: "", phone: "", message: "" });
@@ -48,177 +44,176 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
-      <div className="relative h-[70vh] overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.trvl-media.com/lodging/109000000/108380000/108370800/108370765/28b3dc50.jpg?impolicy=resizecrop&rw=1200&ra=fit')] bg-cover bg-center bg-fixed transform scale-105">
-          <div className="absolute inset-0 bg-gradient-to-b from-gray-900/20 to-gray-900/60" />
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
+      <div className="relative h-[60vh] overflow-hidden">
+        <div className="absolute inset-0">
+          <video
+            autoPlay
+            loop
+            muted
+            className="w-full h-full object-cover"
+          >
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-city-buildings-during-sunset-41375-large.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
         </div>
 
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className="relative h-full max-w-7xl mx-auto px-4 flex flex-col items-center justify-center text-center"
+          transition={{ duration: 0.8 }}
+          className="relative h-full flex flex-col items-center justify-center text-center px-4"
         >
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
-            <span className="bg-gradient-to-r from-teal-600 to-teal-400 bg-clip-text text-transparent">
-              Contact Us
-            </span>
-            {/* <br />
-            Us */}
+          <h1 className="text-6xl md:text-7xl font-bold text-white mb-6">
+            Let's Connect
           </h1>
-          <p className="text-xl text-gray-200 max-w-2xl mb-8">
-          Let&apos;s start a conversation
+          <p className="text-xl text-gray-200 max-w-2xl">
+            We're here to help turn your travel dreams into reality
           </p>
         </motion.div>
       </div>
 
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 border border-black">
-          {/* Information Card Section */}
-          <div className="border-b lg:border-b-0 lg:border-r border-black p-8">
-            <h2 className="text-3xl font-bold mb-6 uppercase tracking-tight">
-              Contact Information
-            </h2>
-            <div className="space-y-6">
-              {/* Location */}
-              <div className="flex items-start space-x-4 border-b border-black pb-4">
-                <Navigation className="w-6 h-6 mt-1" />
-                <div>
-                  <h3 className="font-semibold text-lg">Location</h3>
-                  <p className="text-sm">
-                    IntoTheWildsStays, House no-4 Mussoorie Dhanaulti Road,
-                    Village Nali Kala, Dehradun-248001 Uttarakhand
-                  </p>
+      <div className="max-w-7xl mx-auto px-4 py-16">
+        <div className="grid lg:grid-cols-3 gap-12">
+          {/* Contact Cards */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="lg:col-span-1 space-y-8"
+          >
+            {/* Location Card */}
+            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+              <div className="flex items-center space-x-4 mb-4">
+                <div className="p-3 bg-teal-500 rounded-lg">
+                  <Navigation className="w-6 h-6 text-white" />
                 </div>
+                <h3 className="text-xl font-semibold">Visit Us</h3>
               </div>
+              <p className="text-gray-600">
+                IntoTheWildsStays, House no-4 Mussoorie Dhanaulti Road,
+                Village Nali Kala, Dehradun-248001 Uttarakhand
+              </p>
+            </div>
 
-              {/* Phone */}
-              <div className="flex items-start space-x-4 border-b border-black pb-4">
-                <PhoneCall className="w-6 h-6 mt-1" />
-                <div>
-                  <h3 className="font-semibold text-lg">Phone</h3>
-                  <p className="text-sm">
-                    <a href="tel:+919761966485">+91-9761966485</a>
-                    <br />
-                    <a href="tel:+919958838557">+91-9958838557</a>
-                  </p>
+            {/* Phone Card */}
+            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+              <div className="flex items-center space-x-4 mb-4">
+                <div className="p-3 bg-blue-500 rounded-lg">
+                  <PhoneCall className="w-6 h-6 text-white" />
                 </div>
+                <h3 className="text-xl font-semibold">Call Us</h3>
               </div>
-
-              {/* Email */}
-              <div className="flex items-start space-x-4">
-                <Mails className="w-6 h-6 mt-1" />
-                <div>
-                  <h3 className="font-semibold text-lg">Email</h3>
-                  <p className="text-sm">
-                    <a href="mailto:intothewildstays@outlook.com">
-                      intothewildstays@outlook.com
-                    </a>
-                  </p>
-                </div>
+              <div className="space-y-2">
+                <a href="tel:+919761966485" className="block text-gray-600 hover:text-blue-500">+91-9761966485</a>
+                <a href="tel:+919958838557" className="block text-gray-600 hover:text-blue-500">+91-9958838557</a>
               </div>
             </div>
-          </div>
 
-          {/* Contact Form Section */}
-          <div className="p-8">
-            <h2 className="text-3xl font-bold mb-6 uppercase tracking-tight">
-              Send a Message
-            </h2>
+            {/* Email Card */}
+            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+              <div className="flex items-center space-x-4 mb-4">
+                <div className="p-3 bg-purple-500 rounded-lg">
+                  <Mails className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold">Email Us</h3>
+              </div>
+              <a href="mailto:intothewildstays@outlook.com" className="text-gray-600 hover:text-purple-500">
+                intothewildstays@outlook.com
+              </a>
+            </div>
+          </motion.div>
+
+          {/* Contact Form */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="lg:col-span-2 bg-white rounded-2xl shadow-lg p-8"
+          >
+            <h2 className="text-3xl font-bold mb-8">Send us a Message</h2>
             <form onSubmit={sendEmail} className="space-y-6">
-              <div>
-                <label
-                  htmlFor="name"
-                  className="block uppercase text-xs font-bold mb-2"
-                >
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleInputChange}
-                  required
-                  className="w-full px-3 py-2 border border-black focus:outline-none focus:ring-1 focus:ring-black"
-                  placeholder="Enter your name"
-                />
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Name</label>
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                    placeholder="John Doe"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                    placeholder="john@example.com"
+                  />
+                </div>
               </div>
 
               <div>
-                <label
-                  htmlFor="email"
-                  className="block uppercase text-xs font-bold mb-2"
-                >
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  required
-                  className="w-full px-3 py-2 border border-black focus:outline-none focus:ring-1 focus:ring-black"
-                  placeholder="Enter your email"
-                />
-              </div>
-
-              <div>
-                <label
-                  htmlFor="phone"
-                  className="block uppercase text-xs font-bold mb-2"
-                >
-                  Phone
-                </label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Phone</label>
                 <input
                   type="tel"
-                  id="phone"
                   name="phone"
                   value={formData.phone}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-3 py-2 border border-black focus:outline-none focus:ring-1 focus:ring-black"
-                  placeholder="Enter your phone number"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                  placeholder="+91 98765 43210"
                 />
               </div>
 
               <div>
-                <label
-                  htmlFor="message"
-                  className="block uppercase text-xs font-bold mb-2"
-                >
-                  Message
-                </label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
                 <textarea
-                  id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleInputChange}
                   required
                   rows="5"
-                  className="w-full px-3 py-2 border border-black focus:outline-none focus:ring-1 focus:ring-black"
-                  placeholder="Enter your message"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                  placeholder="Tell us what you're looking for..."
                 ></textarea>
               </div>
 
-              <button
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full border border-black py-3 uppercase text-sm font-bold hover:bg-black hover:text-white transition duration-300 flex items-center justify-center space-x-2"
+                className="w-full bg-gradient-to-r from-teal-500 to-blue-500 text-white py-4 px-8 rounded-lg font-medium hover:opacity-90 transition-all duration-300 flex items-center justify-center space-x-2"
               >
-                {isSubmitting ? "Sending..." : "Send Message"}
-                <Send className="w-4 h-4 ml-2" />
-              </button>
+                {isSubmitting ? (
+                  <span>Sending...</span>
+                ) : (
+                  <>
+                    <span>Send Message</span>
+                    <Send className="w-5 h-5" />
+                  </>
+                )}
+              </motion.button>
 
               {success && (
-                <p className="text-center mt-4 uppercase text-xs">
-                  Message sent successfully
-                </p>
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  className="text-center text-green-600 font-medium"
+                >
+                  Message sent successfully!
+                </motion.div>
               )}
             </form>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>
