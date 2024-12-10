@@ -15,7 +15,7 @@ import heroImage5 from "../assets/banner/b3.jpeg";
 // import heroImage5 from "../assets/guestdiary/img-3.jpeg";
 
 const images = [heroImage1, heroImage2, heroImage3, heroImage4, heroImage5];
-const locations = ["Dhanolti", "Goa", "Tehri", "Majuli"];
+const locations = ["Dhanolti", "Goa", "Tehri", "Majuli","Rishikesh"];
 
 const HomeHero = () => {
   const navigate = useNavigate();
@@ -34,7 +34,7 @@ const HomeHero = () => {
     }, 5000);
     return () => clearInterval(interval);
   }, []);
-
+ 
   const handleSearch = () => {
     const params = new URLSearchParams();
     Object.entries(searchParams).forEach(([key, value]) => {

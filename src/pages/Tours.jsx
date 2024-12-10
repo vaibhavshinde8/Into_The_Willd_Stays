@@ -123,6 +123,7 @@ const Tours = () => {
       <ContactForm
         isOpen={isContactModalOpen}
         onClose={() => setIsContactModalOpen(false)}
+        isTour={true}
       />
     </div>
   );

@@ -136,18 +136,18 @@ const Register = () => {
             <div className="mt-4 flex justify-center">
               <GoogleLogin
                 onSuccess={(response) => {
+                  
                   handleGoogleSignup(response);
                 }}
                 onError={() => {
                   toast.error("Login failed");
                   // console.log("Login failed");
                 }}
-                useOneTap
                 type="standard"
                 text="continue_with"
                 theme="dark"
                 shape='square'
-              />
+                />
             </div>
           </form>
 
