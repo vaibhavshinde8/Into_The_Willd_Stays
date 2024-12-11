@@ -30,7 +30,7 @@ const PropertyShimmer = () => (
   </div>
 );
 
-const locations = ["Dhanolti", "Goa", "Tehri", "Majuli"];
+const locations = ["Dhanolti", "Goa", "Tehri", "Majuli","Rishikesh"];
 
 const Properties = () => {
   const navigate = useNavigate();
@@ -62,12 +62,28 @@ const Properties = () => {
     fetchProperties();
   }, []);
 
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    console.log(urlParams);
+    const location = urlParams.get('location') || "";
+    const checkIn = urlParams.get('checkIn') || "";
+    const checkOut = urlParams.get('checkOut') || "";
+    const adults = urlParams.get('adults') ? parseInt(urlParams.get('adults')) : 1;
+    const children = urlParams.get('children') ? parseInt(urlParams.get('children')) : 0;
+    setSearchParams({ location, checkIn, checkOut, adults, children });
+    
+    if (location) {
+      handleFilterChange({ location: location });
+    }
+  }, [properties]);
+
   const handleSearch = () => {
     const params = new URLSearchParams();
     Object.entries(searchParams).forEach(([key, value]) => {
       if (value) params.append(key, value);
     });
     navigate(`/properties?${params.toString()}`);
+    handleFilterChange({ location: searchParams.location }); // Filter when Explore button is clicked
   };
 
   const handleInputChange = (e) => {

@@ -2,6 +2,9 @@ import { useState, useEffect } from "react";
 import { Mails, Navigation, PhoneCall, Send } from "lucide-react";
 import emailjs from "emailjs-com";
 import { motion } from "framer-motion";
+import axios from "axios";  
+import {toast} from "react-toastify";
+import {BASE_URL} from "../utils/baseurl";
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -22,25 +25,22 @@ const ContactUs = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const sendEmail = (e) => {
+  const sendEmail = async(e) => {
     e.preventDefault();
     setIsSubmitting(true);
-
-    const serviceID = "service_8b79wnu";
-    const templateID = "template_434tezq";
-    const publicKey = "FU4ThIFcvqAz_SSAm";
-
-    emailjs.send(serviceID, templateID, formData, publicKey).then(
-      (response) => {
-        setSuccess(true);
-        setIsSubmitting(false);
-        setFormData({ name: "", email: "", phone: "", message: "" });
-      },
-      (error) => {
-        console.error("FAILED...", error);
-        setIsSubmitting(false);
-      }
-    );
+    try{
+      const response = await axios.post(`${BASE_URL}/contact`, formData);
+      console.log(response);
+      toast.success("Message sent successfully");
+      setFormData({ name: "", email: "", phone: "", message: "" });
+    }catch(error){
+      console.error("FAILED...", error);
+      toast.error("Message failed to send");
+      setIsSubmitting(false);
+    }
+    finally{
+      setIsSubmitting(false);
+    }
   };
 
   return (

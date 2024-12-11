@@ -128,14 +128,14 @@ const Login = () => {
 
             {/* Google Login Custom Button */}
             <div className="mt-4 flex justify-center">
-              <GoogleLogin
-                onSuccess={(response) => {
+                <GoogleLogin
+                  onSuccess={(response) => {
+                 
                   handleGoogleLogin(response);
                 }}
                 onError={() => {
                   console.log("Login failed");
                 }}
-                useOneTap
                 type="standard"
                 text="continue_with"
                 theme="dark"

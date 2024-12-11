@@ -2,8 +2,11 @@ import { useState } from "react";
 import { X, Send, User, Mail, Phone, MessageSquare } from "lucide-react";
 import emailjs from "emailjs-com";
 import { motion, AnimatePresence } from "framer-motion";
+import axios from "axios";
+import {BASE_URL} from "../utils/baseurl";
+import { toast } from "react-toastify";
 
-const ContactForm = ({ isOpen, onClose }) => {
+const ContactForm = ({ isOpen, onClose, isTour }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -18,26 +21,58 @@ const ContactForm = ({ isOpen, onClose }) => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const sendEmail = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-
-    const serviceID = "service_8b79wnu";
-    const templateID = "template_434tezq";
-    const publicKey = "FU4ThIFcvqAz_SSAm";
-
-    emailjs.send(serviceID, templateID, formData, publicKey).then(
-      (response) => {
-        console.log("SUCCESS!", response.status, response.text);
-        setSuccess(true);
-        setIsSubmitting(false);
-        setFormData({ name: "", email: "", phone: "", message: "" });
-      },
-      (error) => {
-        console.error("FAILED...", error);
-        setIsSubmitting(false);
+     
+    try{
+      if(isTour){
+        const response = await axios.post(`${BASE_URL}/toursQuery`, formData);
+        if(response.status === 200){
+          setSuccess(true);
+          setIsSubmitting(false);
+          toast.success("Tours query sent successfully");
+          setFormData({ name: "", email: "", phone: "", message: "" });
+        }
       }
-    );
+      else{
+        const response = await axios.post(`${BASE_URL}/eventQuery`, formData);
+        if(response.status === 200){
+          setSuccess(true);
+          setIsSubmitting(false);
+          toast.success("Event query sent successfully");
+          setFormData({ name: "", email: "", phone: "", message: "" });
+        }
+      }
+    } catch (error) {
+      if(isTour){
+        toast.error("Error sending tours query");
+      }
+      else{
+        toast.error("Error sending event query");
+      }
+      setIsSubmitting(false);
+    }
+    finally{
+      setIsSubmitting(false);
+    }
+
+    // const serviceID = "service_8b79wnu";
+    // const templateID = "template_434tezq";
+    // const publicKey = "FU4ThIFcvqAz_SSAm";
+
+    // emailjs.send(serviceID, templateID, formData, publicKey).then(
+    //   (response) => {
+    //     console.log("SUCCESS!", response.status, response.text);
+    //     setSuccess(true);
+    //     setIsSubmitting(false);
+    //     setFormData({ name: "", email: "", phone: "", message: "" });
+    //   },
+    //   (error) => {
+    //     console.error("FAILED...", error);
+    //     setIsSubmitting(false);
+    //   }
+    // );
   };
 
   if (!isOpen) return null;

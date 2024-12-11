@@ -5,6 +5,9 @@ import { Link } from "react-router-dom";
 import logo from "../assets/IntotheWildStaysLogo.png";
 import emailjs from "emailjs-com";
 import { motion, AnimatePresence } from "framer-motion";
+import axios from "axios";
+import {BASE_URL} from "../utils/baseurl";
+import {toast} from "react-toastify";
 
 // Modal Component for Property Listing Form
 // eslint-disable-next-line react/prop-types
@@ -24,7 +27,7 @@ const PropertyListingModal = ({ isOpen, onClose }) => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
     if (currentStep !== 3) {
       setCurrentStep(curr => curr + 1);
@@ -32,24 +35,38 @@ const PropertyListingModal = ({ isOpen, onClose }) => {
     }
 
     setIsSubmitting(true);
+     try{
+      const response = await axios.post(`${BASE_URL}/propertyListingQuery`, formData);
+      console.log(response);
+      toast.success("Property listing query sent successfully");
+      setFormData({ name: "", email: "", phone: "", message: "" });
+      onClose();
+      setCurrentStep(1);
+     }catch(error){
+      console.error("Error sending property listing query", error);
+      toast.error("Failed to send property listing query");
+     }
+     finally{
+      setIsSubmitting(false);
+     }
 
-    const serviceID = "service_8b79wnu";
-    const templateID = "template_434tezq";
-    const publicKey = "FU4ThIFcvqAz_SSAm";
+    // const serviceID = "service_8b79wnu";
+    // const templateID = "template_434tezq";
+    // const publicKey = "FU4ThIFcvqAz_SSAm";
 
-    emailjs.send(serviceID, templateID, formData, publicKey).then(
-      (response) => {
-        console.log("SUCCESS!", response.status, response.text);
-        setSuccess(true);
-        setIsSubmitting(false);
-        setFormData({ name: "", email: "", phone: "", message: "" });
-        setTimeout(() => onClose(), 2000);
-      },
-      (error) => {
-        console.error("FAILED...", error);
-        setIsSubmitting(false);
-      }
-    );
+    // emailjs.send(serviceID, templateID, formData, publicKey).then(
+    //   (response) => {
+    //     console.log("SUCCESS!", response.status, response.text);
+    //     setSuccess(true);
+    //     setIsSubmitting(false);
+    //     setFormData({ name: "", email: "", phone: "", message: "" });
+    //     setTimeout(() => onClose(), 2000);
+    //   },
+    //   (error) => {
+    //     console.error("FAILED...", error);
+    //     setIsSubmitting(false);
+    //   }
+    // );
   };
 
   if (!isOpen) return null;
