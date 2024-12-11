@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const ListYourProperties = () => {
   return (
-    <section className="relative py-32 bg-gradient-to-br from-blue-50 via-teal-50/30 to-cyan-50/30 overflow-hidden">
+    <section className="relative py-32 bg-gradient-to-r from-blue-100 via-cyan-100 to-emerald-100 overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 bg-grid-slate-100/50 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] -z-10" />
       <div className="absolute -top-40 -right-40 w-80 h-80 bg-teal-100 rounded-full blur-3xl opacity-30" />
@@ -12,7 +12,7 @@ const ListYourProperties = () => {
       <div className="container mx-auto px-6 lg:px-32">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-16">
           {/* Left content */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -20,7 +20,7 @@ const ListYourProperties = () => {
             className="lg:w-1/2 space-y-10"
           >
             <div className="space-y-6">
-              <motion.span 
+              <motion.span
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
@@ -33,33 +33,35 @@ const ListYourProperties = () => {
               </h2>
             </div>
             <p className="text-xl text-gray-600 leading-relaxed font-light">
-              Join our exclusive network of property owners and connect with thousands of travelers seeking unique stays. 
-              We provide comprehensive support to help you manage your property efficiently and maximize your rental income.
+              Join our exclusive network of property owners and connect with
+              thousands of travelers seeking unique stays. We provide
+              comprehensive support to help you manage your property efficiently
+              and maximize your rental income.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               {[
                 {
-                  title: 'Global Reach',
-                  desc: 'Connect with travelers worldwide',
-                  icon: '🌍'
+                  title: "Global Reach",
+                  desc: "Connect with travelers worldwide",
+                  icon: "🌍",
                 },
                 {
-                  title: 'Expert Support',
-                  desc: 'Professional management assistance',
-                  icon: '👥'
+                  title: "Expert Support",
+                  desc: "Professional management assistance",
+                  icon: "👥",
                 },
                 {
-                  title: 'Smart Pricing',
-                  desc: 'Competitive commission structure',
-                  icon: '💰'
+                  title: "Smart Pricing",
+                  desc: "Competitive commission structure",
+                  icon: "💰",
                 },
                 {
-                  title: 'Easy Management',
-                  desc: 'Intuitive host dashboard',
-                  icon: '⚡'
-                }
+                  title: "Easy Management",
+                  desc: "Intuitive host dashboard",
+                  icon: "⚡",
+                },
               ].map((benefit, index) => (
-                <motion.div 
+                <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -69,22 +71,30 @@ const ListYourProperties = () => {
                   className="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-white/50 max-w-[250px]"
                 >
                   <span className="text-2xl mb-3 block">{benefit.icon}</span>
-                  <h3 className="font-bold text-base text-[#0F2642] mb-1">{benefit.title}</h3>
+                  <h3 className="font-bold text-base text-[#0F2642] mb-1">
+                    {benefit.title}
+                  </h3>
                   <p className="text-gray-600 text-sm">{benefit.desc}</p>
                 </motion.div>
               ))}
             </div>
-            <motion.div
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
+            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
               <Link
                 to="/contact-us"
                 className="inline-flex items-center px-10 py-5 bg-gradient-to-r from-[#0F2642] to-teal-700 text-white rounded-2xl hover:shadow-2xl transition-all duration-500 shadow-lg text-lg font-medium group"
               >
                 Contact Us Now
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 ml-3 group-hover:translate-x-2 transition-transform duration-300" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6 ml-3 group-hover:translate-x-2 transition-transform duration-300"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                    clipRule="evenodd"
+                  />
                 </svg>
               </Link>
             </motion.div>

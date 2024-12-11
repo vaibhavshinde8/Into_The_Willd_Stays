@@ -7,9 +7,35 @@
 @tailwind utilities;
 
 * {
-  font-family: "montserrat", sans-serif;
-  /* font-weight: 400; */
-  /* font-style: normal; */
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Reset any conflicting styles */
+.backdrop-blur-md {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.bg-white\/40 {
+  background-color: rgb(255 255 255 / 0.4);
+}
+
+.rounded-3xl {
+  border-radius: 1.5rem;
+}
+
+.inset-0 {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.absolute {
+  position: absolute;
 }
 
 /* #012258
