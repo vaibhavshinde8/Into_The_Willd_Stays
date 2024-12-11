@@ -3,82 +3,111 @@ import { motion } from 'framer-motion';
 
 const ListYourProperties = () => {
   return (
-    <section className="py-24 bg-gradient-to-br from-gray-50 via-teal-50/30 to-blue-50/30 lg:py-32">
-      <div className="container mx-auto px-12 lg:px-32 ">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+    <section className="relative py-32 bg-gradient-to-br from-blue-50 via-teal-50/30 to-cyan-50/30 overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 bg-grid-slate-100/50 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] -z-10" />
+      <div className="absolute -top-40 -right-40 w-80 h-80 bg-teal-100 rounded-full blur-3xl opacity-30" />
+      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-100 rounded-full blur-3xl opacity-30" />
+
+      <div className="container mx-auto px-6 lg:px-32">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-16">
           {/* Left content */}
           <motion.div 
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="lg:w-1/2 space-y-8"
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="lg:w-1/2 space-y-10"
           >
-            <div className="space-y-4">
-              <span className="text-teal-600 font-medium tracking-wider">BECOME A HOST</span>
-              <h2 className="text-4xl lg:text-5xl font-bold text-[#0F2642]">
+            <div className="space-y-6">
+              <motion.span 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                className="inline-block px-4 py-2 bg-teal-100/50 text-teal-700 font-semibold tracking-wider rounded-full"
+              >
+                BECOME A HOST
+              </motion.span>
+              <h2 className="text-5xl lg:text-6xl font-bold bg-gradient-to-r from-[#0F2642] to-teal-600 bg-clip-text text-transparent">
                 List Your Property With Us
               </h2>
             </div>
-            <p className="text-lg text-gray-600 leading-relaxed">
+            <p className="text-xl text-gray-600 leading-relaxed font-light">
               Join our exclusive network of property owners and connect with thousands of travelers seeking unique stays. 
               We provide comprehensive support to help you manage your property efficiently and maximize your rental income.
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               {[
                 {
                   title: 'Global Reach',
-                  desc: 'Connect with travelers worldwide'
+                  desc: 'Connect with travelers worldwide',
+                  icon: '🌍'
                 },
                 {
                   title: 'Expert Support',
-                  desc: 'Professional management assistance'
+                  desc: 'Professional management assistance',
+                  icon: '👥'
                 },
                 {
                   title: 'Smart Pricing',
-                  desc: 'Competitive commission structure'
+                  desc: 'Competitive commission structure',
+                  icon: '💰'
                 },
                 {
                   title: 'Easy Management',
-                  desc: 'Intuitive host dashboard'
+                  desc: 'Intuitive host dashboard',
+                  icon: '⚡'
                 }
               ].map((benefit, index) => (
                 <motion.div 
                   key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
                   whileHover={{ scale: 1.05 }}
-                  className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
+                  className="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-white/50 max-w-[250px]"
                 >
-                  <h3 className="font-semibold text-[#0F2642] mb-2">{benefit.title}</h3>
-                  <p className="text-gray-600">{benefit.desc}</p>
+                  <span className="text-2xl mb-3 block">{benefit.icon}</span>
+                  <h3 className="font-bold text-base text-[#0F2642] mb-1">{benefit.title}</h3>
+                  <p className="text-gray-600 text-sm">{benefit.desc}</p>
                 </motion.div>
               ))}
             </div>
-            <Link
-              to="/contact-us"
-              className="inline-flex items-center px-8 py-4 bg-[#0F2642] text-white rounded-xl hover:bg-[#0F2642]/90 transition-all duration-300 shadow-lg hover:shadow-xl"
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
             >
-             Contact Us Now !
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
-              </svg>
-            </Link>
+              <Link
+                to="/contact-us"
+                className="inline-flex items-center px-10 py-5 bg-gradient-to-r from-[#0F2642] to-teal-700 text-white rounded-2xl hover:shadow-2xl transition-all duration-500 shadow-lg text-lg font-medium group"
+              >
+                Contact Us Now
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 ml-3 group-hover:translate-x-2 transition-transform duration-300" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                </svg>
+              </Link>
+            </motion.div>
           </motion.div>
 
           {/* Right image */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 1, ease: "easeOut" }}
             className="lg:w-1/2"
           >
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-teal-500 to-blue-500 transform rotate-6 rounded-3xl" />
-              <img
+              <div className="absolute inset-0 bg-gradient-to-r from-teal-500 to-blue-500 transform rotate-6 rounded-[2rem] blur-sm" />
+              <motion.img
+                whileHover={{ scale: 1.03 }}
+                transition={{ duration: 0.5 }}
                 src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
                 alt="Luxury property"
-                className="relative rounded-3xl shadow-xl w-full h-[600px] object-cover"
+                className="relative rounded-[2rem] shadow-2xl w-full h-[700px] object-cover hover:shadow-3xl transition-all duration-500"
               />
+              <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-t from-black/30 to-transparent" />
             </div>
           </motion.div>
         </div>

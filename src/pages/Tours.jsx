@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { MapPin, Clock } from "lucide-react";
-import toursData from "../assets/tours.json";
+import toursData from "../data/tours.json";
 import { useNavigate } from "react-router-dom";
 import ContactForm from "../components/ContactForm";
 // import BookingButtonTours from "../components/BookingButtonTours";

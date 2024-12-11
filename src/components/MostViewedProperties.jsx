@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { MapPin, Filter, Compass, Layers, Globe } from "lucide-react";
+// import { MapPin, Filter, Compass, Layers, Globe } from "lucide-react";
 import PropertiesCard from "./PropertiesCard";
 import { motion } from "framer-motion";
 

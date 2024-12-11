@@ -1,5 +1,5 @@
-import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+// import { useNavigate } from "react-router-dom";
+// import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaMapMarkerAlt, FaCompass, FaGlobe } from "react-icons/fa";
 
@@ -40,12 +40,12 @@ const locations = [
 ];
 
 const LocationSection = () => {
-  const navigate = useNavigate();
-  const [activeLocation, setActiveLocation] = useState(null);
+  // const navigate = useNavigate();
+  // const [activeLocation, setActiveLocation] = useState(null);
 
   return (
     <div className=" text-black bg-gradient-to-br from-blue-100 to-cyan-100 py-16 px-4 md:px-16 relative overflow-hidden lg:px-32">
-      <div className="absolute inset-0 backdrop-blur-sm bg-white/30 rounded-3xl"></div>
+      {/* <div className="absolute inset-0 backdrop-blur-sm bg-white/30 rounded-3xl"></div> */}
 
       <div className="relative z-10 max-w-7xl mx-auto">
         <motion.h1
@@ -73,7 +73,7 @@ const LocationSection = () => {
               className="relative group"
             >
               <div className="relative w-64 h-64 mx-auto">
-                <div className="w-full h-full rounded-full overflow-hidden border-4 border-white/50">
+                <div className="w-full h-full rounded-full overflow-hidden border-4 border-blue-400 border-dotted">
                   <img
                     src={location.imgUrl}
                     alt={location.name}

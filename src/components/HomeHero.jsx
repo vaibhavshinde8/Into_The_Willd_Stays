@@ -1,21 +1,15 @@
-import   { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import {
-  FaSearch,
-  FaCalendar,
-  // FaRocket,
-} from "react-icons/fa";
+import { FaSearch, FaCalendar } from "react-icons/fa";
 import heroImage1 from "../assets/guestdiary/img-2.jpg";
 import heroImage2 from "../assets/banner/b1.jpeg";
 import heroImage3 from "../assets/guestdiary/img-1.jpeg";
 import heroImage4 from "../assets/banner/b4.jpeg";
 import heroImage5 from "../assets/banner/b3.jpeg";
-// import heroImage2 from "../assets/banner/b2.jpeg";
-// import heroImage5 from "../assets/guestdiary/img-3.jpeg";
 
 const images = [heroImage1, heroImage2, heroImage3, heroImage4, heroImage5];
-const locations = ["Dhanolti", "Goa", "Tehri", "Majuli","Rishikesh"];
+const locations = ["Dhanolti", "Goa", "Tehri", "Majuli", "Rishikesh"];
 
 const HomeHero = () => {
   const navigate = useNavigate();
@@ -34,7 +28,7 @@ const HomeHero = () => {
     }, 5000);
     return () => clearInterval(interval);
   }, []);
- 
+
   const handleSearch = () => {
     const params = new URLSearchParams();
     Object.entries(searchParams).forEach(([key, value]) => {
@@ -52,49 +46,64 @@ const HomeHero = () => {
   };
 
   return (
-    <div className="relative min-h-screen pt-64 flex flex-col justify-center items-center overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black">
-      {/* Animated Background Overlay */}
-      <div className="absolute inset-0 z-0 opacity-100">
+    <div className="relative min-h-screen pt-48 flex flex-col justify-center items-center overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black">
+      {/* Enhanced Animated Background Overlay */}
+      <div className="absolute inset-0 z-0">
         {images.map((img, index) => (
-          <img
+          <motion.img
             key={index}
             src={img}
             alt={`Background ${index + 1}`}
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 rounded-b-3xl ${
-              index === currentImageIndex ? "opacity-100" : "opacity-0"
+            className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 ease-in-out  ${
+              index === currentImageIndex
+                ? "opacity-100 scale-105"
+                : "opacity-0 scale-100"
             }`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: index === currentImageIndex ? 1 : 0 }}
+            transition={{ duration: 1.5 }}
           />
         ))}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/70 rounded-b-3xl" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/80 backdrop-blur-[2px]" />
       </div>
 
-      {/* Animated Grid Background */}
+      {/* Enhanced Animated Grid Background */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-0 bg-grid-white/5 opacity-50 rounded-b-3xl"></div>
+        <div className="absolute inset-0 bg-grid-white/10 bg-[length:50px_50px] opacity-40 rounded-b-[3rem] animate-pulse"></div>
       </div>
 
-      {/* Content Container */}
+      {/* Enhanced Content Container */}
       <motion.div
-        className="relative z-10 w-full max-w-5xl mx-auto px-4 flex flex-col items-center justify-center flex-grow"
+        className="relative z-10 w-full max-w-6xl mx-auto px-6 flex flex-col items-center justify-center flex-grow"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 1.2, ease: "easeOut" }}
       >
-        {/* Hero Content */}
+        {/* Enhanced Hero Content */}
         <motion.div
-          className="text-center"
+          className="text-center space-y-8"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
+          transition={{ duration: 1, delay: 0.3 }}
         >
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-            <span className="bg-gradient-to-r from-cyan-300 font-bold to-emerald-300 bg-clip-text text-transparent">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-8 leading-tight tracking-tight">
+            <motion.span
+              className="bg-gradient-to-r from-cyan-300 via-teal-300 to-emerald-300 bg-clip-text text-transparent inline-block"
+              animate={{
+                backgroundPosition: ["0%", "100%"],
+              }}
+              transition={{
+                duration: 5,
+                repeat: Infinity,
+                repeatType: "reverse",
+              }}
+            >
               INTO THE WILD
-            </span>
+            </motion.span>
             <br />
-            STAYS
+            <span className="drop-shadow-2xl">STAYS</span>
           </h1>
-          <p className="text-xl md:text-2xl text-white mb-8 max-w-2xl mx-auto">
+          <p className="text-xl md:text-2xl lg:text-3xl text-white/90 mb-10 max-w-3xl mx-auto font-light leading-relaxed">
             Embark on a journey of discovery with our curated travel
             experiences. Find your perfect escape, where every destination tells
             a story.
@@ -138,7 +147,12 @@ const HomeHero = () => {
             {/* Check-in */}
             <div className="md:col-span-1">
               <label className="block text-white mb-2 text-sm">Check-in</label>
-              <div className="relative cursor-pointer" onClick={() => document.getElementById('check-in-date').showPicker()}>
+              <div
+                className="relative cursor-pointer"
+                onClick={() =>
+                  document.getElementById("check-in-date").showPicker()
+                }
+              >
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                   <FaCalendar className="text-gray-400" />
                 </div>
@@ -150,14 +164,24 @@ const HomeHero = () => {
                   onChange={handleInputChange}
                   className="w-full h-[46px] pl-10 pr-4 py-3 bg-white border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-3xl cursor-pointer"
                 />
-                <div className="absolute inset-0" onClick={() => document.getElementById('check-in-date').showPicker()}></div>
+                <div
+                  className="absolute inset-0"
+                  onClick={() =>
+                    document.getElementById("check-in-date").showPicker()
+                  }
+                ></div>
               </div>
             </div>
 
             {/* Check-out */}
             <div className="md:col-span-1">
               <label className="block text-white mb-2 text-sm">Check-out</label>
-              <div className="relative cursor-pointer" onClick={() => document.getElementById('check-out-date').showPicker()}>
+              <div
+                className="relative cursor-pointer"
+                onClick={() =>
+                  document.getElementById("check-out-date").showPicker()
+                }
+              >
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                   <FaCalendar className="text-gray-400" />
                 </div>
@@ -169,7 +193,12 @@ const HomeHero = () => {
                   onChange={handleInputChange}
                   className="w-full h-[46px] pl-10 pr-4 py-3 bg-white border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-3xl cursor-pointer"
                 />
-                <div className="absolute inset-0" onClick={() => document.getElementById('check-out-date').showPicker()}></div>
+                <div
+                  className="absolute inset-0"
+                  onClick={() =>
+                    document.getElementById("check-out-date").showPicker()
+                  }
+                ></div>
               </div>
             </div>
 

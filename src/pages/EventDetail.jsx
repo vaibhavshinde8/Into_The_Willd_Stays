@@ -2,11 +2,13 @@ import { useParams } from "react-router-dom";
 import { eventData } from "../data/eventData";
 import { Phone, Mail, MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import ContactForm from "../components/ContactForm";
 
 const EventDetail = () => {
   const { id } = useParams();
   const event = eventData.find((e) => e.id === parseInt(id));
+  const [showContactForm, setShowContactForm] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -15,6 +17,10 @@ const EventDetail = () => {
   if (!event) {
     return <div>Event not found</div>;
   }
+
+  const handleContactClick = () => {
+    setShowContactForm(true);
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-teal-50/30 to-blue-50/30">
@@ -35,8 +41,10 @@ const EventDetail = () => {
           className="absolute bottom-0 left-0 right-0 p-12 text-white"
         >
           <div className="max-w-6xl mx-auto">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white to-teal-300 bg-clip-text text-transparent">{event.name}</h1>
-            <div className="flex flex-wrap gap-6 text-xl font-light tracking-wide">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white to-teal-300 bg-clip-text text-transparent">
+              {event.name}
+            </h1>
+            <div className="flex flex-wrap gap-6 text-xl font-light tracking-wide mb-8">
               <span className="flex items-center space-x-2 bg-white/10 px-4 py-2 rounded-full backdrop-blur-sm">
                 {event.location}
               </span>
@@ -47,8 +55,36 @@ const EventDetail = () => {
                 Rs. {event.price} per person
               </span>
             </div>
+            <motion.button
+              onClick={handleContactClick}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              whileHover={{ 
+                scale: 1.02,
+                boxShadow: "0 20px 40px rgba(0,0,0,0.2)"
+              }}
+              className="relative group bg-gradient-to-r from-teal-500 via-teal-400 to-emerald-400 
+                       text-white px-10 py-5 rounded-2xl text-lg font-medium
+                       shadow-[0_10px_20px_rgba(0,0,0,0.1)] 
+                       hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)]
+                       transition-all duration-500 overflow-hidden
+                       border border-white/20 backdrop-blur-sm"
+            >
+              <span className="relative z-10 flex items-center justify-center gap-2 group-hover:translate-x-1 transition-transform duration-500">
+                Talk to our Experts
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-500" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                </svg>
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 
+                            translate-x-[-100%] group-hover:translate-x-[100%] 
+                            transition-transform duration-1000" />
+            </motion.button>
           </div>
         </motion.div>
+      </div>
+
+      <div className="bg-white/80 backdrop-blur-sm py-8">
       </div>
 
       <div className="max-w-6xl mx-auto px-6 py-16">
@@ -174,6 +210,8 @@ const EventDetail = () => {
           </div>
         </div>
       </div>
+
+      <ContactForm isOpen={showContactForm} onClose={() => setShowContactForm(false)} />
     </div>
   );
 };

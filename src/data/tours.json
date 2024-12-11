@@ -553,6 +553,342 @@
         "Free cancellation up to 30 days before trip",
         "Partial refunds for cancellations closer to trip date"
       ]
+    },
+    {
+      "id": 9,
+      "imageUrl": "https://www.tourmyindia.com/blog//wp-content/uploads/2022/07/Best-Places-to-Visit-in-Mechuka-Arunachal-Pradesh.jpg",
+      "name": "Mechuka | The Magical Valley",
+      "location": "Mechuka, Arunachal Pradesh",
+      "duration": "6 Days, 5 Nights",
+      "price": "16799",
+      "checkInDate": "2024-12-01",
+      "checkOutDate": "2024-12-06",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "description": "MURKONGSELEK / DIBRUGARH – AALO. Embark on your Journey from Kamakhya railway station, reach the last station Murkongselek / Dibrugarh, meet the team and ride towards Aalo. Check in to hotel and overnight stay in Aalo."
+        },
+        {
+          "day": "Day 2",
+          "description": "ALONG - MECHUKA. After breakfast, drive to Mechuka (6-7 hrs, 186 km). Visit Siko Dido waterfall en route. Evening free for local market exploration. Overnight stay in Mechuka."
+        },
+        {
+          "day": "Day 3",
+          "description": "MECHUKA LA TREK -DORJEELING MOUNTAIN. Trek to Dorjeeling Village and Mountain. Explore the countryside with beautiful streams and golden grasses. Trek back to homestay by dawn. Overnight stay."
+        },
+        {
+          "day": "Day 4",
+          "description": "MECHUKA. Visit Siang River bank, Dorjeeling Village, Salman Khan view point, Gurudwara, Hanuman Point, and Old Gompa (Samten Yongcha Monastery). Evening at leisure."
+        },
+        {
+          "day": "Day 5",
+          "description": "MECHUKA - AALONG. Return journey to Along. Visit Bogibeel bridge en route. Overnight stay in Along."
+        },
+        {
+          "day": "Day 6",
+          "description": "ALONG - DIBRUGARH | DEPARTURE. After breakfast, depart for Dibrugarh airport/railway station."
+        }
+      ],
+      "inclusions": [
+        "Hotels with breakfast (Standard/Semi Deluxe Category)",
+        "Exclusive vehicle (Innova or Similar) Dibrugarh to Dibrugarh",
+        "All sightseeing as per itinerary",
+        "Toll taxes/Parking",
+        "Inner Line Permit for Arunachal Pradesh",
+        "End to End Assistance"
+      ],
+      "exclusions": [
+        "Extra fooding",
+        "Any entertainment fee",
+        "Travel Insurance",
+        "Any monument fee",
+        "Personal expenses (laundry, phone calls, etc.)",
+        "Anything not specified in inclusions"
+      ],
+      "important_notes": [
+        "Tour requires careful planning",
+        "Vehicle provided is Innova or similar",
+        "Inner Line Permit is mandatory",
+        "Breakfast included from day 2 to 6",
+        "Dinner included from day 1 to 5"
+      ],
+      "contact_methods": {
+        "phone": "+91-84728 95147",
+        "email": "hello@tourscart.in",
+        "whatsapp": "+91-84728 95147"
+      },
+      "rules_and_policy": [
+        "Booking amount payment varies based on days before trip",
+        "Additional services not mentioned in inclusions will be charged extra",
+        "Tour modifications subject to weather and local conditions",
+        "Personal belongings are traveler's responsibility"
+      ]
+    },
+    {
+      "id": 10,
+      "imageUrl": "https://www.holidify.com/images/cmsuploads/compressed/hornbillfestival_20191213142949.jpg",
+      "name": "Hornbill Festival & Dzukou Valley Trek",
+      "location": "Kohima, Nagaland, INDIA",
+      "duration": "4 Days, 3 Nights",
+      "price": "6199",
+      "checkInDate": "2024-12-01",
+      "checkOutDate": "2024-12-04",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "description": "Arrival at Dimapur Railway station, transfer to Kisama Heritage Village. Check in at campsite, explore the Hornbill Festival in afternoon/evening, attend night concert. Overnight stay at Kisama Heritage Village."
+        },
+        {
+          "day": "Day 2",
+          "description": "Jakhama to Dzukou Valley Base Camp. Trek through the stunning landscapes and set up camp at the base."
+        },
+        {
+          "day": "Day 3",
+          "description": "Dzukou Valley exploration and return to Kisama Heritage Village. Experience the 'Valley of Flowers of the Northeast' with its vibrant wildflowers and serene hiking trails."
+        },
+        {
+          "day": "Day 4",
+          "description": "Kisama Heritage Village to Dimapur/Kohima for departure. Final morning at the festival before heading back."
+        }
+      ],
+      "inclusions": [
+        "Tents on sharing basis",
+        "Breakfast and dinner daily",
+        "One lunch during valley trekking",
+        "Local Guide services",
+        "Transportation between campsite and trekking point",
+        "Inner Line Permit",
+        "Entry fees to Dzukou Valley"
+      ],
+      "exclusions": [
+        "Travel insurance",
+        "Extra food and beverages",
+        "Tips and gratuities",
+        "Entry fees to monuments not in package",
+        "Personal expenses",
+        "Camera fees",
+        "Medical expenses",
+        "Additional transportation charges"
+      ],
+      "important_notes": [
+        "Tents are allocated on sharing basis (2-man, 3-man, 4-man, and family tents)",
+        "Single occupancy in 2-man tent costs extra ₹2000",
+        "Pickup/drop services available from Kohima, Dimapur and Guwahati",
+        "Festival showcases traditional dance, music, and Naga culture"
+      ],
+      "contact_methods": {
+        "phone": "+91-84728 95147",
+        "email": "hello@tourscart.in",
+        "whatsapp": "+91-84728 95147"
+      },
+      "rules_and_policy": [
+        "Tent allocation subject to availability",
+        "Vehicle services require prior arrangement",
+        "Package modifications based on group size",
+        "Campsite inclusions differ from regular tours"
+      ]
+    },
+    {
+      "id": 11,
+      "imageUrl": "https://www.tourmyindia.com/blog//wp-content/uploads/2021/09/Best-Places-to-Visit-in-Sikkim.jpg",
+      "name": "EAST SIKKIM - Short Escape",
+      "location": "SIKKIM, INDIA",
+      "duration": "3 Days, 2 Nights",
+      "price": "7999",
+      "checkInDate": "2024-12-01",
+      "checkOutDate": "2024-12-03",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "description": "Arrival at NJP or Bagdogra Airport. Transfer to Gangtok, the capital of Sikkim (approximately 4-5 hours). Check into hotel and spend the evening exploring MG Marg, the popular shopping and dining area in Gangtok."
+        },
+        {
+          "day": "Day 2",
+          "description": "Gangtok Local Sightseeing. Visit Rumtek Monastery, Enchey Monastery, Namgyal Institute of Tibetology. Optional visit to Tsomgo Lake (Changu Lake) and other local attractions."
+        },
+        {
+          "day": "Day 3",
+          "description": "After breakfast, check out from hotel and transfer to NJP/Bagdogra for departure."
+        }
+      ],
+      "inclusions": [
+        "NJP-NJP/BAGDOGRA Assistance",
+        "Hotels with breakfast & dinner (Economy/Standard/Semi Deluxe Category)",
+        "Exclusive vehicle",
+        "All sightseeing as per itinerary",
+        "All VAT and taxes",
+        "Permit arrangement and processing"
+      ],
+      "exclusions": [
+        "Insurance/Taxes",
+        "Extra food/Beverage",
+        "Any entertainment fee",
+        "Any monument fee",
+        "Personal expenses (Telephone, laundry, etc.)",
+        "Boots, gloves, jacket, room heater",
+        "Zero point visit (optional, pay extra)"
+      ],
+      "important_notes": [
+        "Inner Line Permits (ILP) required for specific regions",
+        "Protected Area Permits (PAP) needed for certain areas",
+        "Road conditions can be unpredictable",
+        "Zero point is not included in the package",
+        "Check travel advisories before planning"
+      ],
+      "contact_methods": {
+        "phone": "+91-84728 95147",
+        "email": "hello@tourscart.in",
+        "whatsapp": "+91-84728 95147"
+      },
+      "rules_and_policy": [
+        "Permits must be obtained from Sikkim Tourism office",
+        "Package modifications based on weather conditions",
+        "Road access subject to local conditions",
+        "Additional activities available at extra cost"
+      ]
+    },
+    {
+      "id": 12,
+      "imageUrl": "https://www.tourmyindia.com/blog//wp-content/uploads/2021/02/Best-Places-to-Visit-in-Meghalaya.jpg",
+      "name": "Meghalaya – Of Root Bridges, Rivers and Waterfalls",
+      "location": "MEGHALAYA, INDIA",
+      "duration": "6 Days, 5 Nights",
+      "price": "14499",
+      "checkInDate": "2024-12-01",
+      "checkOutDate": "2024-12-06",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "description": "Arrival at Guwahati Airport/Railway Station. Drive to Shillong, stop at Umiam Lake for boating and scenic views. Check in to hotel in Shillong and relax."
+        },
+        {
+          "day": "Day 2",
+          "description": "Shillong Local Sightseeing. Visit Elephant falls (three-step waterfall), Wards Lake, Cathedral, local market. Evening visit to Shillong peak for sunset views of the city."
+        },
+        {
+          "day": "Day 3",
+          "description": "Shillong to Cherrapunjee. Visit Latium Canyon, Nohkalikai Falls, Seven Sisters Falls, Mawsmai Falls. Explore Mawsmai Cave with its stalactites and stalagmites. Visit Dainthlen Falls and Wei Sawdong Falls. Overnight stay."
+        },
+        {
+          "day": "Day 4",
+          "description": "Trek to Nongriat Double Decker Root Bridge. Early breakfast, drive to Tyrna village for trek start. 3000+ steps through sacred groves and suspended bridges. Visit rainbow falls. Travel to Dawki-Mawlynnong for overnight stay."
+        },
+        {
+          "day": "Day 5",
+          "description": "Dawki to Shnongpedeng. Visit Umngot River. Activities include boating, river rafting, kayaking, cliff jumping. Overnight camping at Shnongpedeng or homestay at Dawki."
+        },
+        {
+          "day": "Day 6",
+          "description": "Early morning checkout and proceed to Guwahati with sightseeing en route. Tour ends."
+        }
+      ],
+      "inclusions": [
+        "Accommodation in Hotel/Homestay and Camping at Shnongpdeng",
+        "Transportation (Innova/Dzire or similar)",
+        "Breakfast from day 2 to 7",
+        "Dinner on day 5 at Shnongpedeng Camping",
+        "Permits & Parking charges",
+        "Toll Taxes"
+      ],
+      "exclusions": [
+        "Insurance/Taxes",
+        "Entry fees/Camera fees",
+        "Personal expenses (Laundry etc.)",
+        "Additional sightseeing not mentioned in itinerary",
+        "Costs due to natural calamities or political disturbance",
+        "Price increases in transport before departure"
+      ],
+      "important_notes": [
+        "Known as 'Scotland of the East'",
+        "Features unique living root bridges",
+        "Home to some of the wettest places on Earth",
+        "Crystal-clear rivers perfect for water activities",
+        "Rich in natural beauty and cultural diversity"
+      ],
+      "contact_methods": {
+        "phone": "+91-84728 95147",
+        "email": "hello@tourscart.in",
+        "whatsapp": "+91-84728 95147"
+      },
+      "rules_and_policy": [
+        "Check latest travel advisories before planning",
+        "Activities subject to weather conditions",
+        "Additional costs for natural calamities or political disturbance",
+        "Transport price changes to be borne by clients",
+        "Modifications based on local conditions"
+      ]
+    },
+    {
+      "id": 13,
+      "imageUrl": "https://images.thrillophilia.com/image/upload/s--_XWV6kXV--/c_fill,g_auto,h_600,q_auto,w_975/f_auto,fl_strip_profile/v1/images/photos/000/013/730/original/1577274210_darjeeling_feature.jpg.jpg",
+      "name": "Queen of the Hills - Darjeeling",
+      "location": "Darjeeling, West Bengal",
+      "duration": "4 Days, 3 Nights",
+      "price": "8999",
+      "checkInDate": "2024-12-01",
+      "checkOutDate": "2024-12-04",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "description": "Arrival in Darjeeling. Check into hotel and relax. Evening exploration of Chowrasta Mall with views of the Kanchenjunga range. Visit local shops and cafes. Experience the colonial charm of Mall Road. Dinner and overnight stay in Darjeeling."
+        },
+        {
+          "day": "Day 2",
+          "description": "Early morning drive to Tiger Hill for sunrise views of Mt. Kanchenjunga and Mt. Everest (weather permitting). Visit Batasia Loop and War Memorial en route. After breakfast, visit Japanese Peace Pagoda, tea gardens for guided tour and tea tasting. Evening joy ride on the UNESCO World Heritage Darjeeling Himalayan Railway (Toy Train). Explore Ghum Railway Museum. Return to hotel for dinner and overnight stay."
+        },
+        {
+          "day": "Day 3",
+          "description": "Full-day excursion to Takdah, Tinchuley, and Lamahatta. Morning visit to Takdah Tea Estate with guided tour. Lunch at local eatery. Explore Tinchuley Village, orange orchards, and monastery. Visit Lamahatta Eco Park for gardens, walking trails, and mountain views. Evening return to Darjeeling. Dinner and overnight stay."
+        },
+        {
+          "day": "Day 4",
+          "description": "After breakfast, final visit to Batasia Loop. Free time for souvenir shopping at local markets. Transfer to NJP railway station/Bagdogra airport for departure."
+        }
+      ],
+      "inclusions": [
+        "3 nights accommodation in hotel",
+        "Daily breakfast and dinner",
+        "All transfers and sightseeing by exclusive vehicle",
+        "Toy Train ride tickets (subject to availability)",
+        "English/Hindi speaking guide",
+        "All parking fees and toll taxes",
+        "Pick up and drop from NJP/Bagdogra",
+        "End to end assistance"
+      ],
+      "exclusions": [
+        "Airfare/train fare",
+        "Lunch and other meals not mentioned",
+        "Entry fees to monuments/museums",
+        "Camera fees",
+        "Personal expenses (phone calls, laundry, etc.)",
+        "Tips and gratuities",
+        "Porter service",
+        "Any cost arising due to natural calamities",
+        "Anything not mentioned in inclusions"
+      ],
+      "important_notes": [
+        "Tiger Hill sunrise view subject to weather conditions",
+        "Toy Train booking subject to availability",
+        "Zoo remains closed on Thursdays",
+        "Carry warm clothes as temperatures can drop significantly",
+        "Best time to visit is March-May and October-December",
+        "Early morning Tiger Hill visit requires 4 AM start",
+        "Some attractions might be closed during monsoons"
+      ],
+      "contact_methods": {
+        "phone": "+91-84728 95147",
+        "email": "hello@tourscart.in",
+        "whatsapp": "+91-84728 95147"
+      },
+      "rules_and_policy": [
+        "Check-in time: 12 PM, Check-out time: 11 AM",
+        "Booking confirmation subject to availability",
+        "50% advance payment required for confirmation",
+        "Free cancellation up to 7 days before arrival",
+        "Children below 5 years complimentary without extra bed",
+        "Package modifications possible with prior notice",
+        "Sightseeing schedule may change due to local conditions"
+      ]
     }
   ]
 }
