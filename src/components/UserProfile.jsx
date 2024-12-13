@@ -23,7 +23,7 @@ const EditProfileModal = ({ isOpen, onClose, user, onSave }) => {
     e.preventDefault();
     // Update user in localStorage
     const updatedUser = { ...user, ...formData };
-    localStorage.setItem("user", JSON.stringify(updatedUser));
+    localStorage.setItem("user", JSON?.stringify(updatedUser));
     onSave(updatedUser);
     onClose();
   };
@@ -179,13 +179,13 @@ const UserProfile = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
-  const localUser = JSON.parse(localStorage.getItem("user"));
+  const localUser = localStorage.getItem("user") || "{}";
   // Check for user authentication
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
-
+    console.log("storedUser", storedUser);
     // If no user is logged in, redirect to login page
-    if (!storedUser) {
+    if (!storedUser||storedUser==="{}"||storedUser==="null"||storedUser==="undefined") {
       navigate("/login", {
         state: { from: location },
         replace: true,

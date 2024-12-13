@@ -4,14 +4,18 @@ import { AtSign, Lock, Loader2 } from "lucide-react";
 import { loginUser } from "../api";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { Key } from "lucide-react";
 import { toast } from "react-toastify";
 import { BASE_URL } from "../utils/baseurl";
 import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
 import { googleSignup } from "../api";
+
 const Login = () => {
   const [emailorphone, setEmailorphone] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [otp, setOtp] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [showSuccessDialog, setShowSuccessDialog] = useState(false);
   const navigate = useNavigate();
@@ -23,36 +27,56 @@ const Login = () => {
 
     try {
       const data = await loginUser(emailorphone, password);
-      localStorage.setItem("token", data.token);
-      localStorage.setItem("user", JSON.stringify(data.user));
-      // Show success dialog
-      setIsLoading(false);
-      setShowSuccessDialog(true);
-      // Automatically navigate to booking page after 2 seconds
-      setTimeout(() => {
-        setShowSuccessDialog(false);
-        navigate("/", { state: { user: data.user } });
-      }, 2000);
+      if (data.status === 204) {
+        setIsModalOpen(true);
+      }
+      else {
+        localStorage.setItem("token", data.token);
+        localStorage.setItem("user", JSON.stringify(data.user));
+        // Show success dialog
+        setIsLoading(false);
+        setShowSuccessDialog(true);
+        // Automatically navigate to booking page after 2 seconds
+        setTimeout(() => {
+          setShowSuccessDialog(false);
+          navigate("/", { state: { user: data.user } });
+        }, 2000);
+      }
     } catch (err) {
       setIsLoading(false);
       setError("Login failed. Please check your credentials.");
     }
   };
-   
+
   const handleGoogleLogin = async (response) => {
-      setIsLoading(true);
-      const res=await googleSignup(response);
-      console.log(res);
-      toast.success(res.data.message);
-      localStorage.setItem("token",res.data.token);
-      localStorage.setItem("user",JSON.stringify(res.data.user));
-      setIsLoading(false);
+    setIsLoading(true);
+    const res = await googleSignup(response);
+    console.log(res);
+    toast.success(res.data.message);
+    localStorage.setItem("token", res.data.token);
+    localStorage.setItem("user", JSON.stringify(res.data.user));
+    setIsLoading(false);
+    setShowSuccessDialog(true);
+    setTimeout(() => {
+      setShowSuccessDialog(false);
+      navigate("/", { state: { user: res.data.user } });
+    }, 2000);
+    setIsLoading(false);
+  }
+
+  const handleOtpSubmit = async () => {
+    const res = await axios.post(`${BASE_URL}/auth/verify-email`, { emailorphone, otp });
+    console.log(res);
+    if(res.status===200){
+      localStorage.setItem("token", res.data.token);
+      localStorage.setItem("user", JSON.stringify(res.data.user));
+      setIsModalOpen(false);
       setShowSuccessDialog(true);
       setTimeout(() => {
         setShowSuccessDialog(false);
         navigate("/", { state: { user: res.data.user } });
       }, 2000);
-     setIsLoading(false);
+    }
   }
 
   return (
@@ -128,9 +152,9 @@ const Login = () => {
 
             {/* Google Login Custom Button */}
             <div className="mt-4 flex justify-center">
-                <GoogleLogin
-                  onSuccess={(response) => {
-                 
+              <GoogleLogin
+                onSuccess={(response) => {
+
                   handleGoogleLogin(response);
                 }}
                 onError={() => {
@@ -177,6 +201,44 @@ const Login = () => {
         </div>
       </div>
 
+
+      {/* OTP Modal */}
+      {isModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white rounded-lg shadow-lg p-6 w-full max-w-md">
+            <h3 className="text-xl font-semibold text-gray-900 text-center mb-4">
+              Enter OTP
+            </h3>
+            <div className="relative mb-4">
+              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <Key className="h-5 w-5 text-teal-500" />
+              </div>
+              <input
+                type="text"
+                placeholder="Enter OTP"
+                value={otp}
+                onChange={(e) => setOtp(e.target.value)}
+                required
+                className="block w-full pl-10 pr-4 py-3 border border-emerald-300 rounded-lg shadow-sm text-black focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition duration-300 ease-in-out"
+              />
+            </div>
+            <div className="flex justify-between">
+              <button
+                onClick={handleOtpSubmit}
+                className="py-2 px-4 bg-teal-600 text-white rounded-lg shadow hover:bg-teal-700 transition duration-300"
+              >
+                Confirm OTP
+              </button>
+              <button
+                onClick={() => setIsModalOpen(false)}
+                className="py-2 px-4 bg-red-600 text-white rounded-lg shadow hover:bg-red-700 transition duration-300"
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
       {/* Success Dialog */}
       {showSuccessDialog && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">

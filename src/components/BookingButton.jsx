@@ -4,7 +4,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { BASE_URL } from "../utils/baseurl";
 
-const UserDetailsForm = ({ property, tour, onClose, onSubmit }) => {
+const UserDetailsForm = ({ property, tour, onClose, onSubmit, loading }) => {
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -230,9 +230,10 @@ const UserDetailsForm = ({ property, tour, onClose, onSubmit }) => {
             </button>
             <button
               type="submit"
-              className="w-full sm:w-1/2 px-6 py-3 bg-[#0F2642] text-white rounded-xl hover:bg-[#1a3b66] transition duration-200 font-medium"
+              disabled={loading}
+              className="w-full sm:w-1/2 px-6 py-3 bg-[#0F2642] text-white rounded-xl hover:bg-[#1a3b66] transition duration-200 font-medium disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-gray-300"
             >
-              Proceed to Payment
+              {loading ? "Processing..." : "Proceed to Payment"}
             </button>
           </div>
         </form>
@@ -461,6 +462,7 @@ const BookingButton = ({ property, tour }) => {
           tour={tour}
           onClose={() => setShowUserDetailsForm(false)}
           onSubmit={handleUserDetailsSubmit}
+          loading={loading}
         />
       )}
     </>

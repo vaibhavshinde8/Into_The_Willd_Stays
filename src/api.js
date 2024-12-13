@@ -16,7 +16,12 @@ export const loginUser = async (emailorphone  , password) => {
       const errorData = await response.json();
       throw new Error(errorData.message || "Login failed");
     }
-    return response.json();
+    if(response.status===204){
+      console.log(response);
+      return response;
+    }
+    const data=await response.json();
+    return data;
   } catch (error) {
     console.error("Error during login:", error);
     throw error;

@@ -23,6 +23,15 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    // New password validation
+    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    if (!passwordRegex.test(password)) {
+        // toast.error("Password must be at least 8 characters long and include letters, numbers, and special symbols.");
+        setError("Password must be at least 8 characters long and include letters, numbers, and special symbols.");
+        setIsLoading(false);
+        return; // Exit the function if validation fails
+    }
+
     try {
       setIsLoading(true);
       const data = await registerUser(name, emailorphone, password);
@@ -128,9 +137,10 @@ const Register = () => {
             <div>
               <button
                 type="submit"
-                className="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-base font-semibold text-white bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 transition duration-300 ease-in-out transform hover:scale-105"
+                disabled={isLoading}
+                className="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-base font-semibold text-white bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 transition duration-300 ease-in-out transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Create Account
+                {isLoading ? "Creating Account..." : "Create Account"}
               </button>
             </div>
             <div className="mt-4 flex justify-center">

@@ -20,6 +20,7 @@ import UserProfile from './../components/UserProfile';
 import Events from "../pages/Events";
 import EventDetail from "../pages/EventDetail";
 import ToursDetail from "../pages/ToursDetail";
+import NotFound from "../pages/NotFound";
 
 const blogs = [];
 
@@ -91,6 +92,10 @@ const router = createBrowserRouter([
       {
         path: "/events/:id",
         element: <EventDetail />
+      },
+      {
+        path: "*",
+        element: <NotFound />,
       },
     ],
   },
