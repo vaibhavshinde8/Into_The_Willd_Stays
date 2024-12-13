@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Layers, ArrowRight } from "lucide-react";
-import Image1 from "../assets/tourbanner.jpg";
+// import Image1 from "../assets/tourbanner.jpg";
 
 const PropertiesBanner = () => {
   return (
@@ -24,11 +24,11 @@ const PropertiesBanner = () => {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="space-y-6 bg-white/10 p-8 rounded-3xl backdrop-blur-md"
+              className="space-y-6 bg-white/10 p-8 rounded-3xl backdrop-blur-lg"
             >
               <div className="flex items-center gap-4">
                 <Layers className="w-12 h-12 text-black" />
-                <h1 className="text-4xl font-bold text-black">
+                <h1 className="text-4xl font-bold text-black border-b-2 border-black">
                   Into The Wild Stays
                 </h1>
               </div>

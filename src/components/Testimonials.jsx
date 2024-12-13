@@ -77,7 +77,7 @@ const Testimonials = () => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-blue-50 to-blue-100 py-24 px-8 rounded-3xl">
+    <div className="bg-gradient-to-r from-blue-100 via-cyan-100 to-emerald-100 py-24 px-8 rounded-3xl">
       <div className="max-w-7xl mx-auto">
         <motion.h1
           className="text-5xl md:text-7xl font-bold mb-20 text-center"
@@ -88,10 +88,10 @@ const Testimonials = () => {
           <span className="bg-gradient-to-r from-cyan-800 to-emerald-800 bg-clip-text text-transparent">
             Guest
           </span>{" "}
-          Experiences
+          Experience
         </motion.h1>
 
-        <Swiper
+        {/* <Swiper
           ref={swiperRef}
           modules={[Navigation, Pagination]}
           spaceBetween={40}
@@ -118,11 +118,18 @@ const Testimonials = () => {
                       className="w-24 h-24 rounded-full object-cover border-4 border-emerald-100 shadow-lg"
                     />
                     <div className="absolute -bottom-2 -right-2 bg-emerald-500 rounded-full p-2 shadow-lg">
-                      <Star className="w-4 h-4 text-white" fill="currentColor" />
+                      <Star
+                        className="w-4 h-4 text-white"
+                        fill="currentColor"
+                      />
                     </div>
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-800 mb-1">{testimonial.name}</h3>
-                  <p className="text-sm text-emerald-600 font-medium mb-3">{testimonial.address}</p>
+                  <h3 className="text-2xl font-bold text-gray-800 mb-1">
+                    {testimonial.name}
+                  </h3>
+                  <p className="text-sm text-emerald-600 font-medium mb-3">
+                    {testimonial.address}
+                  </p>
                   <div className="flex space-x-1.5 text-yellow-500">
                     {[...Array(testimonial.rating)].map((_, i) => (
                       <Star key={i} size={20} fill="currentColor" />
@@ -136,7 +143,7 @@ const Testimonials = () => {
               </div>
             </SwiperSlide>
           ))}
-        </Swiper>
+        </Swiper> */}
 
         <div className="mt-32">
           <div className="max-w-5xl mx-auto relative rounded-[2rem] overflow-hidden shadow-2xl group">
@@ -161,8 +168,7 @@ const Testimonials = () => {
                 )}
               </div>
             </div>
-            <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/90 to-transparent">
-            </div>
+            <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/90 to-transparent"></div>
           </div>
         </div>
       </div>

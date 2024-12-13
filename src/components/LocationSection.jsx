@@ -1,5 +1,3 @@
-// import { useNavigate } from "react-router-dom";
-// import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaMapMarkerAlt, FaCompass, FaGlobe } from "react-icons/fa";
 
@@ -40,27 +38,29 @@ const locations = [
 ];
 
 const LocationSection = () => {
-  // const navigate = useNavigate();
-  // const [activeLocation, setActiveLocation] = useState(null);
-
   return (
-    <div className=" text-black bg-gradient-to-br from-blue-100 to-cyan-100 py-16 px-4 md:px-16 relative overflow-hidden lg:px-32">
-      {/* <div className="absolute inset-0 backdrop-blur-sm bg-white/30 rounded-3xl"></div> */}
+    <div className="min-h-screen bg-gradient-to-r from-blue-100 via-cyan-100 to-emerald-100 py-24 px-6 lg:px-32 relative overflow-hidden">
+      <div className="absolute inset-0 backdrop-blur-sm bg-white/20"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto">
-        <motion.h1
-          className="text-4xl md:text-6xl text-black font-bold mb-12 text-center"
+        <motion.div
+          className="text-center mb-20"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <span className="bg-gradient-to-r from-cyan-800 to-emerald-800 bg-clip-text text-transparent">
-            Explore
-          </span>{" "}
-          Extraordinary Destinations
-        </motion.h1>
+          <h1 className="text-5xl md:text-7xl font-bold mb-6">
+            <span className="bg-gradient-to-r from-cyan-800 to-emerald-800 bg-clip-text text-transparent">
+              Explore
+            </span>{" "}
+            <span className="text-gray-800">Destinations</span>
+          </h1>
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+            Discover extraordinary places that promise unforgettable experiences and breathtaking landscapes
+          </p>
+        </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {locations.map((location, index) => (
             <motion.div
               key={location.name}
@@ -72,43 +72,43 @@ const LocationSection = () => {
               }}
               className="relative group"
             >
-              <div className="relative w-64 h-64 mx-auto">
-                <div className="w-full h-full rounded-full overflow-hidden border-4 border-blue-400 border-dotted">
+              <div className="relative w-72 h-72 mx-auto">
+                <div className="w-full h-full rounded-full overflow-hidden border-4 border-white/80 shadow-xl transform group-hover:scale-105 transition-transform duration-500">
                   <img
                     src={location.imgUrl}
                     alt={location.name}
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute bottom-8 left-0 right-0 text-center">
-                    <h3 className="text-2xl font-bold text-white drop-shadow-lg">
-                      {location.name}
-                    </h3>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent">
+                    <div className="absolute bottom-6 left-0 right-0 text-center">
+                      <h3 className="text-3xl font-bold text-white drop-shadow-lg">
+                        {location.name}
+                      </h3>
+                    </div>
                   </div>
                 </div>
 
-                {/* Hover Details */}
-                <div
-                  className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-72 p-4 bg-white/90 backdrop-blur-md rounded-xl 
-                  shadow-xl opacity-0 group-hover:opacity-100 group-hover:-translate-y-20 transition-all duration-300 pointer-events-none"
-                >
-                  <div className="flex justify-between items-center mb-2">
-                    <h2 className="text-xl font-bold text-gray-800">
+                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-80 p-6 bg-white/95  rounded-2xl 
+                  shadow-2xl opacity-0 group-hover:opacity-100 group-hover:-translate-y-20 transition-all duration-500 pointer-events-none
+                  border border-white/50">
+                  <div className="flex justify-between items-center mb-4">
+                    <h2 className="text-2xl font-bold text-gray-800">
                       {location.name}
                     </h2>
-                    <FaMapMarkerAlt className="text-cyan-800 text-xl" />
+                    <FaMapMarkerAlt className="text-cyan-700 text-2xl" />
                   </div>
-                  <p className="text-gray-700 text-sm mb-3">
+                  <p className="text-gray-600 text-base mb-6 leading-relaxed">
                     {location.description}
                   </p>
 
-                  <div className="flex justify-between text-gray-700 text-sm">
-                    <div className="flex items-center space-x-2">
-                      <FaGlobe className="text-emerald-800" />
-                      <span>{location.elevation}</span>
+                  <div className="flex justify-between text-gray-700">
+                    <div className="flex items-center space-x-3">
+                      <FaGlobe className="text-emerald-700 text-lg" />
+                      <span className="font-medium">{location.elevation}</span>
                     </div>
-                    <div className="flex items-center space-x-2">
-                      <FaCompass className="text-cyan-800" />
-                      <span>{location.temperature}</span>
+                    <div className="flex items-center space-x-3">
+                      <FaCompass className="text-cyan-700 text-lg" />
+                      <span className="font-medium">{location.temperature}</span>
                     </div>
                   </div>
                 </div>

@@ -46,47 +46,35 @@ const HomeHero = () => {
   };
 
   return (
-    <div className="relative min-h-screen pt-48 flex flex-col justify-center items-center overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black">
-      {/* Enhanced Animated Background Overlay */}
+    <div className="relative min-h-screen flex flex-col justify-between items-center overflow-hidden py-16 md:pt-32">
+      {/* Background Overlay */}
       <div className="absolute inset-0 z-0">
         {images.map((img, index) => (
           <motion.img
             key={index}
             src={img}
             alt={`Background ${index + 1}`}
-            className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 ease-in-out  ${
-              index === currentImageIndex
-                ? "opacity-100 scale-105"
-                : "opacity-0 scale-100"
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+              index === currentImageIndex ? "opacity-100" : "opacity-0"
             }`}
             initial={{ opacity: 0 }}
             animate={{ opacity: index === currentImageIndex ? 1 : 0 }}
             transition={{ duration: 1.5 }}
           />
         ))}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/80 backdrop-blur-[2px]" />
+        <div className="absolute inset-0 bg-black bg-opacity-40"></div>
       </div>
 
-      {/* Enhanced Animated Grid Background */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-0 bg-grid-white/10 bg-[length:50px_50px] opacity-40 rounded-b-[3rem] animate-pulse"></div>
-      </div>
-
-      {/* Enhanced Content Container */}
-      <motion.div
-        className="relative z-10 w-full max-w-6xl mx-auto px-6 flex flex-col items-center justify-center flex-grow"
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.2, ease: "easeOut" }}
-      >
-        {/* Enhanced Hero Content */}
+      {/* Content Container */}
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-6 flex-1 flex flex-col justify-center">
+        {/* Hero Content */}
         <motion.div
-          className="text-center space-y-8"
+          className="text-center space-y-8 mb-12"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
         >
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-8 leading-tight tracking-tight">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white mb-8 leading-tight tracking-tight">
             <motion.span
               className="bg-gradient-to-r from-cyan-300 via-teal-300 to-emerald-300 bg-clip-text text-transparent inline-block"
               animate={{
@@ -103,157 +91,152 @@ const HomeHero = () => {
             <br />
             <span className="drop-shadow-2xl">STAYS</span>
           </h1>
-          <p className="text-xl md:text-2xl lg:text-3xl text-white/90 mb-10 max-w-3xl mx-auto font-light leading-relaxed">
+          <p className="text-lg md:text-2xl lg:text-3xl text-white/90 max-w-3xl mx-auto font-light leading-relaxed">
             Embark on a journey of discovery with our curated travel
             experiences. Find your perfect escape, where every destination tells
             a story.
           </p>
         </motion.div>
-      </motion.div>
 
-      {/* Search Form - Updated with plain white background and larger padding */}
-      <motion.div
-        className="relative z-10 shadow-2xl rounded-3xl"
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.5 }}
-      >
-        <div className="container mx-auto px-4 lg:px-8 py-16 rounded-3xl">
-          {/* <h2 className="text-3xl text-white font-bold mb-8 text-center">
-            Find Your Next Adventure
-          </h2> */}
-
-          <div className="grid grid-cols-2 md:grid-cols-6 gap-4 items-end">
-            {/* Location */}
-            <div className="md:col-span-1 col-span-2">
-              <label className="block text-white mb-2 text-sm">Location</label>
-              <select
-                name="location"
-                value={searchParams.location}
-                onChange={handleInputChange}
-                className="w-full h-[46px] px-4 py-3 bg-white border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-3xl"
-              >
-                <option value="" className="text-gray-500">
-                  Select Location
-                </option>
-                {locations.map((loc) => (
-                  <option key={loc} value={loc} className="text-gray-900">
-                    {loc}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            {/* Check-in */}
-            <div className="md:col-span-1">
-              <label className="block text-white mb-2 text-sm">Check-in</label>
-              <div
-                className="relative cursor-pointer"
-                onClick={() =>
-                  document.getElementById("check-in-date").showPicker()
-                }
-              >
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <FaCalendar className="text-gray-400" />
-                </div>
-                <input
-                  id="check-in-date"
-                  type="date"
-                  name="checkIn"
-                  value={searchParams.checkIn}
+        {/* Search Form Container */}
+        <motion.div
+          className="relative w-full max-w-7xl mx-auto px-4 hidden md:block"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+        >
+          <div className="bg-black/20 backdrop-blur-sm shadow-lg rounded-lg border border-white/30 p-4 md:p-6">
+            <div className="grid grid-cols-1 md:grid-cols-6 gap-4 md:gap-6">
+              {/* Location */}
+              <div className="md:col-span-1">
+                <label className="block text-white mb-2 text-sm font-medium">
+                  Location
+                </label>
+                <select
+                  name="location"
+                  value={searchParams.location}
                   onChange={handleInputChange}
-                  className="w-full h-[46px] pl-10 pr-4 py-3 bg-white border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-3xl cursor-pointer"
-                />
+                  className="w-full h-[46px] px-4 py-3 bg-white border border-white/30 text-gray-900 focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded-2xl transition-all duration-300 hover:bg-white"
+                >
+                  <option value="" className="text-gray-500">
+                    Select Location
+                  </option>
+                  {locations.map((loc) => (
+                    <option key={loc} value={loc} className="text-gray-900">
+                      {loc}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              {/* Check-in */}
+              <div className="md:col-span-1">
+                <label className="block text-white mb-2 text-sm font-medium">
+                  Check-in
+                </label>
                 <div
-                  className="absolute inset-0"
+                  className="relative cursor-pointer group"
                   onClick={() =>
                     document.getElementById("check-in-date").showPicker()
                   }
-                ></div>
-              </div>
-            </div>
-
-            {/* Check-out */}
-            <div className="md:col-span-1">
-              <label className="block text-white mb-2 text-sm">Check-out</label>
-              <div
-                className="relative cursor-pointer"
-                onClick={() =>
-                  document.getElementById("check-out-date").showPicker()
-                }
-              >
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <FaCalendar className="text-gray-400" />
+                >
+                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <FaCalendar className="text-gray-400 group-hover:text-cyan-400 transition-colors duration-300" />
+                  </div>
+                  <input
+                    id="check-in-date"
+                    type="date"
+                    name="checkIn"
+                    value={searchParams.checkIn}
+                    onChange={handleInputChange}
+                    className="w-full h-[46px] pl-10 pr-4 py-3 bg-white border border-white/30 text-gray-900 focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded-2xl transition-all duration-300 hover:bg-white cursor-pointer"
+                  />
                 </div>
-                <input
-                  id="check-out-date"
-                  type="date"
-                  name="checkOut"
-                  value={searchParams.checkOut}
-                  onChange={handleInputChange}
-                  className="w-full h-[46px] pl-10 pr-4 py-3 bg-white border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-3xl cursor-pointer"
-                />
+              </div>
+
+              {/* Check-out */}
+              <div className="md:col-span-1">
+                <label className="block text-white mb-2 text-sm font-medium">
+                  Check-out
+                </label>
                 <div
-                  className="absolute inset-0"
+                  className="relative cursor-pointer group"
                   onClick={() =>
                     document.getElementById("check-out-date").showPicker()
                   }
-                ></div>
+                >
+                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <FaCalendar className="text-gray-400 group-hover:text-cyan-400 transition-colors duration-300" />
+                  </div>
+                  <input
+                    id="check-out-date"
+                    type="date"
+                    name="checkOut"
+                    value={searchParams.checkOut}
+                    onChange={handleInputChange}
+                    className="w-full h-[46px] pl-10 pr-4 py-3 bg-white border border-white/30 text-gray-900 focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded-2xl transition-all duration-300 hover:bg-white cursor-pointer"
+                  />
+                </div>
+              </div>
+
+              {/* Adults */}
+              <div className="md:col-span-1">
+                <label className="block text-white mb-2 text-sm font-medium">
+                  Adults
+                </label>
+                <select
+                  name="adults"
+                  value={searchParams.adults}
+                  onChange={handleInputChange}
+                  className="w-full h-[46px] px-4 py-3 bg-white border border-white/30 text-gray-900 focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded-2xl transition-all duration-300 hover:bg-white"
+                >
+                  {[...Array(9)].map((_, i) => (
+                    <option key={i + 1} value={i + 1} className="text-gray-900">
+                      {i + 1} Adult{i > 0 ? "s" : ""}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              {/* Children */}
+              <div className="md:col-span-1">
+                <label className="block text-white mb-2 text-sm font-medium">
+                  Children
+                </label>
+                <select
+                  name="children"
+                  value={searchParams.children}
+                  onChange={handleInputChange}
+                  className="w-full h-[46px] px-4 py-3 bg-white border border-white/30 text-gray-900 focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded-2xl transition-all duration-300 hover:bg-white"
+                >
+                  {[...Array(9)].map((_, i) => (
+                    <option key={i} value={i} className="text-gray-900">
+                      {i} Child{i !== 1 ? "ren" : ""}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              {/* Search Button */}
+              <div className="md:col-span-1">
+                <label className="block text-white mb-2 text-sm font-medium">
+                  &nbsp;
+                </label>
+                <button
+                  onClick={handleSearch}
+                  className="w-full h-[46px] bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-medium
+                  hover:from-cyan-600 hover:to-blue-600 transition-all duration-300
+                  flex items-center justify-center space-x-3 
+                  rounded-2xl shadow-lg hover:shadow-cyan-500/30"
+                >
+                  <FaSearch className="text-lg" />
+                  <span>Explore</span>
+                </button>
               </div>
             </div>
-
-            {/* Adults */}
-            <div className="md:col-span-1">
-              <label className="block text-white mb-2 text-sm">Adults</label>
-              <select
-                name="adults"
-                value={searchParams.adults}
-                onChange={handleInputChange}
-                className="w-full h-[46px] px-4 py-3 bg-white border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-3xl"
-              >
-                {[...Array(9)].map((_, i) => (
-                  <option key={i + 1} value={i + 1} className="text-gray-900">
-                    {i + 1} Adult{i > 0 ? "s" : ""}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            {/* Children */}
-            <div className="md:col-span-1">
-              <label className="block text-white mb-2 text-sm">Children</label>
-              <select
-                name="children"
-                value={searchParams.children}
-                onChange={handleInputChange}
-                className="w-full h-[46px] px-4 py-3 bg-white border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-3xl"
-              >
-                {[...Array(9)].map((_, i) => (
-                  <option key={i} value={i} className="text-gray-900">
-                    {i} Child{i !== 1 ? "ren" : ""}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            {/* Search Button */}
-            <div className="md:col-span-1 col-span-2 flex items-end">
-              <button
-                onClick={handleSearch}
-                className="w-full h-[50px] py-3 bg-[#0F2642] text-white border border-white
-          hover:bg-[#0F2642]
-          flex items-center justify-center space-x-3 
-          rounded-3xl"
-              >
-                <FaSearch />
-                <span>Explore</span>
-              </button>
-            </div>
           </div>
-        </div>
-      </motion.div>
-      {/* Decorative Elements */}
-      <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black/30 to-transparent "></div>
+        </motion.div>
+      </div>
     </div>
   );
 };

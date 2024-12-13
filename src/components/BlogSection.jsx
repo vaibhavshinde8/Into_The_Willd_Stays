@@ -8,12 +8,12 @@ const BlogSection = () => {
   const previewBlogs = blogs.slice(0, 3);
 
   return (
-    <section className="bg-gradient-to-br from-blue-100 to-cyan-100 py-20 px-6 relative overflow-hidden lg:px-32">
+    <section className="bg-gradient-to-r from-blue-100 via-cyan-100 to-emerald-100 py-20 px-6  lg:px-32">
       <div className="absolute inset-0 backdrop-blur-md bg-white/40 rounded-3xl"></div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <motion.h1 
+          <motion.h1
             className="text-5xl md:text-6xl font-bold mb-8"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -57,12 +57,16 @@ const BlogSection = () => {
                     <span className="text-sm font-semibold text-[#0F2642] bg-blue-50 px-4 py-2 rounded-full">
                       {blog.category}
                     </span>
-                    <span className="text-sm text-gray-600 font-medium">{blog.date}</span>
+                    <span className="text-sm text-gray-600 font-medium">
+                      {blog.date}
+                    </span>
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-[#0F2642] transition-colors">
                     {blog.title}
                   </h3>
-                  <p className="text-gray-600 line-clamp-2 mb-4">{blog.content[0]}</p>
+                  <p className="text-gray-600 line-clamp-2 mb-4">
+                    {blog.content[0]}
+                  </p>
                   <div className="flex items-center text-[#0F2642] font-semibold group-hover:translate-x-2 transition-transform duration-300">
                     <span>Read More</span>
                     <ArrowRight className="ml-2 w-5 h-5" />
