@@ -11,8 +11,10 @@ const PropertiesBanner = () => {
         style={{
           backgroundImage: `url('https://plus.unsplash.com/premium_photo-1687960117069-567a456fe5f3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`,
           backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundAttachment: "fixed",
           backgroundSize: "cover",
-          filter: "brightness(0.8)",
+          filter: "brightness(0.8) blur(4px)", // Added blur effect
         }}
       />
 
@@ -24,7 +26,7 @@ const PropertiesBanner = () => {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="space-y-6 bg-white/10 p-8 rounded-3xl backdrop-blur-lg"
+              className="space-y-6 bg-white/60 p-8 rounded-3xl backdrop-blur-lg"
             >
               <div className="flex items-center gap-4">
                 <Layers className="w-12 h-12 text-black" />

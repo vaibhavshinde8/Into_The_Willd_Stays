@@ -2,7 +2,6 @@ import {
   Facebook,
   // Twitter,
   Instagram,
- 
   Phone,
   Mail,
   MapPin,
@@ -28,7 +27,7 @@ const Footer = () => {
               IntoTheWildsStays
             </h3>
             <p className="text-sm mb-4">
-              Experience luxury and comfort at our premium locations worldwide.
+              Experience luxury and comfort at our premium locations. <br />
               Book your perfect stay with us today.
             </p>
             <div className="flex space-x-4">

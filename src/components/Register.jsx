@@ -1,4 +1,4 @@
-import { useState,useEffect } from "react";
+import { useState } from "react";
 import { registerUser } from "../api";
 import { useNavigate } from "react-router-dom";
 import { User, AtSign, Lock, Key } from "lucide-react";
@@ -8,7 +8,6 @@ import { Link } from "react-router-dom";
 import { GoogleLogin } from '@react-oauth/google';
 import { toast } from "react-toastify";
 import { googleSignup } from "../api";
-
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -23,20 +22,26 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    // New email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(emailorphone)) {
+      setError("Please enter a valid email address.");
+      setIsLoading(false);
+      return; // Exit the function if validation fails
+    }
+
     // New password validation
     const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
     if (!passwordRegex.test(password)) {
-        // toast.error("Password must be at least 8 characters long and include letters, numbers, and special symbols.");
-        setError("Password must be at least 8 characters long and include letters, numbers, and special symbols.");
-        setIsLoading(false);
-        return; // Exit the function if validation fails
+      setError("Password must be at least 8 characters long and include letters, numbers, and special symbols.");
+      setIsLoading(false);
+      return; // Exit the function if validation fails
     }
 
     try {
       setIsLoading(true);
       const data = await registerUser(name, emailorphone, password);
-      // console.log("Registered successfully:", data);
-      
       setIsModalOpen(true); // Open OTP modal
     } catch (err) {
       setError("Registration failed. Please try again.");
@@ -45,25 +50,23 @@ const Register = () => {
   };
 
   const handleGoogleSignup = async (response) => {
-    // console.log(response);
-      const res = await googleSignup(response);
-      toast.success(res.data.message);
-      localStorage.setItem("token",res.data.token);
-      localStorage.setItem("user",JSON.stringify(res.data.user));
-      setShowSuccessDialog(true);
-      setTimeout(() => {
-        setShowSuccessDialog(false);
-        navigate("/");
-      }, 2000);
+    const res = await googleSignup(response);
+    toast.success(res.data.message);
+    localStorage.setItem("token", res.data.token);
+    localStorage.setItem("user", JSON.stringify(res.data.user));
+    setShowSuccessDialog(true);
+    setTimeout(() => {
+      setShowSuccessDialog(false);
+      navigate("/");
+    }, 2000);
   }
+
   const handleOtpSubmit = async () => {
-    // console.log(emailorphone, otp);
     if (otp) {
       setIsLoading(true);
       const data = await axios.post(`${BASE_URL}/auth/verify-email`, { emailorphone, otp });
-      // console.log("OTP verified:", data);
-      localStorage.setItem("token",data.data.token);
-      localStorage.setItem("user",JSON.stringify(data.data.user));
+      localStorage.setItem("token", data.data.token);
+      localStorage.setItem("user", JSON.stringify(data.data.user));
       if (data.status === 200) {
         setShowSuccessDialog(true);
         setTimeout(() => {
@@ -146,18 +149,16 @@ const Register = () => {
             <div className="mt-4 flex justify-center">
               <GoogleLogin
                 onSuccess={(response) => {
-                  
                   handleGoogleSignup(response);
                 }}
                 onError={() => {
                   toast.error("Login failed");
-                  // console.log("Login failed");
                 }}
                 type="standard"
                 text="continue_with"
                 theme="dark"
                 shape='square'
-                />
+              />
             </div>
           </form>
 

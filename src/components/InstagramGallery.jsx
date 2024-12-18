@@ -211,12 +211,14 @@ const InstagramGallery = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               className="fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center p-4"
+              onClick={closeModal} // Close modal when clicking outside
             >
               <motion.div
                 initial={{ scale: 0.9 }}
                 animate={{ scale: 1 }}
                 exit={{ scale: 0.9 }}
-                className="bg-white w-full max-w-4xl flex flex-col md:flex-row rounded-xl overflow-hidden shadow-2xl"
+                className="bg-white w-full max-w-lg sm:max-w-2xl md:max-w-4xl flex flex-col md:flex-row rounded-xl overflow-hidden shadow-2xl"
+                onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside the modal
               >
                 {/* Image Section */}
                 <div className="w-full md:w-3/5">
@@ -225,7 +227,7 @@ const InstagramGallery = () => {
                     animate={{ opacity: 1 }}
                     src={selectedPost.imageUrl}
                     alt="Selected post"
-                    className="w-full h-64 md:h-[80vh] object-cover"
+                    className="w-full h-48 sm:h-64 md:h-[80vh] object-cover"
                   />
                 </div>
 
@@ -236,9 +238,9 @@ const InstagramGallery = () => {
                     <img
                       src={mockProfileData.profilePicture}
                       alt="Profile"
-                      className="w-8 h-8 md:w-10 md:h-10 rounded-full mr-3 border-2 border-pink-300"
+                      className="w-10 h-10 rounded-full mr-3 border-2 border-pink-300"
                     />
-                    <span className="font-semibold text-sm md:text-base text-gray-800">
+                    <span className="font-semibold text-base text-gray-800">
                       {mockProfileData.username}
                     </span>
                   </div>
@@ -250,6 +252,11 @@ const InstagramGallery = () => {
                     </p>
                   </div>
 
+                  {/* No comments yet */}
+                  <div className="text-gray-500 text-xs md:text-sm flex items-center justify-center h-full border-t border-b border-gray-300">
+                    <span className="text-center">no comments yet</span>
+                  </div>
+
                   {/* Action Icons */}
                   <div className="flex justify-between my-2 md:my-4">
                     <motion.div
@@ -257,15 +264,15 @@ const InstagramGallery = () => {
                       whileTap={{ scale: 0.9 }}
                       className="flex space-x-4 text-gray-600"
                     >
-                      <Heart className="cursor-pointer hover:text-red-500 w-5 h-5 md:w-6 md:h-6" />
-                      <MessageCircle className="cursor-pointer hover:text-blue-500 w-5 h-5 md:w-6 md:h-6" />
-                      <Send className="cursor-pointer hover:text-green-500 w-5 h-5 md:w-6 md:h-6" />
+                      <Heart className="cursor-pointer hover:text-red-500 w-5 h-5" />
+                      <MessageCircle className="cursor-pointer hover:text-blue-500 w-5 h-5" />
+                      <Send className="cursor-pointer hover:text-green-500 w-5 h-5" />
                     </motion.div>
                     <motion.div
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.9 }}
                     >
-                      <Bookmark className="cursor-pointer text-gray-600 hover:text-yellow-500 w-5 h-5 md:w-6 md:h-6" />
+                      <Bookmark className="cursor-pointer text-gray-600 hover:text-yellow-500 w-5 h-5" />
                     </motion.div>
                   </div>
 
