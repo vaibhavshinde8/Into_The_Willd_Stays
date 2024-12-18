@@ -15,18 +15,38 @@ const ContactUs = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [errors, setErrors] = useState({});
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+    setErrors({ ...errors, [name]: "" }); // Clear error on change
   };
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
+  const validateForm = () => {
+    const newErrors = {};
+    if (!formData.name) newErrors.name = "Name is required.";
+    if (!formData.email) {
+      newErrors.email = "Email is required.";
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = "Email address is invalid.";
+    }
+    if (!formData.phone) {
+      newErrors.phone = "Phone number is required.";
+    } else if (!/^\d{10}$/.test(formData.phone)) {
+      newErrors.phone = "Phone number must be 10 digits.";
+    }
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
   const sendEmail = async(e) => {
     e.preventDefault();
+    if (!validateForm()) return; // Stop if validation fails
     setIsSubmitting(true);
     try{
       const response = await axios.post(`${BASE_URL}/contact`, formData);
@@ -47,13 +67,11 @@ const ContactUs = () => {
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
       <div className="relative h-[60vh] overflow-hidden">
         <div className="absolute inset-0">
-          <video
-            autoPlay
-            loop
-            muted
-            className="w-full h-full object-cover"
-          >
-            <source src="https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-city-buildings-during-sunset-41375-large.mp4" type="video/mp4" />
+          <video autoPlay loop muted className="w-full h-full object-cover">
+            <source
+              src="https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-city-buildings-during-sunset-41375-large.mp4"
+              type="video/mp4"
+            />
           </video>
           <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
         </div>
@@ -76,7 +94,7 @@ const ContactUs = () => {
       <div className="max-w-7xl mx-auto px-4 py-16">
         <div className="grid lg:grid-cols-3 gap-12">
           {/* Contact Cards */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -91,8 +109,9 @@ const ContactUs = () => {
                 <h3 className="text-xl font-semibold">Visit Us</h3>
               </div>
               <p className="text-gray-600">
-                IntoTheWildsStays, House no-4 Mussoorie Dhanaulti Road,
-                Village Nali Kala, Dehradun-248001 Uttarakhand
+                Into The Wild Stays,
+                <br /> Near Ambar Eco park Dhanolti,
+                <br /> 248001
               </p>
             </div>
 
@@ -105,8 +124,18 @@ const ContactUs = () => {
                 <h3 className="text-xl font-semibold">Call Us</h3>
               </div>
               <div className="space-y-2">
-                <a href="tel:+919761966485" className="block text-gray-600 hover:text-blue-500">+91-9761966485</a>
-                <a href="tel:+919958838557" className="block text-gray-600 hover:text-blue-500">+91-9958838557</a>
+                <a
+                  href="tel:+919761966485"
+                  className="block text-gray-600 hover:text-blue-500"
+                >
+                  +91-9761966485
+                </a>
+                <a
+                  href="tel:+919958838557"
+                  className="block text-gray-600 hover:text-blue-500"
+                >
+                  +91-9958838557
+                </a>
               </div>
             </div>
 
@@ -118,8 +147,11 @@ const ContactUs = () => {
                 </div>
                 <h3 className="text-xl font-semibold">Email Us</h3>
               </div>
-              <a href="mailto:intothewildstays@outlook.com" className="text-gray-600 hover:text-purple-500">
-                intothewildstays@outlook.com
+              <a
+                href="mailto:intothewildstays@outlook.com"
+                className="text-gray-600 hover:text-purple-500"
+              >
+                intothewildstays@gmail.com
               </a>
             </div>
           </motion.div>
@@ -135,46 +167,69 @@ const ContactUs = () => {
             <form onSubmit={sendEmail} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Name</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Name
+                  </label>
                   <input
                     type="text"
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-teal-500 focus:border-transparent"
-                    placeholder="John Doe"
+                    className={`w-full px-4 py-3 rounded-lg border ${
+                      errors.name ? "border-red-500" : "border-gray-200"
+                    } focus:ring-2 focus:ring-teal-500 focus:border-transparent`}
+                    placeholder="Your Name"
                   />
+                  {errors.name && (
+                    <p className="text-red-500 text-sm">{errors.name}</p>
+                  )}
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Email
+                  </label>
                   <input
                     type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-teal-500 focus:border-transparent"
-                    placeholder="john@example.com"
+                    className={`w-full px-4 py-3 rounded-lg border ${
+                      errors.email ? "border-red-500" : "border-gray-200"
+                    } focus:ring-2 focus:ring-teal-500 focus:border-transparent`}
+                    placeholder="example@gmail.com"
                   />
+                  {errors.email && (
+                    <p className="text-red-500 text-sm">{errors.email}</p>
+                  )}
                 </div>
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Phone</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Phone
+                </label>
                 <input
                   type="tel"
                   name="phone"
                   value={formData.phone}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-teal-500 focus:border-transparent"
-                  placeholder="+91 98765 43210"
+                  className={`w-full px-4 py-3 rounded-lg border ${
+                    errors.phone ? "border-red-500" : "border-gray-200"
+                  } focus:ring-2 focus:ring-teal-500 focus:border-transparent`}
+                  placeholder="0000000000"
                 />
+                {errors.phone && (
+                  <p className="text-red-500 text-sm">{errors.phone}</p>
+                )}
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Message
+                </label>
                 <textarea
                   name="message"
                   value={formData.message}

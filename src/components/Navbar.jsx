@@ -151,7 +151,7 @@ const PropertyListingModal = ({ isOpen, onClose }) => {
                     value={formData.name}
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#0F2642] focus:border-transparent transition-all"
-                    placeholder="John Doe"
+                    placeholder="Enter your full name"
                     required
                   />
                 </div>
@@ -174,7 +174,7 @@ const PropertyListingModal = ({ isOpen, onClose }) => {
                     value={formData.email}
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#0F2642] focus:border-transparent transition-all"
-                    placeholder="john@example.com"
+                    placeholder="Enter your email address"
                     required
                   />
                 </div>
@@ -186,7 +186,7 @@ const PropertyListingModal = ({ isOpen, onClose }) => {
                     value={formData.phone}
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#0F2642] focus:border-transparent transition-all"
-                    placeholder="+1 (555) 000-0000"
+                    placeholder="Enter your phone number"
                     required
                   />
                 </div>
@@ -326,18 +326,24 @@ export default function Navbar() {
           <div className="flex space-x-6">
             <a
               href="https://www.facebook.com/profile.php?id=61557269590045"
+              target="_blank"
+              rel="noopener noreferrer"
               className="hover:text-yellow-300 hover:scale-110 duration-300 ease-in-out transition-all"
             >
               <Facebook size={24} />
             </a>
             <a
               href="https://www.instagram.com/intothewildstays/profilecard/?igsh=cGt4dTRvenNvZ25h"
+              target="_blank"
+              rel="noopener noreferrer"
               className="hover:text-yellow-300 hover:scale-110 duration-300 ease-in-out transition-all"
             >
               <Instagram size={24} />
             </a>
             <a
               href="https://wa.me/9761966485"
+              target="_blank"
+              rel="noopener noreferrer"
               className="hover:text-yellow-300 hover:scale-110 duration-300 ease-in-out transition-all"
             >
               <FaWhatsapp size={24} />

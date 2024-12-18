@@ -127,7 +127,7 @@ const ContactForm = ({ isOpen, onClose, isTour }) => {
                     onChange={handleInputChange}
                     required
                     className={`block w-full pl-10 px-4 py-3 bg-white/50 border ${errors.name ? 'border-red-500' : 'border-gray-200'} rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all duration-300`}
-                    placeholder="Your Name"
+                    placeholder="Enter your name"
                   />
                   {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
                 </motion.div>
@@ -149,7 +149,7 @@ const ContactForm = ({ isOpen, onClose, isTour }) => {
                     onChange={handleInputChange}
                     required
                     className={`block w-full pl-10 px-4 py-3 bg-white/50 border ${errors.email ? 'border-red-500' : 'border-gray-200'} rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all duration-300`}
-                    placeholder="Your Email"
+                    placeholder="Enter your email"
                   />
                   {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
                 </motion.div>
@@ -172,7 +172,7 @@ const ContactForm = ({ isOpen, onClose, isTour }) => {
                   onChange={handleInputChange}
                   required
                   className={`block w-full pl-10 px-4 py-3 bg-white/50 border ${errors.phone ? 'border-red-500' : 'border-gray-200'} rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all duration-300`}
-                  placeholder="Your Phone Number"
+                  placeholder="Enter your phone number"
                 />
                 {errors.phone && <p className="text-red-500 text-sm">{errors.phone}</p>}
               </motion.div>
@@ -194,7 +194,7 @@ const ContactForm = ({ isOpen, onClose, isTour }) => {
                   required
                   rows="4"
                   className="block w-full pl-10 px-4 py-3 bg-white/50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all duration-300"
-                  placeholder="Your Message"
+                  placeholder="Enter your message"
                 ></textarea>
               </motion.div>
 
