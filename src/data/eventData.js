@@ -5,7 +5,7 @@ export const eventData = [
     location: "Rishikesh, Uttarakhand",
     duration: "2 Days, 1 Night",
     price: "6000",
-    imageUrl: process.env.PUBLIC_URL + "/assets/Outdoorevents/schoolcampbanner.png",
+    imageUrl: "/Outdoorevents/schoolcampbanner.png",
     description:
       "An immersive outdoor experience designed to expose youth to nature, build character, and develop essential life skills.",
     activities: [
@@ -24,13 +24,13 @@ export const eventData = [
       "First aid facilities",
     ],
     galleryImages: [
-      process.env.PUBLIC_URL + "/assets/Outdoorevents/oe1.jpeg",
-      process.env.PUBLIC_URL + "/assets/Outdoorevents/oe2.jpeg",
-      process.env.PUBLIC_URL + "/assets/Outdoorevents/oe3.jpeg",
-      process.env.PUBLIC_URL + "/assets/Outdoorevents/oe4.jpeg",
-      process.env.PUBLIC_URL + "/assets/Outdoorevents/oe5.jpeg",
-      process.env.PUBLIC_URL + "/assets/Outdoorevents/oe6.jpeg",
-      process.env.PUBLIC_URL + "/assets/Outdoorevents/oe7.jpeg",
+      "/Outdoorevents/oe1.jpeg",
+      "/Outdoorevents/oe2.jpeg",
+      "/Outdoorevents/oe3.jpeg",
+      "/Outdoorevents/oe4.jpeg",
+      "/Outdoorevents/oe5.jpeg",
+      "/Outdoorevents/oe6.jpeg",
+      "/Outdoorevents/oe7.jpeg",
     ],
   },
   {
@@ -39,7 +39,7 @@ export const eventData = [
     location: "Rishikesh, Uttarakhand",
     duration: "2 Days, 1 Night",
     price: "6000",
-    imageUrl: process.env.PUBLIC_URL + "/assets/Outdoorevents/dadnibanner.png",
+    imageUrl: "/Outdoorevents/dadnibanner.png",
     description:
       "A unique 2-day event that brings dads and children closer through outdoor adventures, team-building activities, and memorable experiences.",
     activities: [
@@ -55,13 +55,13 @@ export const eventData = [
       "Includes stay, meals, workshops, and activities",
     ],
     galleryImages: [
-      process.env.PUBLIC_URL + "/assets/Outdoorevents/oe8.jpeg",
-      process.env.PUBLIC_URL + "/assets/Outdoorevents/oe9.jpeg",
-      process.env.PUBLIC_URL + "/assets/Outdoorevents/oe10.jpeg",
-      process.env.PUBLIC_URL + "/assets/Outdoorevents/oe11.jpeg",
-      process.env.PUBLIC_URL + "/assets/Outdoorevents/oe12.jpeg",
-      process.env.PUBLIC_URL + "/assets/Outdoorevents/oe13.jpeg",
-      process.env.PUBLIC_URL + "/assets/Outdoorevents/oe14.jpeg",
+      "/Outdoorevents/oe8.jpeg",
+      "/Outdoorevents/oe9.jpeg",
+      "/Outdoorevents/oe10.jpeg",
+      "/Outdoorevents/oe11.jpeg",
+      "/Outdoorevents/oe12.jpeg",
+      "/Outdoorevents/oe13.jpeg",
+      "/Outdoorevents/oe14.jpeg",
     ],
   },
 ]; 
