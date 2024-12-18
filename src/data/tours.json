@@ -41,9 +41,9 @@
         "Booking is non-refundable 48 hours prior to the trip."
       ],
       "contact_methods": {
-        "phone": "9958838557",
+        "phone": "+91-9761966485",
         "email": "intothewildstays@gmail.com",
-        "whatsapp": "8762192191"
+        "whatsapp": "+91-9958838557"
       },
       "rules_and_policy": [
         "Smoking and drinking alcohol are strictly prohibited during activities.",
@@ -54,7 +54,6 @@
     {
       "id": 2,
       "imageUrl": "https://static.toiimg.com/photo/msid-80611280,width-96,height-65.cms",
-
       "name": "Mussoorie Nature Escape",
       "location": "Mussoorie, Uttarakhand",
       "duration": "4 Days, 3 Nights",
@@ -94,9 +93,9 @@
         "Booking modifications are subject to availability."
       ],
       "contact_methods": {
-        "phone": "9958838557",
+        "phone": "+91-9761966485",
         "email": "intothewildstays@gmail.com",
-        "whatsapp": "8762192191"
+        "whatsapp": "+91-9958838557"
       },
       "rules_and_policy": [
         "Maintain decorum at tourist spots and accommodations.",
@@ -107,7 +106,6 @@
     {
       "id": 3,
       "imageUrl": "https://images.pexels.com/photos/15031440/pexels-photo-15031440.jpeg?cs=srgb&dl=pexels-alok-kumar-273007-15031440.jpg&fm=jpg",
-
       "name": "Kedarnath Dham",
       "location": "Kedarnath, Uttarakhand",
       "duration": "3 Nights, 4 Days",
@@ -160,7 +158,7 @@
       "contact_methods": {
         "phone": "+91-9761966485",
         "email": "intothewildstays@gmail.com",
-        "whatsapp": "+91-9761966485"
+        "whatsapp": "+91-9958838557"
       },
       "rules_and_policy": [
         "Smoking and drinking alcohol are prohibited during the trip.",
@@ -172,7 +170,6 @@
     {
       "id": 4,
       "imageUrl": "https://www.thesearchingsouls.com/wp-content/uploads/2022/03/kuari-pass-trek-2.jpg",
-
       "name": "Kuari Pass Trek (Lord Curzon Trail)",
       "location": "Joshimath, Uttarakhand",
       "duration": "6 Days, 5 Nights",
@@ -256,13 +253,7 @@
       "contact_methods": {
         "phone": "+91-9761966485",
         "email": "intothewildstays@gmail.com",
-        "whatsapp": "+91-9761966485",
-        "upi_transfer": "9761966485@ybl",
-        "bank_transfer": {
-          "account_name": "Into the Wild Stays",
-          "account_number": "50200067998212",
-          "ifsc_code": "HDFC0008139"
-        }
+        "whatsapp": "+91-9958838557"
       },
       "rules_and_policy": [
         "Participants must adhere to the guide's instructions during the trek.",
@@ -274,7 +265,6 @@
     {
       "id": 5,
       "imageUrl": "https://rishikeshdaytour.com/blog/wp-content/uploads/2021/12/Kanatal-An-Unexplored-Hamlet-in-Uttarakhand-.jpg",
-
       "name": "Rishikesh Kanatal",
       "location": "Rishikesh and Dhanolti, Uttarakhand",
       "duration": "2 Nights, 3 Days",
@@ -328,9 +318,9 @@
         "Non-vegetarian meals can be added at extra cost."
       ],
       "contact_methods": {
-        "phone": "9958838557",
+        "phone": "+91-9761966485",
         "email": "intothewildstays@gmail.com",
-        "whatsapp": "8762192191"
+        "whatsapp": "+91-9958838557"
       },
       "rules_and_policy": [
         "Music allowed only until 10 PM due to reserve forest proximity.",
@@ -342,7 +332,6 @@
     {
       "id": 6,
       "imageUrl": "https://blog.moustachescapes.com/wp-content/uploads/2024/01/629f3b6b4d577_1654602603.jpg",
-
       "name": "Four Treks in One Trip: Valley of Flowers",
       "location": "Chamoli, Uttarakhand",
       "duration": "6 Days, 5 Nights",
@@ -397,7 +386,7 @@
       "contact_methods": {
         "phone": "+91-9761966485",
         "email": "intothewildstays@gmail.com",
-        "whatsapp": "+91-9761966485"
+        "whatsapp": "+91-9958838557"
       },
       "rules_and_policy": [
         "Follow the guide's instructions during treks and activities.",
@@ -473,7 +462,7 @@
       "contact_methods": {
         "phone": "+91-9761966485",
         "email": "intothewildstays@gmail.com",
-        "whatsapp": "+91-9761966485"
+        "whatsapp": "+91-9958838557"
       },
       "rules_and_policy": [
         "Tour price is subject to change as per occupancy",
@@ -542,9 +531,9 @@
         "Accommodation varies by category (Standard, Deluxe, Super Deluxe, Luxury)"
       ],
       "contact_methods": {
-        "phone": ["+91-9761966485", "+91-8218380838"],
+        "phone": "+91-9761966485",
         "email": "intothewildstays@gmail.com",
-        "whatsapp": "+91-9761966485"
+        "whatsapp": "+91-9958838557"
       },
       "rules_and_policy": [
         "Booking amount payment varies based on days before trip",
@@ -613,9 +602,9 @@
         "Dinner included from day 1 to 5"
       ],
       "contact_methods": {
-        "phone": ["+91-9761966485", "+91-8218380838"],
+        "phone": "+91-9761966485",
         "email": "intothewildstays@gmail.com",
-        "whatsapp": "+91-9761966485"
+        "whatsapp": "+91-9958838557"
       },
       "rules_and_policy": [
         "Booking amount payment varies based on days before trip",
@@ -677,9 +666,9 @@
         "Festival showcases traditional dance, music, and Naga culture"
       ],
      "contact_methods": {
-        "phone": ["+91-9761966485", "+91-8218380838"],
+        "phone": "+91-9761966485",
         "email": "intothewildstays@gmail.com",
-        "whatsapp": "+91-9761966485"
+        "whatsapp": "+91-9958838557"
       },
       "rules_and_policy": [
         "Tent allocation subject to availability",
@@ -736,9 +725,9 @@
         "Check travel advisories before planning"
       ],
       "contact_methods": {
-        "phone": ["+91-9761966485", "+91-8218380838"],
+        "phone": "+91-9761966485",
         "email": "intothewildstays@gmail.com",
-        "whatsapp": "+91-9761966485"
+        "whatsapp": "+91-9958838557"
       },
       "rules_and_policy": [
         "Permits must be obtained from Sikkim Tourism office",
@@ -806,9 +795,9 @@
         "Rich in natural beauty and cultural diversity"
       ],
       "contact_methods": {
-        "phone": ["+91-9761966485", "+91-8218380838"],
+        "phone": "+91-9761966485",
         "email": "intothewildstays@gmail.com",
-        "whatsapp": "+91-9761966485"
+        "whatsapp": "+91-9958838557"
       },
       "rules_and_policy": [
         "Check latest travel advisories before planning",
@@ -876,9 +865,9 @@
         "Some attractions might be closed during monsoons"
       ],
       "contact_methods": {
-        "phone": ["+91-9761966485", "+91-8218380838"],
+        "phone": "+91-9761966485",
         "email": "intothewildstays@gmail.com",
-        "whatsapp": "+91-9761966485"
+        "whatsapp": "+91-9958838557"
       },
       "rules_and_policy": [
         "Check-in time: 12 PM, Check-out time: 11 AM",

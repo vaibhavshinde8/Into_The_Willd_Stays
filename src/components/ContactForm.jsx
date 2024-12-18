@@ -15,64 +15,61 @@ const ContactForm = ({ isOpen, onClose, isTour }) => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [errors, setErrors] = useState({});
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+    setErrors({ ...errors, [name]: "" }); // Clear error on change
+  };
+
+  const validateForm = () => {
+    const newErrors = {};
+    if (!formData.name) newErrors.name = "Name is required.";
+    if (!formData.email) {
+      newErrors.email = "Email is required.";
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = "Email address is invalid.";
+    }
+    if (!formData.phone) {
+      newErrors.phone = "Phone number is required.";
+    } else if (!/^\d{10}$/.test(formData.phone)) {
+      newErrors.phone = "Phone number must be 10 digits.";
+    }
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
   };
 
   const sendEmail = async (e) => {
     e.preventDefault();
+    if (!validateForm()) return; // Stop if validation fails
     setIsSubmitting(true);
      
-    try{
-      if(isTour){
+    try {
+      if (isTour) {
         const response = await axios.post(`${BASE_URL}/toursQuery`, formData);
-        if(response.status === 200){
+        if (response.status === 200) {
           setSuccess(true);
-          setIsSubmitting(false);
           toast.success("Tours query sent successfully");
           setFormData({ name: "", email: "", phone: "", message: "" });
         }
-      }
-      else{
+      } else {
         const response = await axios.post(`${BASE_URL}/eventQuery`, formData);
-        if(response.status === 200){
+        if (response.status === 200) {
           setSuccess(true);
-          setIsSubmitting(false);
           toast.success("Event query sent successfully");
           setFormData({ name: "", email: "", phone: "", message: "" });
         }
       }
     } catch (error) {
-      if(isTour){
+      if (isTour) {
         toast.error("Error sending tours query");
-      }
-      else{
+      } else {
         toast.error("Error sending event query");
       }
+    } finally {
       setIsSubmitting(false);
     }
-    finally{
-      setIsSubmitting(false);
-    }
-
-    // const serviceID = "service_8b79wnu";
-    // const templateID = "template_434tezq";
-    // const publicKey = "FU4ThIFcvqAz_SSAm";
-
-    // emailjs.send(serviceID, templateID, formData, publicKey).then(
-    //   (response) => {
-    //     console.log("SUCCESS!", response.status, response.text);
-    //     setSuccess(true);
-    //     setIsSubmitting(false);
-    //     setFormData({ name: "", email: "", phone: "", message: "" });
-    //   },
-    //   (error) => {
-    //     console.error("FAILED...", error);
-    //     setIsSubmitting(false);
-    //   }
-    // );
   };
 
   if (!isOpen) return null;
@@ -129,9 +126,10 @@ const ContactForm = ({ isOpen, onClose, isTour }) => {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="block w-full pl-10 px-4 py-3 bg-white/50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all duration-300"
+                    className={`block w-full pl-10 px-4 py-3 bg-white/50 border ${errors.name ? 'border-red-500' : 'border-gray-200'} rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all duration-300`}
                     placeholder="Your Name"
                   />
+                  {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
                 </motion.div>
 
                 <motion.div
@@ -150,9 +148,10 @@ const ContactForm = ({ isOpen, onClose, isTour }) => {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="block w-full pl-10 px-4 py-3 bg-white/50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all duration-300"
+                    className={`block w-full pl-10 px-4 py-3 bg-white/50 border ${errors.email ? 'border-red-500' : 'border-gray-200'} rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all duration-300`}
                     placeholder="Your Email"
                   />
+                  {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
                 </motion.div>
               </div>
 
@@ -172,9 +171,10 @@ const ContactForm = ({ isOpen, onClose, isTour }) => {
                   value={formData.phone}
                   onChange={handleInputChange}
                   required
-                  className="block w-full pl-10 px-4 py-3 bg-white/50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all duration-300"
+                  className={`block w-full pl-10 px-4 py-3 bg-white/50 border ${errors.phone ? 'border-red-500' : 'border-gray-200'} rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all duration-300`}
                   placeholder="Your Phone Number"
                 />
+                {errors.phone && <p className="text-red-500 text-sm">{errors.phone}</p>}
               </motion.div>
 
               <motion.div

@@ -5,7 +5,7 @@ export const eventData = [
     location: "Rishikesh, Uttarakhand",
     duration: "2 Days, 1 Night",
     price: "6000",
-    imageUrl: "/src/assets/Outdoorevents/schoolcampbanner.png",
+    imageUrl: process.env.PUBLIC_URL + "/assets/Outdoorevents/schoolcampbanner.png",
     description:
       "An immersive outdoor experience designed to expose youth to nature, build character, and develop essential life skills.",
     activities: [
@@ -24,13 +24,13 @@ export const eventData = [
       "First aid facilities",
     ],
     galleryImages: [
-      "/src/assets/Outdoorevents/oe1.jpeg",
-      "/src/assets/Outdoorevents/oe2.jpeg",
-      "/src/assets/Outdoorevents/oe3.jpeg",
-      "/src/assets/Outdoorevents/oe4.jpeg",
-      "/src/assets/Outdoorevents/oe5.jpeg",
-      "/src/assets/Outdoorevents/oe6.jpeg",
-      "/src/assets/Outdoorevents/oe7.jpeg",
+      process.env.PUBLIC_URL + "/assets/Outdoorevents/oe1.jpeg",
+      process.env.PUBLIC_URL + "/assets/Outdoorevents/oe2.jpeg",
+      process.env.PUBLIC_URL + "/assets/Outdoorevents/oe3.jpeg",
+      process.env.PUBLIC_URL + "/assets/Outdoorevents/oe4.jpeg",
+      process.env.PUBLIC_URL + "/assets/Outdoorevents/oe5.jpeg",
+      process.env.PUBLIC_URL + "/assets/Outdoorevents/oe6.jpeg",
+      process.env.PUBLIC_URL + "/assets/Outdoorevents/oe7.jpeg",
     ],
   },
   {
@@ -39,7 +39,7 @@ export const eventData = [
     location: "Rishikesh, Uttarakhand",
     duration: "2 Days, 1 Night",
     price: "6000",
-    imageUrl: "/src/assets/Outdoorevents/dadnibanner.png",
+    imageUrl: process.env.PUBLIC_URL + "/assets/Outdoorevents/dadnibanner.png",
     description:
       "A unique 2-day event that brings dads and children closer through outdoor adventures, team-building activities, and memorable experiences.",
     activities: [
@@ -55,13 +55,13 @@ export const eventData = [
       "Includes stay, meals, workshops, and activities",
     ],
     galleryImages: [
-      "/src/assets/Outdoorevents/oe8.jpeg",
-      "/src/assets/Outdoorevents/oe9.jpeg",
-      "/src/assets/Outdoorevents/oe10.jpeg",
-      "/src/assets/Outdoorevents/oe11.jpeg",
-      "/src/assets/Outdoorevents/oe12.jpeg",
-      "/src/assets/Outdoorevents/oe13.jpeg",
-      "/src/assets/Outdoorevents/oe14.jpeg",
+      process.env.PUBLIC_URL + "/assets/Outdoorevents/oe8.jpeg",
+      process.env.PUBLIC_URL + "/assets/Outdoorevents/oe9.jpeg",
+      process.env.PUBLIC_URL + "/assets/Outdoorevents/oe10.jpeg",
+      process.env.PUBLIC_URL + "/assets/Outdoorevents/oe11.jpeg",
+      process.env.PUBLIC_URL + "/assets/Outdoorevents/oe12.jpeg",
+      process.env.PUBLIC_URL + "/assets/Outdoorevents/oe13.jpeg",
+      process.env.PUBLIC_URL + "/assets/Outdoorevents/oe14.jpeg",
     ],
   },
 ]; 
