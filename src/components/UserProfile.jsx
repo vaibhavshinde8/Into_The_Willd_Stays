@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { User, Mail, ArrowLeft, LogOut, Edit } from "lucide-react";
+import axios from "axios";
+import { BASE_URL } from "../utils/baseurl";
 
 const EditProfileModal = ({ isOpen, onClose, user, onSave }) => {
   const [formData, setFormData] = useState({
@@ -180,12 +182,30 @@ const UserProfile = () => {
   const [user, setUser] = useState(null);
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const localUser = localStorage.getItem("user") || "{}";
+  const [bookings, setBookings] = useState([]);
   // Check for user authentication
+  useEffect(() => {
+    const fetchBookings = async () => {
+      try {
+        const res = await axios.get(`${BASE_URL}/booking/userbookings`, {
+          headers: {
+            authorization: `Bearer ${localStorage.getItem("token")}`
+          }
+        })
+        console.log(res);
+        setBookings(res.data.bookings);
+      }
+      catch (err) {
+        console.log(err);
+      }
+    }
+    fetchBookings();
+  }, [])
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
     console.log("storedUser", storedUser);
     // If no user is logged in, redirect to login page
-    if (!storedUser||storedUser==="{}"||storedUser==="null"||storedUser==="undefined") {
+    if (!storedUser || storedUser === "{}" || storedUser === "null" || storedUser === "undefined") {
       navigate("/login", {
         state: { from: location },
         replace: true,
@@ -244,9 +264,9 @@ const UserProfile = () => {
             {/* Profile Header */}
             <div className="flex flex-col items-center space-y-4">
               <div className="bg-[#0F2642]/10 text-[#0F2642] rounded-full w-24 h-24 flex items-center justify-center">
-                {user.avatar || localUser.avatar ? (
+                {user?.avatar || localUser?.avatar ? (
                   <img
-                    src={user.avatar || localUser.avatar}
+                    src={user?.avatar || localUser.avatar}
                     alt="User Avatar"
                     className="w-20 h-20 rounded-full object-cover"
                   />
@@ -268,30 +288,73 @@ const UserProfile = () => {
               <div className="flex items-center space-x-3">
                 <Mail className="w-6 h-6 text-[#0F2642]/70" />
                 <div>
-                  {user.userEmail || localUser.email ? (
+                  {user?.email || localUser?.email ? (
                     <>
-                    <p className="text-sm text-[#0F2642]/70">Email Address</p>
-                    <p className="font-medium text-[#0F2642]">{user.userEmail || localUser.email}</p>
+                      <p className="text-sm text-[#0F2642]/70">Email Address</p>
+                      <p className="font-medium text-[#0F2642]">{user.email || localUser.email}</p>
                     </>
                   ) : (
                     <>
-                    <p className="text-sm text-[#0F2642]/70">Phone Number</p>
-                    <p className="font-medium text-[#0F2642]">{user.phone || localUser.phone}</p>
+                      <p className="text-sm text-[#0F2642]/70">Phone Number</p>
+                      <p className="font-medium text-[#0F2642]">{user.phone || localUser.phone}</p>
                     </>
                   )}
                 </div>
               </div>
             </div>
 
-            {/* Edit Profile Button */}
-            {/* <button
+
+          </div>
+        </div>
+        {/* Edit Profile Button */}
+        {/* <button
               onClick={() => setIsEditModalOpen(true)}
               className="w-full flex items-center justify-center bg-[#0F2642] text-white py-2 rounded-md hover:bg-[#0F2642]/90 transition-colors space-x-2"
             >
               <Edit className="w-5 h-5" />
               <span>Edit Profile</span>
             </button> */}
-          </div>
+        {/* Bookings Section */}
+        <div className="p-6 space-y-4">
+          <h2 className="text-xl font-bold text-[#0F2642]">Your Bookings</h2>
+          {bookings.length <= 0 &&
+            <>
+              <div className="text-center text-lg font-semibold text-[#0F2642] mt-4">
+                No bookings
+              </div>
+            </>
+          }
+          {
+            bookings.length > 0 &&
+            <>
+              <table className="min-w-full bg-white border border-gray-300">
+                <thead>
+                  <tr className="bg-[#0F2642] text-white">
+                    <th className="py-2 px-4 border">Property Name</th>
+                    <th className="py-2 px-4 border">Check-in Date</th>
+                    <th className="py-2 px-4 border">Check-out Date</th>
+                    <th className="py-2 px-4 border">Payment Status</th>
+                    <th className="py-2 px-4 border">Rooms Booked</th>
+                    <th className="py-2 px-4 border">Amount Paid</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {bookings?.map((booking) => (
+                    <tr key={booking?._id} className="hover:bg-gray-100">
+                      <td className="py-2 px-4 border">{booking?.property.name}</td>
+                      <td className="py-2 px-4 border">{new Date(booking?.checkInDate).toLocaleDateString()}</td>
+                      <td className="py-2 px-4 border">{new Date(booking?.checkOutDate).toLocaleDateString()}</td>
+                      <td className={`py-2 px-4 border ${booking?.status === 'confirmed' ? 'text-green-950' : 'text-yellow-950'}`}>
+                        {booking?.status === 'confirmed' ? 'Confirmed' : 'Pending'}
+                      </td>
+                      <td className="py-2 px-4 border">{booking?.roomBooked}</td>
+                      <td className="py-2 px-4 border">{booking?.amount}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </>
+          }
         </div>
       </div>
 
