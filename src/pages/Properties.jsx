@@ -30,7 +30,7 @@ const PropertyShimmer = () => (
   </div>
 );
 
-const locations = ["Dhanolti", "Goa", "Tehri", "Majuli","Rishikesh"];
+const locations = ["Dhanolti", "Goa", "Tehri", "Majuli", "Rishikesh"];
 
 const Properties = () => {
   const navigate = useNavigate();
@@ -70,19 +70,34 @@ const Properties = () => {
     const checkOut = urlParams.get('checkOut') || "";
     const adults = urlParams.get('adults') ? parseInt(urlParams.get('adults')) : 1;
     const children = urlParams.get('children') ? parseInt(urlParams.get('children')) : 0;
-    setSearchParams({ location, checkIn, checkOut, adults, children });
-    
-    if (location) {
-      handleFilterChange({ location: location });
+
+    // Check if parameters are stored in sessionStorage
+    const storedParams = sessionStorage.getItem('searchParams');
+    console.log(storedParams)
+    if (storedParams) {
+      const { location, checkIn, checkOut, adults, children } = JSON.parse(storedParams);
+      setSearchParams({ location, checkIn, checkOut, adults, children });
+      if (location) {
+        handleFilterChange({ location: location });
+      }
+    } else {
+      navigate('/properties', { replace: true });
     }
   }, [properties]);
-
+  useEffect(() => {
+    const handleBeforeUnload = () => {
+      sessionStorage.removeItem('searchParams');
+    };
+    window.addEventListener('beforeunload', handleBeforeUnload);
+    return () => {
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+    };
+  }, []);
   const handleSearch = () => {
     const params = new URLSearchParams();
     Object.entries(searchParams).forEach(([key, value]) => {
       if (value) params.append(key, value);
     });
-    navigate(`/properties?${params.toString()}`);
     handleFilterChange({ location: searchParams.location }); // Filter when Explore button is clicked
   };
 
@@ -96,16 +111,17 @@ const Properties = () => {
 
   const handleFilterChange = ({ location }) => {
     let filtered = properties;
-
+    console.log(location);
+    console.log(filtered);
     if (location) {
       filtered = filtered.filter(
         (property) => property.location.toLowerCase() === location.toLowerCase()
       );
     }
-
+    console.log(filtered);
     setFilteredProperties(filtered);
   };
-  
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -341,8 +357,8 @@ const Properties = () => {
                             {property.name}
                           </h2>
                           <p className="text-gray-600 mb-4">
-                            {property?.description?.length > 250 
-                              ? `${property.description.substring(0, 250)}...` 
+                            {property?.description?.length > 250
+                              ? `${property.description.substring(0, 250)}...`
                               : property?.description}
                           </p>
 

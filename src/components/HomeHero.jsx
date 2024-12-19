@@ -30,11 +30,10 @@ const HomeHero = () => {
   }, []);
 
   const handleSearch = () => {
-    const params = new URLSearchParams();
-    Object.entries(searchParams).forEach(([key, value]) => {
-      if (value) params.append(key, value);
-    });
-    navigate(`/properties?${params.toString()}`);
+    // Store search parameters in sessionStorage
+    sessionStorage.setItem('searchParams', JSON.stringify(searchParams));
+    
+    navigate('/properties'); // Navigate without URL parameters
   };
 
   const handleInputChange = (e) => {
