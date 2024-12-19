@@ -1,13 +1,22 @@
 import { useState, useEffect } from "react";
-import { Menu, X, User, Phone, Mail, Facebook, Instagram, Send } from "lucide-react";
+import {
+  Menu,
+  X,
+  User,
+  Phone,
+  Mail,
+  Facebook,
+  Instagram,
+  Send,
+} from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import logo from "../assets/IntotheWildStaysLogo.png";
 import emailjs from "emailjs-com";
 import { motion, AnimatePresence } from "framer-motion";
 import axios from "axios";
-import {BASE_URL} from "../utils/baseurl";
-import {toast} from "react-toastify";
+import { BASE_URL } from "../utils/baseurl";
+import { toast } from "react-toastify";
 
 // Modal Component for Property Listing Form
 // eslint-disable-next-line react/prop-types
@@ -16,57 +25,104 @@ const PropertyListingModal = ({ isOpen, onClose }) => {
     name: "",
     email: "",
     phone: "",
-    message: ""
+    message: "",
+  });
+  const [errors, setErrors] = useState({
+    email: "",
+    phone: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
   const [currentStep, setCurrentStep] = useState(1);
 
+  // Validation functions
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email) return "Email is required";
+    if (!emailRegex.test(email)) return "Please enter a valid email address";
+    return "";
+  };
+
+  const validatePhone = (phone) => {
+    const phoneRegex = /^[0-9]{10}$/;
+    if (!phone) return "Phone number is required";
+    if (!phoneRegex.test(phone))
+      return "Please enter a valid 10-digit phone number";
+    return "";
+  };
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+
+    // Clear errors when user starts typing
+    if (name === "email" || name === "phone") {
+      setErrors((prev) => ({ ...prev, [name]: "" }));
+    }
   };
 
-  const handleSubmit = async(e) => {
+  const validateForm = () => {
+    if (currentStep === 2) {
+      const emailError = validateEmail(formData.email);
+      const phoneError = validatePhone(formData.phone);
+
+      setErrors({
+        email: emailError,
+        phone: phoneError,
+      });
+
+      return !emailError && !phoneError;
+    }
+    return true;
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!validateForm()) {
+      return;
+    }
+
     if (currentStep !== 3) {
-      setCurrentStep(curr => curr + 1);
+      setCurrentStep((curr) => curr + 1);
       return;
     }
 
     setIsSubmitting(true);
-     try{
-      const response = await axios.post(`${BASE_URL}/propertyListingQuery`, formData);
+    try {
+      const response = await axios.post(
+        `${BASE_URL}/propertyListingQuery`,
+        formData
+      );
       console.log(response);
       toast.success("Property listing query sent successfully");
       setFormData({ name: "", email: "", phone: "", message: "" });
       onClose();
       setCurrentStep(1);
-     }catch(error){
+    } catch (error) {
       console.error("Error sending property listing query", error);
       toast.error("Failed to send property listing query");
-     }
-     finally{
+    } finally {
       setIsSubmitting(false);
-     }
+    }
 
-    // const serviceID = "service_8b79wnu";
-    // const templateID = "template_434tezq";
-    // const publicKey = "FU4ThIFcvqAz_SSAm";
+    const serviceID = "service_8b79wnu";
+    const templateID = "template_434tezq";
+    const publicKey = "FU4ThIFcvqAz_SSAm";
 
-    // emailjs.send(serviceID, templateID, formData, publicKey).then(
-    //   (response) => {
-    //     console.log("SUCCESS!", response.status, response.text);
-    //     setSuccess(true);
-    //     setIsSubmitting(false);
-    //     setFormData({ name: "", email: "", phone: "", message: "" });
-    //     setTimeout(() => onClose(), 2000);
-    //   },
-    //   (error) => {
-    //     console.error("FAILED...", error);
-    //     setIsSubmitting(false);
-    //   }
-    // );
+    emailjs.send(serviceID, templateID, formData, publicKey).then(
+      (response) => {
+        console.log("SUCCESS!", response.status, response.text);
+        setSuccess(true);
+        setIsSubmitting(false);
+        setFormData({ name: "", email: "", phone: "", message: "" });
+        setTimeout(() => onClose(), 2000);
+      },
+      (error) => {
+        console.error("FAILED...", error);
+        setIsSubmitting(false);
+      }
+    );
   };
 
   if (!isOpen) return null;
@@ -74,16 +130,16 @@ const PropertyListingModal = ({ isOpen, onClose }) => {
   const steps = [
     {
       title: "Personal Details",
-      icon: "👤"
+      icon: "👤",
     },
     {
       title: "Contact Info",
-      icon: "📞"
+      icon: "📞",
     },
     {
       title: "Property Details",
-      icon: "🏠"
-    }
+      icon: "🏠",
+    },
   ];
 
   return (
@@ -93,7 +149,7 @@ const PropertyListingModal = ({ isOpen, onClose }) => {
       exit={{ opacity: 0 }}
       className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4"
     >
-      <motion.div 
+      <motion.div
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         exit={{ scale: 0.9, opacity: 0 }}
@@ -101,22 +157,34 @@ const PropertyListingModal = ({ isOpen, onClose }) => {
       >
         {/* Header */}
         <div className="bg-gradient-to-r from-[#0F2642] to-[#1a3b66] p-6 relative">
-          <button 
-            onClick={onClose} 
+          <button
+            onClick={onClose}
             className="absolute right-4 top-4 text-white/80 hover:text-white transition-colors"
           >
             <X className="w-6 h-6" />
           </button>
-          <h2 className="text-3xl font-bold text-white mb-2">List Your Property</h2>
-          <p className="text-white/80">Join our network of exclusive properties</p>
-          
+          <h2 className="text-3xl font-bold text-white mb-2">
+            List Your Property
+          </h2>
+          <p className="text-white/80">
+            Join our network of exclusive properties
+          </p>
+
           {/* Progress Steps */}
           <div className="flex justify-between mt-6 relative">
             {steps.map((step, index) => (
               <div key={index} className="flex flex-col items-center z-10">
-                <div className={`w-10 h-10 rounded-full flex items-center justify-center text-xl
-                  ${currentStep > index ? 'bg-green-500' : currentStep === index + 1 ? 'bg-yellow-400' : 'bg-white/30'}
-                  transition-all duration-300`}>
+                <div
+                  className={`w-10 h-10 rounded-full flex items-center justify-center text-xl
+                  ${
+                    currentStep > index
+                      ? "bg-green-500"
+                      : currentStep === index + 1
+                      ? "bg-yellow-400"
+                      : "bg-white/30"
+                  }
+                  transition-all duration-300`}
+                >
                   {step.icon}
                 </div>
                 <span className="text-white/90 text-sm mt-2">{step.title}</span>
@@ -124,9 +192,11 @@ const PropertyListingModal = ({ isOpen, onClose }) => {
             ))}
             {/* Progress Line */}
             <div className="absolute top-5 left-0 h-0.5 bg-white/30 w-full -z-0">
-              <div 
+              <div
                 className="h-full bg-green-500 transition-all duration-500"
-                style={{ width: `${((currentStep - 1) / (steps.length - 1)) * 100}%` }}
+                style={{
+                  width: `${((currentStep - 1) / (steps.length - 1)) * 100}%`,
+                }}
               />
             </div>
           </div>
@@ -144,7 +214,9 @@ const PropertyListingModal = ({ isOpen, onClose }) => {
                 className="space-y-4"
               >
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    Full Name
+                  </label>
                   <input
                     type="text"
                     name="name"
@@ -167,28 +239,42 @@ const PropertyListingModal = ({ isOpen, onClose }) => {
                 className="space-y-4"
               >
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    Email Address
+                  </label>
                   <input
                     type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#0F2642] focus:border-transparent transition-all"
+                    className={`w-full px-4 py-3 rounded-lg border ${
+                      errors.email ? "border-red-500" : "border-gray-300"
+                    } focus:ring-2 focus:ring-[#0F2642] focus:border-transparent transition-all`}
                     placeholder="Enter your email address"
                     required
                   />
+                  {errors.email && (
+                    <p className="mt-1 text-sm text-red-500">{errors.email}</p>
+                  )}
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    Phone Number
+                  </label>
                   <input
                     type="tel"
                     name="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#0F2642] focus:border-transparent transition-all"
+                    className={`w-full px-4 py-3 rounded-lg border ${
+                      errors.phone ? "border-red-500" : "border-gray-300"
+                    } focus:ring-2 focus:ring-[#0F2642] focus:border-transparent transition-all`}
                     placeholder="Enter your phone number"
                     required
                   />
+                  {errors.phone && (
+                    <p className="mt-1 text-sm text-red-500">{errors.phone}</p>
+                  )}
                 </div>
               </motion.div>
             )}
@@ -202,7 +288,9 @@ const PropertyListingModal = ({ isOpen, onClose }) => {
                 className="space-y-4"
               >
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Property Details</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    Property Details
+                  </label>
                   <textarea
                     name="message"
                     value={formData.message}
@@ -221,7 +309,7 @@ const PropertyListingModal = ({ isOpen, onClose }) => {
             {currentStep > 1 && (
               <button
                 type="button"
-                onClick={() => setCurrentStep(curr => curr - 1)}
+                onClick={() => setCurrentStep((curr) => curr - 1)}
                 className="px-6 py-2 text-[#0F2642] border-2 border-[#0F2642] rounded-lg hover:bg-gray-50 transition-colors"
               >
                 Previous
@@ -252,7 +340,8 @@ const PropertyListingModal = ({ isOpen, onClose }) => {
               animate={{ opacity: 1, y: 0 }}
               className="text-center text-green-600 bg-green-50 p-4 rounded-lg"
             >
-              Your property has been submitted successfully! We'll contact you soon.
+              Your property has been submitted successfully! We'll contact you
+              soon.
             </motion.div>
           )}
         </form>
@@ -274,8 +363,8 @@ export default function Navbar() {
       setPrevScrollPos(currentScrollPos);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [prevScrollPos]);
 
   const toggleMenu = () => {
@@ -285,11 +374,7 @@ export default function Navbar() {
   const token = localStorage.getItem("token");
 
   return (
-    <nav
-      className={`w-full z-50 bg-white shadow-md transition-all font-ethereal duration-300 fixed ${
-        visible ? "top-0" : "-top-full"
-      }`}
-    >
+    <nav className="w-full z-50 bg-gradient-to-b from-black via-gray-900 to-transparent  transition-all font-ethereal duration-300 fixed ">
       <div className="bg-gradient-to-r from-[#0F2642] to-[#0F2642] text-white text-sm sm:text-base">
         <div className="max-w-7xl mx-auto px-4 py-2 flex flex-col sm:flex-row justify-between items-center space-y-2 sm:space-y-0">
           {/* Left Side: Contact Info */}
@@ -369,44 +454,44 @@ export default function Navbar() {
           <div className="hidden md:flex space-x-8 items-center">
             <Link
               to="/properties"
-              className="text-gray-800 hover:text-[#0F2642] px-3 py-2 text-lg font-semibold transition duration-300"
+              className="text-gray-100 hover:text-[#ffffff] px-3 py-2 text-lg font-semibold transition duration-300"
             >
               Properties
             </Link>
             <Link
               to="/tours"
-              className="text-gray-800 hover:text-[#0F2642] px-3 py-2 text-lg font-semibold transition duration-300"
+              className="text-gray-100 hover:text-[#ffffff] px-3 py-2 text-lg font-semibold transition duration-300"
             >
               Tours
             </Link>
             <Link
               to="/events"
-              className="text-gray-800 hover:text-[#0F2642] px-3 py-2 text-lg font-semibold transition duration-300"
+              className="text-gray-100 hover:text-[#ffffff] px-3 py-2 text-lg font-semibold transition duration-300"
             >
               Events
             </Link>
             <Link
               to="/blog"
-              className="text-gray-800 hover:text-[#0F2642] px-3 py-2 text-lg font-semibold transition duration-300"
+              className="text-gray-100 hover:text-[#ffffff] px-3 py-2 text-lg font-semibold transition duration-300"
             >
               Blog
             </Link>
             <Link
               to="/about-us"
-              className="text-gray-800 hover:text-[#0F2642] px-3 py-2 text-lg font-semibold transition duration-300"
+              className="text-gray-100 hover:text-[#ffffff] px-3 py-2 text-lg font-semibold transition duration-300"
             >
               About Us
             </Link>
             <Link
               to="/contact-us"
-              className="text-gray-800 hover:text-[#0F2642] px-3 py-2 text-lg font-semibold transition duration-300"
+              className="text-gray-100 hover:text-[#ffffff] px-3 py-2 text-lg font-semibold transition duration-300"
             >
               Contact Us
             </Link>
 
             <button
               onClick={() => setIsPropertyModalOpen(true)}
-              className="text-[#0F2642] border-2 border-[#0F2642] hover:bg-[#0F2642] hover:text-white px-4 py-2 rounded-lg font-semibold transition-all duration-300"
+              className="text-[#ffffff] border-2 border-[#ffffff] hover:bg-[#ffffff] hover:text-white px-4 py-2 rounded-lg font-semibold transition-all duration-300"
             >
               List Your Property
             </button>
@@ -439,7 +524,7 @@ export default function Navbar() {
           <div className="md:hidden flex items-center">
             <button
               onClick={toggleMenu}
-              className="p-2 rounded-full text-gray-600 hover:text-[#0F2642] hover:bg-gray-100"
+              className="p-2 rounded-full text-gray-100 hover:text-[#ffffff] hover:bg-gray-100"
             >
               {isOpen ? (
                 <X className="h-8 w-8" />
@@ -468,17 +553,17 @@ export default function Navbar() {
               <X className="h-8 w-8" />
             </button>
 
-            <motion.div 
+            <motion.div
               className="flex flex-col items-center space-y-6 text-center"
               initial="closed"
               animate="open"
               variants={{
                 open: {
-                  transition: { staggerChildren: 0.1 }
+                  transition: { staggerChildren: 0.1 },
                 },
                 closed: {
-                  transition: { staggerChildren: 0.05, staggerDirection: -1 }
-                }
+                  transition: { staggerChildren: 0.05, staggerDirection: -1 },
+                },
               }}
             >
               {[
@@ -488,13 +573,13 @@ export default function Navbar() {
                 { to: "/events", text: "Events" },
                 { to: "/blog", text: "Blog" },
                 { to: "/about-us", text: "About Us" },
-                { to: "/contact-us", text: "Contact Us" }
+                { to: "/contact-us", text: "Contact Us" },
               ].map((link) => (
                 <motion.div
                   key={link.to}
                   variants={{
                     open: { y: 0, opacity: 1 },
-                    closed: { y: 20, opacity: 0 }
+                    closed: { y: 20, opacity: 0 },
                   }}
                 >
                   <Link
@@ -510,7 +595,7 @@ export default function Navbar() {
               <motion.div
                 variants={{
                   open: { y: 0, opacity: 1 },
-                  closed: { y: 20, opacity: 0 }
+                  closed: { y: 20, opacity: 0 },
                 }}
               >
                 <button
@@ -518,7 +603,7 @@ export default function Navbar() {
                     setIsPropertyModalOpen(true);
                     setIsOpen(false);
                   }}
-                  className="text-white border-2 border-white hover:bg-white hover:text-[#0F2642] px-6 py-3 rounded-lg text-lg font-semibold transition-all duration-300"
+                  className="text-white border-2 border-white hover:bg-white hover:text-[#ffffff] px-6 py-3 rounded-lg text-lg font-semibold transition-all duration-300"
                 >
                   List Your Property
                 </button>
@@ -527,7 +612,7 @@ export default function Navbar() {
               <motion.div
                 variants={{
                   open: { y: 0, opacity: 1 },
-                  closed: { y: 20, opacity: 0 }
+                  closed: { y: 20, opacity: 0 },
                 }}
               >
                 <Link
