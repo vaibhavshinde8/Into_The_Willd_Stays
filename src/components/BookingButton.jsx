@@ -86,141 +86,169 @@ const UserDetailsForm = ({ property, tour, onClose, onSubmit, loading }) => {
 
   return (
     <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex justify-center items-center z-50 p-4">
-      <div className="bg-white/90 p-6 md:p-8 rounded-2xl shadow-2xl w-full max-w-2xl border border-gray-200">
-        <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8 text-center bg-gradient-to-r from-[#0F2642] to-blue-600 bg-clip-text text-transparent">
-          Guest Details
-        </h2>
-        <form
-          onSubmit={handleSubmit}
-          className="grid grid-cols-1 md:grid-cols-2 gap-6"
-        >
-          <div className="md:col-span-2">
-            <label htmlFor="fullName" className="block text-gray-700 mb-2 font-medium">
-              Full Name <span className="text-red-500">*</span>
-            </label>
-            <input
-              type="text"
-              id="fullName"
-              name="fullName"
-              value={formData.fullName}
-              onChange={handleChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0F2642] focus:border-transparent transition duration-200"
-              required
-            />
-          </div>
+      <div className="bg-white/90 rounded-2xl shadow-2xl w-full max-w-2xl border border-gray-200 h-[70vh] flex flex-col">
+        <div className="p-6 md:p-8">
+          <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8 text-center bg-gradient-to-r from-[#0F2642] to-blue-600 bg-clip-text text-transparent">
+            Guest Details
+          </h2>
+        </div>
 
-          <div>
-            <label htmlFor="phone" className="block text-gray-700 mb-2 font-medium">
-              Phone Number <span className="text-red-500">*</span>
-            </label>
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              value={formData.phone}
-              onChange={handleChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0F2642] focus:border-transparent transition duration-200"
-              required
-            />
-          </div>
+        <div className="flex-1 overflow-y-auto px-6 md:px-8">
+          <form
+            onSubmit={handleSubmit}
+            className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6"
+          >
+            <div className="md:col-span-2">
+              <label
+                htmlFor="fullName"
+                className="block text-gray-700 mb-2 font-medium"
+              >
+                Full Name <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="text"
+                id="fullName"
+                name="fullName"
+                value={formData.fullName}
+                onChange={handleChange}
+                className="w-full px-4 py-2 md:py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0F2642] focus:border-transparent transition duration-200"
+                required
+              />
+            </div>
 
-          <div>
-            <label htmlFor="age" className="block text-gray-700 mb-2 font-medium">
-              Age
-            </label>
-            <input
-              type="number"
-              id="age"
-              name="age"
-              value={formData.age}
-              onChange={handleChange}
-              min="18"
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0F2642] focus:border-transparent transition duration-200"
-            />
-          </div>
+            <div>
+              <label
+                htmlFor="phone"
+                className="block text-gray-700 mb-2 font-medium"
+              >
+                Phone Number <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                className="w-full px-4 py-2 md:py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0F2642] focus:border-transparent transition duration-200"
+                required
+              />
+            </div>
 
-          <div>
-            <label htmlFor="adults" className="block text-gray-700 mb-2 font-medium">
-              Number of Adults <span className="text-red-500">*</span>
-            </label>
-            <input
-              type="number"
-              id="adults"
-              name="adults"
-              value={formData.adults}
-              onChange={handleChange}
-              min="1"
-              max="6"
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0F2642] focus:border-transparent transition duration-200"
-              required
-            />
-          </div>
+            <div>
+              <label
+                htmlFor="age"
+                className="block text-gray-700 mb-2 font-medium"
+              >
+                Age
+              </label>
+              <input
+                type="number"
+                id="age"
+                name="age"
+                value={formData.age}
+                onChange={handleChange}
+                min="18"
+                className="w-full px-4 py-2 md:py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0F2642] focus:border-transparent transition duration-200"
+              />
+            </div>
 
-          <div>
-            <label htmlFor="children" className="block text-gray-700 mb-2 font-medium">
-              Number of Children
-            </label>
-            <input
-              type="number"
-              id="children"
-              name="children"
-              value={formData.children}
-              onChange={handleChange}
-              min="0"
-              max="5"
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0F2642] focus:border-transparent transition duration-200"
-            />
-          </div>
+            <div>
+              <label
+                htmlFor="adults"
+                className="block text-gray-700 mb-2 font-medium"
+              >
+                Number of Adults <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="number"
+                id="adults"
+                name="adults"
+                value={formData.adults}
+                onChange={handleChange}
+                min="1"
+                max="6"
+                className="w-full px-4 py-2 md:py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0F2642] focus:border-transparent transition duration-200"
+                required
+              />
+            </div>
 
-          <div className="md:col-span-2">
-            <label
-              htmlFor="specialRequirements"
-              className="block text-gray-700 mb-2 font-medium"
-            >
-              Special Requirements
-            </label>
-            <textarea
-              id="specialRequirements"
-              name="specialRequirements"
-              value={formData.specialRequirements}
-              onChange={handleChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0F2642] focus:border-transparent transition duration-200"
-              rows="2"
-              placeholder="Any special requests or requirements"
-            />
-          </div>
+            <div>
+              <label
+                htmlFor="children"
+                className="block text-gray-700 mb-2 font-medium"
+              >
+                Number of Children
+              </label>
+              <input
+                type="number"
+                id="children"
+                name="children"
+                value={formData.children}
+                onChange={handleChange}
+                min="0"
+                max="5"
+                className="w-full px-4 py-2 md:py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0F2642] focus:border-transparent transition duration-200"
+              />
+            </div>
 
-          <div>
-            <label htmlFor="checkInDate" className="block text-gray-700 mb-2 font-medium">
-              Check-in Date
-            </label>
-            <input
-              type="date"
-              id="checkInDate"
-              name="checkInDate"
-              value={formData.checkInDate}
-              onChange={handleChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0F2642] focus:border-transparent transition duration-200"
-              required
-            />
-          </div>
+            <div className="md:col-span-2">
+              <label
+                htmlFor="specialRequirements"
+                className="block text-gray-700 mb-2 font-medium"
+              >
+                Special Requirements
+              </label>
+              <textarea
+                id="specialRequirements"
+                name="specialRequirements"
+                value={formData.specialRequirements}
+                onChange={handleChange}
+                className="w-full px-4 py-2 md:py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0F2642] focus:border-transparent transition duration-200"
+                rows="2"
+                placeholder="Any special requests or requirements"
+              />
+            </div>
 
-          <div>
-            <label htmlFor="checkOutDate" className="block text-gray-700 mb-2 font-medium">
-              Check-out Date
-            </label>
-            <input
-              type="date"
-              id="checkOutDate"
-              name="checkOutDate"
-              value={formData.checkOutDate}
-              onChange={handleChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0F2642] focus:border-transparent transition duration-200"
-              required
-            />
-          </div>
+            <div>
+              <label
+                htmlFor="checkInDate"
+                className="block text-gray-700 mb-2 font-medium"
+              >
+                Check-in Date
+              </label>
+              <input
+                type="date"
+                id="checkInDate"
+                name="checkInDate"
+                value={formData.checkInDate}
+                onChange={handleChange}
+                className="w-full px-4 py-2 md:py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0F2642] focus:border-transparent transition duration-200"
+                required
+              />
+            </div>
 
-          <div className="md:col-span-2 flex justify-between space-x-4 mt-4">
+            <div>
+              <label
+                htmlFor="checkOutDate"
+                className="block text-gray-700 mb-2 font-medium"
+              >
+                Check-out Date
+              </label>
+              <input
+                type="date"
+                id="checkOutDate"
+                name="checkOutDate"
+                value={formData.checkOutDate}
+                onChange={handleChange}
+                className="w-full px-4 py-2 md:py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0F2642] focus:border-transparent transition duration-200"
+                required
+              />
+            </div>
+          </form>
+        </div>
+
+        <div className="p-6 md:p-8 border-t border-gray-200">
+          <div className="flex flex-col sm:flex-row justify-between space-y-4 sm:space-y-0 sm:space-x-4">
             <button
               type="button"
               onClick={onClose}
@@ -229,14 +257,14 @@ const UserDetailsForm = ({ property, tour, onClose, onSubmit, loading }) => {
               Cancel
             </button>
             <button
-              type="submit"
+              onClick={handleSubmit}
               disabled={loading}
               className="w-full sm:w-1/2 px-6 py-3 bg-[#0F2642] text-white rounded-xl hover:bg-[#1a3b66] transition duration-200 font-medium disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-gray-300"
             >
               {loading ? "Processing..." : "Proceed to Payment"}
             </button>
           </div>
-        </form>
+        </div>
       </div>
     </div>
   );

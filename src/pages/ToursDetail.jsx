@@ -215,7 +215,7 @@ const ToursDetail = () => {
                 <MessageCircle className="w-6 h-6 text-green-600" />
                 <span className="text-lg text-gray-700">
                   {tour.contact_methods?.whatsapp
-                    ? `+${tour.contact_methods?.whatsapp}`
+                    ? `${tour.contact_methods?.whatsapp}`
                     : "Not available"}
                 </span>
               </a>

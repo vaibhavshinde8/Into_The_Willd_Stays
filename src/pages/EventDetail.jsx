@@ -24,7 +24,7 @@ const EventDetail = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-teal-50/30 to-blue-50/30">
-      <div className="relative h-[90vh]">
+      <div className="relative h-[80vh]">
         <motion.img
           initial={{ scale: 1.1 }}
           animate={{ scale: 1 }}
@@ -38,20 +38,20 @@ const EventDetail = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="absolute bottom-0 left-0 right-0 p-12 text-white"
+          className="absolute bottom-0 left-0 right-0 p-6 sm:p-12 text-white"
         >
           <div className="max-w-6xl mx-auto">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white to-teal-300 bg-clip-text text-transparent">
+            <h1 className="text-5xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-white to-teal-300 bg-clip-text text-transparent">
               {event.name}
             </h1>
-            <div className="flex flex-wrap gap-6 text-xl font-light tracking-wide mb-8">
-              <span className="flex items-center space-x-2 bg-white/10 px-4 py-2 rounded-full backdrop-blur-sm">
+            <div className="flex flex-wrap gap-4 sm:gap-6 text-lg sm:text-xl font-light tracking-wide mb-6 sm:mb-8">
+              <span className="flex items-center space-x-2 bg-white/10 px-3 sm:px-4 py-1 sm:py-2 rounded-full backdrop-blur-sm">
                 {event.location}
               </span>
-              <span className="flex items-center space-x-2 bg-white/10 px-4 py-2 rounded-full backdrop-blur-sm">
+              <span className="flex items-center space-x-2 bg-white/10 px-3 sm:px-4 py-1 sm:py-2 rounded-full backdrop-blur-sm">
                 {event.duration}
               </span>
-              <span className="flex items-center space-x-2 bg-teal-500/20 px-4 py-2 rounded-full backdrop-blur-sm text-teal-300">
+              <span className="flex items-center space-x-2 bg-teal-500/20 px-3 sm:px-4 py-1 sm:py-2 rounded-full backdrop-blur-sm text-teal-300">
                 Rs. {event.price} per person
               </span>
             </div>
@@ -64,7 +64,7 @@ const EventDetail = () => {
                 boxShadow: "0 20px 40px rgba(0,0,0,0.2)"
               }}
               className="relative group bg-gradient-to-r from-teal-500 via-teal-400 to-emerald-400 
-                       text-white px-10 py-5 rounded-2xl text-lg font-medium
+                       text-white px-8 sm:px-10 py-4 sm:py-5 rounded-2xl text-lg font-medium
                        shadow-[0_10px_20px_rgba(0,0,0,0.1)] 
                        hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)]
                        transition-all duration-500 overflow-hidden

@@ -1,7 +1,7 @@
 export const eventData = [
   {
     id: 1,
-    name: "School Camp",
+    name: "Summer Camp",
     location: "Rishikesh, Uttarakhand",
     duration: "2 Days, 1 Night",
     price: "6000",

@@ -313,7 +313,7 @@ const Properties = () => {
             initial="hidden"
             animate="visible"
           >
-            <div className="grid gap-8">
+            <div className="grid gap-6 md:gap-8">
               {isLoading ? (
                 // Show 3 shimmer effects while loading
                 [...Array(3)].map((_, index) => (
@@ -327,7 +327,7 @@ const Properties = () => {
                     variants={itemVariants}
                     onMouseEnter={() => setHoveredIndex(index)}
                     onMouseLeave={() => setHoveredIndex(null)}
-                    className="relative bg-white overflow-hidden shadow-md transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl rounded-lg"
+                    className="relative bg-white overflow-hidden shadow-lg transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl rounded-lg border border-gray-200"
                   >
                     <div className="flex flex-col md:flex-row h-full">
                       {/* Image Section */}
@@ -335,9 +335,9 @@ const Properties = () => {
                         <img
                           src={property.images[0]}
                           alt={property.name}
-                          className="w-full h-[50vh] object-cover transition-transform duration-700 hover:scale-110 rounded-l-lg"
+                          className="w-full h-[50vh] object-cover transition-transform duration-700 hover:scale-110 rounded-t-lg md:rounded-l-lg"
                         />
-                        <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-lg">
+                        <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-lg shadow-md">
                           <div className="flex items-center space-x-1">
                             <FaStar className="text-yellow-500" />
                             <span className="font-semibold">
@@ -378,8 +378,9 @@ const Properties = () => {
                           </div>
                         </div>
 
-                        <div className="flex items-center justify-between mt-4">
-                          <div className="flex flex-col">
+                        {/* Price and Button Section */}
+                        <div className="flex flex-col md:flex-row items-center justify-between mt-4">
+                          <div className="flex flex-col mb-4 md:mb-0 md:w-1/2">
                             <span className="text-3xl font-bold text-gray-900">
                               ₹{property.price}
                             </span>
@@ -388,16 +389,16 @@ const Properties = () => {
                             </span>
                           </div>
 
-                          <div className="flex space-x-3">
+                          <div className="flex flex-col space-y-3 md:w-1/2">
+                            <BookingButton property={property} />
+                          </div>
                             <Link
                               to={`/property/${property._id}`}
                               onClick={() => window.scrollTo(0, 0)}
-                              className="px-6 my-4 py-2 text-black bg-gray-100 hover:bg-teal-100 transition-colors rounded-lg"
+                              className="px-6 py-2 text-black bg-gray-100 hover:bg-teal-100 transition-colors rounded-lg text-center"
                             >
                               Details
                             </Link>
-                            <BookingButton property={property} />
-                          </div>
                         </div>
                       </div>
                     </div>
