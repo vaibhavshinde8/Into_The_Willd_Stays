@@ -39,7 +39,7 @@ const MostViewedProperties = () => {
   const filteredProperties =
     selectedLocation === "All"
       ? properties
-      : properties.filter((property) => property.location === selectedLocation);
+      : properties?.filter((property) => property?.location === selectedLocation);
 
   const ShimmerCard = () => (
     <div className="bg-gradient-to-br from-blue-100 to-cyan-100 shadow-lg animate-pulse rounded-2xl overflow-hidden">
@@ -73,7 +73,7 @@ const MostViewedProperties = () => {
         </motion.h2>
 
         <div className="flex flex-wrap justify-center gap-3 mb-8">
-          {locations.map((location) => (
+          {locations?.map((location) => (
             <motion.button
               key={location}
               whileHover={{ scale: 1.05 }}
@@ -122,7 +122,7 @@ const MostViewedProperties = () => {
               className="py-8"
             >
               {loading
-                ? [...Array(4)].map((_, index) => (
+                ? [...Array(4)]?.map((_, index) => (
                     <SwiperSlide key={index}>
                       <motion.div
                         initial={{ opacity: 0, y: 50 }}
@@ -133,7 +133,7 @@ const MostViewedProperties = () => {
                       </motion.div>
                     </SwiperSlide>
                   ))
-                : filteredProperties.map((property, index) => (
+                : filteredProperties?.map((property, index) => (
                     <SwiperSlide key={index}>
                       <motion.div
                         initial={{ opacity: 0, y: 50 }}
@@ -144,8 +144,8 @@ const MostViewedProperties = () => {
                         <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-1 h-full">
                           <div className="relative h-48 sm:h-56 md:h-64">
                             <img
-                              src={property.images[0]}
-                              alt={property.name}
+                              src={property?.images[0]}
+                              alt={property?.name}
                               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
@@ -154,10 +154,10 @@ const MostViewedProperties = () => {
                               <div className="flex items-center gap-1">
                                 <span className="text-yellow-500">★</span>
                                 <span className="font-bold">
-                                  {property.rating}
+                                  {property?.rating}
                                 </span>
                                 <span className="text-gray-600">
-                                  ({property.reviews})
+                                  ({property?.reviews})
                                 </span>
                               </div>
                             </div>
@@ -166,7 +166,7 @@ const MostViewedProperties = () => {
                               <div className="flex items-center gap-1.5 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-full text-sm">
                                 <FaMapMarkerAlt className="text-[#0F2642]" />
                                 <span className="font-medium">
-                                  {property.location}
+                                  {property?.location}
                                 </span>
                               </div>
                             </div>
@@ -174,26 +174,26 @@ const MostViewedProperties = () => {
 
                           <div className="p-4">
                             <h2 className="text-lg font-bold mb-2 text-gray-800 line-clamp-1">
-                              {property.name}
+                              {property?.name}
                             </h2>
 
                             <p className="text-sm text-gray-600 mb-3 line-clamp-2">
-                              {property.description}
+                              {property?.description}
                             </p>
 
                             <div className="grid grid-cols-2 gap-2 mb-4">
                               <div className="flex items-center gap-1.5 bg-gray-50 p-2 rounded-lg text-sm">
                                 <MdOutlineBedroomParent className="text-lg text-[#0F2642]" />
                                 <span className="font-medium">
-                                  {property.bedroom} Bed
-                                  {property.bedroom > 1 ? "s" : ""}
+                                  {property?.bedroom} Bed
+                                  {property?.bedroom > 1 ? "s" : ""}
                                 </span>
                               </div>
                               <div className="flex items-center gap-1.5 bg-gray-50 p-2 rounded-lg text-sm">
                                 <IoPeople className="text-lg text-[#0F2642]" />
                                 <span className="font-medium">
-                                  {property.guest} Guest
-                                  {property.guest > 1 ? "s" : ""}
+                                  {property?.guest} Guest
+                                  {property?.guest > 1 ? "s" : ""}
                                 </span>
                               </div>
                             </div>
@@ -201,14 +201,14 @@ const MostViewedProperties = () => {
                             <div className="flex flex-col gap-3">
                               <div className="text-center bg-gray-50 p-2 rounded-lg">
                                 <span className="text-xl font-bold text-[#0F2642]">
-                                  ₹{property.price}
+                                  ₹{property?.price}
                                 </span>
                                 <span className="text-sm text-gray-500 ml-1">
                                   /night
                                 </span>
                               </div>
                               <Link
-                                to={`/property/${property._id}`}
+                                to={`/property/${property?._id}`}
                                 onClick={() => window.scrollTo(0, 0)}
                                 className="w-full py-2 bg-[#0F2642] text-white text-sm rounded-lg hover:bg-[#0F2642]/90 transition-colors duration-300 flex items-center justify-center gap-1.5"
                               >
