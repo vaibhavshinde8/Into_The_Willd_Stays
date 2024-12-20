@@ -131,6 +131,9 @@ const Properties = () => {
     },
   };
 
+  // Get today's date in YYYY-MM-DD format
+  const today = new Date().toISOString().split('T')[0];
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
@@ -201,6 +204,7 @@ const Properties = () => {
                   name="checkIn"
                   value={searchParams.checkIn}
                   onChange={handleInputChange}
+                  min={today} // Prevent past dates
                   className="w-full h-[46px] pl-10 pr-4 py-3 bg-white border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-3xl cursor-pointer"
                 />
                 <div className="absolute inset-0" onClick={() => document.getElementById('check-in-date').showPicker()}></div>
@@ -220,6 +224,7 @@ const Properties = () => {
                   name="checkOut"
                   value={searchParams.checkOut}
                   onChange={handleInputChange}
+                  min={searchParams.checkIn || today} // Prevent past dates and ensure check-out is after check-in
                   className="w-full h-[46px] pl-10 pr-4 py-3 bg-white border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-3xl cursor-pointer"
                 />
                 <div className="absolute inset-0" onClick={() => document.getElementById('check-out-date').showPicker()}></div>

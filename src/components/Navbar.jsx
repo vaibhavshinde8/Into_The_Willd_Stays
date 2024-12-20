@@ -386,13 +386,13 @@ export default function Navbar() {
                   href="tel:+919761966485"
                   className="mr-2 hover:text-yellow-300 transition-colors"
                 >
-                  +919761966485,
+                  +91-9761966485,
                 </a>
                 <a
                   href="tel:+919958838557"
                   className="hover:text-yellow-300 transition-colors"
                 >
-                  +919958838557
+                  +91-9958838557
                 </a>
               </div>
             </div>
@@ -491,7 +491,7 @@ export default function Navbar() {
 
             <button
               onClick={() => setIsPropertyModalOpen(true)}
-              className="text-[#ffffff] border-2 border-[#ffffff] hover:bg-[#ffffff] hover:text-white px-4 py-2 rounded-lg font-semibold transition-all duration-300"
+              className="text-[#ffffff]  hover:text-white px-4 py-2 rounded-lg font-semibold transition-all duration-300"
             >
               List Your Property
             </button>

@@ -45,6 +45,9 @@ const HomeHero = () => {
     }));
   };
 
+  // Get today's date in YYYY-MM-DD format
+  const today = new Date().toISOString().split("T")[0];
+
   return (
     <div className="relative min-h-screen flex flex-col justify-between items-center overflow-hidden py-16 md:pt-32">
       {/* Background Overlay */}
@@ -100,26 +103,26 @@ const HomeHero = () => {
 
         {/* Search Form Container */}
         <motion.div
-          className="relative w-full max-w-7xl mx-auto px-4 hidden md:block"
+          className="relative w-full max-w-[100rem] mx-auto px-4 hidden md:block"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
         >
-          <div className="bg-black/20 backdrop-blur-sm shadow-lg rounded-lg border border-white/30 p-4 md:p-6">
+          <div className="bg-black/20 backdrop-blur-sm shadow-lg gap-4 rounded-lg border border-white/30 p-8">
             <div className="grid grid-cols-1 md:grid-cols-6 gap-4 md:gap-6">
               {/* Location */}
-              <div className="md:col-span-1">
-                <label className="block text-white mb-2 text-sm font-medium">
+              <div className="md:col-span-1 lg:w-40">
+                <label className="block text-white mb-3 text-sm font-medium">
                   Location
                 </label>
                 <select
                   name="location"
                   value={searchParams.location}
                   onChange={handleInputChange}
-                  className="w-full h-[46px] px-4 py-3 bg-white border border-white/30 text-gray-900 focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded-2xl transition-all duration-300 hover:bg-white"
+                  className="w-full h-12 px-6 py-3 bg-white border border-white/30 text-gray-900 focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded-2xl transition-all duration-300 hover:bg-white"
                 >
                   <option value="" className="text-gray-500">
-                    Select Location
+                     Location
                   </option>
                   {locations.map((loc) => (
                     <option key={loc} value={loc} className="text-gray-900">
@@ -130,68 +133,54 @@ const HomeHero = () => {
               </div>
 
               {/* Check-in */}
-              <div className="md:col-span-1">
-                <label className="block text-white mb-2 text-sm font-medium">
+              <div className="md:col-span-1 lg:w-40">
+                <label className="block text-white mb-3 text-sm font-medium">
                   Check-in
                 </label>
-                <div
-                  className="relative cursor-pointer group"
-                  onClick={() =>
-                    document.getElementById("check-in-date").showPicker()
-                  }
-                >
-                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <FaCalendar className="text-gray-400 group-hover:text-cyan-400 transition-colors duration-300" />
-                  </div>
+                <div className="relative">
                   <input
-                    id="check-in-date"
                     type="date"
                     name="checkIn"
                     value={searchParams.checkIn}
                     onChange={handleInputChange}
-                    className="w-full h-[46px] pl-10 pr-4 py-3 bg-white border border-white/30 text-gray-900 focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded-2xl transition-all duration-300 hover:bg-white cursor-pointer"
+                    min={today} // Prevent past dates
+                    placeholder="Select Check-in Date"
+                    className="w-full h-12 px-4 bg-white border border-white/30 text-gray-900 focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded-2xl transition-all duration-300 hover:bg-white cursor-pointer"
                   />
                 </div>
               </div>
 
               {/* Check-out */}
-              <div className="md:col-span-1">
-                <label className="block text-white mb-2 text-sm font-medium">
+              <div className="md:col-span-1 lg:w-40">
+                <label className="block text-white mb-3 text-sm font-medium">
                   Check-out
                 </label>
-                <div
-                  className="relative cursor-pointer group"
-                  onClick={() =>
-                    document.getElementById("check-out-date").showPicker()
-                  }
-                >
-                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <FaCalendar className="text-gray-400 group-hover:text-cyan-400 transition-colors duration-300" />
-                  </div>
+                <div className="relative">
                   <input
-                    id="check-out-date"
                     type="date"
                     name="checkOut"
                     value={searchParams.checkOut}
                     onChange={handleInputChange}
-                    className="w-full h-[46px] pl-10 pr-4 py-3 bg-white border border-white/30 text-gray-900 focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded-2xl transition-all duration-300 hover:bg-white cursor-pointer"
+                    min={searchParams.checkIn} // Prevent past dates and ensure check-out is after check-in
+                    placeholder="Select Check-out Date"
+                    className="w-full h-12 px-4 bg-white border border-white/30 text-gray-900 focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded-2xl transition-all duration-300 hover:bg-white cursor-pointer"
                   />
                 </div>
               </div>
 
               {/* Adults */}
-              <div className="md:col-span-1">
-                <label className="block text-white mb-2 text-sm font-medium">
+              <div className="md:col-span-1 lg:w-40">
+                <label className="block text-white mb-3 text-sm font-medium">
                   Adults
                 </label>
                 <select
                   name="adults"
                   value={searchParams.adults}
                   onChange={handleInputChange}
-                  className="w-full h-[46px] px-4 py-3 bg-white border border-white/30 text-gray-900 focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded-2xl transition-all duration-300 hover:bg-white"
+                  className="w-full h-12 px-6 py-3 bg-white border border-white/30 text-gray-900 focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded-2xl transition-all duration-300 hover:bg-white"
                 >
                   {[...Array(9)].map((_, i) => (
-                    <option key={i + 1} value={i + 1} className="text-gray-900">
+                    <option key={i + 1} value={i + 1}>
                       {i + 1} Adult{i > 0 ? "s" : ""}
                     </option>
                   ))}
@@ -199,18 +188,18 @@ const HomeHero = () => {
               </div>
 
               {/* Children */}
-              <div className="md:col-span-1">
-                <label className="block text-white mb-2 text-sm font-medium">
+              <div className="md:col-span-1 lg:w-40">
+                <label className="block text-white mb-3 text-sm font-medium">
                   Children
                 </label>
                 <select
                   name="children"
                   value={searchParams.children}
                   onChange={handleInputChange}
-                  className="w-full h-[46px] px-4 py-3 bg-white border border-white/30 text-gray-900 focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded-2xl transition-all duration-300 hover:bg-white"
+                  className="w-full h-12 px-6 py-3 bg-white border border-white/30 text-gray-900 focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded-2xl transition-all duration-300 hover:bg-white"
                 >
                   {[...Array(9)].map((_, i) => (
-                    <option key={i} value={i} className="text-gray-900">
+                    <option key={i} value={i}>
                       {i} Child{i !== 1 ? "ren" : ""}
                     </option>
                   ))}
@@ -218,13 +207,13 @@ const HomeHero = () => {
               </div>
 
               {/* Search Button */}
-              <div className="md:col-span-1">
-                <label className="block text-white mb-2 text-sm font-medium">
+              <div className="md:col-span-1 lg:w-40">
+                <label className="block text-white mb-3 text-sm font-medium">
                   &nbsp;
                 </label>
                 <button
                   onClick={handleSearch}
-                  className="w-full h-[46px] bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-medium
+                  className="w-full h-12 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-medium
                   hover:from-cyan-600 hover:to-blue-600 transition-all duration-300
                   flex items-center justify-center space-x-3 
                   rounded-2xl shadow-lg hover:shadow-cyan-500/30"

@@ -1,4 +1,4 @@
-import { useState } from "react";
+// import { useState } from "react";
 import { Quote, Star, Link as LinkIcon } from "lucide-react";
 import Image2 from "../assets/guestdiary/img-1.jpeg";
 import Image3 from "../assets/guestdiary/img-2.jpg";
@@ -129,6 +129,7 @@ const GalleryAndReviews = () => {
           grabCursor={true}
           centeredSlides={true}
           slidesPerView="auto"
+          loop={true} // Enable looping
           coverflowEffect={{
             rotate: 50,
             stretch: 0,
