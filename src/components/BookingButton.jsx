@@ -16,7 +16,7 @@ const UserDetailsForm = ({ property, tour, onClose, onSubmit, loading }) => {
     adults: 1,
     children: 0
   });
-// hello
+
   const calculateTotalDays = () => {
     const checkIn = new Date(formData.checkInDate);
     const checkOut = new Date(formData.checkOutDate);
@@ -70,6 +70,14 @@ const UserDetailsForm = ({ property, tour, onClose, onSubmit, loading }) => {
     // Check-in and check-out date validation
     const checkIn = new Date(formData.checkInDate);
     const checkOut = new Date(formData.checkOutDate);
+    const today = new Date();
+    today.setHours(0, 0, 0, 0); // Set time to midnight for comparison
+
+    if (checkIn < today) {
+      toast.error("Check-in date cannot be in the past");
+      return;
+    }
+
     if (checkOut <= checkIn) {
       toast.error("Check-out date must be after check-in date");
       return;
@@ -222,6 +230,7 @@ const UserDetailsForm = ({ property, tour, onClose, onSubmit, loading }) => {
                 name="checkInDate"
                 value={formData.checkInDate}
                 onChange={handleChange}
+                min={new Date().toISOString().split("T")[0]} // Prevent past dates
                 className="w-full px-4 py-2 md:py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0F2642] focus:border-transparent transition duration-200"
                 required
               />
@@ -240,6 +249,7 @@ const UserDetailsForm = ({ property, tour, onClose, onSubmit, loading }) => {
                 name="checkOutDate"
                 value={formData.checkOutDate}
                 onChange={handleChange}
+                min={formData.checkInDate ? formData.checkInDate : new Date().toISOString().split("T")[0]} // Prevent past dates and ensure check-out is after check-in
                 className="w-full px-4 py-2 md:py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0F2642] focus:border-transparent transition duration-200"
                 required
               />
@@ -271,7 +281,6 @@ const UserDetailsForm = ({ property, tour, onClose, onSubmit, loading }) => {
 };
 
 const BookingButton = ({ property, tour }) => {
-  // console.log(property);
   const [loading, setLoading] = useState(false);
   const [showUserDetailsForm, setShowUserDetailsForm] = useState(false);
   const [showLoginPopup, setShowLoginPopup] = useState(false);
@@ -361,11 +370,9 @@ const BookingButton = ({ property, tour }) => {
         tour: tour ? 'Tour' : null
       });
 
-      // console.log(response.data);
       initPayment(response.data.order, response.data.booking._id);
       setShowUserDetailsForm(false);
     } catch (error) {
-      // console.log(error);
       toast.error(error.response.data.message);
     } finally {
       setLoading(false);

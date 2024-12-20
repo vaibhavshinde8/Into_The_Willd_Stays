@@ -32,25 +32,33 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a
-                href=" https://www.facebook.com/profile.php?id=61557269590045"
+                href="https://www.facebook.com/profile.php?id=61557269590045"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-[#214eca] hover:text-white hover:scale-110 duration-300 ease-in-out transition-colors"
               >
                 <Facebook size={25} />
               </a>
               {/* <a
                 href="#"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-[#1DA1F2] hover:text-white hover:scale-110 duration-300 ease-in-out transition-colors"
               >
                 <Twitter size={25} />
               </a> */}
               <a
                 href="https://www.instagram.com/intothewildstays/profilecard/?igsh=cGt4dTRvenNvZ25h"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-[#db2247] hover:text-white hover:scale-110 duration-300 ease-in-out transition-colors"
               >
                 <Instagram size={25} />
               </a>
               <a
                 href="https://wa.me/9761966485"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-[#1c9e18] hover:text-white hover:scale-110 duration-300 ease-in-out transition-colors"
               >
                 <FaWhatsapp size={25} />
@@ -117,10 +125,10 @@ const Footer = () => {
                 <div className="flex items-center space-x-2">
                   <Phone size={16} />
                   <a href="tel:+919761966485" className="mr-2 hover:underline">
-                    +919761966485
+                    +91-9761966485
                   </a>
                   <a href="tel:+919958838557" className="hover:underline">
-                    +919958838557
+                    +91-9958838557
                   </a>
                 </div>
               </li>
