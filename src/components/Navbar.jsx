@@ -172,7 +172,7 @@ const PropertyListingModal = ({ isOpen, onClose }) => {
 
           {/* Progress Steps */}
           <div className="flex justify-between mt-6 relative">
-            {steps.map((step, index) => (
+            {steps?.map((step, index) => (
               <div key={index} className="flex flex-col items-center z-10">
                 <div
                   className={`w-10 h-10 rounded-full flex items-center justify-center text-xl
@@ -574,7 +574,7 @@ export default function Navbar() {
                 { to: "/blog", text: "Blog" },
                 { to: "/about-us", text: "About Us" },
                 { to: "/contact-us", text: "Contact Us" },
-              ].map((link) => (
+              ]?.map((link) => (
                 <motion.div
                   key={link.to}
                   variants={{

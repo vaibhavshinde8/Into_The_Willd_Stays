@@ -31,7 +31,7 @@ const BlogSection = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 mb-16">
-          {previewBlogs.map((blog, index) => (
+          {previewBlogs?.map((blog, index) => (
             <motion.div
               key={blog.id}
               initial={{ opacity: 0, y: 20 }}

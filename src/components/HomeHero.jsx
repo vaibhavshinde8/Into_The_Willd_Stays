@@ -51,7 +51,7 @@ const HomeHero = () => {
     <div className="relative min-h-screen flex flex-col justify-between items-center overflow-hidden py-16 md:pt-32">
       {/* Background Overlay */}
       <div className="absolute inset-0 z-0">
-        {images.map((img, index) => (
+        {images?.map((img, index) => (
           <motion.img
             key={index}
             src={img}
@@ -123,7 +123,7 @@ const HomeHero = () => {
                   <option value="" className="text-gray-500">
                      Location
                   </option>
-                  {locations.map((loc) => (
+                  {locations?.map((loc) => (
                     <option key={loc} value={loc} className="text-gray-900">
                       {loc}
                     </option>
@@ -178,7 +178,7 @@ const HomeHero = () => {
                   onChange={handleInputChange}
                   className="w-full h-12 px-6 py-3 bg-white border border-white/30 text-gray-900 focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded-2xl transition-all duration-300 hover:bg-white"
                 >
-                  {[...Array(9)].map((_, i) => (
+                  {[...Array(9)]?.map((_, i) => (
                     <option key={i + 1} value={i + 1}>
                       {i + 1} Adult{i > 0 ? "s" : ""}
                     </option>
@@ -197,7 +197,7 @@ const HomeHero = () => {
                   onChange={handleInputChange}
                   className="w-full h-12 px-6 py-3 bg-white border border-white/30 text-gray-900 focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded-2xl transition-all duration-300 hover:bg-white"
                 >
-                  {[...Array(9)].map((_, i) => (
+                  {[...Array(9)]?.map((_, i) => (
                     <option key={i} value={i}>
                       {i} Child{i !== 1 ? "ren" : ""}
                     </option>

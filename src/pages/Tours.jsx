@@ -64,7 +64,7 @@ const Tours = () => {
 
       <div className="max-w-7xl mx-auto px-6 py-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-          {tours.map((tour, index) => (
+          {tours?.map((tour, index) => (
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}

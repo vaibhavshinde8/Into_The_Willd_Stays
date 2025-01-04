@@ -61,7 +61,7 @@ const LocationSection = () => {
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
-          {locations.map((location, index) => (
+          {locations?.map((location, index) => (
             <motion.div
               key={location.name}
               initial={{ opacity: 0, scale: 0.9 }}

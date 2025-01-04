@@ -106,7 +106,7 @@ const ToursDetail = () => {
               Itinerary
             </h2>
             <div className="space-y-6">
-              {tour.itinerary.map((item, index) => (
+              {tour.itinerary?.map((item, index) => (
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -133,7 +133,7 @@ const ToursDetail = () => {
                 Inclusions
               </h2>
               <div className="space-y-4">
-                {tour.inclusions.map((item, index) => (
+                {tour.inclusions?.map((item, index) => (
                   <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -154,7 +154,7 @@ const ToursDetail = () => {
                 Exclusions
               </h2>
               <div className="space-y-4">
-                {tour.exclusions.map((item, index) => (
+                {tour.exclusions?.map((item, index) => (
                   <motion.div
                     initial={{ opacity: 0, x: 20 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -228,7 +228,7 @@ const ToursDetail = () => {
               Rules & Policy
             </h2>
             <div className="grid gap-4">
-              {tour.rules_and_policy.map((item, index) => (
+              {tour.rules_and_policy?.map((item, index) => (
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}

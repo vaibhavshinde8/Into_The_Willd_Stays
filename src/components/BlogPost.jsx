@@ -49,7 +49,7 @@ export const BlogPost = () => {
             {blog.category}
           </p>
           <div className="prose prose-lg mt-4">
-            {blog.content.map((paragraph, index) => (
+            {blog?.content?.map((paragraph, index) => (
               <p key={index}>{paragraph}</p>
             ))}
           </div>

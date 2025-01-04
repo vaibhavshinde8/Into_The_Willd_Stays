@@ -174,7 +174,7 @@ const InstagramGallery = () => {
           transition={{ staggerChildren: 0.1 }}
           className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-1 rounded-b-lg bg-white p-1 sm:p-2 md:p-4"
         >
-          {mockPosts.map((post) => (
+          {mockPosts?.map((post) => (
             <motion.div
               key={post.id}
               initial={{ opacity: 0, scale: 0.9 }}

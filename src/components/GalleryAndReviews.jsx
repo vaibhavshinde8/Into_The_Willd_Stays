@@ -147,7 +147,7 @@ const GalleryAndReviews = () => {
             1024: { slidesPerView: 3 },
           }}
         >
-          {testData.map((item, index) => (
+          {testData?.map((item, index) => (
             <SwiperSlide key={index} className="py-12 px-4">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -175,7 +175,7 @@ const GalleryAndReviews = () => {
                     <div className="flex items-center justify-between mb-6">
                       <Quote className="w-12 h-12 text-[#0F2642] opacity-80" />
                       <div className="flex space-x-1 text-amber-400">
-                        {[...Array(5)].map((_, i) => (
+                        {[...Array(5)]?.map((_, i) => (
                           <Star key={i} className="w-5 h-5 fill-current" />
                         ))}
                       </div>

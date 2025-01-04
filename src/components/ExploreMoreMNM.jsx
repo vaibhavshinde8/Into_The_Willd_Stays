@@ -147,7 +147,7 @@ const ExploreMoreMNM = () => {
         {/* Gallery Section */}
         <div className="w-full lg:w-1/2">
           <div className="grid grid-cols-2 gap-4 max-w-2xl mx-auto">
-            {galleryImages.map((image, index) => (
+            {galleryImages?.map((image, index) => (
               <div
                 key={index}
                 className="aspect-square overflow-hidden  shadow-md hover:shadow-xl transition-shadow duration-300"

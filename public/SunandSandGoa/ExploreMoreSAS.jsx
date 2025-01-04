@@ -196,7 +196,7 @@ const ExploreMoreSAS = () => {
         {/* Gallery Section */}
         <div className="w-full lg:w-1/2">
           <div className="grid grid-cols-2 gap-4 max-w-2xl mx-auto">
-            {galleryImages.map((image, index) => (
+            {galleryImages?.map((image, index) => (
               <div
                 key={index}
                 className="aspect-square overflow-hidden  shadow-md hover:shadow-xl transition-shadow duration-300"
@@ -403,7 +403,7 @@ const ExploreMoreSAS = () => {
           FAQs
         </h2>
         <div className="space-y-4 sm:space-y-6">
-          {faqs.map((faq, index) => (
+          {faqs?.map((faq, index) => (
             <div
               key={index}
               className="bg-white bg-opacity-10 backdrop-blur-lg p-4 sm:p-6 rounded-lg shadow-xl cursor-pointer transition-all duration-300 hover:shadow-2xl"
@@ -436,7 +436,7 @@ const ExploreMoreSAS = () => {
         </h2>
         <div className="bg-white bg-opacity-10 backdrop-blur-lg p-6 sm:p-8 rounded-lg shadow-xl">
           <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-            {amenities.map((amenity, index) => (
+            {amenities?.map((amenity, index) => (
               <li
                 key={index}
                 className="text-black flex items-center space-x-2"
@@ -456,7 +456,7 @@ const ExploreMoreSAS = () => {
         </h2>
         <div className="bg-white bg-opacity-10 backdrop-blur-lg p-6 sm:p-8 rounded-lg shadow-xl">
           <ul className="list-disc ml-4 sm:ml-6 space-y-2 sm:space-y-3">
-            {bookingPolicies.map((policy, index) => (
+            {bookingPolicies?.map((policy, index) => (
               <li key={index} className="text-black text-sm sm:text-base">
                 {policy}
               </li>
@@ -472,7 +472,7 @@ const ExploreMoreSAS = () => {
         </h2>
         <div className="bg-white bg-opacity-10 backdrop-blur-lg p-6 sm:p-8 rounded-lg shadow-xl">
           <ul className="list-disc ml-4 sm:ml-6 space-y-2 sm:space-y-3">
-            {cancellationPolicy.map((policy, index) => (
+            {cancellationPolicy?.map((policy, index) => (
               <li key={index} className="text-black text-sm sm:text-base">
                 {policy}
               </li>

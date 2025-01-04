@@ -110,7 +110,7 @@ const EventDetail = () => {
             >
               <h2 className="text-3xl font-bold mb-6 text-[#0F2642]">Activities</h2>
               <ul className="space-y-4">
-                {event.activities.map((activity, index) => (
+                {event.activities?.map((activity, index) => (
                   <li
                     key={index}
                     className="flex items-start text-gray-700 text-lg group"
@@ -131,7 +131,7 @@ const EventDetail = () => {
             >
               <h2 className="text-3xl font-bold mb-6 text-[#0F2642]">Package Details</h2>
               <ul className="space-y-4">
-                {event.packageDetails.map((detail, index) => (
+                {event.packageDetails?.map((detail, index) => (
                   <li
                     key={index}
                     className="flex items-start text-gray-700 text-lg group"
@@ -152,7 +152,7 @@ const EventDetail = () => {
             >
               <h2 className="text-3xl font-bold mb-6 text-[#0F2642]">Gallery</h2>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-                {event.galleryImages.map((image, index) => (
+                {event.galleryImages?.map((image, index) => (
                   <motion.div
                     key={index}
                     className="relative overflow-hidden rounded-2xl group"

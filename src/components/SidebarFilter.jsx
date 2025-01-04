@@ -12,7 +12,7 @@ const SidebarFilter = ({ onFilterChange, properties }) => {
   };
 
   const locations = Array.from(
-    new Set(properties.map((property) => property.location))
+    new Set(properties?.map((property) => property.location))
   ).sort(); // Sort locations alphabetically
 
   return (
@@ -30,7 +30,7 @@ const SidebarFilter = ({ onFilterChange, properties }) => {
         </div>
 
         <div className="flex flex-col gap-2">
-          {locations.map((city, index) => (
+          {locations?.map((city, index) => (
             <button
               key={index}
               onClick={() => handleLocationClick(city)}

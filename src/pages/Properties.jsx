@@ -199,7 +199,7 @@ const Properties = () => {
                 <option value="" className="text-gray-500">
                   Select Location
                 </option>
-                {locations.map((loc) => (
+                {locations?.map((loc) => (
                   <option key={loc} value={loc} className="text-gray-900">
                     {loc}
                   </option>
@@ -256,7 +256,7 @@ const Properties = () => {
                 onChange={handleInputChange}
                 className="w-full h-[46px] px-4 py-3 bg-white border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-3xl"
               >
-                {[...Array(9)].map((_, i) => (
+                {[...Array(9)]?.map((_, i) => (
                   <option key={i + 1} value={i + 1} className="text-gray-900">
                     {i + 1} Adult{i > 0 ? "s" : ""}
                   </option>
@@ -273,7 +273,7 @@ const Properties = () => {
                 onChange={handleInputChange}
                 className="w-full h-[46px] px-4 py-3 bg-white border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-3xl"
               >
-                {[...Array(9)].map((_, i) => (
+                {[...Array(9)]?.map((_, i) => (
                   <option key={i} value={i} className="text-gray-900">
                     {i} Child{i !== 1 ? "ren" : ""}
                   </option>
@@ -321,12 +321,12 @@ const Properties = () => {
             <div className="grid gap-6 md:gap-8">
               {isLoading ? (
                 // Show 3 shimmer effects while loading
-                [...Array(3)].map((_, index) => (
+                [...Array(3)]?.map((_, index) => (
                   <PropertyShimmer key={index} />
                 ))
               ) : (
                 // Show actual properties when loaded
-                filteredProperties.map((property, index) => (
+                filteredProperties?.map((property, index) => (
                   <motion.div
                     key={index}
                     variants={itemVariants}

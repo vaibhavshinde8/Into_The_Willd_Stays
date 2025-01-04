@@ -58,7 +58,7 @@ const Events = () => {
       {/* Events Grid */}
       <div className="max-w-7xl mx-auto px-4 py-24">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-          {events.map((event) => (
+          {events?.map((event) => (
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}

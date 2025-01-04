@@ -56,14 +56,14 @@ const ExploreMoreITW = () => {
             </div>
             <div className="w-full lg:w-1/2">
               <div className="grid grid-cols-2 gap-4">
-                {[1, 2, 3, 4].map((i) => (
+                {[1, 2, 3, 4]?.map((i) => (
                   <div key={i} className="aspect-square bg-gray-200 rounded-lg"></div>
                 ))}
               </div>
             </div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {[1, 2, 3, 4, 5, 6].map((i) => (
+            {[1, 2, 3, 4, 5, 6]?.map((i) => (
               <div key={i} className="h-24 bg-gray-200 rounded-lg"></div>
             ))}
           </div>
@@ -92,7 +92,7 @@ const ExploreMoreITW = () => {
           />
         </motion.div>
         <div className="grid grid-cols-2 gap-6">
-          {property?.images.slice(1, 5).map((image, idx) => (
+          {property?.images.slice(1, 5)?.map((image, idx) => (
             <motion.div
               key={idx}
               whileHover={{ scale: 1.05 }}
@@ -177,7 +177,7 @@ const ExploreMoreITW = () => {
                       text: "Token amount non-refundable on cancellation",
                       color: "text-red-600",
                     },
-                  ].map((item, index) => (
+                  ]?.map((item, index) => (
                     <div
                       key={index}
                       className="flex items-center gap-3 
@@ -241,7 +241,7 @@ const ExploreMoreITW = () => {
               Amenities
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {property?.amenities.map((amenity, idx) => (
+              {property?.amenities?.map((amenity, idx) => (
                 <motion.div
                   whileHover={{ scale: 1.03 }}
                   key={idx}
@@ -310,7 +310,7 @@ const ExploreMoreITW = () => {
                   text: "Token amount non-refundable on cancellation",
                   color: "text-red-600",
                 },
-              ].map((item, index) => (
+              ]?.map((item, index) => (
                 <div
                   key={index}
                   className="flex items-center gap-3 
@@ -351,7 +351,7 @@ const ExploreMoreITW = () => {
             Booking Policies
           </h2>
           <ul className="list-none space-y-3">
-            {property?.bookingPolicies.map((policy, idx) => (
+            {property?.bookingPolicies?.map((policy, idx) => (
               <li key={idx} className="flex items-start gap-3 text-gray-700">
                 <span className="text-blue-500 mt-1">•</span>
                 {policy}
@@ -365,7 +365,7 @@ const ExploreMoreITW = () => {
             Cancellation Policy
           </h2>
           <ul className="list-none space-y-3">
-            {property?.cancellationPolicy.map((policy, idx) => (
+            {property?.cancellationPolicy?.map((policy, idx) => (
               <li key={idx} className="flex items-start gap-3 text-gray-700">
                 <span className="text-red-500 mt-1">•</span>
                 {policy}
@@ -382,7 +382,7 @@ const ExploreMoreITW = () => {
           Frequently Asked Questions
         </h2>
         <div className="space-y-4">
-          {property?.faqs.map((faq, idx) => (
+          {property?.faqs?.map((faq, idx) => (
             <motion.div
               key={idx}
               initial={false}

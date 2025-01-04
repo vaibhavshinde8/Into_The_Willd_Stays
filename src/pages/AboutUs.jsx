@@ -116,7 +116,7 @@ const AboutUs = () => {
                   icon: <Palette className="w-6 h-6" />,
                   text: "Cultural Immersion",
                 },
-              ].map((item, index) => (
+              ]?.map((item, index) => (
                 <div
                   key={index}
                   className="flex items-center gap-3 text-[#0F2642]"
@@ -182,7 +182,7 @@ const AboutUs = () => {
               { name: "Astha Doval", role: "Cyclist", img: Imageastha },
               { name: "Raghav", role: "Cycling Instructor", img: Imageraghav },
               { name: "Sonam Rana", role: "Kayak Instructor", img: Imagesonam },
-            ].map((member, index) => (
+            ]?.map((member, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
@@ -216,7 +216,7 @@ const AboutUs = () => {
       <div className="py-24 bg-gradient-to-br from-gray-50 via-teal-50/30 to-blue-50/30">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {[Image3, Image4, Image5, Image6, Image7].map((image, index) => (
+            {[Image3, Image4, Image5, Image6, Image7]?.map((image, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}

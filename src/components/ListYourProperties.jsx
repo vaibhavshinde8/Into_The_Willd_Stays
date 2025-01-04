@@ -60,7 +60,7 @@ const ListYourProperties = () => {
                   desc: "Intuitive host dashboard",
                   icon: "⚡",
                 },
-              ].map((benefit, index) => (
+              ]?.map((benefit, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
