@@ -7,7 +7,7 @@ const BookingPolicies = () => {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
           <div className="p-6 border rounded-lg shadow-lg">
-            <h3 className="text-xl font-semibold text-[#091F3C] mb-4">Property Rules</h3>
+            <h3 className="lg:text-xl text-xl font-semibold text-[#091F3C] mb-4 ">Property Rules</h3>
             <ul className="list-disc pl-6 text-gray-600 space-y-2">
               <li>100% Power backup.</li>
               <li>Please Be mindful and keep the noise to the minimum after 10 pm.</li>

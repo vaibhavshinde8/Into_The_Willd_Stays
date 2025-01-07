@@ -9,6 +9,7 @@ import { toast } from "react-toastify";
 import { BASE_URL } from "../utils/baseurl";
 import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
 import { googleSignup } from "../api";
+import bgLogo from "../assets/IntotheWildStaysLogo.png";
 
 const Login = () => {
   const [emailorphone, setEmailorphone] = useState("");
@@ -80,9 +81,13 @@ const Login = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 flex items-center justify-center px-4 py-12 relative">
+    <div className="min-h-screen from-emerald-50 via-teal-50 to-cyan-50 flex items-center justify-around px-4 pt-12 relative bg-[url('https://png.pngtree.com/thumb_back/fw800/background/20231230/pngtree-wooden-texture-login-form-enhancing-aesthetic-appeal-image_13918200.png')]">
+      <div className="flex items-center">
+        <img className="w-56" src={bgLogo} alt="" />
+        <h1 className="text-4xl text-white font-bold">IntoTheWildStays</h1>
+      </div>
       {/* Login Form */}
-      <div className="w-full max-w-md bg-white shadow-2xl rounded-2xl overflow-hidden border border-emerald-100">
+      <div className="w-full border-l-2 border-white max-w-md bg-white shadow-2xl rounded-2xl overflow-hidden">
         <div className="p-8">
           <div className="text-center mb-8">
             <h2 className="text-3xl font-extrabold text-emerald-900">
