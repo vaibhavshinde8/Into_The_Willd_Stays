@@ -4,6 +4,17 @@ import { motion } from "framer-motion";
 import toursData from "../data/tours.json";
 import { useEffect, useState } from "react";
 import ContactForm from "../components/ContactForm";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/effect-fade";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+import "../index.css";
+// import required modules
+import { EffectFade, Navigation, Pagination } from "swiper/modules";
 
 const ToursDetail = () => {
   const { id } = useParams();
@@ -54,9 +65,9 @@ const ToursDetail = () => {
             onClick={() => setShowContactForm(true)}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            whileHover={{ 
+            whileHover={{
               scale: 1.02,
-              boxShadow: "0 20px 40px rgba(0,0,0,0.2)"
+              boxShadow: "0 20px 40px rgba(0,0,0,0.2)",
             }}
             className="relative group bg-gradient-to-r from-teal-500 via-teal-400 to-emerald-400 
                      text-white px-10 py-5 rounded-2xl text-lg font-medium
@@ -67,13 +78,24 @@ const ToursDetail = () => {
           >
             <span className="relative z-10 flex items-center justify-center gap-2 group-hover:translate-x-1 transition-transform duration-500">
               Talk to our Experts
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-500" viewBox="0 0 20 20" fill="currentColor">
-                <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-500"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                  clipRule="evenodd"
+                />
               </svg>
             </span>
-            <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 
+            <div
+              className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 
                           translate-x-[-100%] group-hover:translate-x-[100%] 
-                          transition-transform duration-1000" />
+                          transition-transform duration-1000"
+            />
           </motion.button>
         </div>
       </div>
@@ -121,6 +143,43 @@ const ToursDetail = () => {
                   <p className="text-lg leading-relaxed text-gray-700">
                     {item.description}
                   </p>
+                  <div className="py-4">
+                    <Swiper
+                      spaceBetween={30}
+                      effect={"fade"}
+                      navigation={true}
+                      pagination={{
+                        clickable: true,
+                      }}
+                      modules={[EffectFade, Navigation, Pagination]}
+                      className="mySwiper h-[300px] rounded-lg"
+                    >
+                      <SwiperSlide>
+                        <img
+                          className="w-full rounded-lg"
+                          src="https://swiperjs.com/demos/images/nature-1.jpg"
+                        />
+                      </SwiperSlide>
+                      <SwiperSlide>
+                        <img
+                          className="w-full rounded-lg"
+                          src="https://swiperjs.com/demos/images/nature-2.jpg"
+                        />
+                      </SwiperSlide>
+                      <SwiperSlide>
+                        <img
+                          className="w-full rounded-lg"
+                          src="https://swiperjs.com/demos/images/nature-3.jpg"
+                        />
+                      </SwiperSlide>
+                      <SwiperSlide>
+                        <img
+                          className="w-full rounded-lg"
+                          src="https://swiperjs.com/demos/images/nature-4.jpg"
+                        />
+                      </SwiperSlide>
+                    </Swiper>
+                  </div>
                 </motion.div>
               ))}
             </div>
@@ -247,7 +306,11 @@ const ToursDetail = () => {
       </div>
 
       {/* Add ContactForm Modal */}
-      <ContactForm isOpen={showContactForm} onClose={() => setShowContactForm(false)} isTour={true} />
+      <ContactForm
+        isOpen={showContactForm}
+        onClose={() => setShowContactForm(false)}
+        isTour={true}
+      />
     </div>
   );
 };
