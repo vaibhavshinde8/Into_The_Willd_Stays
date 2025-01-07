@@ -81,10 +81,10 @@ const Login = () => {
   }
 
   return (
-    <div className="min-h-screen from-emerald-50 via-teal-50 to-cyan-50 flex items-center justify-around px-4 pt-12 relative bg-[url('https://png.pngtree.com/thumb_back/fw800/background/20231230/pngtree-wooden-texture-login-form-enhancing-aesthetic-appeal-image_13918200.png')]">
+    <div className="min-h-screen from-emerald-50 via-teal-50 to-cyan-50 flex items-center justify-around px-4 pt-12 relative bg-[url('https://img.freepik.com/free-vector/realistic-travel-background-with-elements_52683-77784.jpg?t=st=1736251246~exp=1736254846~hmac=a60f9b0dd6328af546bb696700ed00883117f58cfa9390ea245fd07678b7d008&w=996')] bg-no-repeat bg-center bg-cover">
       <div className="flex items-center">
         <img className="w-56" src={bgLogo} alt="" />
-        <h1 className="text-4xl text-white font-bold">IntoTheWildStays</h1>
+        <h1 className="text-4xl font-bold">IntoTheWildStays</h1>
       </div>
       {/* Login Form */}
       <div className="w-full border-l-2 border-white max-w-md bg-white shadow-2xl rounded-2xl overflow-hidden">
