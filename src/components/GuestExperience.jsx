@@ -61,6 +61,12 @@ const GuestExperience = () => {
     setProgress(0);
   };
 
+  const selectVideo = (index) => {
+    setCurrentVideoIndex(index);
+    setIsPlaying(false);
+    setProgress(0);
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-r from-blue-100 via-cyan-100 to-emerald-100 py-24 relative overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6">
@@ -185,6 +191,27 @@ const GuestExperience = () => {
               </motion.button>
             </div>
           </motion.div>
+        </div>
+
+        {/* Slider Section */}
+        <div className="mt-12 flex justify-center space-x-4">
+          {videos.map((video, index) => (
+            <div
+              key={index}
+              className={`w-24 h-24 border-2 rounded-xl overflow-hidden cursor-pointer ${
+                index === currentVideoIndex
+                  ? "border-teal-600"
+                  : "border-gray-300"
+              }`}
+              onClick={() => selectVideo(index)}
+            >
+              <video
+                src={video.src}
+                className="w-full h-full object-cover"
+                muted
+              />
+            </div>
+          ))}
         </div>
       </div>
     </div>

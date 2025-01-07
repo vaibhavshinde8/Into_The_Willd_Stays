@@ -88,8 +88,8 @@ const LocationSection = () => {
                   </div>
                 </div>
 
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-80 p-6 bg-white/95  rounded-2xl 
-                  shadow-2xl opacity-0 group-hover:opacity-100 group-hover:-translate-y-20 transition-all duration-500 pointer-events-none
+                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-64 p-4 bg-white/95  rounded-2xl 
+                  shadow-2xl opacity-0 group-hover:opacity-100 group-hover:-translate-y-16 transition-all duration-500 pointer-events-none
                   border border-white/50">
                   <div className="flex justify-between items-center mb-4">
                     <h2 className="text-2xl font-bold text-gray-800">
