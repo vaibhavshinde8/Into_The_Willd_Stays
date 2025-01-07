@@ -6,7 +6,6 @@ export const loginUser = async (emailorphone  , password) => {
   try {
     // console.log("API");
     // console.log("Login payload:", { emailorphone, password });
-
     const response = await fetch(`${BASE_URL}/auth/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
