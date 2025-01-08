@@ -84,8 +84,8 @@ const AboutUs = () => {
             className="space-y-8"
           >
             <div className="space-y-4">
-              <span className="text-teal-600 font-medium">OUR STORY</span>
-              <h2 className="text-4xl lg:text-5xl font-bold text-[#0F2642]">
+              <span className="text-teal-600 font-medium text-4xl">OUR STORY</span>
+              <h2 className="text-3xl lg:text-4xl font-bold text-[#0F2642]">
                 Creating Memories in Nature&apos;s Embrace
               </h2>
             </div>
