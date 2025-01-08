@@ -123,24 +123,55 @@
       "checkOutDate": "2024-12-04",
       "itinerary": [
         {
-          "day": "Day 1",
-          "description": " Delhi to Rishikesh - Overnight Journey"
+          "day": "Day 1 - Delhi to Rishikesh - Overnight Journey",
+          "description": [
+            "The group will assemble at the pickup point.",
+            "Afterward, you’ll be introduced with the team captains and the whole group.",
+            "We’ll start for a overnight journey towards Rishikesh.",
+            "We’ll take a midway stoppage for dinner.",
+            "Pickup point is Noida, sector 62, metro station."
+          ]
         },
         {
-          "day": "Day 2",
-          "description": " Rishikesh to Sonprayag"
+          "day": "Day 2 - Rishikesh to Sonprayag",
+          "description": [
+            "Reach Rishikesh early morning.",
+            "A small halt for tea break near shuivpuri.",
+            "Pit stop ta Devprayag for breakfast.",
+            "Reach Sonprayag in the evening.",
+            "Room allotments will be done.",
+            "Dinner will be served at hotel."
+          ]
         },
         {
-          "day": "Day 3",
-          "description": " Sonprayag to Kedarnath"
+          "day": "Day 3 - Sonprayag to Kedarnath",
+          "description": [
+            "Start early, for Kedarnath trek.",
+            "Breakfast will be served at Gaurikund.",
+            "After that, head out for Kedarnath Trek.",
+            "Trek distance is 17kms, reach Kedarnath by evening.",
+            "Dinner will be served at hotel."
+          ]
         },
         {
-          "day": "Day4",
-          "description": " Kedarnath to Guptkashi/Sonprayag"
+          "day": "Day 4 - Kedarnath to Guptkashi/Sonprayag",
+          "description": [
+            "Start early, for Kedarnath Darshan.",
+            "After darshan, breakfast will be served at choti lincholi.",
+            "After that, head out for trek down to Gaurikund.",
+            "Trek distance is 17kms, reach Sonprayag hotel.",
+            "Dinner and overnight stay at hotel."
+          ]
         },
         {
-          "day": "Day 5",
-          "description": " Sonprayag to Delhi"
+          "day": "Day 5 - Sonprayag to Delhi Via Rishikesh",
+          "description": [
+            "On the last day of trip start your journey with comfortable morning.",
+            "Wake up and have your breakfast.",
+            "Board your vehicle and start your long day journey to Delhi via Rishikesh.",
+            "You will reach Delhi by 9:30pm to 10:30pm.",
+            "Trip ends with lots of happy memories."
+          ]
         }
       ],
       "inclusions": [
@@ -185,50 +216,83 @@
       "price": "9499",
       "checkInDate": "2024-12-01",
       "checkOutDate": "2024-12-06",
+      "highlights": [
+        "Welcome to Joshimath, an important pilgrimage destination in Uttarakhand. From here, your exciting trek to Kuari Pass will commence.",
+        "Nestled between the Karakoram and Zanskar mountain ranges, Ladakh offers breathtaking views of snow-capped peaks, pristine lakes, and vast, arid deserts."
+      ],
       "itinerary": [
         {
-          "day": "Day 1",
-          "title": "Rishikesh to Karchi via Joshimath",
+          "day": "Day 1 - Rishikesh to Karchi via Joshimath",
+          "title": "",
           "drive": "275 kms",
           "time": "10-12 Hours",
-          "description": "Welcome to Joshimath, an important pilgrimage destination in Uttarakhand. Check into your homestay at Karchi and spend the day exploring the village at your own pace."
+          "description": [
+            "Welcome to Joshimath, an important pilgrimage destination in Uttarakhand.",
+            "From here, your exciting trek to Kuari Pass will commence. Joshimath is a last big town in Chamoli district, you can avail cash from ATM from Joshimath, later we head to karchi village!",
+            "Check into your homestay at Karchi and spend the day exploring the village at your own pace."
+          ]
         },
         {
-          "day": "Day 2",
-          "title": "Karchi to Gulling Top via Tugasi",
+          "day": "Day 2 - Karchi to Gulling Top via Tugasi",
+          "title": "",
           "trek_distance": "4 km",
           "duration": "5-6 Hours",
           "elevation": "9600 ft",
-          "description": "Start your trek from Karchi, passing through Tugasi village with views of the Dhauladhar Range. Camp overnight at Gulling Top."
+          "description": [
+            "Start your trek from Karchi, passing through Tugasi village with views of the Dhauladhar Range.",
+            "After checking out from your homestay, receive a briefing about the trail and set out on your first leg of the trek.",
+            "Traverse the delightful TUGASI village, where you'll experience traditional architecture and local culture against the stunning backdrop of the Dhauladhar Range and other peaks.",
+            "Once you reach Gulling Top, Camp overnight at Gulling Top."
+          ]
         },
         {
-          "day": "Day 3",
-          "title": "Gulling Top to Khullara Top",
+          "day": "Day 3 - Gulling Top to Khullara Top",
+          "title": "",
           "trek_distance": "6 km",
           "duration": "6 Hours",
           "elevation": "11,075 ft",
-          "description": "Continue through oak, rhododendron, and walnut forests, enjoying views of the Pir Panjal and Shivalik Ranges. Overnight stay at Khullara Top."
+          "description": [
+            "At dawn, prepare to embark on the next leg of your journey. The path gently climbs through lush oak, rhododendron, and walnut forests, accompanied by the soothing sound of flowing streams.",
+            "Along the way, enjoy panoramic vistas of the Pir Panjal Range, Shivalik Range, and other majestic Himalayan peaks.",
+            "When you arrive at the picturesque Khullara Top",
+            "Take a moment to appreciate the serene mountain atmosphere before setting up camp for a restful overnight stay."
+          ]
         },
         {
-          "day": "Day 4",
-          "title": "Trek from Khullara Top to Kuari Pass and Descend",
+          "day": "Day 4 - Trek from Khullara Top to Kuari Pass and Descend",
+          "title": "",
           "trek_distance": "12 km",
           "duration": "8-10 Hours",
           "elevation": "12,516 ft",
-          "description": "Trek to Kuari Pass with views of Nanda Devi, Kamet, and Trishul. Return to Khullara Top for an overnight stay."
+          "description": [
+            "Put on your hiking boots and set off on an exhilarating journey to Kuari Pass. Start by tracing the path that reveals stunning vistas of the Himalayan giants, including Nanda Devi, Kamet, and Trishul.",
+            "The ascent is steep, so be mindful of your footing and remember to stay hydrated.",
+            "Upon reaching the summit, take in the awe-inspiring panoramic views, featuring Dronagiri, Chitrakantha, and other majestic peaks.",
+            "Afterward, make your way down to Khullara Top to set up camp and enjoy a restful overnight stay."
+          ]
         },
         {
-          "day": "Day 5",
-          "title": "Downhill Trek from Khullara Top to Karchi",
+          "day": "Day 5 - Downhill Trek from Khullara Top to Karchi",
+          "title": "",
           "trek_distance": "11 km",
           "duration": "8-10 Hours",
           "elevation": "6,716 ft",
-          "description": "Descend towards Karchi Village, through Alpine and Mossy Oak forests. Overnight stay at a homestay in Karchi."
+          "description": [
+            "Start your final day with the awe-inspiring sunrise over the Himalayas, and prepare yourself for an exhilarating downhill trek.",
+            "Enjoy a hearty breakfast to energize yourself for the journey ahead.",
+            "As you descend towards karchi Village, you'll traverse through lush Alpine and Mossy Oak forests.",
+            "Once you arrive in the picturesque karchi Village,Upon arrival, settle into your homestay and unwind after a day of adventure."
+          ]
         },
         {
-          "day": "Day 6",
-          "title": "Trek Down to Karchi from Khullara Top",
-          "description": "End the trek with a downhill journey to Karchi Village."
+          "day": "Day 6 - Trek Down to Karchi from Khullara Top",
+          "title": "",
+          "description": [
+            "Begin your day with a stunning sunrise over the Himalayas, and prepare for an exciting final day of downhill trekking.",
+            "Enjoy a hearty breakfast before starting your descent towards karchi Village.",
+            "Along the way, you'll traverse through lush Alpine and Mossy oak forests before arriving at the picturesque Karchi Village.",
+            "Check into your homestay and unwind after the day's adventures."
+          ]
         }
       ],
       "inclusions": [
@@ -412,26 +476,50 @@
       "price": "29999",
       "checkInDate": "2024-07-15",
       "checkOutDate": "2024-07-19",
+      "highlights": [
+        "Welcome to Ladakh, Ladakh, often referred to as the 'Land of High Passes,'' is a mesmerizing region in the Indian Himalayas known for its stunning landscapes, unique culture, and serene monasteries.",
+        "Nestled between the Karakoram and Zanskar mountain ranges, Ladakh offers breathtaking views of snow-capped peaks, pristine lakes, and vast, arid deserts.",
+        "The temple’s intricate carvings and sacred atmosphere invite you to pause and reflect, setting the tone for your adventure."
+      ],
       "itinerary": [
         {
-          "day": "Day 1",
-          "description": "ARRIVAL IN LEH | SIGHTSEEING TOUR IN LEH. After arriving at Leh airport, you will be transferred to your pre-booked hotel in Leh. Check in and rest for a while before embarking on a sightseeing tour of Leh. You will be visiting Leh Palace, Shanti Stupa (a peaceful Buddhist white domed stupa), and later continue your day tour with a visit to the vibrant Leh Market."
+          "day": "Day 1 - ARRIVAL IN LEH | SIGHTSEEING TOUR IN LEH.",
+          "description": [
+            "After arriving at Leh airport, you will be transferred to your pre-booked hotel in Leh.",
+            "Check in and rest for a while before embarking on a sightseeing tour of Leh.",
+            "You will be visiting Leh Palace, Shanti Stupa (a peaceful Buddhist white domed stupa), and later continue your day tour with a visit to the vibrant Leh Market."
+          ]
         },
         {
-          "day": "Day 2",
-          "description": "EXCURSION TO SHAM VALLEY | EXPLORING THE LADAKHI CULTURE. In the morning, you will be driven to Sham Valley. Begin your exploration at the Spituk Gompa and then the Sangam Point, a beautiful confluence of the Zanskar & Indus river. Next, make a stop at the Gurudwara Pathar Sahib & drive through the mysterious Magnetic Hills. You will also visit the SECMOL School, before heading towards the famous Hall of Fame. Afterwards, you can enjoy a White Water Rafting (at your own cost) before returning to your hotel in Leh for an overnight stay."
+          "day": "Day 2 - EXCURSION TO SHAM VALLEY | EXPLORING THE LADAKHI CULTURE.",
+          "description": [
+            "In the morning, you will be driven to Sham Valley. Begin your exploration at the Spituk Gompa and then the Sangam Point, a beautiful confluence of the Zanskar & Indus river.",
+            "Next, make a stop at the Gurudwara Pathar Sahib & drive through the mysterious Magnetic Hills.",
+            "You will also visit the SECMOL School, before heading towards the famous Hall of Fame.",
+            "Afterwards, you can enjoy a White Water Rafting (at your own cost) before returning to your hotel in Leh for an overnight stay."
+          ]
         },
         {
-          "day": "Day 3",
-          "description": "TRIP ACROSS KHARDUNG-LA PASS | DRIVING ACROSS THE HIGHEST ALL SEASON MOTORABLE PASS. After breakfast, you will embark on an exciting journey towards the world's highest all season motorable pass - Khardung la Pass. During your excursion, make a stop at the famous Rinchen cafe for a steaming bowl of Maggi and a refreshing chai (at your own cost). Later, head back to Leh for overnight stay."
+          "day": "Day 3 - TRIP ACROSS KHARDUNG-LA PASS | DRIVING ACROSS THE HIGHEST ALL SEASON MOTORABLE PASS",
+          "description": [
+            "After breakfast, you will embark on an exciting journey towards the world's highest all season motorable pass - Khardung la Pass.",
+            "During your excursion, make a stop at the famous Rinchen cafe for a steaming bowl of Maggi and a refreshing chai (at your own cost).",
+            "Later, head back to Leh for overnight stay."
+          ]
         },
         {
-          "day": "Day 4",
-          "description": "TRIP TO PANGONG LAKE | EN-ROUTE SIGHTSEEING FROM PANGONG TSO TO LEH. Begin your day trip to the breathtaking Pangong Tso. After you arrive at the Pangong Tso, spend the time admiring the dreamy landscapes and the vibrant shades of the lake. As you return to Leh via Chang La Pass, you will make stops at the Chang La Baba Temple, Thiksey Monastery and Druk Padma School. Later, you will return to your hotel in Leh for a comfortable overnight stay."
+          "day": "Day 4 - TRIP TO PANGONG LAKE | EN-ROUTE SIGHTSEEING FROM PANGONG TSO TO LEH.",
+          "description": [
+            "Begin your day trip to the breathtaking Pangong Tso.",
+            "After you arrive at the Pangong Tso, spend the time admiring the dreamy landscapes and the vibrant shades of the lake.",
+            "As you return to Leh via Chang La Pass, you will make stops at the Chang La Baba Temple.",
+            "Thiksey Monastery and Druk Padma School.",
+            "Later, you will return to your hotel in Leh for a comfortable overnight stay."
+          ]
         },
         {
-          "day": "Day 5",
-          "description": "DEPARTURE FROM LEH. After checking out of your hotel, you will be transferred to Leh airport."
+          "day": "Day 5 - DEPARTURE FROM LEH. ",
+          "description": "After checking out of your hotel, you will be transferred to Leh airport."
         }
       ],
       "inclusions": [
