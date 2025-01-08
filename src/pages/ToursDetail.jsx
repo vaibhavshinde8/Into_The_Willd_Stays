@@ -20,7 +20,11 @@ const ToursDetail = () => {
   const { id } = useParams();
   const tour = toursData.tours.find((t) => t.id === parseInt(id));
   const [showContactForm, setShowContactForm] = useState(false);
+  const [expandedDay, setExpandedDay] = useState(null);
 
+  const toggleAccordion = (index) => {
+    setExpandedDay(expandedDay === index ? null : index);
+  };
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -122,66 +126,91 @@ const ToursDetail = () => {
       {/* Content Section */}
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="space-y-16">
+
+          <div className="p-6 bg-gray-100 rounded-lg shadow-lg">
+            <h1 className="text-2xl font-bold text-gray-800 mb-4 text-center uppercase">Trip Highlights</h1>
+            {
+              tour.highlights?.map((item, index) => (
+                <h2
+                  key={index}
+                  className="text-lg text-gray-600 mb-3 pl-4 border-l-4 border-blue-500"
+                >
+                  {item}
+                </h2>
+              ))
+            }
+          </div>
+
+
           {/* Itinerary */}
           <section>
-            <h2 className="text-3xl font-bold text-[#0F2642] mb-8">
+            <h2 className="text-3xl font-bold text-[#0F2642] mb-8 text-center">
               Itinerary
             </h2>
+            <div>
+
+            </div>
             <div className="space-y-6">
               {tour.itinerary?.map((item, index) => (
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
+                <div
                   key={index}
-                  className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
                 >
-                  <h3 className="font-bold text-[#0F2642] text-2xl mb-4">
-                    {item.day}
-                  </h3>
-                  <p className="text-lg leading-relaxed text-gray-700">
-                    {item.description}
-                  </p>
-                  <div className="py-4">
-                    <Swiper
-                      spaceBetween={30}
-                      effect={"fade"}
-                      navigation={true}
-                      pagination={{
-                        clickable: true,
-                      }}
-                      modules={[EffectFade, Navigation, Pagination]}
-                      className="mySwiper h-[300px] rounded-lg"
+                  {/* Accordion Header */}
+                  <div
+                    className="flex items-center justify-between cursor-pointer"
+                    onClick={() => toggleAccordion(index)}
+                  >
+                    <h3 className="font-bold text-[#0F2642] text-xl">
+                      {item.day}
+                    </h3>
+                    <span
+                      className={`transform transition-transform duration-300 ${expandedDay === index ? "rotate-180" : ""}`}
                     >
-                      <SwiperSlide>
-                        <img
-                          className="w-full rounded-lg"
-                          src="https://swiperjs.com/demos/images/nature-1.jpg"
-                        />
-                      </SwiperSlide>
-                      <SwiperSlide>
-                        <img
-                          className="w-full rounded-lg"
-                          src="https://swiperjs.com/demos/images/nature-2.jpg"
-                        />
-                      </SwiperSlide>
-                      <SwiperSlide>
-                        <img
-                          className="w-full rounded-lg"
-                          src="https://swiperjs.com/demos/images/nature-3.jpg"
-                        />
-                      </SwiperSlide>
-                      <SwiperSlide>
-                        <img
-                          className="w-full rounded-lg"
-                          src="https://swiperjs.com/demos/images/nature-4.jpg"
-                        />
-                      </SwiperSlide>
-                    </Swiper>
+                      ⌄
+                    </span>
                   </div>
-                </motion.div>
+
+                  {/* Accordion Content */}
+                  {expandedDay === index && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="mt-4"
+                    >
+                      <p className="text-lg leading-relaxed text-gray-700 mb-4">
+                        {item.description}
+                      </p>
+
+                      <Swiper
+                        spaceBetween={30}
+                        effect={"fade"}
+                        navigation={true}
+                        pagination={{
+                          clickable: true,
+                        }}
+                        modules={[EffectFade, Navigation, Pagination]}
+                        className="mySwiper h-[400px] rounded-lg"
+                      >
+                        {/* Dynamically render images from the itinerary JSON */}
+                        {Object.values(item.images).map((image, idx) => (
+                <SwiperSlide key={idx}>
+                  <img
+                    className="w-full h-full object-cover rounded-lg transition-transform duration-300 hover:scale-105"
+                    src={image}
+                    alt={`Day ${index + 1} Image ${idx + 1}`}
+                  />
+                </SwiperSlide>
               ))}
+                      </Swiper>
+                    </motion.div>
+                  )}
+                </div>
+              ))}
+
+
             </div>
           </section>
 
