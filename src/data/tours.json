@@ -493,7 +493,7 @@
       "price": "34999",
       "checkInDate": "2024-08-15",
       "checkOutDate": "2024-08-20",
-      "Highlight": "Welcome to Jammu, the gateway to Kashmir, where every corner is steeped in history and culture. Begin your journey by exploring the iconic Raghunath Temple, a stunning example of Hindu architecture that stands as a testament to the city's spiritual heritage. The temple’s intricate carvings and sacred atmosphere invite you to pause and reflect, setting the tone for your adventure.",
+      "Highlight":[ "Welcome to Jammu, the gateway to Kashmir, where every corner is steeped in history and culture. Begin your journey by exploring the iconic Raghunath Temple, a stunning example of Hindu architecture that stands as a testament to the city's spiritual heritage. The temple’s intricate carvings and sacred atmosphere invite you to pause and reflect, setting the tone for your adventure."],
       "itinerary": [
         {
           "day": "Day 1 - JAMMU TO PAHALGAM",
