@@ -18,15 +18,15 @@
       "itinerary": [
         {
           "day": "Day 1",
-          "description": "Arrival, check-in, and evening Ganga Aarti."
+          "description": ["Arrival, check-in, and evening Ganga Aarti."]
         },
         {
           "day": "Day 2",
-          "description": "River rafting, cliff jumping, and trekking."
+          "description":[ "River rafting, cliff jumping, and trekking."]
         },
         {
           "day": "Day 3",
-          "description": "Local sightseeing and departure."
+          "description": ["Local sightseeing and departure."]
         }
       ],
       "inclusions": [
@@ -66,22 +66,29 @@
       "price": "12499",
       "checkInDate": "2024-12-01",
       "checkOutDate": "2024-12-04",
+      "highlights": [
+        "Mussoorie, the queen of hill stations, is famous for its scenic beauty, good social life and entertainment. ",
+        "The excellent climate makes it an attractive holiday resort. Thronged by holidayers, it vibrates with gaiety and merry making during the summer season.",
+        "Lal Tibba - The highest peak in Mussoorie, at 2,275 meters. The peak's name comes from the red glow it takes on at dusk. It offers panoramic views of the snow-capped Himalayas and Doon Valley",
+        "Gun Hill - Mussoorie's second highest peak, and a popular viewpoint. It offers 360-degree views of the town, Doon Valley, and the Himalayan ranges.",
+        "Kempty Falls - A major waterfall surrounded by mountain cliffs. The water from the falls drops 41 feet into a small pond where visitors can swim and bathe. "
+      ],
       "itinerary": [
         {
           "day": "Day 1",
-          "description": "Arrival, check-in, and exploring Mall Road."
+          "description": ["Arrival, check-in, and exploring Mall Road."]
         },
         {
           "day": "Day 2",
-          "description": " Visit to Kempty Falls and Gun Hill."
+          "description": [" Visit to Kempty Falls and Gun Hill."]
         },
         {
           "day": "Day 3",
-          "description": "Trek to Lal Tibba and Camel's Back Road."
+          "description":[ "Trek to Lal Tibba and Camel's Back Road."]
         },
         {
           "day": "Day 4",
-          "description": "Leisure day and departure."
+          "description": ["Leisure day and departure."]
         }
       ],
       "inclusions": [
@@ -338,36 +345,46 @@
     {
       "id": 5,
       "imageUrl": "https://rishikeshdaytour.com/blog/wp-content/uploads/2021/12/Kanatal-An-Unexplored-Hamlet-in-Uttarakhand-.jpg",
-      "name": "Rishikesh Kanatal",
+      "name": "Rishikesh - Dhanolti",
       "location": "Rishikesh and Dhanolti, Uttarakhand",
       "duration": "2 Nights, 3 Days",
       "price": "3500",
       "checkInDate": "2024-12-01",
       "checkOutDate": "2024-12-03",
+      "highlights": [
+        "Rishikesh is a city in India’s northern state of Uttarakhand, in the Himalayan foothills beside the Ganges River. The river is considered holy, and the city is renowned as a center for studying yoga and meditation.",
+        "Temples and ashrams (centers for spiritual studies) line the eastern bank around Swarg Ashram, a traffic-free, alcohol-free and vegetarian enclave upstream from Rishikesh town."
+      ],
       "itinerary": [
         {
-          "day": "Day 1",
+          "day": "Day 1 - Rishikesh",
           "description": [
-            "Rishikesh ",
             "Stay in Swiss Camps (Quad sharing) with attached washroom and cooler.",
             "Activities: 16 km rafting at Shivpuri.",
             "Meals: Breakfast (Aloo puri, Aloo paratha, Tea), Lunch (Jeera aalu, Daal tadka, Rice, Chapati), Dinner (Shahee paneer, Chicken curry, Daal tadka, Rice, Chapati), and Evening snack (Mix Pakoda with tea)."
           ]
         },
         {
-          "day": "Day 2",
+          "day": "Day 2 - Rishikesh to Dhanolti",
           "description": [
-            "Rishikesh to Dhanolti ",
             "Stay in Luxury Cottages (Quad sharing).",
             "Sightseeing: Visit Surkanda Devi Temple, the highest point in the Dhanolti-Kanatal region.",
             "Meals: Breakfast (Aloo puri, Aloo paratha, Bread toast, Tea & coffee), Lunch (Jeera aalu, Daal tadka, Raita, Rice, Chapati), Dinner (Kadhai paneer, Shahee paneer, Chicken curry, Daal tadka, Rice, Chapati), and Evening snack (Mix Pakoda with tea)."
           ]
         },
         {
-          "day": "Day 3",
+          "day": "Day 3 - Dhanolti to Mussoorie",
           "description": [
-            "Dhanolti - Tehri - Delhi ",
             "Music allowed until 10 PM due to reserve forest proximity.",
+            "Surkanda Devi:- Highest tample of Mussoorie region",
+            "Mussorie:- Landour Street/ Landour Bakery / Chardukan/ Kampty Fall"
+          ]
+        },
+        {
+          "day": "Day 4 - Dhanolti to Dehradun (Checkout)",
+          "description": [
+            "Music allowed until 10 PM due to reserve forest proximity.",
+            "Sightseeing:- Robert's Cave, Tapkeshwar Temple",
             "Check-out and departure."
           ]
         }
@@ -411,30 +428,64 @@
       "price": "7500",
       "checkInDate": "2024-12-01",
       "checkOutDate": "2024-12-06",
+      "highlights": [
+        "Discovered back in the year 1931 by three British Mountaineers R.L.Holdsworth, Frank S.Smythe and Eric Shipton, this beautiful valley has also been declared as a World Heritage Site by UNESCO, owing to its incredibly mesmerizing blooms encircled by mighty icy peaks.",
+        "Trek to Hemkunt sahib- The highest Gurudwara in the world.",
+        "Trek to the valley of flowers- Explore the depths of the UNESCO world heritage site.",
+        "Witness over 600 different species of alpine flowers during the valley of flowers trek.",
+        "Rudraprayag, Karnaprayag, Nandprayag, Vishnuprayag). One Stop Travel Solution: Pickup and Drop from Delhi."
+      ],
       "itinerary": [
         {
-          "day": "Day 1",
-          "description": "Rishikesh to Joshimath (Drive 290kms)"
+          "day": "Day 1 - Rishikesh to Joshimath (Drive 290kms)",
+          "description": [
+            "Pit stop at Devprayag, (Confluence of Ganga River).",
+            "Later reach Joshimath via Rudraprayag.",
+            "Joshimath (Dinner will be served at hotel premises).",
+            "Meet at rishikesh bus stop",
+            "Assemble and briefing about travel details."
+          ]
         },
         {
-          "day": "Day 2",
-          "description": "Joshimath to Ghangaria via Govindghat (Drive 28kms + Trek 10kms)"
+          "day": "Day 2 - Joshimath to Ghangaria via Govindghat (Drive 28kms + Trek 10kms)",
+          "description": [
+            "On the second day of your Valley of Flowers trek, you will enjoy a trekking tour to Ghangaria through Pulna Village.",
+            "You will first take a 4 kilometers drive to Pulna, which is located at an approximate altitude of around 7,200 feet above sea level.",
+            "From here, you will cover an easy to moderate trekking trail of 10 kms to arrive at Ghangaria within 5 to 6 hours.",
+            "Once you reach Ghangaria village, located at an approximate altitude of around 7,200 feet above sea level, you can wind up for the day and rest in a hotel or camp under the night sky."
+          ]
         },
         {
-          "day": "Day 3",
-          "description": "Ghangaria to Hemkunt Sahib & Back to Ghangaria (Trek 6kms)"
+          "day": "Day 3 - Ghangaria to Hemkunt Sahib & Back to Ghangaria (Trek 6kms)",
+          "description": [
+            "Your fourth day will be all about a trekking tour to the famous religious site, Hemkund Sahib.",
+            "You will cover a steep ascent of 6 kilometers to reach Hemkund Sahib, which is located at an approximate altitude of around 14,107 feet above sea level.",
+            "After enjoying a peaceful day here, you will take a steep descent and get back to Ghangaria for rest."
+            
+          ]
         },
         {
-          "day": "Day 4",
-          "description": "Ghangaria to Valley of Flowers and back to Ghangaria (Trek 5kms)"
+          "day": "Day 4 - Ghangaria to Valley of Flowers and back to Ghangaria (Trek 5kms)",
+          "description": [
+            "Visit to the beautiful Valley of Flowers.",
+            "You will cover a trekking trail of 5 kms within 3 hours to reach the valley that is located at an approximate altitude of around 11,500 feet above sea level.",
+            "After enjoying a day out at Valley of Flowers, you will cover a descending trail of 3 hours to reach Ghangaria for your overnight stay."
+          
+          ]
         },
         {
-          "day": "Day 5",
-          "description": "Ghangaria to Joshimath via Badrinath"
+          "day": "Day 5 - Ghangaria to Joshimath via Badrinath",
+          "description": [
+            "On the fifth day, you will cover the same trekking trail and reach Govindghat via Pulna Village.",
+            "Leave Govindghat before 12:00 noon and enjoy the scenic route of shri badri vishal ji and after darshan leave for joshimath."
+          ]
         },
         {
-          "day": "Day 6",
-          "description": "Reach Rishikesh in the evening (Drive 289kms)"
+          "day": "Day 6 - Reach Rishikesh in the evening (Drive 289kms)",
+          "description": [
+            "After breakfast we will leave for RISHIKESH by 6:30-7:30 Pm.",
+            "Say good bye to your fellow travelers and enjoy the memories till next time."
+          ]
         }
       ],
       "inclusions": [
@@ -519,7 +570,7 @@
         },
         {
           "day": "Day 5 - DEPARTURE FROM LEH. ",
-          "description": "After checking out of your hotel, you will be transferred to Leh airport."
+          "description":[ "After checking out of your hotel, you will be transferred to Leh airport."]
         }
       ],
       "inclusions": [
