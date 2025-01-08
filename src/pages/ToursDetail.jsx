@@ -144,7 +144,7 @@ const ToursDetail = () => {
 
           {/* Itinerary */}
           <section>
-            <h2 className="text-3xl font-bold text-[#0F2642] mb-8">
+            <h2 className="text-3xl font-bold text-[#0F2642] mb-8 text-center">
               Itinerary
             </h2>
             <div>
@@ -165,8 +165,7 @@ const ToursDetail = () => {
                       {item.day}
                     </h3>
                     <span
-                      className={`transform transition-transform duration-300 ${expandedDay === index ? "rotate-180" : ""
-                        }`}
+                      className={`transform transition-transform duration-300 ${expandedDay === index ? "rotate-180" : ""}`}
                     >
                       ⌄
                     </span>
@@ -193,41 +192,25 @@ const ToursDetail = () => {
                           clickable: true,
                         }}
                         modules={[EffectFade, Navigation, Pagination]}
-                        className="mySwiper h-[300px] rounded-lg"
+                        className="mySwiper h-[400px] rounded-lg"
                       >
-                        <SwiperSlide>
-                          <img
-                            className="w-full rounded-lg"
-                            src="https://swiperjs.com/demos/images/nature-1.jpg"
-                            alt="Day Image 1"
-                          />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                          <img
-                            className="w-full rounded-lg"
-                            src="https://swiperjs.com/demos/images/nature-2.jpg"
-                            alt="Day Image 2"
-                          />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                          <img
-                            className="w-full rounded-lg"
-                            src="https://swiperjs.com/demos/images/nature-3.jpg"
-                            alt="Day Image 3"
-                          />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                          <img
-                            className="w-full rounded-lg"
-                            src="https://swiperjs.com/demos/images/nature-4.jpg"
-                            alt="Day Image 4"
-                          />
-                        </SwiperSlide>
+                        {/* Dynamically render images from the itinerary JSON */}
+                        {Object.values(item.images).map((image, idx) => (
+                <SwiperSlide key={idx}>
+                  <img
+                    className="w-full h-full object-cover rounded-lg transition-transform duration-300 hover:scale-105"
+                    src={image}
+                    alt={`Day ${index + 1} Image ${idx + 1}`}
+                  />
+                </SwiperSlide>
+              ))}
                       </Swiper>
                     </motion.div>
                   )}
                 </div>
               ))}
+
+
             </div>
           </section>
 
