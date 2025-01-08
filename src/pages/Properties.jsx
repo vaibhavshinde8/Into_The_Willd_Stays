@@ -340,10 +340,10 @@ const Properties = () => {
                     <div className="mt-2">
                       <button
                         onClick={closeGuestDropdown}
-                        className="w-full h-10 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-medium
-            hover:from-cyan-600 hover:to-blue-600 transition-all duration-300
-            flex items-center justify-center space-x-3 
-            rounded-2xl shadow-lg hover:shadow-cyan-500/30"
+                        className="w-full h-[50px] py-3 bg-[#0F2642] text-white border border-white
+                hover:bg-[#0F2642]
+                flex items-center justify-center space-x-3 
+                rounded-3xl"
                       >
                         Done
                       </button>
