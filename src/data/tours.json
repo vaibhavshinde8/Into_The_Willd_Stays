@@ -3,30 +3,94 @@
     {
       "id": 1,
       "imageUrl": "https://wandersky.in/wp-content/uploads/2023/08/Rishikesh-Tourism-Travel-Guide-2023.jpg",
-      "name": "Rishikesh Adventure Trip",
-      "location": "Rishikesh, Uttarakhand",
-      "duration": "3 Days, 2 Nights",
+      "name": "Spiti Valley",
+      "location": "Spiti Valley, Uttarakhand",
+      "duration": "8 Days, 7 Nights",
       "price": "9999",
       "checkInDate": "2024-12-01",
       "checkOutDate": "2024-12-03",
       "highlights": [
-        "Embark on a thrilling journey through Ladakh's wild terrain, towering peaks, breathtaking views, and boundless adventures, creating unforgettable memories at every turn.",
-        "Experience the intriguing phenomenon of Magnetic Hills, where vehicles seem to defy gravity, offering an unforgettable roadside marvel in Ladakh.",
-        "At Sangam Point, witness the mesmerizing convergence of the Zanskar and Indus rivers, a breathtaking natural sight that adds to the beauty of Ladakh landscapes.",
-        "Embark on an unforgettable adventure through Nubra Valley atop a Bactrian camel, immersing yourself in the tranquil beauty of the cold desert"
+        "Set off on an unforgettable adventure through Spiti Valley, a high-altitude desert mountain haven nestled in the Himalayas. Begin your journey in Kaza, the valley’s vibrant heart, where ancient Buddhist monasteries and rich local culture welcome you with open arms. ",
+        "Discover the serenity of Key Monastery, perched majestically on a hilltop, and soak in the spiritual aura that defines this remote region.",
+        "Continue your exploration with a visit to the secluded village of Dhankar, home to the ancient Dhankar Monastery. Clinging dramatically to a cliff, this 1,000-year-old fortress offers sweeping views of the Spiti and Pin valleys.",
+        "Finally, uncover the hidden treasure of Tabo, often dubbed the 'Ajanta of the Himalayas' for its ancient Buddhist caves and beautifully preserved monasteries."
       ],
       "itinerary": [
         {
-          "day": "Day 1",
-          "description": ["Arrival, check-in, and evening Ganga Aarti."]
+          "day": "Day 0 - Departure From Delhi",
+          "description": [
+            "Gather at the Departure Point (Kashmiri Gate/R.K. Ashram Delhi)",
+            "Meet your trip captain at the boarding point for a pre-trip briefing.",
+            "Board the designated transport for the overnight journey to Manali. Depart from Delhi."
+          ]
         },
         {
-          "day": "Day 2",
-          "description":[ "River rafting, cliff jumping, and trekking."]
+          "day": "Day 1 - Reach Manali, Transfer To Jibhi",
+          "description": [
+            "Reach Manali, and stop for the mesmerizing River Beas.",
+            "Day 1 starts from Manali & Transfer to Jibhi.",
+            "Revel in the freedom of the road, exploring Jibhi's hidden gems.",
+            "Local sightseeing of Jibhi - Mini Thailand, Cafe Hopping, Jibhi Waterfall",
+            "Rest and recharge for the next day."
+          ]
         },
         {
-          "day": "Day 3",
-          "description": ["Local sightseeing and departure."]
+          "day": "Day 2 - Move To Chitkul Via Sangla For Stay",
+          "description": [
+            "Depart for Chitkul, a remote and scenic village in the Kinnaur district.",
+            "Traverse the beautiful Sangla Valley en route to Chitkul.",
+            "Immerse in the local culture and admire the unique architecture of the village.",
+            "Enjoy an overnight stay in the peaceful surroundings of Chitkul/Sangla."
+          ]
+        },
+        {
+          "day": "Day 3 - Explore Chitkul, Head To Nako Via Khab Sangam & Overnight Stay At Tabo",
+          "description": [
+            "Explore Chitkul, known as the last village near the Indo-China border.",
+            "Head towards Nako, passing through the mesmerizing Khab Sangam.",
+            "Witness the confluence of the Spiti and Sutlej rivers at Khab Visit Gue Monastery on the way, and stay overnight at Tabo."
+          ]
+        },
+        {
+          "day": "Day 4 - Visit Dhankar & Pin Valley, Overnight In Kaza",
+          "description": [
+            "Visit the historic Tabo Monastery, home to ancient monasteries and cave art.",
+            "Explore Dhankar monastery, perched on a high cliff & experience the Pin Valley.",
+            "Immerse in the local culture and admire the unique architecture of the village.",
+            "Explore Lingti waterfall on the way to Kaza. Settle in for an overnight stay in the lively town of Kaza."
+          ]
+        },
+        {
+          "day": "Day 5 - Explore Lingti waterfall on the way to Kaza. Settle in for an overnight stay in the lively town of Kaza.",
+          "description": [
+            "Explore the unique high-altitude villages of Hikkim, Komic, and Langza.",
+            "Visit the iconic Key Monastery, a significant Tibetan Buddhist monastery.",
+            "Immerse in the spiritual and cultural richness of the region.",
+            "Return for an overnight stay in Kaza"
+          ]
+        },
+        {
+          "day": "Day 6 - Visit Chicham Bridge, Head To Chandratal Via Kunzum Pass & Overnight Stay",
+          "description": [
+            "Explore the engineering marvel of Chicham Bridge, the highest bridge in Asia.",
+            "Journey to the mesmerizing Chandratal Lake via the scenic Kunzum Pass.",
+            "Enjoy the surreal beauty of the high-altitude lake.",
+            "Settle in for an overnight stay, surrounded by the tranquillity of Chandratal"
+          ]
+        },
+        {
+          "day": "Day 7 - Transfer To Manali Via Atal Tunnel, Proceed To Delhi Via Volvo",
+          "description": [
+            "Travel back to Manali, passing through the recently inaugurated Atal Tunnel.",
+            "Experience the convenience and thrill of the tunnel journey. Transfer to Delhi via a comfortable Volvo transportation.",
+            "Reflect on the memories of the remarkable journey."
+          ]
+        },
+        {
+          "day": "Day 8 - Arrival In Delhi Between 8:00 To 9:00 AM",
+          "description": [
+            "Arrive in Delhi, concluding the expedition with memories of the breathtaking landscapes and cultural richness of the Himalayan region."
+          ]
         }
       ],
       "inclusions": [
@@ -84,7 +148,7 @@
         },
         {
           "day": "Day 3",
-          "description":[ "Trek to Lal Tibba and Camel's Back Road."]
+          "description": ["Trek to Lal Tibba and Camel's Back Road."]
         },
         {
           "day": "Day 4",
@@ -124,10 +188,17 @@
       "imageUrl": "https://images.pexels.com/photos/15031440/pexels-photo-15031440.jpeg?cs=srgb&dl=pexels-alok-kumar-273007-15031440.jpg&fm=jpg",
       "name": "Kedarnath Dham",
       "location": "Kedarnath, Uttarakhand",
-      "duration": "3 Nights, 4 Days",
+      "duration": "4 Days, 3 Nights",
       "price": "10499",
       "checkInDate": "2024-12-01",
       "checkOutDate": "2024-12-04",
+      "highlights": [
+        "Nestled amidst the majestic Himalayn ranges, Kedarnath is a sacred pilgrimage site located in the Rudraprayag district of Uttarakhand, India. Renowned for its spiritual significance and breathtaking natural beauty, Kedarnath attracts millions of devotees and nature enthusiasts each year.",
+        "Kedarnath holds a rich historical and mythological heritage. According to Hindu mythology, it is believed to be one of the twelve Jyotirlingas (radiant lingas) of Lord Shiva, representing his infinite power and energy.",
+        "The temple of Kedarnath is believed to have been built by the Pandavas, the legendary heroes of the Indian epic, Mahabharata. The temple’s architecture is a marvel in itself, reflecting ancient craftsmanship and devotion.",
+        "TREK TO KEDARNATH - A moderate 17kms trek from Gaurikund to Kedarnath is a beautiful trek along with mandankini river and valleys.",
+        "DEVPRAYAG - Is a final one of the panch prayag (five confluences) of Alaknanda River where Alaknanda meets the Bhagirathi river and both rivers thereafter flow on as the Ganges river or Maa Ganga."
+      ],
       "itinerary": [
         {
           "day": "Day 1 - Delhi to Rishikesh - Overnight Journey",
@@ -461,7 +532,6 @@
             "Your fourth day will be all about a trekking tour to the famous religious site, Hemkund Sahib.",
             "You will cover a steep ascent of 6 kilometers to reach Hemkund Sahib, which is located at an approximate altitude of around 14,107 feet above sea level.",
             "After enjoying a peaceful day here, you will take a steep descent and get back to Ghangaria for rest."
-            
           ]
         },
         {
@@ -470,7 +540,6 @@
             "Visit to the beautiful Valley of Flowers.",
             "You will cover a trekking trail of 5 kms within 3 hours to reach the valley that is located at an approximate altitude of around 11,500 feet above sea level.",
             "After enjoying a day out at Valley of Flowers, you will cover a descending trail of 3 hours to reach Ghangaria for your overnight stay."
-          
           ]
         },
         {
@@ -570,7 +639,9 @@
         },
         {
           "day": "Day 5 - DEPARTURE FROM LEH. ",
-          "description":[ "After checking out of your hotel, you will be transferred to Leh airport."]
+          "description": [
+            "After checking out of your hotel, you will be transferred to Leh airport."
+          ]
         }
       ],
       "inclusions": [
