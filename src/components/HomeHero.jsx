@@ -7,6 +7,7 @@ import heroImage2 from "../assets/banner/b1.jpeg";
 import heroImage3 from "../assets/guestdiary/img-1.jpeg";
 import heroImage4 from "../assets/banner/b4.jpeg";
 import heroImage5 from "../assets/banner/b3.jpeg";
+import React from 'react';
 
 const images = [heroImage1, heroImage2, heroImage3, heroImage4, heroImage5];
 const locations = ["Dhanolti", "Goa", "Tehri", "Majuli", "Rishikesh"];
@@ -21,6 +22,23 @@ const HomeHero = () => {
     adults: 1,
     children: 0,
   });
+  const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
+
+
+  const toggleGuestDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  const closeGuestDropdown = () => {
+    setIsDropdownOpen(false);
+  };
+
+  const handleGuestChange = (type, delta) => {
+    setSearchParams((prev) => ({
+      ...prev,
+      [type]: Math.max(0, prev[type] + delta), // Prevents negative values
+    }));
+  };
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -32,7 +50,7 @@ const HomeHero = () => {
   const handleSearch = () => {
     // Store search parameters in sessionStorage
     sessionStorage.setItem('searchParams', JSON.stringify(searchParams));
-    
+
     navigate('/properties'); // Navigate without URL parameters
   };
 
@@ -48,7 +66,7 @@ const HomeHero = () => {
   const today = new Date().toISOString().split("T")[0];
 
   return (
-    <div className="relative min-h-screen flex flex-col justify-between items-center overflow-hidden py-16 md:pt-32">
+    <div className="relative min-h-screen flex flex-col justify-between items-center overflow-hidden  md:pt-32" style={{ paddingBottom: "105px" }}>
       {/* Background Overlay */}
       <div className="absolute inset-0 z-0">
         {images?.map((img, index) => (
@@ -56,15 +74,14 @@ const HomeHero = () => {
             key={index}
             src={img}
             alt={`Background ${index + 1}`}
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-              index === currentImageIndex ? "opacity-100" : "opacity-0"
-            }`}
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${index === currentImageIndex ? "opacity-100" : "opacity-0"
+              }`}
             initial={{ opacity: 0 }}
             animate={{ opacity: index === currentImageIndex ? 1 : 0 }}
             transition={{ duration: 1.5 }}
           />
         ))}
-        <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+        <div className="absolute inset-0  bg-black bg-opacity-40"></div>
       </div>
 
       {/* Content Container */}
@@ -121,7 +138,7 @@ const HomeHero = () => {
                   className="w-full h-12 px-6 py-3 bg-white border border-white/30 text-gray-900 focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded-2xl transition-all duration-300 hover:bg-white"
                 >
                   <option value="" className="text-gray-500">
-                     Location
+                    Location
                   </option>
                   {locations?.map((loc) => (
                     <option key={loc} value={loc} className="text-gray-900">
@@ -168,45 +185,105 @@ const HomeHero = () => {
               </div>
 
               {/* Adults */}
-              <div className="md:col-span-1 lg:w-40">
+              <div className="relative w-full md:w-auto">
+                {/* Dropdown Button */}
                 <label className="block text-white mb-3 text-sm font-medium">
-                  Adults
+                  Guests
                 </label>
-                <select
-                  name="adults"
-                  value={searchParams.adults}
-                  onChange={handleInputChange}
-                  className="w-full h-12 px-6 py-3 bg-white border border-white/30 text-gray-900 focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded-2xl transition-all duration-300 hover:bg-white"
+                <button
+                  onClick={toggleGuestDropdown}
+                  className="w-full md:w-56 h-12 px-4 py-2 bg-white border border-gray-300 text-gray-900 rounded-lg text-left flex items-center justify-between hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-cyan-400"
                 >
-                  {[...Array(9)]?.map((_, i) => (
-                    <option key={i + 1} value={i + 1}>
-                      {i + 1} Adult{i > 0 ? "s" : ""}
-                    </option>
-                  ))}
-                </select>
+                  <span className="text-sm w-full">
+                    {`${searchParams.adults} Adult${searchParams.adults > 1 ? 's' : ''} and ${searchParams.children} Child${searchParams.children > 1 ? 'ren' : ''}`}
+                  </span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5 text-gray-500"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M5.293 9.293a1 1 0 011.414 0L10 12.586l3.293-3.293a1 1 0 011.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </button>
+
+                {/* Dropdown Content */}
+                {isDropdownOpen && (
+                  <div
+                    className="absolute z-50 mt-2 w-full md:w-64 bg-white border border-gray-300 rounded-lg shadow-lg p-2"
+                    style={{ position: "absolute", bottom: "auto" }} // Prevents clipping
+                  >
+                    {/* Adults */}
+                    <div className="flex justify-between items-center mb-2">
+                      <div>
+                        <p className="text-gray-700 font-medium text-sm">Adults</p>
+                      </div>
+                      <div className="flex items-center">
+                        <button
+                          onClick={() => handleGuestChange("adults", -1)}
+                          className="px-0.5 py-0.5 bg-gray-100 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-200 disabled:opacity-50"
+                          disabled={searchParams.adults <= 0}
+                        >
+                          −
+                        </button>
+                        <span className="mx-2 text-gray-900 text-sm">{searchParams.adults}</span>
+                        <button
+                          onClick={() => handleGuestChange("adults", 1)}
+                          className="px-0.5 py-0.5 bg-gray-100 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-200"
+                        >
+                          +
+                        </button>
+                      </div>
+                    </div>
+
+                    {/* Children */}
+                    <div className="flex justify-between items-center mb-2">
+                      <div>
+                        <p className="text-gray-700 font-medium text-sm">Children</p>
+                      </div>
+                      <div className="flex items-center">
+                        <button
+                          onClick={() => handleGuestChange("children", -1)}
+                          className="px-0.5 py-0.5 bg-gray-100 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-200 disabled:opacity-50"
+                          disabled={searchParams.children <= 0}
+                        >
+                          −
+                        </button>
+                        <span className="mx-2 text-gray-900 text-sm">{searchParams.children}</span>
+                        <button
+                          onClick={() => handleGuestChange("children", 1)}
+                          className="px-0.5 py-0.5 bg-gray-100 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-200"
+                        >
+                          +
+                        </button>
+                      </div>
+                    </div>
+
+                    {/* Done Button */}
+                    <div className="mt-2">
+                      <button
+                        onClick={closeGuestDropdown}
+                        className="w-full h-10 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-medium
+            hover:from-cyan-600 hover:to-blue-600 transition-all duration-300
+            flex items-center justify-center space-x-3 
+            rounded-2xl shadow-lg hover:shadow-cyan-500/30"
+                      >
+                        Done
+                      </button>
+                    </div>
+                  </div>
+                )}
               </div>
 
-              {/* Children */}
-              <div className="md:col-span-1 lg:w-40">
-                <label className="block text-white mb-3 text-sm font-medium">
-                  Children
-                </label>
-                <select
-                  name="children"
-                  value={searchParams.children}
-                  onChange={handleInputChange}
-                  className="w-full h-12 px-6 py-3 bg-white border border-white/30 text-gray-900 focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded-2xl transition-all duration-300 hover:bg-white"
-                >
-                  {[...Array(9)]?.map((_, i) => (
-                    <option key={i} value={i}>
-                      {i} Child{i !== 1 ? "ren" : ""}
-                    </option>
-                  ))}
-                </select>
-              </div>
+
+
 
               {/* Search Button */}
-              <div className="md:col-span-1 lg:w-40">
+              <div className="md:col-span-1 lg:w-40 ml-16">
                 <label className="block text-white mb-3 text-sm font-medium">
                   &nbsp;
                 </label>
