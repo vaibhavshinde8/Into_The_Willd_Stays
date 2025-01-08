@@ -221,7 +221,7 @@
             "Dinner will be served at hotel."
           ]
         },
-        
+
         {
           "day": "Day 3 - Sonprayag to Kedarnath",
           "description": [
@@ -1111,45 +1111,75 @@
     {
       "id": 13,
       "imageUrl": "https://www.sikkimdarjeelingtourism.com/images/packages/package_banner_1689920458.jpg",
-      "name": "Queen of the Hills - Darjeeling",
-      "location": "Darjeeling, West Bengal",
-      "duration": "4 Days, 3 Nights",
+      "name": "Chopta Tungnath",
+      "location": "Chopta Tungnath, Uttrakhand",
+      "duration": "3 Days, 2 Nights",
       "price": "8999",
       "checkInDate": "2024-12-01",
       "checkOutDate": "2024-12-04",
+      "highlights": [
+        "Chopta to Tungnath is a breathtaking trek in the Garhwal region of Uttarakhand, India. Chopta, often referred to as the 'Mini Switzerland of India,' serves as the base for this enchanting journey.",
+        "Tungnath Temple: The world's highest Shiva temple, located at an elevation of 12,073 ft. It's part of the Panck Kedar Temples of Lord Shiva.",
+        "Chandrashila Peak: Located at an elevation of 12,110 ft, this peak is also known as 'Moon Rock'. It offers views of the Himalayas, including Nanda Devi, Trisul, Kedar Peak, Bandarpunch, and Chaukhamba peaks.",
+        "Rhododendron forest: The trail features a captivating rhododendron forest with red, scarlet, and pink flowers"
+      ],
       "itinerary": [
         {
-          "day": "Day 1",
-          "description": "Arrival in Darjeeling. Check into hotel and relax. Evening exploration of Chowrasta Mall with views of the Kanchenjunga range. Visit local shops and cafes. Experience the colonial charm of Mall Road. Dinner and overnight stay in Darjeeling."
+          "day": "Day 0 - Noida to Chopta I Overnight Journey",
+          "description": [
+            "Assemble at boarding point in Noida - assemble at boarding point- Noida Electronic city metro station gate no. 1",
+            "Start an overnight journey to Chopta and socialize with your co-travellers."
+          ]
         },
         {
-          "day": "Day 2",
-          "description": "Early morning drive to Tiger Hill for sunrise views of Mt. Kanchenjunga and Mt. Everest (weather permitting). Visit Batasia Loop and War Memorial en route. After breakfast, visit Japanese Peace Pagoda, tea gardens for guided tour and tea tasting. Evening joy ride on the UNESCO World Heritage Darjeeling Himalayan Railway (Toy Train). Explore Ghum Railway Museum. Return to hotel for dinner and overnight stay."
+          "day": "Day 1 - Devprayag Sangam | Chopta Arrival",
+          "description": [
+            "Enroute Chopta, we will take a pit stop at Devprayag in early morning to witness the beautiful confluence of Bhagirathi & Alaknanda rivers ultimately becoming Ganga river. Further we will take a halt around",
+            "Rudraprayag to grab a satisfying breakfast and continue our journey towards Chopta. After arriving in Chopta Valley, check-in to our scenic",
+            "property, freshen-up and have some leisure. Go for a forest walk and absorb in the charming Himalayan beauty.",
+            "In the evening, enjoy warm bonfire and mouth-watering snacks under a million stars.",
+            "Savour home-style cooked dinner and overnight stay in camps/hotel."
+          ]
         },
         {
-          "day": "Day 3",
-          "description": "Full-day excursion to Takdah, Tinchuley, and Lamahatta. Morning visit to Takdah Tea Estate with guided tour. Lunch at local eatery. Explore Tinchuley Village, orange orchards, and monastery. Visit Lamahatta Eco Park for gardens, walking trails, and mountain views. Evening return to Darjeeling. Dinner and overnight stay."
+          "day": "Day 2 - Trek To Chandrashila via Tungnath Mahadev Temple",
+          "description": [
+            "Wake up early to witness the beautiful sunrise and post breakfast, drive to the starting point of our trek. Begin your trek to Tungnath - one of the Panch Kedar and World’s highest temple dedicated to Lord Shiva.",
+            "Trek further to magnificient Chandrashila Peak situated at 13,000 ft (if weather & conditions permits) and gather for an #InstaPerfect group picture.",
+            "Trek back to Chopta village and drive back to our property and have some leisure.",
+            "Savour home-style cooked dinner and overnight stay in a camps/hotel."
+          ]
         },
         {
-          "day": "Day 4",
-          "description": "After breakfast, final visit to Batasia Loop. Free time for souvenir shopping at local markets. Transfer to NJP railway station/Bagdogra airport for departure."
+          "day": "Day 3 - Drive To Sari Village | Trek To Deoriatal I Depart For Noida",
+          "description": [
+            "Wake up to a peaceful mountain morning and post breakfast, drive to Sari Village.",
+            "Begin your trek to mesmerising Deoriatal Lake. Trek back to Sari village and post lunch start-off your return journey to Noida.",
+            "Take a halt at Rishikesh in the night to explore the local market, go for cafe hopping, visit temples and serene Ganga ghats (if time permits)."
+          ]
+        },
+        {
+          "day": "Day 4 - Noida Arrival | Trip Ends",
+          "description": [
+            "Reach Noida early morning with lots of amazing memories and unforgettable experiences."
+          ]
         }
       ],
       "inclusions": [
-        "3 nights accommodation in hotel",
-        "Daily breakfast and dinner",
-        "All transfers and sightseeing by exclusive vehicle",
-        "Toy Train ride tickets (subject to availability)",
-        "English/Hindi speaking guide",
-        "All parking fees and toll taxes",
+        "Transportation from Noida to Noida - Noida electronic City metro station gate no. 1",
+        "Accommodation on Sharing Basis: Swiss Camps/Homestay.",
+        "Experienced and cool Trip Captain/Trek Guide.",
+        "Bonfire (if weather permits) during the stay and local explorations as per itinerary.",
+        "Veg Meals: Dinner (2), Breakfast (2) and Evening Snacks (2), starting from Evening Snacks on Day 1 to Breakfast on Day 3.",
+        "Driver allowances, toll taxes, parking, state taxes.",
         "Pick up and drop from NJP/Bagdogra",
         "End to end assistance"
       ],
       "exclusions": [
-        "Airfare/train fare",
-        "Lunch and other meals not mentioned",
-        "Entry fees to monuments/museums",
-        "Camera fees",
+        "Any extra meals apart from the ones mentioned under inclusions.",
+        "Travel Insurance, items of personal nature like porterage, tips",
+        "Any entry fees, extra expenses for optional activities, room heaters or tickets, unless quoted in Inclusions.",
+        "Any other costing involved due to circumstances like natural calamity, weather conditions, riots, roadblocks, landslides or any other forced circumstances which are out of our control.",
         "Personal expenses (phone calls, laundry, etc.)",
         "Tips and gratuities",
         "Porter service",

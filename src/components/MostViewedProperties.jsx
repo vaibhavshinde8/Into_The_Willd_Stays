@@ -99,14 +99,14 @@ const MostViewedProperties = () => {
             {" "}
             {/* Added horizontal padding */}
             <Swiper
-              modules={[Navigation, Pagination, Autoplay]}
+              modules={[Navigation, Autoplay]}
               spaceBetween={20}
               slidesPerView={1}
               navigation={{
                 prevEl: ".swiper-button-prev",
                 nextEl: ".swiper-button-next",
               }}
-              pagination={{ clickable: true }}
+              // pagination={{ clickable: true }}
               autoplay={{ delay: 5000 }}
               breakpoints={{
                 640: {
