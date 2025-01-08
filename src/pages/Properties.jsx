@@ -101,13 +101,7 @@ const Properties = () => {
     handleFilterChange({ location: searchParams.location }); // Filter when Explore button is clicked
   };
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setSearchParams((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
+
 
   const handleFilterChange = ({ location }) => {
     let filtered = properties;
@@ -145,6 +139,23 @@ const Properties = () => {
         duration: 0.5,
       },
     },
+  };
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const toggleGuestDropdown = () => {
+    setIsDropdownOpen((prev) => !prev);
+  };
+
+  const closeGuestDropdown = () => {
+    setIsDropdownOpen(false);
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setSearchParams((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
 
   // Get today's date in YYYY-MM-DD format
@@ -249,40 +260,102 @@ const Properties = () => {
 
             {/* Adults */}
             <div className="md:col-span-1">
-              <label className="block text-gray-700 mb-2 text-sm">Adults</label>
-              <select
-                name="adults"
-                value={searchParams.adults}
-                onChange={handleInputChange}
-                className="w-full h-[46px] px-4 py-3 bg-white border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-3xl"
-              >
-                {[...Array(9)]?.map((_, i) => (
-                  <option key={i + 1} value={i + 1} className="text-gray-900">
-                    {i + 1} Adult{i > 0 ? "s" : ""}
-                  </option>
-                ))}
-              </select>
+              <label className="block text-gray-700 mb-2 text-sm">Guests</label>
+              <div className="relative">
+                {/* Dropdown Button */}
+                <button
+                  onClick={toggleGuestDropdown}
+                  className="w-full md:w-56 h-12 px-4 py-2 bg-white border border-gray-300 text-gray-900 rounded-lg text-left flex items-center justify-between hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+                >
+                  <span className="text-sm w-full">
+                    {`${searchParams.adults} Adult${searchParams.adults > 1 ? 's' : ''} and ${searchParams.children} Child${searchParams.children > 1 ? 'ren' : ''}`}
+                  </span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5 text-gray-500"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M5.293 9.293a1 1 0 011.414 0L10 12.586l3.293-3.293a1 1 0 011.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </button>
+
+                {/* Dropdown Content */}
+                {isDropdownOpen && (
+                  <div
+                    className="absolute z-50 mt-2 w-full md:w-64 bg-white border border-gray-300 rounded-lg shadow-lg p-2"
+                    style={{ position: "absolute", bottom: "auto" }} // Prevents clipping
+                  >
+                    {/* Adults */}
+                    <div className="flex justify-between items-center mb-2">
+                      <div>
+                        <p className="text-gray-700 font-medium text-sm">Adults</p>
+                      </div>
+                      <div className="flex items-center">
+                        <button
+                          onClick={() => handleInputChange({ target: { name: 'adults', value: searchParams.adults - 1 } })}
+                          className="px-0.5 py-0.5 bg-gray-100 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-200 disabled:opacity-50"
+                          disabled={searchParams.adults <= 0}
+                        >
+                          −
+                        </button>
+                        <span className="mx-2 text-gray-900 text-sm">{searchParams.adults}</span>
+                        <button
+                          onClick={() => handleInputChange({ target: { name: 'adults', value: searchParams.adults + 1 } })}
+                          className="px-0.5 py-0.5 bg-gray-100 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-200"
+                        >
+                          +
+                        </button>
+                      </div>
+                    </div>
+
+                    {/* Children */}
+                    <div className="flex justify-between items-center mb-2">
+                      <div>
+                        <p className="text-gray-700 font-medium text-sm">Children</p>
+                      </div>
+                      <div className="flex items-center">
+                        <button
+                          onClick={() => handleInputChange({ target: { name: 'children', value: searchParams.children - 1 } })}
+                          className="px-0.5 py-0.5 bg-gray-100 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-200 disabled:opacity-50"
+                          disabled={searchParams.children <= 0}
+                        >
+                          −
+                        </button>
+                        <span className="mx-2 text-gray-900 text-sm">{searchParams.children}</span>
+                        <button
+                          onClick={() => handleInputChange({ target: { name: 'children', value: searchParams.children + 1 } })}
+                          className="px-0.5 py-0.5 bg-gray-100 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-200"
+                        >
+                          +
+                        </button>
+                      </div>
+                    </div>
+
+                    {/* Done Button */}
+                    <div className="mt-2">
+                      <button
+                        onClick={closeGuestDropdown}
+                        className="w-full h-[50px] py-3 bg-[#0F2642] text-white border border-white
+                hover:bg-[#0F2642]
+                flex items-center justify-center space-x-3 
+                rounded-3xl"
+                      >
+                        Done
+                      </button>
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
 
-            {/* Children */}
-            <div className="md:col-span-1">
-              <label className="block text-gray-700 mb-2 text-sm">Children</label>
-              <select
-                name="children"
-                value={searchParams.children}
-                onChange={handleInputChange}
-                className="w-full h-[46px] px-4 py-3 bg-white border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-3xl"
-              >
-                {[...Array(9)]?.map((_, i) => (
-                  <option key={i} value={i} className="text-gray-900">
-                    {i} Child{i !== 1 ? "ren" : ""}
-                  </option>
-                ))}
-              </select>
-            </div>
 
             {/* Search Button */}
-            <div className="md:col-span-1 col-span-2 flex items-end">
+            <div className="md:col-span-1 col-span-2 flex items-end ml-6">
               <button
                 onClick={handleSearch}
                 className="w-full h-[50px] py-3 bg-[#0F2642] text-white border border-white
@@ -397,13 +470,13 @@ const Properties = () => {
                           <div className="flex flex-col space-y-3 md:w-1/2">
                             <BookingButton property={property} />
                           </div>
-                            <Link
-                              to={`/property/${property._id}`}
-                              onClick={() => window.scrollTo(0, 0)}
-                              className="px-6 py-2 text-black bg-gray-100 hover:bg-teal-100 transition-colors rounded-lg text-center"
-                            >
-                              Details
-                            </Link>
+                          <Link
+                            to={`/property/${property._id}`}
+                            onClick={() => window.scrollTo(0, 0)}
+                            className="px-6 py-2 text-black bg-gray-100 hover:bg-teal-100 transition-colors rounded-lg text-center"
+                          >
+                            Details
+                          </Link>
                         </div>
                       </div>
                     </div>

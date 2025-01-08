@@ -66,7 +66,7 @@ const HomeHero = () => {
   const today = new Date().toISOString().split("T")[0];
 
   return (
-    <div className="relative min-h-screen flex flex-col justify-between items-center overflow-hidden  md:pt-32" style={{ paddingBottom: "105px" }}>
+    <div className="relative min-h-screen flex flex-col justify-between items-center overflow-hidden  md:pt-32" style={{ paddingBottom: "106px" }}>
       {/* Background Overlay */}
       <div className="absolute inset-0 z-0">
         {images?.map((img, index) => (
