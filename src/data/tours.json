@@ -483,26 +483,57 @@
       "price": "34999",
       "checkInDate": "2024-08-15",
       "checkOutDate": "2024-08-20",
+      "Highlight": "Welcome to Jammu, the gateway to Kashmir, where every corner is steeped in history and culture. Begin your journey by exploring the iconic Raghunath Temple, a stunning example of Hindu architecture that stands as a testament to the city's spiritual heritage. The temple’s intricate carvings and sacred atmosphere invite you to pause and reflect, setting the tone for your adventure.",
       "itinerary": [
         {
-          "day": "Day 1",
-          "description": "JAMMU TO PAHALGAM. Arrive at Jammu by train or flight. Travel to Pahalgam by taxi or bus (approximately 7-8 hours, 95 km). Check-in at your pre-booked hotel in Pahalgam. Enjoy a leisurely lunch at the hotel or a local restaurant. Explore the scenic beauty of Pahalgam: stroll along the Lidder River, visit the local market. Dinner at the hotel. Overnight stay in Pahalgam."
+          "day": "Day 1 - JAMMU TO PAHALGAM",
+          "description": "Arrive at Jammu by train or flight. Travel to Pahalgam by taxi or bus (approximately 7-8 hours, 95 km). Check-in at your pre-booked hotel in Pahalgam. Enjoy a leisurely lunch at the hotel or a local restaurant. Explore the scenic beauty of Pahalgam: stroll along the Lidder River, visit the local market. Dinner at the hotel. Overnight stay in Pahalgam.",
+          "images": {
+            "img1": "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
+            "img2": "https://png.pngtree.com/background/20230805/original/pngtree-a-snowy-mountain-adorned-in-pahalgam-valley-located-in-kashmir-india-picture-image_4440125.jpg",
+            "img3": "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg",
+            "img4": "https://png.pngtree.com/background/20230401/original/pngtree-view-from-chitkul-village-in-sangla-valley-vector-picture-image_2229375.jpg"
+          }
         },
         {
           "day": "Day 2",
-          "description": "PAHALGAM TO SRINAGAR. Breakfast at the hotel. Check out and travel to Srinagar (approximately 4-5 hours, 90 km). Check-in at your hotel or houseboat in Srinagar. Have lunch at the hotel or a local restaurant. Explore the famous Dal Lake: enjoy a Shikara ride (traditional wooden boat). Visit the Mughal Gardens: Shalimar Bagh, Nishat Bagh, and Chashme Shahi. Dinner at the hotel or a local restaurant. Overnight stay in Srinagar."
+          "description": "PAHALGAM TO SRINAGAR. Breakfast at the hotel. Check out and travel to Srinagar (approximately 4-5 hours, 90 km). Check-in at your hotel or houseboat in Srinagar. Have lunch at the hotel or a local restaurant. Explore the famous Dal Lake: enjoy a Shikara ride (traditional wooden boat). Visit the Mughal Gardens: Shalimar Bagh, Nishat Bagh, and Chashme Shahi. Dinner at the hotel or a local restaurant. Overnight stay in Srinagar.",
+          "images": {
+            "img1": "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
+            "img2": "https://png.pngtree.com/background/20230805/original/pngtree-a-snowy-mountain-adorned-in-pahalgam-valley-located-in-kashmir-india-picture-image_4440125.jpg",
+            "img3": "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg",
+            "img4": "https://png.pngtree.com/background/20230401/original/pngtree-view-from-chitkul-village-in-sangla-valley-vector-picture-image_2229375.jpg"
+          }
         },
         {
           "day": "Day 3",
-          "description": "SIGHTSEEING IN SRINAGAR. Breakfast at the hotel. Visit the historic Jamia Masjid and the old city of Srinagar. Explore the local markets for handicrafts and souvenirs. Lunch at a local restaurant or hotel. Visit the Tulip Garden (seasonal) or the botanical garden. Optionally, visit the Shankaracharya Temple for panoramic views of Srinagar. Relax and enjoy a traditional Kashmiri dinner at the hotel. Overnight stay in Srinagar."
+          "description": "SIGHTSEEING IN SRINAGAR. Breakfast at the hotel. Visit the historic Jamia Masjid and the old city of Srinagar. Explore the local markets for handicrafts and souvenirs. Lunch at a local restaurant or hotel. Visit the Tulip Garden (seasonal) or the botanical garden. Optionally, visit the Shankaracharya Temple for panoramic views of Srinagar. Relax and enjoy a traditional Kashmiri dinner at the hotel. Overnight stay in Srinagar.",
+          "images": {
+            "img1": "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
+            "img2": "https://png.pngtree.com/background/20230805/original/pngtree-a-snowy-mountain-adorned-in-pahalgam-valley-located-in-kashmir-india-picture-image_4440125.jpg",
+            "img3": "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg",
+            "img4": "https://png.pngtree.com/background/20230401/original/pngtree-view-from-chitkul-village-in-sangla-valley-vector-picture-image_2229375.jpg"
+          }
         },
         {
           "day": "Day 4",
-          "description": "EXCURSION TO GULMARG. Breakfast at the hotel. Check out and travel to Gulmarg (approximately 2 hours, 50 km). Enjoy the Gulmarg Gondola ride (one of the highest cable cars in the world) for stunning views. Lunch at a local restaurant or hotel in Gulmarg. Explore the meadows, visit the St. Mary's Church, and enjoy nature walks or outdoor activities. Return to Srinagar. Dinner at the hotel or a local restaurant. Overnight stay in Srinagar."
+          "description": "EXCURSION TO GULMARG. Breakfast at the hotel. Check out and travel to Gulmarg (approximately 2 hours, 50 km). Enjoy the Gulmarg Gondola ride (one of the highest cable cars in the world) for stunning views. Lunch at a local restaurant or hotel in Gulmarg. Explore the meadows, visit the St. Mary's Church, and enjoy nature walks or outdoor activities. Return to Srinagar. Dinner at the hotel or a local restaurant. Overnight stay in Srinagar.",
+          "images": {
+            "img1": "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
+            "img2": "https://png.pngtree.com/background/20230805/original/pngtree-a-snowy-mountain-adorned-in-pahalgam-valley-located-in-kashmir-india-picture-image_4440125.jpg",
+            "img3": "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg",
+            "img4": "https://png.pngtree.com/background/20230401/original/pngtree-view-from-chitkul-village-in-sangla-valley-vector-picture-image_2229375.jpg"
+          }
         },
         {
           "day": "Day 5",
-          "description": "EXCURSION TO SONMARG. Breakfast at the hotel. Check out and travel to Sonmarg (approximately 3 hours, 80 km). Explore the beautiful Thajiwas Glacier (by pony or on foot). Lunch at a local restaurant or packed lunch. Enjoy the scenic beauty of Sonmarg and the surrounding landscapes. Return to Srinagar. Dinner at the hotel or a local restaurant. Overnight stay in Srinagar."
+          "description": "EXCURSION TO SONMARG. Breakfast at the hotel. Check out and travel to Sonmarg (approximately 3 hours, 80 km). Explore the beautiful Thajiwas Glacier (by pony or on foot). Lunch at a local restaurant or packed lunch. Enjoy the scenic beauty of Sonmarg and the surrounding landscapes. Return to Srinagar. Dinner at the hotel or a local restaurant. Overnight stay in Srinagar.",
+          "images": {
+            "img1": "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
+            "img2": "https://png.pngtree.com/background/20230805/original/pngtree-a-snowy-mountain-adorned-in-pahalgam-valley-located-in-kashmir-india-picture-image_4440125.jpg",
+            "img3": "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg",
+            "img4": "https://png.pngtree.com/background/20230401/original/pngtree-view-from-chitkul-village-in-sangla-valley-vector-picture-image_2229375.jpg"
+          }
         },
         {
           "day": "Day 6",
