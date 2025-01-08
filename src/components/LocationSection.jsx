@@ -39,7 +39,7 @@ const locations = [
 
 const LocationSection = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-r from-blue-100 via-cyan-100 to-emerald-100 py-24 px-6 lg:px-32 relative overflow-hidden">
+    <div className="z-10min-h-screen bg-gradient-to-r from-blue-100 via-cyan-100 to-emerald-100 py-24 px-6 lg:px-32 relative overflow-hidden">
       <div className="absolute inset-0 backdrop-blur-sm bg-white/20"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto">
