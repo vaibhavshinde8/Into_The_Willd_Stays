@@ -36,7 +36,7 @@ const Tours = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
-            className="text-teal-400 text-base sm:text-lg md:text-xl font-medium tracking-wider mb-4 sm:mb-6"
+            className="text-blue-600 text-base sm:text-lg md:text-xl font-bold tracking-wider mb-4 sm:mb-6"
           >
             EXPLORE THE WORLD
           </motion.span>
@@ -47,7 +47,7 @@ const Tours = () => {
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-4 sm:mb-6 lg:mb-8 leading-tight px-4"
           >
             {/* Unforgettable <br className="hidden sm:block"/> */}
-            <span className="bg-gradient-to-r from-teal-400 to-blue-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
               Tours
             </span>
           </motion.h1>

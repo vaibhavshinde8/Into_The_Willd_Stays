@@ -176,11 +176,11 @@ const Properties = () => {
           className="relative h-full max-w-7xl mx-auto px-4 flex flex-col items-center justify-center text-center"
         >
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
-            <span className="bg-gradient-to-r from-teal-600 to-teal-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
               Discover
-            </span>
             <br />
             Your Perfect Stay
+            </span>
           </h1>
           <p className="text-xl text-gray-200 max-w-2xl mb-8">
             Explore our handpicked collection of stunning properties in

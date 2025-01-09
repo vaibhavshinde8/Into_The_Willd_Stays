@@ -47,7 +47,7 @@ const AboutUs = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
-            className="text-teal-400 text-lg md:text-xl font-medium tracking-wider mb-4"
+            className="text-blue-600 font-bold text-lg md:text-xl tracking-wider mb-4"
           >
             WELCOME TO INTO THE WILD STAYS
           </motion.span>
@@ -58,7 +58,7 @@ const AboutUs = () => {
             className="text-5xl sm:text-6xl md:text-7xl font-bold text-white mb-6"
           >
             {/* Turning <br /> */}
-            <span className="bg-gradient-to-r from-teal-400 to-teal-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
               About Us
             </span>
           </motion.h1>
@@ -66,7 +66,7 @@ const AboutUs = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.2, duration: 0.8 }}
-            className="text-xl text-gray-200 max-w-2xl"
+            className="text-xl text-gray-200 max-w-2xl bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent"
           >
             Meet the passionate team behind your extraordinary experiences
           </motion.p>
@@ -84,7 +84,9 @@ const AboutUs = () => {
             className="space-y-8"
           >
             <div className="space-y-4">
-              <span className="text-teal-600 font-medium text-4xl">OUR STORY</span>
+              <span className="text-teal-600 font-medium text-4xl">
+                OUR STORY
+              </span>
               <h2 className="text-3xl lg:text-4xl font-bold text-[#0F2642]">
                 Creating Memories in Nature&apos;s Embrace
               </h2>
