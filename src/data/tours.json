@@ -189,19 +189,35 @@
       "itinerary": [
         {
           "day": "Day 1",
-          "description": ["Arrival, check-in, and exploring Mall Road."]
+          "description": ["Arrival, check-in, and exploring Mall Road."],
+          "images": {
+            "img1": "https://images.pexels.com/photos/2070307/pexels-photo-2070307.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "img2": "https://images.pexels.com/photos/15896015/pexels-photo-15896015/free-photo-of-laxmanjhula-ramjhula-rishikesh-uttarakhand.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          }
         },
         {
           "day": "Day 2",
-          "description": [" Visit to Kempty Falls and Gun Hill."]
+          "description": [" Visit to Kempty Falls and Gun Hill."],
+          "images": {
+            "img1": "https://images.pexels.com/photos/2214386/pexels-photo-2214386.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "img2": "https://images.pexels.com/photos/30139893/pexels-photo-30139893/free-photo-of-charming-mountain-village-in-spring-landscape.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          }
         },
         {
           "day": "Day 3",
-          "description": ["Trek to Lal Tibba and Camel's Back Road."]
+          "description": ["Trek to Lal Tibba and Camel's Back Road."],
+          "images": {
+            "img1": "https://images.pexels.com/photos/14504178/pexels-photo-14504178.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "img2": "https://images.pexels.com/photos/7750616/pexels-photo-7750616.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          }
         },
         {
           "day": "Day 4",
-          "description": ["Leisure day and departure."]
+          "description": ["Leisure day and departure."],
+          "images": {
+            "img1": "https://images.pexels.com/photos/9745701/pexels-photo-9745701.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "img2": "https://images.pexels.com/photos/11710908/pexels-photo-11710908.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          }
         }
       ],
       "inclusions": [
@@ -257,7 +273,13 @@
             "We’ll start for a overnight journey towards Rishikesh.",
             "We’ll take a midway stoppage for dinner.",
             "Pickup point is Noida, sector 62, metro station."
-          ]
+          ],
+          "images": {
+            "img1": "https://images.pexels.com/photos/257092/pexels-photo-257092.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "img2": "https://images.pexels.com/photos/5205768/pexels-photo-5205768.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "img3": "https://images.pexels.com/photos/15495250/pexels-photo-15495250/free-photo-of-man-talking-to-a-group-of-people.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "img4": "https://images.pexels.com/photos/14064751/pexels-photo-14064751.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          }
         },
         {
           "day": "Day 2 - Rishikesh to Sonprayag",
@@ -268,7 +290,13 @@
             "Reach Sonprayag in the evening.",
             "Room allotments will be done.",
             "Dinner will be served at hotel."
-          ]
+          ],
+          "images": {
+            "img1": "https://images.unsplash.com/photo-1656501097897-7dcec86f61eb?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "img2": "https://images.unsplash.com/photo-1606722581293-628fa217a6f7?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "img3": "https://images.unsplash.com/photo-1657215756064-a1cec8616e80?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "img4": "https://images.unsplash.com/photo-1676182259623-a5f4c8d0a8a4?q=80&w=868&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          }
         },
 
         {
@@ -279,7 +307,13 @@
             "After that, head out for Kedarnath Trek.",
             "Trek distance is 17kms, reach Kedarnath by evening.",
             "Dinner will be served at hotel."
-          ]
+          ],
+          "images": {
+            "img1": "https://images.pexels.com/photos/15031440/pexels-photo-15031440/free-photo-of-a-crowd-standing-in-front-of-the-kedarnath-temple-in-kedarnath-india-during-a-ceremony.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "img2": "https://images.pexels.com/photos/16152405/pexels-photo-16152405/free-photo-of-crowds-of-people-by-a-mountain-temple.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "img3": "https://images.pexels.com/photos/19010047/pexels-photo-19010047/free-photo-of-crowd-walking-on-street-with-tents-around-in-village-in-mountains.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "img4": "https://images.unsplash.com/photo-1724733613256-a1ed7936bb70?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          }
         },
         {
           "day": "Day 4 - Kedarnath to Guptkashi/Sonprayag",
@@ -289,7 +323,13 @@
             "After that, head out for trek down to Gaurikund.",
             "Trek distance is 17kms, reach Sonprayag hotel.",
             "Dinner and overnight stay at hotel."
-          ]
+          ],
+          "images": {
+            "img1": "https://www.holidify.com/images/bgImages/GUPTAKASHI.jpg",
+            "img2": "https://media.holidify.com/images/cmsuploads/compressed/1024px-Chaukhamba_peak2C_Garhwal_Himalayas2C_Uttarakhand_20241204011508.jpg",
+            "img3": "https://www.holidify.com/images/compressed/3951.jpg?v=1.1",
+            "img4": "https://www.holidify.com/images/compressed/dest_wiki_5438.jpg"
+          }
         },
         {
           "day": "Day 5 - Sonprayag to Delhi Via Rishikesh",
@@ -299,7 +339,11 @@
             "Board your vehicle and start your long day journey to Delhi via Rishikesh.",
             "You will reach Delhi by 9:30pm to 10:30pm.",
             "Trip ends with lots of happy memories."
-          ]
+          ],
+          "images": {
+            "img1": "https://images.pexels.com/photos/6776755/pexels-photo-6776755.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "img2": "https://images.pexels.com/photos/29547317/pexels-photo-29547317/free-photo-of-aerial-view-of-delhi-s-bustling-expressway.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          }
         }
       ],
       "inclusions": [
@@ -358,7 +402,13 @@
             "Welcome to Joshimath, an important pilgrimage destination in Uttarakhand.",
             "From here, your exciting trek to Kuari Pass will commence. Joshimath is a last big town in Chamoli district, you can avail cash from ATM from Joshimath, later we head to karchi village!",
             "Check into your homestay at Karchi and spend the day exploring the village at your own pace."
-          ]
+          ],
+          "images": {
+            "img1": "https://img.freepik.com/free-photo/forested-mountain-covered-snow-people-hiking-col-de-la-lombarde_181624-23191.jpg?t=st=1736412107~exp=1736415707~hmac=bdde8d4637d0eb6c70b0fd165d5de5ba2f97a28043f81983186a62639e0725fb&w=900",
+            "img2": "https://img.freepik.com/free-photo/snowy-rugged-white-mountains-with-hiking-travelers_181624-6293.jpg?t=st=1736412284~exp=1736415884~hmac=605a49679fa5728d8a5cddd7ea2690dd6c0dbba104ff9e99d62a7a8a231c597e&w=900",
+            "img3": "https://img.freepik.com/free-photo/beautiful-shot-hiker-with-red-travel-backpack-hiking-up-mountain-blue-sky_181624-23123.jpg?t=st=1736412304~exp=1736415904~hmac=ea5ee510f577a0dcb20190d0ef9aeb5f9e9d3b7c90ce9fa9e7a1e5cf637784bd&w=900",
+            "img4": "https://img.freepik.com/free-photo/horizontal-shot-group-people-hiking-mountains-covered-snow-cloudy-sky_181624-44954.jpg?t=st=1736412323~exp=1736415923~hmac=ca7b987a0d78e0e8c17f962958835e3a6ef98ae47ecdbc505c51e81c1bdb3310&w=900"
+          }
         },
         {
           "day": "Day 2 - Karchi to Gulling Top via Tugasi",
@@ -371,7 +421,13 @@
             "After checking out from your homestay, receive a briefing about the trail and set out on your first leg of the trek.",
             "Traverse the delightful TUGASI village, where you'll experience traditional architecture and local culture against the stunning backdrop of the Dhauladhar Range and other peaks.",
             "Once you reach Gulling Top, Camp overnight at Gulling Top."
-          ]
+          ],
+          "images": {
+            "img1": "https://img.freepik.com/free-photo/young-girl-with-sticks-forest_23-2147770432.jpg?t=st=1736412420~exp=1736416020~hmac=b59f0632e3dc1fea8029131aa6e82049667441e7eee3082b254cf23170b0da99&w=740",
+            "img2": "https://img.freepik.com/free-photo/people-holding-hands-as-sign-peace-with-mountains-background-winter_181624-30476.jpg?t=st=1736412480~exp=1736416080~hmac=4999d673f5cd567f60d5cb67320edfb3cf595d204ef27a28bb89f4e1d356df20&w=900",
+            "img3": "https://img.freepik.com/free-photo/snowy-road-south-tyrol-dolomites-italy_181624-36190.jpg?t=st=1736412502~exp=1736416102~hmac=6a92fe7625bc5e682407fcbef19476842562a69ec5b16c70528c41307e94df85&w=900",
+            "img4": "https://img.freepik.com/free-photo/shot-mountain-covered-snow-people-hiking-col-de-la-lombarde-isola-2000-france_181624-18113.jpg?t=st=1736412525~exp=1736416125~hmac=2b5cee8e3f13f345ba731dfb869f796b6096485030a245f7f0f37b084e2a7e37&w=900"
+          }
         },
         {
           "day": "Day 3 - Gulling Top to Khullara Top",
@@ -384,7 +440,13 @@
             "Along the way, enjoy panoramic vistas of the Pir Panjal Range, Shivalik Range, and other majestic Himalayan peaks.",
             "When you arrive at the picturesque Khullara Top",
             "Take a moment to appreciate the serene mountain atmosphere before setting up camp for a restful overnight stay."
-          ]
+          ],
+          "images": {
+            "img1": "https://img.freepik.com/free-photo/man-skiing-mountains-covered-with-snow-daytime_181624-4596.jpg?t=st=1736412547~exp=1736416147~hmac=9ce70ffb90487964a87f9ec2e4d1e26fd58ad0e3c3abca17a7d41d2f2438b177&w=900",
+            "img2": "https://img.freepik.com/free-photo/young-hipster-man-hiking-mountains-winter-vacation-traveling_285396-1956.jpg?t=st=1736412548~exp=1736416148~hmac=0c551ee40e81fa42176fde601fa3fe0fb1de8a5e96d299da002b498e44f481a4&w=900",
+            "img3": "https://img.freepik.com/free-photo/male-hiker-taking-photos-winter-alpine-mountain-snow-covered-hut_181624-23001.jpg?t=st=1736412574~exp=1736416174~hmac=03f165b049c5909f50e79e126ee51210a37d5e8964d89c490f178385e3d7c3d9&w=900",
+            "img4": "https://img.freepik.com/free-photo/group-people-hiking-mountains-covered-snow-beautiful-blue-sky_181624-4737.jpg?t=st=1736412578~exp=1736416178~hmac=5d18a5de0c96ba533883e6c9307ecd6e5e8aa85d0bb1c39e6687a4fefe65bf39&w=900"
+          }
         },
         {
           "day": "Day 4 - Trek from Khullara Top to Kuari Pass and Descend",
@@ -397,7 +459,13 @@
             "The ascent is steep, so be mindful of your footing and remember to stay hydrated.",
             "Upon reaching the summit, take in the awe-inspiring panoramic views, featuring Dronagiri, Chitrakantha, and other majestic peaks.",
             "Afterward, make your way down to Khullara Top to set up camp and enjoy a restful overnight stay."
-          ]
+          ],
+          "images": {
+            "img1": "https://img.freepik.com/free-photo/beautiful-shot-man-hiking-snowy-carpathian-mountains-romania_181624-15121.jpg?t=st=1736412584~exp=1736416184~hmac=ea944edff1d271a597fdb4c74b7e50942d8c0e8c3c7a6b51db6016da06628493&w=900",
+            "img2": "https://img.freepik.com/free-photo/way-alone-snow-camping-journey_1253-687.jpg?t=st=1736412623~exp=1736416223~hmac=bd7a8bf458c1a0eaf839c46bfd6241f667a855b667da2f3a8b1a11ee44e577b9&w=900",
+            "img3": "https://img.freepik.com/free-photo/climbers-top-snowy-mountain_155999-15.jpg?t=st=1736412632~exp=1736416232~hmac=f366ff0d48841e386d079e6401ab7cbcb9d1daf66f870d2e5a07f7c3f6184ef7&w=900",
+            "img4": "https://img.freepik.com/free-photo/way-fall-walk-active-guy_1253-689.jpg?t=st=1736412634~exp=1736416234~hmac=4436e0be81ba0d03d89a68cdfea3872533c4c7b76f66b94df1d8640cf01f6ac0&w=900"
+          }
         },
         {
           "day": "Day 5 - Downhill Trek from Khullara Top to Karchi",
@@ -410,7 +478,13 @@
             "Enjoy a hearty breakfast to energize yourself for the journey ahead.",
             "As you descend towards karchi Village, you'll traverse through lush Alpine and Mossy Oak forests.",
             "Once you arrive in the picturesque karchi Village,Upon arrival, settle into your homestay and unwind after a day of adventure."
-          ]
+          ],
+          "images": {
+            "img1": "https://img.freepik.com/free-photo/group-sled-dogs-skagway-alaska_181624-45005.jpg?t=st=1736412677~exp=1736416277~hmac=f0d0ca7dd511ba2fe2dc2da63c4ef78daa00f6e885412c9a54421d22b696f313&w=900",
+            "img2": "https://img.freepik.com/free-photo/hiker-with-backpack-is-climbing-mountain-range-admires-snow-capped-peak-epic-adventure-winter-wilderness_146671-15231.jpg?t=st=1736412690~exp=1736416290~hmac=e58996d2467b1905549ee08b5e191ed9b39713fd4d4d7974928f945046fece33&w=900",
+            "img3": "https://img.freepik.com/free-photo/back-experienced-friendly-hikers-with-bright-ski-costumes-colorful-hats_1268-19845.jpg?t=st=1736412695~exp=1736416295~hmac=9b39ee78dccc65de1b832dbfa9bcc86f2d960dfa92aeec9a77cdeeb9afc64ecd&w=900",
+            "img4": "https://img.freepik.com/free-photo/groups-hiking-tourists-trekking-snowy-white-rugged-mountains_181624-5950.jpg?t=st=1736412707~exp=1736416307~hmac=c373b8114dd93699ba60d5808fca87de551194fe5c57c89e39a463b74a7c2598&w=900"
+          }
         },
         {
           "day": "Day 6 - Trek Down to Karchi from Khullara Top",
@@ -420,7 +494,13 @@
             "Enjoy a hearty breakfast before starting your descent towards karchi Village.",
             "Along the way, you'll traverse through lush Alpine and Mossy oak forests before arriving at the picturesque Karchi Village.",
             "Check into your homestay and unwind after the day's adventures."
-          ]
+          ],
+          "images": {
+            "img1": "https://img.freepik.com/free-photo/valee-blanche-mont-blanc_181624-27220.jpg?t=st=1736412759~exp=1736416359~hmac=68ec9a2b01ca29dc96be15471236dda5f9f56fbe072db3d34fce65bf7e85c4ac&w=900",
+            "img2": "https://img.freepik.com/free-photo/person-snowy-valley-mountains_23-2147803939.jpg?t=st=1736412760~exp=1736416360~hmac=ad2b3ff208701a43e4ddd426e9f5d5eb046568c7dc9c84ed930e4b1334d8017d&w=900",
+            "img3": "https://img.freepik.com/free-photo/ski-resort-winter-tourism-mountains_114579-12104.jpg?t=st=1736412773~exp=1736416373~hmac=4263526a1f25cc545cec8160571c18c1c5c077c54c371570088ba34dc9fc7a11&w=900",
+            "img4": "https://img.freepik.com/free-photo/person-doing-yoga-cold-wintry-weather_23-2150163281.jpg?t=st=1736412793~exp=1736416393~hmac=78bca16534d9392ab6c8959d754c8c1b2674d409acb33ced3269d0ae000a5f6e&w=900"
+          }
         }
       ],
       "inclusions": [
