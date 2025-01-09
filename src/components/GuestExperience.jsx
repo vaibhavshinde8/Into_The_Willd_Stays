@@ -98,7 +98,7 @@ const GuestExperience = () => {
               <h2 className="text-4xl font-bold bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">
                 Welcome to Our Company
               </h2>
-              <p className="text-xl leading-relaxed text-gray-600">
+              <p className="text-lg leading-relaxed text-gray-600">
                 At <span className="font-bold bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">Into The Wild Stays</span> We offer more than just accommodations. We create memorable
                 escapes in nature&apos;s embrace. Nestled in serene, offbeat
                 locations, our boutique homestays and cottages provide the
@@ -111,7 +111,7 @@ const GuestExperience = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="text-xl leading-relaxed text-gray-600"
+              className="text-lg leading-relaxed text-gray-600"
             >
               Our philosophy revolves around crafting personalized experiences
               that connect guests with the beauty of the wilderness. With
@@ -124,10 +124,10 @@ const GuestExperience = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
-              className="text-xl leading-relaxed font-medium text-teal-600 italic"
+              className="text-lg leading-relaxed font-medium text-teal-600 italic"
             >
               Come, escape the chaos, and immerse yourself in the unforgettable
-              charm of Into the Wild Stays!
+              charm of <br /> <span className="font-bold bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">Into the Wild Stays!</span>
             </motion.p>
           </motion.div>
 
