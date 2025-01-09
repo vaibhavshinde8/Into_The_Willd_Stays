@@ -61,6 +61,7 @@ const Tours = () => {
           </motion.p>
         </motion.div>
       </div>
+      
 
       <div className="max-w-7xl mx-auto px-6 py-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
