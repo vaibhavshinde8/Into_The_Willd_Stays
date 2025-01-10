@@ -77,10 +77,11 @@ const ContactUs = () => {
           transition={{ duration: 0.8 }}
           className="relative h-full flex flex-col items-center justify-center text-center px-4"
         >
-          <h1 className="text-6xl md:text-7xl font-bold text-white mb-6">
-            Let's Connect
+          <h1 className="text-6xl md:text-7xl font-bold text-white mb-6 ">
+            <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">Let's Connect</span>
+           
           </h1>
-          <p className="text-xl text-gray-200 max-w-2xl">
+          <p className="text-xl bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent font-bold max-w-2xl ">
             We're here to help turn your travel dreams into reality
           </p>
         </motion.div>

@@ -81,7 +81,7 @@ const HomeHero = () => {
             transition={{ duration: 1.5 }}
           />
         ))}
-        <div className="absolute inset-0  bg-black bg-opacity-40"></div>
+        <div className="absolute inset-0  bg-black bg-opacity-60"></div>
       </div>
 
       {/* Content Container */}
@@ -95,7 +95,7 @@ const HomeHero = () => {
         >
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white mb-8 leading-tight tracking-tight">
             <motion.span
-              className="bg-gradient-to-r from-cyan-300 via-teal-300 to-emerald-300 bg-clip-text text-transparent inline-block"
+              className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent inline-block"
               animate={{
                 backgroundPosition: ["0%", "100%"],
               }}
@@ -110,7 +110,7 @@ const HomeHero = () => {
             <br />
             <span className="drop-shadow-2xl">STAYS</span>
           </h1>
-          <p className="text-lg md:text-2xl lg:text-3xl text-white/90 max-w-3xl mx-auto font-light leading-relaxed">
+          <p className="text-lg md:text-2xl lg:text-3xl text-white max-w-3xl mx-auto leading-relaxed">
             Embark on a journey of discovery with our curated travel
             experiences. Find your perfect escape, where every destination tells
             a story.

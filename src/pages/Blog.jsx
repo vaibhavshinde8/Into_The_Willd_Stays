@@ -43,8 +43,8 @@ const Blog = () => {
             transition={{ delay: 0.8, duration: 1 }}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-4 sm:mb-6 lg:mb-8 leading-tight"
           >
+            <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
             Our <br />
-            <span className="bg-gradient-to-r from-teal-400 to-teal-500 bg-clip-text text-transparent">
               Blogs
             </span>
           </motion.h1>
