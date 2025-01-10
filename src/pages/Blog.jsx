@@ -44,7 +44,7 @@ const Blog = () => {
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-4 sm:mb-6 lg:mb-8 leading-tight"
           >
             <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
-            Our Blogs
+              Our Blogs
             </span>
           </motion.h1>
           <motion.p
@@ -78,7 +78,9 @@ const Blog = () => {
                 />
                 <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full z-10 flex items-center gap-2 shadow-lg">
                   <CalendarDays className="h-4 w-4 text-[#0F2642]" />
-                  <span className="text-sm text-[#0F2642] font-medium">{blog.date}</span>
+                  <span className="text-sm text-[#0F2642] font-medium">
+                    {blog.date}
+                  </span>
                 </div>
               </div>
               <div className="p-6 space-y-3">

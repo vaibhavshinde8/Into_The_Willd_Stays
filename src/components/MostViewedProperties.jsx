@@ -1,20 +1,17 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import {
-  MdOutlineBedroomParent,
-  MdExplore,
-} from "react-icons/md";
+import { MdOutlineBedroomParent, MdExplore } from "react-icons/md";
 import { FaMapMarkerAlt, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { IoPeople } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useEffect } from "react";
 import { BASE_URL } from "../utils/baseurl";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 const MostViewedProperties = () => {
   const [selectedLocation, setSelectedLocation] = useState("All");
@@ -25,7 +22,9 @@ const MostViewedProperties = () => {
   useEffect(() => {
     const fetchProperties = async () => {
       try {
-        const response = await axios.get(`${BASE_URL}/properties/getProperties`);
+        const response = await axios.get(
+          `${BASE_URL}/properties/getProperties`
+        );
         setProperties(response.data.properties);
       } catch (error) {
         // Handle error silently
@@ -39,7 +38,9 @@ const MostViewedProperties = () => {
   const filteredProperties =
     selectedLocation === "All"
       ? properties
-      : properties?.filter((property) => property?.location === selectedLocation);
+      : properties?.filter(
+          (property) => property?.location === selectedLocation
+        );
 
   const ShimmerCard = () => (
     <div className="bg-gradient-to-br from-blue-100 to-cyan-100 shadow-lg animate-pulse rounded-2xl overflow-hidden">

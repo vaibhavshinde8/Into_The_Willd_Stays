@@ -60,11 +60,9 @@ const ToursDetail = () => {
     };
   }, []);
 
-
   if (!tour) {
     return <div>Tour not found</div>;
   }
-
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-teal-50/30 to-blue-50/30">
@@ -154,7 +152,9 @@ const ToursDetail = () => {
             className="w-full h-64 sm:h-full object-cover"
           />
           <div className="absolute bottom-4 right-2 justify-center bg-black bg-opacity-25 rounded-lg transition-opacity duration-300 hover:bg-opacity-50">
-            <span className="text-white text-sm sm:text-lg font-semibold">Explore Beauty</span>
+            <span className="text-white text-sm sm:text-lg font-semibold">
+              Explore Beauty
+            </span>
           </div>
         </div>
 
@@ -167,7 +167,9 @@ const ToursDetail = () => {
               className="w-full h-full object-cover"
             />
             <div className="absolute bottom-4 right-2 justify-center bg-black bg-opacity-25 transition-opacity duration-300 hover:bg-opacity-50">
-              <span className="text-white text-xs sm:text-sm font-medium">Destinations</span>
+              <span className="text-white text-xs sm:text-sm font-medium">
+                Destinations
+              </span>
             </div>
           </div>
 
@@ -178,7 +180,9 @@ const ToursDetail = () => {
               className="w-full h-full object-cover"
             />
             <div className="absolute bottom-4 right-2 justify-center bg-black bg-opacity-25 transition-opacity duration-300 hover:bg-opacity-50">
-              <span className="text-white text-xs sm:text-sm font-medium">Stays</span>
+              <span className="text-white text-xs sm:text-sm font-medium">
+                Stays
+              </span>
             </div>
           </div>
 
@@ -189,7 +193,9 @@ const ToursDetail = () => {
               className="w-full h-full object-cover"
             />
             <div className="absolute bottom-4 right-2 justify-center bg-black bg-opacity-25 transition-opacity duration-300 hover:bg-opacity-50">
-              <span className="text-white text-xs sm:text-sm font-medium">Activity</span>
+              <span className="text-white text-xs sm:text-sm font-medium">
+                Activity
+              </span>
             </div>
           </div>
 
@@ -199,13 +205,17 @@ const ToursDetail = () => {
               alt="View All Images"
               className="w-full h-full object-cover"
             />
-            <div className="absolute bottom-4 right-2 justify-center bg-black bg-opacity-25 transition-opacity duration-300 hover:bg-opacity-50" id="specific-tag-start">
-              <span className="text-white text-xs sm:text-sm font-medium">View All Images</span>
+            <div
+              className="absolute bottom-4 right-2 justify-center bg-black bg-opacity-25 transition-opacity duration-300 hover:bg-opacity-50"
+              id="specific-tag-start"
+            >
+              <span className="text-white text-xs sm:text-sm font-medium">
+                View All Images
+              </span>
             </div>
           </div>
         </div>
       </div>
-
 
       {/* Connect to Expert Button */}
       <div className="bg-white/80 backdrop-blur-sm py-8">
@@ -281,8 +291,6 @@ const ToursDetail = () => {
   </div>
 </div>
 
-
-
       {/* Content Section */}
       <div className="lg:max-w-8xl mx-auto lg:px-24 py-16  ">
         <div className="space-y-16">
@@ -300,87 +308,86 @@ const ToursDetail = () => {
                 </h2>
               ))}
             </div>
-            {
-              showForm && (
-                <div className="relative flex">
-                  {/* Other content */}
-                  <div className="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md ml-10 fixed top-40">
-                    {/* Header Section */}
-                    <h2 className="text-lg font-semibold text-gray-800">
-                      {tour.location}
-                    </h2>
-                    <div className="flex items-center space-x-2 mt-2">
-                      <span className="text-2xl font-bold text-gray-800">INR {tour.price}</span>
-                      <span className="line-through text-gray-500 text-sm">INR 15,998</span>
-                      <span className="bg-green-100 text-green-600 text-xs font-medium px-2 py-1 rounded">
-                        SAVE INR 1,999
-                      </span>
-                    </div>
+            {showForm && (
+              <div className="relative hidden lg:flex">
+                {/* Other content */}
+                <div className="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md ml-10 fixed top-40">
+                  {/* Header Section */}
+                  <h2 className="text-lg font-semibold text-gray-800">
+                    {tour.location}
+                  </h2>
+                  <div className="flex items-center space-x-2 mt-2">
+                    <span className="text-2xl font-bold text-gray-800">
+                      INR {tour.price}
+                    </span>
+                    <span className="line-through text-gray-500 text-sm">
+                      INR 15,998
+                    </span>
+                    <span className="bg-green-100 text-green-600 text-xs font-medium px-2 py-1 rounded">
+                      SAVE INR 1,999
+                    </span>
+                  </div>
 
-                    {/* Form */}
-                    <form className="space-y-4 mt-6">
-                      <div>
-                        <input
-                          type="text"
-                          placeholder="Full Name*"
-                          className="w-full border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
-                        />
-                      </div>
-                      <div>
-                        <input
-                          type="email"
-                          placeholder="Email*"
-                          className="w-full border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
-                        />
-                      </div>
-                      <div className="flex space-x-2">
-                        <select
-                          className="w-1/4 border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
-                        >
-                          <option value="+91">+91</option>
-                        </select>
-                        <input
-                          type="text"
-                          placeholder="Your Phone*"
-                          className="w-3/4 border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
-                        />
-                      </div>
-                      <div className="flex space-x-2">
-                        <input
-                          type="date"
-                          placeholder="Travel Date*"
-                          className="w-1/2 border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
-                        />
-                        <input
-                          type="number"
-                          placeholder="Traveller Count*"
-                          className="w-1/2 border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
-                        />
-                      </div>
-                      <div>
-                        <textarea
-                          placeholder="Message..."
-                          className="w-full border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
-                          rows="3"
-                        ></textarea>
-                      </div>
-                      <button
-                        type="submit"
-                        className="w-full group bg-gradient-to-r from-teal-500 via-teal-400 to-emerald-400 
+                  {/* Form */}
+                  <form className="space-y-4 mt-6">
+                    <div>
+                      <input
+                        type="text"
+                        placeholder="Full Name*"
+                        className="w-full border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
+                      />
+                    </div>
+                    <div>
+                      <input
+                        type="email"
+                        placeholder="Email*"
+                        className="w-full border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
+                      />
+                    </div>
+                    <div className="flex space-x-2">
+                      <select className="w-1/4 border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500">
+                        <option value="+91">+91</option>
+                      </select>
+                      <input
+                        type="text"
+                        placeholder="Your Phone*"
+                        className="w-3/4 border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
+                      />
+                    </div>
+                    <div className="flex space-x-2">
+                      <input
+                        type="date"
+                        placeholder="Travel Date*"
+                        className="w-1/2 border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
+                      />
+                      <input
+                        type="number"
+                        placeholder="Traveller Count*"
+                        className="w-1/2 border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
+                      />
+                    </div>
+                    <div>
+                      <textarea
+                        placeholder="Message..."
+                        className="w-full border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
+                        rows="3"
+                      ></textarea>
+                    </div>
+                    <button
+                      type="submit"
+                      className="w-full group bg-gradient-to-r from-teal-500 via-teal-400 to-emerald-400 
              text-white px-4 py-2 rounded-2xl text-lg font-medium
              shadow-[0_10px_20px_rgba(0,0,0,0.1)] 
              hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)]
              transition-all duration-500 overflow-hidden
              border border-white/20 backdrop-blur-sm"
-                      >
-                        Send Enquiry
-                      </button>
-                    </form>
-                  </div>
+                    >
+                      Send Enquiry
+                    </button>
+                  </form>
                 </div>
-              )
-            }
-
+              </div>
+            )}
           </div>
 
           <section>
@@ -506,7 +513,6 @@ const ToursDetail = () => {
                             pagination={{
                               type: "fraction",
                               el: `.swiper-pagination-${dayIndex}`,
-
                             }}
                             autoplay={{
                               delay: 3000,
@@ -520,15 +526,19 @@ const ToursDetail = () => {
                             ]}
                             className="mySwiper h-[150px] sm:h-[250px] rounded-lg"
                           >
-                            {Object.values(day.images).map((image, imgIndex) => (
-                              <SwiperSlide key={imgIndex}>
-                                <img
-                                  className="w-full h-full object-cover rounded-lg transition-transform duration-300 hover:scale-105"
-                                  src={image}
-                                  alt={`Day ${dayIndex + 1} Image ${imgIndex + 1}`}
-                                />
-                              </SwiperSlide>
-                            ))}
+                            {Object.values(day.images).map(
+                              (image, imgIndex) => (
+                                <SwiperSlide key={imgIndex}>
+                                  <img
+                                    className="w-full h-full object-cover rounded-lg transition-transform duration-300 hover:scale-105"
+                                    src={image}
+                                    alt={`Day ${dayIndex + 1} Image ${
+                                      imgIndex + 1
+                                    }`}
+                                  />
+                                </SwiperSlide>
+                              )
+                            )}
                             <div
                               className={`swiper-button-next swiper-button-next-${dayIndex}`}
                             ></div>
@@ -548,20 +558,15 @@ const ToursDetail = () => {
             </div>
           </section>
 
-
-
           <img
             src="https://media1.thrillophilia.com/end_of_trip_desktop.png"
             alt="End of Trip"
-            className="w-full h-auto"
+            className="w-full h-auto object-cover"
             id="specific-tag"
           />
 
-
-
-
           {/* Inclusions & Exclusions */}
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid md:grid-cols-2 gap-12 mx-2">
             {/* Inclusions Section */}
             <section>
               <h2 className="text-3xl font-bold text-[#0F2642] mb-8">
@@ -635,7 +640,6 @@ const ToursDetail = () => {
             </section>
           </div>
 
-
           {/* Connect to Expert Button */}
           {/* <section className="text-center">
             <motion.button
@@ -651,8 +655,7 @@ const ToursDetail = () => {
 
           {/* Contact Methods */}
 
-
-          <section>
+          <section className="mx-2">
             <h2 className="text-3xl font-bold text-[#0F2642] mb-8">
               Contact Methods
             </h2>
@@ -690,7 +693,7 @@ const ToursDetail = () => {
           </section>
 
           {/* Rules & Policy */}
-          <section>
+          <section className="mx-2">
             <h2 className="text-3xl font-bold text-[#0F2642] mb-8">
               Rules & Policy
             </h2>

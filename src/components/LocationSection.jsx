@@ -56,7 +56,8 @@ const LocationSection = () => {
             <span className="text-gray-800">Destinations</span>
           </h1>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            Discover extraordinary places that promise unforgettable experiences and breathtaking landscapes
+            Discover extraordinary places that promise unforgettable experiences
+            and breathtaking landscapes
           </p>
         </motion.div>
 
@@ -88,9 +89,11 @@ const LocationSection = () => {
                   </div>
                 </div>
 
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-64 p-4 bg-white/95  rounded-2xl 
+                <div
+                  className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-64 p-4 bg-white/95  rounded-2xl 
                   shadow-2xl opacity-0 group-hover:opacity-100 group-hover:-translate-y-16 transition-all duration-500 pointer-events-none
-                  border border-white/50">
+                  border border-white/50"
+                >
                   <div className="flex justify-between items-center mb-4">
                     <h2 className="text-2xl font-bold text-gray-800">
                       {location.name}
@@ -108,7 +111,9 @@ const LocationSection = () => {
                     </div>
                     <div className="flex items-center space-x-3">
                       <FaCompass className="text-cyan-700 text-lg" />
-                      <span className="font-medium">{location.temperature}</span>
+                      <span className="font-medium">
+                        {location.temperature}
+                      </span>
                     </div>
                   </div>
                 </div>
