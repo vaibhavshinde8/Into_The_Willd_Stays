@@ -321,7 +321,7 @@ const ExploreMoreITW = () => {
             </div>
           </div>
 
-          <div className="w-full flex  sticky top-44 sm:top-28 z-40 gap-2 sm:gap-8 py-4 mb-4">
+          <div className="w-full flex sticky top-44 sm:top-28 z-40 gap-2 sm:gap-8 py-4 mb-4">
             {buttons.map((button) => (
               <a
                 key={button.id}
