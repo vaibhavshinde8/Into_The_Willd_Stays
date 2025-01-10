@@ -355,6 +355,7 @@ export default function Navbar() {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
   const [isPropertyModalOpen, setIsPropertyModalOpen] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -458,12 +459,55 @@ export default function Navbar() {
             >
               Properties
             </Link>
+            <div
+        className="relative group"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
             <Link
               to="/tours"
               className="text-gray-100 hover:text-[#ffffff] px-3 py-2 text-lg font-semibold transition duration-300"
             >
               Tours
             </Link>
+            {isHovered && (
+          <div className="absolute  top-full left-0 mt-1 bg-gray-700 text-white rounded-md shadow-lg">
+            <ul className="py-2">
+              <li>
+                <Link
+                  to="#"
+                  className="block px-4 py-2 hover:bg-gray-600"
+                >
+                  Kedarnath
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/tours/delhi"
+                  className="block px-4 py-2 hover:bg-gray-600"
+                >
+                  Delhi
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="#"
+                  className="block px-4 py-2 hover:bg-gray-600"
+                >
+                  Nagpur
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="#"
+                  className="block px-4 py-2 hover:bg-gray-600"
+                >
+                  Shirdi
+                </Link>
+              </li>
+            </ul>
+          </div>
+        )}</div>
             <Link
               to="/events"
               className="text-gray-100 hover:text-[#ffffff] px-3 py-2 text-lg font-semibold transition duration-300"
