@@ -2,10 +2,11 @@ import { useState, useEffect } from "react";
 import { FaArrowAltCircleDown, FaArrowAltCircleUp, FaMapMarkerAlt, FaBed,  FaRupeeSign, FaQuestionCircle,  FaTimesCircle, FaHome, FaUsers, FaUserFriends } from "react-icons/fa";
 import { IoMdSunny } from "react-icons/io";
 import { FcRules } from "react-icons/fc";
-
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import { motion, AnimatePresence } from "framer-motion";
 import BookingButton from "./BookingButton";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import { BASE_URL } from "../utils/baseurl";
 
@@ -16,14 +17,32 @@ const ExploreMoreITW = () => {
   const [openIndex, setOpenIndex] = useState(null);
   const [property, setProperty] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [activeButton, setActiveButton] = useState(null); 
+  const [selectedCheckInDate, setSelectedCheckInDate] = useState(new Date("2025-01-10"));
+  const [selectedCheckOutDate, setSelectedCheckOutDate] = useState(new Date("2025-01-10"));
+  const [adults, setAdults] = useState(1);
+  const [children, setChildren] = useState(0);
   const { id } = useParams();
 
+  const buttons = [
+    { id: "amenities", label: "Amenities" },
+    { id: "location", label: "Location" },
+    { id: "policies", label: "Policies" },
+    { id: "faqs", label: "FAQ" },
+  ];
+
+
+  const guestSummary = `${adults} Adult${adults > 1 ? "s" : ""} and ${children} Child${children > 1 ? "ren" : ""}`;
   useEffect(() => {
     const fetchProperty = async () => {
       try {
         const res = await axios.get(
           `${BASE_URL}/properties/getPropertyById/${id}`
         );
+
+        
+        console.log(res.data);
+        
         setProperty(res.data.property);
       } finally {
         setLoading(false);
@@ -77,7 +96,7 @@ const ExploreMoreITW = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="min-h-screen bg-blue-100/50 px-4 sm:px-8 lg:px-32 py-44"
+      className="min-h-screen bg-blue-100/50 px-4 sm:px-8 lg:px-14 py-44 scroll-smooth"
     >
       {/* Main Image Gallery */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
@@ -124,75 +143,168 @@ const ExploreMoreITW = () => {
             </div>
 
             <div className="lg:hidden mb-8 w-full">
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  type: "spring",
-                  stiffness: 100,
-                  damping: 15,
-                }}
-                className="bg-white border border-gray-100 rounded-2xl 
-                    max-w-md mx-auto 
-                    p-6 space-y-6 
-                    shadow-xl ring-1 ring-gray-100"
+            <motion.div
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{
+        type: "spring",
+        stiffness: 100,
+        damping: 15,
+      }}
+      className="bg-white  h-[auto] border sticky top-28 border-gray-100 rounded-2xl 
+                w-full max-w-md mx-auto 
+                p-6 space-y-6 
+                shadow-xl ring-1 ring-gray-100"
+    >
+      {/* Price and Booking Button Row */}
+      <div className="flex justify-between items-center">
+        {/* Price Header */}
+        <div className="text-center">
+          <div className="flex justify-center items-center gap-1">
+            <span className="text-3xl font-bold text-neutral-800">From</span>
+            <FaRupeeSign className="text-neutral-600 text-2xl" />
+            <span className="text-3xl font-bold text-neutral-800">{property.price}</span><b className="text-gray-400 text-sm">/Night</b>
+          </div>
+          {/* <p className="text-neutral-500 text-sm mt-1">per night</p> */}
+        </div>
+
+       
+      </div>
+
+      {/* Booking Details */}
+      <div className="space-y-4">
+       <div className="flex gap-4">
+       <motion.div
+          initial={{ opacity: 0, x: -10 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ type: "spring", stiffness: 100, damping: 15 }}
+          className="date_card"
+        >
+          <h3 className="text-lg font-semibold">Check In</h3>
+          <DatePicker
+        selected={selectedCheckInDate}
+        onChange={(date) => setSelectedCheckInDate(date)}
+        dateFormat="dd MMM yyyy"
+        className="hidden1 border rounded p-2 w-full text-[#112641] font-semibold"
+      />
+        </motion.div>
+
+        {/* Check-Out */}
+        <motion.div
+          initial={{ opacity: 0, x: 10 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ type: "spring", stiffness: 100, damping: 15 }}
+          className="date_card"
+        >
+          <h3 className="text-lg font-semibold">Check Out</h3>
+          <DatePicker
+        selected={selectedCheckOutDate}
+        onChange={(date) => setSelectedCheckOutDate(date)}
+        dateFormat="dd MMM yyyy"
+        className="hidden1 border rounded p-2 w-full text-[#112641] font-semibold"
+      />
+        </motion.div>
+       </div>
+       
+
+        {/* Guests */}
+        <motion.div
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ type: "spring", stiffness: 100, damping: 15 }}
+      className="date_card"
+    >
+      <h3 className="text-lg font-semibold">Guest</h3>
+      <input
+        type="text"
+        placeholder="Guest"
+        value={guestSummary}
+        className="border rounded p-2 w-full text-[#112641] font-semibold"
+        readOnly
+      />
+      <div className="bg-white shadow-lg mt-2 p-4 rounded">
+        <ul>
+          {/* Adults Section */}
+          <li className="flex items-center justify-between mb-4">
+            <div>
+              <p className="font-semibold mb-0">Adults</p>
+              <p className="text-sm mb-0">12+</p>
+            </div>
+            <div className="quantity-box flex items-center gap-2">
+              <button
+                className="border  px-3 py-1 rounded"
+                onClick={() => setAdults((prev) => Math.max(1, prev - 1))} // Minimum 1 adult
               >
-                {/* Price and Booking Button Row */}
-                <div className="flex justify-between items-center">
-                  {/* Price Header */}
-                  <div className="text-center">
-                    <div className="flex justify-center items-center gap-1">
-                      <FaRupeeSign className="text-neutral-600 text-2xl" />
-                      <span className="text-4xl font-bold text-neutral-800">
-                        {property?.price}
-                      </span>
-                    </div>
-                    <p className="text-neutral-500 text-sm mt-1">per night</p>
-                  </div>
+                -
+              </button>
+              <span>{adults}</span>
+              <button
+                className="border px-3 py-1 rounded"
+                onClick={() => setAdults((prev) => prev + 1)}
+              >
+                +
+              </button>
+            </div>
+          </li>
 
-                  {/* Booking Button */}
-                  <div>
-                    <BookingButton
-                      property={property}
-                      className="py-3 bg-neutral-900 text-white 
-                         rounded-xl hover:bg-neutral-700 
-                         transition-colors duration-300 
-                         font-medium tracking-wide"
-                    />
-                  </div>
-                </div>
-
-                {/* Booking Details */}
-                <div className="space-y-3 text-sm text-neutral-600">
-                  {[
-                    {
-                      text: "20% token amount required for booking",
-                      color: "text-green-600",
-                    },
-                    {
-                      text: "Balance payment at check-in",
-                      color: "text-neutral-600",
-                    },
-                    {
-                      text: "Token amount non-refundable on cancellation",
-                      color: "text-red-600",
-                    },
-                  ]?.map((item, index) => (
-                    <div
-                      key={index}
-                      className="flex items-center gap-3 
-                         border-l-2 border-neutral-200 
-                         pl-3 py-1 hover:border-neutral-400 
-                         transition-all duration-300"
-                    >
-                      <span className={`text-sm ${item.color}`}>•</span>
-                      <p className="text-neutral-700">{item.text}</p>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
+          {/* Children Section */}
+          <li className="flex items-center justify-between">
+            <div>
+              <p className="font-semibold mb-0">Children</p>
+              <p className="text-sm mb-0">6-11</p>
+            </div>
+            <div className="quantity-box flex items-center gap-2">
+              <button
+                className="border px-3 py-1 rounded"
+                onClick={() => setChildren((prev) => Math.max(0, prev - 1))} // Minimum 0 children
+              >
+                -
+              </button>
+              <span>{children}</span>
+              <button
+                className="border px-3 py-1 rounded"
+                onClick={() => setChildren((prev) => prev + 1)}
+              >
+                +
+              </button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </motion.div>
+      </div>
+       {/* Booking Button */}
+       <div>
+          <button
+            type="button"
+            className="w-full py-3 bg-[#112641] text-white 
+                       rounded-xl hover:bg-white hover:text-[#112641] hover:border-[#112641] hover:border
+                       transition-colors duration-300 
+                       font-medium tracking-wide"
+          >
+            Check Availability
+          </button>
+        </div>
+    </motion.div>
             </div>
           </div>
+
+          <div className="w-full flex sticky top-44 sm:top-28 z-40 gap-2 sm:gap-8 py-4 mb-4">
+      {buttons.map((button) => (
+        <a
+          key={button.id}
+          href={`#${button.id}`}
+          onClick={() => setActiveButton(button.id)}
+          className={`py-2 rounded font-semibold  flex-auto drop-shadow-lg flex items-center justify-center px-1 sm:px-4 transition duration-300 ${
+            activeButton === button.id
+              ? "bg-[#163257] text-white"
+              : "bg-white text-gray-600"
+          }`}
+        >
+          {button.label}
+        </a>
+      ))}
+    </div>
 
           {/* Property Details Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
@@ -256,74 +368,150 @@ const ExploreMoreITW = () => {
         </div>
 
         {/* Right Column - Booking Card (Desktop) */}
-        <div className="hidden lg:block lg:col-span-1">
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              type: "spring",
-              stiffness: 100,
-              damping: 15,
-            }}
-            className="bg-white border border-gray-100 rounded-2xl 
-                    w-full max-w-md mx-auto 
-                    p-6 space-y-6 
-                    shadow-xl ring-1 ring-gray-100"
+        <div className="hidden lg:block  lg:col-span-1">
+        <motion.div
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{
+        type: "spring",
+        stiffness: 100,
+        damping: 15,
+      }}
+      className="bg-white  h-[auto] border sticky top-28 border-gray-100 rounded-2xl 
+                w-full max-w-md mx-auto 
+                p-6 space-y-6 
+                shadow-xl ring-1 ring-gray-100"
+    >
+      {/* Price and Booking Button Row */}
+      <div className="flex justify-between items-center">
+        {/* Price Header */}
+        <div className="text-center">
+          <div className="flex justify-center items-center gap-1">
+            <span className="text-3xl font-bold text-neutral-800">From</span>
+            <FaRupeeSign className="text-neutral-600 text-2xl" />
+            <span className="text-3xl font-bold text-neutral-800">{property.price}</span><b className="text-gray-400 text-sm">/Night</b>
+          </div>
+          {/* <p className="text-neutral-500 text-sm mt-1">per night</p> */}
+        </div>
+
+       
+      </div>
+
+      {/* Booking Details */}
+      <div className="space-y-4">
+       <div className="flex gap-4">
+       <motion.div
+          initial={{ opacity: 0, x: -10 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ type: "spring", stiffness: 100, damping: 15 }}
+          className="date_card"
+        >
+          <h3 className="text-lg font-semibold">Check In</h3>
+          <DatePicker
+        selected={selectedCheckInDate}
+        onChange={(date) => setSelectedCheckInDate(date)}
+        dateFormat="dd MMM yyyy"
+        className="hidden1 border rounded p-2 w-full text-[#112641] font-semibold"
+      />
+        </motion.div>
+
+        {/* Check-Out */}
+        <motion.div
+          initial={{ opacity: 0, x: 10 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ type: "spring", stiffness: 100, damping: 15 }}
+          className="date_card"
+        >
+          <h3 className="text-lg font-semibold">Check Out</h3>
+          <DatePicker
+        selected={selectedCheckOutDate}
+        onChange={(date) => setSelectedCheckOutDate(date)}
+        dateFormat="dd MMM yyyy"
+        className="hidden1 border rounded p-2 w-full text-[#112641] font-semibold"
+      />
+        </motion.div>
+       </div>
+       
+
+        {/* Guests */}
+        <motion.div
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ type: "spring", stiffness: 100, damping: 15 }}
+      className="date_card"
+    >
+      <h3 className="text-lg font-semibold">Guest</h3>
+      <input
+        type="text"
+        placeholder="Guest"
+        value={guestSummary}
+        className="border rounded p-2 w-full text-[#112641] font-semibold"
+        readOnly
+      />
+      <div className="bg-white shadow-lg mt-2 p-4 rounded">
+        <ul>
+          {/* Adults Section */}
+          <li className="flex items-center justify-between mb-4">
+            <div>
+              <p className="font-semibold mb-0">Adults</p>
+              <p className="text-sm mb-0">12+</p>
+            </div>
+            <div className="quantity-box flex items-center gap-2">
+              <button
+                className="border  px-3 py-1 rounded"
+                onClick={() => setAdults((prev) => Math.max(1, prev - 1))} // Minimum 1 adult
+              >
+                -
+              </button>
+              <span>{adults}</span>
+              <button
+                className="border px-3 py-1 rounded"
+                onClick={() => setAdults((prev) => prev + 1)}
+              >
+                +
+              </button>
+            </div>
+          </li>
+
+          {/* Children Section */}
+          <li className="flex items-center justify-between">
+            <div>
+              <p className="font-semibold mb-0">Children</p>
+              <p className="text-sm mb-0">6-11</p>
+            </div>
+            <div className="quantity-box flex items-center gap-2">
+              <button
+                className="border px-3 py-1 rounded"
+                onClick={() => setChildren((prev) => Math.max(0, prev - 1))} // Minimum 0 children
+              >
+                -
+              </button>
+              <span>{children}</span>
+              <button
+                className="border px-3 py-1 rounded"
+                onClick={() => setChildren((prev) => prev + 1)}
+              >
+                +
+              </button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </motion.div>
+      </div>
+       {/* Booking Button */}
+       <div>
+          <button
+            type="button"
+            className="w-full py-3 bg-[#112641] text-white 
+                       rounded-xl hover:bg-white hover:text-[#112641] hover:border-[#112641] hover:border
+                       transition-colors duration-300 
+                       font-medium tracking-wide"
           >
-            {/* Price and Booking Button Row */}
-            <div className="flex justify-between items-center">
-              {/* Price Header */}
-              <div className="text-center">
-                <div className="flex justify-center items-center gap-1">
-                  <FaRupeeSign className="text-neutral-600 text-2xl" />
-                  <span className="text-4xl font-bold text-neutral-800">
-                    {property?.price}
-                  </span>
-                </div>
-                <p className="text-neutral-500 text-sm mt-1">per night</p>
-              </div>
-
-              {/* Booking Button */}
-              <div>
-                <BookingButton
-                  property={property}
-                  className="w-full py-3 bg-neutral-900 text-white 
-                         rounded-xl hover:bg-neutral-700 
-                         transition-colors duration-300 
-                         font-medium tracking-wide"
-                />
-              </div>
-            </div>
-
-            {/* Booking Details */}
-            <div className="space-y-3 text-sm text-neutral-600">
-              {[
-                {
-                  text: "20% token amount required for booking",
-                  color: "text-green-600",
-                },
-                {
-                  text: "Balance payment at check-in",
-                  color: "text-neutral-600",
-                },
-                {
-                  text: "Token amount non-refundable on cancellation",
-                  color: "text-red-600",
-                },
-              ]?.map((item, index) => (
-                <div
-                  key={index}
-                  className="flex items-center gap-3 
-                         border-l-2 border-neutral-200 
-                         pl-3 py-1 hover:border-neutral-400 
-                         transition-all duration-300"
-                >
-                  <span className={`text-sm ${item.color}`}>•</span>
-                  <p className="text-neutral-700">{item.text}</p>
-                </div>
-              ))}
-            </div>
-          </motion.div>
+            Check Availability
+          </button>
+        </div>
+    </motion.div>
         </div>
       </div>
 

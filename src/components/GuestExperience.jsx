@@ -2,9 +2,10 @@ import { useEffect, useRef, useState } from "react";
 import { Play, Pause, ChevronRight, ChevronLeft } from "lucide-react";
 import { motion } from "framer-motion";
 
-import guestExp1 from "../assets/Video-14~2.mp4";
-import guestExp2 from "../assets/guest-exp.mp4";
-import guestExp3 from "../assets/Video-822~2.mp4";
+import guestExp1 from "../assets/guest4.mp4";
+import guestExp2 from "../assets/Video-14~2.mp4";
+import guestExp3 from "../assets/guest-exp.mp4";
+import guestExp4 from "../assets/Video-822~2.mp4";
 
 const GuestExperience = () => {
   const videoRefs = useRef([]);
@@ -16,6 +17,7 @@ const GuestExperience = () => {
     { src: guestExp1, title: "Wilderness Retreat" },
     { src: guestExp3, title: "Serene Landscapes" },
     { src: guestExp2, title: "Adventure Moments" },
+    { src: guestExp4, title: "Into The Wilds Stays" },
   ];
 
   const handleTimeUpdate = (e) => {
@@ -69,7 +71,7 @@ const GuestExperience = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-r from-blue-100 via-cyan-100 to-emerald-100 py-24 relative overflow-hidden">
-      <div className="max-w-[1400px] mx-auto px-6">
+      <div className=" mx-auto px-12">
         <motion.h1
           initial={{ opacity: 0, y: -50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -81,13 +83,13 @@ const GuestExperience = () => {
           </span>
         </motion.h1>
 
-        <div className="grid lg:grid-cols-12 gap-2 items-center">
+        <div className="grid lg:grid-cols-12 gap-6 items-center">
           {/* Content Section */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="lg:col-span-7 space-y-2"
+            className="lg:col-span-7 space-y-2 border-2 border-cyan-400 rounded-2xl my-6 mx-10 p-8 shadow-xl hover:shadow-2xl"
           >
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -98,8 +100,12 @@ const GuestExperience = () => {
               <h2 className="text-4xl font-bold bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">
                 Welcome to Our Company
               </h2>
-              <p className="text-lg leading-relaxed text-gray-600">
-                At <span className="font-bold bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">Into The Wild Stays</span> We offer more than just accommodations. We create memorable
+              <p className="text-[15px] leading-relaxed text-gray-600">
+                At{" "}
+                <span className="font-bold bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">
+                  Into The Wild Stays
+                </span>{" "}
+                We offer more than just accommodations. We create memorable
                 escapes in nature&apos;s embrace. Nestled in serene, offbeat
                 locations, our boutique homestays and cottages provide the
                 perfect blend of comfort, tranquility, and adventure.
@@ -111,7 +117,7 @@ const GuestExperience = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="text-lg leading-relaxed text-gray-600"
+              className="text-[15px] leading-relaxed text-gray-600"
             >
               Our philosophy revolves around crafting personalized experiences
               that connect guests with the beauty of the wilderness. With
@@ -127,7 +133,10 @@ const GuestExperience = () => {
               className="text-lg leading-relaxed font-medium text-teal-600 italic"
             >
               Come, escape the chaos, and immerse yourself in the unforgettable
-              charm of <br /> <span className="font-bold bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">Into the Wild Stays!</span>
+              charm of{" "}
+              <span className="font-bold bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">
+                Into the Wild Stays!
+              </span>
             </motion.p>
           </motion.div>
 
@@ -143,6 +152,8 @@ const GuestExperience = () => {
                 videoRefs.current[currentVideoIndex] = el;
               }}
               src={videos[currentVideoIndex].src}
+              autoPlay
+              muted
               className="w-full h-full object-cover scale-105 group-hover:scale-110 transition-transform duration-700"
               onEnded={nextVideo}
             />

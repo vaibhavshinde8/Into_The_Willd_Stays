@@ -7,7 +7,7 @@ import heroImage2 from "../assets/banner/b1.jpeg";
 import heroImage3 from "../assets/guestdiary/img-1.jpeg";
 import heroImage4 from "../assets/banner/b4.jpeg";
 import heroImage5 from "../assets/banner/b3.jpeg";
-import React from 'react';
+import React from "react";
 
 const images = [heroImage1, heroImage2, heroImage3, heroImage4, heroImage5];
 const locations = ["Dhanolti", "Goa", "Tehri", "Majuli", "Rishikesh"];
@@ -23,7 +23,6 @@ const HomeHero = () => {
     children: 0,
   });
   const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
-
 
   const toggleGuestDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -49,9 +48,9 @@ const HomeHero = () => {
 
   const handleSearch = () => {
     // Store search parameters in sessionStorage
-    sessionStorage.setItem('searchParams', JSON.stringify(searchParams));
+    sessionStorage.setItem("searchParams", JSON.stringify(searchParams));
 
-    navigate('/properties'); // Navigate without URL parameters
+    navigate("/properties"); // Navigate without URL parameters
   };
 
   const handleInputChange = (e) => {
@@ -66,7 +65,10 @@ const HomeHero = () => {
   const today = new Date().toISOString().split("T")[0];
 
   return (
-    <div className="relative min-h-screen flex flex-col justify-between items-center overflow-hidden  md:pt-32" style={{ paddingBottom: "106px" }}>
+    <div
+      className="relative min-h-screen flex flex-col justify-between items-center overflow-hidden  md:pt-32"
+      style={{ paddingBottom: "106px" }}
+    >
       {/* Background Overlay */}
       <div className="absolute inset-0 z-0">
         {images?.map((img, index) => (
@@ -74,8 +76,9 @@ const HomeHero = () => {
             key={index}
             src={img}
             alt={`Background ${index + 1}`}
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${index === currentImageIndex ? "opacity-100" : "opacity-0"
-              }`}
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+              index === currentImageIndex ? "opacity-100" : "opacity-0"
+            }`}
             initial={{ opacity: 0 }}
             animate={{ opacity: index === currentImageIndex ? 1 : 0 }}
             transition={{ duration: 1.5 }}
@@ -125,7 +128,7 @@ const HomeHero = () => {
           transition={{ duration: 0.8, delay: 0.5 }}
         >
           <div className="bg-black/20 backdrop-blur-sm shadow-lg gap-4 rounded-lg border border-white/30 p-8">
-            <div className="grid grid-cols-1 md:grid-cols-6 gap-4 md:gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-2">
               {/* Location */}
               <div className="md:col-span-1 lg:w-40">
                 <label className="block text-white mb-3 text-sm font-medium">
@@ -153,7 +156,9 @@ const HomeHero = () => {
                 <label className="block text-white mb-3 text-sm font-medium">
                   Check-in
                 </label>
-                <div className="relative">
+                <div className="relative" onClick={() =>
+                  document.getElementById("check-in-date").showPicker()
+                }>
                   <input
                     type="date"
                     name="checkIn"
@@ -195,7 +200,11 @@ const HomeHero = () => {
                   className="w-full md:w-56 h-12 px-4 py-2 bg-white border border-gray-300 text-gray-900 rounded-lg text-left flex items-center justify-between hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-cyan-400"
                 >
                   <span className="text-sm w-full">
-                    {`${searchParams.adults} Adult${searchParams.adults > 1 ? 's' : ''} and ${searchParams.children} Child${searchParams.children > 1 ? 'ren' : ''}`}
+                    {`${searchParams.adults} Adult${
+                      searchParams.adults > 1 ? "s" : ""
+                    } and ${searchParams.children} Child${
+                      searchParams.children > 1 ? "ren" : ""
+                    }`}
                   </span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -220,7 +229,9 @@ const HomeHero = () => {
                     {/* Adults */}
                     <div className="flex justify-between items-center mb-2">
                       <div>
-                        <p className="text-gray-700 font-medium text-sm">Adults</p>
+                        <p className="text-gray-700 font-medium text-sm">
+                          Adults
+                        </p>
                       </div>
                       <div className="flex items-center">
                         <button
@@ -230,7 +241,9 @@ const HomeHero = () => {
                         >
                           −
                         </button>
-                        <span className="mx-2 text-gray-900 text-sm">{searchParams.adults}</span>
+                        <span className="mx-2 text-gray-900 text-sm">
+                          {searchParams.adults}
+                        </span>
                         <button
                           onClick={() => handleGuestChange("adults", 1)}
                           className="px-0.5 py-0.5 bg-gray-100 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-200"
@@ -243,7 +256,9 @@ const HomeHero = () => {
                     {/* Children */}
                     <div className="flex justify-between items-center mb-2">
                       <div>
-                        <p className="text-gray-700 font-medium text-sm">Children</p>
+                        <p className="text-gray-700 font-medium text-sm">
+                          Children
+                        </p>
                       </div>
                       <div className="flex items-center">
                         <button
@@ -253,7 +268,9 @@ const HomeHero = () => {
                         >
                           −
                         </button>
-                        <span className="mx-2 text-gray-900 text-sm">{searchParams.children}</span>
+                        <span className="mx-2 text-gray-900 text-sm">
+                          {searchParams.children}
+                        </span>
                         <button
                           onClick={() => handleGuestChange("children", 1)}
                           className="px-0.5 py-0.5 bg-gray-100 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-200"
@@ -279,11 +296,8 @@ const HomeHero = () => {
                 )}
               </div>
 
-
-
-
               {/* Search Button */}
-              <div className="md:col-span-1 lg:w-40 ml-16">
+              <div className="md:col-span-1 lg:w-40 ml-12">
                 <label className="block text-white mb-3 text-sm font-medium">
                   &nbsp;
                 </label>
