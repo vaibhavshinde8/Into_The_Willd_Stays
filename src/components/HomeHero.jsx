@@ -130,17 +130,17 @@ const HomeHero = () => {
           <div className="bg-black/20 backdrop-blur-sm shadow-lg gap-4 rounded-lg border border-white/30 p-8">
             <div className="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-2">
               {/* Location */}
-              <div className="md:col-span-1 lg:w-40">
-                <label className="block text-white mb-3 text-sm font-medium">
+              <div className="md:col-span-1 lg:w-44">
+                <label className="block text-white mb-3 text-lg font-medium">
                   Location
                 </label>
                 <select
                   name="location"
                   value={searchParams.location}
                   onChange={handleInputChange}
-                  className="w-full h-12 px-6 py-3 bg-white border border-white/30 text-gray-900 focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded-2xl transition-all duration-300 hover:bg-white"
+                  className="w-full h-12 px-6 py-3 bg-white border border-white/30 text-gray-900 focus:outline-none text-[1.10rem] focus:ring-2 focus:ring-cyan-400 rounded-2xl transition-all duration-300 hover:bg-white"
                 >
-                  <option value="" className="text-gray-500">
+                  <option value="" className="text-gray-500 ">
                     Location
                   </option>
                   {locations?.map((loc) => (
@@ -152,28 +152,29 @@ const HomeHero = () => {
               </div>
 
               {/* Check-in */}
-              <div className="md:col-span-1 lg:w-40">
-                <label className="block text-white mb-3 text-sm font-medium">
+              <div className="md:col-span-1 lg:w-44">
+                <label className="block text-white mb-3 text-lg font-medium">
                   Check-in
                 </label>
-                <div className="relative" onClick={() =>
-                  document.getElementById("check-in-date").showPicker()
-                }>
-                  <input
-                    type="date"
-                    name="checkIn"
-                    value={searchParams.checkIn}
-                    onChange={handleInputChange}
-                    min={today} // Prevent past dates
-                    placeholder="Select Check-in Date"
-                    className="w-full h-12 px-4 bg-white border border-white/30 text-gray-900 focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded-2xl transition-all duration-300 hover:bg-white cursor-pointer"
-                  />
-                </div>
+                <div className="relative">
+        <input
+          type="date"
+          name="checkIn"
+          value={searchParams.checkIn}
+          onChange={handleInputChange}
+          min={today} // Prevent past dates
+          placeholder="Select Check-in Date"
+          className="w-full h-12 px-4 text-[1.10rem] bg-white border border-white/30 text-gray-900 
+                     focus:outline-none focus:ring-2 focus:ring-cyan-400 
+                     rounded-2xl transition-all duration-300 hover:bg-white cursor-pointer"
+          onFocus={(e) => e.target.showPicker()} // Opens the calendar on focus
+        />
+      </div>
               </div>
 
               {/* Check-out */}
-              <div className="md:col-span-1 lg:w-40">
-                <label className="block text-white mb-3 text-sm font-medium">
+              <div className="md:col-span-1 lg:w-44">
+                <label className="block text-white mb-3 text-lg font-medium">
                   Check-out
                 </label>
                 <div className="relative">
@@ -184,7 +185,8 @@ const HomeHero = () => {
                     onChange={handleInputChange}
                     min={searchParams.checkIn} // Prevent past dates and ensure check-out is after check-in
                     placeholder="Select Check-out Date"
-                    className="w-full h-12 px-4 bg-white border border-white/30 text-gray-900 focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded-2xl transition-all duration-300 hover:bg-white cursor-pointer"
+                    className="w-full h-12 text-[1.10rem] px-4 bg-white border border-white/30 text-gray-900 focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded-2xl transition-all duration-300 hover:bg-white cursor-pointer"
+                    onFocus={(e) => e.target.showPicker()}
                   />
                 </div>
               </div>
@@ -192,7 +194,7 @@ const HomeHero = () => {
               {/* Adults */}
               <div className="relative w-full md:w-auto">
                 {/* Dropdown Button */}
-                <label className="block text-white mb-3 text-sm font-medium">
+                <label className="block text-white mb-3 text-lg font-medium">
                   Guests
                 </label>
                 <button
@@ -284,7 +286,7 @@ const HomeHero = () => {
                     <div className="mt-2">
                       <button
                         onClick={closeGuestDropdown}
-                        className="w-full h-10 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-medium
+                        className="w-full h-10 bg-gradient-to-r  from-cyan-500 to-blue-500 text-white font-medium
             hover:from-cyan-600 hover:to-blue-600 transition-all duration-300
             flex items-center justify-center space-x-3 
             rounded-2xl shadow-lg hover:shadow-cyan-500/30"
@@ -303,7 +305,7 @@ const HomeHero = () => {
                 </label>
                 <button
                   onClick={handleSearch}
-                  className="w-full h-12 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-medium
+                  className="w-full h-[3.55rem]  bg-gradient-to-r text-lg from-cyan-500 to-blue-500 text-white font-medium
                   hover:from-cyan-600 hover:to-blue-600 transition-all duration-300
                   flex items-center justify-center space-x-3 
                   rounded-2xl shadow-lg hover:shadow-cyan-500/30"
