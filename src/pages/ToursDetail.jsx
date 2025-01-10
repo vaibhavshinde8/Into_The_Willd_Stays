@@ -144,7 +144,7 @@ const ToursDetail = () => {
 
       <div
         className="grid grid-cols-1 md:grid-cols-3 gap-3 p-4 sm:p-6 w-full sm:w-4/5 mx-auto bg-gray-50 shadow-lg rounded-lg"
-        
+
       >
         {/* Main Image */}
         <div className="relative md:col-span-2 rounded-lg overflow-hidden shadow-md">
@@ -228,63 +228,66 @@ const ToursDetail = () => {
 
 
       <div className="space-y-4 sm:ml-10 md:ml-44">
-        {/* Title Section */}
-        <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-black text-center md:text-left">
-          {tour.name}
-        </h1>
+  {/* Title Section */}
+  <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-black text-center md:text-left">
+    {tour.name}
+  </h1>
 
-        {/* Badge and Itinerary Days */}
-        <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4 space-y-4 sm:space-y-0">
-          {/* Badge */}
-          <span className="group bg-gradient-to-r from-teal-500 via-teal-400 to-emerald-400 
-                 text-white px-4 py-2 rounded-2xl text-base sm:text-lg font-medium
-                 shadow-[0_10px_20px_rgba(0,0,0,0.1)] 
-                 hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)]
-                 transition-all duration-500 overflow-hidden
-                 border border-white/20 backdrop-blur-sm text-center">
-            6D/5N
-          </span>
+  {/* Badge and Itinerary Days */}
+  <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4 space-y-4 sm:space-y-0 ">
+    {/* Badge */}
+    <div className="lex flex-col items-center flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6">
 
-          {/* Days with Destinations */}
-          <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6">
-            {/* Day in Gangtok */}
-            <div className="flex flex-col items-center">
-              <span className="text-xl sm:text-2xl font-bold text-gray-800">2</span>
-              <span className="text-xs sm:text-sm font-medium text-gray-500 text-center">Days in Gangtok</span>
-            </div>
-            {/* Separator */}
-            <div className="hidden sm:block h-6 w-px bg-gray-300"></div>
-
-            {/* Day in Lachen */}
-            <div className="flex flex-col items-center">
-              <span className="text-xl sm:text-2xl font-bold text-gray-800">1</span>
-              <span className="text-xs sm:text-sm font-medium text-gray-500 text-center">Day in Lachen</span>
-            </div>
-            <div className="hidden sm:block h-6 w-px bg-gray-300"></div>
-
-            {/* Day in Lachung */}
-            <div className="flex flex-col items-center">
-              <span className="text-xl sm:text-2xl font-bold text-gray-800">1</span>
-              <span className="text-xs sm:text-sm font-medium text-gray-500 text-center">Day in Lachung</span>
-            </div>
-            <div className="hidden sm:block h-6 w-px bg-gray-300"></div>
-
-            {/* Additional Day in Gangtok */}
-            <div className="flex flex-col items-center">
-              <span className="text-xl sm:text-2xl font-bold text-gray-800">1</span>
-              <span className="text-xs sm:text-sm font-medium text-gray-500 text-center">Day in Gangtok</span>
-            </div>
-          </div>
-        </div>
+   
+    <span
+      className="text-xl sm:text-xl font-bold text-gray-800 group bg-gradient-to-r from-teal-500 via-teal-400 to-emerald-400 
+                     text-white px-6 py-3 rounded-2xl text-lg font-medium
+                     shadow-[0_10px_20px_rgba(0,0,0,0.1)] 
+                     hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)]"
+    >
+      6D/5N
+    </span>
+    </div>
+    {/* Days with Destinations */}
+    <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6">
+      {/* Day in Gangtok */}
+      <div className="flex flex-col items-center">
+        <span className="text-xl sm:text-2xl font-bold text-gray-800">2</span>
+        <span className="text-xs sm:text-sm font-medium text-gray-500 text-center">Days in Gangtok</span>
       </div>
+      {/* Separator */}
+      <div className="hidden sm:block h-6 w-px bg-gray-300"></div>
+
+      {/* Day in Lachen */}
+      <div className="flex flex-col items-center">
+        <span className="text-xl sm:text-2xl font-bold text-gray-800">1</span>
+        <span className="text-xs sm:text-sm font-medium text-gray-500 text-center">Day in Lachen</span>
+      </div>
+      <div className="hidden sm:block h-6 w-px bg-gray-300"></div>
+
+      {/* Day in Lachung */}
+      <div className="flex flex-col items-center">
+        <span className="text-xl sm:text-2xl font-bold text-gray-800">1</span>
+        <span className="text-xs sm:text-sm font-medium text-gray-500 text-center">Day in Lachung</span>
+      </div>
+      <div className="hidden sm:block h-6 w-px bg-gray-300"></div>
+
+      {/* Additional Day in Gangtok */}
+      <div className="flex flex-col items-center">
+        <span className="text-xl sm:text-2xl font-bold text-gray-800">1</span>
+        <span className="text-xs sm:text-sm font-medium text-gray-500 text-center">Day in Gangtok</span>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
       {/* Content Section */}
-      <div className="max-w-8xl mx-auto lg:px-24 py-16  ">
+      <div className="lg:max-w-8xl mx-auto lg:px-24 py-16  ">
         <div className="space-y-16">
           <div className="flex gap-12">
-            <div className="p-6 bg-gray-100 rounded-lg shadow-lg w-3/5">
+            <div className="p-6 bg-gray-100 rounded-lg shadow-lg lg:w-3/5 md:lg:w-3/5">
               <h1 className="text-2xl font-bold text-gray-800 mb-4 text-center uppercase">
                 Trip Highlights
               </h1>
@@ -382,14 +385,14 @@ const ToursDetail = () => {
 
           <section>
             <div></div>
-            <div className="space-y-6 w-3/5">
+            <div className="space-y-6 md:w-3/5 lg:w-3/5">
               <h2 className="text-2xl font-bold text-gray-800 mb-4 text-center uppercase">
                 Itinerary
               </h2>
               {tour.itinerary?.map((item, index) => (
                 <div key={index}>
                   {/* Display combinedDays images with Swiper */}
-                  <div className="mb-4">
+                  <div className="mb-4 bg-white/80 backdrop-blur-sm rounded-2xl p-4 sm:p-4 shadow-lg hover:shadow-xl transition-all duration-300 mb-4 border border-gray-200">
                     {item.combinedDays && item.combinedDays.length > 0 && (
                       <Swiper
                         spaceBetween={20}
@@ -446,8 +449,8 @@ const ToursDetail = () => {
                         <h3 className="text-black font-semibold">{day.day}</h3>
                         <span
                           className={`transform transition-transform duration-300 ${expandedDay === `${index}-${dayIndex}`
-                              ? "rotate-180"
-                              : ""
+                            ? "rotate-180"
+                            : ""
                             }`}
                         >
                           ⌄
