@@ -36,8 +36,6 @@ const ToursDetail = () => {
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-teal-50/30 to-blue-50/30">
       {/* Hero Section */}
       <div className="relative h-[90vh] overflow-hidden">
-
-
         <div className="absolute inset-0">
           <img
             src={tour.imageUrl}
@@ -46,7 +44,6 @@ const ToursDetail = () => {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-[#0F2642]/40 via-[#0F2642]/60 to-[#0F2642]/80" />
         </div>
-
 
         <div className="relative h-full max-w-7xl mx-auto px-6 flex flex-col items-center justify-center text-center">
           <motion.h1
@@ -108,73 +105,72 @@ const ToursDetail = () => {
         </div>
       </div>
 
-
-
       <div className="grid grid-cols-3 gap-3 p-6 max-w-screen-lg mx-auto bg-gray-50 shadow-lg rounded-lg">
-  {/* Main Image */}
-  <div className="relative col-span-2 rounded-lg overflow-hidden shadow-md">
-    <img
-      src="https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg"
-      alt="Main Image"
-      className="w-full h-full object-cover"
-    />
-    <div className="absolute bottom-4 right-2 justify-center bg-black bg-opacity-25 rounded-lg transition-opacity duration-300 hover:bg-opacity-50">
-      <span className="text-white text-lg font-semibold ">Explore Beauty</span>
-    </div>
-  </div>
+        {/* Main Image */}
+        <div className="relative col-span-2 rounded-lg overflow-hidden shadow-md">
+          <img
+            src="https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg"
+            alt="Main Image"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute bottom-4 right-2 justify-center bg-black bg-opacity-25 rounded-lg transition-opacity duration-300 hover:bg-opacity-50">
+            <span className="text-white text-lg font-semibold ">
+              Explore Beauty
+            </span>
+          </div>
+        </div>
 
-  {/* Smaller Images */}
-  <div className="grid grid-cols-2 gap-3">
-    <div className="relative h-70 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
-      <img
-        src="https://png.pngtree.com/background/20230805/original/pngtree-a-snowy-mountain-adorned-in-pahalgam-valley-located-in-kashmir-india-picture-image_4440125.jpg"
-        alt="Destinations"
-        className="w-full h-full object-cover"
-      />
-      <div className="absolute bottom-4 right-2 justify-center bg-black bg-opacity-25 transition-opacity duration-300 hover:bg-opacity-50">
-        <span className="text-white text-sm font-medium">Destinations</span>
+        {/* Smaller Images */}
+        <div className="grid grid-cols-2 gap-3">
+          <div className="relative h-70 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+            <img
+              src="https://png.pngtree.com/background/20230805/original/pngtree-a-snowy-mountain-adorned-in-pahalgam-valley-located-in-kashmir-india-picture-image_4440125.jpg"
+              alt="Destinations"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute bottom-4 right-2 justify-center bg-black bg-opacity-25 transition-opacity duration-300 hover:bg-opacity-50">
+              <span className="text-white text-sm font-medium">
+                Destinations
+              </span>
+            </div>
+          </div>
+
+          <div className="relative h-60 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+            <img
+              src="https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"
+              alt="Stays"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute bottom-4 right-2 justify-center bg-black bg-opacity-25 transition-opacity duration-300 hover:bg-opacity-50">
+              <span className="text-white text-sm font-medium">Stays</span>
+            </div>
+          </div>
+
+          <div className="relative h-60 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+            <img
+              src="https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"
+              alt="Activity & Sightseeing"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute bottom-4 right-2 justify-center bg-black bg-opacity-25 transition-opacity duration-300 hover:bg-opacity-50">
+              <span className="text-white text-sm font-medium">Activity</span>
+            </div>
+          </div>
+
+          <div className="relative h-60 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+            <img
+              src="https://png.pngtree.com/background/20230401/original/pngtree-view-from-chitkul-village-in-sangla-valley-vector-picture-image_2229375.jpg"
+              alt="View All Images"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute bottom-4 right-2 justify-center bg-black bg-opacity-25 transition-opacity duration-300 hover:bg-opacity-50">
+              <span className="text-white text-sm font-medium">
+                View All Images
+              </span>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-
-    <div className="relative h-60 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
-      <img
-        src="https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"
-        alt="Stays"
-        className="w-full h-full object-cover"
-      />
-      <div className="absolute bottom-4 right-2 justify-center bg-black bg-opacity-25 transition-opacity duration-300 hover:bg-opacity-50">
-        <span className="text-white text-sm font-medium">Stays</span>
-      </div>
-    </div>
-
-    <div className="relative h-60 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
-      <img
-        src="https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"
-        alt="Activity & Sightseeing"
-        className="w-full h-full object-cover"
-      />
-      <div className="absolute bottom-4 right-2 justify-center bg-black bg-opacity-25 transition-opacity duration-300 hover:bg-opacity-50">
-        <span className="text-white text-sm font-medium">Activity</span>
-      </div>
-    </div>
-
-    <div className="relative h-60 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
-      <img
-        src="https://png.pngtree.com/background/20230401/original/pngtree-view-from-chitkul-village-in-sangla-valley-vector-picture-image_2229375.jpg"
-        alt="View All Images"
-        className="w-full h-full object-cover"
-      />
-      <div className="absolute bottom-4 right-2 justify-center bg-black bg-opacity-25 transition-opacity duration-300 hover:bg-opacity-50">
-        <span className="text-white text-sm font-medium">View All Images</span>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-
-
 
       {/* Connect to Expert Button */}
       <div className="bg-white/80 backdrop-blur-sm py-8">
@@ -200,17 +196,17 @@ const ToursDetail = () => {
         <div className="space-y-16">
           <div className="flex">
             <div className="p-6 bg-gray-100 rounded-lg shadow-lg w-3/5">
-              <h1 className="text-2xl font-bold text-gray-800 mb-4 text-center uppercase">Trip Highlights</h1>
-              {
-                tour.highlights?.map((item, index) => (
-                  <h2
-                    key={index}
-                    className=" text-gray-600 mb-3 pl-4 border-l-4 border-blue-500"
-                  >
-                    {item}
-                  </h2>
-                ))
-              }
+              <h1 className="text-2xl font-bold text-gray-800 mb-4 text-center uppercase">
+                Trip Highlights
+              </h1>
+              {tour.highlights?.map((item, index) => (
+                <h2
+                  key={index}
+                  className=" text-gray-600 mb-3 pl-4 border-l-4 border-blue-500"
+                >
+                  {item}
+                </h2>
+              ))}
             </div>
             <div className="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md ml-4 sticky top-20">
               {/* Header Section */}
@@ -218,8 +214,12 @@ const ToursDetail = () => {
                 {tour.location}
               </h2>
               <div className="flex items-center space-x-2 mt-2">
-                <span className="text-2xl font-bold text-gray-800">INR  {tour.price}</span>
-                <span className="line-through text-gray-500 text-sm">INR 15,998</span>
+                <span className="text-2xl font-bold text-gray-800">
+                  INR {tour.price}
+                </span>
+                <span className="line-through text-gray-500 text-sm">
+                  INR 15,998
+                </span>
                 <span className="bg-green-100 text-green-600 text-xs font-medium px-2 py-1 rounded">
                   SAVE INR 1,999
                 </span>
@@ -247,9 +247,7 @@ const ToursDetail = () => {
 
                 {/* Phone */}
                 <div className="flex space-x-2">
-                  <select
-                    className="w-1/4 border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
-                  >
+                  <select className="w-1/4 border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500">
                     <option value="+91">+91</option>
                     {/* Add more country codes here */}
                   </select>
@@ -297,11 +295,7 @@ const ToursDetail = () => {
                 </button>
               </form>
             </div>
-
-
-
           </div>
-
 
           <section>
             <div></div>
@@ -352,12 +346,13 @@ const ToursDetail = () => {
                         className="flex items-center justify-between cursor-pointer"
                         onClick={() => toggleAccordion(`${index}-${dayIndex}`)}
                       >
-                        <h3 className=" text-[#0F2642] ">
-                          {day.day}
-                        </h3>
+                        <h3 className=" text-[#0F2642] ">{day.day}</h3>
                         <span
-                          className={`transform transition-transform duration-300 ${expandedDay === `${index}-${dayIndex}` ? "rotate-180" : ""
-                            }`}
+                          className={`transform transition-transform duration-300 ${
+                            expandedDay === `${index}-${dayIndex}`
+                              ? "rotate-180"
+                              : ""
+                          }`}
                         >
                           ⌄
                         </span>
@@ -419,18 +414,27 @@ const ToursDetail = () => {
                               delay: 3000,
                               disableOnInteraction: false,
                             }}
-                            modules={[EffectFade, Navigation, Pagination, Autoplay]}
+                            modules={[
+                              EffectFade,
+                              Navigation,
+                              Pagination,
+                              Autoplay,
+                            ]}
                             className="mySwiper h-[150px] sm:h-[250px] rounded-lg"
                           >
-                            {Object.values(day.images).map((image, imgIndex) => (
-                              <SwiperSlide key={imgIndex}>
-                                <img
-                                  className="w-full h-full object-cover rounded-lg transition-transform duration-300 hover:scale-105"
-                                  src={image}
-                                  alt={`Day ${dayIndex + 1} Image ${imgIndex + 1}`}
-                                />
-                              </SwiperSlide>
-                            ))}
+                            {Object.values(day.images).map(
+                              (image, imgIndex) => (
+                                <SwiperSlide key={imgIndex}>
+                                  <img
+                                    className="w-full h-full object-cover rounded-lg transition-transform duration-300 hover:scale-105"
+                                    src={image}
+                                    alt={`Day ${dayIndex + 1} Image ${
+                                      imgIndex + 1
+                                    }`}
+                                  />
+                                </SwiperSlide>
+                              )
+                            )}
                           </Swiper>
                         </motion.div>
                       )}
@@ -440,12 +444,6 @@ const ToursDetail = () => {
               ))}
             </div>
           </section>
-
-
-
-
-
-
 
           {/* Inclusions & Exclusions */}
           <div className="grid md:grid-cols-2 gap-12">
@@ -529,7 +527,7 @@ const ToursDetail = () => {
                   {tour.contact_methods?.email || "Not available"}
                 </span>
               </a>
-              <a
+              {/* <a
                 href={`https://wa.me/${tour.contact_methods?.whatsapp}`}
                 className="flex items-center space-x-4 bg-green-50/80 backdrop-blur-sm p-6 rounded-2xl hover:shadow-lg hover:scale-105 transition-all duration-300"
               >
@@ -539,7 +537,7 @@ const ToursDetail = () => {
                     ? `${tour.contact_methods?.whatsapp}`
                     : "Not available"}
                 </span>
-              </a>
+              </a> */}
             </div>
           </section>
 
@@ -565,7 +563,6 @@ const ToursDetail = () => {
             </div>
           </section>
         </div>
-
       </div>
 
       {/* Add ContactForm Modal */}
