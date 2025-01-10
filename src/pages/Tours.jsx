@@ -37,15 +37,15 @@ const Tours = () => {
           transition={{ duration: 1.2, ease: "easeOut" }}
           className="relative h-full max-w-7xl mx-auto px-4 sm:px-6 flex flex-col items-center justify-center text-center"
         >
-          <motion.span 
+          {/* <motion.span 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
-            className="text-blue-600 text-base sm:text-lg md:text-xl font-bold tracking-wider mb-4 sm:mb-6"
+            className="text-white/60 text-base sm:text-lg md:text-xl font- tracking-wider mb-4 sm:mb-6"
           >
             EXPLORE THE WORLD
-          </motion.span>
-          <motion.h1 
+          </motion.span> */}
+          <motion.h1
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.8, duration: 1 }}
@@ -56,17 +56,17 @@ const Tours = () => {
               Tours
             </span>
           </motion.h1>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.2, duration: 1 }}
             className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-200 max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-3xl mb-8 sm:mb-10 lg:mb-12 leading-relaxed px-4"
           >
-            Embark on extraordinary journeys that will create memories to last a lifetime
+            Embark on extraordinary journeys that will create memories to last a
+            lifetime
           </motion.p>
         </motion.div>
       </div>
-      
 
       <div className="max-w-7xl mx-auto px-6 py-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
@@ -126,30 +126,30 @@ const Tours = () => {
         </div>
       </div>
 
-       <div className="py-24 bg-gradient-to-br from-gray-50 via-teal-50/30 to-blue-50/30">
-              <div className="max-w-7xl mx-auto px-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  {[Image3, Image4, Image5, Image6, Image7]?.map((image, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: index * 0.1 }}
-                      className={`rounded-3xl overflow-hidden shadow-xl ${
-                        index === 0 ? "md:col-span-2" : ""
-                      }`}
-                    >
-                      <img
-                        src={image}
-                        alt={`Gallery ${index + 1}`}
-                        className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
-                      />
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-            </div>
+      <div className="py-24 bg-gradient-to-br from-gray-50 via-teal-50/30 to-blue-50/30">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {[Image3, Image4, Image5, Image6, Image7]?.map((image, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className={`rounded-3xl overflow-hidden shadow-xl ${
+                  index === 0 ? "md:col-span-2" : ""
+                }`}
+              >
+                <img
+                  src={image}
+                  alt={`Gallery ${index + 1}`}
+                  className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
+                />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
 
       <ContactForm
         isOpen={isContactModalOpen}

@@ -70,8 +70,6 @@ const ToursDetail = () => {
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-teal-50/30 to-blue-50/30">
       {/* Hero Section */}
       <div className="relative h-[90vh] overflow-hidden">
-
-
         <div className="absolute inset-0">
           <img
             src={tour.imageUrl}
@@ -80,7 +78,6 @@ const ToursDetail = () => {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-[#0F2642]/40 via-[#0F2642]/60 to-[#0F2642]/80" />
         </div>
-
 
         <div className="relative h-full max-w-7xl mx-auto px-6 flex flex-col items-center justify-center text-center">
           <motion.h1
@@ -141,6 +138,7 @@ const ToursDetail = () => {
           </motion.button>
         </div>
       </div>
+
 
 
 
@@ -211,6 +209,9 @@ const ToursDetail = () => {
 
 
 
+
+
+    
 
 
 
@@ -292,17 +293,17 @@ const ToursDetail = () => {
         <div className="space-y-16">
           <div className="flex">
             <div className="p-6 bg-gray-100 rounded-lg shadow-lg w-3/5">
-              <h1 className="text-2xl font-bold text-gray-800 mb-4 text-center uppercase">Trip Highlights</h1>
-              {
-                tour.highlights?.map((item, index) => (
-                  <h2
-                    key={index}
-                    className=" text-gray-600 mb-3 pl-4 border-l-4 border-blue-500"
-                  >
-                    {item}
-                  </h2>
-                ))
-              }
+              <h1 className="text-2xl font-bold text-gray-800 mb-4 text-center uppercase">
+                Trip Highlights
+              </h1>
+              {tour.highlights?.map((item, index) => (
+                <h2
+                  key={index}
+                  className=" text-gray-600 mb-3 pl-4 border-l-4 border-blue-500"
+                >
+                  {item}
+                </h2>
+              ))}
             </div>
             {
               showForm && (
@@ -387,7 +388,6 @@ const ToursDetail = () => {
 
           </div>
 
-
           <section>
             <div></div>
             <div className="space-y-6 w-3/5">
@@ -453,8 +453,11 @@ const ToursDetail = () => {
                       >
                         <h3 className="text-black font-semibold">{day.day}</h3>
                         <span
-                          className={`transform transition-transform duration-300 ${expandedDay === `${index}-${dayIndex}` ? "rotate-180" : ""
-                            }`}
+                          className={`transform transition-transform duration-300 ${
+                            expandedDay === `${index}-${dayIndex}`
+                              ? "rotate-180"
+                              : ""
+                          }`}
                         >
                           ⌄
                         </span>
@@ -515,7 +518,12 @@ const ToursDetail = () => {
                               delay: 3000,
                               disableOnInteraction: false,
                             }}
-                            modules={[EffectFade, Navigation, Pagination, Autoplay]}
+                            modules={[
+                              EffectFade,
+                              Navigation,
+                              Pagination,
+                              Autoplay,
+                            ]}
                             className="mySwiper h-[150px] sm:h-[250px] rounded-lg"
                           >
                             {Object.values(day.images).map((image, imgIndex) => (
@@ -673,7 +681,7 @@ const ToursDetail = () => {
                   {tour.contact_methods?.email || "Not available"}
                 </span>
               </a>
-              <a
+              {/* <a
                 href={`https://wa.me/${tour.contact_methods?.whatsapp}`}
                 className="flex items-center space-x-4 bg-green-50/80 backdrop-blur-sm p-6 rounded-2xl hover:shadow-lg hover:scale-105 transition-all duration-300"
               >
@@ -683,7 +691,7 @@ const ToursDetail = () => {
                     ? `${tour.contact_methods?.whatsapp}`
                     : "Not available"}
                 </span>
-              </a>
+              </a> */}
             </div>
           </section>
 
@@ -709,7 +717,6 @@ const ToursDetail = () => {
             </div>
           </section>
         </div>
-
       </div>
 
       {/* Add ContactForm Modal */}
