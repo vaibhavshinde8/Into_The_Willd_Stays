@@ -151,7 +151,7 @@ const ExploreMoreITW = () => {
         <div className="lg:col-span-2">
           <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start">
             <div>
-              <h1 className="text-5xl font-extrabold mb-4 text-gray-800">
+              <h1 className="lg:text-5xl md:text-3xl text-2xl font-extrabold mb-4 text-gray-800">
                 {property?.name}
               </h1>
               <p className="text-gray-600 mb-8 flex items-center gap-2">
