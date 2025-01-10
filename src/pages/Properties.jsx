@@ -207,7 +207,7 @@ const Properties = () => {
         transition={{ duration: 0.8, delay: 0.5 }}
       >
         <div className="container mx-auto px-4 lg:px-8 py-8 rounded-3xl bg-white/90 backdrop-blur-md">
-          <div className="grid grid-cols-2 md:grid-cols-6 gap-4 items-end">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 items-end">
             {/* Location */}
             <div className="md:col-span-1 col-span-2">
               <label className="block text-gray-700 mb-2 text-sm">
