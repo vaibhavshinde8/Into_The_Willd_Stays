@@ -150,21 +150,21 @@ const AboutUs = () => {
       <div className="bg-[#0F2642] py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16 space-y-4">
-            <motion.span
+            {/* <motion.span
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               className="text-teal-400 font-medium"
             >
               OUR TEAM
-            </motion.span>
+            </motion.span> */}
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl lg:text-5xl font-bold text-white"
+              className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent"
             >
-              Meet the Experts
+              Our Team
             </motion.h2>
           </div>
 
