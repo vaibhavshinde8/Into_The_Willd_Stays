@@ -286,7 +286,7 @@ const HomeHero = () => {
                     <div className="mt-2">
                       <button
                         onClick={closeGuestDropdown}
-                        className="w-full h-10 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-medium
+                        className="w-full h-10 bg-gradient-to-r  from-cyan-500 to-blue-500 text-white font-medium
             hover:from-cyan-600 hover:to-blue-600 transition-all duration-300
             flex items-center justify-center space-x-3 
             rounded-2xl shadow-lg hover:shadow-cyan-500/30"
@@ -305,7 +305,7 @@ const HomeHero = () => {
                 </label>
                 <button
                   onClick={handleSearch}
-                  className="w-full h-12 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-medium
+                  className="w-full h-[3.55rem]  bg-gradient-to-r text-lg from-cyan-500 to-blue-500 text-white font-medium
                   hover:from-cyan-600 hover:to-blue-600 transition-all duration-300
                   flex items-center justify-center space-x-3 
                   rounded-2xl shadow-lg hover:shadow-cyan-500/30"
