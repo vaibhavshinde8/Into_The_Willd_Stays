@@ -2,14 +2,14 @@ import { useState, useEffect } from "react";
 import { Mails, Navigation, PhoneCall, Send } from "lucide-react";
 import emailjs from "emailjs-com";
 import { motion } from "framer-motion";
-import axios from "axios";  
-import {toast} from "react-toastify";
-import {BASE_URL} from "../utils/baseurl";
+import axios from "axios";
+import { toast } from "react-toastify";
+import { BASE_URL } from "../utils/baseurl";
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
     name: "",
-    email: "", 
+    email: "",
     phone: "",
     message: "",
   });
@@ -44,21 +44,20 @@ const ContactUs = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const sendEmail = async(e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
     if (!validateForm()) return; // Stop if validation fails
     setIsSubmitting(true);
-    try{
+    try {
       const response = await axios.post(`${BASE_URL}/contact`, formData);
       console.log(response);
       toast.success("Message sent successfully");
       setFormData({ name: "", email: "", phone: "", message: "" });
-    }catch(error){
+    } catch (error) {
       console.error("FAILED...", error);
       toast.error("Message failed to send");
       setIsSubmitting(false);
-    }
-    finally{
+    } finally {
       setIsSubmitting(false);
     }
   };
@@ -78,8 +77,9 @@ const ContactUs = () => {
           className="relative h-full flex flex-col items-center justify-center text-center px-4"
         >
           <h1 className="text-6xl md:text-7xl font-bold text-white mb-6 ">
-            <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">Let's Connect</span>
-           
+            <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+              Let's Connect
+            </span>
           </h1>
           <p className="text-xl font-semibold text-white/60 max-w-2xl ">
             We're here to help turn your travel dreams into reality
@@ -215,7 +215,7 @@ const ContactUs = () => {
                   className={`w-full px-4 py-3 rounded-lg border ${
                     errors.phone ? "border-red-500" : "border-gray-200"
                   } focus:ring-2 focus:ring-teal-500 focus:border-transparent`}
-                  placeholder="0000000000"
+                  placeholder="Enter Your Contact Number"
                 />
                 {errors.phone && (
                   <p className="text-red-500 text-sm">{errors.phone}</p>

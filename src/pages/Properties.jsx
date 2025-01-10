@@ -481,81 +481,84 @@ const Properties = () => {
                       onMouseLeave={() => setHoveredIndex(null)}
                       className="relative bg-white overflow-hidden shadow-lg transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl rounded-lg border border-gray-200"
                     >
-                      <a href={`/property/${property._id}`}>
-                      <div className="flex flex-col md:flex-row h-full">
-                        {/* Image Section */}
-                        <div className="md:w-2/5 relative overflow-hidden h-64 md:h-auto">
-                          <img
-                            src={property.images[0]}
-                            alt={property.name}
-                            className="w-full h-[50vh] object-cover transition-transform duration-700 hover:scale-110 rounded-t-lg md:rounded-l-lg"
-                          />
-                          <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-lg shadow-md">
-                            <div className="flex items-center space-x-1">
-                              <FaStar className="text-yellow-500" />
-                              <span className="font-semibold">
-                                {property.rating}
-                              </span>
-                              <span className="text-sm text-gray-600">
-                                ({property.reviews})
-                              </span>
+                      <Link to={`/property/${property._id}`}>
+                        <div className="flex flex-col md:flex-row h-full">
+                          {/* Image Section */}
+                          <div className="md:w-2/5 relative overflow-hidden h-64 md:h-auto">
+                            <img
+                              src={property.images[0]}
+                              alt={property.name}
+                              className="w-full h-[50vh] object-cover transition-transform duration-700 hover:scale-110 rounded-t-lg md:rounded-l-lg"
+                            />
+                            <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-lg shadow-md">
+                              <div className="flex items-center space-x-1">
+                                <FaStar className="text-yellow-500" />
+                                <span className="font-semibold">
+                                  {property.rating}
+                                </span>
+                                <span className="text-sm text-gray-600">
+                                  ({property.reviews})
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Content Section */}
+                          <div className="flex-1 p-6 flex flex-col justify-between">
+                            <div>
+                              <h2 className="text-2xl font-bold text-gray-800 mb-3">
+                                {property.name}
+                              </h2>
+                              <p className="text-gray-600 mb-4">
+                                {property?.description?.length > 250
+                                  ? `${property.description.substring(
+                                      0,
+                                      250
+                                    )}...`
+                                  : property?.description}
+                              </p>
+
+                              <div className="flex flex-wrap gap-3 mb-4">
+                                <span className="flex items-center space-x-2 bg-teal-50 text-teal-700 px-3 py-1 rounded-lg text-sm">
+                                  <FaMapMarkerAlt className="text-teal-500" />
+                                  <span>{property.location}</span>
+                                </span>
+                                <span className="flex items-center space-x-2 bg-blue-50 text-blue-700 px-3 py-1 rounded-lg text-sm">
+                                  <FaBed className="text-blue-500" />
+                                  <span>{property.bedroom} Cottages</span>
+                                </span>
+                                <span className="flex items-center space-x-2 bg-purple-50 text-purple-700 px-3 py-1 rounded-lg text-sm">
+                                  <FaUsers className="text-purple-500" />
+                                  <span>{property.guest} Guests</span>
+                                </span>
+                              </div>
+                            </div>
+
+                            {/* Price and Button Section */}
+                            <div className="flex flex-col md:flex-row items-center justify-between mt-4">
+                              <div className="flex flex-col mb-4 md:mb-0 md:w-1/2">
+                                <span className="text-3xl font-bold text-gray-900">
+                                  ₹{property.price}
+                                </span>
+                                <span className="text-sm text-gray-500">
+                                  per night / Cottage
+                                </span>
+                              </div>
+
+                              <div className="flex flex-col space-y-3 md:w-1/2">
+                                <BookingButton property={property} />
+                              </div>
+                              <Link
+                                to={`/property/${property._id}`}
+                                onClick={() => window.scrollTo(0, 0)}
+                                className="px-8 py-[11px] text-black font-semibold bg-gradient-to-r from-blue-300 to-cyan-300 hover:bg-gradient-to-r hover:from-cyan-400 hover:to-blue-400 hover:transition ease-in-out duration-300 rounded-lg text-center"
+                              >
+                                Details
+                              </Link>
                             </div>
                           </div>
                         </div>
-
-                        {/* Content Section */}
-                        <div className="flex-1 p-6 flex flex-col justify-between">
-                          <div>
-                            <h2 className="text-2xl font-bold text-gray-800 mb-3">
-                              {property.name}
-                            </h2>
-                            <p className="text-gray-600 mb-4">
-                              {property?.description?.length > 250
-                                ? `${property.description.substring(0, 250)}...`
-                                : property?.description}
-                            </p>
-
-                            <div className="flex flex-wrap gap-3 mb-4">
-                              <span className="flex items-center space-x-2 bg-teal-50 text-teal-700 px-3 py-1 rounded-lg text-sm">
-                                <FaMapMarkerAlt className="text-teal-500" />
-                                <span>{property.location}</span>
-                              </span>
-                              <span className="flex items-center space-x-2 bg-blue-50 text-blue-700 px-3 py-1 rounded-lg text-sm">
-                                <FaBed className="text-blue-500" />
-                                <span>{property.bedroom} Cottages</span>
-                              </span>
-                              <span className="flex items-center space-x-2 bg-purple-50 text-purple-700 px-3 py-1 rounded-lg text-sm">
-                                <FaUsers className="text-purple-500" />
-                                <span>{property.guest} Guests</span>
-                              </span>
-                            </div>
-                          </div>
-
-                          {/* Price and Button Section */}
-                          <div className="flex flex-col md:flex-row items-center justify-between mt-4">
-                            <div className="flex flex-col mb-4 md:mb-0 md:w-1/2">
-                              <span className="text-3xl font-bold text-gray-900">
-                                ₹{property.price}
-                              </span>
-                              <span className="text-sm text-gray-500">
-                                per night / Cottage
-                              </span>
-                            </div>
-
-                            <div className="flex flex-col space-y-3 md:w-1/2">
-                              <BookingButton property={property} />
-                            </div>
-                            <Link
-                              to={`/property/${property._id}`}
-                              onClick={() => window.scrollTo(0, 0)}
-                              className="px-8 py-[11px] text-black bg-gradient-to-r from-blue-300 to-cyan-300 hover:bg-teal-100 transition-colors rounded-lg text-center"
-                            >
-                              Details
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                      </a>
+                      </Link>
                     </motion.div>
                   ))}
             </div>
