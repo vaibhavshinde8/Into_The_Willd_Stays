@@ -374,8 +374,9 @@ const ExploreMoreITW = () => {
             </div>
           </div>
 
-          <div className="prose max-w-none text-lg mb-12">
-            <p>{property?.description}</p>
+          <div className="prose max-w-none flex flex-col gap-2 mb-12 shadow-md rounded-xl p-3">
+            <h2 className="text-lg font-semibold">Description</h2>
+            <p className="text-md">{property?.description}</p>
           </div>
 
           {/* Amenities Grid */}
@@ -414,7 +415,10 @@ const ExploreMoreITW = () => {
           </div>
 
           {/* Policies Section */}
-          <div id="policies" className="mt-16 grid md:grid-cols-2 gap-12 bg-white rounded-xl shadow-md p-8">
+          <div
+            id="policies"
+            className="mt-16 grid md:grid-cols-2 gap-12 bg-white rounded-xl shadow-md p-8"
+          >
             <div>
               <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
                 <FcRules className="text-blue-500" />
@@ -497,78 +501,83 @@ const ExploreMoreITW = () => {
 
           {/* Feedback section */}
 
-          <div className="w-full h-[auto] flex flex-col items-start" id="Review">
-                <h1 className="text-3xl font-bold mb-8 flex items-center justify-start " ><span><i class="fa-solid fa-comment text-blue-500 me-4 "></i> </span>Feedback Section</h1>
+          <div
+            className="w-full h-[auto] flex flex-col items-start"
+            id="Review"
+          >
+            <h1 className="text-3xl font-bold mb-8 flex items-center justify-start ">
+              <span>
+                <i class="fa-solid fa-comment text-blue-500 me-4 "></i>{" "}
+              </span>
+              Feedback Section
+            </h1>
 
-                <div className="flex flex-col sm:flex-row items-center gap-4  w-full">
+            <div className="flex flex-col sm:flex-row items-center gap-4  w-full">
+              <div className=" flex-auto  bg-white p-6 rounded-xl shadow-md border border-gray-200">
+                {/* User Info */}
+                <div className="flex items-center space-x-4 mb-4">
+                  <img
+                    src="https://img.freepik.com/free-photo/confident-handsome-guy-looking-camera_114579-79335.jpg?t=st=1736512295~exp=1736515895~hmac=e34c5fb64d2dbf6fffd1a4b32b83638c99ea4f093018f2afa29ee2522a440fbd&w=740"
+                    alt="User Avatar"
+                    className="w-12 h-12 rounded-full object-cover"
+                  />
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-800">
+                      John Doe
+                    </h3>
+                    <p className="text-sm text-gray-500">2 days ago</p>
+                  </div>
+                </div>
 
-                <div className=" flex-auto  bg-white p-6 rounded-xl shadow-md border border-gray-200">
-              {/* User Info */}
-              <div className="flex items-center space-x-4 mb-4">
-                <img
-                  src="https://img.freepik.com/free-photo/confident-handsome-guy-looking-camera_114579-79335.jpg?t=st=1736512295~exp=1736515895~hmac=e34c5fb64d2dbf6fffd1a4b32b83638c99ea4f093018f2afa29ee2522a440fbd&w=740"
-                  alt="User Avatar"
-                  className="w-12 h-12 rounded-full object-cover"
-                />
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-800">
-                    John Doe
-                  </h3>
-                  <p className="text-sm text-gray-500">2 days ago</p>
+                {/* Feedback Content */}
+                <p className="text-gray-700 mb-4">
+                  “This is one of the best services I've ever used! The team was
+                  very professional, and the overall experience was amazing.
+                  Highly recommended!”
+                </p>
+
+                {/* Rating */}
+                <div className="flex items-center space-x-1">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <span key={star} className="text-yellow-500 text-xl">
+                      ★
+                    </span>
+                  ))}
                 </div>
               </div>
+              <div className=" flex-auto  bg-white p-6 rounded-xl shadow-md border border-gray-200">
+                {/* User Info */}
+                <div className="flex items-center space-x-4 mb-4">
+                  <img
+                    src="https://img.freepik.com/free-photo/regretful-young-handsome-man-looking-camera-isolated-white-background_141793-132015.jpg?semt=ais_hybrid"
+                    alt="User Avatar"
+                    className="w-12 h-12 rounded-full object-cover "
+                  />
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-800">
+                      Piter charl
+                    </h3>
+                    <p className="text-sm text-gray-500">4 days ago</p>
+                  </div>
+                </div>
 
-              {/* Feedback Content */}
-              <p className="text-gray-700 mb-4">
-                “This is one of the best services I've ever used! The team was
-                very professional, and the overall experience was amazing.
-                Highly recommended!”
-              </p>
+                {/* Feedback Content */}
+                <p className="text-gray-700 mb-4">
+                  “This is one of the best services I've ever used! The team was
+                  very professional, and the overall experience was amazing.
+                  Highly recommended!”
+                </p>
 
-              {/* Rating */}
-              <div className="flex items-center space-x-1">
-                {[1, 2, 3, 4, 5].map((star) => (
-                  <span key={star} className="text-yellow-500 text-xl">
-                    ★
-                  </span>
-                ))}
+                {/* Rating */}
+                <div className="flex items-center space-x-1">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <span key={star} className="text-yellow-500 text-xl">
+                      ★
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
-            <div className=" flex-auto  bg-white p-6 rounded-xl shadow-md border border-gray-200">
-              {/* User Info */}
-              <div className="flex items-center space-x-4 mb-4">
-                <img
-                  src="https://img.freepik.com/free-photo/regretful-young-handsome-man-looking-camera-isolated-white-background_141793-132015.jpg?semt=ais_hybrid"
-                  alt="User Avatar"
-                  className="w-12 h-12 rounded-full object-cover "
-                />
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-800">
-                    Piter charl
-                  </h3>
-                  <p className="text-sm text-gray-500">4 days ago</p>
-                </div>
-              </div>
-
-              {/* Feedback Content */}
-              <p className="text-gray-700 mb-4">
-                “This is one of the best services I've ever used! The team was
-                very professional, and the overall experience was amazing.
-                Highly recommended!”
-              </p>
-
-              {/* Rating */}
-              <div className="flex items-center space-x-1">
-                {[1, 2, 3, 4, 5].map((star) => (
-                  <span key={star} className="text-yellow-500 text-xl">
-                    ★
-                  </span>
-                ))}
-              </div>
-            </div>
-                </div>
-
-            
           </div>
         </div>
 
