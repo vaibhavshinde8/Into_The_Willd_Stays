@@ -230,7 +230,7 @@ const ToursDetail = () => {
         </div> */}
       </div>
 
-      <div className="space-y-4 sm:ml-10 md:ml-44">
+      <div className="space-y-4 mx-2 sm:ml-10 md:ml-44">
         {/* Title Section */}
         <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-black text-center md:text-left">
           {tour.name}
@@ -251,9 +251,9 @@ const ToursDetail = () => {
           </span>
 
           {/* Days with Destinations */}
-          <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6">
+          <div className="flex overflow-x-auto gap-4 sm:flex-row items-center sm:space-y-0 sm:space-x-6">
             {/* Day in Gangtok */}
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col flex-shrink-0 items-center">
               <span className="text-xl sm:text-2xl font-bold text-gray-800">
                 2
               </span>
@@ -265,7 +265,7 @@ const ToursDetail = () => {
             <div className="hidden sm:block h-6 w-px bg-gray-300"></div>
 
             {/* Day in Lachen */}
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col flex-shrink-0 items-center">
               <span className="text-xl sm:text-2xl font-bold text-gray-800">
                 1
               </span>
@@ -276,7 +276,7 @@ const ToursDetail = () => {
             <div className="hidden sm:block h-6 w-px bg-gray-300"></div>
 
             {/* Day in Lachung */}
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col flex-shrink-0 items-center">
               <span className="text-xl sm:text-2xl font-bold text-gray-800">
                 1
               </span>
@@ -287,7 +287,7 @@ const ToursDetail = () => {
             <div className="hidden sm:block h-6 w-px bg-gray-300"></div>
 
             {/* Additional Day in Gangtok */}
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col flex-shrink-0 items-center">
               <span className="text-xl sm:text-2xl font-bold text-gray-800">
                 1
               </span>
@@ -575,7 +575,7 @@ const ToursDetail = () => {
           />
 
           {/* Inclusions & Exclusions */}
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid md:grid-cols-2 gap-12 mx-2">
             {/* Inclusions Section */}
             <section>
               <h2 className="text-3xl font-bold text-[#0F2642] mb-8">
@@ -664,7 +664,7 @@ const ToursDetail = () => {
 
           {/* Contact Methods */}
 
-          <section>
+          <section className="mx-2">
             <h2 className="text-3xl font-bold text-[#0F2642] mb-8">
               Contact Methods
             </h2>
@@ -702,7 +702,7 @@ const ToursDetail = () => {
           </section>
 
           {/* Rules & Policy */}
-          <section>
+          <section className="mx-2">
             <h2 className="text-3xl font-bold text-[#0F2642] mb-8">
               Rules & Policy
             </h2>
