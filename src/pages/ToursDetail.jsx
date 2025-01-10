@@ -60,11 +60,9 @@ const ToursDetail = () => {
     };
   }, []);
 
-
   if (!tour) {
     return <div>Tour not found</div>;
   }
-
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-teal-50/30 to-blue-50/30">
@@ -139,13 +137,7 @@ const ToursDetail = () => {
         </div>
       </div>
 
-
-
-
-      <div
-        className="grid grid-cols-1 md:grid-cols-3 gap-3 p-4 sm:p-6 w-full sm:w-4/5 mx-auto bg-gray-50 shadow-lg rounded-lg"
-        
-      >
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-3 p-4 sm:p-6 w-full sm:w-4/5 mx-auto bg-gray-50 shadow-lg rounded-lg">
         {/* Main Image */}
         <div className="relative md:col-span-2 rounded-lg overflow-hidden shadow-md">
           <img
@@ -154,7 +146,9 @@ const ToursDetail = () => {
             className="w-full h-64 sm:h-full object-cover"
           />
           <div className="absolute bottom-4 right-2 justify-center bg-black bg-opacity-25 rounded-lg transition-opacity duration-300 hover:bg-opacity-50">
-            <span className="text-white text-sm sm:text-lg font-semibold">Explore Beauty</span>
+            <span className="text-white text-sm sm:text-lg font-semibold">
+              Explore Beauty
+            </span>
           </div>
         </div>
 
@@ -167,7 +161,9 @@ const ToursDetail = () => {
               className="w-full h-full object-cover"
             />
             <div className="absolute bottom-4 right-2 justify-center bg-black bg-opacity-25 transition-opacity duration-300 hover:bg-opacity-50">
-              <span className="text-white text-xs sm:text-sm font-medium">Destinations</span>
+              <span className="text-white text-xs sm:text-sm font-medium">
+                Destinations
+              </span>
             </div>
           </div>
 
@@ -178,7 +174,9 @@ const ToursDetail = () => {
               className="w-full h-full object-cover"
             />
             <div className="absolute bottom-4 right-2 justify-center bg-black bg-opacity-25 transition-opacity duration-300 hover:bg-opacity-50">
-              <span className="text-white text-xs sm:text-sm font-medium">Stays</span>
+              <span className="text-white text-xs sm:text-sm font-medium">
+                Stays
+              </span>
             </div>
           </div>
 
@@ -189,7 +187,9 @@ const ToursDetail = () => {
               className="w-full h-full object-cover"
             />
             <div className="absolute bottom-4 right-2 justify-center bg-black bg-opacity-25 transition-opacity duration-300 hover:bg-opacity-50">
-              <span className="text-white text-xs sm:text-sm font-medium">Activity</span>
+              <span className="text-white text-xs sm:text-sm font-medium">
+                Activity
+              </span>
             </div>
           </div>
 
@@ -199,13 +199,17 @@ const ToursDetail = () => {
               alt="View All Images"
               className="w-full h-full object-cover"
             />
-            <div className="absolute bottom-4 right-2 justify-center bg-black bg-opacity-25 transition-opacity duration-300 hover:bg-opacity-50" id="specific-tag-start">
-              <span className="text-white text-xs sm:text-sm font-medium">View All Images</span>
+            <div
+              className="absolute bottom-4 right-2 justify-center bg-black bg-opacity-25 transition-opacity duration-300 hover:bg-opacity-50"
+              id="specific-tag-start"
+            >
+              <span className="text-white text-xs sm:text-sm font-medium">
+                View All Images
+              </span>
             </div>
           </div>
         </div>
       </div>
-
 
       {/* Connect to Expert Button */}
       <div className="bg-white/80 backdrop-blur-sm py-8">
@@ -226,7 +230,6 @@ const ToursDetail = () => {
         </div> */}
       </div>
 
-
       <div className="space-y-4 sm:ml-10 md:ml-44">
         {/* Title Section */}
         <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-black text-center md:text-left">
@@ -236,12 +239,14 @@ const ToursDetail = () => {
         {/* Badge and Itinerary Days */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4 space-y-4 sm:space-y-0">
           {/* Badge */}
-          <span className="group bg-gradient-to-r from-teal-500 via-teal-400 to-emerald-400 
+          <span
+            className="group bg-gradient-to-r from-teal-500 via-teal-400 to-emerald-400 
                  text-white px-4 py-2 rounded-2xl text-base sm:text-lg font-medium
                  shadow-[0_10px_20px_rgba(0,0,0,0.1)] 
                  hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)]
                  transition-all duration-500 overflow-hidden
-                 border border-white/20 backdrop-blur-sm text-center">
+                 border border-white/20 backdrop-blur-sm text-center"
+          >
             6D/5N
           </span>
 
@@ -249,36 +254,50 @@ const ToursDetail = () => {
           <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6">
             {/* Day in Gangtok */}
             <div className="flex flex-col items-center">
-              <span className="text-xl sm:text-2xl font-bold text-gray-800">2</span>
-              <span className="text-xs sm:text-sm font-medium text-gray-500 text-center">Days in Gangtok</span>
+              <span className="text-xl sm:text-2xl font-bold text-gray-800">
+                2
+              </span>
+              <span className="text-xs sm:text-sm font-medium text-gray-500 text-center">
+                Days in Gangtok
+              </span>
             </div>
             {/* Separator */}
             <div className="hidden sm:block h-6 w-px bg-gray-300"></div>
 
             {/* Day in Lachen */}
             <div className="flex flex-col items-center">
-              <span className="text-xl sm:text-2xl font-bold text-gray-800">1</span>
-              <span className="text-xs sm:text-sm font-medium text-gray-500 text-center">Day in Lachen</span>
+              <span className="text-xl sm:text-2xl font-bold text-gray-800">
+                1
+              </span>
+              <span className="text-xs sm:text-sm font-medium text-gray-500 text-center">
+                Day in Lachen
+              </span>
             </div>
             <div className="hidden sm:block h-6 w-px bg-gray-300"></div>
 
             {/* Day in Lachung */}
             <div className="flex flex-col items-center">
-              <span className="text-xl sm:text-2xl font-bold text-gray-800">1</span>
-              <span className="text-xs sm:text-sm font-medium text-gray-500 text-center">Day in Lachung</span>
+              <span className="text-xl sm:text-2xl font-bold text-gray-800">
+                1
+              </span>
+              <span className="text-xs sm:text-sm font-medium text-gray-500 text-center">
+                Day in Lachung
+              </span>
             </div>
             <div className="hidden sm:block h-6 w-px bg-gray-300"></div>
 
             {/* Additional Day in Gangtok */}
             <div className="flex flex-col items-center">
-              <span className="text-xl sm:text-2xl font-bold text-gray-800">1</span>
-              <span className="text-xs sm:text-sm font-medium text-gray-500 text-center">Day in Gangtok</span>
+              <span className="text-xl sm:text-2xl font-bold text-gray-800">
+                1
+              </span>
+              <span className="text-xs sm:text-sm font-medium text-gray-500 text-center">
+                Day in Gangtok
+              </span>
             </div>
           </div>
         </div>
       </div>
-
-
 
       {/* Content Section */}
       <div className="max-w-8xl mx-auto lg:px-24 py-16  ">
@@ -297,87 +316,86 @@ const ToursDetail = () => {
                 </h2>
               ))}
             </div>
-            {
-              showForm && (
-                <div className="relative flex">
-                  {/* Other content */}
-                  <div className="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md ml-10 fixed top-40">
-                    {/* Header Section */}
-                    <h2 className="text-lg font-semibold text-gray-800">
-                      {tour.location}
-                    </h2>
-                    <div className="flex items-center space-x-2 mt-2">
-                      <span className="text-2xl font-bold text-gray-800">INR {tour.price}</span>
-                      <span className="line-through text-gray-500 text-sm">INR 15,998</span>
-                      <span className="bg-green-100 text-green-600 text-xs font-medium px-2 py-1 rounded">
-                        SAVE INR 1,999
-                      </span>
-                    </div>
+            {showForm && (
+              <div className="relative flex">
+                {/* Other content */}
+                <div className="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md ml-10 fixed top-40">
+                  {/* Header Section */}
+                  <h2 className="text-lg font-semibold text-gray-800">
+                    {tour.location}
+                  </h2>
+                  <div className="flex items-center space-x-2 mt-2">
+                    <span className="text-2xl font-bold text-gray-800">
+                      INR {tour.price}
+                    </span>
+                    <span className="line-through text-gray-500 text-sm">
+                      INR 15,998
+                    </span>
+                    <span className="bg-green-100 text-green-600 text-xs font-medium px-2 py-1 rounded">
+                      SAVE INR 1,999
+                    </span>
+                  </div>
 
-                    {/* Form */}
-                    <form className="space-y-4 mt-6">
-                      <div>
-                        <input
-                          type="text"
-                          placeholder="Full Name*"
-                          className="w-full border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
-                        />
-                      </div>
-                      <div>
-                        <input
-                          type="email"
-                          placeholder="Email*"
-                          className="w-full border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
-                        />
-                      </div>
-                      <div className="flex space-x-2">
-                        <select
-                          className="w-1/4 border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
-                        >
-                          <option value="+91">+91</option>
-                        </select>
-                        <input
-                          type="text"
-                          placeholder="Your Phone*"
-                          className="w-3/4 border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
-                        />
-                      </div>
-                      <div className="flex space-x-2">
-                        <input
-                          type="date"
-                          placeholder="Travel Date*"
-                          className="w-1/2 border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
-                        />
-                        <input
-                          type="number"
-                          placeholder="Traveller Count*"
-                          className="w-1/2 border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
-                        />
-                      </div>
-                      <div>
-                        <textarea
-                          placeholder="Message..."
-                          className="w-full border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
-                          rows="3"
-                        ></textarea>
-                      </div>
-                      <button
-                        type="submit"
-                        className="w-full group bg-gradient-to-r from-teal-500 via-teal-400 to-emerald-400 
+                  {/* Form */}
+                  <form className="space-y-4 mt-6">
+                    <div>
+                      <input
+                        type="text"
+                        placeholder="Full Name*"
+                        className="w-full border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
+                      />
+                    </div>
+                    <div>
+                      <input
+                        type="email"
+                        placeholder="Email*"
+                        className="w-full border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
+                      />
+                    </div>
+                    <div className="flex space-x-2">
+                      <select className="w-1/4 border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500">
+                        <option value="+91">+91</option>
+                      </select>
+                      <input
+                        type="text"
+                        placeholder="Your Phone*"
+                        className="w-3/4 border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
+                      />
+                    </div>
+                    <div className="flex space-x-2">
+                      <input
+                        type="date"
+                        placeholder="Travel Date*"
+                        className="w-1/2 border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
+                      />
+                      <input
+                        type="number"
+                        placeholder="Traveller Count*"
+                        className="w-1/2 border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
+                      />
+                    </div>
+                    <div>
+                      <textarea
+                        placeholder="Message..."
+                        className="w-full border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
+                        rows="3"
+                      ></textarea>
+                    </div>
+                    <button
+                      type="submit"
+                      className="w-full group bg-gradient-to-r from-teal-500 via-teal-400 to-emerald-400 
              text-white px-4 py-2 rounded-2xl text-lg font-medium
              shadow-[0_10px_20px_rgba(0,0,0,0.1)] 
              hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)]
              transition-all duration-500 overflow-hidden
              border border-white/20 backdrop-blur-sm"
-                      >
-                        Send Enquiry
-                      </button>
-                    </form>
-                  </div>
+                    >
+                      Send Enquiry
+                    </button>
+                  </form>
                 </div>
-              )
-            }
-
+              </div>
+            )}
           </div>
 
           <section>
@@ -445,10 +463,11 @@ const ToursDetail = () => {
                       >
                         <h3 className="text-black font-semibold">{day.day}</h3>
                         <span
-                          className={`transform transition-transform duration-300 ${expandedDay === `${index}-${dayIndex}`
+                          className={`transform transition-transform duration-300 ${
+                            expandedDay === `${index}-${dayIndex}`
                               ? "rotate-180"
                               : ""
-                            }`}
+                          }`}
                         >
                           ⌄
                         </span>
@@ -503,7 +522,6 @@ const ToursDetail = () => {
                             pagination={{
                               type: "fraction",
                               el: `.swiper-pagination-${dayIndex}`,
-
                             }}
                             autoplay={{
                               delay: 3000,
@@ -517,15 +535,19 @@ const ToursDetail = () => {
                             ]}
                             className="mySwiper h-[150px] sm:h-[250px] rounded-lg"
                           >
-                            {Object.values(day.images).map((image, imgIndex) => (
-                              <SwiperSlide key={imgIndex}>
-                                <img
-                                  className="w-full h-full object-cover rounded-lg transition-transform duration-300 hover:scale-105"
-                                  src={image}
-                                  alt={`Day ${dayIndex + 1} Image ${imgIndex + 1}`}
-                                />
-                              </SwiperSlide>
-                            ))}
+                            {Object.values(day.images).map(
+                              (image, imgIndex) => (
+                                <SwiperSlide key={imgIndex}>
+                                  <img
+                                    className="w-full h-full object-cover rounded-lg transition-transform duration-300 hover:scale-105"
+                                    src={image}
+                                    alt={`Day ${dayIndex + 1} Image ${
+                                      imgIndex + 1
+                                    }`}
+                                  />
+                                </SwiperSlide>
+                              )
+                            )}
                             <div
                               className={`swiper-button-next swiper-button-next-${dayIndex}`}
                             ></div>
@@ -545,17 +567,12 @@ const ToursDetail = () => {
             </div>
           </section>
 
-
-
           <img
             src="https://media1.thrillophilia.com/end_of_trip_desktop.png"
             alt="End of Trip"
             className="w-full h-auto"
             id="specific-tag"
           />
-
-
-
 
           {/* Inclusions & Exclusions */}
           <div className="grid md:grid-cols-2 gap-12">
@@ -632,7 +649,6 @@ const ToursDetail = () => {
             </section>
           </div>
 
-
           {/* Connect to Expert Button */}
           {/* <section className="text-center">
             <motion.button
@@ -647,7 +663,6 @@ const ToursDetail = () => {
           </section> */}
 
           {/* Contact Methods */}
-
 
           <section>
             <h2 className="text-3xl font-bold text-[#0F2642] mb-8">
