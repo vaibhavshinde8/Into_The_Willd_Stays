@@ -39,7 +39,7 @@ const ToursDetail = () => {
         const { top: startTop } = startElement.getBoundingClientRect();
         const { top: targetTop } = targetElement.getBoundingClientRect();
         const windowHeight = window.innerHeight;
-  
+
         // Check scroll position and screen width
         if (
           startTop <= 0 && // Passed the start element
@@ -52,14 +52,14 @@ const ToursDetail = () => {
         }
       }
     };
-  
+
     window.addEventListener("scroll", handleScroll);
-  
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  
+
 
   if (!tour) {
     return <div>Tour not found</div>;
@@ -143,76 +143,68 @@ const ToursDetail = () => {
 
 
       <div
-  className="grid grid-cols-1 md:grid-cols-3 gap-3 p-4 sm:p-6 w-full sm:w-4/5 mx-auto bg-gray-50 shadow-lg rounded-lg"
-  id="specific-tag-start"
->
-  {/* Main Image */}
-  <div className="relative md:col-span-2 rounded-lg overflow-hidden shadow-md">
-    <img
-      src="https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg"
-      alt="Main Image"
-      className="w-full h-64 sm:h-full object-cover"
-    />
-    <div className="absolute bottom-4 right-2 justify-center bg-black bg-opacity-25 rounded-lg transition-opacity duration-300 hover:bg-opacity-50">
-      <span className="text-white text-sm sm:text-lg font-semibold">Explore Beauty</span>
-    </div>
-  </div>
+        className="grid grid-cols-1 md:grid-cols-3 gap-3 p-4 sm:p-6 w-full sm:w-4/5 mx-auto bg-gray-50 shadow-lg rounded-lg"
+        id="specific-tag-start"
+      >
+        {/* Main Image */}
+        <div className="relative md:col-span-2 rounded-lg overflow-hidden shadow-md">
+          <img
+            src="https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg"
+            alt="Main Image"
+            className="w-full h-64 sm:h-full object-cover"
+          />
+          <div className="absolute bottom-4 right-2 justify-center bg-black bg-opacity-25 rounded-lg transition-opacity duration-300 hover:bg-opacity-50">
+            <span className="text-white text-sm sm:text-lg font-semibold">Explore Beauty</span>
+          </div>
+        </div>
 
-  {/* Smaller Images */}
-  <div className="grid grid-cols-2 gap-3">
-    <div className="relative h-40 sm:h-60 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
-      <img
-        src="https://png.pngtree.com/background/20230805/original/pngtree-a-snowy-mountain-adorned-in-pahalgam-valley-located-in-kashmir-india-picture-image_4440125.jpg"
-        alt="Destinations"
-        className="w-full h-full object-cover"
-      />
-      <div className="absolute bottom-4 right-2 justify-center bg-black bg-opacity-25 transition-opacity duration-300 hover:bg-opacity-50">
-        <span className="text-white text-xs sm:text-sm font-medium">Destinations</span>
+        {/* Smaller Images */}
+        <div className="grid grid-cols-2 gap-3">
+          <div className="relative h-40 sm:h-60 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+            <img
+              src="https://png.pngtree.com/background/20230805/original/pngtree-a-snowy-mountain-adorned-in-pahalgam-valley-located-in-kashmir-india-picture-image_4440125.jpg"
+              alt="Destinations"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute bottom-4 right-2 justify-center bg-black bg-opacity-25 transition-opacity duration-300 hover:bg-opacity-50">
+              <span className="text-white text-xs sm:text-sm font-medium">Destinations</span>
+            </div>
+          </div>
+
+          <div className="relative h-40 sm:h-60 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+            <img
+              src="https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"
+              alt="Stays"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute bottom-4 right-2 justify-center bg-black bg-opacity-25 transition-opacity duration-300 hover:bg-opacity-50">
+              <span className="text-white text-xs sm:text-sm font-medium">Stays</span>
+            </div>
+          </div>
+
+          <div className="relative h-40 sm:h-60 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+            <img
+              src="https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"
+              alt="Activity"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute bottom-4 right-2 justify-center bg-black bg-opacity-25 transition-opacity duration-300 hover:bg-opacity-50">
+              <span className="text-white text-xs sm:text-sm font-medium">Activity</span>
+            </div>
+          </div>
+
+          <div className="relative h-40 sm:h-60 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+            <img
+              src="https://png.pngtree.com/background/20230401/original/pngtree-view-from-chitkul-village-in-sangla-valley-vector-picture-image_2229375.jpg"
+              alt="View All Images"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute bottom-4 right-2 justify-center bg-black bg-opacity-25 transition-opacity duration-300 hover:bg-opacity-50">
+              <span className="text-white text-xs sm:text-sm font-medium">View All Images</span>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-
-    <div className="relative h-40 sm:h-60 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
-      <img
-        src="https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"
-        alt="Stays"
-        className="w-full h-full object-cover"
-      />
-      <div className="absolute bottom-4 right-2 justify-center bg-black bg-opacity-25 transition-opacity duration-300 hover:bg-opacity-50">
-        <span className="text-white text-xs sm:text-sm font-medium">Stays</span>
-      </div>
-    </div>
-
-    <div className="relative h-40 sm:h-60 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
-      <img
-        src="https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"
-        alt="Activity"
-        className="w-full h-full object-cover"
-      />
-      <div className="absolute bottom-4 right-2 justify-center bg-black bg-opacity-25 transition-opacity duration-300 hover:bg-opacity-50">
-        <span className="text-white text-xs sm:text-sm font-medium">Activity</span>
-      </div>
-    </div>
-
-    <div className="relative h-40 sm:h-60 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
-      <img
-        src="https://png.pngtree.com/background/20230401/original/pngtree-view-from-chitkul-village-in-sangla-valley-vector-picture-image_2229375.jpg"
-        alt="View All Images"
-        className="w-full h-full object-cover"
-      />
-      <div className="absolute bottom-4 right-2 justify-center bg-black bg-opacity-25 transition-opacity duration-300 hover:bg-opacity-50">
-        <span className="text-white text-xs sm:text-sm font-medium">View All Images</span>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-
-
-
-    
-
 
 
       {/* Connect to Expert Button */}
@@ -236,55 +228,55 @@ const ToursDetail = () => {
 
 
       <div className="space-y-4 sm:ml-10 md:ml-44">
-  {/* Title Section */}
-  <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-black text-center md:text-left">
-    {tour.name}
-  </h1>
+        {/* Title Section */}
+        <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-black text-center md:text-left">
+          {tour.name}
+        </h1>
 
-  {/* Badge and Itinerary Days */}
-  <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4 space-y-4 sm:space-y-0">
-    {/* Badge */}
-    <span className="group bg-gradient-to-r from-teal-500 via-teal-400 to-emerald-400 
+        {/* Badge and Itinerary Days */}
+        <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4 space-y-4 sm:space-y-0">
+          {/* Badge */}
+          <span className="group bg-gradient-to-r from-teal-500 via-teal-400 to-emerald-400 
                  text-white px-4 py-2 rounded-2xl text-base sm:text-lg font-medium
                  shadow-[0_10px_20px_rgba(0,0,0,0.1)] 
                  hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)]
                  transition-all duration-500 overflow-hidden
                  border border-white/20 backdrop-blur-sm text-center">
-      6D/5N
-    </span>
+            6D/5N
+          </span>
 
-    {/* Days with Destinations */}
-    <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6">
-      {/* Day in Gangtok */}
-      <div className="flex flex-col items-center">
-        <span className="text-xl sm:text-2xl font-bold text-gray-800">2</span>
-        <span className="text-xs sm:text-sm font-medium text-gray-500 text-center">Days in Gangtok</span>
-      </div>
-      {/* Separator */}
-      <div className="hidden sm:block h-6 w-px bg-gray-300"></div>
+          {/* Days with Destinations */}
+          <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6">
+            {/* Day in Gangtok */}
+            <div className="flex flex-col items-center">
+              <span className="text-xl sm:text-2xl font-bold text-gray-800">2</span>
+              <span className="text-xs sm:text-sm font-medium text-gray-500 text-center">Days in Gangtok</span>
+            </div>
+            {/* Separator */}
+            <div className="hidden sm:block h-6 w-px bg-gray-300"></div>
 
-      {/* Day in Lachen */}
-      <div className="flex flex-col items-center">
-        <span className="text-xl sm:text-2xl font-bold text-gray-800">1</span>
-        <span className="text-xs sm:text-sm font-medium text-gray-500 text-center">Day in Lachen</span>
-      </div>
-      <div className="hidden sm:block h-6 w-px bg-gray-300"></div>
+            {/* Day in Lachen */}
+            <div className="flex flex-col items-center">
+              <span className="text-xl sm:text-2xl font-bold text-gray-800">1</span>
+              <span className="text-xs sm:text-sm font-medium text-gray-500 text-center">Day in Lachen</span>
+            </div>
+            <div className="hidden sm:block h-6 w-px bg-gray-300"></div>
 
-      {/* Day in Lachung */}
-      <div className="flex flex-col items-center">
-        <span className="text-xl sm:text-2xl font-bold text-gray-800">1</span>
-        <span className="text-xs sm:text-sm font-medium text-gray-500 text-center">Day in Lachung</span>
-      </div>
-      <div className="hidden sm:block h-6 w-px bg-gray-300"></div>
+            {/* Day in Lachung */}
+            <div className="flex flex-col items-center">
+              <span className="text-xl sm:text-2xl font-bold text-gray-800">1</span>
+              <span className="text-xs sm:text-sm font-medium text-gray-500 text-center">Day in Lachung</span>
+            </div>
+            <div className="hidden sm:block h-6 w-px bg-gray-300"></div>
 
-      {/* Additional Day in Gangtok */}
-      <div className="flex flex-col items-center">
-        <span className="text-xl sm:text-2xl font-bold text-gray-800">1</span>
-        <span className="text-xs sm:text-sm font-medium text-gray-500 text-center">Day in Gangtok</span>
+            {/* Additional Day in Gangtok */}
+            <div className="flex flex-col items-center">
+              <span className="text-xl sm:text-2xl font-bold text-gray-800">1</span>
+              <span className="text-xs sm:text-sm font-medium text-gray-500 text-center">Day in Gangtok</span>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</div>
 
 
 
@@ -453,11 +445,10 @@ const ToursDetail = () => {
                       >
                         <h3 className="text-black font-semibold">{day.day}</h3>
                         <span
-                          className={`transform transition-transform duration-300 ${
-                            expandedDay === `${index}-${dayIndex}`
+                          className={`transform transition-transform duration-300 ${expandedDay === `${index}-${dayIndex}`
                               ? "rotate-180"
                               : ""
-                          }`}
+                            }`}
                         >
                           ⌄
                         </span>
@@ -568,78 +559,78 @@ const ToursDetail = () => {
 
           {/* Inclusions & Exclusions */}
           <div className="grid md:grid-cols-2 gap-12">
-  {/* Inclusions Section */}
-  <section>
-    <h2 className="text-3xl font-bold text-[#0F2642] mb-8">
-      Inclusions
-    </h2>
-    <div className="space-y-4">
-      {tour.inclusions?.map((item, index) => (
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: index * 0.1 }}
-          key={index}
-          className="flex items-center space-x-3 bg-teal-50 p-4 rounded-xl border border-teal-200"
-        >
-          {/* Check Icon */}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6 text-teal-500 flex-shrink-0"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth={2}
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M5 13l4 4L19 7"
-            />
-          </svg>
-          <span className="text-lg text-gray-700">{item}</span>
-        </motion.div>
-      ))}
-    </div>
-  </section>
+            {/* Inclusions Section */}
+            <section>
+              <h2 className="text-3xl font-bold text-[#0F2642] mb-8">
+                Inclusions
+              </h2>
+              <div className="space-y-4">
+                {tour.inclusions?.map((item, index) => (
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                    key={index}
+                    className="flex items-center space-x-3 bg-teal-50 p-4 rounded-xl border border-teal-200"
+                  >
+                    {/* Check Icon */}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6 text-teal-500 flex-shrink-0"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    <span className="text-lg text-gray-700">{item}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </section>
 
-  {/* Exclusions Section */}
-  <section>
-    <h2 className="text-3xl font-bold text-[#0F2642] mb-8">
-      Exclusions
-    </h2>
-    <div className="space-y-4">
-      {tour.exclusions?.map((item, index) => (
-        <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: index * 0.1 }}
-          key={index}
-          className="flex items-center space-x-3 bg-red-50 p-4 rounded-xl border border-red-200"
-        >
-          {/* Cross Icon */}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6 text-red-400 flex-shrink-0"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth={2}
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M6 18L18 6M6 6l12 12"
-            />
-          </svg>
-          <span className="text-lg text-gray-700">{item}</span>
-        </motion.div>
-      ))}
-    </div>
-  </section>
-</div>
+            {/* Exclusions Section */}
+            <section>
+              <h2 className="text-3xl font-bold text-[#0F2642] mb-8">
+                Exclusions
+              </h2>
+              <div className="space-y-4">
+                {tour.exclusions?.map((item, index) => (
+                  <motion.div
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                    key={index}
+                    className="flex items-center space-x-3 bg-red-50 p-4 rounded-xl border border-red-200"
+                  >
+                    {/* Cross Icon */}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6 text-red-400 flex-shrink-0"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M6 18L18 6M6 6l12 12"
+                      />
+                    </svg>
+                    <span className="text-lg text-gray-700">{item}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </section>
+          </div>
 
 
           {/* Connect to Expert Button */}
