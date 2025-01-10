@@ -36,6 +36,8 @@ const ToursDetail = () => {
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-teal-50/30 to-blue-50/30">
       {/* Hero Section */}
       <div className="relative h-[90vh] overflow-hidden">
+
+
         <div className="absolute inset-0">
           <img
             src={tour.imageUrl}
@@ -44,6 +46,8 @@ const ToursDetail = () => {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-[#0F2642]/40 via-[#0F2642]/60 to-[#0F2642]/80" />
         </div>
+
+
         <div className="relative h-full max-w-7xl mx-auto px-6 flex flex-col items-center justify-center text-center">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -104,6 +108,74 @@ const ToursDetail = () => {
         </div>
       </div>
 
+
+
+      <div className="grid grid-cols-3 gap-3 p-6 max-w-screen-lg mx-auto bg-gray-50 shadow-lg rounded-lg">
+  {/* Main Image */}
+  <div className="relative col-span-2 rounded-lg overflow-hidden shadow-md">
+    <img
+      src="https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg"
+      alt="Main Image"
+      className="w-full h-full object-cover"
+    />
+    <div className="absolute bottom-4 right-2 justify-center bg-black bg-opacity-25 rounded-lg transition-opacity duration-300 hover:bg-opacity-50">
+      <span className="text-white text-lg font-semibold ">Explore Beauty</span>
+    </div>
+  </div>
+
+  {/* Smaller Images */}
+  <div className="grid grid-cols-2 gap-3">
+    <div className="relative h-70 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+      <img
+        src="https://png.pngtree.com/background/20230805/original/pngtree-a-snowy-mountain-adorned-in-pahalgam-valley-located-in-kashmir-india-picture-image_4440125.jpg"
+        alt="Destinations"
+        className="w-full h-full object-cover"
+      />
+      <div className="absolute bottom-4 right-2 justify-center bg-black bg-opacity-25 transition-opacity duration-300 hover:bg-opacity-50">
+        <span className="text-white text-sm font-medium">Destinations</span>
+      </div>
+    </div>
+
+    <div className="relative h-60 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+      <img
+        src="https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"
+        alt="Stays"
+        className="w-full h-full object-cover"
+      />
+      <div className="absolute bottom-4 right-2 justify-center bg-black bg-opacity-25 transition-opacity duration-300 hover:bg-opacity-50">
+        <span className="text-white text-sm font-medium">Stays</span>
+      </div>
+    </div>
+
+    <div className="relative h-60 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+      <img
+        src="https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"
+        alt="Activity & Sightseeing"
+        className="w-full h-full object-cover"
+      />
+      <div className="absolute bottom-4 right-2 justify-center bg-black bg-opacity-25 transition-opacity duration-300 hover:bg-opacity-50">
+        <span className="text-white text-sm font-medium">Activity</span>
+      </div>
+    </div>
+
+    <div className="relative h-60 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+      <img
+        src="https://png.pngtree.com/background/20230401/original/pngtree-view-from-chitkul-village-in-sangla-valley-vector-picture-image_2229375.jpg"
+        alt="View All Images"
+        className="w-full h-full object-cover"
+      />
+      <div className="absolute bottom-4 right-2 justify-center bg-black bg-opacity-25 transition-opacity duration-300 hover:bg-opacity-50">
+        <span className="text-white text-sm font-medium">View All Images</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
       {/* Connect to Expert Button */}
       <div className="bg-white/80 backdrop-blur-sm py-8">
         {/* <div className="max-w-7xl mx-auto px-6">
@@ -124,31 +196,119 @@ const ToursDetail = () => {
       </div>
 
       {/* Content Section */}
-      <div className="max-w-7xl mx-auto px-6 py-16">
+      <div className="max-w-7xl mx-auto px-10 py-16 mr-20 ">
         <div className="space-y-16">
+          <div className="flex">
+            <div className="p-6 bg-gray-100 rounded-lg shadow-lg w-3/5">
+              <h1 className="text-2xl font-bold text-gray-800 mb-4 text-center uppercase">Trip Highlights</h1>
+              {
+                tour.highlights?.map((item, index) => (
+                  <h2
+                    key={index}
+                    className=" text-gray-600 mb-3 pl-4 border-l-4 border-blue-500"
+                  >
+                    {item}
+                  </h2>
+                ))
+              }
+            </div>
+            <div className="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md ml-4 sticky top-20">
+              {/* Header Section */}
+              <h2 className="text-lg font-semibold text-gray-800">
+                {tour.location}
+              </h2>
+              <div className="flex items-center space-x-2 mt-2">
+                <span className="text-2xl font-bold text-gray-800">INR  {tour.price}</span>
+                <span className="line-through text-gray-500 text-sm">INR 15,998</span>
+                <span className="bg-green-100 text-green-600 text-xs font-medium px-2 py-1 rounded">
+                  SAVE INR 1,999
+                </span>
+              </div>
 
-          <div className="p-6 bg-gray-100 rounded-lg shadow-lg">
-            <h1 className="text-2xl font-bold text-gray-800 mb-4 text-center uppercase">Trip Highlights</h1>
-            {
-              tour.highlights?.map((item, index) => (
-                <h2
-                  key={index}
-                  className="text-lg text-gray-600 mb-3 pl-4 border-l-4 border-blue-500"
+              {/* Form */}
+              <form className="space-y-4 mt-6">
+                {/* Full Name */}
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Full Name*"
+                    className="w-full border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
+                  />
+                </div>
+
+                {/* Email */}
+                <div>
+                  <input
+                    type="email"
+                    placeholder="Email*"
+                    className="w-full border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
+                  />
+                </div>
+
+                {/* Phone */}
+                <div className="flex space-x-2">
+                  <select
+                    className="w-1/4 border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
+                  >
+                    <option value="+91">+91</option>
+                    {/* Add more country codes here */}
+                  </select>
+                  <input
+                    type="text"
+                    placeholder="Your Phone*"
+                    className="w-3/4 border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
+                  />
+                </div>
+
+                {/* Travel Date & Traveller Count */}
+                <div className="flex space-x-2">
+                  <input
+                    type="date"
+                    placeholder="Travel Date*"
+                    className="w-1/2 border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
+                  />
+                  <input
+                    type="number"
+                    placeholder="Traveller Count*"
+                    className="w-1/2 border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
+                  />
+                </div>
+
+                {/* Message */}
+                <div>
+                  <textarea
+                    placeholder="Message..."
+                    className="w-full border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
+                    rows="3"
+                  ></textarea>
+                </div>
+
+                {/* Submit Button */}
+                <button
+                  type="submit"
+                  className="w-full group bg-gradient-to-r from-teal-500 via-teal-400 to-emerald-400 
+                     text-white px-4 py-2 rounded-2xl text-lg font-medium
+                     shadow-[0_10px_20px_rgba(0,0,0,0.1)] 
+                     hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)]
+                     transition-all duration-500 overflow-hidden
+                     border border-white/20 backdrop-blur-sm"
                 >
-                  {item}
-                </h2>
-              ))
-            }
+                  Send Enquiry
+                </button>
+              </form>
+            </div>
+
+
+
           </div>
 
 
-          {/* Itinerary */}
           <section>
-            <h2 className="text-3xl font-bold text-[#0F2642] mb-8 text-center">
-              Itinerary
-            </h2>
             <div></div>
-            <div className="space-y-6 w-3/4">
+            <div className="space-y-6 w-3/5">
+              <h2 className="text-2xl font-bold text-gray-800 mb-4 text-center uppercase">
+                Itinerary
+              </h2>
               {tour.itinerary?.map((item, index) => (
                 <div key={index}>
                   {/* Display combinedDays images with Swiper */}
@@ -192,7 +352,7 @@ const ToursDetail = () => {
                         className="flex items-center justify-between cursor-pointer"
                         onClick={() => toggleAccordion(`${index}-${dayIndex}`)}
                       >
-                        <h3 className="font-bold text-[#0F2642] text-lg sm:text-xl">
+                        <h3 className=" text-[#0F2642] ">
                           {day.day}
                         </h3>
                         <span
@@ -219,7 +379,7 @@ const ToursDetail = () => {
                                 {day.description.map((desc, descIndex) => (
                                   <li
                                     key={descIndex}
-                                    className="flex items-start text-sm sm:text-base md:text-lg leading-normal"
+                                    className="flex items-start text-sm sm:text-base  leading-normal"
                                   >
                                     {/* Custom Icon */}
                                     <span className="mr-2 sm:mr-3 flex-shrink-0 text-blue-500">
@@ -405,6 +565,7 @@ const ToursDetail = () => {
             </div>
           </section>
         </div>
+
       </div>
 
       {/* Add ContactForm Modal */}
