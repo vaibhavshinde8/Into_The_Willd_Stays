@@ -237,7 +237,7 @@ const ToursDetail = () => {
         </h1>
 
         {/* Badge and Itinerary Days */}
-        <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4 space-y-4 sm:space-y-0">
+        <div className="flex flex-col md:flex-row sm:items-center sm:space-x-4 space-y-4 sm:space-y-0">
           {/* Badge */}
           <span
             className="group bg-gradient-to-r from-teal-500 via-teal-400 to-emerald-400 
@@ -300,10 +300,10 @@ const ToursDetail = () => {
       </div>
 
       {/* Content Section */}
-      <div className="max-w-8xl mx-auto lg:px-24 py-16  ">
+      <div className="lg:max-w-8xl w-full mx-auto lg:px-24 py-16  ">
         <div className="space-y-16">
-          <div className="flex gap-12">
-            <div className="p-6 bg-gray-100 rounded-lg shadow-lg w-3/5">
+          <div className="flex flex-col lg:flex-row gap-12">
+            <div className="p-6 bg-gray-100 rounded-lg shadow-lg w-full lg:w-3/5">
               <h1 className="text-2xl font-bold text-gray-800 mb-4 text-center uppercase">
                 Trip Highlights
               </h1>
@@ -317,7 +317,7 @@ const ToursDetail = () => {
               ))}
             </div>
             {showForm && (
-              <div className="relative flex">
+              <div className="relative hidden lg:flex">
                 {/* Other content */}
                 <div className="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md ml-10 fixed top-40">
                   {/* Header Section */}
@@ -400,7 +400,7 @@ const ToursDetail = () => {
 
           <section>
             <div></div>
-            <div className="space-y-6 w-3/5">
+            <div className="space-y-6 lg:w-3/5 w-full mx-2">
               <h2 className="text-2xl font-bold text-gray-800 mb-4 text-center uppercase">
                 Itinerary
               </h2>
@@ -570,7 +570,7 @@ const ToursDetail = () => {
           <img
             src="https://media1.thrillophilia.com/end_of_trip_desktop.png"
             alt="End of Trip"
-            className="w-full h-auto"
+            className="w-full h-auto object-cover"
             id="specific-tag"
           />
 
