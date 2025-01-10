@@ -189,7 +189,7 @@ const Properties = () => {
             <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
               Discover
               <br />
-              Your Perfect Stay
+              <span className="text-white/60">Your Perfect Stay</span>
             </span>
           </h1>
           <p className="text-xl text-gray-200 max-w-2xl mb-8">
@@ -481,6 +481,7 @@ const Properties = () => {
                       onMouseLeave={() => setHoveredIndex(null)}
                       className="relative bg-white overflow-hidden shadow-lg transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl rounded-lg border border-gray-200"
                     >
+                      <a href={`/property/${property._id}`}>
                       <div className="flex flex-col md:flex-row h-full">
                         {/* Image Section */}
                         <div className="md:w-2/5 relative overflow-hidden h-64 md:h-auto">
@@ -554,6 +555,7 @@ const Properties = () => {
                           </div>
                         </div>
                       </div>
+                      </a>
                     </motion.div>
                   ))}
             </div>

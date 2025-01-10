@@ -81,7 +81,7 @@ const ContactUs = () => {
             <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">Let's Connect</span>
            
           </h1>
-          <p className="text-xl bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent font-bold max-w-2xl ">
+          <p className="text-xl font-semibold text-white/60 max-w-2xl ">
             We're here to help turn your travel dreams into reality
           </p>
         </motion.div>

@@ -28,7 +28,7 @@ const Events = () => {
           transition={{ duration: 1 }}
           className="relative h-full max-w-7xl mx-auto px-4 sm:px-6 flex flex-col items-center justify-center text-center"
         >
-          <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent font-bold text-sm sm:text-base md:text-lg tracking-wider mb-2 sm:mb-4">
+          <span className="text-white/60 font-semibold text-sm sm:text-base md:text-lg tracking-wider mb-2 sm:mb-4">
             DISCOVER & EXPLORE
           </span>
           <motion.h1

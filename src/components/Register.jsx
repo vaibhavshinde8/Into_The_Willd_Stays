@@ -5,9 +5,10 @@ import { User, AtSign, Lock, Key } from "lucide-react";
 import { BASE_URL } from "../utils/baseurl";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { GoogleLogin } from '@react-oauth/google';
+import { GoogleLogin } from "@react-oauth/google";
 import { toast } from "react-toastify";
 import { googleSignup } from "../api";
+import bgLogo from "../assets/IntotheWildStaysLogo.png";
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -22,7 +23,7 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     // New email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(emailorphone)) {
@@ -32,9 +33,12 @@ const Register = () => {
     }
 
     // New password validation
-    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    const passwordRegex =
+      /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
     if (!passwordRegex.test(password)) {
-      setError("Password must be at least 8 characters long and include letters, numbers, and special symbols.");
+      setError(
+        "Password must be at least 8 characters long and include letters, numbers, and special symbols."
+      );
       setIsLoading(false);
       return; // Exit the function if validation fails
     }
@@ -59,12 +63,15 @@ const Register = () => {
       setShowSuccessDialog(false);
       navigate("/");
     }, 2000);
-  }
+  };
 
   const handleOtpSubmit = async () => {
     if (otp) {
       setIsLoading(true);
-      const data = await axios.post(`${BASE_URL}/auth/verify-email`, { emailorphone, otp });
+      const data = await axios.post(`${BASE_URL}/auth/verify-email`, {
+        emailorphone,
+        otp,
+      });
       localStorage.setItem("token", data.data.token);
       localStorage.setItem("user", JSON.stringify(data.data.user));
       if (data.status === 200) {
@@ -83,7 +90,11 @@ const Register = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 flex items-center justify-center px-4 py-32">
+    <div className="min-h-screen flex items-center justify-center lg:gap-10 px-4 py-32 bg-[url('https://img.freepik.com/free-vector/realistic-travel-background-with-elements_52683-77784.jpg?t=st=1736251246~exp=1736254846~hmac=a60f9b0dd6328af546bb696700ed00883117f58cfa9390ea245fd07678b7d008&w=996')] bg-no-repeat bg-center bg-cover">
+      <div className="hidden lg:flex items-center">
+        <img className="w-56" src={bgLogo} alt="" />
+        <h1 className="text-4xl font-bold">IntoTheWildStays</h1>
+      </div>
       <div className="w-full max-w-md bg-white shadow-2xl rounded-2xl overflow-hidden border border-emerald-100">
         <div className="p-8">
           <div className="text-center mb-8">
@@ -157,7 +168,7 @@ const Register = () => {
                 type="standard"
                 text="continue_with"
                 theme="dark"
-                shape='square'
+                shape="square"
               />
             </div>
           </form>
