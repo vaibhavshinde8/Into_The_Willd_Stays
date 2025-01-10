@@ -157,19 +157,19 @@ const HomeHero = () => {
                   Check-in
                 </label>
                 <div className="relative">
-        <input
-          type="date"
-          name="checkIn"
-          value={searchParams.checkIn}
-          onChange={handleInputChange}
-          min={today} // Prevent past dates
-          placeholder="Select Check-in Date"
-          className="w-full h-12 px-4 text-[1.10rem] bg-white border border-white/30 text-gray-900 
+                  <input
+                    type="date"
+                    name="checkIn"
+                    value={searchParams.checkIn}
+                    onChange={handleInputChange}
+                    min={today} // Prevent past dates
+                    placeholder="Select Check-in Date"
+                    className="w-full h-12 px-4 text-[1.10rem] bg-white border border-white/30 text-gray-900 
                      focus:outline-none focus:ring-2 focus:ring-cyan-400 
                      rounded-2xl transition-all duration-300 hover:bg-white cursor-pointer"
-          onFocus={(e) => e.target.showPicker()} // Opens the calendar on focus
-        />
-      </div>
+                    onFocus={(e) => e.target.showPicker()} // Opens the calendar on focus
+                  />
+                </div>
               </div>
 
               {/* Check-out */}
