@@ -160,7 +160,7 @@ const ToursDetail = () => {
 
         {/* Smaller Images */}
         <div className="grid grid-cols-2 gap-3">
-          <div className="relative h-40 sm:h-60 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+          <div className="relative h-40 sm:h-80 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
             <img
               src="https://png.pngtree.com/background/20230805/original/pngtree-a-snowy-mountain-adorned-in-pahalgam-valley-located-in-kashmir-india-picture-image_4440125.jpg"
               alt="Destinations"
@@ -171,7 +171,7 @@ const ToursDetail = () => {
             </div>
           </div>
 
-          <div className="relative h-40 sm:h-60 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+          <div className="relative h-40 sm:h-80 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
             <img
               src="https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"
               alt="Stays"
@@ -182,7 +182,7 @@ const ToursDetail = () => {
             </div>
           </div>
 
-          <div className="relative h-40 sm:h-60 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+          <div className="relative h-40 sm:h-80 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
             <img
               src="https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"
               alt="Activity"
@@ -193,7 +193,7 @@ const ToursDetail = () => {
             </div>
           </div>
 
-          <div className="relative h-40 sm:h-60 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+          <div className="relative h-40 sm:h-80 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
             <img
               src="https://png.pngtree.com/background/20230401/original/pngtree-view-from-chitkul-village-in-sangla-valley-vector-picture-image_2229375.jpg"
               alt="View All Images"
