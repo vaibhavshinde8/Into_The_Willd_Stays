@@ -144,7 +144,7 @@ const ToursDetail = () => {
 
       <div
         className="grid grid-cols-1 md:grid-cols-3 gap-3 p-4 sm:p-6 w-full sm:w-4/5 mx-auto bg-gray-50 shadow-lg rounded-lg"
-        id="specific-tag-start"
+        
       >
         {/* Main Image */}
         <div className="relative md:col-span-2 rounded-lg overflow-hidden shadow-md">
@@ -199,7 +199,7 @@ const ToursDetail = () => {
               alt="View All Images"
               className="w-full h-full object-cover"
             />
-            <div className="absolute bottom-4 right-2 justify-center bg-black bg-opacity-25 transition-opacity duration-300 hover:bg-opacity-50">
+            <div className="absolute bottom-4 right-2 justify-center bg-black bg-opacity-25 transition-opacity duration-300 hover:bg-opacity-50" id="specific-tag-start">
               <span className="text-white text-xs sm:text-sm font-medium">View All Images</span>
             </div>
           </div>
@@ -281,7 +281,7 @@ const ToursDetail = () => {
 
 
       {/* Content Section */}
-      <div className="max-w-7xl mx-auto px-10 py-16 mr-20 ">
+      <div className="max-w-7xl mx-auto px-10 py-16  ">
         <div className="space-y-16">
           <div className="flex">
             <div className="p-6 bg-gray-100 rounded-lg shadow-lg w-3/5">
