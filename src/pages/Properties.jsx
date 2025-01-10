@@ -481,7 +481,7 @@ const Properties = () => {
                       onMouseLeave={() => setHoveredIndex(null)}
                       className="relative bg-white overflow-hidden shadow-lg transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl rounded-lg border border-gray-200"
                     >
-                      <a href={`/property/${property._id}`}>
+                      <Link to={`/property/${property._id}`}>
                         <div className="flex flex-col md:flex-row h-full">
                           {/* Image Section */}
                           <div className="md:w-2/5 relative overflow-hidden h-64 md:h-auto">
@@ -558,7 +558,7 @@ const Properties = () => {
                             </div>
                           </div>
                         </div>
-                      </a>
+                      </Link>
                     </motion.div>
                   ))}
             </div>
