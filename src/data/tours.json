@@ -10,136 +10,172 @@
       "checkInDate": "2024-12-01",
       "checkOutDate": "2024-12-03",
       "highlights": [
-        "Set off on an unforgettable adventure through Spiti Valley, a high-altitude desert mountain haven nestled in the Himalayas. Begin your journey in Kaza, the valley’s vibrant heart, where ancient Buddhist monasteries and rich local culture welcome you with open arms. ",
+        "Set off on an unforgettable adventure through Spiti Valley, a high-altitude desert mountain haven nestled in the Himalayas. Begin your journey in Kaza, the valley’s vibrant heart, where ancient Buddhist monasteries and rich local culture welcome you with open arms.",
         "Discover the serenity of Key Monastery, perched majestically on a hilltop, and soak in the spiritual aura that defines this remote region.",
         "Continue your exploration with a visit to the secluded village of Dhankar, home to the ancient Dhankar Monastery. Clinging dramatically to a cliff, this 1,000-year-old fortress offers sweeping views of the Spiti and Pin valleys.",
         "Finally, uncover the hidden treasure of Tabo, often dubbed the 'Ajanta of the Himalayas' for its ancient Buddhist caves and beautifully preserved monasteries."
       ],
       "itinerary": [
         {
-          "day": "Day 0 - Departure From Delhi",
-          "description": [
-            "Gather at the Departure Point (Kashmiri Gate/R.K. Ashram Delhi)",
-            "Meet your trip captain at the boarding point for a pre-trip briefing.",
-            "Board the designated transport for the overnight journey to Manali. Depart from Delhi."
-          ],
-          "images": {
-            "img1": "https://images.pexels.com/photos/2216400/pexels-photo-2216400.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            "img2": "https://images.pexels.com/photos/1007426/pexels-photo-1007426.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          }
+          "combinedDays": ["https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg", 
+          "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"],
+          "days": [
+            {
+              "day": "Day 0 - Departure From Delhi",
+              "description": [
+                "Gather at the Departure Point (Kashmiri Gate/R.K. Ashram Delhi)",
+                "Meet your trip captain at the boarding point for a pre-trip briefing.",
+                "Board the designated transport for the overnight journey to Manali. Depart from Delhi."
+              ],
+              "images": {
+                "img1": "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
+                "img2": "https://png.pngtree.com/background/20230805/original/pngtree-a-snowy-mountain-adorned-in-pahalgam-valley-located-in-kashmir-india-picture-image_4440125.jpg",
+                "img3": "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg",
+                "img4": "https://png.pngtree.com/background/20230401/original/pngtree-view-from-chitkul-village-in-sangla-valley-vector-picture-image_2229375.jpg"
+              }
+            },
+            {
+              "day": "Day 1 - Reach Manali, Transfer To Jibhi",
+              "description": [
+                "Reach Manali, and stop for the mesmerizing River Beas.",
+                "Day 1 starts from Manali & Transfer to Jibhi.",
+                "Revel in the freedom of the road, exploring Jibhi's hidden gems.",
+                "Local sightseeing of Jibhi - Mini Thailand, Cafe Hopping, Jibhi Waterfall.",
+                "Rest and recharge for the next day."
+              ],
+              "images": {
+                "img1": "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
+                "img2": "https://png.pngtree.com/background/20230805/original/pngtree-a-snowy-mountain-adorned-in-pahalgam-valley-located-in-kashmir-india-picture-image_4440125.jpg",
+                "img3": "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg",
+                "img4": "https://png.pngtree.com/background/20230401/original/pngtree-view-from-chitkul-village-in-sangla-valley-vector-picture-image_2229375.jpg"
+              }
+            }
+          ]
         },
         {
-          "day": "Day 1 - Reach Manali, Transfer To Jibhi",
-          "description": [
-            "Reach Manali, and stop for the mesmerizing River Beas.",
-            "Day 1 starts from Manali & Transfer to Jibhi.",
-            "Revel in the freedom of the road, exploring Jibhi's hidden gems.",
-            "Local sightseeing of Jibhi - Mini Thailand, Cafe Hopping, Jibhi Waterfall",
-            "Rest and recharge for the next day."
-          ],
-          "images": {
-            "img1": "https://images.pexels.com/photos/968625/pexels-photo-968625.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            "img2": "https://images.pexels.com/photos/939714/pexels-photo-939714.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            "img3": "https://images.pexels.com/photos/5205541/pexels-photo-5205541.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            "img4": "https://images.pexels.com/photos/7086906/pexels-photo-7086906.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          }
+          "combinedDays": ["https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg", 
+          "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"],
+          "days": [
+            {
+              "day": "Day 2 - Move To Chitkul Via Sangla For Stay",
+              "description": [
+                "Depart for Chitkul, a remote and scenic village in the Kinnaur district.",
+                "Traverse the beautiful Sangla Valley en route to Chitkul.",
+                "Immerse in the local culture and admire the unique architecture of the village.",
+                "Enjoy an overnight stay in the peaceful surroundings of Chitkul/Sangla."
+              ],
+              "images": {
+                "img1": "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
+                "img2": "https://png.pngtree.com/background/20230805/original/pngtree-a-snowy-mountain-adorned-in-pahalgam-valley-located-in-kashmir-india-picture-image_4440125.jpg",
+                "img3": "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg",
+                "img4": "https://png.pngtree.com/background/20230401/original/pngtree-view-from-chitkul-village-in-sangla-valley-vector-picture-image_2229375.jpg"
+              }
+            }
+          ]
         },
         {
-          "day": "Day 2 - Move To Chitkul Via Sangla For Stay",
-          "description": [
-            "Depart for Chitkul, a remote and scenic village in the Kinnaur district.",
-            "Traverse the beautiful Sangla Valley en route to Chitkul.",
-            "Immerse in the local culture and admire the unique architecture of the village.",
-            "Enjoy an overnight stay in the peaceful surroundings of Chitkul/Sangla."
-          ],
-          "images": {
-            "img1": "https://images.pexels.com/photos/15918166/pexels-photo-15918166/free-photo-of-snowed-winter-city.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            "img2": "https://images.pexels.com/photos/17148596/pexels-photo-17148596/free-photo-of-landscape-of-rocky-snowcapped-mountains.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            "img3": "https://images.pexels.com/photos/6149893/pexels-photo-6149893.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            "img4": "https://images.pexels.com/photos/8002501/pexels-photo-8002501.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          }
+          "combinedDays": ["https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg", 
+          "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"],
+          "days": [
+            {
+              "day": "Day 3 - Explore Chitkul, Head To Nako Via Khab Sangam & Overnight Stay At Tabo",
+              "description": [
+                "Explore Chitkul, known as the last village near the Indo-China border.",
+                "Head towards Nako, passing through the mesmerizing Khab Sangam.",
+                "Witness the confluence of the Spiti and Sutlej rivers at Khab Visit Gue Monastery on the way, and stay overnight at Tabo."
+              ],
+              "images": {
+                "img1": "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
+                "img2": "https://png.pngtree.com/background/20230805/original/pngtree-a-snowy-mountain-adorned-in-pahalgam-valley-located-in-kashmir-india-picture-image_4440125.jpg",
+                "img3": "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg",
+                "img4": "https://png.pngtree.com/background/20230401/original/pngtree-view-from-chitkul-village-in-sangla-valley-vector-picture-image_2229375.jpg"
+              }
+            },
+            {
+              "day": "Day 4 - Visit Dhankar & Pin Valley, Overnight In Kaza",
+              "description": [
+                "Visit the historic Tabo Monastery, home to ancient monasteries and cave art.",
+                "Explore Dhankar monastery, perched on a high cliff & experience the Pin Valley.",
+                "Immerse in the local culture and admire the unique architecture of the village.",
+                "Explore Lingti waterfall on the way to Kaza. Settle in for an overnight stay in the lively town of Kaza."
+              ],
+              "images": {
+                "img1": "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
+                "img2": "https://png.pngtree.com/background/20230805/original/pngtree-a-snowy-mountain-adorned-in-pahalgam-valley-located-in-kashmir-india-picture-image_4440125.jpg",
+                "img3": "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg",
+                "img4": "https://png.pngtree.com/background/20230401/original/pngtree-view-from-chitkul-village-in-sangla-valley-vector-picture-image_2229375.jpg"
+              }
+            }
+          ]
         },
         {
-          "day": "Day 3 - Explore Chitkul, Head To Nako Via Khab Sangam & Overnight Stay At Tabo",
-          "description": [
-            "Explore Chitkul, known as the last village near the Indo-China border.",
-            "Head towards Nako, passing through the mesmerizing Khab Sangam.",
-            "Witness the confluence of the Spiti and Sutlej rivers at Khab Visit Gue Monastery on the way, and stay overnight at Tabo."
-          ],
-          "images": {
-            "img1": "https://images.pexels.com/photos/19566202/pexels-photo-19566202/free-photo-of-milkyway-photography-taken-in-spiti-valley-himachal-pradesh.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            "img2": "https://images.pexels.com/photos/23522680/pexels-photo-23522680/free-photo-of-key-gompa-monastery-in-mountains-in-india.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            "img3": "https://images.pexels.com/photos/27662410/pexels-photo-27662410/free-photo-of-spiti-valley.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            "img4": "https://images.pexels.com/photos/29443897/pexels-photo-29443897/free-photo-of-stunning-mountain-reflection-in-himachal-pradesh.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          }
+          "combinedDays": ["https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg", 
+          "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"],
+          "days": [
+            {
+              "day": "Day 5 - Explore Lingti waterfall on the way to Kaza. Settle in for an overnight stay in the lively town of Kaza.",
+              "description": [
+                "Explore the unique high-altitude villages of Hikkim, Komic, and Langza.",
+                "Visit the iconic Key Monastery, a significant Tibetan Buddhist monastery.",
+                "Immerse in the spiritual and cultural richness of the region.",
+                "Return for an overnight stay in Kaza."
+              ],
+              "images": {
+                "img1": "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
+                "img2": "https://png.pngtree.com/background/20230805/original/pngtree-a-snowy-mountain-adorned-in-pahalgam-valley-located-in-kashmir-india-picture-image_4440125.jpg",
+                "img3": "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg",
+                "img4": "https://png.pngtree.com/background/20230401/original/pngtree-view-from-chitkul-village-in-sangla-valley-vector-picture-image_2229375.jpg"
+              }
+            },
+            {
+              "day": "Day 6 - Visit Chicham Bridge, Head To Chandratal Via Kunzum Pass & Overnight Stay",
+              "description": [
+                "Explore the engineering marvel of Chicham Bridge, the highest bridge in Asia.",
+                "Journey to the mesmerizing Chandratal Lake via the scenic Kunzum Pass.",
+                "Enjoy the surreal beauty of the high-altitude lake.",
+                "Settle in for an overnight stay, surrounded by the tranquillity of Chandratal."
+              ],
+              "images": {
+                "img1": "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
+                "img2": "https://png.pngtree.com/background/20230805/original/pngtree-a-snowy-mountain-adorned-in-pahalgam-valley-located-in-kashmir-india-picture-image_4440125.jpg",
+                "img3": "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg",
+                "img4": "https://png.pngtree.com/background/20230401/original/pngtree-view-from-chitkul-village-in-sangla-valley-vector-picture-image_2229375.jpg"
+              }
+            }
+          ]
         },
         {
-          "day": "Day 4 - Visit Dhankar & Pin Valley, Overnight In Kaza",
-          "description": [
-            "Visit the historic Tabo Monastery, home to ancient monasteries and cave art.",
-            "Explore Dhankar monastery, perched on a high cliff & experience the Pin Valley.",
-            "Immerse in the local culture and admire the unique architecture of the village.",
-            "Explore Lingti waterfall on the way to Kaza. Settle in for an overnight stay in the lively town of Kaza."
-          ],
-          "images": {
-            "img1": "https://images.pexels.com/photos/28486315/pexels-photo-28486315/free-photo-of-haedong-yonggungsa-temple-by-the-sea-busan.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            "img2": "https://www.pexels.com/photo/snow-capped-mountains-at-sunset-in-alpine-landscape-30133738/",
-            "img3": "https://images.pexels.com/photos/30140365/pexels-photo-30140365/free-photo-of-dramatic-sky-over-yosemite-valley-landscape.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            "img4": "https://images.pexels.com/photos/2897748/pexels-photo-2897748.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          }
-        },
-        {
-          "day": "Day 5 - Explore Lingti waterfall on the way to Kaza. Settle in for an overnight stay in the lively town of Kaza.",
-          "description": [
-            "Explore the unique high-altitude villages of Hikkim, Komic, and Langza.",
-            "Visit the iconic Key Monastery, a significant Tibetan Buddhist monastery.",
-            "Immerse in the spiritual and cultural richness of the region.",
-            "Return for an overnight stay in Kaza"
-          ],
-          "images": {
-            "img1": "https://images.pexels.com/photos/30119928/pexels-photo-30119928/free-photo-of-mossy-stream-flowing-through-canmore-forest.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            "img2": "https://images.pexels.com/photos/18646436/pexels-photo-18646436/free-photo-of-pensi-la-also-known-as-penzi-la-mountain-pass-4-400-m-between-suru-valley-and-zanskar-valley-ladakh-region-india.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            "img3": "https://images.pexels.com/photos/30107653/pexels-photo-30107653/free-photo-of-stunning-skogafoss-waterfall-in-iceland.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            "img4": "https://images.pexels.com/photos/30081715/pexels-photo-30081715/free-photo-of-stunning-waterfall-in-arequipa-peru-s-rugged-landscape.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          }
-        },
-        {
-          "day": "Day 6 - Visit Chicham Bridge, Head To Chandratal Via Kunzum Pass & Overnight Stay",
-          "description": [
-            "Explore the engineering marvel of Chicham Bridge, the highest bridge in Asia.",
-            "Journey to the mesmerizing Chandratal Lake via the scenic Kunzum Pass.",
-            "Enjoy the surreal beauty of the high-altitude lake.",
-            "Settle in for an overnight stay, surrounded by the tranquillity of Chandratal"
-          ],
-          "images": {
-            "img1": "https://images.pexels.com/photos/14574640/pexels-photo-14574640.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            "img2": "https://images.pexels.com/photos/30145292/pexels-photo-30145292/free-photo-of-peaceful-kayaking-on-pristine-lake-at-sunset.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            "img3": "https://images.pexels.com/photos/30143832/pexels-photo-30143832/free-photo-of-scenic-winter-view-of-fuschl-am-see-lake.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            "img4": "https://images.pexels.com/photos/30128789/pexels-photo-30128789/free-photo-of-winter-ice-fishing-scene-in-nelson-wisconsin.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          }
-        },
-        {
-          "day": "Day 7 - Transfer To Manali Via Atal Tunnel, Proceed To Delhi Via Volvo",
-          "description": [
-            "Travel back to Manali, passing through the recently inaugurated Atal Tunnel.",
-            "Experience the convenience and thrill of the tunnel journey. Transfer to Delhi via a comfortable Volvo transportation.",
-            "Reflect on the memories of the remarkable journey."
-          ],
-          "images": {
-            "img1": "https://images.pexels.com/photos/994194/pexels-photo-994194.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            "img3": "https://images.pexels.com/photos/29943767/pexels-photo-29943767/free-photo-of-majestic-snow-covered-mountain-peaks-against-blue-sky.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            "img4": "https://images.pexels.com/photos/9390367/pexels-photo-9390367.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          }
-        },
-        {
-          "day": "Day 8 - Arrival In Delhi Between 8:00 To 9:00 AM",
-          "description": [
-            "Arrive in Delhi, concluding the expedition with memories of the breathtaking landscapes and cultural richness of the Himalayan region."
-          ],
-          "images": {
-            "img1": "https://images.pexels.com/photos/6776755/pexels-photo-6776755.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            "img2": "https://images.pexels.com/photos/29547317/pexels-photo-29547317/free-photo-of-aerial-view-of-delhi-s-bustling-expressway.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          }
+          "combinedDays": ["https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg", 
+          "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"],
+          "days": [
+            {
+              "day": "Day 7 - Transfer To Manali Via Atal Tunnel, Proceed To Delhi Via Volvo",
+              "description": [
+                "Travel back to Manali, passing through the recently inaugurated Atal Tunnel.",
+                "Experience the convenience and thrill of the tunnel journey.",
+                "Transfer to Delhi via a comfortable Volvo transportation.",
+                "Reflect on the memories of the remarkable journey."
+              ],
+              "images": {
+                "img1": "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
+                "img2": "https://png.pngtree.com/background/20230805/original/pngtree-a-snowy-mountain-adorned-in-pahalgam-valley-located-in-kashmir-india-picture-image_4440125.jpg",
+                "img3": "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg",
+                "img4": "https://png.pngtree.com/background/20230401/original/pngtree-view-from-chitkul-village-in-sangla-valley-vector-picture-image_2229375.jpg"
+              }
+            },
+            {
+              "day": "Day 8 - Arrival In Delhi Between 8:00 To 9:00 AM",
+              "description": [
+                "Arrive in Delhi, concluding the expedition with memories of the breathtaking landscapes and cultural richness of the Himalayan region."
+              ],
+              "images": {
+                "img1": "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
+                "img2": "https://png.pngtree.com/background/20230805/original/pngtree-a-snowy-mountain-adorned-in-pahalgam-valley-located-in-kashmir-india-picture-image_4440125.jpg",
+                "img3": "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg",
+                "img4": "https://png.pngtree.com/background/20230401/original/pngtree-view-from-chitkul-village-in-sangla-valley-vector-picture-image_2229375.jpg"
+              }
+            }
+          ]
         }
       ],
       "inclusions": [
@@ -169,7 +205,8 @@
         "Participants are responsible for their personal belongings.",
         "In case of adverse weather conditions, activities may be rescheduled."
       ]
-    },
+    }
+,    
     {
       "id": 2,
       "imageUrl": "https://static.toiimg.com/photo/msid-80611280,width-96,height-65.cms",
