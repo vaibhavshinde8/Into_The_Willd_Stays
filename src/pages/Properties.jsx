@@ -1,7 +1,14 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { FaMapMarkerAlt, FaBed, FaUsers, FaStar, FaSearch, FaCalendar } from "react-icons/fa";
+import {
+  FaMapMarkerAlt,
+  FaBed,
+  FaUsers,
+  FaStar,
+  FaSearch,
+  FaCalendar,
+} from "react-icons/fa";
 import SidebarFilter from "../components/SidebarFilter";
 import BookingButton from "../components/BookingButton";
 import TourBanner from "../components/TourBanner";
@@ -54,7 +61,7 @@ const Properties = () => {
         setProperties(res.data.properties);
         setFilteredProperties(res.data.properties);
       } catch (error) {
-        console.error('Error fetching properties:', error);
+        console.error("Error fetching properties:", error);
       } finally {
         setIsLoading(false);
       }
@@ -65,32 +72,37 @@ const Properties = () => {
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
     console.log(urlParams);
-    const location = urlParams.get('location') || "";
-    const checkIn = urlParams.get('checkIn') || "";
-    const checkOut = urlParams.get('checkOut') || "";
-    const adults = urlParams.get('adults') ? parseInt(urlParams.get('adults')) : 1;
-    const children = urlParams.get('children') ? parseInt(urlParams.get('children')) : 0;
+    const location = urlParams.get("location") || "";
+    const checkIn = urlParams.get("checkIn") || "";
+    const checkOut = urlParams.get("checkOut") || "";
+    const adults = urlParams.get("adults")
+      ? parseInt(urlParams.get("adults"))
+      : 1;
+    const children = urlParams.get("children")
+      ? parseInt(urlParams.get("children"))
+      : 0;
 
     // Check if parameters are stored in sessionStorage
-    const storedParams = sessionStorage.getItem('searchParams');
-    console.log(storedParams)
+    const storedParams = sessionStorage.getItem("searchParams");
+    console.log(storedParams);
     if (storedParams) {
-      const { location, checkIn, checkOut, adults, children } = JSON.parse(storedParams);
+      const { location, checkIn, checkOut, adults, children } =
+        JSON.parse(storedParams);
       setSearchParams({ location, checkIn, checkOut, adults, children });
       if (location) {
         handleFilterChange({ location: location });
       }
     } else {
-      navigate('/properties', { replace: true });
+      navigate("/properties", { replace: true });
     }
   }, [properties]);
   useEffect(() => {
     const handleBeforeUnload = () => {
-      sessionStorage.removeItem('searchParams');
+      sessionStorage.removeItem("searchParams");
     };
-    window.addEventListener('beforeunload', handleBeforeUnload);
+    window.addEventListener("beforeunload", handleBeforeUnload);
     return () => {
-      window.removeEventListener('beforeunload', handleBeforeUnload);
+      window.removeEventListener("beforeunload", handleBeforeUnload);
     };
   }, []);
   const handleSearch = () => {
@@ -100,8 +112,6 @@ const Properties = () => {
     });
     handleFilterChange({ location: searchParams.location }); // Filter when Explore button is clicked
   };
-
-
 
   const handleFilterChange = ({ location }) => {
     let filtered = properties;
@@ -159,7 +169,7 @@ const Properties = () => {
   };
 
   // Get today's date in YYYY-MM-DD format
-  const today = new Date().toISOString().split('T')[0];
+  const today = new Date().toISOString().split("T")[0];
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -178,8 +188,8 @@ const Properties = () => {
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
             <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
               Discover
-            <br />
-            Your Perfect Stay
+              <br />
+              Your Perfect Stay
             </span>
           </h1>
           <p className="text-xl text-gray-200 max-w-2xl mb-8">
@@ -200,7 +210,9 @@ const Properties = () => {
           <div className="grid grid-cols-2 md:grid-cols-6 gap-4 items-end">
             {/* Location */}
             <div className="md:col-span-1 col-span-2">
-              <label className="block text-gray-700 mb-2 text-sm">Location</label>
+              <label className="block text-gray-700 mb-2 text-sm">
+                Location
+              </label>
               <select
                 name="location"
                 value={searchParams.location}
@@ -220,8 +232,15 @@ const Properties = () => {
 
             {/* Check-in */}
             <div className="md:col-span-1">
-              <label className="block text-gray-700 mb-2 text-sm">Check-in</label>
-              <div className="relative cursor-pointer" onClick={() => document.getElementById('check-in-date').showPicker()}>
+              <label className="block text-gray-700 mb-2 text-sm">
+                Check-in
+              </label>
+              <div
+                className="relative cursor-pointer"
+                onClick={() =>
+                  document.getElementById("check-in-date").showPicker()
+                }
+              >
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                   <FaCalendar className="text-gray-400" />
                 </div>
@@ -234,14 +253,26 @@ const Properties = () => {
                   min={today} // Prevent past dates
                   className="w-full h-[46px] pl-10 pr-4 py-3 bg-white border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-3xl cursor-pointer"
                 />
-                <div className="absolute inset-0" onClick={() => document.getElementById('check-in-date').showPicker()}></div>
+                <div
+                  className="absolute inset-0"
+                  onClick={() =>
+                    document.getElementById("check-in-date").showPicker()
+                  }
+                ></div>
               </div>
             </div>
 
             {/* Check-out */}
             <div className="md:col-span-1">
-              <label className="block text-gray-700 mb-2 text-sm">Check-out</label>
-              <div className="relative cursor-pointer" onClick={() => document.getElementById('check-out-date').showPicker()}>
+              <label className="block text-gray-700 mb-2 text-sm">
+                Check-out
+              </label>
+              <div
+                className="relative cursor-pointer"
+                onClick={() =>
+                  document.getElementById("check-out-date").showPicker()
+                }
+              >
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                   <FaCalendar className="text-gray-400" />
                 </div>
@@ -254,7 +285,12 @@ const Properties = () => {
                   min={searchParams.checkIn || today} // Prevent past dates and ensure check-out is after check-in
                   className="w-full h-[46px] pl-10 pr-4 py-3 bg-white border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-3xl cursor-pointer"
                 />
-                <div className="absolute inset-0" onClick={() => document.getElementById('check-out-date').showPicker()}></div>
+                <div
+                  className="absolute inset-0"
+                  onClick={() =>
+                    document.getElementById("check-out-date").showPicker()
+                  }
+                ></div>
               </div>
             </div>
 
@@ -268,7 +304,11 @@ const Properties = () => {
                   className="w-full md:w-56 h-12 px-4 py-2 bg-white border border-gray-300 text-gray-900 rounded-lg text-left flex items-center justify-between hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-cyan-400"
                 >
                   <span className="text-sm w-full">
-                    {`${searchParams.adults} Adult${searchParams.adults > 1 ? 's' : ''} and ${searchParams.children} Child${searchParams.children > 1 ? 'ren' : ''}`}
+                    {`${searchParams.adults} Adult${
+                      searchParams.adults > 1 ? "s" : ""
+                    } and ${searchParams.children} Child${
+                      searchParams.children > 1 ? "ren" : ""
+                    }`}
                   </span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -293,19 +333,37 @@ const Properties = () => {
                     {/* Adults */}
                     <div className="flex justify-between items-center mb-2">
                       <div>
-                        <p className="text-gray-700 font-medium text-sm">Adults</p>
+                        <p className="text-gray-700 font-medium text-sm">
+                          Adults
+                        </p>
                       </div>
                       <div className="flex items-center">
                         <button
-                          onClick={() => handleInputChange({ target: { name: 'adults', value: searchParams.adults - 1 } })}
+                          onClick={() =>
+                            handleInputChange({
+                              target: {
+                                name: "adults",
+                                value: searchParams.adults - 1,
+                              },
+                            })
+                          }
                           className="px-0.5 py-0.5 bg-gray-100 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-200 disabled:opacity-50"
                           disabled={searchParams.adults <= 0}
                         >
                           −
                         </button>
-                        <span className="mx-2 text-gray-900 text-sm">{searchParams.adults}</span>
+                        <span className="mx-2 text-gray-900 text-sm">
+                          {searchParams.adults}
+                        </span>
                         <button
-                          onClick={() => handleInputChange({ target: { name: 'adults', value: searchParams.adults + 1 } })}
+                          onClick={() =>
+                            handleInputChange({
+                              target: {
+                                name: "adults",
+                                value: searchParams.adults + 1,
+                              },
+                            })
+                          }
                           className="px-0.5 py-0.5 bg-gray-100 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-200"
                         >
                           +
@@ -316,19 +374,37 @@ const Properties = () => {
                     {/* Children */}
                     <div className="flex justify-between items-center mb-2">
                       <div>
-                        <p className="text-gray-700 font-medium text-sm">Children</p>
+                        <p className="text-gray-700 font-medium text-sm">
+                          Children
+                        </p>
                       </div>
                       <div className="flex items-center">
                         <button
-                          onClick={() => handleInputChange({ target: { name: 'children', value: searchParams.children - 1 } })}
+                          onClick={() =>
+                            handleInputChange({
+                              target: {
+                                name: "children",
+                                value: searchParams.children - 1,
+                              },
+                            })
+                          }
                           className="px-0.5 py-0.5 bg-gray-100 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-200 disabled:opacity-50"
                           disabled={searchParams.children <= 0}
                         >
                           −
                         </button>
-                        <span className="mx-2 text-gray-900 text-sm">{searchParams.children}</span>
+                        <span className="mx-2 text-gray-900 text-sm">
+                          {searchParams.children}
+                        </span>
                         <button
-                          onClick={() => handleInputChange({ target: { name: 'children', value: searchParams.children + 1 } })}
+                          onClick={() =>
+                            handleInputChange({
+                              target: {
+                                name: "children",
+                                value: searchParams.children + 1,
+                              },
+                            })
+                          }
                           className="px-0.5 py-0.5 bg-gray-100 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-200"
                         >
                           +
@@ -352,7 +428,6 @@ const Properties = () => {
                 )}
               </div>
             </div>
-
 
             {/* Search Button */}
             <div className="md:col-span-1 col-span-2 flex items-end ml-6">
@@ -392,97 +467,95 @@ const Properties = () => {
             animate="visible"
           >
             <div className="grid gap-6 md:gap-8">
-              {isLoading ? (
-                // Show 3 shimmer effects while loading
-                [...Array(3)]?.map((_, index) => (
-                  <PropertyShimmer key={index} />
-                ))
-              ) : (
-                // Show actual properties when loaded
-                filteredProperties?.map((property, index) => (
-                  <motion.div
-                    key={index}
-                    variants={itemVariants}
-                    onMouseEnter={() => setHoveredIndex(index)}
-                    onMouseLeave={() => setHoveredIndex(null)}
-                    className="relative bg-white overflow-hidden shadow-lg transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl rounded-lg border border-gray-200"
-                  >
-                    <div className="flex flex-col md:flex-row h-full">
-                      {/* Image Section */}
-                      <div className="md:w-2/5 relative overflow-hidden h-64 md:h-auto">
-                        <img
-                          src={property.images[0]}
-                          alt={property.name}
-                          className="w-full h-[50vh] object-cover transition-transform duration-700 hover:scale-110 rounded-t-lg md:rounded-l-lg"
-                        />
-                        <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-lg shadow-md">
-                          <div className="flex items-center space-x-1">
-                            <FaStar className="text-yellow-500" />
-                            <span className="font-semibold">
-                              {property.rating}
-                            </span>
-                            <span className="text-sm text-gray-600">
-                              ({property.reviews})
-                            </span>
+              {isLoading
+                ? // Show 3 shimmer effects while loading
+                  [...Array(3)]?.map((_, index) => (
+                    <PropertyShimmer key={index} />
+                  ))
+                : // Show actual properties when loaded
+                  filteredProperties?.map((property, index) => (
+                    <motion.div
+                      key={index}
+                      variants={itemVariants}
+                      onMouseEnter={() => setHoveredIndex(index)}
+                      onMouseLeave={() => setHoveredIndex(null)}
+                      className="relative bg-white overflow-hidden shadow-lg transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl rounded-lg border border-gray-200"
+                    >
+                      <div className="flex flex-col md:flex-row h-full">
+                        {/* Image Section */}
+                        <div className="md:w-2/5 relative overflow-hidden h-64 md:h-auto">
+                          <img
+                            src={property.images[0]}
+                            alt={property.name}
+                            className="w-full h-[50vh] object-cover transition-transform duration-700 hover:scale-110 rounded-t-lg md:rounded-l-lg"
+                          />
+                          <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-lg shadow-md">
+                            <div className="flex items-center space-x-1">
+                              <FaStar className="text-yellow-500" />
+                              <span className="font-semibold">
+                                {property.rating}
+                              </span>
+                              <span className="text-sm text-gray-600">
+                                ({property.reviews})
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Content Section */}
+                        <div className="flex-1 p-6 flex flex-col justify-between">
+                          <div>
+                            <h2 className="text-2xl font-bold text-gray-800 mb-3">
+                              {property.name}
+                            </h2>
+                            <p className="text-gray-600 mb-4">
+                              {property?.description?.length > 250
+                                ? `${property.description.substring(0, 250)}...`
+                                : property?.description}
+                            </p>
+
+                            <div className="flex flex-wrap gap-3 mb-4">
+                              <span className="flex items-center space-x-2 bg-teal-50 text-teal-700 px-3 py-1 rounded-lg text-sm">
+                                <FaMapMarkerAlt className="text-teal-500" />
+                                <span>{property.location}</span>
+                              </span>
+                              <span className="flex items-center space-x-2 bg-blue-50 text-blue-700 px-3 py-1 rounded-lg text-sm">
+                                <FaBed className="text-blue-500" />
+                                <span>{property.bedroom} Cottages</span>
+                              </span>
+                              <span className="flex items-center space-x-2 bg-purple-50 text-purple-700 px-3 py-1 rounded-lg text-sm">
+                                <FaUsers className="text-purple-500" />
+                                <span>{property.guest} Guests</span>
+                              </span>
+                            </div>
+                          </div>
+
+                          {/* Price and Button Section */}
+                          <div className="flex flex-col md:flex-row items-center justify-between mt-4">
+                            <div className="flex flex-col mb-4 md:mb-0 md:w-1/2">
+                              <span className="text-3xl font-bold text-gray-900">
+                                ₹{property.price}
+                              </span>
+                              <span className="text-sm text-gray-500">
+                                per night / Cottage
+                              </span>
+                            </div>
+
+                            <div className="flex flex-col space-y-3 md:w-1/2">
+                              <BookingButton property={property} />
+                            </div>
+                            <Link
+                              to={`/property/${property._id}`}
+                              onClick={() => window.scrollTo(0, 0)}
+                              className="px-8 py-[11px] text-black bg-gradient-to-r from-blue-300 to-cyan-300 hover:bg-teal-100 transition-colors rounded-lg text-center"
+                            >
+                              Details
+                            </Link>
                           </div>
                         </div>
                       </div>
-
-                      {/* Content Section */}
-                      <div className="flex-1 p-6 flex flex-col justify-between">
-                        <div>
-                          <h2 className="text-2xl font-bold text-gray-800 mb-3">
-                            {property.name}
-                          </h2>
-                          <p className="text-gray-600 mb-4">
-                            {property?.description?.length > 250
-                              ? `${property.description.substring(0, 250)}...`
-                              : property?.description}
-                          </p>
-
-                          <div className="flex flex-wrap gap-3 mb-4">
-                            <span className="flex items-center space-x-2 bg-teal-50 text-teal-700 px-3 py-1 rounded-lg text-sm">
-                              <FaMapMarkerAlt className="text-teal-500" />
-                              <span>{property.location}</span>
-                            </span>
-                            <span className="flex items-center space-x-2 bg-blue-50 text-blue-700 px-3 py-1 rounded-lg text-sm">
-                              <FaBed className="text-blue-500" />
-                              <span>{property.bedroom} Cottages</span>
-                            </span>
-                            <span className="flex items-center space-x-2 bg-purple-50 text-purple-700 px-3 py-1 rounded-lg text-sm">
-                              <FaUsers className="text-purple-500" />
-                              <span>{property.guest} Guests</span>
-                            </span>
-                          </div>
-                        </div>
-
-                        {/* Price and Button Section */}
-                        <div className="flex flex-col md:flex-row items-center justify-between mt-4">
-                          <div className="flex flex-col mb-4 md:mb-0 md:w-1/2">
-                            <span className="text-3xl font-bold text-gray-900">
-                              ₹{property.price}
-                            </span>
-                            <span className="text-sm text-gray-500">
-                              per night / Cottage
-                            </span>
-                          </div>
-
-                          <div className="flex flex-col space-y-3 md:w-1/2">
-                            <BookingButton property={property} />
-                          </div>
-                          <Link
-                            to={`/property/${property._id}`}
-                            onClick={() => window.scrollTo(0, 0)}
-                            className="px-6 py-2 text-black bg-gray-100 hover:bg-teal-100 transition-colors rounded-lg text-center"
-                          >
-                            Details
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
-                ))
-              )}
+                    </motion.div>
+                  ))}
             </div>
           </motion.div>
         </div>
