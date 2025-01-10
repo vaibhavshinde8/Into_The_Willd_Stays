@@ -321,13 +321,13 @@ const ExploreMoreITW = () => {
             </div>
           </div>
 
-          <div className="w-full flex flex-wrap justify-between sticky top-44 sm:top-28 z-40 gap-2 sm:gap-8 py-4 mb-4">
+          <div className="w-full flex  sticky top-44 sm:top-28 z-40 gap-2 sm:gap-8 py-4 mb-4">
             {buttons.map((button) => (
               <a
                 key={button.id}
                 href={`#${button.id}`}
                 onClick={() => setActiveButton(button.id)}
-                className={`py-2 rounded font-semibold flex-auto max-w-32  drop-shadow-lg flex items-center justify-center px-1 sm:px-4 transition duration-300 ${
+                className={`py-2 rounded font-semibold flex-auto drop-shadow-lg flex items-center justify-center px-1 sm:px-4 transition duration-300 ${
                   activeButton === button.id
                     ? "bg-[#163257] text-white"
                     : "bg-white text-gray-600"
