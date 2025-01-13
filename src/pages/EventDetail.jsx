@@ -10,6 +10,15 @@ const EventDetail = () => {
   const event = eventData.find((e) => e.id === parseInt(id));
   const [showContactForm, setShowContactForm] = useState(false);
 
+  const phoneNumber = '9761966485';
+  const getWhatsAppLink = () => {
+    // Check if mobile device
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    return isMobile 
+      ? `whatsapp://send?phone=${phoneNumber}`
+      : `https://web.whatsapp.com/send?phone=${phoneNumber}`;
+  };
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -199,7 +208,7 @@ const EventDetail = () => {
                 </motion.a>
                 <motion.a
                   whileHover={{ scale: 1.02 }}
-                  href="https://wa.me/9761966485"
+                  href={getWhatsAppLink()} target="_blank"
                   className="flex items-center text-gray-700 hover:text-teal-600 bg-gray-50 p-4 rounded-2xl transition-colors duration-300"
                 >
                   <MessageCircle className="w-6 h-6 mr-4" />
