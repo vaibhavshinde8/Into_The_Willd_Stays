@@ -471,38 +471,38 @@ export default function Navbar() {
               Tours
             </Link>
             {isHovered && (
-          <div className="absolute  top-full left-0 mt-1 bg-gray-700 text-white rounded-md shadow-lg">
-            <ul className="py-2">
+          <div className="absolute  top-full w-56 left-0 mt-1 bg-gray-700 text-white rounded-md shadow-lg ">
+            <ul className="py-2 ">
               <li>
                 <Link
-                  to="#"
+                  to="/tours/1"
                   className="block px-4 py-2 hover:bg-gray-600"
                 >
-                  Kedarnath
+                  Spiti Valley
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/tours/delhi"
+                  to="/tours/7"
                   className="block px-4 py-2 hover:bg-gray-600"
                 >
-                  Delhi
+                  Leh-Ladakh Himalayan Adventure
                 </Link>
               </li>
               <li>
                 <Link
-                  to="#"
+                  to="/tours/3"
                   className="block px-4 py-2 hover:bg-gray-600"
                 >
-                  Nagpur
+                 Kedarnath Dham
                 </Link>
               </li>
               <li>
                 <Link
-                  to="#"
+                  to="/tours/5"
                   className="block px-4 py-2 hover:bg-gray-600"
                 >
-                  Shirdi
+                  Rishikesh - Dhanolti
                 </Link>
               </li>
             </ul>
