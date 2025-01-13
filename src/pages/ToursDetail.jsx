@@ -400,7 +400,7 @@ const ToursDetail = () => {
           <section>
             <div></div>
             <div className="space-y-6 mx-2 md:w-3/5 lg:w-3/5">
-              <h2 className="text-2xl font-bold text-gray-800 mb-4 text-center uppercase">
+              <h2 className="text-2xl lg:text-2xl font-bold text-gray-800 mb-4 text-center uppercase">
                 Itinerary
               </h2>
               {tour.itinerary?.map((item, index) => (
