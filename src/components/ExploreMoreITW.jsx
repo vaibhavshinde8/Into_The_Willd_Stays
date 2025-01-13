@@ -391,7 +391,7 @@ const ExploreMoreITW = () => {
                 <motion.div
                   whileHover={{ scale: 1.03 }}
                   key={idx}
-                  className="flex items-center gap-3 px-4  py-3 sm:py-4 bg-white  rounded-xl shadow-md hover:bg-gray-100 transition-all duration-300"
+                  className="paddingY-320 flex items-center gap-3 px-4  py-3 sm:py-4 bg-white  rounded-xl shadow-md hover:bg-gray-100 transition-all duration-300"
                 >
                   <IoMdSunny className="text-blue-500 hidden-before-320" />
                   <span className="text-xs sm:text-md font-medium ">{amenity}</span>
