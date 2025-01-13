@@ -20,6 +20,7 @@ import BookingButton from "./BookingButton";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import { BASE_URL } from "../utils/baseurl";
+import "./exploreMoreITW.css"
 
 //hello
 
@@ -340,37 +341,37 @@ const ExploreMoreITW = () => {
 
           {/* Property Details Grid */}
           <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-            <div className="bg-white shadow-md px-6 sm:py-6 py-3 rounded-xl">
+            <div className="bg-white shadow-md px-2 sm:px-6 sm:py-6 py-3 rounded-xl">
               <div className="flex items-center gap-3 mb-2">
-                <FaHome className="text-blue-500 text-md sm:text-xl" />
-                <h3 className="font-semibold ">Cottages</h3>
+                <FaHome className="text-blue-500  hidden sm:block text-xl" />
+                <h3 className="font-semibold text-sm ">Cottages</h3>
               </div>
-              <p className="text-gray-700 " >{property?.bedroom} Cottages</p>
+              <p className="text-gray-700 text-sm " >{property?.bedroom} Cottages</p>
             </div>
-            <div className="bg-white shadow-md px-6 sm:py-6 py-3 rounded-xl">
+            <div className="bg-white shadow-md px-2 sm:px-6 sm:py-6 py-3 rounded-xl">
               <div className="flex items-center gap-3 mb-2">
-                <FaUserFriends className="text-blue-500 text-xl" />
-                <h3 className="font-semibold">Guest Capacity</h3>
+                <FaUserFriends className="text-blue-500  hidden sm:block text-xl" />
+                <h3 className="font-semibold text-sm">Guest Capacity</h3>
               </div>
-              <p className="text-gray-700">
+              <p className="text-gray-700 text-sm">
                 {property?.guestCapacity} persons per cottage
               </p>
             </div>
-            <div className="bg-white shadow-md px-6 sm:py-6 py-3 rounded-xl">
+            <div className="bg-white shadow-md  px-2 sm:px-6  sm:py-6 py-3 rounded-xl">
               <div className="flex items-center gap-3 mb-2">
-                <FaUsers className="text-blue-500 text-xl" />
-                <h3 className="font-semibold">Maximum Capacity</h3>
+                <FaUsers className="text-blue-500 text-xl hidden sm:block" />
+                <h3 className="font-semibold text-sm">Maximum Capacity</h3>
               </div>
-              <p className="text-gray-700">
+              <p className="text-gray-700 text-sm">
                 {property?.maximumCapacity} persons
               </p>
             </div>
-            <div className="bg-white shadow-md  px-6 sm:py-6 py-3 rounded-xl lg:col-span-3">
+            <div className="bg-white shadow-md  px-2 sm:px-6 sm:py-6 py-3 rounded-xl lg:col-span-3">
               <div className="flex items-center gap-3 mb-2">
-                <FaMapMarkerAlt className="text-blue-500 text-xl" />
-                <h3 className="font-semibold">Address</h3>
+                <FaMapMarkerAlt className="text-blue-500  text-xl hidden sm:block" />
+                <h3 className="font-semibold text-sm">Address</h3>
               </div>
-              <p className="text-gray-700">{property?.address}</p>
+              <p className="text-gray-700 text-sm">{property?.address}</p>
             </div>
           </div>
 
@@ -381,7 +382,7 @@ const ExploreMoreITW = () => {
 
           {/* Amenities Grid */}
           <div id="amenities" className="mb-12">
-            <h2 className=" text-2xl ms-4 sm:ms-0 sm:text-3xl font-bold mb-6 flex items-center gap-3">
+            <h2 className=" text-2xl ms-4 sm:ms-0  font-bold mb-6 flex items-center gap-3">
               <FaBed className="hidden  sm:block text-blue-500" />
               Amenities
             </h2>
@@ -392,8 +393,8 @@ const ExploreMoreITW = () => {
                   key={idx}
                   className="flex items-center gap-3 px-4  py-3 sm:py-4 bg-white  rounded-xl shadow-md hover:bg-gray-100 transition-all duration-300"
                 >
-                  <IoMdSunny className="text-blue-500" />
-                  <span className="text-sm sm:text-md font-medium">{amenity}</span>
+                  <IoMdSunny className="text-blue-500 hidden-before-320" />
+                  <span className="text-xs sm:text-md font-medium ">{amenity}</span>
                 </motion.div>
               ))}
             </div>
@@ -417,10 +418,10 @@ const ExploreMoreITW = () => {
           {/* Policies Section */}
           <div
             id="policies"
-            className="mt-16 grid md:grid-cols-2 gap-12 bg-white rounded-xl shadow-md p-8"
+            className="mt-16 grid md:grid-cols-2 gap-12 bg-white rounded-xl shadow-md py-8 px-4 sm:px-8"
           >
             <div>
-              <h2 className="text-2xl ms-4 sm:ms-0 sm:text-3xl font-bold mb-6 flex items-center gap-3">
+              <h2 className="text-2xl ms-4 sm:ms-0  font-bold mb-6 flex items-center gap-3">
                 <FcRules className=" hidden sm:block text-blue-500" />
                 Booking Policies
               </h2>
@@ -428,7 +429,7 @@ const ExploreMoreITW = () => {
                 {property?.bookingPolicies?.map((policy, idx) => (
                   <li
                     key={idx}
-                    className="flex items-start gap-3 text-gray-700"
+                    className="flex items-start gap-3 text-gray-700 text-sm sm:text-md"
                   >
                     <span className="text-blue-500 mt-1">•</span>
                     {policy}
@@ -437,7 +438,7 @@ const ExploreMoreITW = () => {
               </ul>
             </div>
             <div>
-              <h2 className="text-2xl sm:text-3xl ms-4 sm:ms-0 font-bold mb-6 flex items-center gap-3">
+              <h2 className="text-2xl  ms-4 sm:ms-0 font-bold mb-6 flex items-center gap-3">
                 <FaTimesCircle className="hidden sm:block text-red-500" />
                 Cancellation Policy
               </h2>
@@ -445,7 +446,7 @@ const ExploreMoreITW = () => {
                 {property?.cancellationPolicy?.map((policy, idx) => (
                   <li
                     key={idx}
-                    className="flex items-start gap-3 text-gray-700"
+                    className="flex items-start gap-3 text-gray-700 text-sm sm:text-md"
                   >
                     <span className="text-red-500 mt-1">•</span>
                     {policy}
@@ -457,9 +458,9 @@ const ExploreMoreITW = () => {
 
           {/* FAQs Accordion */}
           <div id="faqs" className="mt-16 mb-12">
-            <h2 className="text-2xl sm:text-3xl ms-4 sm:ms-0 font-bold mb-8 flex items-center gap-3">
+            <h2 className="text-2xl ms-4 sm:ms-0 font-bold mb-8 flex items-center gap-3">
               <FaQuestionCircle className="hidden sm:block text-blue-500" />
-              Frequently Asked Questions
+              FAQ
             </h2>
             <div className="space-y-4">
               {property?.faqs?.map((faq, idx) => (
@@ -469,14 +470,14 @@ const ExploreMoreITW = () => {
                   className="border rounded-xl overflow-hidden shadow-md bg-white"
                 >
                   <div
-                    className="flex justify-between items-center p-5 cursor-pointer bg-gray-50 hover:bg-gray-100 transition-colors duration-300"
+                    className="flex justify-between gap-2 items-center p-5 cursor-pointer bg-gray-50 hover:bg-gray-100 transition-colors duration-300"
                     onClick={() => toggleFaq(idx)}
                   >
-                    <h3 className="font-semibold text-md sm:text-lg">{faq.question}</h3>
+                    <h3 className="font-semibold text-sm sm:text-lg  ">{faq.question}</h3>
                     {openIndex === idx ? (
-                      <FaArrowAltCircleUp className="text-blue-500 text-xl" />
+                      <FaArrowAltCircleUp className="text-blue-500 text-xl w-8" />
                     ) : (
-                      <FaArrowAltCircleDown className="text-gray-400 text-xl" />
+                      <FaArrowAltCircleDown className="text-gray-400 text-xl w-8" />
                     )}
                   </div>
                   <AnimatePresence>
@@ -489,7 +490,7 @@ const ExploreMoreITW = () => {
                         className="overflow-hidden"
                       >
                         <div className="p-5 bg-white">
-                          <p className="text-gray-700">{faq.answer}</p>
+                          <p className="text-gray-700 text-sm sm:text-md">{faq.answer}</p>
                         </div>
                       </motion.div>
                     )}
@@ -505,7 +506,7 @@ const ExploreMoreITW = () => {
             className="w-full h-[auto] flex flex-col items-start"
             id="Review"
           >
-            <h1 className=" text-2xl sm:text-3xl ms-4 sm:ms-0 font-bold mb-8 flex items-center justify-start ">
+            <h1 className=" text-2xl  ms-4 sm:ms-0 font-bold mb-8 flex items-center justify-start ">
               <span>
                 <i class="fa-solid fa-comment hidden sm:block text-blue-500 me-4 "></i>{" "}
               </span>
@@ -530,7 +531,7 @@ const ExploreMoreITW = () => {
                 </div>
 
                 {/* Feedback Content */}
-                <p className="text-gray-700 mb-4">
+                <p className="text-gray-700 mb-4 text-sm sm:text-md">
                   “This is one of the best services I've ever used! The team was
                   very professional, and the overall experience was amazing.
                   Highly recommended!”
@@ -562,7 +563,7 @@ const ExploreMoreITW = () => {
                 </div>
 
                 {/* Feedback Content */}
-                <p className="text-gray-700 mb-4">
+                <p className="text-gray-700 mb-4 text-sm sm:text-md">
                   “This is one of the best services I've ever used! The team was
                   very professional, and the overall experience was amazing.
                   Highly recommended!”

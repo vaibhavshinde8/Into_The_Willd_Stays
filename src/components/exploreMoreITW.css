@@ -1,0 +1,5 @@
+@media (max-width: 320px) {
+    #amenities .hidden-before-320 {
+      display: none !important;
+    }
+  }
