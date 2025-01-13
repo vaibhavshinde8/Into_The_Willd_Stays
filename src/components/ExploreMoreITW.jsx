@@ -321,13 +321,13 @@ const ExploreMoreITW = () => {
             </div>
           </div>
 
-          <div className="w-full flex sticky top-44 sm:top-28 z-40 gap-2 sm:gap-8 py-4 mb-4">
+          <div className="w-full flex sticky overflow-x-scroll top-44 sm:top-28 z-40 gap-4  sm:gap-8 py-4 mb-4 no-scrollbar">
             {buttons.map((button) => (
               <a
                 key={button.id}
                 href={`#${button.id}`}
                 onClick={() => setActiveButton(button.id)}
-                className={`py-2 rounded font-semibold flex-auto drop-shadow-lg flex items-center justify-center px-1 sm:px-4 transition duration-300 ${
+                className={`py-2  rounded font-semibold flex-auto drop-shadow-lg flex items-center justify-center px-4 transition duration-300 ${
                   activeButton === button.id
                     ? "bg-[#163257] text-white"
                     : "bg-white text-gray-600"
@@ -339,15 +339,15 @@ const ExploreMoreITW = () => {
           </div>
 
           {/* Property Details Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-            <div className="bg-white shadow-md p-6 rounded-xl">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            <div className="bg-white shadow-md px-6 sm:py-6 py-3 rounded-xl">
               <div className="flex items-center gap-3 mb-2">
-                <FaHome className="text-blue-500 text-xl" />
-                <h3 className="font-semibold">Cottages</h3>
+                <FaHome className="text-blue-500 text-md sm:text-xl" />
+                <h3 className="font-semibold ">Cottages</h3>
               </div>
-              <p className="text-gray-700">{property?.bedroom} Cottages</p>
+              <p className="text-gray-700 " >{property?.bedroom} Cottages</p>
             </div>
-            <div className="bg-white shadow-md p-6 rounded-xl">
+            <div className="bg-white shadow-md px-6 sm:py-6 py-3 rounded-xl">
               <div className="flex items-center gap-3 mb-2">
                 <FaUserFriends className="text-blue-500 text-xl" />
                 <h3 className="font-semibold">Guest Capacity</h3>
@@ -356,7 +356,7 @@ const ExploreMoreITW = () => {
                 {property?.guestCapacity} persons per cottage
               </p>
             </div>
-            <div className="bg-white shadow-md p-6 rounded-xl">
+            <div className="bg-white shadow-md px-6 sm:py-6 py-3 rounded-xl">
               <div className="flex items-center gap-3 mb-2">
                 <FaUsers className="text-blue-500 text-xl" />
                 <h3 className="font-semibold">Maximum Capacity</h3>
@@ -365,7 +365,7 @@ const ExploreMoreITW = () => {
                 {property?.maximumCapacity} persons
               </p>
             </div>
-            <div className="bg-white shadow-md p-6 rounded-xl lg:col-span-3">
+            <div className="bg-white shadow-md  px-6 sm:py-6 py-3 rounded-xl lg:col-span-3">
               <div className="flex items-center gap-3 mb-2">
                 <FaMapMarkerAlt className="text-blue-500 text-xl" />
                 <h3 className="font-semibold">Address</h3>
@@ -376,24 +376,24 @@ const ExploreMoreITW = () => {
 
           <div className="prose max-w-none flex flex-col gap-2 mb-12 shadow-md rounded-xl p-3">
             <h2 className="text-lg font-semibold">Description</h2>
-            <p className="text-md">{property?.description}</p>
+            <p className="text-sm sm:text-md">{property?.description}</p>
           </div>
 
           {/* Amenities Grid */}
           <div id="amenities" className="mb-12">
-            <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
-              <FaBed className="text-blue-500" />
+            <h2 className=" text-2xl ms-4 sm:ms-0 sm:text-3xl font-bold mb-6 flex items-center gap-3">
+              <FaBed className="hidden  sm:block text-blue-500" />
               Amenities
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {property?.amenities?.map((amenity, idx) => (
                 <motion.div
                   whileHover={{ scale: 1.03 }}
                   key={idx}
-                  className="flex items-center gap-3 p-4 bg-white  rounded-xl shadow-md hover:bg-gray-100 transition-all duration-300"
+                  className="flex items-center gap-3 px-4  py-3 sm:py-4 bg-white  rounded-xl shadow-md hover:bg-gray-100 transition-all duration-300"
                 >
                   <IoMdSunny className="text-blue-500" />
-                  <span className="font-medium">{amenity}</span>
+                  <span className="text-sm sm:text-md font-medium">{amenity}</span>
                 </motion.div>
               ))}
             </div>
@@ -420,8 +420,8 @@ const ExploreMoreITW = () => {
             className="mt-16 grid md:grid-cols-2 gap-12 bg-white rounded-xl shadow-md p-8"
           >
             <div>
-              <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
-                <FcRules className="text-blue-500" />
+              <h2 className="text-2xl ms-4 sm:ms-0 sm:text-3xl font-bold mb-6 flex items-center gap-3">
+                <FcRules className=" hidden sm:block text-blue-500" />
                 Booking Policies
               </h2>
               <ul className="list-none space-y-3">
@@ -437,8 +437,8 @@ const ExploreMoreITW = () => {
               </ul>
             </div>
             <div>
-              <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
-                <FaTimesCircle className="text-red-500" />
+              <h2 className="text-2xl sm:text-3xl ms-4 sm:ms-0 font-bold mb-6 flex items-center gap-3">
+                <FaTimesCircle className="hidden sm:block text-red-500" />
                 Cancellation Policy
               </h2>
               <ul className="list-none space-y-3">
@@ -457,8 +457,8 @@ const ExploreMoreITW = () => {
 
           {/* FAQs Accordion */}
           <div id="faqs" className="mt-16 mb-12">
-            <h2 className="text-3xl font-bold mb-8 flex items-center gap-3">
-              <FaQuestionCircle className="text-blue-500" />
+            <h2 className="text-2xl sm:text-3xl ms-4 sm:ms-0 font-bold mb-8 flex items-center gap-3">
+              <FaQuestionCircle className="hidden sm:block text-blue-500" />
               Frequently Asked Questions
             </h2>
             <div className="space-y-4">
@@ -472,7 +472,7 @@ const ExploreMoreITW = () => {
                     className="flex justify-between items-center p-5 cursor-pointer bg-gray-50 hover:bg-gray-100 transition-colors duration-300"
                     onClick={() => toggleFaq(idx)}
                   >
-                    <h3 className="font-semibold text-lg">{faq.question}</h3>
+                    <h3 className="font-semibold text-md sm:text-lg">{faq.question}</h3>
                     {openIndex === idx ? (
                       <FaArrowAltCircleUp className="text-blue-500 text-xl" />
                     ) : (
@@ -505,9 +505,9 @@ const ExploreMoreITW = () => {
             className="w-full h-[auto] flex flex-col items-start"
             id="Review"
           >
-            <h1 className="text-3xl font-bold mb-8 flex items-center justify-start ">
+            <h1 className=" text-2xl sm:text-3xl ms-4 sm:ms-0 font-bold mb-8 flex items-center justify-start ">
               <span>
-                <i class="fa-solid fa-comment text-blue-500 me-4 "></i>{" "}
+                <i class="fa-solid fa-comment hidden sm:block text-blue-500 me-4 "></i>{" "}
               </span>
               Feedback Section
             </h1>
