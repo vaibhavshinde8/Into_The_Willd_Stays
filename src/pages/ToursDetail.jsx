@@ -60,6 +60,7 @@ const ToursDetail = () => {
     };
   }, []);
 
+
   if (!tour) {
     return <div>Tour not found</div>;
   }
@@ -674,7 +675,7 @@ const ToursDetail = () => {
               >
                 <Phone className="w-6 h-6 text-blue-600" />
                 <span className="text-lg text-gray-700">
-                  {tour.contact_methods?.phone || "Not available"}
+                  {tour.contact_methods?.phone.replace(/-/g, '').replace(/(\+\d{2})(\d{5})(\d{5})/, '$1 $2 $3') || "Not available"}
                 </span>
               </a>
               <a
