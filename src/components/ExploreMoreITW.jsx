@@ -30,10 +30,10 @@ const ExploreMoreITW = () => {
   const [loading, setLoading] = useState(true);
   const [activeButton, setActiveButton] = useState(null);
   const [selectedCheckInDate, setSelectedCheckInDate] = useState(
-    new Date("2025-01-10")
+    new Date()
   );
   const [selectedCheckOutDate, setSelectedCheckOutDate] = useState(
-    new Date("2025-01-10")
+    new Date()
   );
   const [adults, setAdults] = useState(1);
   const [children, setChildren] = useState(0);
@@ -212,6 +212,7 @@ const ExploreMoreITW = () => {
                         onChange={(date) => setSelectedCheckInDate(date)}
                         dateFormat="dd MMM yyyy"
                         className="hidden1 border rounded p-2 w-full text-[#112641] font-semibold"
+                        minDate={new Date()} 
                       />
                     </motion.div>
 
@@ -232,6 +233,7 @@ const ExploreMoreITW = () => {
                         onChange={(date) => setSelectedCheckOutDate(date)}
                         dateFormat="dd MMM yyyy"
                         className="hidden1 border rounded p-2 w-full text-[#112641] font-semibold"
+                        minDate={selectedCheckInDate || new Date()} 
                       />
                     </motion.div>
                   </div>
@@ -315,7 +317,7 @@ const ExploreMoreITW = () => {
                        transition-colors duration-300 
                        font-medium tracking-wide"
                   >
-                    Check Availability
+                    Book Now
                   </button>
                 </div>
               </motion.div>
@@ -630,6 +632,7 @@ const ExploreMoreITW = () => {
                     onChange={(date) => setSelectedCheckInDate(date)}
                     dateFormat="dd MMM yyyy"
                     className="hidden1 border rounded p-2 w-full text-[#112641] font-semibold"
+                    minDate={new Date()}
                   />
                 </motion.div>
 
@@ -646,6 +649,7 @@ const ExploreMoreITW = () => {
                     onChange={(date) => setSelectedCheckOutDate(date)}
                     dateFormat="dd MMM yyyy"
                     className="hidden1 border rounded p-2 w-full text-[#112641] font-semibold"
+                    minDate={selectedCheckInDate || new Date()} 
                   />
                 </motion.div>
               </div>
