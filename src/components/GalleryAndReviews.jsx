@@ -160,7 +160,7 @@ const GalleryAndReviews = () => {
                     <img
                       src={item.imgSrc}
                       alt={item.caption || `Gallery item ${index + 1}`}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      className="w-full h-full object-cover  transition-transform duration-700 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent group-hover:from-black/90 transition-all duration-300">
                       <div className="absolute bottom-0 left-0 right-0 p-8 transform translate-y-6 group-hover:translate-y-0 transition-transform duration-300">
@@ -182,7 +182,7 @@ const GalleryAndReviews = () => {
                     </div>
 
                     <p className="italic text-gray-700 text-lg flex-grow leading-relaxed mb-6">
-                      &ldquo;{item.review}&rdquo;
+                      &ldquo;{item.review.length > 125 ? `${item.review.substring(0, 125)}...`: item.review}&rdquo;
                     </p>
 
                     <div className="mt-auto">
