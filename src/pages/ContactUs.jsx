@@ -124,13 +124,13 @@ const ContactUs = () => {
                   href="tel:+919761966485"
                   className="block text-gray-600 hover:text-blue-500"
                 >
-                  +91-9761966485
+                  +91 9761966485
                 </a>
                 <a
                   href="tel:+919958838557"
                   className="block text-gray-600 hover:text-blue-500"
                 >
-                  +91-9958838557
+                  +91 9958838557
                 </a>
               </div>
             </div>
