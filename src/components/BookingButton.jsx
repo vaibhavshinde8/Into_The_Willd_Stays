@@ -285,6 +285,7 @@ const BookingButton = ({ property, tour }) => {
   const [showUserDetailsForm, setShowUserDetailsForm] = useState(false);
   const [showLoginPopup, setShowLoginPopup] = useState(false);
   const navigate = useNavigate();
+  console.log(property)
 
   const token = localStorage.getItem("token");
   const user = JSON.parse(localStorage.getItem("user") || "null");

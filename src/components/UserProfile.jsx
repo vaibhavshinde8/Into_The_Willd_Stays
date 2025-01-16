@@ -175,7 +175,6 @@ const EditProfileModal = ({ isOpen, onClose, user, onSave }) => {
   );
 };
 
-
 const UserProfile = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -189,23 +188,29 @@ const UserProfile = () => {
       try {
         const res = await axios.get(`${BASE_URL}/booking/userbookings`, {
           headers: {
-            authorization: `Bearer ${localStorage.getItem("token")}`
-          }
-        })
+            authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        });
         console.log(res);
         setBookings(res.data.bookings);
-      }
-      catch (err) {
+      } catch (err) {
         console.log(err);
       }
-    }
+    };
     fetchBookings();
-  }, [])
+  }, []);
+
+  
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
     console.log("storedUser", storedUser);
     // If no user is logged in, redirect to login page
-    if (!storedUser || storedUser === "{}" || storedUser === "null" || storedUser === "undefined") {
+    if (
+      !storedUser ||
+      storedUser === "{}" ||
+      storedUser === "null" ||
+      storedUser === "undefined"
+    ) {
       navigate("/login", {
         state: { from: location },
         replace: true,
@@ -236,7 +241,7 @@ const UserProfile = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white flex items-center justify-center p-4">
+    <div className="min-h-screen bg-white flex items-center justify-center p-4 lg:pt-28">
       <div className="w-full max-w-md mx-auto">
         <div className="bg-white shadow-xl rounded-xl overflow-hidden border border-[#0F2642]/10">
           {/* Navigation Header */}
@@ -291,42 +296,41 @@ const UserProfile = () => {
                   {user?.email || localUser?.email ? (
                     <>
                       <p className="text-sm text-[#0F2642]/70">Email Address</p>
-                      <p className="font-medium text-[#0F2642]">{user.email || localUser.email}</p>
+                      <p className="font-medium text-[#0F2642]">
+                        {user.email || localUser.email}
+                      </p>
                     </>
                   ) : (
                     <>
                       <p className="text-sm text-[#0F2642]/70">Phone Number</p>
-                      <p className="font-medium text-[#0F2642]">{user.phone || localUser.phone}</p>
+                      <p className="font-medium text-[#0F2642]">
+                        {user.phone || localUser.phone}
+                      </p>
                     </>
                   )}
                 </div>
               </div>
             </div>
-
-
           </div>
         </div>
         {/* Edit Profile Button */}
-        {/* <button
+        <button
               onClick={() => setIsEditModalOpen(true)}
               className="w-full flex items-center justify-center bg-[#0F2642] text-white py-2 rounded-md hover:bg-[#0F2642]/90 transition-colors space-x-2"
             >
               <Edit className="w-5 h-5" />
               <span>Edit Profile</span>
-            </button> */}
+            </button>
         {/* Bookings Section */}
         <div className="p-6 space-y-4">
           <h2 className="text-xl font-bold text-[#0F2642]">Your Bookings</h2>
-          {bookings.length <= 0 &&
-            <>
-              <div className="text-center text-lg font-semibold text-[#0F2642] mt-4">
-                No bookings
-              </div>
-            </>
-          }
-          {
-            bookings.length > 0 &&
-            <>
+          {bookings.length <= 0 && (
+            <div className="text-center text-lg font-semibold text-[#0F2642] mt-4">
+              No bookings
+            </div>
+          )}
+          {bookings.length > 0 && (
+            <div className="overflow-x-auto md:overflow-x-visible">
               <table className="min-w-full bg-white border border-gray-300">
                 <thead>
                   <tr className="bg-[#0F2642] text-white">
@@ -341,20 +345,36 @@ const UserProfile = () => {
                 <tbody>
                   {bookings?.map((booking) => (
                     <tr key={booking?._id} className="hover:bg-gray-100">
-                      <td className="py-2 px-4 border">{booking?.property.name}</td>
-                      <td className="py-2 px-4 border">{new Date(booking?.checkInDate).toLocaleDateString()}</td>
-                      <td className="py-2 px-4 border">{new Date(booking?.checkOutDate).toLocaleDateString()}</td>
-                      <td className={`py-2 px-4 border ${booking?.status === 'confirmed' ? 'text-green-950' : 'text-yellow-950'}`}>
-                        {booking?.status === 'confirmed' ? 'Confirmed' : 'Pending'}
+                      <td className="py-2 px-4 border">
+                        {booking?.property.name}
                       </td>
-                      <td className="py-2 px-4 border">{booking?.roomBooked}</td>
+                      <td className="py-2 px-4 border">
+                        {new Date(booking?.checkInDate).toLocaleDateString()}
+                      </td>
+                      <td className="py-2 px-4 border">
+                        {new Date(booking?.checkOutDate).toLocaleDateString()}
+                      </td>
+                      <td
+                        className={`py-2 px-4 border ${
+                          booking?.status === "confirmed"
+                            ? "text-green-950"
+                            : "text-yellow-950"
+                        }`}
+                      >
+                        {booking?.status === "confirmed"
+                          ? "Confirmed"
+                          : "Pending"}
+                      </td>
+                      <td className="py-2 px-4 border">
+                        {booking?.roomBooked}
+                      </td>
                       <td className="py-2 px-4 border">{booking?.amount}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
-            </>
-          }
+            </div>
+          )}
         </div>
       </div>
 

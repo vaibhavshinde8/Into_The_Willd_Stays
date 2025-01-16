@@ -98,7 +98,7 @@ const HomeHero = () => {
         >
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white mb-8 leading-tight tracking-tight">
             <motion.span
-              className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent inline-block"
+              className="bg-gradient-to-r from-blue-400 to-cyan-600 bg-clip-text text-transparent inline-block"
               animate={{
                 backgroundPosition: ["0%", "100%"],
               }}

@@ -5,7 +5,7 @@ const AdminPanel = () => {
   const { user } = location.state || {}; // Destructure user data from location state
 
   if (!user) {
-    return <p>No user data available.</p>;
+    return <p className="pt-32">No user data available.</p>;
   }
 
   return (

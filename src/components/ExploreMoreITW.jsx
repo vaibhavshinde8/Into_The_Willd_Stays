@@ -35,6 +35,7 @@ const ExploreMoreITW = () => {
   const [selectedCheckOutDate, setSelectedCheckOutDate] = useState(
     new Date()
   );
+  
   const [adults, setAdults] = useState(1);
   const [children, setChildren] = useState(0);
   const { id } = useParams();
@@ -324,7 +325,7 @@ const ExploreMoreITW = () => {
             </div>
           </div>
 
-          <div className="w-full flex sticky overflow-x-scroll top-44 sm:top-28 z-40 gap-4  sm:gap-8 py-4 mb-4 no-scrollbar">
+          <div className="w-full flex sticky overflow-x-scroll top-44 sm:top-28  gap-4  sm:gap-8 py-4 mb-4 no-scrollbar">
             {buttons.map((button) => (
               <a
                 key={button.id}
@@ -510,7 +511,7 @@ const ExploreMoreITW = () => {
           >
             <h1 className=" text-2xl  ms-4 sm:ms-0 font-bold mb-8 flex items-center justify-start ">
               <span>
-                <i class="fa-solid fa-comment hidden sm:block text-blue-500 me-4 "></i>{" "}
+                <i className="fa-solid fa-comment hidden sm:block text-blue-500 me-4 "></i>{" "}
               </span>
               Feedback Section
             </h1>
@@ -726,15 +727,7 @@ const ExploreMoreITW = () => {
             </div>
             {/* Booking Button */}
             <div>
-              <button
-                type="button"
-                className="w-full py-3 bg-[#112641] text-white 
-                       rounded-xl hover:bg-white hover:text-[#112641] hover:border-[#112641] hover:border
-                       transition-colors duration-300 
-                       font-medium tracking-wide"
-              >
-                Book Now
-              </button>
+              <BookingButton property={property} />
             </div>
           </motion.div>
         </div>

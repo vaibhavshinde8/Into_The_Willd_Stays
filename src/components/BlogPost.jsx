@@ -39,7 +39,7 @@ export const BlogPost = () => {
         <img
           src={blog.image}
           alt={blog.title}
-          className="w-[50vw] h-auto max-h-[60vh] object-cover rounded-lg mx-auto"
+          className="w-[60vw] lg:h-auto max-h-[80vh] object-cover rounded-lg mx-auto mt-32 lg:mt-4"
         />
 
         {/* Blog Content */}

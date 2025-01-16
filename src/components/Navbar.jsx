@@ -221,7 +221,13 @@ const PropertyListingModal = ({ isOpen, onClose }) => {
                     type="text"
                     name="name"
                     value={formData.name}
-                    onChange={handleInputChange}
+                    onChange={(e) => {
+                      const value = e.target.value;
+                      // Allow only letters and spaces
+                      if (/^[a-zA-Z\s]*$/.test(value)) {
+                        handleInputChange(e);
+                      }
+                    }}
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#0F2642] focus:border-transparent transition-all"
                     placeholder="Enter your full name"
                     required
@@ -460,54 +466,55 @@ export default function Navbar() {
               Properties
             </Link>
             <div
-        className="relative group"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-            <Link
-              to="/tours"
-              className="text-gray-100 hover:text-[#ffffff] px-3 py-2 text-lg font-semibold transition duration-300"
+              className="relative group"
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
             >
-              Tours
-            </Link>
-            {isHovered && (
-          <div className="absolute  top-full w-56 left-0 mt-1 bg-gray-700 text-white rounded-md shadow-lg ">
-            <ul className="py-2 ">
-              <li>
-                <Link
-                  to="/tours/1"
-                  className="block px-4 py-2 hover:bg-gray-600"
-                >
-                  Spiti Valley
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/tours/7"
-                  className="block px-4 py-2 hover:bg-gray-600"
-                >
-                  Leh-Ladakh Himalayan Adventure
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/tours/3"
-                  className="block px-4 py-2 hover:bg-gray-600"
-                >
-                 Kedarnath Dham
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/tours/5"
-                  className="block px-4 py-2 hover:bg-gray-600"
-                >
-                  Rishikesh - Dhanolti
-                </Link>
-              </li>
-            </ul>
-          </div>
-        )}</div>
+              <Link
+                to="/tours"
+                className="text-gray-100 hover:text-[#ffffff] px-3 py-2 text-lg font-semibold transition duration-300"
+              >
+                Tours
+              </Link>
+              {isHovered && (
+                <div className="absolute  top-full w-56 left-0 mt-1 bg-gray-700 text-white rounded-md shadow-lg ">
+                  <ul className="py-2 ">
+                    <li>
+                      <Link
+                        to="/tours/1"
+                        className="block px-4 py-2 hover:bg-gray-600"
+                      >
+                        Spiti Valley
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/tours/7"
+                        className="block px-4 py-2 hover:bg-gray-600"
+                      >
+                        Leh-Ladakh Himalayan Adventure
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/tours/3"
+                        className="block px-4 py-2 hover:bg-gray-600"
+                      >
+                        Kedarnath Dham
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/tours/5"
+                        className="block px-4 py-2 hover:bg-gray-600"
+                      >
+                        Rishikesh - Dhanolti
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              )}
+            </div>
             <Link
               to="/events"
               className="text-gray-100 hover:text-[#ffffff] px-3 py-2 text-lg font-semibold transition duration-300"

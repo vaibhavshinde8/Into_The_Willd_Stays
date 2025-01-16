@@ -60,7 +60,6 @@ const ToursDetail = () => {
     };
   }, []);
 
-
   if (!tour) {
     return <div>Tour not found</div>;
   }
@@ -358,16 +357,22 @@ const ToursDetail = () => {
                       </select>
                       <input
                         type="text"
+                        pattern="\d{10}"
                         placeholder="Your Phone*"
                         className="w-3/4 border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
+                        title="Please enter a valid 10-digit phone number"
+                        required
                       />
                     </div>
+
                     <div className="flex space-x-2">
                       <input
                         type="date"
                         placeholder="Travel Date*"
                         className="w-1/2 border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
+                        min={new Date().toISOString().split("T")[0]} // Set today's date as the minimum
                       />
+
                       <input
                         type="number"
                         placeholder="Traveller Count*"
@@ -675,7 +680,10 @@ const ToursDetail = () => {
               >
                 <Phone className="w-6 h-6 text-blue-600" />
                 <span className="text-lg text-gray-700">
-                  {tour.contact_methods?.phone.replace(/-/g, '').replace(/(\+\d{2})(\d{5})(\d{5})/, '$1 $2 $3') || "Not available"}
+                  {tour.contact_methods?.phone
+                    .replace(/-/g, "")
+                    .replace(/(\+\d{2})(\d{5})(\d{5})/, "$1 $2 $3") ||
+                    "Not available"}
                 </span>
               </a>
               <a

@@ -125,7 +125,7 @@ const Footer = () => {
                 <div className="flex items-center space-x-2">
                   <Phone size={16} />
                   <a href="tel:+919761966485" className="mr-2 hover:underline">
-                  +91 97619 66485
+                  +91 97619 66485,
                   </a>
                   <a href="tel:+919958838557" className="hover:underline">
                   +91 99588 38557
@@ -182,7 +182,7 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-sm">
-              © 2024 IntoTheWildsStays. All rights reserved.
+              © 2025 IntoTheWildsStays. All rights reserved.
             </div>
             <div className="flex space-x-6 text-sm text-[#F77706]">
               Designed and Developed by House Of Marktech
