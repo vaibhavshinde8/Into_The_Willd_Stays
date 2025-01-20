@@ -37,14 +37,6 @@ const Tours = () => {
           transition={{ duration: 1.2, ease: "easeOut" }}
           className="relative h-full max-w-7xl mx-auto px-4 sm:px-6 flex flex-col items-center justify-center text-center"
         >
-          {/* <motion.span 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
-            className="text-white/60 text-base sm:text-lg md:text-xl font- tracking-wider mb-4 sm:mb-6"
-          >
-            EXPLORE THE WORLD
-          </motion.span> */}
           <motion.h1
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}

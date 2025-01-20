@@ -5,7 +5,9 @@ import toursData from "../data/tours.json";
 import { useEffect, useState } from "react";
 import ContactForm from "../components/ContactForm";
 import { Swiper, SwiperSlide } from "swiper/react";
-
+import Modal from "react-modal"; // Import a library for the modal functionality
+import Navbar from "../components/Navbar";
+Modal.setAppElement("#root"); // Required for accessibility with React Modal
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-fade";
@@ -59,6 +61,31 @@ const ToursDetail = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [imageSet, setImageSet] = useState([]); // To store the current set of images being viewed
+
+  const openModal = (images, index) => {
+    setImageSet(images); // Set the current array of images (combined days or specific day)
+    setSelectedImage(images[index]);
+    setCurrentIndex(index);
+  };
+
+  const closeModal = () => {
+    setSelectedImage(null);
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % imageSet.length);
+    setSelectedImage(imageSet[(currentIndex + 1) % imageSet.length]);
+  };
+
+  const handlePrev = () => {
+    setCurrentIndex(
+      (prevIndex) => (prevIndex - 1 + imageSet.length) % imageSet.length
+    );
+    setSelectedImage(imageSet[(currentIndex - 1 + imageSet.length) % imageSet.length]);
+  };
 
   if (!tour) {
     return <div>Tour not found</div>;
@@ -402,57 +429,27 @@ const ToursDetail = () => {
               </div>
             )}
           </div>
-
           <section>
-            <div></div>
             <div className="space-y-6 mx-2 md:w-3/5 lg:w-3/5">
               <h2 className="text-2xl lg:text-2xl font-bold text-gray-800 mb-4 text-center uppercase">
                 Itinerary
               </h2>
               {tour.itinerary?.map((item, index) => (
                 <div key={index}>
-                  {/* Display combinedDays images with Swiper */}
-                  <div className=" bg-white/80 backdrop-blur-sm rounded-2xl p-4 sm:p-4 shadow-lg hover:shadow-xl transition-all duration-300 mb-4 border border-gray-200">
+                  {/* Display combinedDays images in a horizontal scrollable row */}
+                  <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 sm:p-4 shadow-lg hover:shadow-xl transition-all duration-300 mb-4 border border-gray-200">
                     {item.combinedDays && item.combinedDays.length > 0 && (
-                      <Swiper
-                        spaceBetween={20}
-                        effect={"fade"}
-                        navigation={{
-                          nextEl: `.swiper-button-next-${index}`,
-                          prevEl: `.swiper-button-prev-${index}`,
-                        }}
-                        pagination={{
-                          type: "fraction",
-                          el: `.swiper-pagination-${index}`,
-                        }}
-                        autoplay={{
-                          delay: 3000,
-                          disableOnInteraction: false,
-                        }}
-                        modules={[EffectFade, Navigation, Pagination, Autoplay]}
-                        className="mySwiper h-[150px] sm:h-[250px] rounded-lg"
-                      >
+                      <div className="flex space-x-4 overflow-x-auto scrollbar-hide">
                         {item.combinedDays.map((image, imgIndex) => (
-                          <SwiperSlide key={imgIndex}>
-                            <img
-                              className="w-full h-full object-cover rounded-lg transition-transform duration-300 hover:scale-105"
-                              src={image}
-                              alt={`Combined Day Image ${imgIndex + 1}`}
-                            />
-                          </SwiperSlide>
+                          <img
+                            key={imgIndex}
+                            className="w-40 h-40 sm:w-52 sm:h-52 object-cover rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105"
+                            src={image}
+                            alt={`Combined Day Image ${imgIndex + 1}`}
+                            onClick={() => openModal(item.combinedDays, imgIndex)}
+                          />
                         ))}
-                        {/* Custom Navigation Buttons */}
-                        <div
-                          className={`swiper-button-next swiper-button-next-${index}`}
-                        ></div>
-                        <div
-                          className={`swiper-button-prev swiper-button-prev-${index}`}
-                        ></div>
-                        {/* Pagination */}
-                        <div
-                          className={`swiper-pagination swiper-pagination-${index}`}
-                        ></div>
-                      </Swiper>
+                      </div>
                     )}
                   </div>
 
@@ -468,11 +465,8 @@ const ToursDetail = () => {
                       >
                         <h3 className="text-black font-semibold">{day.day}</h3>
                         <span
-                          className={`transform transition-transform duration-300 ${
-                            expandedDay === `${index}-${dayIndex}`
-                              ? "rotate-180"
-                              : ""
-                          }`}
+                          className={`transform transition-transform duration-300 ${expandedDay === `${index}-${dayIndex}` ? "rotate-180" : ""
+                            }`}
                         >
                           ⌄
                         </span>
@@ -517,60 +511,92 @@ const ToursDetail = () => {
                             )}
                           </div>
 
-                          <Swiper
-                            spaceBetween={20}
-                            effect={"fade"}
-                            navigation={{
-                              nextEl: `.swiper-button-next-${dayIndex}`,
-                              prevEl: `.swiper-button-prev-${dayIndex}`,
-                            }}
-                            pagination={{
-                              type: "fraction",
-                              el: `.swiper-pagination-${dayIndex}`,
-                            }}
-                            autoplay={{
-                              delay: 3000,
-                              disableOnInteraction: false,
-                            }}
-                            modules={[
-                              EffectFade,
-                              Navigation,
-                              Pagination,
-                              Autoplay,
-                            ]}
-                            className="mySwiper h-[150px] sm:h-[250px] rounded-lg"
-                          >
-                            {Object.values(day.images).map(
-                              (image, imgIndex) => (
-                                <SwiperSlide key={imgIndex}>
-                                  <img
-                                    className="w-full h-full object-cover rounded-lg transition-transform duration-300 hover:scale-105"
-                                    src={image}
-                                    alt={`Day ${dayIndex + 1} Image ${
-                                      imgIndex + 1
-                                    }`}
-                                  />
-                                </SwiperSlide>
-                              )
-                            )}
-                            <div
-                              className={`swiper-button-next swiper-button-next-${dayIndex}`}
-                            ></div>
-                            <div
-                              className={`swiper-button-prev swiper-button-prev-${dayIndex}`}
-                            ></div>
-                            <div
-                              className={`swiper-pagination swiper-pagination-${dayIndex}`}
-                            ></div>
-                          </Swiper>
+                          {/* Display day's images in a horizontal scrollable row */}
+                          <div className="flex space-x-4 overflow-x-auto scrollbar-hide">
+                            {Object.values(day.images).map((image, imgIndex) => (
+                              <img
+                                key={imgIndex}
+                                className="w-40 h-40 sm:w-52 sm:h-52 object-cover rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105"
+                                src={image}
+                                alt={`Day ${dayIndex + 1} Image ${imgIndex + 1}`}
+                                onClick={() =>
+                                  openModal(Object.values(day.images), imgIndex)
+                                }
+                              />
+                            ))}
+                          </div>
                         </motion.div>
                       )}
                     </div>
                   ))}
                 </div>
               ))}
+
+              {/* Popup Modal */}
+
+              <Modal
+
+                isOpen={!!selectedImage}
+                onRequestClose={closeModal}
+                className="fixed inset-0 flex items-center justify-center z-50 outline-none"
+                overlayClassName="fixed inset-0 bg-black bg-opacity-75 z-40"
+              >
+                {selectedImage && (
+                  <div className="relative flex items-center justify-center w-full h-full bg-black bg-opacity-90 z-50">
+                    {/* Close Bar */}
+                    <div className="absolute top-0 left-0 w-full bg-gray-800 text-white p-4 flex justify-between items-center">
+                      <span className="text-lg font-bold">Image Viewer</span>
+                      <button
+                        onClick={closeModal}
+                        className="text-white hover:text-gray-300 text-2xl font-semibold"
+                        aria-label="Close"
+                      >
+                        ✕
+                      </button>
+                    </div>
+
+                    {/* Main Close Button */}
+                    <button
+                      onClick={closeModal}
+                      className="absolute top-4 right-4 bg-gray-800 rounded-full p-2 hover:bg-gray-700"
+                      aria-label="Close"
+                    >
+                      <span className="text-white text-4xl font-bold">✕</span>
+                    </button>
+
+                    {/* Modal Content */}
+                    <img
+                      src={selectedImage}
+                      alt="Selected"
+                      className="w-full max-h-full object-contain"
+                    />
+
+                    {/* Navigation Icons */}
+                    <div
+                      className="absolute top-1/2 left-6 transform -translate-y-1/2 text-white hover:text-gray-300 cursor-pointer text-5xl z-50"
+                      onClick={handlePrev}
+                    >
+                      ‹
+                    </div>
+                    <div
+                      className="absolute top-1/2 right-6 transform -translate-y-1/2 text-white hover:text-gray-300 cursor-pointer text-5xl z-50"
+                      onClick={handleNext}
+                    >
+                      ›
+                    </div>
+                  </div>
+                )}
+              </Modal>
+
+
             </div>
           </section>
+
+
+
+
+
+
 
           <img
             src="https://media1.thrillophilia.com/end_of_trip_desktop.png"

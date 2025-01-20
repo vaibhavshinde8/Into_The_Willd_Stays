@@ -9,6 +9,7 @@
       "price": "9,999",
       "checkInDate": "2024-12-01",
       "checkOutDate": "2024-12-03",
+      
       "highlights": [
         "Set off on an unforgettable adventure through Spiti Valley, a high-altitude desert mountain haven nestled in the Himalayas. Begin your journey in Kaza, the valley’s vibrant heart, where ancient Buddhist monasteries and rich local culture welcome you with open arms.",
         "Discover the serenity of Key Monastery, perched majestically on a hilltop, and soak in the spiritual aura that defines this remote region.",
@@ -17,8 +18,12 @@
       ],
       "itinerary": [
         {
-          "combinedDays": ["https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg", 
-          "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"],
+          "combinedDays": [
+            "https://images.pexels.com/photos/30318498/pexels-photo-30318498.jpeg",
+            "https://images.pexels.com/photos/30318497/pexels-photo-30318497.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            "https://images.pexels.com/photos/30318488/pexels-photo-30318488.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            "https://images.pexels.com/photos/30318489/pexels-photo-30318489.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+          ],
           "days": [
             {
               "day": "Day 0 - Departure From Delhi",
@@ -28,10 +33,9 @@
                 "Board the designated transport for the overnight journey to Manali. Depart from Delhi."
               ],
               "images": {
-                "img1": "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
-                "img2": "https://png.pngtree.com/background/20230805/original/pngtree-a-snowy-mountain-adorned-in-pahalgam-valley-located-in-kashmir-india-picture-image_4440125.jpg",
-                "img3": "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg",
-                "img4": "https://png.pngtree.com/background/20230401/original/pngtree-view-from-chitkul-village-in-sangla-valley-vector-picture-image_2229375.jpg"
+                "img1": "https://images.pexels.com/photos/30318496/pexels-photo-30318496.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+                "img2": "https://images.pexels.com/photos/30318495/pexels-photo-30318495.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+                "img3": "https://images.pexels.com/photos/30318494/pexels-photo-30318494.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
               }
             },
             {
@@ -44,17 +48,18 @@
                 "Rest and recharge for the next day."
               ],
               "images": {
-                "img1": "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
-                "img2": "https://png.pngtree.com/background/20230805/original/pngtree-a-snowy-mountain-adorned-in-pahalgam-valley-located-in-kashmir-india-picture-image_4440125.jpg",
-                "img3": "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg",
-                "img4": "https://png.pngtree.com/background/20230401/original/pngtree-view-from-chitkul-village-in-sangla-valley-vector-picture-image_2229375.jpg"
+                "img1": "https://images.pexels.com/photos/30318493/pexels-photo-30318493.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+                "img2": "https://images.pexels.com/photos/30318492/pexels-photo-30318492.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+                "img3": "https://images.pexels.com/photos/30318491/pexels-photo-30318491.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
               }
             }
           ]
         },
         {
-          "combinedDays": ["https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg", 
-          "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"],
+          "combinedDays": [
+            "https://images.pexels.com/photos/30318490/pexels-photo-30318490.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            "https://images.pexels.com/photos/30318489/pexels-photo-30318489.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+          ],
           "days": [
             {
               "day": "Day 2 - Move To Chitkul Via Sangla For Stay",
@@ -65,8 +70,8 @@
                 "Enjoy an overnight stay in the peaceful surroundings of Chitkul/Sangla."
               ],
               "images": {
-                "img1": "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
-                "img2": "https://png.pngtree.com/background/20230805/original/pngtree-a-snowy-mountain-adorned-in-pahalgam-valley-located-in-kashmir-india-picture-image_4440125.jpg",
+                "img1": "https://images.pexels.com/photos/30318488/pexels-photo-30318488.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+                "img2": "https://images.pexels.com/photos/30318489/pexels-photo-30318489.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
                 "img3": "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg",
                 "img4": "https://png.pngtree.com/background/20230401/original/pngtree-view-from-chitkul-village-in-sangla-valley-vector-picture-image_2229375.jpg"
               }
@@ -74,8 +79,10 @@
           ]
         },
         {
-          "combinedDays": ["https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg", 
-          "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"],
+          "combinedDays": [
+            "https://images.pexels.com/photos/30318487/pexels-photo-30318487.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            "https://images.pexels.com/photos/30318488/pexels-photo-30318488.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+          ],
           "days": [
             {
               "day": "Day 3 - Explore Chitkul, Head To Nako Via Khab Sangam & Overnight Stay At Tabo",
@@ -85,10 +92,8 @@
                 "Witness the confluence of the Spiti and Sutlej rivers at Khab Visit Gue Monastery on the way, and stay overnight at Tabo."
               ],
               "images": {
-                "img1": "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
-                "img2": "https://png.pngtree.com/background/20230805/original/pngtree-a-snowy-mountain-adorned-in-pahalgam-valley-located-in-kashmir-india-picture-image_4440125.jpg",
-                "img3": "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg",
-                "img4": "https://png.pngtree.com/background/20230401/original/pngtree-view-from-chitkul-village-in-sangla-valley-vector-picture-image_2229375.jpg"
+                "img2": "https://images.pexels.com/photos/30318487/pexels-photo-30318487.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+                "img3": "https://images.pexels.com/photos/30318487/pexels-photo-30318487.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
               }
             },
             {
@@ -100,17 +105,18 @@
                 "Explore Lingti waterfall on the way to Kaza. Settle in for an overnight stay in the lively town of Kaza."
               ],
               "images": {
-                "img1": "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
-                "img2": "https://png.pngtree.com/background/20230805/original/pngtree-a-snowy-mountain-adorned-in-pahalgam-valley-located-in-kashmir-india-picture-image_4440125.jpg",
-                "img3": "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg",
-                "img4": "https://png.pngtree.com/background/20230401/original/pngtree-view-from-chitkul-village-in-sangla-valley-vector-picture-image_2229375.jpg"
+                "img1": "https://images.pexels.com/photos/30318496/pexels-photo-30318496.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+                "img2": "https://images.pexels.com/photos/30318495/pexels-photo-30318495.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+                "img3": "https://images.pexels.com/photos/30318494/pexels-photo-30318494.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
               }
             }
           ]
         },
         {
-          "combinedDays": ["https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg", 
-          "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"],
+          "combinedDays": [
+            "https://images.pexels.com/photos/30318498/pexels-photo-30318498.jpeg",
+            "https://images.pexels.com/photos/30318497/pexels-photo-30318497.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+          ],
           "days": [
             {
               "day": "Day 5 - Explore Lingti waterfall on the way to Kaza. Settle in for an overnight stay in the lively town of Kaza.",
@@ -121,58 +127,8 @@
                 "Return for an overnight stay in Kaza."
               ],
               "images": {
-                "img1": "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
-                "img2": "https://png.pngtree.com/background/20230805/original/pngtree-a-snowy-mountain-adorned-in-pahalgam-valley-located-in-kashmir-india-picture-image_4440125.jpg",
-                "img3": "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg",
-                "img4": "https://png.pngtree.com/background/20230401/original/pngtree-view-from-chitkul-village-in-sangla-valley-vector-picture-image_2229375.jpg"
-              }
-            },
-            {
-              "day": "Day 6 - Visit Chicham Bridge, Head To Chandratal Via Kunzum Pass & Overnight Stay",
-              "description": [
-                "Explore the engineering marvel of Chicham Bridge, the highest bridge in Asia.",
-                "Journey to the mesmerizing Chandratal Lake via the scenic Kunzum Pass.",
-                "Enjoy the surreal beauty of the high-altitude lake.",
-                "Settle in for an overnight stay, surrounded by the tranquillity of Chandratal."
-              ],
-              "images": {
-                "img1": "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
-                "img2": "https://png.pngtree.com/background/20230805/original/pngtree-a-snowy-mountain-adorned-in-pahalgam-valley-located-in-kashmir-india-picture-image_4440125.jpg",
-                "img3": "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg",
-                "img4": "https://png.pngtree.com/background/20230401/original/pngtree-view-from-chitkul-village-in-sangla-valley-vector-picture-image_2229375.jpg"
-              }
-            }
-          ]
-        },
-        {
-          "combinedDays": ["https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg", 
-          "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"],
-          "days": [
-            {
-              "day": "Day 7 - Transfer To Manali Via Atal Tunnel, Proceed To Delhi Via Volvo",
-              "description": [
-                "Travel back to Manali, passing through the recently inaugurated Atal Tunnel.",
-                "Experience the convenience and thrill of the tunnel journey.",
-                "Transfer to Delhi via a comfortable Volvo transportation.",
-                "Reflect on the memories of the remarkable journey."
-              ],
-              "images": {
-                "img1": "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
-                "img2": "https://png.pngtree.com/background/20230805/original/pngtree-a-snowy-mountain-adorned-in-pahalgam-valley-located-in-kashmir-india-picture-image_4440125.jpg",
-                "img3": "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg",
-                "img4": "https://png.pngtree.com/background/20230401/original/pngtree-view-from-chitkul-village-in-sangla-valley-vector-picture-image_2229375.jpg"
-              }
-            },
-            {
-              "day": "Day 8 - Arrival In Delhi Between 8:00 To 9:00 AM",
-              "description": [
-                "Arrive in Delhi, concluding the expedition with memories of the breathtaking landscapes and cultural richness of the Himalayan region."
-              ],
-              "images": {
-                "img1": "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
-                "img2": "https://png.pngtree.com/background/20230805/original/pngtree-a-snowy-mountain-adorned-in-pahalgam-valley-located-in-kashmir-india-picture-image_4440125.jpg",
-                "img3": "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg",
-                "img4": "https://png.pngtree.com/background/20230401/original/pngtree-view-from-chitkul-village-in-sangla-valley-vector-picture-image_2229375.jpg"
+                "img1": "https://images.pexels.com/photos/30318488/pexels-photo-30318488.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+                "img2": "https://images.pexels.com/photos/30318489/pexels-photo-30318489.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
               }
             }
           ]
@@ -205,8 +161,7 @@
         "Participants are responsible for their personal belongings.",
         "In case of adverse weather conditions, activities may be rescheduled."
       ]
-    }
-,    
+    },
     {
       "id": 2,
       "imageUrl": "https://static.toiimg.com/photo/msid-80611280,width-96,height-65.cms",
@@ -225,12 +180,16 @@
       ],
       "itinerary": [
         {
-          "combinedDays": ["https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg", 
-          "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"],
+          "combinedDays": [
+            "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
+            "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"
+          ],
           "days": [
             {
               "day": "Day 1",
-              "description":["Arrival, check-in, and exploring Mall Road."],
+              "description": [
+                "Arrival, check-in, and exploring Mall Road."
+              ],
               "images": {
                 "img1": "https://images.pexels.com/photos/2070307/pexels-photo-2070307.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
                 "img2": "https://images.pexels.com/photos/15896015/pexels-photo-15896015/free-photo-of-laxmanjhula-ramjhula-rishikesh-uttarakhand.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
@@ -238,7 +197,9 @@
             },
             {
               "day": "Day 2",
-              "description": [" Visit to Kempty Falls and Gun Hill."],
+              "description": [
+                " Visit to Kempty Falls and Gun Hill."
+              ],
               "images": {
                 "img1": "https://images.pexels.com/photos/2214386/pexels-photo-2214386.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
                 "img2": "https://images.pexels.com/photos/30139893/pexels-photo-30139893/free-photo-of-charming-mountain-village-in-spring-landscape.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
@@ -247,28 +208,33 @@
           ]
         },
         {
-          "combinedDays": ["https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg", 
-          "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"],
+          "combinedDays": [
+            "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
+            "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"
+          ],
           "days": [
             {
               "day": "Day 3",
-              "description": ["Trek to Lal Tibba and Camel's Back Road."],
+              "description": [
+                "Trek to Lal Tibba and Camel's Back Road."
+              ],
               "images": {
                 "img1": "https://images.pexels.com/photos/14504178/pexels-photo-14504178.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
                 "img2": "https://images.pexels.com/photos/7750616/pexels-photo-7750616.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
               }
-            }, {
+            },
+            {
               "day": "Day 4",
-              "description": ["Leisure day and departure."],
+              "description": [
+                "Leisure day and departure."
+              ],
               "images": {
                 "img1": "https://images.pexels.com/photos/9745701/pexels-photo-9745701.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
                 "img2": "https://images.pexels.com/photos/11710908/pexels-photo-11710908.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
               }
             }
-
           ]
         }
-      
       ],
       "inclusions": [
         "Stay in a 3-star hotel with hill view rooms.",
@@ -316,8 +282,10 @@
       ],
       "itinerary": [
         {
-          "combinedDays": ["https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg", 
-          "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"],
+          "combinedDays": [
+            "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
+            "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"
+          ],
           "days": [
             {
               "day": "Day 1 - Delhi to Rishikesh - Overnight Journey",
@@ -352,12 +320,13 @@
                 "img4": "https://images.unsplash.com/photo-1676182259623-a5f4c8d0a8a4?q=80&w=868&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               }
             }
-    
           ]
         },
         {
-          "combinedDays": ["https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg", 
-          "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"],
+          "combinedDays": [
+            "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
+            "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"
+          ],
           "days": [
             {
               "day": "Day 3 - Sonprayag to Kedarnath",
@@ -393,7 +362,6 @@
             }
           ]
         }
-       
       ],
       "inclusions": [
         "3-night stay in hotel/homestay/campsite.",
@@ -443,8 +411,10 @@
       ],
       "itinerary": [
         {
-          "combinedDays": ["https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg", 
-          "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"],
+          "combinedDays": [
+            "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
+            "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"
+          ],
           "days": [
             {
               "day": "Day 1 - Rishikesh to Karchi via Joshimath",
@@ -485,8 +455,10 @@
           ]
         },
         {
-          "combinedDays": ["https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg", 
-          "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"],
+          "combinedDays": [
+            "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
+            "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"
+          ],
           "days": [
             {
               "day": "Day 3 - Gulling Top to Khullara Top",
@@ -529,8 +501,10 @@
           ]
         },
         {
-          "combinedDays": ["https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg", 
-          "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"],
+          "combinedDays": [
+            "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
+            "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"
+          ],
           "days": [
             {
               "day": "Day 5 - Downhill Trek from Khullara Top to Karchi",
@@ -570,8 +544,10 @@
           ]
         },
         {
-          "combinedDays": ["https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg", 
-          "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"],
+          "combinedDays": [
+            "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
+            "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"
+          ],
           "days": [
             {
               "day": "Day 5 - Explore Lingti waterfall on the way to Kaza. Settle in for an overnight stay in the lively town of Kaza.",
@@ -605,7 +581,6 @@
             }
           ]
         }
-       
       ],
       "inclusions": [
         "3 Nights of tented accommodation on twin sharing and 2 nights in a guest house at Karchi on multi-sharing.",
@@ -662,8 +637,10 @@
       ],
       "itinerary": [
         {
-          "combinedDays": ["https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg", 
-          "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"],
+          "combinedDays": [
+            "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
+            "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"
+          ],
           "days": [
             {
               "day": "Day 1 - Rishikesh",
@@ -696,8 +673,10 @@
           ]
         },
         {
-          "combinedDays": ["https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg", 
-          "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"],
+          "combinedDays": [
+            "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
+            "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"
+          ],
           "days": [
             {
               "day": "Day 3 - Dhanolti to Mussoorie",
@@ -725,7 +704,6 @@
             }
           ]
         }
-        
       ],
       "inclusions": [
         "Stay in Swiss Camps and Luxury Cottages with quad sharing.",
@@ -775,8 +753,10 @@
       ],
       "itinerary": [
         {
-          "combinedDays": ["https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg", 
-          "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"],
+          "combinedDays": [
+            "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
+            "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"
+          ],
           "days": [
             {
               "day": "Day 1 - Rishikesh to Joshimath (Drive 290kms)",
@@ -812,8 +792,10 @@
           ]
         },
         {
-          "combinedDays": ["https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg", 
-          "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"],
+          "combinedDays": [
+            "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
+            "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"
+          ],
           "days": [
             {
               "day": "Day 3 - Ghangaria to Hemkunt Sahib & Back to Ghangaria (Trek 6kms)",
@@ -844,8 +826,10 @@
           ]
         },
         {
-          "combinedDays": ["https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg", 
-          "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"],
+          "combinedDays": [
+            "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
+            "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"
+          ],
           "days": [
             {
               "day": "Day 5 - Ghangaria to Joshimath via Badrinath",
@@ -873,7 +857,6 @@
             }
           ]
         }
-      
       ],
       "inclusions": [
         "Accommodation at Auli (1 night) and Ghangaria (3 nights).",
@@ -921,8 +904,10 @@
       ],
       "itinerary": [
         {
-          "combinedDays": ["https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg", 
-          "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"],
+          "combinedDays": [
+            "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
+            "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"
+          ],
           "days": [
             {
               "day": "Day 1 - ARRIVAL IN LEH | SIGHTSEEING TOUR IN LEH.",
@@ -955,8 +940,10 @@
           ]
         },
         {
-          "combinedDays": ["https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg", 
-          "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"],
+          "combinedDays": [
+            "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
+            "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"
+          ],
           "days": [
             {
               "day": "Day 2 - Move To Chitkul Via Sangla For Stay",
@@ -976,8 +963,10 @@
           ]
         },
         {
-          "combinedDays": ["https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg", 
-          "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"],
+          "combinedDays": [
+            "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
+            "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"
+          ],
           "days": [
             {
               "day": "Day 3 - TRIP ACROSS KHARDUNG-LA PASS | DRIVING ACROSS THE HIGHEST ALL SEASON MOTORABLE PASS",
@@ -1011,7 +1000,6 @@
             }
           ]
         }
-       
       ],
       "inclusions": [
         "4 nights of stays in Leh",
@@ -1079,8 +1067,10 @@
       ],
       "itinerary": [
         {
-          "combinedDays": ["https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg", 
-          "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"],
+          "combinedDays": [
+            "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
+            "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"
+          ],
           "days": [
             {
               "day": "Day 1 - JAMMU TO PAHALGAM",
@@ -1120,8 +1110,10 @@
           ]
         },
         {
-          "combinedDays": ["https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg", 
-          "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"],
+          "combinedDays": [
+            "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
+            "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"
+          ],
           "days": [
             {
               "day": "Day 3 -SIGHTSEEING IN SRINAGAR",
@@ -1159,8 +1151,10 @@
           ]
         },
         {
-          "combinedDays": ["https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg", 
-          "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"],
+          "combinedDays": [
+            "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
+            "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"
+          ],
           "days": [
             {
               "day": "Day 5 - EXCURSION TO SONMARG",
@@ -1195,7 +1189,6 @@
             }
           ]
         }
-       
       ],
       "inclusions": [
         "Accommodation in hotels/houseboats",
@@ -1242,8 +1235,10 @@
       "checkOutDate": "2024-12-06",
       "itinerary": [
         {
-          "combinedDays": ["https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg", 
-          "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"],
+          "combinedDays": [
+            "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
+            "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"
+          ],
           "days": [
             {
               "day": "Day 1 - MURKONGSELEK / DIBRUGARH – AALO",
@@ -1273,8 +1268,10 @@
           ]
         },
         {
-          "combinedDays": ["https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg", 
-          "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"],
+          "combinedDays": [
+            "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
+            "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"
+          ],
           "days": [
             {
               "day": "Day 3 - MECHUKA LA TREK -DORJEELING MOUNTAIN",
@@ -1301,8 +1298,10 @@
           ]
         },
         {
-          "combinedDays": ["https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg", 
-          "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"],
+          "combinedDays": [
+            "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
+            "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"
+          ],
           "days": [
             {
               "day": "Day 5 - MECHUKA - AALONG.",
@@ -1375,8 +1374,10 @@
       "checkOutDate": "2024-12-04",
       "itinerary": [
         {
-          "combinedDays": ["https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg", 
-          "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"],
+          "combinedDays": [
+            "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
+            "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"
+          ],
           "days": [
             {
               "day": "Day 1",
@@ -1399,8 +1400,10 @@
           ]
         },
         {
-          "combinedDays": ["https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg", 
-          "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"],
+          "combinedDays": [
+            "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
+            "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"
+          ],
           "days": [
             {
               "day": "Day 3",
@@ -1471,8 +1474,10 @@
       "checkOutDate": "2024-12-03",
       "itinerary": [
         {
-          "combinedDays": ["https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg", 
-          "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"],
+          "combinedDays": [
+            "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
+            "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"
+          ],
           "days": [
             {
               "day": "Day 1",
@@ -1499,8 +1504,10 @@
           ]
         },
         {
-          "combinedDays": ["https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg", 
-          "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"],
+          "combinedDays": [
+            "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
+            "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"
+          ],
           "days": [
             {
               "day": "Day 3",
@@ -1563,8 +1570,10 @@
       "checkOutDate": "2024-12-06",
       "itinerary": [
         {
-          "combinedDays": ["https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg", 
-          "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"],
+          "combinedDays": [
+            "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
+            "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"
+          ],
           "days": [
             {
               "day": "Day 1",
@@ -1589,8 +1598,10 @@
           ]
         },
         {
-          "combinedDays": ["https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg", 
-          "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"],
+          "combinedDays": [
+            "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
+            "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"
+          ],
           "days": [
             {
               "day": "Day 3",
@@ -1615,8 +1626,10 @@
           ]
         },
         {
-          "combinedDays": ["https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg", 
-          "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"],
+          "combinedDays": [
+            "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
+            "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"
+          ],
           "days": [
             {
               "day": "Day 5",
@@ -1641,8 +1654,10 @@
           ]
         },
         {
-          "combinedDays": ["https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg", 
-          "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"],
+          "combinedDays": [
+            "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
+            "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"
+          ],
           "days": [
             {
               "day": "Day 5 - Explore Lingti waterfall on the way to Kaza. Settle in for an overnight stay in the lively town of Kaza.",
@@ -1730,8 +1745,10 @@
       ],
       "itinerary": [
         {
-          "combinedDays": ["https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg", 
-          "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"],
+          "combinedDays": [
+            "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
+            "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"
+          ],
           "days": [
             {
               "day": "Day 0 - Noida to Chopta I Overnight Journey",
@@ -1762,8 +1779,10 @@
           ]
         },
         {
-          "combinedDays": ["https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg", 
-          "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"],
+          "combinedDays": [
+            "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
+            "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"
+          ],
           "days": [
             {
               "day": "Day 2 - Trek To Chandrashila via Tungnath Mahadev Temple",
@@ -1797,8 +1816,10 @@
           ]
         },
         {
-          "combinedDays": ["https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg", 
-          "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"],
+          "combinedDays": [
+            "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
+            "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"
+          ],
           "days": [
             {
               "day": "Day 4 - Noida Arrival | Trip Ends",
