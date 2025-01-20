@@ -20,7 +20,7 @@ import BookingButton from "./BookingButton";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import { BASE_URL } from "../utils/baseurl";
-import "./exploreMoreITW.css"
+import "./exploreMoreITW.css";
 
 //hello
 
@@ -29,13 +29,9 @@ const ExploreMoreITW = () => {
   const [property, setProperty] = useState(null);
   const [loading, setLoading] = useState(true);
   const [activeButton, setActiveButton] = useState(null);
-  const [selectedCheckInDate, setSelectedCheckInDate] = useState(
-    new Date()
-  );
-  const [selectedCheckOutDate, setSelectedCheckOutDate] = useState(
-    new Date()
-  );
-  
+  const [selectedCheckInDate, setSelectedCheckInDate] = useState(new Date());
+  const [selectedCheckOutDate, setSelectedCheckOutDate] = useState(new Date());
+
   const [adults, setAdults] = useState(1);
   const [children, setChildren] = useState(0);
   const { id } = useParams();
@@ -213,7 +209,7 @@ const ExploreMoreITW = () => {
                         onChange={(date) => setSelectedCheckInDate(date)}
                         dateFormat="dd MMM yyyy"
                         className="hidden1 border rounded p-2 w-full text-[#112641] font-semibold"
-                        minDate={new Date()} 
+                        minDate={new Date()}
                       />
                     </motion.div>
 
@@ -234,7 +230,7 @@ const ExploreMoreITW = () => {
                         onChange={(date) => setSelectedCheckOutDate(date)}
                         dateFormat="dd MMM yyyy"
                         className="hidden1 border rounded p-2 w-full text-[#112641] font-semibold"
-                        minDate={selectedCheckInDate || new Date()} 
+                        minDate={selectedCheckInDate || new Date()}
                       />
                     </motion.div>
                   </div>
@@ -349,7 +345,9 @@ const ExploreMoreITW = () => {
                 <FaHome className="text-blue-500  hidden sm:block text-xl" />
                 <h3 className="font-semibold text-sm ">Cottages</h3>
               </div>
-              <p className="text-gray-700 text-sm " >{property?.bedroom} Cottages</p>
+              <p className="text-gray-700 text-sm ">
+                {property?.bedroom} Cottages
+              </p>
             </div>
             <div className="bg-white shadow-md px-2 sm:px-6 sm:py-6 py-3 rounded-xl">
               <div className="flex items-center gap-3 mb-2">
@@ -476,7 +474,9 @@ const ExploreMoreITW = () => {
                     className="flex justify-between gap-2 items-center p-5 cursor-pointer bg-gray-50 hover:bg-gray-100 transition-colors duration-300"
                     onClick={() => toggleFaq(idx)}
                   >
-                    <h3 className="font-semibold text-sm sm:text-lg  ">{faq.question}</h3>
+                    <h3 className="font-semibold text-sm sm:text-lg  ">
+                      {faq.question}
+                    </h3>
                     {openIndex === idx ? (
                       <FaArrowAltCircleUp className="text-blue-500 text-xl w-8" />
                     ) : (
@@ -493,7 +493,9 @@ const ExploreMoreITW = () => {
                         className="overflow-hidden"
                       >
                         <div className="p-5 bg-white">
-                          <p className="text-gray-700 text-sm sm:text-md">{faq.answer}</p>
+                          <p className="text-gray-700 text-sm sm:text-md">
+                            {faq.answer}
+                          </p>
                         </div>
                       </motion.div>
                     )}
@@ -650,7 +652,7 @@ const ExploreMoreITW = () => {
                     onChange={(date) => setSelectedCheckOutDate(date)}
                     dateFormat="dd MMM yyyy"
                     className="hidden1 border rounded p-2 w-full text-[#112641] font-semibold"
-                    minDate={selectedCheckInDate || new Date()} 
+                    minDate={selectedCheckInDate || new Date()}
                   />
                 </motion.div>
               </div>
