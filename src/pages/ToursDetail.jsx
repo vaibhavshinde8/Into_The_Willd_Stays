@@ -164,82 +164,42 @@ const ToursDetail = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-3 p-4 sm:p-6 w-full sm:w-4/5 mx-auto bg-gray-50 shadow-lg rounded-lg">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-3 p-4 sm:p-6 w-full sm:w-4/5 mx-auto bg-gray-50 shadow-lg rounded-lg"
+      >
         {/* Main Image */}
         <div className="relative md:col-span-2 rounded-lg overflow-hidden shadow-md">
           <img
-            src="https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg"
-            alt="Main Image"
+            src={tour.imageUrl}
+            alt={tour.name}
             className="w-full h-64 sm:h-full object-cover"
           />
           <div className="absolute bottom-4 right-2 justify-center bg-black bg-opacity-25 rounded-lg transition-opacity duration-300 hover:bg-opacity-50">
-            <span className="text-white text-sm sm:text-lg font-semibold">
-              Explore Beauty
-            </span>
+
           </div>
         </div>
 
         {/* Smaller Images */}
         <div className="grid grid-cols-2 gap-3">
-          <div className="relative h-40 sm:h-80 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
-            <img
-              src="https://png.pngtree.com/background/20230805/original/pngtree-a-snowy-mountain-adorned-in-pahalgam-valley-located-in-kashmir-india-picture-image_4440125.jpg"
-              alt="Destinations"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute bottom-4 right-2 justify-center bg-black bg-opacity-25 transition-opacity duration-300 hover:bg-opacity-50">
-              <span className="text-white text-xs sm:text-sm font-medium">
-                Destinations
-              </span>
-            </div>
-          </div>
-
-          <div className="relative h-40 sm:h-80 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
-            <img
-              src="https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"
-              alt="Stays"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute bottom-4 right-2 justify-center bg-black bg-opacity-25 transition-opacity duration-300 hover:bg-opacity-50">
-              <span className="text-white text-xs sm:text-sm font-medium">
-                Stays
-              </span>
-            </div>
-          </div>
-
-          <div className="relative h-40 sm:h-80 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
-            <img
-              src="https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"
-              alt="Activity"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute bottom-4 right-2 justify-center bg-black bg-opacity-25 transition-opacity duration-300 hover:bg-opacity-50">
-              <span className="text-white text-xs sm:text-sm font-medium">
-                Activity
-              </span>
-            </div>
-          </div>
-
-          <div className="relative h-40 sm:h-80 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
-            <img
-              src="https://png.pngtree.com/background/20230401/original/pngtree-view-from-chitkul-village-in-sangla-valley-vector-picture-image_2229375.jpg"
-              alt="View All Images"
-              className="w-full h-full object-cover"
-            />
+          {tour.images.map((image, index) => (
             <div
-              className="absolute bottom-4 right-2 justify-center bg-black bg-opacity-25 transition-opacity duration-300 hover:bg-opacity-50"
-              id="specific-tag-start"
+              key={index}
+              className="relative h-30 sm:h-80 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
             >
-              <span className="text-white text-xs sm:text-sm font-medium">
-                View All Images
-              </span>
+              <img
+                src={image}
+                alt={`Image ${index + 1}`}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute bottom-4 right-2 justify-center bg-black bg-opacity-25 transition-opacity duration-300 hover:bg-opacity-50">
+
+              </div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
 
       {/* Connect to Expert Button */}
-      <div className="bg-white/80 backdrop-blur-sm py-8">
+      <div className="bg-white/80 backdrop-blur-sm py-8" id="specific-tag-start">
         {/* <div className="max-w-7xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -284,7 +244,7 @@ const ToursDetail = () => {
                 2
               </span>
               <span className="text-xs sm:text-sm font-medium text-gray-500 text-center">
-                Days in Gangtok
+                Days in Delhi
               </span>
             </div>
             {/* Separator */}
@@ -296,7 +256,7 @@ const ToursDetail = () => {
                 1
               </span>
               <span className="text-xs sm:text-sm font-medium text-gray-500 text-center">
-                Day in Lachen
+                Day in Manali
               </span>
             </div>
             <div className="hidden sm:block h-6 w-px bg-gray-300"></div>
@@ -307,7 +267,7 @@ const ToursDetail = () => {
                 1
               </span>
               <span className="text-xs sm:text-sm font-medium text-gray-500 text-center">
-                Day in Lachung
+                Day in Chitkul
               </span>
             </div>
             <div className="hidden sm:block h-6 w-px bg-gray-300"></div>
@@ -318,7 +278,7 @@ const ToursDetail = () => {
                 1
               </span>
               <span className="text-xs sm:text-sm font-medium text-gray-500 text-center">
-                Day in Gangtok
+                Day in Dhankar
               </span>
             </div>
           </div>
@@ -535,33 +495,23 @@ const ToursDetail = () => {
               {/* Popup Modal */}
 
               <Modal
-
                 isOpen={!!selectedImage}
                 onRequestClose={closeModal}
-                className="fixed inset-0 flex items-center justify-center z-50 outline-none"
+                className="fixed inset-0 flex"
                 overlayClassName="fixed inset-0 bg-black bg-opacity-75 z-40"
               >
+                {!selectedImage }
+
+                {/* Modal */}
                 {selectedImage && (
                   <div className="relative flex items-center justify-center w-full h-full bg-black bg-opacity-90 z-50">
-                    {/* Close Bar */}
-                    <div className="absolute top-0 left-0 w-full bg-gray-800 text-white p-4 flex justify-between items-center">
-                      <span className="text-lg font-bold">Image Viewer</span>
-                      <button
-                        onClick={closeModal}
-                        className="text-white hover:text-gray-300 text-2xl font-semibold"
-                        aria-label="Close"
-                      >
-                        ✕
-                      </button>
-                    </div>
-
                     {/* Main Close Button */}
                     <button
                       onClick={closeModal}
-                      className="absolute top-4 right-4 bg-gray-800 rounded-full p-2 hover:bg-gray-700"
+                      className="absolute   top-40 right-4 text-white text-3xl font-bold hover:text-gray-300 z-50"
                       aria-label="Close"
                     >
-                      <span className="text-white text-4xl font-bold">✕</span>
+                      ✕
                     </button>
 
                     {/* Modal Content */}
@@ -573,13 +523,13 @@ const ToursDetail = () => {
 
                     {/* Navigation Icons */}
                     <div
-                      className="absolute top-1/2 left-6 transform -translate-y-1/2 text-white hover:text-gray-300 cursor-pointer text-5xl z-50"
+                      className="absolute top-1/2 left-6 transform -translate-y-1/2 text-white hover:text-gray-300 cursor-pointer text-6xl z-50"
                       onClick={handlePrev}
                     >
                       ‹
                     </div>
                     <div
-                      className="absolute top-1/2 right-6 transform -translate-y-1/2 text-white hover:text-gray-300 cursor-pointer text-5xl z-50"
+                      className="absolute top-1/2 right-6 transform -translate-y-1/2 text-white hover:text-gray-300 cursor-pointer text-6xl z-50"
                       onClick={handleNext}
                     >
                       ›
@@ -587,6 +537,7 @@ const ToursDetail = () => {
                   </div>
                 )}
               </Modal>
+
 
 
             </div>

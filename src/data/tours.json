@@ -6,6 +6,12 @@
       "name": "Spiti Valley",
       "location": "Spiti Valley, Uttarakhand",
       "duration": "8 Days, 7 Nights",
+      "images":[
+        "https://images.pexels.com/photos/30318498/pexels-photo-30318498.jpeg",
+        "https://images.pexels.com/photos/30318497/pexels-photo-30318497.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "https://images.pexels.com/photos/30318488/pexels-photo-30318488.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "https://images.pexels.com/photos/30318489/pexels-photo-30318489.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      ],
       "price": "9,999",
       "checkInDate": "2024-12-01",
       "checkOutDate": "2024-12-03",
@@ -58,7 +64,8 @@
         {
           "combinedDays": [
             "https://images.pexels.com/photos/30318490/pexels-photo-30318490.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-            "https://images.pexels.com/photos/30318489/pexels-photo-30318489.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            "https://images.pexels.com/photos/30318489/pexels-photo-30318489.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            "https://images.pexels.com/photos/30318492/pexels-photo-30318492.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
           ],
           "days": [
             {
@@ -72,8 +79,8 @@
               "images": {
                 "img1": "https://images.pexels.com/photos/30318488/pexels-photo-30318488.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
                 "img2": "https://images.pexels.com/photos/30318489/pexels-photo-30318489.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-                "img3": "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg",
-                "img4": "https://png.pngtree.com/background/20230401/original/pngtree-view-from-chitkul-village-in-sangla-valley-vector-picture-image_2229375.jpg"
+                "img3": "https://images.pexels.com/photos/30318488/pexels-photo-30318488.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+  
               }
             }
           ]
@@ -81,7 +88,8 @@
         {
           "combinedDays": [
             "https://images.pexels.com/photos/30318487/pexels-photo-30318487.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-            "https://images.pexels.com/photos/30318488/pexels-photo-30318488.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            "https://images.pexels.com/photos/30318488/pexels-photo-30318488.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            "https://images.pexels.com/photos/30318490/pexels-photo-30318490.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
           ],
           "days": [
             {
@@ -115,7 +123,8 @@
         {
           "combinedDays": [
             "https://images.pexels.com/photos/30318498/pexels-photo-30318498.jpeg",
-            "https://images.pexels.com/photos/30318497/pexels-photo-30318497.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            "https://images.pexels.com/photos/30318497/pexels-photo-30318497.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            "https://images.pexels.com/photos/30318490/pexels-photo-30318490.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
           ],
           "days": [
             {
@@ -128,7 +137,8 @@
               ],
               "images": {
                 "img1": "https://images.pexels.com/photos/30318488/pexels-photo-30318488.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-                "img2": "https://images.pexels.com/photos/30318489/pexels-photo-30318489.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                "img2": "https://images.pexels.com/photos/30318489/pexels-photo-30318489.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+                "img3": "https://images.pexels.com/photos/30318488/pexels-photo-30318488.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
               }
             }
           ]
@@ -169,6 +179,12 @@
       "location": "Mussoorie, Uttarakhand",
       "duration": "4 Days, 3 Nights",
       "price": "12499",
+      "images":[
+        "https://images.pexels.com/photos/30318498/pexels-photo-30318498.jpeg",
+        "https://images.pexels.com/photos/30318497/pexels-photo-30318497.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "https://images.pexels.com/photos/30318488/pexels-photo-30318488.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "https://images.pexels.com/photos/30318489/pexels-photo-30318489.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      ],
       "checkInDate": "2024-12-01",
       "checkOutDate": "2024-12-04",
       "highlights": [
@@ -271,6 +287,12 @@
       "location": "Kedarnath, Uttarakhand",
       "duration": "4 Days, 3 Nights",
       "price": "10499",
+      "images":[
+        "https://images.pexels.com/photos/30318498/pexels-photo-30318498.jpeg",
+        "https://images.pexels.com/photos/30318497/pexels-photo-30318497.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "https://images.pexels.com/photos/30318488/pexels-photo-30318488.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "https://images.pexels.com/photos/30318489/pexels-photo-30318489.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      ],
       "checkInDate": "2024-12-01",
       "checkOutDate": "2024-12-04",
       "highlights": [
@@ -403,6 +425,12 @@
       "location": "Joshimath, Uttarakhand",
       "duration": "6 Days, 5 Nights",
       "price": "9499",
+      "images":[
+        "https://images.pexels.com/photos/30318498/pexels-photo-30318498.jpeg",
+        "https://images.pexels.com/photos/30318497/pexels-photo-30318497.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "https://images.pexels.com/photos/30318488/pexels-photo-30318488.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "https://images.pexels.com/photos/30318489/pexels-photo-30318489.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      ],
       "checkInDate": "2024-12-01",
       "checkOutDate": "2024-12-06",
       "highlights": [
@@ -629,6 +657,12 @@
       "location": "Rishikesh and Dhanolti, Uttarakhand",
       "duration": "2 Nights, 3 Days",
       "price": "3500",
+      "images":[
+        "https://images.pexels.com/photos/30318498/pexels-photo-30318498.jpeg",
+        "https://images.pexels.com/photos/30318497/pexels-photo-30318497.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "https://images.pexels.com/photos/30318488/pexels-photo-30318488.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "https://images.pexels.com/photos/30318489/pexels-photo-30318489.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      ],
       "checkInDate": "2024-12-01",
       "checkOutDate": "2024-12-03",
       "highlights": [
@@ -742,6 +776,12 @@
       "location": "Chamoli, Uttarakhand",
       "duration": "6 Days, 5 Nights",
       "price": "7500",
+      "images":[
+        "https://images.pexels.com/photos/30318498/pexels-photo-30318498.jpeg",
+        "https://images.pexels.com/photos/30318497/pexels-photo-30318497.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "https://images.pexels.com/photos/30318488/pexels-photo-30318488.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "https://images.pexels.com/photos/30318489/pexels-photo-30318489.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      ],
       "checkInDate": "2024-12-01",
       "checkOutDate": "2024-12-06",
       "highlights": [
@@ -895,6 +935,12 @@
       "location": "Ladakh, Jammu and Kashmir",
       "duration": "5 Days, 4 Nights",
       "price": "29999",
+      "images":[
+        "https://images.pexels.com/photos/30318498/pexels-photo-30318498.jpeg",
+        "https://images.pexels.com/photos/30318497/pexels-photo-30318497.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "https://images.pexels.com/photos/30318488/pexels-photo-30318488.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "https://images.pexels.com/photos/30318489/pexels-photo-30318489.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      ],
       "checkInDate": "2024-07-15",
       "checkOutDate": "2024-07-19",
       "highlights": [
@@ -1058,6 +1104,12 @@
       "location": "Jammu and Kashmir",
       "duration": "6 Days, 5 Nights",
       "price": "34999",
+      "images":[
+        "https://images.pexels.com/photos/30318498/pexels-photo-30318498.jpeg",
+        "https://images.pexels.com/photos/30318497/pexels-photo-30318497.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "https://images.pexels.com/photos/30318488/pexels-photo-30318488.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "https://images.pexels.com/photos/30318489/pexels-photo-30318489.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      ],
       "checkInDate": "2024-08-15",
       "checkOutDate": "2024-08-20",
       "highlights": [
@@ -1231,6 +1283,12 @@
       "location": "Mechuka, Arunachal Pradesh",
       "duration": "6 Days, 5 Nights",
       "price": "16799",
+      "images":[
+        "https://images.pexels.com/photos/30318498/pexels-photo-30318498.jpeg",
+        "https://images.pexels.com/photos/30318497/pexels-photo-30318497.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "https://images.pexels.com/photos/30318488/pexels-photo-30318488.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "https://images.pexels.com/photos/30318489/pexels-photo-30318489.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      ],
       "checkInDate": "2024-12-01",
       "checkOutDate": "2024-12-06",
       "itinerary": [
@@ -1370,6 +1428,12 @@
       "location": "Kohima, Nagaland, INDIA",
       "duration": "4 Days, 3 Nights",
       "price": "6199",
+      "images":[
+        "https://images.pexels.com/photos/30318498/pexels-photo-30318498.jpeg",
+        "https://images.pexels.com/photos/30318497/pexels-photo-30318497.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "https://images.pexels.com/photos/30318488/pexels-photo-30318488.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "https://images.pexels.com/photos/30318489/pexels-photo-30318489.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      ],
       "checkInDate": "2024-12-01",
       "checkOutDate": "2024-12-04",
       "itinerary": [
@@ -1470,6 +1534,12 @@
       "location": "SIKKIM, INDIA",
       "duration": "3 Days, 2 Nights",
       "price": "7999",
+      "images":[
+        "https://images.pexels.com/photos/30318498/pexels-photo-30318498.jpeg",
+        "https://images.pexels.com/photos/30318497/pexels-photo-30318497.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "https://images.pexels.com/photos/30318488/pexels-photo-30318488.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "https://images.pexels.com/photos/30318489/pexels-photo-30318489.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      ],
       "checkInDate": "2024-12-01",
       "checkOutDate": "2024-12-03",
       "itinerary": [
@@ -1566,6 +1636,12 @@
       "location": "MEGHALAYA, INDIA",
       "duration": "6 Days, 5 Nights",
       "price": "14499",
+      "images":[
+        "https://images.pexels.com/photos/30318498/pexels-photo-30318498.jpeg",
+        "https://images.pexels.com/photos/30318497/pexels-photo-30318497.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "https://images.pexels.com/photos/30318488/pexels-photo-30318488.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "https://images.pexels.com/photos/30318489/pexels-photo-30318489.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      ],
       "checkInDate": "2024-12-01",
       "checkOutDate": "2024-12-06",
       "itinerary": [
@@ -1735,6 +1811,12 @@
       "location": "Chopta Tungnath, Uttrakhand",
       "duration": "3 Days, 2 Nights",
       "price": "8999",
+      "images":[
+        "https://images.pexels.com/photos/30318498/pexels-photo-30318498.jpeg",
+        "https://images.pexels.com/photos/30318497/pexels-photo-30318497.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "https://images.pexels.com/photos/30318488/pexels-photo-30318488.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "https://images.pexels.com/photos/30318489/pexels-photo-30318489.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      ],
       "checkInDate": "2024-12-01",
       "checkOutDate": "2024-12-04",
       "highlights": [
