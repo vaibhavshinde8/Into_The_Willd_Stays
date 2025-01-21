@@ -192,15 +192,23 @@ const ToursDetail = () => {
   };
 
   // Handle like button click
-  const handleLike = (index) => {
-    const updatedReviews = [...reviews];
-    updatedReviews[index].likes += 1;
-    setReviews(updatedReviews);
-  };
+  
   // Calculate overall rating
   const overallRating =
     reviews.reduce((acc, review) => acc + review.stars, 0) / reviews.length + 0.5 || 0;
+    const [likedReviews, setLikedReviews] = useState([]);
 
+    // Function to handle like button click
+    const handleLike = (index) => {
+      // Prevent liking the same review more than once
+      if (likedReviews.includes(index)) return;
+  
+      // Update the likes count in the reviews array
+      reviews[index].likes += 1;
+  
+      // Add the index of the liked review to the state
+      setLikedReviews((prev) => [...prev, index]);
+    };
   if (!tour) {
     return <div>Tour not found</div>;
   }
@@ -331,79 +339,54 @@ const ToursDetail = () => {
         </div> */}
       </div>
 
-      <div className="space-y-4 sm:ml-10 md:ml-44">
-        {/* Title Section */}
-        <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-black text-center md:text-left">
-          {tour.name}
-        </h1>
+      <div className="space-y-4 sm:ml-10 md:ml-24">
+  {/* Title Section */}
+  <h1
+    className="text-lg sm:text-xl md:text-2xl md:ml-64 font-bold text-gray-800 mb-4 uppercase text-center md:text-left"
+  >
+    {tour.name}
+  </h1>
 
-        {/* Badge and Itinerary Days */}
-        <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4 space-y-4 sm:space-y-0 ">
-          {/* Badge */}
-          <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6">
-            <span
-              className=" sm:text-xl font-bold  group bg-gradient-to-r from-teal-500 via-teal-400 to-emerald-400 
-                     text-white px-6 py-3 rounded-2xl text-lg font
-                     shadow-[0_10px_20px_rgba(0,0,0,0.1)] 
-                     hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)]"
-            >
-              6D/5N
-            </span>
-          </div>
-          {/* Days with Destinations */}
-          <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6">
-            {/* Day in Gangtok */}
-            <div className="flex flex-col items-center">
-              <span className="text-xl sm:text-2xl font-bold text-gray-800">
-                2
-              </span>
-              <span className="text-xs sm:text-sm font-medium text-gray-500 text-center">
-                Days in Delhi
-              </span>
-            </div>
-            {/* Separator */}
-            <div className="hidden sm:block h-6 w-px bg-gray-300"></div>
+  {/* Badge and Itinerary Days */}
+  <div
+    className="w-full sm:w-3/5 grid grid-cols-2 sm:flex sm:justify-around items-center p-6 bg-white border border-gray-200 rounded-lg gap-4"
+  >
+    {/* Duration */}
+    <div className="text-center">
+      <div className="text-blue-500 text-2xl mb-2">🕒</div>
+      <p className="text-sm font-bold text-gray-700">Duration</p>
+      <p className="text-sm text-gray-500">9 Nights 10 Days</p>
+    </div>
 
-            {/* Day in Lachen */}
-            <div className="flex flex-col items-center">
-              <span className="text-xl sm:text-2xl font-bold text-gray-800">
-                1
-              </span>
-              <span className="text-xs sm:text-sm font-medium text-gray-500 text-center">
-                Day in Manali
-              </span>
-            </div>
-            <div className="hidden sm:block h-6 w-px bg-gray-300"></div>
+    {/* Tour Type */}
+    <div className="text-center">
+      <div className="text-blue-500 text-2xl mb-2">👣</div>
+      <p className="text-sm font-bold text-gray-700">Tour Type</p>
+      <p className="text-sm text-gray-500">Specific Tour</p>
+    </div>
 
-            {/* Day in Lachung */}
-            <div className="flex flex-col items-center">
-              <span className="text-xl sm:text-2xl font-bold text-gray-800">
-                1
-              </span>
-              <span className="text-xs sm:text-sm font-medium text-gray-500 text-center">
-                Day in Chitkul
-              </span>
-            </div>
-            <div className="hidden sm:block h-6 w-px bg-gray-300"></div>
+    {/* Group Size */}
+    <div className="text-center">
+      <div className="text-blue-500 text-2xl mb-2">👥</div>
+      <p className="text-sm font-bold text-gray-700">Group Size</p>
+      <p className="text-sm text-gray-500">40 people</p>
+    </div>
 
-            {/* Additional Day in Gangtok */}
-            <div className="flex flex-col items-center">
-              <span className="text-xl sm:text-2xl font-bold text-gray-800">
-                1
-              </span>
-              <span className="text-xs sm:text-sm font-medium text-gray-500 text-center">
-                Day in Dhankar
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
+    {/* Languages */}
+    <div className="text-center">
+      <div className="text-blue-500 text-2xl mb-2">🌐</div>
+      <p className="text-sm font-bold text-gray-700">Languages</p>
+      <p className="text-sm text-gray-500">—</p>
+    </div>
+  </div>
+</div>
+
 
       {/* Content Section */}
-      <div className="lg:max-w-8xl mx-auto lg:px-24 py-16  ">
+      <div className="lg:max-w-8xl mx-auto    py-16 md:ml-24 ">
         <div className="space-y-16">
           <div className="flex gap-12">
-            <div className="p-6 bg-gray-100 rounded-lg shadow-lg lg:w-3/5 md:lg:w-3/5">
+            <div className="p-6  rounded-lg shadow-lg md:w-3/5 lg:w-3/5 border border-gray-200 rounded-lg">
               <h1 className="text-2xl font-bold text-gray-800 mb-4 text-center uppercase">
                 Trip Highlights
               </h1>
@@ -419,7 +402,7 @@ const ToursDetail = () => {
             {showForm && (
               <div className="relative hidden lg:flex">
                 {/* Other content */}
-                <div className="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md ml-10 fixed top-40">
+                <div className="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md ml-10 fixed top-32">
                   {/* Header Section */}
                   <h2 className="text-lg font-semibold text-gray-800">
                     {tour.location}
@@ -523,7 +506,15 @@ const ToursDetail = () => {
                         className="flex items-center justify-between cursor-pointer"
                         onClick={() => toggleAccordion(`${index}-${dayIndex}`)}
                       >
-                        <h3 className="text-black font-semibold"> {day.day}</h3>
+                        <h3 className="text-black  font-semibold">
+                          <span className="bg-gradient-to-r from-[#05dce3] to-[#05dce3] text-white font-bold px-2 py-1 rounded-md shadow-md mr-2">
+                            {day.day.slice(0, 5)} {/* First 5 letters */}
+                          </span>
+                          {day.day.slice(5)} {/* Rest of the text */}
+                        </h3>
+
+
+
                         <span
                           className={`transform transition-transform duration-300 ${expandedDay === `${index}-${dayIndex}` ? "rotate-180" : ""
                             }`}
@@ -637,17 +628,8 @@ const ToursDetail = () => {
                   </div>
                 )}
               </Modal>
-
-
-
             </div>
           </section>
-
-
-
-
-
-
 
           <img
             src="https://media1.thrillophilia.com/end_of_trip_desktop.png"
@@ -787,7 +769,7 @@ const ToursDetail = () => {
           </section>
 
           {/* Rules & Policy */}
-          <section className="mx-2">
+          <section className="mx-2 ">
             <h2 className="text-3xl font-bold text-[#0F2642] mb-8">
               Rules & Policy
             </h2>
@@ -799,7 +781,7 @@ const ToursDetail = () => {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                   key={index}
-                  className="flex items-center space-x-4 bg-white/80 backdrop-blur-sm p-6 rounded-xl shadow-md"
+                  className="flex items-center space-x-4 bg-white/80 backdrop-blur-sm p-6 rounded-xl shadow-md border border-gray-200 rounded-lg"
                 >
                   <span className="h-3 w-3 rounded-full bg-[#0F2642] flex-shrink-0" />
                   <span className="text-lg text-gray-700">{item}</span>
@@ -808,11 +790,10 @@ const ToursDetail = () => {
             </div>
           </section>
         </div>
-      </div>
-      <section>
-        <div className="p-6 bg-gray-50 min-h-screen">
+        <section>
+        <div className="p-6 bg-gray-50 min-h-screen ">
           {/* Overall Rating and Reviews Section */}
-          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Overall Rating Section */}
             <div className="col-span-1 bg-white rounded-lg shadow-lg p-6">
               <h2 className="text-2xl font-bold mb-6">Reviews Summary</h2>
@@ -840,7 +821,7 @@ const ToursDetail = () => {
               </div>
               {/* Visualization Bars */}
               <div className="space-y-6">
-                {["Sleep", "Location", "Service", "Clean", "Rooms"].map(
+                {["Sleep", "Location", "Service", "Cleanliness", "Rooms"].map(
                   (category, index) => (
                     <div key={index} className="flex items-center">
                       <div className="w-24 text-gray-600">{category}</div>
@@ -875,7 +856,7 @@ const ToursDetail = () => {
 
             {/* Write a Review Section */}
             <div className="col-span-2 bg-white rounded-lg shadow-lg p-4">
-              <button className="text-blue-600 font-bold text-lg mb-2">
+              <button className="text-blue-600  text-2xl font-bold  mb-2">
                 Write a review
               </button>
               <div id="reviewForm">
@@ -919,7 +900,7 @@ const ToursDetail = () => {
                     required
                   ></textarea>
                   <div className="grid grid-cols-2 gap-2">
-                    {["Sleep", "Location", "Service", "Clean", "Rooms"].map(
+                    {["Sleep", "Location", "Service", "Cleanliness", "Rooms"].map(
                       (category, index) => (
                         <div key={index}>
                           <label className="block mb-1">{category}</label>
@@ -959,67 +940,70 @@ const ToursDetail = () => {
           </div>
 
           {/* Display Reviews Section */}
-          <div className="max-w-6xl mx-auto mt-6 space-y-4">
-            {reviews.map((review, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-lg shadow-lg p-6 space-y-2"
-              >
-                <div className="flex items-center justify-between">
-                  <div>
-                    <h3 className="font-bold">{review.name}</h3>
-                    <span className="text-gray-500">{review.date}</span>
-                  </div>
-                  <div className="text-yellow-400 flex">
-                    {Array(review.stars)
-                      .fill()
-                      .map((_, i) => (
-                        <span key={i}>&#9733;</span>
-                      ))}
-                  </div>
-                </div>
-                <h4 className="font-bold">{review.title}</h4>
-                <p className="text-gray-700">{review.content}</p>
-                <div className="grid grid-cols-2 gap-4 text-gray-600">
-                  <div>Sleep: {review.sleep}
-                    <span className="text-yellow-400 text-2xl">
-                      &#9733;
-                    </span>
-
-                  </div>
-                  <div>Location: {review.location}
-                    <span className="text-yellow-400 text-2xl">
-                      &#9733;
-                    </span>
-                  </div>
-                  <div>Service: {review.service}
-                    <span className="text-yellow-400 text-2xl">
-                      &#9733;
-                    </span>
-                  </div>
-                  <div>Clean: {review.cleanliness}
-                    <span className="text-yellow-400 text-2xl">
-                      &#9733;
-                    </span>
-                  </div>
-                  <div>Rooms: {review.rooms}
-                    <span className="text-yellow-400 text-2xl">
-                      &#9733;
-                    </span>
-                  </div>
-                </div>
-                <button
-                  onClick={() => handleLike(index)}
-                  className="flex items-center text-gray-500 hover:text-blue-600"
-                >
-                  {review.likes} likes
-                  <FontAwesomeIcon icon={faThumbsUp} className="ml-1 text-lg" />
-                </button>
-              </div>
-            ))}
+          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 space-y-4">
+          {reviews.map((review, index) => (
+        <div
+          key={index}
+          className="bg-white rounded-lg shadow-lg p-6 space-y-2"
+        >
+          <div className="flex items-center justify-between">
+            <div>
+              <h3 className="font-bold">{review.name}</h3>
+              <span className="text-gray-500">{review.date}</span>
+            </div>
+            <div className="text-yellow-400 flex">
+              {Array(review.stars)
+                .fill()
+                .map((_, i) => (
+                  <span key={i}>&#9733;</span>
+                ))}
+            </div>
+          </div>
+          <h4 className="font-bold">{review.title}</h4>
+          <p className="text-gray-700">{review.content}</p>
+          <div className="grid grid-cols-2 gap-4 text-gray-600">
+            <div>
+              Sleep: {review.sleep}
+              <span className="text-yellow-400 text-2xl">&#9733;</span>
+            </div>
+            <div>
+              Location: {review.location}
+              <span className="text-yellow-400 text-2xl">&#9733;</span>
+            </div>
+            <div>
+              Service: {review.service}
+              <span className="text-yellow-400 text-2xl">&#9733;</span>
+            </div>
+            <div>
+              Cleanliness: {review.cleanliness}
+              <span className="text-yellow-400 text-2xl">&#9733;</span>
+            </div>
+            <div>
+              Rooms: {review.rooms}
+              <span className="text-yellow-400 text-2xl">&#9733;</span>
+            </div>
+          </div>
+          <div className="mt-4">
+          <button
+            onClick={() => handleLike(index)}
+            className={`flex items-center ${
+              likedReviews.includes(index) ? "text-blue-600" : "text-gray-500"
+            } hover:text-blue-600`}
+            disabled={likedReviews.includes(index)}
+          >
+            {review.likes} likes
+            <FontAwesomeIcon icon={faThumbsUp} className="ml-1 text-lg" />
+          </button>
+          </div>
+          
+        </div>
+      ))}
           </div>
         </div>
       </section>
+
+      </div>
+      
 
       {/* Add ContactForm Modal */}
       <ContactForm

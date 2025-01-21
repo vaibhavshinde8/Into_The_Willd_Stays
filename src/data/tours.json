@@ -174,16 +174,16 @@
     },
     {
       "id": 2,
-      "imageUrl": "https://static.toiimg.com/photo/msid-80611280,width-96,height-65.cms",
+      "imageUrl": "https://imagizer.imageshack.com/img923/6708/6f4MPd.jpg",
       "name": "Mussoorie Nature Escape",
       "location": "Mussoorie, Uttarakhand",
       "duration": "4 Days, 3 Nights",
       "price": "12499",
       "images":[
-        "https://images.pexels.com/photos/30318498/pexels-photo-30318498.jpeg",
-        "https://images.pexels.com/photos/30318497/pexels-photo-30318497.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-        "https://images.pexels.com/photos/30318488/pexels-photo-30318488.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-        "https://images.pexels.com/photos/30318489/pexels-photo-30318489.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+        "https://imagizer.imageshack.com/img923/6417/3ARz71.jpg",
+        "https://imagizer.imageshack.com/img922/3788/qzVFOq.jpg",
+        "https://imagizer.imageshack.com/img922/5113/gzxqlA.jpg",
+        "https://imagizer.imageshack.com/img923/1018/GaKUgx.jpg"
       ],
       "checkInDate": "2024-12-01",
       "checkOutDate": "2024-12-04",
@@ -207,8 +207,9 @@
                 "Arrival, check-in, and exploring Mall Road."
               ],
               "images": {
-                "img1": "https://images.pexels.com/photos/2070307/pexels-photo-2070307.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                "img2": "https://images.pexels.com/photos/15896015/pexels-photo-15896015/free-photo-of-laxmanjhula-ramjhula-rishikesh-uttarakhand.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                "img1": "https://imagizer.imageshack.com/img923/6708/6f4MPd.jpg",
+                "img3": "https://imagizer.imageshack.com/img922/2825/A1zB6U.jpg",
+                "img2": "https://imagizer.imageshack.com/img924/1115/svkRau.jpg"
               }
             },
             {
@@ -217,8 +218,9 @@
                 " Visit to Kempty Falls and Gun Hill."
               ],
               "images": {
-                "img1": "https://images.pexels.com/photos/2214386/pexels-photo-2214386.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                "img2": "https://images.pexels.com/photos/30139893/pexels-photo-30139893/free-photo-of-charming-mountain-village-in-spring-landscape.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                "img1": "https://imagizer.imageshack.com/img924/6915/7h0pQL.jpg",
+                "img3": "https://imagizer.imageshack.com/img924/3077/MsRX7o.jpg",
+                "img2": "https://imagizer.imageshack.com/img922/7821/C3AMGf.jpg"
               }
             }
           ]
@@ -235,8 +237,9 @@
                 "Trek to Lal Tibba and Camel's Back Road."
               ],
               "images": {
-                "img1": "https://images.pexels.com/photos/14504178/pexels-photo-14504178.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                "img2": "https://images.pexels.com/photos/7750616/pexels-photo-7750616.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                "img1": "https://imagizer.imageshack.com/img923/6048/hMRKGL.jpg",
+                "img3": "https://imagizer.imageshack.com/img924/6070/L5sGv4.jpg",
+                "img2": "https://imagizer.imageshack.com/img923/9239/tes1Ll.jpg"
               }
             },
             {
@@ -245,8 +248,9 @@
                 "Leisure day and departure."
               ],
               "images": {
-                "img1": "https://images.pexels.com/photos/9745701/pexels-photo-9745701.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                "img2": "https://images.pexels.com/photos/11710908/pexels-photo-11710908.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                "img1": "https://imagizer.imageshack.com/img922/1235/Oz4d0e.jpg",
+                "img3":"https://imagizer.imageshack.com/img923/7192/fsAUK6.jpg",
+                "img2": "https://imagizer.imageshack.com/img922/9413/Wy1DCf.jpg"
               }
             }
           ]
@@ -319,10 +323,10 @@
                 "Pickup point is Noida, sector 62, metro station."
               ],
               "images": {
-                "img1": "https://images.pexels.com/photos/257092/pexels-photo-257092.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                "img2": "https://images.pexels.com/photos/5205768/pexels-photo-5205768.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                "img3": "https://images.pexels.com/photos/15495250/pexels-photo-15495250/free-photo-of-man-talking-to-a-group-of-people.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                "img4": "https://images.pexels.com/photos/14064751/pexels-photo-14064751.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                "img1": "https://imagizer.imageshack.com/img923/926/OxIx0T.jpg",
+                "img2": "https://imagizer.imageshack.com/img923/9567/8fobIq.jpg",
+                "img3": "https://imagizer.imageshack.com/img923/9279/nbDFmA.jpg",
+                "img4": "https://imagizer.imageshack.com/img923/1104/9jZk0P.jpg"
               }
             },
             {
@@ -336,10 +340,10 @@
                 "Dinner will be served at hotel."
               ],
               "images": {
-                "img1": "https://images.unsplash.com/photo-1656501097897-7dcec86f61eb?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                "img2": "https://images.unsplash.com/photo-1606722581293-628fa217a6f7?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                "img3": "https://images.unsplash.com/photo-1657215756064-a1cec8616e80?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                "img4": "https://images.unsplash.com/photo-1676182259623-a5f4c8d0a8a4?q=80&w=868&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                "img1": "https://imagizer.imageshack.com/img922/8350/zXC8qK.jpg",
+                "img2": "https://imagizer.imageshack.com/img922/2198/qOxJTw.jpg",
+                "img3": "https://imagizer.imageshack.com/img922/3682/xYYN07.jpg",
+                "img4": "https://imagizer.imageshack.com/img923/7343/7Spmsb.jpg"
               }
             }
           ]
@@ -360,10 +364,10 @@
                 "Dinner will be served at hotel."
               ],
               "images": {
-                "img1": "https://images.pexels.com/photos/15031440/pexels-photo-15031440/free-photo-of-a-crowd-standing-in-front-of-the-kedarnath-temple-in-kedarnath-india-during-a-ceremony.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                "img2": "https://images.pexels.com/photos/16152405/pexels-photo-16152405/free-photo-of-crowds-of-people-by-a-mountain-temple.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                "img3": "https://images.pexels.com/photos/19010047/pexels-photo-19010047/free-photo-of-crowd-walking-on-street-with-tents-around-in-village-in-mountains.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                "img4": "https://images.unsplash.com/photo-1724733613256-a1ed7936bb70?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                "img1": "https://imagizer.imageshack.com/img923/6350/Aqe7JP.jpg",
+                "img2": "https://imagizer.imageshack.com/img922/8425/suAWOA.jpg",
+                "img3": "https://imagizer.imageshack.com/img922/7188/3Szdua.jpg",
+                "img4": "https://imagizer.imageshack.com/img924/8185/gcB3Pc.jpg"
               }
             },
             {
@@ -376,10 +380,10 @@
                 "Dinner and overnight stay at hotel."
               ],
               "images": {
-                "img1": "https://www.holidify.com/images/bgImages/GUPTAKASHI.jpg",
-                "img2": "https://media.holidify.com/images/cmsuploads/compressed/1024px-Chaukhamba_peak2C_Garhwal_Himalayas2C_Uttarakhand_20241204011508.jpg",
-                "img3": "https://www.holidify.com/images/compressed/3951.jpg?v=1.1",
-                "img4": "https://www.holidify.com/images/compressed/dest_wiki_5438.jpg"
+                "img1": "https://imagizer.imageshack.com/img924/6633/inX41h.jpg",
+                "img2": "https://imagizer.imageshack.com/img922/8872/xA13gq.jpg",
+                "img3": "https://imagizer.imageshack.com/img923/9979/m1f9yv.jpg",
+                "img4": "https://imagizer.imageshack.com/img922/8131/LFBNUb.jpg"
               }
             }
           ]
