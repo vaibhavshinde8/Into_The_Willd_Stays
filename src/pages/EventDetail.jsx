@@ -10,11 +10,11 @@ const EventDetail = () => {
   const event = eventData.find((e) => e.id === parseInt(id));
   const [showContactForm, setShowContactForm] = useState(false);
 
-  const phoneNumber = '9761966485';
+  const phoneNumber = "9761966485";
   const getWhatsAppLink = () => {
     // Check if mobile device
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    return isMobile 
+    return isMobile
       ? `whatsapp://send?phone=${phoneNumber}`
       : `https://web.whatsapp.com/send?phone=${phoneNumber}`;
   };
@@ -43,7 +43,7 @@ const EventDetail = () => {
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0F2642]/60 to-[#0F2642]/90 backdrop-blur-[2px]" />
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -68,9 +68,9 @@ const EventDetail = () => {
               onClick={handleContactClick}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              whileHover={{ 
+              whileHover={{
                 scale: 1.02,
-                boxShadow: "0 20px 40px rgba(0,0,0,0.2)"
+                boxShadow: "0 20px 40px rgba(0,0,0,0.2)",
               }}
               className="relative group bg-gradient-to-r from-teal-500 via-teal-400 to-emerald-400 
                        text-white px-8 sm:px-10 py-4 sm:py-5 rounded-2xl text-lg font-medium
@@ -81,20 +81,30 @@ const EventDetail = () => {
             >
               <span className="relative z-10 flex items-center justify-center gap-2 group-hover:translate-x-1 transition-transform duration-500">
                 Talk to our Experts
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-500" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-500"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                    clipRule="evenodd"
+                  />
                 </svg>
               </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 
+              <div
+                className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 
                             translate-x-[-100%] group-hover:translate-x-[100%] 
-                            transition-transform duration-1000" />
+                            transition-transform duration-1000"
+              />
             </motion.button>
           </div>
         </motion.div>
       </div>
 
-      <div className="bg-white/80 backdrop-blur-sm py-8">
-      </div>
+      <div className="bg-white/80 backdrop-blur-sm py-8"></div>
 
       <div className="max-w-6xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
@@ -106,8 +116,12 @@ const EventDetail = () => {
               transition={{ duration: 0.6 }}
               className="bg-white/60 backdrop-blur-md rounded-3xl p-8 shadow-xl"
             >
-              <h2 className="text-3xl font-bold mb-6 text-[#0F2642]">About This Event</h2>
-              <p className="text-gray-700 text-lg leading-relaxed">{event.description}</p>
+              <h2 className="text-3xl font-bold mb-6 text-[#0F2642]">
+                About This Event
+              </h2>
+              <p className="text-gray-700 text-lg leading-relaxed">
+                {event.description}
+              </p>
             </motion.section>
 
             <motion.section
@@ -117,7 +131,9 @@ const EventDetail = () => {
               transition={{ duration: 0.6 }}
               className="bg-white/60 backdrop-blur-md rounded-3xl p-8 shadow-xl"
             >
-              <h2 className="text-3xl font-bold mb-6 text-[#0F2642]">Activities</h2>
+              <h2 className="text-3xl font-bold mb-6 text-[#0F2642]">
+                Activities
+              </h2>
               <ul className="space-y-4">
                 {event.activities?.map((activity, index) => (
                   <li
@@ -138,7 +154,9 @@ const EventDetail = () => {
               transition={{ duration: 0.6 }}
               className="bg-white/60 backdrop-blur-md rounded-3xl p-8 shadow-xl"
             >
-              <h2 className="text-3xl font-bold mb-6 text-[#0F2642]">Package Details</h2>
+              <h2 className="text-3xl font-bold mb-6 text-[#0F2642]">
+                Package Details
+              </h2>
               <ul className="space-y-4">
                 {event.packageDetails?.map((detail, index) => (
                   <li
@@ -159,7 +177,9 @@ const EventDetail = () => {
               transition={{ duration: 0.6 }}
               className="bg-white/60 backdrop-blur-md rounded-3xl p-8 shadow-xl"
             >
-              <h2 className="text-3xl font-bold mb-6 text-[#0F2642]">Gallery</h2>
+              <h2 className="text-3xl font-bold mb-6 text-[#0F2642]">
+                Gallery
+              </h2>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
                 {event.galleryImages?.map((image, index) => (
                   <motion.div
@@ -188,7 +208,9 @@ const EventDetail = () => {
               transition={{ duration: 0.6 }}
               className="sticky top-8 bg-white/80 backdrop-blur-xl p-8 rounded-3xl shadow-xl"
             >
-              <h3 className="text-2xl font-bold mb-8 text-[#0F2642]">Contact Information</h3>
+              <h3 className="text-2xl font-bold mb-8 text-[#0F2642]">
+                Contact Information
+              </h3>
               <div className="space-y-6">
                 <motion.a
                   whileHover={{ scale: 1.02 }}
@@ -208,7 +230,8 @@ const EventDetail = () => {
                 </motion.a>
                 <motion.a
                   whileHover={{ scale: 1.02 }}
-                  href={getWhatsAppLink()} target="_blank"
+                  href={getWhatsAppLink()}
+                  target="_blank"
                   className="flex items-center text-gray-700 hover:text-teal-600 bg-gray-50 p-4 rounded-2xl transition-colors duration-300"
                 >
                   <MessageCircle className="w-6 h-6 mr-4" />
@@ -220,7 +243,10 @@ const EventDetail = () => {
         </div>
       </div>
 
-      <ContactForm isOpen={showContactForm} onClose={() => setShowContactForm(false)} />
+      <ContactForm
+        isOpen={showContactForm}
+        onClose={() => setShowContactForm(false)}
+      />
     </div>
   );
 };

@@ -86,7 +86,9 @@ const ToursDetail = () => {
     setCurrentIndex(
       (prevIndex) => (prevIndex - 1 + imageSet.length) % imageSet.length
     );
-    setSelectedImage(imageSet[(currentIndex - 1 + imageSet.length) % imageSet.length]);
+    setSelectedImage(
+      imageSet[(currentIndex - 1 + imageSet.length) % imageSet.length]
+    );
   };
   const [reviews, setReviews] = useState([
     {
@@ -129,9 +131,8 @@ const ToursDetail = () => {
       rooms: 4,
       content:
         "Global Corporate Tour Company went above and beyond to ensure a smooth and delightful experience. Their attention to detail and customer satisfaction is unmatched. Highly professional and efficient service!",
-      likes: 0
-    }
-
+      likes: 0,
+    },
   ]);
 
   // Form state
@@ -167,7 +168,7 @@ const ToursDetail = () => {
         formData.service +
         formData.clean +
         formData.rooms) /
-      5
+        5
     );
 
     const newReview = {
@@ -192,23 +193,24 @@ const ToursDetail = () => {
   };
 
   // Handle like button click
-  
+
   // Calculate overall rating
   const overallRating =
-    reviews.reduce((acc, review) => acc + review.stars, 0) / reviews.length + 0.5 || 0;
-    const [likedReviews, setLikedReviews] = useState([]);
+    reviews.reduce((acc, review) => acc + review.stars, 0) / reviews.length +
+      0.5 || 0;
+  const [likedReviews, setLikedReviews] = useState([]);
 
-    // Function to handle like button click
-    const handleLike = (index) => {
-      // Prevent liking the same review more than once
-      if (likedReviews.includes(index)) return;
-  
-      // Update the likes count in the reviews array
-      reviews[index].likes += 1;
-  
-      // Add the index of the liked review to the state
-      setLikedReviews((prev) => [...prev, index]);
-    };
+  // Function to handle like button click
+  const handleLike = (index) => {
+    // Prevent liking the same review more than once
+    if (likedReviews.includes(index)) return;
+
+    // Update the likes count in the reviews array
+    reviews[index].likes += 1;
+
+    // Add the index of the liked review to the state
+    setLikedReviews((prev) => [...prev, index]);
+  };
   if (!tour) {
     return <div>Tour not found</div>;
   }
@@ -286,8 +288,7 @@ const ToursDetail = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-3 p-4 sm:p-6 w-full sm:w-4/5 mx-auto bg-gray-50 shadow-lg rounded-lg"
-      >
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-3 p-4 sm:p-6 w-full sm:w-4/5 mx-auto bg-gray-50 shadow-lg rounded-lg">
         {/* Main Image */}
         <div className="relative md:col-span-2 rounded-lg overflow-hidden shadow-md">
           <img
@@ -295,9 +296,7 @@ const ToursDetail = () => {
             alt={tour.name}
             className="w-full h-64 sm:h-full object-cover"
           />
-          <div className="absolute bottom-4 right-2 justify-center bg-black bg-opacity-25 rounded-lg transition-opacity duration-300 hover:bg-opacity-50">
-
-          </div>
+          <div className="absolute bottom-4 right-2 justify-center bg-black bg-opacity-25 rounded-lg transition-opacity duration-300 hover:bg-opacity-50"></div>
         </div>
 
         {/* Smaller Images */}
@@ -312,16 +311,17 @@ const ToursDetail = () => {
                 alt={`Image ${index + 1}`}
                 className="w-full h-full object-cover"
               />
-              <div className="absolute bottom-4 right-2 justify-center bg-black bg-opacity-25 transition-opacity duration-300 hover:bg-opacity-50">
-
-              </div>
+              <div className="absolute bottom-4 right-2 justify-center bg-black bg-opacity-25 transition-opacity duration-300 hover:bg-opacity-50"></div>
             </div>
           ))}
         </div>
       </div>
 
       {/* Connect to Expert Button */}
-      <div className="bg-white/80 backdrop-blur-sm py-8" id="specific-tag-start">
+      <div
+        className="bg-white/80 backdrop-blur-sm py-8"
+        id="specific-tag-start"
+      >
         {/* <div className="max-w-7xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -340,53 +340,48 @@ const ToursDetail = () => {
       </div>
 
       <div className="space-y-4 sm:ml-10 md:ml-24">
-  {/* Title Section */}
-  <h1
-    className="text-lg sm:text-xl md:text-2xl md:ml-64 font-bold text-gray-800 mb-4 uppercase text-center md:text-left"
-  >
-    {tour.name}
-  </h1>
+        {/* Title Section */}
+        <h1 className="text-lg sm:text-xl md:text-2xl md:ml-64 font-bold text-gray-800 mb-4 uppercase text-center md:text-left">
+          {tour.name}
+        </h1>
 
-  {/* Badge and Itinerary Days */}
-  <div
-    className="w-full sm:w-3/5 grid grid-cols-2 sm:flex sm:justify-around items-center p-6 bg-white border border-gray-200 rounded-lg gap-4"
-  >
-    {/* Duration */}
-    <div className="text-center">
-      <div className="text-blue-500 text-2xl mb-2">🕒</div>
-      <p className="text-sm font-bold text-gray-700">Duration</p>
-      <p className="text-sm text-gray-500">9 Nights 10 Days</p>
-    </div>
+        {/* Badge and Itinerary Days */}
+        <div className="w-full sm:w-3/5 grid grid-cols-2 sm:flex sm:justify-around items-center p-6 bg-white border border-gray-200 rounded-lg gap-4">
+          {/* Duration */}
+          <div className="text-center">
+            <div className="text-blue-500 text-2xl mb-2">🕒</div>
+            <p className="text-sm font-bold text-gray-700">Duration</p>
+            <p className="text-sm text-gray-500">9 Nights 10 Days</p>
+          </div>
 
-    {/* Tour Type */}
-    <div className="text-center">
-      <div className="text-blue-500 text-2xl mb-2">👣</div>
-      <p className="text-sm font-bold text-gray-700">Tour Type</p>
-      <p className="text-sm text-gray-500">Specific Tour</p>
-    </div>
+          {/* Tour Type */}
+          <div className="text-center">
+            <div className="text-blue-500 text-2xl mb-2">👣</div>
+            <p className="text-sm font-bold text-gray-700">Tour Type</p>
+            <p className="text-sm text-gray-500">Specific Tour</p>
+          </div>
 
-    {/* Group Size */}
-    <div className="text-center">
-      <div className="text-blue-500 text-2xl mb-2">👥</div>
-      <p className="text-sm font-bold text-gray-700">Group Size</p>
-      <p className="text-sm text-gray-500">40 people</p>
-    </div>
+          {/* Group Size */}
+          <div className="text-center">
+            <div className="text-blue-500 text-2xl mb-2">👥</div>
+            <p className="text-sm font-bold text-gray-700">Group Size</p>
+            <p className="text-sm text-gray-500">40 people</p>
+          </div>
 
-    {/* Languages */}
-    <div className="text-center">
-      <div className="text-blue-500 text-2xl mb-2">🌐</div>
-      <p className="text-sm font-bold text-gray-700">Languages</p>
-      <p className="text-sm text-gray-500">—</p>
-    </div>
-  </div>
-</div>
-
+          {/* Languages */}
+          <div className="text-center">
+            <div className="text-blue-500 text-2xl mb-2">🌐</div>
+            <p className="text-sm font-bold text-gray-700">Languages</p>
+            <p className="text-sm text-gray-500">—</p>
+          </div>
+        </div>
+      </div>
 
       {/* Content Section */}
       <div className="lg:max-w-8xl mx-auto    py-16 md:ml-24 ">
         <div className="space-y-16">
           <div className="flex gap-12">
-            <div className="p-6  rounded-lg shadow-lg md:w-3/5 lg:w-3/5 border border-gray-200 rounded-lg">
+            <div className="p-6 shadow-lg md:w-3/5 lg:w-3/5 border border-gray-200 rounded-lg">
               <h1 className="text-2xl font-bold text-gray-800 mb-4 text-center uppercase">
                 Trip Highlights
               </h1>
@@ -495,7 +490,6 @@ const ToursDetail = () => {
                 <div key={index}>
                   {/* Display combinedDays images in a horizontal scrollable row */}
 
-
                   {/* Render days with toggleAccordion */}
                   {item.days.map((day, dayIndex) => (
                     <div
@@ -513,11 +507,12 @@ const ToursDetail = () => {
                           {day.day.slice(5)} {/* Rest of the text */}
                         </h3>
 
-
-
                         <span
-                          className={`transform transition-transform duration-300 ${expandedDay === `${index}-${dayIndex}` ? "rotate-180" : ""
-                            }`}
+                          className={`transform transition-transform duration-300 ${
+                            expandedDay === `${index}-${dayIndex}`
+                              ? "rotate-180"
+                              : ""
+                          }`}
                         >
                           ⌄
                         </span>
@@ -564,17 +559,24 @@ const ToursDetail = () => {
 
                           {/* Display day's images in a horizontal scrollable row */}
                           <div className="flex space-x-4 overflow-x-auto scrollbar-hide">
-                            {Object.values(day.images).map((image, imgIndex) => (
-                              <img
-                                key={imgIndex}
-                                className="w-40 h-40 sm:w-52 sm:h-52 object-cover rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105"
-                                src={image}
-                                alt={`Day ${dayIndex + 1} Image ${imgIndex + 1}`}
-                                onClick={() =>
-                                  openModal(Object.values(day.images), imgIndex)
-                                }
-                              />
-                            ))}
+                            {Object.values(day.images).map(
+                              (image, imgIndex) => (
+                                <img
+                                  key={imgIndex}
+                                  className="w-40 h-40 sm:w-52 sm:h-52 object-cover rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105"
+                                  src={image}
+                                  alt={`Day ${dayIndex + 1} Image ${
+                                    imgIndex + 1
+                                  }`}
+                                  onClick={() =>
+                                    openModal(
+                                      Object.values(day.images),
+                                      imgIndex
+                                    )
+                                  }
+                                />
+                              )
+                            )}
                           </div>
                         </motion.div>
                       )}
@@ -781,7 +783,7 @@ const ToursDetail = () => {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                   key={index}
-                  className="flex items-center space-x-4 bg-white/80 backdrop-blur-sm p-6 rounded-xl shadow-md border border-gray-200 rounded-lg"
+                  className="flex items-center space-x-4 bg-white/80 backdrop-blur-sm p-6 shadow-md border border-gray-200 rounded-lg"
                 >
                   <span className="h-3 w-3 rounded-full bg-[#0F2642] flex-shrink-0" />
                   <span className="text-lg text-gray-700">{item}</span>
@@ -791,117 +793,126 @@ const ToursDetail = () => {
           </section>
         </div>
         <section>
-        <div className="p-6 bg-gray-50 min-h-screen ">
-          {/* Overall Rating and Reviews Section */}
-          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Overall Rating Section */}
-            <div className="col-span-1 bg-white rounded-lg shadow-lg p-6">
-              <h2 className="text-2xl font-bold mb-6">Reviews Summary</h2>
-              <div className="flex items-center mb-8">
-                <div className="text-6xl font-bold text-blue-600">
-                  {overallRating.toFixed(1)}
-                </div>
-                <div className="ml-4 p-2">
-                  {/* Determine Rating Category */}
-                  <div className="text-xl font-bold text-[#02d190]">
-                    {overallRating >= 4.5
-                      ? "Excellent"
-                      : overallRating >= 3.5
+          <div className="p-6 bg-gray-50 min-h-screen ">
+            {/* Overall Rating and Reviews Section */}
+            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+              {/* Overall Rating Section */}
+              <div className="col-span-1 bg-white rounded-lg shadow-lg p-6">
+                <h2 className="text-2xl font-bold mb-6">Reviews Summary</h2>
+                <div className="flex items-center mb-8">
+                  <div className="text-6xl font-bold text-blue-600">
+                    {overallRating.toFixed(1)}
+                  </div>
+                  <div className="ml-4 p-2">
+                    {/* Determine Rating Category */}
+                    <div className="text-xl font-bold text-[#02d190]">
+                      {overallRating >= 4.5
+                        ? "Excellent"
+                        : overallRating >= 3.5
                         ? "Good"
                         : overallRating >= 2.5
-                          ? "Average"
-                          : overallRating >= 1.5
-                            ? "Below Average"
-                            : "Poor"}
-                  </div>
-                  <div className="text-gray-500">
-                    Based on {reviews.length} review{reviews.length > 1 ? "s" : ""}
+                        ? "Average"
+                        : overallRating >= 1.5
+                        ? "Below Average"
+                        : "Poor"}
+                    </div>
+                    <div className="text-gray-500">
+                      Based on {reviews.length} review
+                      {reviews.length > 1 ? "s" : ""}
+                    </div>
                   </div>
                 </div>
-              </div>
-              {/* Visualization Bars */}
-              <div className="space-y-6">
-                {["Sleep", "Location", "Service", "Cleanliness", "Rooms"].map(
-                  (category, index) => (
-                    <div key={index} className="flex items-center">
-                      <div className="w-24 text-gray-600">{category}</div>
-                      <div className="flex-grow bg-gray-200 h-2 rounded-full overflow-hidden">
-                        <div
-                          className="bg-[#02d190] h-2"
-                          style={{
-                            width: `${(reviews.reduce(
-                              (sum, review) => sum + review[category.toLowerCase()],
+                {/* Visualization Bars */}
+                <div className="space-y-6">
+                  {["Sleep", "Location", "Service", "Cleanliness", "Rooms"].map(
+                    (category, index) => (
+                      <div key={index} className="flex items-center">
+                        <div className="w-24 text-gray-600">{category}</div>
+                        <div className="flex-grow bg-gray-200 h-2 rounded-full overflow-hidden">
+                          <div
+                            className="bg-[#02d190] h-2"
+                            style={{
+                              width: `${
+                                (reviews.reduce(
+                                  (sum, review) =>
+                                    sum + review[category.toLowerCase()],
+                                  0
+                                ) /
+                                  reviews.length) *
+                                20
+                              }%`,
+                            }}
+                          ></div>
+                        </div>
+                        <span className="ml-4 text-gray-600">
+                          {(
+                            reviews.reduce(
+                              (sum, review) =>
+                                sum + review[category.toLowerCase()],
                               0
-                            ) /
-                              reviews.length) *
-                              20}%`,
-                          }}
-                        ></div>
+                            ) / reviews.length || 0
+                          ).toFixed(1)}{" "}
+                          / 5
+                        </span>
                       </div>
-                      <span className="ml-4 text-gray-600">
-                        {(
-                          reviews.reduce(
-                            (sum, review) => sum + review[category.toLowerCase()],
-                            0
-                          ) / reviews.length || 0
-                        ).toFixed(1)}{" "}
-                        / 5
-                      </span>
-                    </div>
-                  )
-                )}
+                    )
+                  )}
+                </div>
               </div>
-            </div>
 
-
-            {/* Write a Review Section */}
-            <div className="col-span-2 bg-white rounded-lg shadow-lg p-4">
-              <button className="text-blue-600  text-2xl font-bold  mb-2">
-                Write a review
-              </button>
-              <div id="reviewForm">
-                <form onSubmit={handleSubmit} className="space-y-2">
-                  <div className="grid grid-cols-2 gap-2">
+              {/* Write a Review Section */}
+              <div className="col-span-2 bg-white rounded-lg shadow-lg p-4">
+                <button className="text-blue-600  text-2xl font-bold  mb-2">
+                  Write a review
+                </button>
+                <div id="reviewForm">
+                  <form onSubmit={handleSubmit} className="space-y-2">
+                    <div className="grid grid-cols-2 gap-2">
+                      <input
+                        type="text"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleInputChange}
+                        placeholder="Name *"
+                        className="border p-1 rounded-md w-full"
+                        required
+                      />
+                      <input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        placeholder="Email *"
+                        className="border p-1 rounded-md w-full"
+                        required
+                      />
+                    </div>
                     <input
                       type="text"
-                      name="name"
-                      value={formData.name}
+                      name="title"
+                      value={formData.title}
                       onChange={handleInputChange}
-                      placeholder="Name *"
+                      placeholder="Title *"
                       className="border p-1 rounded-md w-full"
                       required
                     />
-                    <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
+                    <textarea
+                      name="content"
+                      value={formData.content}
                       onChange={handleInputChange}
-                      placeholder="Email *"
+                      placeholder="Content *"
                       className="border p-1 rounded-md w-full"
+                      rows="2"
                       required
-                    />
-                  </div>
-                  <input
-                    type="text"
-                    name="title"
-                    value={formData.title}
-                    onChange={handleInputChange}
-                    placeholder="Title *"
-                    className="border p-1 rounded-md w-full"
-                    required
-                  />
-                  <textarea
-                    name="content"
-                    value={formData.content}
-                    onChange={handleInputChange}
-                    placeholder="Content *"
-                    className="border p-1 rounded-md w-full"
-                    rows="2"
-                    required
-                  ></textarea>
-                  <div className="grid grid-cols-2 gap-2">
-                    {["Sleep", "Location", "Service", "Cleanliness", "Rooms"].map(
-                      (category, index) => (
+                    ></textarea>
+                    <div className="grid grid-cols-2 gap-2">
+                      {[
+                        "Sleep",
+                        "Location",
+                        "Service",
+                        "Cleanliness",
+                        "Rooms",
+                      ].map((category, index) => (
                         <div key={index}>
                           <label className="block mb-1">{category}</label>
                           <div className="flex">
@@ -909,101 +920,105 @@ const ToursDetail = () => {
                               <span
                                 key={value}
                                 onClick={() =>
-                                  handleStarChange(category.toLowerCase(), value)
+                                  handleStarChange(
+                                    category.toLowerCase(),
+                                    value
+                                  )
                                 }
-                                className={`cursor-pointer text-2xl ${formData[category.toLowerCase()] >= value
-                                  ? "text-yellow-400"
-                                  : "text-gray-300"
-                                  }`}
+                                className={`cursor-pointer text-2xl ${
+                                  formData[category.toLowerCase()] >= value
+                                    ? "text-yellow-400"
+                                    : "text-gray-300"
+                                }`}
                               >
                                 &#9733;
                               </span>
                             ))}
                           </div>
                         </div>
-                      )
-                    )}
-                  </div>
-                  <button
-                    type="submit"
-                    className="group bg-gradient-to-r from-teal-500 via-teal-400 to-emerald-400 
+                      ))}
+                    </div>
+                    <button
+                      type="submit"
+                      className="group bg-gradient-to-r from-teal-500 via-teal-400 to-emerald-400 
                      text-white font
                      shadow-[0_10px_20px_rgba(0,0,0,0.1)] 
-                     hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)] text-white py-1 px-3 rounded-md"
-                  >
-                    Post Review
-                  </button>
-                </form>
+                     hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)]  py-1 px-3 rounded-md"
+                    >
+                      Post Review
+                    </button>
+                  </form>
+                </div>
               </div>
             </div>
 
+            {/* Display Reviews Section */}
+            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 space-y-4">
+              {reviews.map((review, index) => (
+                <div
+                  key={index}
+                  className="bg-white rounded-lg shadow-lg p-6 space-y-2"
+                >
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h3 className="font-bold">{review.name}</h3>
+                      <span className="text-gray-500">{review.date}</span>
+                    </div>
+                    <div className="text-yellow-400 flex">
+                      {Array(review.stars)
+                        .fill()
+                        .map((_, i) => (
+                          <span key={i}>&#9733;</span>
+                        ))}
+                    </div>
+                  </div>
+                  <h4 className="font-bold">{review.title}</h4>
+                  <p className="text-gray-700">{review.content}</p>
+                  <div className="grid grid-cols-2 gap-4 text-gray-600">
+                    <div>
+                      Sleep: {review.sleep}
+                      <span className="text-yellow-400 text-2xl">&#9733;</span>
+                    </div>
+                    <div>
+                      Location: {review.location}
+                      <span className="text-yellow-400 text-2xl">&#9733;</span>
+                    </div>
+                    <div>
+                      Service: {review.service}
+                      <span className="text-yellow-400 text-2xl">&#9733;</span>
+                    </div>
+                    <div>
+                      Cleanliness: {review.cleanliness}
+                      <span className="text-yellow-400 text-2xl">&#9733;</span>
+                    </div>
+                    <div>
+                      Rooms: {review.rooms}
+                      <span className="text-yellow-400 text-2xl">&#9733;</span>
+                    </div>
+                  </div>
+                  <div className="mt-4">
+                    <button
+                      onClick={() => handleLike(index)}
+                      className={`flex items-center ${
+                        likedReviews.includes(index)
+                          ? "text-blue-600"
+                          : "text-gray-500"
+                      } hover:text-blue-600`}
+                      disabled={likedReviews.includes(index)}
+                    >
+                      {review.likes} likes
+                      <FontAwesomeIcon
+                        icon={faThumbsUp}
+                        className="ml-1 text-lg"
+                      />
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
-
-          {/* Display Reviews Section */}
-          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 space-y-4">
-          {reviews.map((review, index) => (
-        <div
-          key={index}
-          className="bg-white rounded-lg shadow-lg p-6 space-y-2"
-        >
-          <div className="flex items-center justify-between">
-            <div>
-              <h3 className="font-bold">{review.name}</h3>
-              <span className="text-gray-500">{review.date}</span>
-            </div>
-            <div className="text-yellow-400 flex">
-              {Array(review.stars)
-                .fill()
-                .map((_, i) => (
-                  <span key={i}>&#9733;</span>
-                ))}
-            </div>
-          </div>
-          <h4 className="font-bold">{review.title}</h4>
-          <p className="text-gray-700">{review.content}</p>
-          <div className="grid grid-cols-2 gap-4 text-gray-600">
-            <div>
-              Sleep: {review.sleep}
-              <span className="text-yellow-400 text-2xl">&#9733;</span>
-            </div>
-            <div>
-              Location: {review.location}
-              <span className="text-yellow-400 text-2xl">&#9733;</span>
-            </div>
-            <div>
-              Service: {review.service}
-              <span className="text-yellow-400 text-2xl">&#9733;</span>
-            </div>
-            <div>
-              Cleanliness: {review.cleanliness}
-              <span className="text-yellow-400 text-2xl">&#9733;</span>
-            </div>
-            <div>
-              Rooms: {review.rooms}
-              <span className="text-yellow-400 text-2xl">&#9733;</span>
-            </div>
-          </div>
-          <div className="mt-4">
-          <button
-            onClick={() => handleLike(index)}
-            className={`flex items-center ${
-              likedReviews.includes(index) ? "text-blue-600" : "text-gray-500"
-            } hover:text-blue-600`}
-            disabled={likedReviews.includes(index)}
-          >
-            {review.likes} likes
-            <FontAwesomeIcon icon={faThumbsUp} className="ml-1 text-lg" />
-          </button>
-          </div>
-          
-        </div>
-      ))}
-          </div>
-        </div>
-      </section>
-
+        </section>
       </div>
-      
 
       {/* Add ContactForm Modal */}
       <ContactForm
