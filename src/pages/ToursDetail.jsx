@@ -8,6 +8,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import Modal from "react-modal"; // Import a library for the modal functionality
 import Navbar from "../components/Navbar";
 Modal.setAppElement("#root"); // Required for accessibility with React Modal
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-fade";
@@ -86,6 +88,118 @@ const ToursDetail = () => {
     );
     setSelectedImage(imageSet[(currentIndex - 1 + imageSet.length) % imageSet.length]);
   };
+  const [reviews, setReviews] = useState([
+    {
+      name: "Vaibhav Shinde",
+      date: "02/27/2024",
+      title: "Impeccable Planning and Service",
+      stars: 4,
+      sleep: 5,
+      location: 3.5,
+      service: 5,
+      clean: 4,
+      rooms: 5,
+      content:
+        "Global Corporate Tour Company's commitment to excellence truly sets them apart. Our team had an amazing time thanks to their impeccable planning and service.",
+      likes: 3,
+    },
+    {
+      name: "Shaikh Amir",
+      date: "02/27/2024",
+      title: "Planning to impeccable execution",
+      stars: 4,
+      sleep: 5,
+      location: 4.5,
+      service: 5,
+      clean: 5,
+      rooms: 3,
+      content:
+        "From seamless planning to impeccable execution, Global Corporate Tour Company delivered an exceptional corporate travel experience. Highly recommended!",
+      likes: 0,
+    },
+    {
+      name: "Roshan Tambi",
+      date: "09/12/2024",
+      title: "Outstanding Corporate Travel Experience",
+      stars: 5,
+      sleep: 5,
+      location: 5,
+      service: 5,
+      clean: 4.5,
+      rooms: 4,
+      content:
+        "Global Corporate Tour Company went above and beyond to ensure a smooth and delightful experience. Their attention to detail and customer satisfaction is unmatched. Highly professional and efficient service!",
+      likes: 0
+    }
+
+  ]);
+
+  // Form state
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    title: "",
+    content: "",
+    sleep: 0,
+    location: 0,
+    service: 0,
+    clean: 0,
+    rooms: 0,
+  });
+
+  // Handle form input changes
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  // Handle star rating changes for each category
+  const handleStarChange = (category, value) => {
+    setFormData({ ...formData, [category]: value });
+  };
+
+  // Handle form submission
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const overallStars = Math.round(
+      (formData.sleep +
+        formData.location +
+        formData.service +
+        formData.clean +
+        formData.rooms) /
+      5
+    );
+
+    const newReview = {
+      ...formData,
+      stars: overallStars,
+      date: new Date().toLocaleDateString(),
+      likes: 0,
+    };
+
+    setReviews([newReview, ...reviews]);
+    setFormData({
+      name: "",
+      email: "",
+      title: "",
+      content: "",
+      sleep: 0,
+      location: 0,
+      service: 0,
+      clean: 0,
+      rooms: 0,
+    });
+  };
+
+  // Handle like button click
+  const handleLike = (index) => {
+    const updatedReviews = [...reviews];
+    updatedReviews[index].likes += 1;
+    setReviews(updatedReviews);
+  };
+  // Calculate overall rating
+  const overallRating =
+    reviews.reduce((acc, review) => acc + review.stars, 0) / reviews.length + 0.5 || 0;
 
   if (!tour) {
     return <div>Tour not found</div>;
@@ -397,21 +511,7 @@ const ToursDetail = () => {
               {tour.itinerary?.map((item, index) => (
                 <div key={index}>
                   {/* Display combinedDays images in a horizontal scrollable row */}
-                  <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 sm:p-4 shadow-lg hover:shadow-xl transition-all duration-300 mb-4 border border-gray-200">
-                    {item.combinedDays && item.combinedDays.length > 0 && (
-                      <div className="flex space-x-4 overflow-x-auto scrollbar-hide">
-                        {item.combinedDays.map((image, imgIndex) => (
-                          <img
-                            key={imgIndex}
-                            className="w-40 h-40 sm:w-52 sm:h-52 object-cover rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105"
-                            src={image}
-                            alt={`Combined Day Image ${imgIndex + 1}`}
-                            onClick={() => openModal(item.combinedDays, imgIndex)}
-                          />
-                        ))}
-                      </div>
-                    )}
-                  </div>
+
 
                   {/* Render days with toggleAccordion */}
                   {item.days.map((day, dayIndex) => (
@@ -423,7 +523,7 @@ const ToursDetail = () => {
                         className="flex items-center justify-between cursor-pointer"
                         onClick={() => toggleAccordion(`${index}-${dayIndex}`)}
                       >
-                        <h3 className="text-black font-semibold">{day.day}</h3>
+                        <h3 className="text-black font-semibold"> {day.day}</h3>
                         <span
                           className={`transform transition-transform duration-300 ${expandedDay === `${index}-${dayIndex}` ? "rotate-180" : ""
                             }`}
@@ -500,7 +600,7 @@ const ToursDetail = () => {
                 className="fixed inset-0 flex"
                 overlayClassName="fixed inset-0 bg-black bg-opacity-75 z-40"
               >
-                {!selectedImage }
+                {!selectedImage}
 
                 {/* Modal */}
                 {selectedImage && (
@@ -709,6 +809,217 @@ const ToursDetail = () => {
           </section>
         </div>
       </div>
+      <section>
+        <div className="p-6 bg-gray-50 min-h-screen">
+          {/* Overall Rating and Reviews Section */}
+          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Overall Rating Section */}
+            <div className="col-span-1 bg-white rounded-lg shadow-lg p-6">
+              <h2 className="text-2xl font-bold mb-6">Reviews Summary</h2>
+              <div className="flex items-center mb-8">
+                <div className="text-6xl font-bold text-blue-600">
+                  {overallRating.toFixed(1)}
+                </div>
+                <div className="ml-4 p-2">
+                  {/* Determine Rating Category */}
+                  <div className="text-xl font-bold text-[#02d190]">
+                    {overallRating >= 4.5
+                      ? "Excellent"
+                      : overallRating >= 3.5
+                        ? "Good"
+                        : overallRating >= 2.5
+                          ? "Average"
+                          : overallRating >= 1.5
+                            ? "Below Average"
+                            : "Poor"}
+                  </div>
+                  <div className="text-gray-500">
+                    Based on {reviews.length} review{reviews.length > 1 ? "s" : ""}
+                  </div>
+                </div>
+              </div>
+              {/* Visualization Bars */}
+              <div className="space-y-6">
+                {["Sleep", "Location", "Service", "Clean", "Rooms"].map(
+                  (category, index) => (
+                    <div key={index} className="flex items-center">
+                      <div className="w-24 text-gray-600">{category}</div>
+                      <div className="flex-grow bg-gray-200 h-2 rounded-full overflow-hidden">
+                        <div
+                          className="bg-[#02d190] h-2"
+                          style={{
+                            width: `${(reviews.reduce(
+                              (sum, review) => sum + review[category.toLowerCase()],
+                              0
+                            ) /
+                              reviews.length) *
+                              20}%`,
+                          }}
+                        ></div>
+                      </div>
+                      <span className="ml-4 text-gray-600">
+                        {(
+                          reviews.reduce(
+                            (sum, review) => sum + review[category.toLowerCase()],
+                            0
+                          ) / reviews.length || 0
+                        ).toFixed(1)}{" "}
+                        / 5
+                      </span>
+                    </div>
+                  )
+                )}
+              </div>
+            </div>
+
+
+            {/* Write a Review Section */}
+            <div className="col-span-2 bg-white rounded-lg shadow-lg p-4">
+              <button className="text-blue-600 font-bold text-lg mb-2">
+                Write a review
+              </button>
+              <div id="reviewForm">
+                <form onSubmit={handleSubmit} className="space-y-2">
+                  <div className="grid grid-cols-2 gap-2">
+                    <input
+                      type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      placeholder="Name *"
+                      className="border p-1 rounded-md w-full"
+                      required
+                    />
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      placeholder="Email *"
+                      className="border p-1 rounded-md w-full"
+                      required
+                    />
+                  </div>
+                  <input
+                    type="text"
+                    name="title"
+                    value={formData.title}
+                    onChange={handleInputChange}
+                    placeholder="Title *"
+                    className="border p-1 rounded-md w-full"
+                    required
+                  />
+                  <textarea
+                    name="content"
+                    value={formData.content}
+                    onChange={handleInputChange}
+                    placeholder="Content *"
+                    className="border p-1 rounded-md w-full"
+                    rows="2"
+                    required
+                  ></textarea>
+                  <div className="grid grid-cols-2 gap-2">
+                    {["Sleep", "Location", "Service", "Clean", "Rooms"].map(
+                      (category, index) => (
+                        <div key={index}>
+                          <label className="block mb-1">{category}</label>
+                          <div className="flex">
+                            {[1, 2, 3, 4, 5].map((value) => (
+                              <span
+                                key={value}
+                                onClick={() =>
+                                  handleStarChange(category.toLowerCase(), value)
+                                }
+                                className={`cursor-pointer text-2xl ${formData[category.toLowerCase()] >= value
+                                  ? "text-yellow-400"
+                                  : "text-gray-300"
+                                  }`}
+                              >
+                                &#9733;
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      )
+                    )}
+                  </div>
+                  <button
+                    type="submit"
+                    className="group bg-gradient-to-r from-teal-500 via-teal-400 to-emerald-400 
+                     text-white font
+                     shadow-[0_10px_20px_rgba(0,0,0,0.1)] 
+                     hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)] text-white py-1 px-3 rounded-md"
+                  >
+                    Post Review
+                  </button>
+                </form>
+              </div>
+            </div>
+
+          </div>
+
+          {/* Display Reviews Section */}
+          <div className="max-w-6xl mx-auto mt-6 space-y-4">
+            {reviews.map((review, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-lg shadow-lg p-6 space-y-2"
+              >
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h3 className="font-bold">{review.name}</h3>
+                    <span className="text-gray-500">{review.date}</span>
+                  </div>
+                  <div className="text-yellow-400 flex">
+                    {Array(review.stars)
+                      .fill()
+                      .map((_, i) => (
+                        <span key={i}>&#9733;</span>
+                      ))}
+                  </div>
+                </div>
+                <h4 className="font-bold">{review.title}</h4>
+                <p className="text-gray-700">{review.content}</p>
+                <div className="grid grid-cols-2 gap-4 text-gray-600">
+                  <div>Sleep: {review.sleep}
+                    <span className="text-yellow-400 text-2xl">
+                      &#9733;
+                    </span>
+
+                  </div>
+                  <div>Location: {review.location}
+                    <span className="text-yellow-400 text-2xl">
+                      &#9733;
+                    </span>
+                  </div>
+                  <div>Service: {review.service}
+                    <span className="text-yellow-400 text-2xl">
+                      &#9733;
+                    </span>
+                  </div>
+                  <div>Clean: {review.cleanliness}
+                    <span className="text-yellow-400 text-2xl">
+                      &#9733;
+                    </span>
+                  </div>
+                  <div>Rooms: {review.rooms}
+                    <span className="text-yellow-400 text-2xl">
+                      &#9733;
+                    </span>
+                  </div>
+                </div>
+                <button
+                  onClick={() => handleLike(index)}
+                  className="flex items-center text-gray-500 hover:text-blue-600"
+                >
+                  {review.likes} likes
+                  <FontAwesomeIcon icon={faThumbsUp} className="ml-1 text-lg" />
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Add ContactForm Modal */}
       <ContactForm
