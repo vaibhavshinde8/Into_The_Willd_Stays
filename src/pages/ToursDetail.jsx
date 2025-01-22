@@ -92,35 +92,35 @@ const ToursDetail = () => {
     {
       name: "Vaibhav Shinde",
       date: "02/27/2024",
-      title: "Impeccable Planning and Service",
-      stars: 4,
-      sleep: 5,
-      location: 3.5,
-      service: 5,
-      clean: 4,
-      rooms: 5,
-      content:
-        "Global Corporate Tour Company's commitment to excellence truly sets them apart. Our team had an amazing time thanks to their impeccable planning and service.",
-      likes: 3,
-    },
-    {
-      name: "Shaikh Amir",
-      date: "02/27/2024",
-      title: "Planning to impeccable execution",
+      title: "Wonderful Stay and Hospitality",
       stars: 4,
       sleep: 5,
       location: 4.5,
       service: 5,
       clean: 5,
-      rooms: 3,
+      rooms: 5,
       content:
-        "From seamless planning to impeccable execution, Global Corporate Tour Company delivered an exceptional corporate travel experience. Highly recommended!",
+        "The entire experience was amazing! The staff was very friendly, and the service exceeded our expectations. Highly recommended!",
+      likes: 3,
+    },
+    {
+      name: "Shaikh Aamir",
+      date: "02/27/2024",
+      title: "Great Hotel with Excellent Service",
+      stars: 4,
+      sleep: 5,
+      location: 4.5,
+      service: 5,
+      clean: 5,
+      rooms: 5,
+      content:
+        "I loved my stay here. The rooms were clean, and the location was perfect for our needs. Would definitely visit again.",
       likes: 0,
     },
     {
       name: "Roshan Tambi",
       date: "09/12/2024",
-      title: "Outstanding Corporate Travel Experience",
+      title: "Amazing Experience!",
       stars: 5,
       sleep: 5,
       location: 5,
@@ -128,7 +128,7 @@ const ToursDetail = () => {
       clean: 4.5,
       rooms: 4,
       content:
-        "Global Corporate Tour Company went above and beyond to ensure a smooth and delightful experience. Their attention to detail and customer satisfaction is unmatched. Highly professional and efficient service!",
+        "The hotel offered everything we could have asked for. The food was great, and the service was exceptional.",
       likes: 0
     }
 
@@ -190,25 +190,27 @@ const ToursDetail = () => {
       rooms: 0,
     });
   };
+  
 
   // Handle like button click
-  
+  let price = parseInt(tour.price) + 7999;
   // Calculate overall rating
   const overallRating =
-    reviews.reduce((acc, review) => acc + review.stars, 0) / reviews.length + 0.5 || 0;
-    const [likedReviews, setLikedReviews] = useState([]);
+  reviews.reduce((acc, review) => acc + review.stars, 1) / reviews.length || 0;
 
-    // Function to handle like button click
-    const handleLike = (index) => {
-      // Prevent liking the same review more than once
-      if (likedReviews.includes(index)) return;
-  
-      // Update the likes count in the reviews array
-      reviews[index].likes += 1;
-  
-      // Add the index of the liked review to the state
-      setLikedReviews((prev) => [...prev, index]);
-    };
+  const [likedReviews, setLikedReviews] = useState([]);
+
+  // Function to handle like button click
+  const handleLike = (index) => {
+    // Prevent liking the same review more than once
+    if (likedReviews.includes(index)) return;
+
+    // Update the likes count in the reviews array
+    reviews[index].likes += 1;
+
+    // Add the index of the liked review to the state
+    setLikedReviews((prev) => [...prev, index]);
+  };
   if (!tour) {
     return <div>Tour not found</div>;
   }
@@ -340,46 +342,46 @@ const ToursDetail = () => {
       </div>
 
       <div className="space-y-4 sm:ml-10 md:ml-24">
-  {/* Title Section */}
-  <h1
-    className="text-lg sm:text-xl md:text-2xl md:ml-64 font-bold text-gray-800 mb-4 uppercase text-center md:text-left"
-  >
-    {tour.name}
-  </h1>
+        {/* Title Section */}
+        <h1
+          className="text-lg sm:text-xl md:text-2xl md:ml-64 font-bold text-gray-800 mb-4 uppercase text-center md:text-left"
+        >
+          {tour.name}
+        </h1>
 
-  {/* Badge and Itinerary Days */}
-  <div
-    className="w-full sm:w-3/5 grid grid-cols-2 sm:flex sm:justify-around items-center p-6 bg-white border border-gray-200 rounded-lg gap-4"
-  >
-    {/* Duration */}
-    <div className="text-center">
-      <div className="text-blue-500 text-2xl mb-2">🕒</div>
-      <p className="text-sm font-bold text-gray-700">Duration</p>
-      <p className="text-sm text-gray-500">9 Nights 10 Days</p>
-    </div>
+        {/* Badge and Itinerary Days */}
+        <div
+          className="w-full sm:w-3/5 grid grid-cols-2 sm:flex sm:justify-around items-center p-6 bg-white border border-gray-200 rounded-lg gap-4"
+        >
+          {/* Duration */}
+          <div className="text-center">
+            <div className="text-blue-500 text-2xl mb-2">🕒</div>
+            <p className="text-sm font-bold text-gray-700">Duration</p>
+            <p className="text-sm text-gray-500">9 Nights 10 Days</p>
+          </div>
 
-    {/* Tour Type */}
-    <div className="text-center">
-      <div className="text-blue-500 text-2xl mb-2">👣</div>
-      <p className="text-sm font-bold text-gray-700">Tour Type</p>
-      <p className="text-sm text-gray-500">Specific Tour</p>
-    </div>
+          {/* Tour Type */}
+          <div className="text-center">
+            <div className="text-blue-500 text-2xl mb-2">👣</div>
+            <p className="text-sm font-bold text-gray-700">Tour Type</p>
+            <p className="text-sm text-gray-500">Specific Tour</p>
+          </div>
 
-    {/* Group Size */}
-    <div className="text-center">
-      <div className="text-blue-500 text-2xl mb-2">👥</div>
-      <p className="text-sm font-bold text-gray-700">Group Size</p>
-      <p className="text-sm text-gray-500">40 people</p>
-    </div>
+          {/* Group Size */}
+          <div className="text-center">
+            <div className="text-blue-500 text-2xl mb-2">👥</div>
+            <p className="text-sm font-bold text-gray-700">Group Size</p>
+            <p className="text-sm text-gray-500">40 people</p>
+          </div>
 
-    {/* Languages */}
-    <div className="text-center">
-      <div className="text-blue-500 text-2xl mb-2">🌐</div>
-      <p className="text-sm font-bold text-gray-700">Languages</p>
-      <p className="text-sm text-gray-500">—</p>
-    </div>
-  </div>
-</div>
+          {/* Languages */}
+          <div className="text-center">
+            <div className="text-blue-500 text-2xl mb-2">🌐</div>
+            <p className="text-sm font-bold text-gray-700">Languages</p>
+            <p className="text-sm text-gray-500">—</p>
+          </div>
+        </div>
+      </div>
 
 
       {/* Content Section */}
@@ -412,10 +414,10 @@ const ToursDetail = () => {
                       INR {tour.price}
                     </span>
                     <span className="line-through text-gray-500 text-sm">
-                      INR 15,998
+                      INR {price}
                     </span>
                     <span className="bg-green-100 text-green-600 text-xs font-medium px-2 py-1 rounded">
-                      SAVE INR 1,999
+                      SAVE INR 7,999
                     </span>
                   </div>
 
@@ -791,219 +793,218 @@ const ToursDetail = () => {
           </section>
         </div>
         <section>
-        <div className="p-6 bg-gray-50 min-h-screen ">
-          {/* Overall Rating and Reviews Section */}
-          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Overall Rating Section */}
-            <div className="col-span-1 bg-white rounded-lg shadow-lg p-6">
-              <h2 className="text-2xl font-bold mb-6">Reviews Summary</h2>
-              <div className="flex items-center mb-8">
-                <div className="text-6xl font-bold text-blue-600">
-                  {overallRating.toFixed(1)}
-                </div>
-                <div className="ml-4 p-2">
-                  {/* Determine Rating Category */}
-                  <div className="text-xl font-bold text-[#02d190]">
-                    {overallRating >= 4.5
-                      ? "Excellent"
-                      : overallRating >= 3.5
-                        ? "Good"
-                        : overallRating >= 2.5
-                          ? "Average"
-                          : overallRating >= 1.5
-                            ? "Below Average"
-                            : "Poor"}
+          <div className="p-6 bg-gray-50 min-h-screen ">
+            {/* Overall Rating and Reviews Section */}
+            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+              {/* Overall Rating Section */}
+              <div className="col-span-1 bg-white rounded-lg shadow-lg p-6">
+                <h2 className="text-2xl font-bold mb-6">Reviews Summary</h2>
+                <div className="flex items-center mb-8">
+                  <div className="text-6xl font-bold text-blue-600">
+                    {overallRating.toFixed(1)}
                   </div>
-                  <div className="text-gray-500">
-                    Based on {reviews.length} review{reviews.length > 1 ? "s" : ""}
+                  <div className="ml-4 p-2">
+                    {/* Determine Rating Category */}
+                    <div className="text-xl font-bold text-[#02d190]">
+                      {overallRating >= 4.5
+                        ? "Excellent"
+                        : overallRating >= 3.5
+                          ? "Good"
+                          : overallRating >= 2.5
+                            ? "Average"
+                            : overallRating >= 1.5
+                              ? "Below Average"
+                              : "Poor"}
+                    </div>
+                    <div className="text-gray-500">
+                      Based on {reviews.length} review{reviews.length > 1 ? "s" : ""}
+                    </div>
                   </div>
                 </div>
-              </div>
-              {/* Visualization Bars */}
-              <div className="space-y-6">
-                {["Sleep", "Location", "Service", "Cleanliness", "Rooms"].map(
-                  (category, index) => (
-                    <div key={index} className="flex items-center">
-                      <div className="w-24 text-gray-600">{category}</div>
-                      <div className="flex-grow bg-gray-200 h-2 rounded-full overflow-hidden">
-                        <div
-                          className="bg-[#02d190] h-2"
-                          style={{
-                            width: `${(reviews.reduce(
+                {/* Visualization Bars */}
+                <div className="space-y-6">
+                  {["Sleep", "Location", "Service", "Clean", "Rooms"].map(
+                    (category, index) => (
+                      <div key={index} className="flex items-center">
+                        <div className="w-24 text-gray-600">{category}</div>
+                        <div className="flex-grow bg-gray-200 h-2 rounded-full overflow-hidden">
+                          <div
+                            className="bg-[#02d190] h-2"
+                            style={{
+                              width: `${(reviews.reduce(
+                                (sum, review) => sum + review[category.toLowerCase()],
+                                0
+                              ) /
+                                reviews.length) *
+                                20}%`,
+                            }}
+                          ></div>
+                        </div>
+                        <span className="ml-4 text-gray-600">
+                          {(
+                            reviews.reduce(
                               (sum, review) => sum + review[category.toLowerCase()],
                               0
-                            ) /
-                              reviews.length) *
-                              20}%`,
-                          }}
-                        ></div>
+                            ) / reviews.length || 0
+                          ).toFixed(1)}{" "}
+                          / 5
+                        </span>
                       </div>
-                      <span className="ml-4 text-gray-600">
-                        {(
-                          reviews.reduce(
-                            (sum, review) => sum + review[category.toLowerCase()],
-                            0
-                          ) / reviews.length || 0
-                        ).toFixed(1)}{" "}
-                        / 5
-                      </span>
-                    </div>
-                  )
-                )}
+                    )
+                  )}
+                </div>
               </div>
-            </div>
 
 
-            {/* Write a Review Section */}
-            <div className="col-span-2 bg-white rounded-lg shadow-lg p-4">
-              <button className="text-blue-600  text-2xl font-bold  mb-2">
-                Write a review
-              </button>
-              <div id="reviewForm">
-                <form onSubmit={handleSubmit} className="space-y-2">
-                  <div className="grid grid-cols-2 gap-2">
+              {/* Write a Review Section */}
+              <div className="col-span-2 bg-white rounded-lg shadow-lg p-4">
+                <button className="text-blue-600  text-2xl font-bold  mb-2">
+                  Write a review
+                </button>
+                <div id="reviewForm">
+                  <form onSubmit={handleSubmit} className="space-y-2">
+                    <div className="grid grid-cols-2 gap-2">
+                      <input
+                        type="text"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleInputChange}
+                        placeholder="Name *"
+                        className="border p-1 rounded-md w-full"
+                        required
+                      />
+                      <input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        placeholder="Email *"
+                        className="border p-1 rounded-md w-full"
+                        required
+                      />
+                    </div>
                     <input
                       type="text"
-                      name="name"
-                      value={formData.name}
+                      name="title"
+                      value={formData.title}
                       onChange={handleInputChange}
-                      placeholder="Name *"
+                      placeholder="Title *"
                       className="border p-1 rounded-md w-full"
                       required
                     />
-                    <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
+                    <textarea
+                      name="content"
+                      value={formData.content}
                       onChange={handleInputChange}
-                      placeholder="Email *"
+                      placeholder="Content *"
                       className="border p-1 rounded-md w-full"
+                      rows="2"
                       required
-                    />
-                  </div>
-                  <input
-                    type="text"
-                    name="title"
-                    value={formData.title}
-                    onChange={handleInputChange}
-                    placeholder="Title *"
-                    className="border p-1 rounded-md w-full"
-                    required
-                  />
-                  <textarea
-                    name="content"
-                    value={formData.content}
-                    onChange={handleInputChange}
-                    placeholder="Content *"
-                    className="border p-1 rounded-md w-full"
-                    rows="2"
-                    required
-                  ></textarea>
-                  <div className="grid grid-cols-2 gap-2">
-                    {["Sleep", "Location", "Service", "Cleanliness", "Rooms"].map(
-                      (category, index) => (
-                        <div key={index}>
-                          <label className="block mb-1">{category}</label>
-                          <div className="flex">
-                            {[1, 2, 3, 4, 5].map((value) => (
-                              <span
-                                key={value}
-                                onClick={() =>
-                                  handleStarChange(category.toLowerCase(), value)
-                                }
-                                className={`cursor-pointer text-2xl ${formData[category.toLowerCase()] >= value
-                                  ? "text-yellow-400"
-                                  : "text-gray-300"
-                                  }`}
-                              >
-                                &#9733;
-                              </span>
-                            ))}
+                    ></textarea>
+                    <div className="grid grid-cols-2 gap-2">
+                      {["Sleep", "Location", "Service", "Clean", "Rooms"].map(
+                        (category, index) => (
+                          <div key={index}>
+                            <label className="block mb-1">{category}</label>
+                            <div className="flex">
+                              {[1, 2, 3, 4, 5].map((value) => (
+                                <span
+                                  key={value}
+                                  onClick={() =>
+                                    handleStarChange(category.toLowerCase(), value)
+                                  }
+                                  className={`cursor-pointer text-2xl ${formData[category.toLowerCase()] >= value
+                                    ? "text-yellow-400"
+                                    : "text-gray-300"
+                                    }`}
+                                >
+                                  &#9733;
+                                </span>
+                              ))}
+                            </div>
                           </div>
-                        </div>
-                      )
-                    )}
-                  </div>
-                  <button
-                    type="submit"
-                    className="group bg-gradient-to-r from-teal-500 via-teal-400 to-emerald-400 
+                        )
+                      )}
+                    </div>
+                    <button
+                      type="submit"
+                      className="group bg-gradient-to-r from-teal-500 via-teal-400 to-emerald-400 
                      text-white font
                      shadow-[0_10px_20px_rgba(0,0,0,0.1)] 
                      hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)] text-white py-1 px-3 rounded-md"
-                  >
-                    Post Review
-                  </button>
-                </form>
+                    >
+                      Post Review
+                    </button>
+                  </form>
+                </div>
               </div>
+
             </div>
 
-          </div>
+            {/* Display Reviews Section */}
+            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 space-y-4">
+              {reviews.map((review, index) => (
+                <div
+                  key={index}
+                  className="bg-white rounded-lg shadow-lg p-6 space-y-2"
+                >
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h3 className="font-bold">{review.name}</h3>
+                      <span className="text-gray-500">{review.date}</span>
+                    </div>
+                    <div className="text-yellow-400 flex">
+                      {Array(review.stars)
+                        .fill()
+                        .map((_, i) => (
+                          <span key={i}>&#9733;</span>
+                        ))}
+                    </div>
+                  </div>
+                  <h4 className="font-bold">{review.title}</h4>
+                  <p className="text-gray-700">{review.content}</p>
+                  <div className="grid grid-cols-2 gap-4 text-gray-600">
+                    <div>
+                      Sleep: {review.sleep}
+                      <span className="text-yellow-400 text-2xl">&#9733;</span>
+                    </div>
+                    <div>
+                      Location: {review.location}
+                      <span className="text-yellow-400 text-2xl">&#9733;</span>
+                    </div>
+                    <div>
+                      Service: {review.service}
+                      <span className="text-yellow-400 text-2xl">&#9733;</span>
+                    </div>
+                    <div>
+                      Clean: {review.clean}
+                      <span className="text-yellow-400 text-2xl">&#9733;</span>
+                    </div>
+                    <div>
+                      Rooms: {review.rooms}
+                      <span className="text-yellow-400 text-2xl">&#9733;</span>
+                    </div>
+                  </div>
+                  <div className="mt-4">
+                    <button
+                      onClick={() => handleLike(index)}
+                      className={`flex items-center ${likedReviews.includes(index) ? "text-blue-600" : "text-gray-500"
+                        } hover:text-blue-600`}
+                      disabled={likedReviews.includes(index)}
+                    >
+                      {review.likes} likes
+                      <FontAwesomeIcon icon={faThumbsUp} className="ml-1 text-lg" />
+                    </button>
+                  </div>
 
-          {/* Display Reviews Section */}
-          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 space-y-4">
-          {reviews.map((review, index) => (
-        <div
-          key={index}
-          className="bg-white rounded-lg shadow-lg p-6 space-y-2"
-        >
-          <div className="flex items-center justify-between">
-            <div>
-              <h3 className="font-bold">{review.name}</h3>
-              <span className="text-gray-500">{review.date}</span>
-            </div>
-            <div className="text-yellow-400 flex">
-              {Array(review.stars)
-                .fill()
-                .map((_, i) => (
-                  <span key={i}>&#9733;</span>
-                ))}
+                </div>
+              ))}
             </div>
           </div>
-          <h4 className="font-bold">{review.title}</h4>
-          <p className="text-gray-700">{review.content}</p>
-          <div className="grid grid-cols-2 gap-4 text-gray-600">
-            <div>
-              Sleep: {review.sleep}
-              <span className="text-yellow-400 text-2xl">&#9733;</span>
-            </div>
-            <div>
-              Location: {review.location}
-              <span className="text-yellow-400 text-2xl">&#9733;</span>
-            </div>
-            <div>
-              Service: {review.service}
-              <span className="text-yellow-400 text-2xl">&#9733;</span>
-            </div>
-            <div>
-              Cleanliness: {review.cleanliness}
-              <span className="text-yellow-400 text-2xl">&#9733;</span>
-            </div>
-            <div>
-              Rooms: {review.rooms}
-              <span className="text-yellow-400 text-2xl">&#9733;</span>
-            </div>
-          </div>
-          <div className="mt-4">
-          <button
-            onClick={() => handleLike(index)}
-            className={`flex items-center ${
-              likedReviews.includes(index) ? "text-blue-600" : "text-gray-500"
-            } hover:text-blue-600`}
-            disabled={likedReviews.includes(index)}
-          >
-            {review.likes} likes
-            <FontAwesomeIcon icon={faThumbsUp} className="ml-1 text-lg" />
-          </button>
-          </div>
-          
-        </div>
-      ))}
-          </div>
-        </div>
-      </section>
+        </section>
 
       </div>
-      
+
 
       {/* Add ContactForm Modal */}
       <ContactForm
