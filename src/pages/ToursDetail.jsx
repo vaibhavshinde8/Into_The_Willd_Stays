@@ -120,7 +120,7 @@ const ToursDetail = () => {
       likes: 0,
     },
     {
-      name: "Roshan Tambi",
+      name: "Roshan Tambe",
       date: "09/12/2024",
       title: "Amazing Experience!",
       stars: 5,
