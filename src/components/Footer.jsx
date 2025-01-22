@@ -156,7 +156,7 @@ const Footer = () => {
 
           {/* Why Choose Us */}
           <div>
-            <h3 className="text-white text-lg font-semibold mb-4">
+            <h3 className="text-white md:text-white text-lg font-semibold mb-4">
               Why Choose Us
             </h3>
             <ul className="space-y-4 text-sm">
