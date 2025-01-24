@@ -34,37 +34,35 @@ const ToursDetail = () => {
   }, []);
 
   const [showForm, setShowForm] = useState(false);
-const [isSmallDevice, setIsSmallDevice] = useState(false);
+  const [isSmallDevice, setIsSmallDevice] = useState(false);
 
+  useEffect(() => {
+    const handleResize = () => {
+      // Check if the current screen width is less than 768px (mobile devices)
+      if (window.innerWidth < 768) {
+        setIsSmallDevice(true); // Set true for small devices
+        console.log("Small device detected");
+      } else {
+        setIsSmallDevice(false); // Set false for larger devices
+        console.log("Not a small device");
+      }
+    };
 
-useEffect(() => {
-  const handleResize = () => {
-    // Check if the current screen width is less than 768px (mobile devices)
-    if (window.innerWidth < 768) {
-      setIsSmallDevice(true); // Set true for small devices
-      console.log("Small device detected");
-    } else {
-      setIsSmallDevice(false); // Set false for larger devices
-      console.log("Not a small device");
-    }
-  };
+    // Run the check on component mount and on window resize
+    handleResize();
+    window.addEventListener("resize", handleResize);
 
-  // Run the check on component mount and on window resize
-  handleResize();
-  window.addEventListener("resize", handleResize);
-
-  return () => {
-    window.removeEventListener("resize", handleResize);
-  };
-}, []);
-
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY; // Current scroll position
       const windowHeight = window.innerHeight; // Height of the viewport
       const windowWidth = window.innerWidth; // Width of the viewport
-  
+
       // Define scroll thresholds for different devices
       if (windowWidth >= 1025) {
         // For laptops and larger screens
@@ -91,16 +89,14 @@ useEffect(() => {
         console.log("Form is hidden on mobile devices");
       }
     };
-  
+
     window.addEventListener("scroll", handleScroll);
-  
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  
-  
-  
+
   const [selectedImage, setSelectedImage] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [imageSet, setImageSet] = useState([]); // To store the current set of images being viewed
@@ -169,9 +165,8 @@ useEffect(() => {
       rooms: 4,
       content:
         "The hotel offered everything we could have asked for. The food was great, and the service was exceptional.",
-      likes: 0
-    }
-
+      likes: 0,
+    },
   ]);
 
   // Form state
@@ -230,13 +225,13 @@ useEffect(() => {
       rooms: 0,
     });
   };
-  
 
   // Handle like button click
   let price = parseInt(tour.price) + 7999;
   // Calculate overall rating
   const overallRating =
-  reviews.reduce((acc, review) => acc + review.stars, 1) / reviews.length || 0;
+    reviews.reduce((acc, review) => acc + review.stars, 1) / reviews.length ||
+    0;
 
   const [likedReviews, setLikedReviews] = useState([]);
 
@@ -381,16 +376,12 @@ useEffect(() => {
 
       <div className="space-y-4  lg:ml-24">
         {/* Title Section */}
-        <h1
-          className="text-lg sm:text-xl md:text-2xl md:ml-64 font-bold text-gray-800 mb-4 uppercase text-center md:text-left"
-        >
+        <h1 className="text-lg sm:text-xl md:text-2xl md:ml-64 font-bold text-gray-800 mb-4 uppercase text-center md:text-left">
           {tour.name}
         </h1>
 
         {/* Badge and Itinerary Days */}
-        <div
-          className="w-full md:w-3/5 grid grid-cols-2 sm:flex sm:justify-around items-center p-6 bg-white border border-gray-200 rounded-lg gap-4"
-        >
+        <div className="w-full md:w-3/5 grid grid-cols-2 sm:flex sm:justify-around items-center p-6 bg-white border border-gray-200 rounded-lg gap-4">
           {/* Duration */}
           <div className="text-center">
             <div className="text-blue-500 text-2xl mb-2">🕒</div>
@@ -413,12 +404,10 @@ useEffect(() => {
           </div>
 
           {/* Languages */}
-          
         </div>
       </div>
 
-          {/* Languages */}
-          
+      {/* Languages */}
 
       {/* Content Section */}
       <div className="lg:max-w-8xl mx-auto py-16 lg:ml-24 ">
@@ -852,15 +841,16 @@ useEffect(() => {
                       {overallRating >= 4.5
                         ? "Excellent"
                         : overallRating >= 3.5
-                          ? "Good"
-                          : overallRating >= 2.5
-                            ? "Average"
-                            : overallRating >= 1.5
-                              ? "Below Average"
-                              : "Poor"}
+                        ? "Good"
+                        : overallRating >= 2.5
+                        ? "Average"
+                        : overallRating >= 1.5
+                        ? "Below Average"
+                        : "Poor"}
                     </div>
                     <div className="text-gray-500">
-                      Based on {reviews.length} review{reviews.length > 1 ? "s" : ""}
+                      Based on {reviews.length} review
+                      {reviews.length > 1 ? "s" : ""}
                     </div>
                   </div>
                 </div>
@@ -874,19 +864,23 @@ useEffect(() => {
                           <div
                             className="bg-[#02d190] h-2"
                             style={{
-                              width: `${(reviews.reduce(
-                                (sum, review) => sum + review[category.toLowerCase()],
-                                0
-                              ) /
-                                reviews.length) *
-                                20}%`,
+                              width: `${
+                                (reviews.reduce(
+                                  (sum, review) =>
+                                    sum + review[category.toLowerCase()],
+                                  0
+                                ) /
+                                  reviews.length) *
+                                20
+                              }%`,
                             }}
                           ></div>
                         </div>
                         <span className="ml-4 text-gray-600">
                           {(
                             reviews.reduce(
-                              (sum, review) => sum + review[category.toLowerCase()],
+                              (sum, review) =>
+                                sum + review[category.toLowerCase()],
                               0
                             ) / reviews.length || 0
                           ).toFixed(1)}{" "}
@@ -953,12 +947,16 @@ useEffect(() => {
                                 <span
                                   key={value}
                                   onClick={() =>
-                                    handleStarChange(category.toLowerCase(), value)
+                                    handleStarChange(
+                                      category.toLowerCase(),
+                                      value
+                                    )
                                   }
-                                  className={`cursor-pointer text-2xl ${formData[category.toLowerCase()] >= value
-                                    ? "text-yellow-400"
-                                    : "text-gray-300"
-                                    }`}
+                                  className={`cursor-pointer text-2xl ${
+                                    formData[category.toLowerCase()] >= value
+                                      ? "text-yellow-400"
+                                      : "text-gray-300"
+                                  }`}
                                 >
                                   &#9733;
                                 </span>
@@ -980,7 +978,6 @@ useEffect(() => {
                   </form>
                 </div>
               </div>
-
             </div>
 
             {/* Display Reviews Section */}
@@ -1030,25 +1027,28 @@ useEffect(() => {
                   <div className="mt-4">
                     <button
                       onClick={() => handleLike(index)}
-                      className={`flex items-center ${likedReviews.includes(index) ? "text-blue-600" : "text-gray-500"
-                        } hover:text-blue-600`}
+                      className={`flex items-center ${
+                        likedReviews.includes(index)
+                          ? "text-blue-600"
+                          : "text-gray-500"
+                      } hover:text-blue-600`}
                       disabled={likedReviews.includes(index)}
                     >
                       {review.likes} likes
-                      <FontAwesomeIcon icon={faThumbsUp} className="ml-1 text-lg" />
+                      <FontAwesomeIcon
+                        icon={faThumbsUp}
+                        className="ml-1 text-lg"
+                      />
                     </button>
                   </div>
-
                 </div>
               ))}
             </div>
           </div>
         </section>
-
       </div>
-      {
-        isSmallDevice && (
-          <div className="relative  lg:flex">
+      {isSmallDevice && (
+        <div className="relative  lg:flex">
           {/* Other content */}
           <div className="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md lg:ml-10">
             {/* Header Section */}
@@ -1132,10 +1132,7 @@ useEffect(() => {
             </form>
           </div>
         </div>
-        )
-      }
-     
-
+      )}
 
       {/* Add ContactForm Modal */}
       <ContactForm
@@ -1144,7 +1141,6 @@ useEffect(() => {
         isTour={true}
       />
     </div>
-
   );
 };
 
