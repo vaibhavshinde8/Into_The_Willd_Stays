@@ -170,7 +170,7 @@
         "In case of adverse weather conditions, activities may be rescheduled."
       ]
     },
-    {
+    { 
       "id": 2,
       "imageUrl": "https://imagizer.imageshack.com/img923/6708/6f4MPd.jpg",
       "name": "Mussoorie Nature Escape",
@@ -200,7 +200,7 @@
           ],
           "days": [
             {
-              "day": "Day 1",
+              "day": "Day 1 - Arrival in Mussoorie from Delhi",
               "description": [
                 "In the morning, reach Majnu Ka Tila in Delhi and board your transfer to Mussoorie, the Queen of Hills.",
                 "Upon arrival, check in to the hotel.",
@@ -217,7 +217,7 @@
               }
             },
             {
-              "day": "Day 2",
+              "day": "Day 2 - Mussoorie Sightseeing Tour",
               "description": [
                 " Begin your Mussoorie Sightseeing Tour with a visit to Kempty Falls and enjoy the cascading waters amidst lush greenery.",
                 "Ascend Gun Hill by cable car or trek for stunning Himalayan views, and visit the scenic Company Garden.",
@@ -239,7 +239,7 @@
           ],
           "days": [
             {
-              "day": "Day 3",
+              "day": "Day 3 - Day Trip to Dhanaulti",
               "description": [
                 "In the morning, board your transfer for a day trip to Dhanaulti.",
                 "Visit Eco Cave Park to explore natural caves and the area's geological wonders.",
@@ -253,7 +253,7 @@
               }
             },
             {
-              "day": "Day 4",
+              "day": "Day 4 - Departure Day",
               "description": [
                 "Check out from your hotel, bid farewell to the hill station, and board your transfer to Delhi.",
                 "Arrive at Majnu Ka Tila in Delhi and proceed with your onward journey, marking the end of your amazing trip!"
