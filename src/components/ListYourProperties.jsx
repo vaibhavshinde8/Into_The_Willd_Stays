@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import heroImage4 from "../assets/banner/b4.jpeg";
 
 const ListYourProperties = () => {
   return (
@@ -32,7 +33,7 @@ const ListYourProperties = () => {
                 List Your Property With Us
               </h2>
             </div>
-            <p className="text-xl text-gray-600 leading-relaxed font-light">
+            <p className="text-xl bg-cyan-50 hover:shadow-md p-4 rounded-3xl text-gray-600 leading-relaxed font-light">
               Join our exclusive network of property owners and connect with
               thousands of travelers seeking unique stays. We provide
               comprehensive support to help you manage your property efficiently
@@ -109,11 +110,11 @@ const ListYourProperties = () => {
             className="lg:w-1/2"
           >
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-teal-500 to-blue-500 transform rotate-6 rounded-[2rem] blur-sm" />
+              <div className="absolute inset-0 bg-gradient-to-r from-indigo-400 to-indigo-500 transform rotate-6 rounded-[2rem] blur-sm" />
               <motion.img
                 whileHover={{ scale: 1.03 }}
                 transition={{ duration: 0.5 }}
-                src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
+                src={heroImage4}
                 alt="Luxury property"
                 className="relative rounded-[2rem] shadow-2xl w-full h-[700px] object-cover hover:shadow-3xl transition-all duration-500"
               />
