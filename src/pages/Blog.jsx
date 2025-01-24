@@ -7,7 +7,6 @@ import { useEffect } from "react";
 const Blog = () => {
   const { blogs } = useAppContext();
   const navigate = useNavigate();
-
   const handleBlogClick = (blogId) => {
     navigate(`/blog/${blogId}`);
   };
