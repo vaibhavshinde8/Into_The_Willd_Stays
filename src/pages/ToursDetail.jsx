@@ -804,7 +804,7 @@ const ToursDetail = () => {
         <section>
           <div className="p-6 bg-gray-50 min-h-screen ">
             {/* Overall Rating and Reviews Section */}
-            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 ">
               {/* Overall Rating Section */}
               <div className="col-span-1 bg-white rounded-lg shadow-lg p-6">
                 <h2 className="text-2xl font-bold mb-6">Reviews Summary</h2>
@@ -939,7 +939,7 @@ const ToursDetail = () => {
                       className="group bg-gradient-to-r from-teal-500 via-teal-400 to-emerald-400 
                      text-white font
                      shadow-[0_10px_20px_rgba(0,0,0,0.1)] 
-                     hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)] text-white py-1 px-3 rounded-md"
+                     hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)] py-1 px-3 rounded-md"
                     >
                       Post Review
                     </button>
