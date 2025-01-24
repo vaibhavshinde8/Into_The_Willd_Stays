@@ -330,7 +330,7 @@ useEffect(() => {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-3 p-4 sm:p-6 w-full lg:w-4/5 mx-auto bg-gray-50 shadow-lg rounded-lg">
         {/* Main Image */}
-        <div className="relative md:col-span-2 rounded-lg overflow-hidden shadow-md">
+        <div className="relative md:col-span-2  rounded-lg overflow-hidden shadow-md">
           <img
             src={tour.firstImage}
             alt={tour.name}
