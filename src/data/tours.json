@@ -6,7 +6,7 @@
       "name": "Spiti Valley",
       "location": "Spiti Valley, Uttarakhand",
       "duration": "8 Days, 7 Nights",
-      "images":[
+      "images": [
         "https://images.pexels.com/photos/30318498/pexels-photo-30318498.jpeg",
         "https://images.pexels.com/photos/30318497/pexels-photo-30318497.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
         "https://images.pexels.com/photos/30318488/pexels-photo-30318488.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
@@ -15,7 +15,7 @@
       "price": "9999",
       "checkInDate": "2024-12-01",
       "checkOutDate": "2024-12-03",
-      
+
       "highlights": [
         "Set off on an unforgettable adventure through Spiti Valley, a high-altitude desert mountain haven nestled in the Himalayas. Begin your journey in Kaza, the valley’s vibrant heart, where ancient Buddhist monasteries and rich local culture welcome you with open arms.",
         "Discover the serenity of Key Monastery, perched majestically on a hilltop, and soak in the spiritual aura that defines this remote region.",
@@ -79,7 +79,6 @@
               "images": {
                 "img1": "https://imagizer.imageshack.com/img924/6500/Ju4X8t.jpg",
                 "img2": "https://imagizer.imageshack.com/img923/4498/urOL4G.jpg"
-  
               }
             }
           ]
@@ -101,7 +100,7 @@
               "images": {
                 "img2": "https://imagizer.imageshack.com/img922/8052/PDct9F.jpg",
                 "img3": "https://imagizer.imageshack.com/img923/3088/iTlIkI.jpg",
-                "img4":"https://imagizer.imageshack.com/img923/6752/BcSZRU.jpg"
+                "img4": "https://imagizer.imageshack.com/img923/6752/BcSZRU.jpg"
               }
             },
             {
@@ -179,7 +178,7 @@
       "location": "Mussoorie, Uttarakhand",
       "duration": "4 Days, 3 Nights",
       "price": "12499",
-      "images":[
+      "images": [
         "https://imagizer.imageshack.com/img923/6417/3ARz71.jpg",
         "https://imagizer.imageshack.com/img922/3788/qzVFOq.jpg",
         "https://imagizer.imageshack.com/img922/5113/gzxqlA.jpg",
@@ -203,9 +202,7 @@
           "days": [
             {
               "day": "Day 1",
-              "description": [
-                "Arrival, check-in, and exploring Mall Road."
-              ],
+              "description": ["Arrival, check-in, and exploring Mall Road."],
               "images": {
                 "img1": "https://imagizer.imageshack.com/img923/6708/6f4MPd.jpg",
                 "img3": "https://imagizer.imageshack.com/img922/2825/A1zB6U.jpg",
@@ -214,9 +211,7 @@
             },
             {
               "day": "Day 2",
-              "description": [
-                " Visit to Kempty Falls and Gun Hill."
-              ],
+              "description": [" Visit to Kempty Falls and Gun Hill."],
               "images": {
                 "img1": "https://imagizer.imageshack.com/img924/6915/7h0pQL.jpg",
                 "img3": "https://imagizer.imageshack.com/img924/3077/MsRX7o.jpg",
@@ -233,9 +228,7 @@
           "days": [
             {
               "day": "Day 3",
-              "description": [
-                "Trek to Lal Tibba and Camel's Back Road."
-              ],
+              "description": ["Trek to Lal Tibba and Camel's Back Road."],
               "images": {
                 "img1": "https://imagizer.imageshack.com/img923/6048/hMRKGL.jpg",
                 "img3": "https://imagizer.imageshack.com/img924/6070/L5sGv4.jpg",
@@ -244,12 +237,10 @@
             },
             {
               "day": "Day 4",
-              "description": [
-                "Leisure day and departure."
-              ],
+              "description": ["Leisure day and departure."],
               "images": {
                 "img1": "https://imagizer.imageshack.com/img922/1235/Oz4d0e.jpg",
-                "img3":"https://imagizer.imageshack.com/img923/7192/fsAUK6.jpg",
+                "img3": "https://imagizer.imageshack.com/img923/7192/fsAUK6.jpg",
                 "img2": "https://imagizer.imageshack.com/img922/9413/Wy1DCf.jpg"
               }
             }
@@ -291,10 +282,10 @@
       "location": "Kedarnath, Uttarakhand",
       "duration": "4 Days, 3 Nights",
       "price": "10499",
-      "images":[
+      "images": [
         "https://images.pexels.com/photos/30318498/pexels-photo-30318498.jpeg",
-        "https://images.pexels.com/photos/30318497/pexels-photo-30318497.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-        "https://images.pexels.com/photos/30318488/pexels-photo-30318488.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "https://res.cloudinary.com/dwbbpznwe/image/upload/v1737716098/pexels-manik-mandal-7483243-7542627_1_w2wotk.jpg",
+        "https://res.cloudinary.com/dwbbpznwe/image/upload/v1737716853/Shedup_Choepelling_Buddhist_Monastery_c0y2ex.jpg",
         "https://images.pexels.com/photos/30318489/pexels-photo-30318489.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
       ],
       "checkInDate": "2024-12-01",
@@ -429,7 +420,7 @@
       "location": "Joshimath, Uttarakhand",
       "duration": "6 Days, 5 Nights",
       "price": "9499",
-      "images":[
+      "images": [
         "https://images.pexels.com/photos/30318498/pexels-photo-30318498.jpeg",
         "https://images.pexels.com/photos/30318497/pexels-photo-30318497.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
         "https://images.pexels.com/photos/30318488/pexels-photo-30318488.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
@@ -661,11 +652,11 @@
       "location": "Rishikesh and Dhanolti, Uttarakhand",
       "duration": "2 Nights, 3 Days",
       "price": "3500",
-      "images":[
-        "https://images.pexels.com/photos/30318498/pexels-photo-30318498.jpeg",
-        "https://images.pexels.com/photos/30318497/pexels-photo-30318497.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-        "https://images.pexels.com/photos/30318488/pexels-photo-30318488.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-        "https://images.pexels.com/photos/30318489/pexels-photo-30318489.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      "images": [
+        "https://res.cloudinary.com/dwbbpznwe/image/upload/v1737713690/surkanda-temple-3_turr4l.jpg",
+        "https://res.cloudinary.com/dwbbpznwe/image/upload/v1737714026/20221227_154829-1024x1024_o5qulj.jpg",
+        "https://res.cloudinary.com/dwbbpznwe/image/upload/v1737714134/IMG-20241208-WA0074_cbl790.jpg",
+        "https://res.cloudinary.com/dwbbpznwe/image/upload/v1737714200/IMG-20241208-WA0095_j4mobj.jpg"
       ],
       "checkInDate": "2024-12-01",
       "checkOutDate": "2024-12-03",
@@ -688,10 +679,10 @@
                 "Meals: Breakfast (Aloo puri, Aloo paratha, Tea), Lunch (Jeera aalu, Daal tadka, Rice, Chapati), Dinner (Shahee paneer, Chicken curry, Daal tadka, Rice, Chapati), and Evening snack (Mix Pakoda with tea)."
               ],
               "images": {
-                "img1": "https://img.freepik.com/free-photo/forested-mountain-covered-snow-people-hiking-col-de-la-lombarde_181624-23191.jpg?t=st=1736412107~exp=1736415707~hmac=bdde8d4637d0eb6c70b0fd165d5de5ba2f97a28043f81983186a62639e0725fb&w=900",
-                "img2": "https://img.freepik.com/free-photo/snowy-rugged-white-mountains-with-hiking-travelers_181624-6293.jpg?t=st=1736412284~exp=1736415884~hmac=605a49679fa5728d8a5cddd7ea2690dd6c0dbba104ff9e99d62a7a8a231c597e&w=900",
-                "img3": "https://img.freepik.com/free-photo/beautiful-shot-hiker-with-red-travel-backpack-hiking-up-mountain-blue-sky_181624-23123.jpg?t=st=1736412304~exp=1736415904~hmac=ea5ee510f577a0dcb20190d0ef9aeb5f9e9d3b7c90ce9fa9e7a1e5cf637784bd&w=900",
-                "img4": "https://img.freepik.com/free-photo/horizontal-shot-group-people-hiking-mountains-covered-snow-cloudy-sky_181624-44954.jpg?t=st=1736412323~exp=1736415923~hmac=ca7b987a0d78e0e8c17f962958835e3a6ef98ae47ecdbc505c51e81c1bdb3310&w=900"
+                "img1": "https://res.cloudinary.com/dwbbpznwe/image/upload/v1737714598/IMG-20241208-WA0056_jxxo3l.jpg",
+                "img2": "https://res.cloudinary.com/dwbbpznwe/image/upload/v1737714134/IMG-20241208-WA0074_cbl790.jpg",
+                "img3": "https://res.cloudinary.com/dwbbpznwe/image/upload/v1737714688/IMG-20241208-WA0077_pjkbgd.jpg",
+                "img4": "https://res.cloudinary.com/dwbbpznwe/image/upload/v1737714712/IMG-20241208-WA0073_jqxpa8.jpg"
               }
             },
             {
@@ -702,10 +693,10 @@
                 "Meals: Breakfast (Aloo puri, Aloo paratha, Bread toast, Tea & coffee), Lunch (Jeera aalu, Daal tadka, Raita, Rice, Chapati), Dinner (Kadhai paneer, Shahee paneer, Chicken curry, Daal tadka, Rice, Chapati), and Evening snack (Mix Pakoda with tea)."
               ],
               "images": {
-                "img1": "https://images.pexels.com/photos/877263/pexels-photo-877263.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                "img2": "https://img.freepik.com/free-photo/snowy-rugged-white-mountains-with-hiking-travelers_181624-6293.jpg?t=st=1736412284~exp=1736415884~hmac=605a49679fa5728d8a5cddd7ea2690dd6c0dbba104ff9e99d62a7a8a231c597e&w=900",
-                "img3": "https://img.freepik.com/free-photo/beautiful-shot-hiker-with-red-travel-backpack-hiking-up-mountain-blue-sky_181624-23123.jpg?t=st=1736412304~exp=1736415904~hmac=ea5ee510f577a0dcb20190d0ef9aeb5f9e9d3b7c90ce9fa9e7a1e5cf637784bd&w=900",
-                "img4": "https://img.freepik.com/free-photo/horizontal-shot-group-people-hiking-mountains-covered-snow-cloudy-sky_181624-44954.jpg?t=st=1736412323~exp=1736415923~hmac=ca7b987a0d78e0e8c17f962958835e3a6ef98ae47ecdbc505c51e81c1bdb3310&w=900"
+                "img1": "https://res.cloudinary.com/dwbbpznwe/image/upload/v1737714870/IMG-20241208-WA0110_xrueqh.jpg",
+                "img2": "https://res.cloudinary.com/dwbbpznwe/image/upload/v1737714870/IMG-20241208-WA0105_u3b3lj.jpg",
+                "img3": "https://res.cloudinary.com/dwbbpznwe/image/upload/v1737714870/IMG-20241208-WA0078_eeirxm.jpg",
+                "img4": "https://res.cloudinary.com/dwbbpznwe/image/upload/v1737714870/IMG-20241208-WA0106_gicoal.jpg"
               }
             }
           ]
@@ -724,8 +715,10 @@
                 "Mussorie:- Landour Street/ Landour Bakery / Chardukan/ Kampty Fall"
               ],
               "images": {
-                "img1": "https://images.pexels.com/photos/2070307/pexels-photo-2070307.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                "img2": "https://images.pexels.com/photos/15896015/pexels-photo-15896015/free-photo-of-laxmanjhula-ramjhula-rishikesh-uttarakhand.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                "img1": "https://res.cloudinary.com/dwbbpznwe/image/upload/v1737715051/IMG-20241208-WA0117_wabp0h.jpg",
+                "img2": "https://res.cloudinary.com/dwbbpznwe/image/upload/v1737715050/IMG-20241208-WA0118_blx3ev.jpg",
+                "img3": "https://res.cloudinary.com/dwbbpznwe/image/upload/v1737715051/IMG-20241208-WA0113_sqxdzp.jpg",
+                "img4": "https://res.cloudinary.com/dwbbpznwe/image/upload/v1737715051/pexels-dhruv-jangid-2945224-25037184_gpkg0j.jpg"
               }
             },
             {
@@ -736,8 +729,10 @@
                 "Check-out and departure."
               ],
               "images": {
-                "img1": "https://images.pexels.com/photos/954646/pexels-photo-954646.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                "img2": "https://images.pexels.com/photos/11124347/pexels-photo-11124347.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                "img1": "https://res.cloudinary.com/dwbbpznwe/image/upload/v1737716097/pexels-julia-volk-5205763_kzgaqd.jpg",
+                "img2": "https://res.cloudinary.com/dwbbpznwe/image/upload/v1737716098/pexels-hrishavjha-20754960_ozi1st.jpg",
+                "img3":"https://res.cloudinary.com/dwbbpznwe/image/upload/v1737716098/pexels-manik-mandal-7483243-7542627_1_w2wotk.jpg",
+                "img4":"https://res.cloudinary.com/dwbbpznwe/image/upload/v1737716096/pexels-maa-shakti-yog-36422106-7137807_iucvkw.jpg"
               }
             }
           ]
@@ -780,11 +775,11 @@
       "location": "Chamoli, Uttarakhand",
       "duration": "6 Days, 5 Nights",
       "price": "7500",
-      "images":[
-        "https://images.pexels.com/photos/30318498/pexels-photo-30318498.jpeg",
-        "https://images.pexels.com/photos/30318497/pexels-photo-30318497.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-        "https://images.pexels.com/photos/30318488/pexels-photo-30318488.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-        "https://images.pexels.com/photos/30318489/pexels-photo-30318489.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      "images": [
+        "https://res.cloudinary.com/dwbbpznwe/image/upload/v1737715579/pexels-manik-mandal-7483243-7542627_magx0j.jpg",
+        "https://res.cloudinary.com/dwbbpznwe/image/upload/v1737715579/IMG-20241208-WA0095_bsmfn1.jpg",
+        "https://res.cloudinary.com/dwbbpznwe/image/upload/v1737715578/Copy_of_IMG_6564_arcgsb.jpg",
+        "https://res.cloudinary.com/dwbbpznwe/image/upload/v1737715578/Landour_ofa6o4.jpg"
       ],
       "checkInDate": "2024-12-01",
       "checkOutDate": "2024-12-06",
@@ -812,10 +807,10 @@
                 "Assemble and briefing about travel details."
               ],
               "images": {
-                "img1": "https://img.freepik.com/free-photo/forested-mountain-covered-snow-people-hiking-col-de-la-lombarde_181624-23191.jpg?t=st=1736412107~exp=1736415707~hmac=bdde8d4637d0eb6c70b0fd165d5de5ba2f97a28043f81983186a62639e0725fb&w=900",
-                "img2": "https://img.freepik.com/free-photo/snowy-rugged-white-mountains-with-hiking-travelers_181624-6293.jpg?t=st=1736412284~exp=1736415884~hmac=605a49679fa5728d8a5cddd7ea2690dd6c0dbba104ff9e99d62a7a8a231c597e&w=900",
-                "img3": "https://img.freepik.com/free-photo/beautiful-shot-hiker-with-red-travel-backpack-hiking-up-mountain-blue-sky_181624-23123.jpg?t=st=1736412304~exp=1736415904~hmac=ea5ee510f577a0dcb20190d0ef9aeb5f9e9d3b7c90ce9fa9e7a1e5cf637784bd&w=900",
-                "img4": "https://img.freepik.com/free-photo/horizontal-shot-group-people-hiking-mountains-covered-snow-cloudy-sky_181624-44954.jpg?t=st=1736412323~exp=1736415923~hmac=ca7b987a0d78e0e8c17f962958835e3a6ef98ae47ecdbc505c51e81c1bdb3310&w=900"
+                "img1": "https://res.cloudinary.com/dwbbpznwe/image/upload/v1737721339/IMG_20240730_132615_jopedn.jpg",
+                "img2": "https://res.cloudinary.com/dwbbpznwe/image/upload/v1737721339/IMG_20240731_155947_tx8mvi.jpg",
+                "img3": "https://res.cloudinary.com/dwbbpznwe/image/upload/v1737721338/IMG_20240801_084029_tksw77.jpg",
+                "img4": "https://res.cloudinary.com/dwbbpznwe/image/upload/v1737721336/IMG_20240731_140528_hy3rcr.jpg"
               }
             },
             {
@@ -882,9 +877,10 @@
                 "Leave Govindghat before 12:00 noon and enjoy the scenic route of shri badri vishal ji and after darshan leave for joshimath."
               ],
               "images": {
-                "img1": "https://images.pexels.com/photos/4242690/pexels-photo-4242690.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                "img2": "https://images.pexels.com/photos/9962698/pexels-photo-9962698.jpeg?auto=compress&cs=tinysrgb&w=400",
-                "img3": "https://images.pexels.com/photos/27852924/pexels-photo-27852924/free-photo-of-a-field-of-wildflowers-and-trees-in-the-mountains.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                "img1": "https://res.cloudinary.com/dwbbpznwe/image/upload/v1737721688/pexels-ankit-rainloure-1425442-18342812_sgvfia.jpg",
+                "img2": "https://res.cloudinary.com/dwbbpznwe/image/upload/v1737721685/pexels-rajesh-s-balouria-1289088-15017640_sordew.jpg",
+                "img3": "https://images.pexels.com/photos/27852924/pexels-photo-27852924/free-photo-of-a-field-of-wildflowers-and-trees-in-the-mountains.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                "img4": "https://res.cloudinary.com/dwbbpznwe/image/upload/v1737721684/pexels-nithin-ajayan-685228803-17935048_e7bawk.jpg"
               }
             },
             {
@@ -939,7 +935,7 @@
       "location": "Ladakh, Jammu and Kashmir",
       "duration": "5 Days, 4 Nights",
       "price": "29999",
-      "images":[
+      "images": [
         "https://images.pexels.com/photos/30318498/pexels-photo-30318498.jpeg",
         "https://images.pexels.com/photos/30318497/pexels-photo-30318497.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
         "https://images.pexels.com/photos/30318488/pexels-photo-30318488.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
@@ -1108,7 +1104,7 @@
       "location": "Jammu and Kashmir",
       "duration": "6 Days, 5 Nights",
       "price": "34999",
-      "images":[
+      "images": [
         "https://images.pexels.com/photos/30318498/pexels-photo-30318498.jpeg",
         "https://images.pexels.com/photos/30318497/pexels-photo-30318497.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
         "https://images.pexels.com/photos/30318488/pexels-photo-30318488.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
@@ -1287,7 +1283,7 @@
       "location": "Mechuka, Arunachal Pradesh",
       "duration": "6 Days, 5 Nights",
       "price": "16799",
-      "images":[
+      "images": [
         "https://images.pexels.com/photos/30318498/pexels-photo-30318498.jpeg",
         "https://images.pexels.com/photos/30318497/pexels-photo-30318497.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
         "https://images.pexels.com/photos/30318488/pexels-photo-30318488.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
@@ -1432,7 +1428,7 @@
       "location": "Kohima, Nagaland, INDIA",
       "duration": "4 Days, 3 Nights",
       "price": "6199",
-      "images":[
+      "images": [
         "https://images.pexels.com/photos/30318498/pexels-photo-30318498.jpeg",
         "https://images.pexels.com/photos/30318497/pexels-photo-30318497.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
         "https://images.pexels.com/photos/30318488/pexels-photo-30318488.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
@@ -1538,7 +1534,7 @@
       "location": "SIKKIM, INDIA",
       "duration": "3 Days, 2 Nights",
       "price": "7999",
-      "images":[
+      "images": [
         "https://images.pexels.com/photos/30318498/pexels-photo-30318498.jpeg",
         "https://images.pexels.com/photos/30318497/pexels-photo-30318497.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
         "https://images.pexels.com/photos/30318488/pexels-photo-30318488.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
@@ -1640,7 +1636,7 @@
       "location": "MEGHALAYA, INDIA",
       "duration": "6 Days, 5 Nights",
       "price": "14499",
-      "images":[
+      "images": [
         "https://images.pexels.com/photos/30318498/pexels-photo-30318498.jpeg",
         "https://images.pexels.com/photos/30318497/pexels-photo-30318497.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
         "https://images.pexels.com/photos/30318488/pexels-photo-30318488.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
@@ -1815,7 +1811,7 @@
       "location": "Chopta Tungnath, Uttrakhand",
       "duration": "3 Days, 2 Nights",
       "price": "8999",
-      "images":[
+      "images": [
         "https://images.pexels.com/photos/30318498/pexels-photo-30318498.jpeg",
         "https://images.pexels.com/photos/30318497/pexels-photo-30318497.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
         "https://images.pexels.com/photos/30318488/pexels-photo-30318488.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
