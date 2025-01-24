@@ -409,15 +409,11 @@ useEffect(() => {
           <div className="text-center">
             <div className="text-blue-500 text-2xl mb-2">👥</div>
             <p className="text-sm font-bold text-gray-700">Group Size</p>
-            <p className="text-sm text-gray-500">40 people</p>
+            <p className="text-sm text-gray-500">20 people</p>
           </div>
 
           {/* Languages */}
-          <div className="text-center">
-            <div className="text-blue-500 text-2xl mb-2">🌐</div>
-            <p className="text-sm font-bold text-gray-700">Languages</p>
-            <p className="text-sm text-gray-500">—</p>
-          </div>
+          
         </div>
       </div>
 
