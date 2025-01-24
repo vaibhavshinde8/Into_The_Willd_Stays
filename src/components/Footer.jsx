@@ -35,7 +35,7 @@ const Footer = () => {
                 href="https://www.facebook.com/profile.php?id=61557269590045"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#214eca] hover:text-white hover:scale-110 duration-300 ease-in-out transition-colors"
+                className="text-[#214eca] hover:text-[#214eca] hover:scale-110 duration-300 ease-in-out transition-colors"
               >
                 <Facebook size={25} />
               </a>
@@ -51,7 +51,7 @@ const Footer = () => {
                 href="https://www.instagram.com/intothewildstays/profilecard/?igsh=cGt4dTRvenNvZ25h"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#db2247] hover:text-white hover:scale-110 duration-300 ease-in-out transition-colors"
+                className="text-[#db2247] hover:text-[#db2247] hover:scale-110 duration-300 ease-in-out transition-colors"
               >
                 <Instagram size={25} />
               </a>
@@ -59,7 +59,7 @@ const Footer = () => {
                 href="https://wa.me/9761966485"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#1c9e18] hover:text-white hover:scale-110 duration-300 ease-in-out transition-colors"
+                className="text-[#1c9e18] hover:text-[#1c9e18] hover:scale-110 duration-300 ease-in-out transition-colors"
               >
                 <FaWhatsapp size={25} />
               </a>

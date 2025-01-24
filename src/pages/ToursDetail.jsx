@@ -21,7 +21,7 @@ import "../index.css";
 import { EffectFade, Navigation, Pagination, Autoplay } from "swiper/modules";
 import { BASE_URL } from "../utils/baseurl";
 import axios from 'axios'
-import {toast} from 'react-toastify'
+import { toast } from 'react-toastify'
 
 const ToursDetail = () => {
   const { id } = useParams();
@@ -38,7 +38,6 @@ const ToursDetail = () => {
 
   const [showForm, setShowForm] = useState(false);
   const [isSmallDevice, setIsSmallDevice] = useState(false);
-
 
   useEffect(() => {
     const handleResize = () => {
@@ -60,7 +59,6 @@ const ToursDetail = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-
 
   useEffect(() => {
     const handleScroll = () => {
@@ -101,8 +99,6 @@ const ToursDetail = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
-
 
   const [selectedImage, setSelectedImage] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -172,9 +168,8 @@ const ToursDetail = () => {
       rooms: 4,
       content:
         "The hotel offered everything we could have asked for. The food was great, and the service was exceptional.",
-      likes: 0
-    }
-
+      likes: 0,
+    },
   ]);
 
   // Form state
@@ -196,6 +191,7 @@ const ToursDetail = () => {
     date: "", // This will be used to store the travel date
     message: "",
   });
+  const [loading, setLoading] = useState(false); // Add loading state
   // Handle form input changes
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -207,10 +203,10 @@ const ToursDetail = () => {
   };
   const handleQuerySubmit = async (e) => {
     e.preventDefault();
-
+    setLoading(true);
     const dataToSend = {
       ...tourFormData,
-      tourName:tour.name
+      tourName: tour.name
       // No need to format date since it's already in the correct format
     };
 
@@ -223,6 +219,8 @@ const ToursDetail = () => {
       }
     } catch (error) {
       toast.error("Error sending tours query");
+    }finally {
+      setLoading(false); // Reset loading state after response
     }
   };
 
@@ -264,12 +262,12 @@ const ToursDetail = () => {
     });
   };
 
-
   // Handle like button click
   let price = parseInt(tour.price) + 7999;
   // Calculate overall rating
   const overallRating =
-    reviews.reduce((acc, review) => acc + review.stars, 1) / reviews.length || 0;
+    reviews.reduce((acc, review) => acc + review.stars, 1) / reviews.length ||
+    0;
 
   const [likedReviews, setLikedReviews] = useState([]);
 
@@ -363,9 +361,9 @@ const ToursDetail = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-3 p-4 sm:p-6 w-full lg:w-4/5 mx-auto bg-gray-50 shadow-lg rounded-lg">
         {/* Main Image */}
-        <div className="relative md:col-span-2 rounded-lg overflow-hidden shadow-md">
+        <div className="relative md:col-span-2  rounded-lg overflow-hidden shadow-md">
           <img
-            src={tour.imageUrl}
+            src={tour.firstImage}
             alt={tour.name}
             className="w-full h-64 sm:h-full object-cover"
           />
@@ -414,16 +412,12 @@ const ToursDetail = () => {
 
       <div className="space-y-4  lg:ml-24">
         {/* Title Section */}
-        <h1
-          className="text-lg sm:text-xl md:text-2xl md:ml-64 font-bold text-gray-800 mb-4 uppercase text-center md:text-left"
-        >
+        <h1 className="text-lg sm:text-xl md:text-2xl md:ml-64 font-bold text-gray-800 mb-4 uppercase text-center md:text-left">
           {tour.name}
         </h1>
 
         {/* Badge and Itinerary Days */}
-        <div
-          className="w-full md:w-3/5 grid grid-cols-2 sm:flex sm:justify-around items-center p-6 bg-white border border-gray-200 rounded-lg gap-4"
-        >
+        <div className="w-full md:w-3/5 grid grid-cols-2 sm:flex sm:justify-around items-center p-6 bg-white border border-gray-200 rounded-lg gap-4">
           {/* Duration */}
           <div className="text-center">
             <div className="text-blue-500 text-2xl mb-2">🕒</div>
@@ -442,20 +436,14 @@ const ToursDetail = () => {
           <div className="text-center">
             <div className="text-blue-500 text-2xl mb-2">👥</div>
             <p className="text-sm font-bold text-gray-700">Group Size</p>
-            <p className="text-sm text-gray-500">40 people</p>
+            <p className="text-sm text-gray-500">20 people</p>
           </div>
 
           {/* Languages */}
-          <div className="text-center">
-            <div className="text-blue-500 text-2xl mb-2">🌐</div>
-            <p className="text-sm font-bold text-gray-700">Languages</p>
-            <p className="text-sm text-gray-500">—</p>
-          </div>
         </div>
       </div>
 
       {/* Languages */}
-
 
       {/* Content Section */}
       <div className="lg:max-w-8xl mx-auto py-16 lg:ml-24 ">
@@ -566,7 +554,22 @@ const ToursDetail = () => {
              transition-all duration-500 overflow-hidden
              border border-white/20 backdrop-blur-sm"
                     >
-                      Send Enquiry
+                     {loading ? (
+          <div className="flex items-center justify-center">
+            <svg
+              className="animate-spin h-5 w-5 mr-3 text-white"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z" />
+            </svg>
+            Sending...
+          </div>
+        ) : (
+          "Send Enquiry"
+        )}
                     </button>
                   </form>
                 </div>
@@ -883,9 +886,9 @@ const ToursDetail = () => {
           </section>
         </div>
         <section>
-          <div className="p-6 bg-gray-50 min-h-screen ">
+          <div className="p-2 mt-2 bg-gray-50 min-h-screen ">
             {/* Overall Rating and Reviews Section */}
-            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 ">
+            <div className="max-w-9xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 ">
               {/* Overall Rating Section */}
               <div className="col-span-1 bg-white rounded-lg shadow-lg p-6">
                 <h2 className="text-2xl font-bold mb-6">Reviews Summary</h2>
@@ -907,7 +910,8 @@ const ToursDetail = () => {
                               : "Poor"}
                     </div>
                     <div className="text-gray-500">
-                      Based on {reviews.length} review{reviews.length > 1 ? "s" : ""}
+                      Based on {reviews.length} review
+                      {reviews.length > 1 ? "s" : ""}
                     </div>
                   </div>
                 </div>
@@ -922,18 +926,21 @@ const ToursDetail = () => {
                             className="bg-[#02d190] h-2"
                             style={{
                               width: `${(reviews.reduce(
-                                (sum, review) => sum + review[category.toLowerCase()],
+                                (sum, review) =>
+                                  sum + review[category.toLowerCase()],
                                 0
                               ) /
-                                reviews.length) *
-                                20}%`,
+                                  reviews.length) *
+                                20
+                                }%`,
                             }}
                           ></div>
                         </div>
                         <span className="ml-4 text-gray-600">
                           {(
                             reviews.reduce(
-                              (sum, review) => sum + review[category.toLowerCase()],
+                              (sum, review) =>
+                                sum + review[category.toLowerCase()],
                               0
                             ) / reviews.length || 0
                           ).toFixed(1)}{" "}
@@ -1000,11 +1007,14 @@ const ToursDetail = () => {
                                 <span
                                   key={value}
                                   onClick={() =>
-                                    handleStarChange(category.toLowerCase(), value)
+                                    handleStarChange(
+                                      category.toLowerCase(),
+                                      value
+                                    )
                                   }
                                   className={`cursor-pointer text-2xl ${formData[category.toLowerCase()] >= value
-                                    ? "text-yellow-400"
-                                    : "text-gray-300"
+                                      ? "text-yellow-400"
+                                      : "text-gray-300"
                                     }`}
                                 >
                                   &#9733;
@@ -1027,11 +1037,10 @@ const ToursDetail = () => {
                   </form>
                 </div>
               </div>
-
             </div>
 
             {/* Display Reviews Section */}
-            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 space-y-4">
+            <div className="max-w-9xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 space-y-4">
               {reviews.map((review, index) => (
                 <div
                   key={index}
@@ -1077,41 +1086,73 @@ const ToursDetail = () => {
                   <div className="mt-4">
                     <button
                       onClick={() => handleLike(index)}
-                      className={`flex items-center ${likedReviews.includes(index) ? "text-blue-600" : "text-gray-500"
+                      className={`flex items-center ${likedReviews.includes(index)
+                          ? "text-blue-600"
+                          : "text-gray-500"
                         } hover:text-blue-600`}
                       disabled={likedReviews.includes(index)}
                     >
                       {review.likes} likes
-                      <FontAwesomeIcon icon={faThumbsUp} className="ml-1 text-lg" />
+                      <FontAwesomeIcon
+                        icon={faThumbsUp}
+                        className="ml-1 text-lg"
+                      />
                     </button>
                   </div>
-
                 </div>
               ))}
             </div>
           </div>
         </section>
-
       </div>
-      {
-        isSmallDevice && (
-          <div className="relative  lg:flex">
-            {/* Other content */}
-            <div className="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md lg:ml-10">
-              {/* Header Section */}
-              <h2 className="text-lg font-semibold text-gray-800">
-                {tour.location}
-              </h2>
-              <div className="flex items-center space-x-2 mt-2">
-                <span className="text-2xl font-bold text-gray-800">
-                  INR {tour.price}
-                </span>
-                <span className="line-through text-gray-500 text-sm">
-                  INR {price}
-                </span>
-                <span className="bg-green-100 text-green-600 text-xs font-medium px-2 py-1 rounded">
-                  SAVE INR 7,999
-                </span>
+      {isSmallDevice && (
+        <div className="relative  lg:flex">
+          {/* Other content */}
+          <div className="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md lg:ml-10">
+            {/* Header Section */}
+            <h2 className="text-lg font-semibold text-gray-800">
+              {tour.location}
+            </h2>
+            <div className="flex items-center space-x-2 mt-2">
+              <span className="text-2xl font-bold text-gray-800">
+                INR {tour.price}
+              </span>
+              <span className="line-through text-gray-500 text-sm">
+                INR {price}
+              </span>
+              <span className="bg-green-100 text-green-600 text-xs font-medium px-2 py-1 rounded">
+                SAVE INR 7,999
+              </span>
+            </div>
+
+            {/* Form */}
+            <form className="space-y-4 mt-6">
+              <div>
+                <input
+                  type="text"
+                  placeholder="Full Name*"
+                  className="w-full border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
+                />
+              </div>
+              <div>
+                <input
+                  type="email"
+                  placeholder="Email*"
+                  className="w-full border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
+                />
+              </div>
+              <div className="flex space-x-2">
+                <select className="w-1/4 border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500">
+                  <option value="+91">+91</option>
+                </select>
+                <input
+                  type="text"
+                  pattern="\d{10}"
+                  placeholder="Your Phone*"
+                  className="w-3/4 border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
+                  title="Please enter a valid 10-digit phone number"
+                  required
+                />
               </div>
 
               {/* Form */}
@@ -1172,21 +1213,19 @@ const ToursDetail = () => {
                   Send Enquiry
                 </button>
               </form>
-            </div>
-          </div>
-        )
-      }
+            </form>
+        </div>
+      </div>
+  )
+}
 
-
-
-      {/* Add ContactForm Modal */}
-      <ContactForm
-        isOpen={showContactForm}
-        onClose={() => setShowContactForm(false)}
-        isTour={true}
-      />
-    </div>
-
+{/* Add ContactForm Modal */ }
+<ContactForm
+  isOpen={showContactForm}
+  onClose={() => setShowContactForm(false)}
+  isTour={true}
+/>
+    </div >
   );
 };
 
