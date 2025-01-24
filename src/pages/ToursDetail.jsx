@@ -19,6 +19,9 @@ import "swiper/css/pagination";
 import "../index.css";
 // import required modules
 import { EffectFade, Navigation, Pagination, Autoplay } from "swiper/modules";
+import { BASE_URL } from "../utils/baseurl";
+import axios from 'axios'
+import {toast} from 'react-toastify'
 
 const ToursDetail = () => {
   const { id } = useParams();
@@ -34,29 +37,29 @@ const ToursDetail = () => {
   }, []);
 
   const [showForm, setShowForm] = useState(false);
-const [isSmallDevice, setIsSmallDevice] = useState(false);
+  const [isSmallDevice, setIsSmallDevice] = useState(false);
 
 
-useEffect(() => {
-  const handleResize = () => {
-    // Check if the current screen width is less than 768px (mobile devices)
-    if (window.innerWidth < 768) {
-      setIsSmallDevice(true); // Set true for small devices
-      console.log("Small device detected");
-    } else {
-      setIsSmallDevice(false); // Set false for larger devices
-      console.log("Not a small device");
-    }
-  };
+  useEffect(() => {
+    const handleResize = () => {
+      // Check if the current screen width is less than 768px (mobile devices)
+      if (window.innerWidth < 768) {
+        setIsSmallDevice(true); // Set true for small devices
+        console.log("Small device detected");
+      } else {
+        setIsSmallDevice(false); // Set false for larger devices
+        console.log("Not a small device");
+      }
+    };
 
-  // Run the check on component mount and on window resize
-  handleResize();
-  window.addEventListener("resize", handleResize);
+    // Run the check on component mount and on window resize
+    handleResize();
+    window.addEventListener("resize", handleResize);
 
-  return () => {
-    window.removeEventListener("resize", handleResize);
-  };
-}, []);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
 
   useEffect(() => {
@@ -64,7 +67,7 @@ useEffect(() => {
       const scrollPosition = window.scrollY; // Current scroll position
       const windowHeight = window.innerHeight; // Height of the viewport
       const windowWidth = window.innerWidth; // Width of the viewport
-  
+
       // Define scroll thresholds for different devices
       if (windowWidth >= 1025) {
         // For laptops and larger screens
@@ -91,16 +94,16 @@ useEffect(() => {
         console.log("Form is hidden on mobile devices");
       }
     };
-  
+
     window.addEventListener("scroll", handleScroll);
-  
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  
-  
-  
+
+
+
   const [selectedImage, setSelectedImage] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [imageSet, setImageSet] = useState([]); // To store the current set of images being viewed
@@ -186,11 +189,41 @@ useEffect(() => {
     clean: 0,
     rooms: 0,
   });
-
+  const [tourFormData, setTourFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    date: "", // This will be used to store the travel date
+    message: "",
+  });
   // Handle form input changes
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+  };
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setTourFormData({ ...tourFormData, [name]: value });
+  };
+  const handleQuerySubmit = async (e) => {
+    e.preventDefault();
+
+    const dataToSend = {
+      ...tourFormData,
+      tourName:tour.name
+      // No need to format date since it's already in the correct format
+    };
+
+    try {
+      const response = await axios.post(`${BASE_URL}/toursQuery`, dataToSend);
+      // console.log(response);
+      if (response.status === 200) {
+        toast.success("Tours query sent successfully");
+        setTourFormData({ name: "", email: "", phone: "", date: "", message: "" }); // Reset form
+      }
+    } catch (error) {
+      toast.error("Error sending tours query");
+    }
   };
 
   // Handle star rating changes for each category
@@ -207,7 +240,7 @@ useEffect(() => {
         formData.service +
         formData.clean +
         formData.rooms) /
-        5
+      5
     );
 
     const newReview = {
@@ -230,13 +263,13 @@ useEffect(() => {
       rooms: 0,
     });
   };
-  
+
 
   // Handle like button click
   let price = parseInt(tour.price) + 7999;
   // Calculate overall rating
   const overallRating =
-  reviews.reduce((acc, review) => acc + review.stars, 1) / reviews.length || 0;
+    reviews.reduce((acc, review) => acc + review.stars, 1) / reviews.length || 0;
 
   const [likedReviews, setLikedReviews] = useState([]);
 
@@ -421,8 +454,8 @@ useEffect(() => {
         </div>
       </div>
 
-          {/* Languages */}
-          
+      {/* Languages */}
+
 
       {/* Content Section */}
       <div className="lg:max-w-8xl mx-auto py-16 lg:ml-24 ">
@@ -462,11 +495,15 @@ useEffect(() => {
                   </div>
 
                   {/* Form */}
-                  <form className="space-y-4 mt-6">
+                  <form onSubmit={handleQuerySubmit} className="space-y-4 mt-6">
                     <div>
                       <input
                         type="text"
                         placeholder="Full Name*"
+                        name="name"
+                        value={tourFormData.name}
+                        onChange={handleChange}
+                        required
                         className="w-full border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
                       />
                     </div>
@@ -474,6 +511,10 @@ useEffect(() => {
                       <input
                         type="email"
                         placeholder="Email*"
+                        name="email"
+                        value={tourFormData.email}
+                        onChange={handleChange}
+                        required
                         className="w-full border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
                       />
                     </div>
@@ -484,6 +525,9 @@ useEffect(() => {
                       <input
                         type="text"
                         pattern="\d{10}"
+                        name="phone"
+                        value={tourFormData.phone}
+                        onChange={handleChange}
                         placeholder="Your Phone*"
                         className="w-3/4 border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
                         title="Please enter a valid 10-digit phone number"
@@ -494,20 +538,21 @@ useEffect(() => {
                     <div className="flex space-x-2">
                       <input
                         type="date"
+                        name="date" // Change to 'date' to match the state
+                        value={tourFormData.date}
+                        onChange={handleChange}
                         placeholder="Travel Date*"
                         className="w-1/2 border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
                         min={new Date().toISOString().split("T")[0]} // Set today's date as the minimum
                       />
 
-                      <input
-                        type="number"
-                        placeholder="Traveller Count*"
-                        className="w-1/2 border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
-                      />
                     </div>
                     <div>
                       <textarea
                         placeholder="Message..."
+                        name="message"
+                        value={tourFormData.message}
+                        onChange={handleChange}
                         className="w-full border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
                         rows="3"
                       ></textarea>
@@ -555,11 +600,10 @@ useEffect(() => {
                         </h3>
 
                         <span
-                          className={`transform transition-transform duration-300 ${
-                            expandedDay === `${index}-${dayIndex}`
-                              ? "rotate-180"
-                              : ""
-                          }`}
+                          className={`transform transition-transform duration-300 ${expandedDay === `${index}-${dayIndex}`
+                            ? "rotate-180"
+                            : ""
+                            }`}
                         >
                           ⌄
                         </span>
@@ -612,9 +656,8 @@ useEffect(() => {
                                   key={imgIndex}
                                   className="w-40 h-40 sm:w-52 sm:h-52 object-cover rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105"
                                   src={image}
-                                  alt={`Day ${dayIndex + 1} Image ${
-                                    imgIndex + 1
-                                  }`}
+                                  alt={`Day ${dayIndex + 1} Image ${imgIndex + 1
+                                    }`}
                                   onClick={() =>
                                     openModal(
                                       Object.values(day.images),
@@ -1053,92 +1096,87 @@ useEffect(() => {
       {
         isSmallDevice && (
           <div className="relative  lg:flex">
-          {/* Other content */}
-          <div className="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md lg:ml-10">
-            {/* Header Section */}
-            <h2 className="text-lg font-semibold text-gray-800">
-              {tour.location}
-            </h2>
-            <div className="flex items-center space-x-2 mt-2">
-              <span className="text-2xl font-bold text-gray-800">
-                INR {tour.price}
-              </span>
-              <span className="line-through text-gray-500 text-sm">
-                INR {price}
-              </span>
-              <span className="bg-green-100 text-green-600 text-xs font-medium px-2 py-1 rounded">
-                SAVE INR 7,999
-              </span>
-            </div>
-
-            {/* Form */}
-            <form className="space-y-4 mt-6">
-              <div>
-                <input
-                  type="text"
-                  placeholder="Full Name*"
-                  className="w-full border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
-                />
-              </div>
-              <div>
-                <input
-                  type="email"
-                  placeholder="Email*"
-                  className="w-full border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
-                />
-              </div>
-              <div className="flex space-x-2">
-                <select className="w-1/4 border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500">
-                  <option value="+91">+91</option>
-                </select>
-                <input
-                  type="text"
-                  pattern="\d{10}"
-                  placeholder="Your Phone*"
-                  className="w-3/4 border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
-                  title="Please enter a valid 10-digit phone number"
-                  required
-                />
+            {/* Other content */}
+            <div className="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md lg:ml-10">
+              {/* Header Section */}
+              <h2 className="text-lg font-semibold text-gray-800">
+                {tour.location}
+              </h2>
+              <div className="flex items-center space-x-2 mt-2">
+                <span className="text-2xl font-bold text-gray-800">
+                  INR {tour.price}
+                </span>
+                <span className="line-through text-gray-500 text-sm">
+                  INR {price}
+                </span>
+                <span className="bg-green-100 text-green-600 text-xs font-medium px-2 py-1 rounded">
+                  SAVE INR 7,999
+                </span>
               </div>
 
-              <div className="flex space-x-2">
-                <input
-                  type="date"
-                  placeholder="Travel Date*"
-                  className="w-1/2 border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
-                  min={new Date().toISOString().split("T")[0]} // Set today's date as the minimum
-                />
+              {/* Form */}
+              <form className="space-y-4 mt-6">
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Full Name*"
+                    className="w-full border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
+                  />
+                </div>
+                <div>
+                  <input
+                    type="email"
+                    placeholder="Email*"
+                    className="w-full border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
+                  />
+                </div>
+                <div className="flex space-x-2">
+                  <select className="w-1/4 border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500">
+                    <option value="+91">+91</option>
+                  </select>
+                  <input
+                    type="text"
+                    pattern="\d{10}"
+                    placeholder="Your Phone*"
+                    className="w-3/4 border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
+                    title="Please enter a valid 10-digit phone number"
+                    required
+                  />
+                </div>
 
-                <input
-                  type="number"
-                  placeholder="Traveller Count*"
-                  className="w-1/2 border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
-                />
-              </div>
-              <div>
-                <textarea
-                  placeholder="Message..."
-                  className="w-full border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
-                  rows="3"
-                ></textarea>
-              </div>
-              <button
-                type="submit"
-                className="w-full group bg-gradient-to-r from-teal-500 via-teal-400 to-emerald-400 
+                <div className="flex space-x-2">
+                  <input
+                    type="date"
+                    placeholder="Travel Date*"
+                    className="w-1/2 border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
+                    min={new Date().toISOString().split("T")[0]} // Set today's date as the minimum
+                  />
+
+                </div>
+                <div>
+                  <textarea
+                    placeholder="Message..."
+                    className="w-full border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
+                    rows="3"
+                  ></textarea>
+                </div>
+                <button
+                  type="submit"
+                  className="w-full group bg-gradient-to-r from-teal-500 via-teal-400 to-emerald-400 
        text-white px-4 py-2 rounded-2xl text-lg font-medium
        shadow-[0_10px_20px_rgba(0,0,0,0.1)] 
        hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)]
        transition-all duration-500 overflow-hidden
        border border-white/20 backdrop-blur-sm"
-              >
-                Send Enquiry
-              </button>
-            </form>
+                >
+                  Send Enquiry
+                </button>
+              </form>
+            </div>
           </div>
-        </div>
         )
       }
-     
+
 
 
       {/* Add ContactForm Modal */}
