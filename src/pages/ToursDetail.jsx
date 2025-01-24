@@ -332,7 +332,7 @@ useEffect(() => {
         {/* Main Image */}
         <div className="relative md:col-span-2 rounded-lg overflow-hidden shadow-md">
           <img
-            src={tour.imageUrl}
+            src={tour.firstImage}
             alt={tour.name}
             className="w-full h-64 sm:h-full object-cover"
           />
@@ -840,9 +840,9 @@ useEffect(() => {
           </section>
         </div>
         <section>
-          <div className="p-6 bg-gray-50 min-h-screen ">
+          <div className="p-2 mt-2 bg-gray-50 min-h-screen ">
             {/* Overall Rating and Reviews Section */}
-            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 ">
+            <div className="max-w-9xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 ">
               {/* Overall Rating Section */}
               <div className="col-span-1 bg-white rounded-lg shadow-lg p-6">
                 <h2 className="text-2xl font-bold mb-6">Reviews Summary</h2>
@@ -988,7 +988,7 @@ useEffect(() => {
             </div>
 
             {/* Display Reviews Section */}
-            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 space-y-4">
+            <div className="max-w-9xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 space-y-4">
               {reviews.map((review, index) => (
                 <div
                   key={index}

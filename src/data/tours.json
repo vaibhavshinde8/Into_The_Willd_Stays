@@ -6,6 +6,7 @@
       "name": "Spiti Valley",
       "location": "Spiti Valley, Uttarakhand",
       "duration": "8 Days, 7 Nights",
+      "firstImage":"https://imagizer.imageshack.com/img924/9837/GEO8Zc.jpg",
       "images": [
         "https://images.pexels.com/photos/30318498/pexels-photo-30318498.jpeg",
         "https://images.pexels.com/photos/30318497/pexels-photo-30318497.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
@@ -176,6 +177,7 @@
       "name": "Mussoorie Nature Escape",
       "location": "Mussoorie, Uttarakhand",
       "duration": "4 Days, 3 Nights",
+      "firstImage":"https://imagizer.imageshack.com/img922/2825/A1zB6U.jpg",
       "price": "12499",
       "images": [
         "https://imagizer.imageshack.com/img923/6417/3ARz71.jpg",
@@ -302,6 +304,7 @@
       "location": "Kedarnath, Uttarakhand",
       "duration": "4 Days, 3 Nights",
       "price": "10499",
+      "firstImage":"https://imagizer.imageshack.com/img923/9567/8fobIq.jpg",
       "images": [
         "https://images.pexels.com/photos/30318498/pexels-photo-30318498.jpeg",
         "https://res.cloudinary.com/dwbbpznwe/image/upload/v1737716098/pexels-manik-mandal-7483243-7542627_1_w2wotk.jpg",
@@ -375,7 +378,7 @@
                 "Dinner will be served at hotel."
               ],
               "images": {
-                "img1": "https://imagizer.imageshack.com/img923/6350/Aqe7JP.jpg",
+               
                 "img2": "https://imagizer.imageshack.com/img922/8425/suAWOA.jpg",
                 "img3": "https://imagizer.imageshack.com/img922/7188/3Szdua.jpg",
                 "img4": "https://imagizer.imageshack.com/img924/8185/gcB3Pc.jpg"
@@ -439,6 +442,7 @@
       "name": "Kuari Pass Trek (Lord Curzon Trail)",
       "location": "Joshimath, Uttarakhand",
       "duration": "6 Days, 5 Nights",
+      "firstImage":"https://img.freepik.com/free-photo/snowy-rugged-white-mountains-with-hiking-travelers_181624-6293.jpg?t=st=1736412284~exp=1736415884~hmac=605a49679fa5728d8a5cddd7ea2690dd6c0dbba104ff9e99d62a7a8a231c597e&w=900",
       "price": "9499",
       "images": [
         "https://images.pexels.com/photos/30318498/pexels-photo-30318498.jpeg",
@@ -585,44 +589,6 @@
               }
             }
           ]
-        },
-        {
-          "combinedDays": [
-            "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
-            "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"
-          ],
-          "days": [
-            {
-              "day": "Day 5 - Explore Lingti waterfall on the way to Kaza. Settle in for an overnight stay in the lively town of Kaza.",
-              "description": [
-                "Explore the unique high-altitude villages of Hikkim, Komic, and Langza.",
-                "Visit the iconic Key Monastery, a significant Tibetan Buddhist monastery.",
-                "Immerse in the spiritual and cultural richness of the region.",
-                "Return for an overnight stay in Kaza."
-              ],
-              "images": {
-                "img1": "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
-                "img2": "https://png.pngtree.com/background/20230805/original/pngtree-a-snowy-mountain-adorned-in-pahalgam-valley-located-in-kashmir-india-picture-image_4440125.jpg",
-                "img3": "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg",
-                "img4": "https://png.pngtree.com/background/20230401/original/pngtree-view-from-chitkul-village-in-sangla-valley-vector-picture-image_2229375.jpg"
-              }
-            },
-            {
-              "day": "Day 6 - Visit Chicham Bridge, Head To Chandratal Via Kunzum Pass & Overnight Stay",
-              "description": [
-                "Explore the engineering marvel of Chicham Bridge, the highest bridge in Asia.",
-                "Journey to the mesmerizing Chandratal Lake via the scenic Kunzum Pass.",
-                "Enjoy the surreal beauty of the high-altitude lake.",
-                "Settle in for an overnight stay, surrounded by the tranquillity of Chandratal."
-              ],
-              "images": {
-                "img1": "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
-                "img2": "https://png.pngtree.com/background/20230805/original/pngtree-a-snowy-mountain-adorned-in-pahalgam-valley-located-in-kashmir-india-picture-image_4440125.jpg",
-                "img3": "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg",
-                "img4": "https://png.pngtree.com/background/20230401/original/pngtree-view-from-chitkul-village-in-sangla-valley-vector-picture-image_2229375.jpg"
-              }
-            }
-          ]
         }
       ],
       "inclusions": [
@@ -672,6 +638,7 @@
       "location": "Rishikesh and Dhanolti, Uttarakhand",
       "duration": "2 Nights, 3 Days",
       "price": "3500",
+      "firstImage":"https://res.cloudinary.com/dwbbpznwe/image/upload/v1737714134/IMG-20241208-WA0074_cbl790.jpg",
       "images": [
         "https://res.cloudinary.com/dwbbpznwe/image/upload/v1737713690/surkanda-temple-3_turr4l.jpg",
         "https://res.cloudinary.com/dwbbpznwe/image/upload/v1737714026/20221227_154829-1024x1024_o5qulj.jpg",
@@ -794,6 +761,7 @@
       "name": "Four Treks in One Trip: Valley of Flowers",
       "location": "Chamoli, Uttarakhand",
       "duration": "6 Days, 5 Nights",
+      "firstImage":"https://res.cloudinary.com/dwbbpznwe/image/upload/v1737721338/IMG_20240801_084029_tksw77.jpg",
       "price": "7500",
       "images": [
         "https://res.cloudinary.com/dwbbpznwe/image/upload/v1737715579/pexels-manik-mandal-7483243-7542627_magx0j.jpg",
@@ -955,6 +923,7 @@
       "name": "Leh-Ladakh Himalayan Adventure",
       "location": "Ladakh, Jammu and Kashmir",
       "duration": "5 Days, 4 Nights",
+      "firstImage":"https://images.pexels.com/photos/5202070/pexels-photo-5202070.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "price": "29999",
       "images": [
         "https://images.pexels.com/photos/30318498/pexels-photo-30318498.jpeg",
@@ -1123,6 +1092,7 @@
       "imageUrl": "https://i0.wp.com/www.makemyride.in/wp-content/uploads/2023/07/divya-agrawal-VV0fF4EoZaI-unsplash-scaled.jpg?resize=1080%2C675&ssl=1",
       "name": "Kashmir Valley Exploration",
       "location": "Jammu and Kashmir",
+      "firstImage":"https://images.pexels.com/photos/18276027/pexels-photo-18276027/free-photo-of-mountains-in-snow-under-storm-clouds.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "duration": "6 Days, 5 Nights",
       "price": "34999",
       "images": [
@@ -1303,6 +1273,7 @@
       "name": "Mechuka | The Magical Valley",
       "location": "Mechuka, Arunachal Pradesh",
       "duration": "6 Days, 5 Nights",
+      "firstImage":"https://images.pexels.com/photos/19946580/pexels-photo-19946580/free-photo-of-mountain-valley-covered-with-smoke.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "price": "16799",
       "images": [
         "https://images.pexels.com/photos/30318498/pexels-photo-30318498.jpeg",
@@ -1448,6 +1419,7 @@
       "name": "Hornbill Festival & Dzukou Valley Trek",
       "location": "Kohima, Nagaland, INDIA",
       "duration": "4 Days, 3 Nights",
+      "firstImage":"https://images.pexels.com/photos/2439742/pexels-photo-2439742.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "price": "6199",
       "images": [
         "https://images.pexels.com/photos/30318498/pexels-photo-30318498.jpeg",
@@ -1554,6 +1526,7 @@
       "name": "EAST SIKKIM - Short Escape",
       "location": "SIKKIM, INDIA",
       "duration": "3 Days, 2 Nights",
+      "firstImage":"https://images.pexels.com/photos/2324780/pexels-photo-2324780.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "price": "7999",
       "images": [
         "https://images.pexels.com/photos/30318498/pexels-photo-30318498.jpeg",
@@ -1657,6 +1630,7 @@
       "location": "MEGHALAYA, INDIA",
       "duration": "6 Days, 5 Nights",
       "price": "14499",
+      "firstImage":"https://images.pexels.com/photos/27786369/pexels-photo-27786369/free-photo-of-lyngksiar-waterfall.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "images": [
         "https://images.pexels.com/photos/30318498/pexels-photo-30318498.jpeg",
         "https://images.pexels.com/photos/30318497/pexels-photo-30318497.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
@@ -1829,6 +1803,7 @@
       "id": 13,
       "imageUrl": "https://www.sikkimdarjeelingtourism.com/images/packages/package_banner_1689920458.jpg",
       "name": "Chopta Tungnath",
+      "firstImage":"https://images.pexels.com/photos/29510970/pexels-photo-29510970/free-photo-of-scenic-view-of-tungnath-temple-in-uttarakhand-hills.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "location": "Chopta Tungnath, Uttrakhand",
       "duration": "3 Days, 2 Nights",
       "price": "8999",
