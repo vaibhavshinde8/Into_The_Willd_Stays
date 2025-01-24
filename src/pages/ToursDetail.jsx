@@ -34,35 +34,73 @@ const ToursDetail = () => {
   }, []);
 
   const [showForm, setShowForm] = useState(false);
+const [isSmallDevice, setIsSmallDevice] = useState(false);
+
+
+useEffect(() => {
+  const handleResize = () => {
+    // Check if the current screen width is less than 768px (mobile devices)
+    if (window.innerWidth < 768) {
+      setIsSmallDevice(true); // Set true for small devices
+      console.log("Small device detected");
+    } else {
+      setIsSmallDevice(false); // Set false for larger devices
+      console.log("Not a small device");
+    }
+  };
+
+  // Run the check on component mount and on window resize
+  handleResize();
+  window.addEventListener("resize", handleResize);
+
+  return () => {
+    window.removeEventListener("resize", handleResize);
+  };
+}, []);
+
 
   useEffect(() => {
     const handleScroll = () => {
-      const startElement = document.getElementById("specific-tag-start");
-      const targetElement = document.getElementById("specific-tag");
-      if (startElement && targetElement) {
-        const { top: startTop } = startElement.getBoundingClientRect();
-        const { top: targetTop } = targetElement.getBoundingClientRect();
-        const windowHeight = window.innerHeight;
-
-        // Check scroll position and screen width
-        if (
-          startTop <= 0 && // Passed the start element
-          targetTop > windowHeight && // Target is below the viewport
-          window.innerWidth > 768 // Exclude mobile devices
-        ) {
-          setShowForm(true); // Show form
+      const scrollPosition = window.scrollY; // Current scroll position
+      const windowHeight = window.innerHeight; // Height of the viewport
+      const windowWidth = window.innerWidth; // Width of the viewport
+  
+      // Define scroll thresholds for different devices
+      if (windowWidth >= 1025) {
+        // For laptops and larger screens
+        if (scrollPosition > 1150 && scrollPosition < 1900) {
+          setShowForm(true);
+          console.log("Form is visible on laptops/desktops");
         } else {
-          setShowForm(false); // Hide form
+          setShowForm(false);
+          console.log("Form is hidden on laptops/desktops");
         }
+      } else if (windowWidth >= 768 && windowWidth <= 1024) {
+        // For tablets or medium-sized devices
+        if (scrollPosition > 2000 && scrollPosition < 2700) {
+          setShowForm(true);
+          console.log("Form is visible on tablets/medium devices");
+        } else {
+          setShowForm(false);
+          console.log("Form is hidden on tablets/medium devices");
+        }
+      } else {
+        // For smaller devices, hide form by default
+        setShowForm(false);
+        //SetisSmallDevice(true);
+        console.log("Form is hidden on mobile devices");
       }
     };
-
+  
     window.addEventListener("scroll", handleScroll);
-
+  
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+  
+  
+  
   const [selectedImage, setSelectedImage] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [imageSet, setImageSet] = useState([]); // To store the current set of images being viewed
@@ -290,7 +328,7 @@ const ToursDetail = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-3 p-4 sm:p-6 w-full sm:w-4/5 mx-auto bg-gray-50 shadow-lg rounded-lg">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-3 p-4 sm:p-6 w-full lg:w-4/5 mx-auto bg-gray-50 shadow-lg rounded-lg">
         {/* Main Image */}
         <div className="relative md:col-span-2 rounded-lg overflow-hidden shadow-md">
           <img
@@ -341,7 +379,7 @@ const ToursDetail = () => {
         </div> */}
       </div>
 
-      <div className="space-y-4 sm:ml-10 md:ml-24">
+      <div className="space-y-4  lg:ml-24">
         {/* Title Section */}
         <h1
           className="text-lg sm:text-xl md:text-2xl md:ml-64 font-bold text-gray-800 mb-4 uppercase text-center md:text-left"
@@ -351,13 +389,13 @@ const ToursDetail = () => {
 
         {/* Badge and Itinerary Days */}
         <div
-          className="w-full sm:w-3/5 grid grid-cols-2 sm:flex sm:justify-around items-center p-6 bg-white border border-gray-200 rounded-lg gap-4"
+          className="w-full md:w-3/5 grid grid-cols-2 sm:flex sm:justify-around items-center p-6 bg-white border border-gray-200 rounded-lg gap-4"
         >
           {/* Duration */}
           <div className="text-center">
             <div className="text-blue-500 text-2xl mb-2">🕒</div>
             <p className="text-sm font-bold text-gray-700">Duration</p>
-            <p className="text-sm text-gray-500">9 Nights 10 Days</p>
+            <p className="text-sm text-gray-500">{tour.duration}</p>
           </div>
 
           {/* Tour Type */}
@@ -387,7 +425,7 @@ const ToursDetail = () => {
           
 
       {/* Content Section */}
-      <div className="lg:max-w-8xl mx-auto    py-16 md:ml-24 ">
+      <div className="lg:max-w-8xl mx-auto py-16 lg:ml-24 ">
         <div className="space-y-16">
           <div className="flex gap-12">
             <div className="p-6 shadow-lg md:w-3/5 lg:w-3/5 border border-gray-200 rounded-lg">
@@ -404,9 +442,9 @@ const ToursDetail = () => {
               ))}
             </div>
             {showForm && (
-              <div className="relative hidden lg:flex">
+              <div className="relative  lg:flex">
                 {/* Other content */}
-                <div className="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md ml-10 fixed top-32">
+                <div className="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md lg:ml-10 fixed top-32">
                   {/* Header Section */}
                   <h2 className="text-lg font-semibold text-gray-800">
                     {tour.location}
@@ -804,7 +842,7 @@ const ToursDetail = () => {
         <section>
           <div className="p-6 bg-gray-50 min-h-screen ">
             {/* Overall Rating and Reviews Section */}
-            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 ">
+            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 grid grid-cols-1 md:grid-cols-3 gap-6">
               {/* Overall Rating Section */}
               <div className="col-span-1 bg-white rounded-lg shadow-lg p-6">
                 <h2 className="text-2xl font-bold mb-6">Reviews Summary</h2>
@@ -939,7 +977,7 @@ const ToursDetail = () => {
                       className="group bg-gradient-to-r from-teal-500 via-teal-400 to-emerald-400 
                      text-white font
                      shadow-[0_10px_20px_rgba(0,0,0,0.1)] 
-                     hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)] py-1 px-3 rounded-md"
+                     hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)] text-white py-1 px-3 rounded-md"
                     >
                       Post Review
                     </button>
@@ -1012,6 +1050,95 @@ const ToursDetail = () => {
         </section>
 
       </div>
+      {
+        isSmallDevice && (
+          <div className="relative  lg:flex">
+          {/* Other content */}
+          <div className="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md lg:ml-10">
+            {/* Header Section */}
+            <h2 className="text-lg font-semibold text-gray-800">
+              {tour.location}
+            </h2>
+            <div className="flex items-center space-x-2 mt-2">
+              <span className="text-2xl font-bold text-gray-800">
+                INR {tour.price}
+              </span>
+              <span className="line-through text-gray-500 text-sm">
+                INR {price}
+              </span>
+              <span className="bg-green-100 text-green-600 text-xs font-medium px-2 py-1 rounded">
+                SAVE INR 7,999
+              </span>
+            </div>
+
+            {/* Form */}
+            <form className="space-y-4 mt-6">
+              <div>
+                <input
+                  type="text"
+                  placeholder="Full Name*"
+                  className="w-full border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
+                />
+              </div>
+              <div>
+                <input
+                  type="email"
+                  placeholder="Email*"
+                  className="w-full border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
+                />
+              </div>
+              <div className="flex space-x-2">
+                <select className="w-1/4 border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500">
+                  <option value="+91">+91</option>
+                </select>
+                <input
+                  type="text"
+                  pattern="\d{10}"
+                  placeholder="Your Phone*"
+                  className="w-3/4 border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
+                  title="Please enter a valid 10-digit phone number"
+                  required
+                />
+              </div>
+
+              <div className="flex space-x-2">
+                <input
+                  type="date"
+                  placeholder="Travel Date*"
+                  className="w-1/2 border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
+                  min={new Date().toISOString().split("T")[0]} // Set today's date as the minimum
+                />
+
+                <input
+                  type="number"
+                  placeholder="Traveller Count*"
+                  className="w-1/2 border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
+                />
+              </div>
+              <div>
+                <textarea
+                  placeholder="Message..."
+                  className="w-full border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
+                  rows="3"
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                className="w-full group bg-gradient-to-r from-teal-500 via-teal-400 to-emerald-400 
+       text-white px-4 py-2 rounded-2xl text-lg font-medium
+       shadow-[0_10px_20px_rgba(0,0,0,0.1)] 
+       hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)]
+       transition-all duration-500 overflow-hidden
+       border border-white/20 backdrop-blur-sm"
+              >
+                Send Enquiry
+              </button>
+            </form>
+          </div>
+        </div>
+        )
+      }
+     
 
 
       {/* Add ContactForm Modal */}
@@ -1021,6 +1148,7 @@ const ToursDetail = () => {
         isTour={true}
       />
     </div>
+
   );
 };
 
