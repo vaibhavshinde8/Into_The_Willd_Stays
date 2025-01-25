@@ -1,11 +1,11 @@
 import { FaWhatsapp } from "react-icons/fa";
 
 const FloatingWhatsappIcon = () => {
-  const phoneNumber = '9761966485';
+  const phoneNumber = "9761966485";
   const getWhatsAppLink = () => {
     // Check if mobile device
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    return isMobile 
+    return isMobile
       ? `whatsapp://send?phone=${phoneNumber}`
       : `https://web.whatsapp.com/send?phone=${phoneNumber}`;
   };
