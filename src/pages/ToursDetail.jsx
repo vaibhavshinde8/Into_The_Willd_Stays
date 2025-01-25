@@ -27,10 +27,11 @@ const ToursDetail = () => {
   const { id } = useParams();
   const tour = toursData.tours.find((t) => t.id === parseInt(id));
   const [showContactForm, setShowContactForm] = useState(false);
+
   const [expandedDay, setExpandedDay] = useState(null);
 
-  const toggleAccordion = (index) => {
-    setExpandedDay(expandedDay === index ? null : index);
+  const toggleAccordion = (dayKey) => {
+    setExpandedDay(expandedDay === dayKey ? null : dayKey);
   };
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -602,101 +603,96 @@ const ToursDetail = () => {
                 Itinerary
               </h2>
               {tour.itinerary?.map((item, index) => (
-                <div key={index}>
-                  {/* Display combinedDays images in a horizontal scrollable row */}
+  <div key={index}>
+    {item.days.map((day, dayIndex) => (
+      <div
+        key={dayIndex}
+        className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 sm:p-4 shadow-lg hover:shadow-xl transition-all duration-300 mb-4 border border-gray-500"
+      >
+        <div
+          className="flex items-center justify-between cursor-pointer"
+          onClick={() => toggleAccordion(`${index}-${dayIndex}`)}
+        >
+          <h3 className="text-black font-semibold">
+            <span className="bg-gradient-to-r from-[#05dce3] to-[#05dce3] text-white font-bold px-2 py-1 rounded-md shadow-md mr-2">
+              {day.day.slice(0, 5)}
+            </span>
+            {day.day.slice(5)}
+          </h3>
 
-                  {/* Render days with toggleAccordion */}
-                  {item.days.map((day, dayIndex) => (
-                    <div
-                      key={dayIndex}
-                      className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 sm:p-4 shadow-lg hover:shadow-xl transition-all duration-300 mb-4 border border-gray-500"
+          <span
+            className={`transform transition-transform duration-300 ${
+              expandedDay === `${index}-${dayIndex}` ? "rotate-180" : ""
+            }`}
+          >
+            ⌄
+          </span>
+        </div>
+        {expandedDay === `${index}-${dayIndex}` && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+            className="mt-4"
+          >
+            <div className="text-sm sm:text-lg leading-relaxed text-gray-800 mb-4 bg-gray-50 p-3 sm:p-4 rounded-lg shadow-inner">
+              {Array.isArray(day.description) ? (
+                <ul className="space-y-2 sm:space-y-3 text-[#0F2642]">
+                  {day.description.map((desc, descIndex) => (
+                    <li
+                      key={descIndex}
+                      className="flex items-start text-sm sm:text-base leading-normal"
                     >
-                      <div
-                        className="flex items-center justify-between cursor-pointer"
-                        onClick={() => toggleAccordion(`${index}-${dayIndex}`)}
-                      >
-                        <h3 className="text-black  font-semibold">
-                          <span className="bg-gradient-to-r from-[#05dce3] to-[#05dce3] text-white font-bold px-2 py-1 rounded-md shadow-md mr-2">
-                            {day.day.slice(0, 5)} {/* First 5 letters */}
-                          </span>
-                          {day.day.slice(5)} {/* Rest of the text */}
-                        </h3>
-
-                        <span
-                          className={`transform transition-transform duration-300 ${expandedDay === `${index}-${dayIndex}`
-                            ? "rotate-180"
-                            : ""
-                            }`}
+                      <span className="mr-2 sm:mr-3 flex-shrink-0 text-blue-500">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="currentColor"
+                          viewBox="0 0 16 16"
+                          className="w-4 h-4 sm:w-5 sm:h-5"
                         >
-                          ⌄
-                        </span>
-                      </div>
-                      {expandedDay === `${index}-${dayIndex}` && (
-                        <motion.div
-                          initial={{ opacity: 0, height: 0 }}
-                          animate={{ opacity: 1, height: "auto" }}
-                          exit={{ opacity: 0, height: 0 }}
-                          transition={{ duration: 0.3 }}
-                          className="mt-4"
-                        >
-                          <div className="text-sm sm:text-lg leading-relaxed text-gray-800 mb-4 bg-gray-50 p-3 sm:p-4 rounded-lg shadow-inner">
-                            {Array.isArray(day.description) ? (
-                              <ul className="space-y-2 sm:space-y-3 text-[#0F2642]">
-                                {day.description.map((desc, descIndex) => (
-                                  <li
-                                    key={descIndex}
-                                    className="flex items-start text-sm sm:text-base leading-normal"
-                                  >
-                                    <span className="mr-2 sm:mr-3 flex-shrink-0 text-blue-500">
-                                      <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill="currentColor"
-                                        viewBox="0 0 16 16"
-                                        className="w-4 h-4 sm:w-5 sm:h-5"
-                                      >
-                                        <path
-                                          fillRule="evenodd"
-                                          d="M8.146 11.854a.5.5 0 0 1-.708-.708L10.293 8 7.438 5.146a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3z"
-                                        />
-                                      </svg>
-                                    </span>
-                                    <span>{desc}</span>
-                                  </li>
-                                ))}
-                              </ul>
-                            ) : (
-                              <p className="text-sm sm:text-base md:text-lg text-[#0F2642] leading-normal">
-                                {day.description}
-                              </p>
-                            )}
-                          </div>
-
-                          {/* Display day's images in a horizontal scrollable row */}
-                          <div className="flex space-x-4 overflow-x-auto scrollbar-hide">
-                            {Object.values(day.images).map(
-                              (image, imgIndex) => (
-                                <img
-                                  key={imgIndex}
-                                  className="w-40 h-40 sm:w-52 sm:h-52 object-cover rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105"
-                                  src={image}
-                                  alt={`Day ${dayIndex + 1} Image ${imgIndex + 1
-                                    }`}
-                                  onClick={() =>
-                                    openModal(
-                                      Object.values(day.images),
-                                      imgIndex
-                                    )
-                                  }
-                                />
-                              )
-                            )}
-                          </div>
-                        </motion.div>
-                      )}
-                    </div>
+                          <path
+                            fillRule="evenodd"
+                            d="M8.146 11.854a.5.5 0 0 1-.708-.708L10.293 8 7.438 5.146a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3z"
+                          />
+                        </svg>
+                      </span>
+                      <span>{desc}</span>
+                    </li>
                   ))}
+                </ul>
+              ) : (
+                <p className="text-sm sm:text-base md:text-lg text-[#0F2642] leading-normal">
+                  {day.description}
+                </p>
+              )}
+            </div>
+
+            {/* Horizontal Image Row */}
+            <div className="flex space-x-4 overflow-x-auto scrollbar-hide">
+              {Object.values(day.images).map((image, imgIndex) => (
+                <div key={imgIndex} className="w-40 h-40 sm:w-52 sm:h-52">
+                  <img
+                    className="w-full h-full object-cover rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105"
+                    src={image}
+                    alt={`Day ${dayIndex + 1} Image ${imgIndex + 1}`}
+                    onLoad={() => {
+                      // Trigger re-render or animation recalculation here if needed
+                    }}
+                    onClick={() =>
+                      openModal(Object.values(day.images), imgIndex)
+                    }
+                  />
                 </div>
               ))}
+            </div>
+          </motion.div>
+        )}
+      </div>
+    ))}
+  </div>
+))}
+
 
               {/* Popup Modal */}
 
