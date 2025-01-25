@@ -4,7 +4,7 @@ const TourBanner = () => {
   return (
     <div className="py-8 text-gray-800">
       <div
-        style={{ backgroundImage: `url(${Img1})` }}
+        style={{ backgroundImage: `url(${"https://imagizer.imageshack.com/img922/9293/vmY9bW.png"})` }}
         className="flex flex-col gap-6 lg:gap-8 items-start lg:mx-16 mx-4 lg:py-16 py-10 px-6 lg:pl-20 bg-fixed bg-cover bg-center shadow-lg backdrop-blur-md"
       >
         <h1 className="lg:text-5xl text-3xl font-extrabold text-gray-100 tracking-wide leading-tight">

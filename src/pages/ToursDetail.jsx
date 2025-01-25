@@ -219,7 +219,7 @@ const ToursDetail = () => {
       }
     } catch (error) {
       toast.error("Error sending tours query");
-    }finally {
+    } finally {
       setLoading(false); // Reset loading state after response
     }
   };
@@ -361,21 +361,23 @@ const ToursDetail = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-3 p-4 sm:p-6 w-full lg:w-4/5 mx-auto bg-gray-50 shadow-lg rounded-lg">
         {/* Main Image */}
-        <div className="relative md:col-span-2  rounded-lg overflow-hidden shadow-md">
+        <div className="relative md:col-span-2 rounded-lg overflow-hidden shadow-md"
+          style={{ height: "500px" }}>
           <img
             src={tour.firstImage}
             alt={tour.name}
-            className="w-full h-64 sm:h-full object-cover"
+            className="w-full h-full object-cover" // Ensures full height
           />
           <div className="absolute bottom-4 right-2 justify-center bg-black bg-opacity-25 rounded-lg transition-opacity duration-300 hover:bg-opacity-50"></div>
         </div>
 
         {/* Smaller Images */}
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-2 gap-2">
           {tour.images.map((image, index) => (
             <div
               key={index}
-              className="relative h-30 sm:h-80 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+              style={{ height: "240px" }}
+              className="relative  rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
             >
               <img
                 src={image}
@@ -387,6 +389,10 @@ const ToursDetail = () => {
           ))}
         </div>
       </div>
+
+
+
+
 
       {/* Connect to Expert Button */}
       <div
@@ -412,12 +418,26 @@ const ToursDetail = () => {
 
       <div className="space-y-4  lg:ml-24">
         {/* Title Section */}
-        <h1 className="text-lg sm:text-xl md:text-2xl md:ml-64 font-bold text-gray-800 mb-4 uppercase text-center md:text-left">
-          {tour.name}
+        <h1 className="text-lg sm:text-xl md:text-2xl md:ml-72 font-bold text-gray-800 mb-4 uppercase text-center md:text-left">
+          {(() => {
+            const words = tour.name.split(" ");
+            const firstLine = words.slice(0, 3).join(" ");
+            const secondLine = words.slice(3).join(" ");
+            return (
+              <>
+                <span>{firstLine}</span>
+                {secondLine && (
+                  <br />
+                )}
+                <span>{secondLine}</span>
+              </>
+            );
+          })()}
         </h1>
 
+
         {/* Badge and Itinerary Days */}
-        <div className="w-full md:w-3/5 grid grid-cols-2 sm:flex sm:justify-around items-center p-6 bg-white border border-gray-200 rounded-lg gap-4">
+        <div className="w-full md:w-3/5 grid grid-cols-3 sm:flex sm:justify-around items-center p-6 bg-white border border-gray-300 rounded-lg gap-4">
           {/* Duration */}
           <div className="text-center">
             <div className="text-blue-500 text-2xl mb-2">🕒</div>
@@ -436,7 +456,7 @@ const ToursDetail = () => {
           <div className="text-center">
             <div className="text-blue-500 text-2xl mb-2">👥</div>
             <p className="text-sm font-bold text-gray-700">Group Size</p>
-            <p className="text-sm text-gray-500">20 people</p>
+            <p className="text-sm text-gray-500">2 - 20 peoples</p>
           </div>
 
           {/* Languages */}
@@ -530,7 +550,7 @@ const ToursDetail = () => {
                         value={tourFormData.date}
                         onChange={handleChange}
                         placeholder="Travel Date*"
-                        className="w-1/2 border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
+                        className="w-full border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
                         min={new Date().toISOString().split("T")[0]} // Set today's date as the minimum
                       />
 
@@ -554,22 +574,22 @@ const ToursDetail = () => {
              transition-all duration-500 overflow-hidden
              border border-white/20 backdrop-blur-sm"
                     >
-                     {loading ? (
-          <div className="flex items-center justify-center">
-            <svg
-              className="animate-spin h-5 w-5 mr-3 text-white"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-            >
-              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z" />
-            </svg>
-            Sending...
-          </div>
-        ) : (
-          "Send Enquiry"
-        )}
+                      {loading ? (
+                        <div className="flex items-center justify-center">
+                          <svg
+                            className="animate-spin h-5 w-5 mr-3 text-white"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                          >
+                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z" />
+                          </svg>
+                          Sending...
+                        </div>
+                      ) : (
+                        "Send Enquiry"
+                      )}
                     </button>
                   </form>
                 </div>
@@ -930,7 +950,7 @@ const ToursDetail = () => {
                                   sum + review[category.toLowerCase()],
                                 0
                               ) /
-                                  reviews.length) *
+                                reviews.length) *
                                 20
                                 }%`,
                             }}
@@ -1013,8 +1033,8 @@ const ToursDetail = () => {
                                     )
                                   }
                                   className={`cursor-pointer text-2xl ${formData[category.toLowerCase()] >= value
-                                      ? "text-yellow-400"
-                                      : "text-gray-300"
+                                    ? "text-yellow-400"
+                                    : "text-gray-300"
                                     }`}
                                 >
                                   &#9733;
@@ -1087,8 +1107,8 @@ const ToursDetail = () => {
                     <button
                       onClick={() => handleLike(index)}
                       className={`flex items-center ${likedReviews.includes(index)
-                          ? "text-blue-600"
-                          : "text-gray-500"
+                        ? "text-blue-600"
+                        : "text-gray-500"
                         } hover:text-blue-600`}
                       disabled={likedReviews.includes(index)}
                     >
@@ -1108,7 +1128,7 @@ const ToursDetail = () => {
       {isSmallDevice && (
         <div className="relative  lg:flex">
           {/* Other content */}
-          <div className="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md lg:ml-10">
+          <div className="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md ">
             {/* Header Section */}
             <h2 className="text-lg font-semibold text-gray-800">
               {tour.location}
@@ -1126,11 +1146,15 @@ const ToursDetail = () => {
             </div>
 
             {/* Form */}
-            <form className="space-y-4 mt-6">
+            <form onSubmit={handleQuerySubmit} className="space-y-4 mt-6">
               <div>
                 <input
                   type="text"
                   placeholder="Full Name*"
+                  name="name"
+                  value={tourFormData.name}
+                  onChange={handleChange}
+                  required
                   className="w-full border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
                 />
               </div>
@@ -1138,6 +1162,10 @@ const ToursDetail = () => {
                 <input
                   type="email"
                   placeholder="Email*"
+                  name="email"
+                  value={tourFormData.email}
+                  onChange={handleChange}
+                  required
                   className="w-full border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
                 />
               </div>
@@ -1148,6 +1176,9 @@ const ToursDetail = () => {
                 <input
                   type="text"
                   pattern="\d{10}"
+                  name="phone"
+                  value={tourFormData.phone}
+                  onChange={handleChange}
                   placeholder="Your Phone*"
                   className="w-3/4 border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
                   title="Please enter a valid 10-digit phone number"
@@ -1155,76 +1186,66 @@ const ToursDetail = () => {
                 />
               </div>
 
-              {/* Form */}
-              <form className="space-y-4 mt-6">
-                <div>
-                  <input
-                    type="text"
-                    placeholder="Full Name*"
-                    className="w-full border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
-                  />
-                </div>
-                <div>
-                  <input
-                    type="email"
-                    placeholder="Email*"
-                    className="w-full border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
-                  />
-                </div>
-                <div className="flex space-x-2">
-                  <select className="w-1/4 border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500">
-                    <option value="+91">+91</option>
-                  </select>
-                  <input
-                    type="text"
-                    pattern="\d{10}"
-                    placeholder="Your Phone*"
-                    className="w-3/4 border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
-                    title="Please enter a valid 10-digit phone number"
-                    required
-                  />
-                </div>
+              <div className="flex space-x-2">
+                <input
+                  type="date"
+                  name="date" // Change to 'date' to match the state
+                  value={tourFormData.date}
+                  onChange={handleChange}
+                  placeholder="Travel Date*"
+                  className="w-full border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
+                  min={new Date().toISOString().split("T")[0]} // Set today's date as the minimum
+                />
 
-                <div className="flex space-x-2">
-                  <input
-                    type="date"
-                    placeholder="Travel Date*"
-                    className="w-1/2 border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
-                    min={new Date().toISOString().split("T")[0]} // Set today's date as the minimum
-                  />
-
-                </div>
-                <div>
-                  <textarea
-                    placeholder="Message..."
-                    className="w-full border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
-                    rows="3"
-                  ></textarea>
-                </div>
-                <button
-                  type="submit"
-                  className="w-full group bg-gradient-to-r from-teal-500 via-teal-400 to-emerald-400 
-       text-white px-4 py-2 rounded-2xl text-lg font-medium
-       shadow-[0_10px_20px_rgba(0,0,0,0.1)] 
-       hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)]
-       transition-all duration-500 overflow-hidden
-       border border-white/20 backdrop-blur-sm"
-                >
-                  Send Enquiry
-                </button>
-              </form>
+              </div>
+              <div>
+                <textarea
+                  placeholder="Message..."
+                  name="message"
+                  value={tourFormData.message}
+                  onChange={handleChange}
+                  className="w-full border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
+                  rows="3"
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                className="w-full group bg-gradient-to-r from-teal-500 via-teal-400 to-emerald-400 
+     text-white px-4 py-2 rounded-2xl text-lg font-medium
+     shadow-[0_10px_20px_rgba(0,0,0,0.1)] 
+     hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)]
+     transition-all duration-500 overflow-hidden
+     border border-white/20 backdrop-blur-sm"
+              >
+                {loading ? (
+                  <div className="flex items-center justify-center">
+                    <svg
+                      className="animate-spin h-5 w-5 mr-3 text-white"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z" />
+                    </svg>
+                    Sending...
+                  </div>
+                ) : (
+                  "Send Enquiry"
+                )}
+              </button>
             </form>
+          </div>
         </div>
-      </div>
-  )
-}
+      )
+      }
 
-{/* Add ContactForm Modal */ }
-<ContactForm
-  isOpen={showContactForm}
-  onClose={() => setShowContactForm(false)}
-  isTour={true}
-/>
+      {/* Add ContactForm Modal */}
+      <ContactForm
+        isOpen={showContactForm}
+        onClose={() => setShowContactForm(false)}
+        isTour={true}
+      />
     </div >
   );
 };

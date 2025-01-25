@@ -6,7 +6,7 @@
       "name": "Spiti Valley",
       "location": "Spiti Valley, Uttarakhand",
       "duration": "8 Days, 7 Nights",
-      "firstImage":"https://imagizer.imageshack.com/img924/9837/GEO8Zc.jpg",
+      "firstImage": "https://imagizer.imageshack.com/img924/9837/GEO8Zc.jpg",
       "images": [
         "https://images.pexels.com/photos/30318498/pexels-photo-30318498.jpeg",
         "https://images.pexels.com/photos/30318497/pexels-photo-30318497.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
@@ -171,13 +171,13 @@
         "In case of adverse weather conditions, activities may be rescheduled."
       ]
     },
-    { 
+    {
       "id": 2,
       "imageUrl": "https://imagizer.imageshack.com/img923/6708/6f4MPd.jpg",
       "name": "Mussoorie Nature Escape",
-      "location": "Mussoorie, Uttarakhand",
+      "location": "Mussoorie Weekend Getaway",
       "duration": "4 Days, 3 Nights",
-      "firstImage":"https://imagizer.imageshack.com/img922/2825/A1zB6U.jpg",
+      "firstImage": "https://imagizer.imageshack.com/img922/2825/A1zB6U.jpg",
       "price": "12499",
       "images": [
         "https://imagizer.imageshack.com/img923/6417/3ARz71.jpg",
@@ -304,7 +304,7 @@
       "location": "Kedarnath, Uttarakhand",
       "duration": "4 Days, 3 Nights",
       "price": "10499",
-      "firstImage":"https://imagizer.imageshack.com/img923/9567/8fobIq.jpg",
+      "firstImage": "https://imagizer.imageshack.com/img923/9567/8fobIq.jpg",
       "images": [
         "https://images.pexels.com/photos/30318498/pexels-photo-30318498.jpeg",
         "https://res.cloudinary.com/dwbbpznwe/image/upload/v1737716098/pexels-manik-mandal-7483243-7542627_1_w2wotk.jpg",
@@ -378,7 +378,6 @@
                 "Dinner will be served at hotel."
               ],
               "images": {
-               
                 "img2": "https://imagizer.imageshack.com/img922/8425/suAWOA.jpg",
                 "img3": "https://imagizer.imageshack.com/img922/7188/3Szdua.jpg",
                 "img4": "https://imagizer.imageshack.com/img924/8185/gcB3Pc.jpg"
@@ -439,10 +438,10 @@
     {
       "id": 4,
       "imageUrl": "https://www.thesearchingsouls.com/wp-content/uploads/2022/03/kuari-pass-trek-2.jpg",
-      "name": "Kuari Pass Trek (Lord Curzon Trail)",
+      "name": "Kuari Pass Trek",
       "location": "Joshimath, Uttarakhand",
       "duration": "6 Days, 5 Nights",
-      "firstImage":"https://img.freepik.com/free-photo/snowy-rugged-white-mountains-with-hiking-travelers_181624-6293.jpg?t=st=1736412284~exp=1736415884~hmac=605a49679fa5728d8a5cddd7ea2690dd6c0dbba104ff9e99d62a7a8a231c597e&w=900",
+      "firstImage": "https://img.freepik.com/free-photo/snowy-rugged-white-mountains-with-hiking-travelers_181624-6293.jpg?t=st=1736412284~exp=1736415884~hmac=605a49679fa5728d8a5cddd7ea2690dd6c0dbba104ff9e99d62a7a8a231c597e&w=900",
       "price": "9499",
       "images": [
         "https://images.pexels.com/photos/30318498/pexels-photo-30318498.jpeg",
@@ -634,11 +633,11 @@
     {
       "id": 5,
       "imageUrl": "https://rishikeshdaytour.com/blog/wp-content/uploads/2021/12/Kanatal-An-Unexplored-Hamlet-in-Uttarakhand-.jpg",
-      "name": "Rishikesh - Dhanolti",
+      "name": "Rishikesh Dhanolti Weekend Getaway",
       "location": "Rishikesh and Dhanolti, Uttarakhand",
       "duration": "2 Nights, 3 Days",
       "price": "3500",
-      "firstImage":"https://res.cloudinary.com/dwbbpznwe/image/upload/v1737714134/IMG-20241208-WA0074_cbl790.jpg",
+      "firstImage": "https://res.cloudinary.com/dwbbpznwe/image/upload/v1737714134/IMG-20241208-WA0074_cbl790.jpg",
       "images": [
         "https://res.cloudinary.com/dwbbpznwe/image/upload/v1737713690/surkanda-temple-3_turr4l.jpg",
         "https://res.cloudinary.com/dwbbpznwe/image/upload/v1737714026/20221227_154829-1024x1024_o5qulj.jpg",
@@ -718,8 +717,8 @@
               "images": {
                 "img1": "https://res.cloudinary.com/dwbbpznwe/image/upload/v1737716097/pexels-julia-volk-5205763_kzgaqd.jpg",
                 "img2": "https://res.cloudinary.com/dwbbpznwe/image/upload/v1737716098/pexels-hrishavjha-20754960_ozi1st.jpg",
-                "img3":"https://res.cloudinary.com/dwbbpznwe/image/upload/v1737716098/pexels-manik-mandal-7483243-7542627_1_w2wotk.jpg",
-                "img4":"https://res.cloudinary.com/dwbbpznwe/image/upload/v1737716096/pexels-maa-shakti-yog-36422106-7137807_iucvkw.jpg"
+                "img3": "https://res.cloudinary.com/dwbbpznwe/image/upload/v1737716098/pexels-manik-mandal-7483243-7542627_1_w2wotk.jpg",
+                "img4": "https://res.cloudinary.com/dwbbpznwe/image/upload/v1737716096/pexels-maa-shakti-yog-36422106-7137807_iucvkw.jpg"
               }
             }
           ]
@@ -758,10 +757,10 @@
     {
       "id": 6,
       "imageUrl": "https://blog.moustachescapes.com/wp-content/uploads/2024/01/629f3b6b4d577_1654602603.jpg",
-      "name": "Four Treks in One Trip: Valley of Flowers",
+      "name": "Valley of Flowers",
       "location": "Chamoli, Uttarakhand",
       "duration": "6 Days, 5 Nights",
-      "firstImage":"https://res.cloudinary.com/dwbbpznwe/image/upload/v1737721338/IMG_20240801_084029_tksw77.jpg",
+      "firstImage": "https://res.cloudinary.com/dwbbpznwe/image/upload/v1737721338/IMG_20240801_084029_tksw77.jpg",
       "price": "7500",
       "images": [
         "https://res.cloudinary.com/dwbbpznwe/image/upload/v1737715579/pexels-manik-mandal-7483243-7542627_magx0j.jpg",
@@ -923,7 +922,7 @@
       "name": "Leh-Ladakh Himalayan Adventure",
       "location": "Ladakh, Jammu and Kashmir",
       "duration": "5 Days, 4 Nights",
-      "firstImage":"https://images.pexels.com/photos/5202070/pexels-photo-5202070.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "firstImage": "https://images.pexels.com/photos/5202070/pexels-photo-5202070.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "price": "29999",
       "images": [
         "https://images.pexels.com/photos/30318498/pexels-photo-30318498.jpeg",
@@ -1092,7 +1091,7 @@
       "imageUrl": "https://i0.wp.com/www.makemyride.in/wp-content/uploads/2023/07/divya-agrawal-VV0fF4EoZaI-unsplash-scaled.jpg?resize=1080%2C675&ssl=1",
       "name": "Kashmir Valley Exploration",
       "location": "Jammu and Kashmir",
-      "firstImage":"https://images.pexels.com/photos/18276027/pexels-photo-18276027/free-photo-of-mountains-in-snow-under-storm-clouds.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "firstImage": "https://images.pexels.com/photos/18276027/pexels-photo-18276027/free-photo-of-mountains-in-snow-under-storm-clouds.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "duration": "6 Days, 5 Nights",
       "price": "34999",
       "images": [
@@ -1273,13 +1272,18 @@
       "name": "Mechuka | The Magical Valley",
       "location": "Mechuka, Arunachal Pradesh",
       "duration": "6 Days, 5 Nights",
-      "firstImage":"https://images.pexels.com/photos/19946580/pexels-photo-19946580/free-photo-of-mountain-valley-covered-with-smoke.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "firstImage": "https://tourscart.in/wp-content/uploads/2024/01/1705169473092-01-600x540.jpeg",
       "price": "16799",
       "images": [
-        "https://images.pexels.com/photos/30318498/pexels-photo-30318498.jpeg",
-        "https://images.pexels.com/photos/30318497/pexels-photo-30318497.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-        "https://images.pexels.com/photos/30318488/pexels-photo-30318488.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-        "https://images.pexels.com/photos/30318489/pexels-photo-30318489.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+        "https://tourscart.in/wp-content/uploads/2024/01/1705170317120-01-600x540.jpeg",
+        "https://tourscart.in/wp-content/uploads/2024/01/1705169709829-01-600x540.jpeg",
+        "https://tourscart.in/wp-content/uploads/2024/01/1705170811555-01-600x540.jpeg",
+        "https://tourscart.in/wp-content/uploads/2024/01/1705169920444-01-600x540.jpeg"
+      ],
+      "highlights": [
+        "This Mechuka 6DAYS -5NIGHTS  Tour – a road trip to Mechuka is, put simply, an experience of a lifetime. From gorgeous mountains to breathtaking valleys, from scattered tiny little tribal hamlets to the beautiful town of Mechuka, this one-week Mechuka trip has everything that a mountain lover would dream of, and then, some more.",
+        "Mechuka (also known as Mechuka) is a beautiful border village, located in the higher reaches of the newly carved Shi-Yomi district of Arunachal Pradesh. Cozily tucked away in the upper mountain folds of the Siyom Valley, Mechuka in Arunachal is set amidst a dramatic amphitheater of alpine grasslands, wide river valleys and beautiful hanging bridges lined with Tibetan prayer flags. The frontier town lies just a few kilometers away from the Indo-Tibet Border, enthralling its visitors with its geographical isolation and its unspoiled charm",
+        "Despite the improvement in roads, the area still remains delightfully secluded from the rest of the world, thus offering a perfect peaceful escape for all. Machaka’s allure lies not only in its physical environs and natural beauty but also in the captivating stories, legends and folktales woven into its fabric by its diverse tribal culture and historical legacy"
       ],
       "checkInDate": "2024-12-01",
       "checkOutDate": "2024-12-06",
@@ -1293,13 +1297,14 @@
             {
               "day": "Day 1 - MURKONGSELEK / DIBRUGARH – AALO",
               "description": [
-                "MURKONGSELEK / DIBRUGARH – AALO.",
-                "Embark on your Journey from Kamakhya railway station, reach the last station Murkongselek / Dibrugarh, meet the team and ride towards Aalo.",
+                "Embark on your Journey from Kamakhya railway station, reach the last station Murkongselek / Dibrugarh, meet the team and ride towards Aalo , also known as Along, is a charming town located in the West Siang district of Arunachal Pradesh. It is situated on the banks of the Siyom River, is famous for its orange orchards. Once you reach Along, you can check in to a hotel or homestay and spend the night there.",
+                "Aalo. Overnight Stay in Aalo.",
                 "Check in to hotel and overnight stay in Aalo."
               ],
               "images": {
-                "img1": "https://images.pexels.com/photos/28748192/pexels-photo-28748192/free-photo-of-serene-alpine-forest-in-arunachal-pradesh-india.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                "img2": "https://images.pexels.com/photos/19946580/pexels-photo-19946580/free-photo-of-mountain-valley-covered-with-smoke.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                "img1": "https://tourscart.in/wp-content/uploads/2024/01/1705170271526-01-600x540.jpeg",
+                "img2": "https://tourscart.in/wp-content/uploads/2024/01/1705169234576-011-600x540.jpeg",
+                "img3": "https://tourscart.in/wp-content/uploads/2024/01/1705170028210-01-600x540.jpeg"
               }
             },
             {
@@ -1311,8 +1316,8 @@
                 "Overnight stay in Mechuka."
               ],
               "images": {
-                "img1": "https://images.pexels.com/photos/26829034/pexels-photo-26829034/free-photo-of-cloud-over-mountains-peaks.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                "img2": "https://images.pexels.com/photos/19248350/pexels-photo-19248350/free-photo-of-scenic-view-of-mountains-and-valleys.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                "img1": "https://tourscart.in/wp-content/uploads/2024/01/1705170028210-01-600x540.jpeg",
+                "img2": "https://tourscart.in/wp-content/uploads/2024/01/1705169624273-01-600x540.jpeg"
               }
             }
           ]
@@ -1331,8 +1336,8 @@
                 "Trek back to homestay by dawn. Overnight stay."
               ],
               "images": {
-                "img1": "https://images.pexels.com/photos/5330710/pexels-photo-5330710.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                "img2": "https://images.pexels.com/photos/16665662/pexels-photo-16665662/free-photo-of-storm-clouds-over-mountains-and-forest.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                "img1": "https://tourscart.in/wp-content/uploads/2024/01/1705170371043-01-600x540.jpeg",
+                "img2": "https://tourscart.in/wp-content/uploads/2024/01/1705170343523-01-600x540.jpeg"
               }
             },
             {
@@ -1341,8 +1346,8 @@
                 "MECHUKA. Visit Siang River bank, Dorjeeling Village, Salman Khan view point, Gurudwara, Hanuman Point, and Old Gompa (Samten Yongcha Monastery). Evening at leisure."
               ],
               "images": {
-                "img1": "https://images.pexels.com/photos/2058754/pexels-photo-2058754.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                "img2": "https://images.pexels.com/photos/20476397/pexels-photo-20476397/free-photo-of-tourist-sitting-on-glow-lake-next-to-the-observation-tower.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                "img1": "https://tourscart.in/wp-content/uploads/2024/01/1705169875499-01-scaled-e1708098819129-600x540.jpeg",
+                "img2": "https://tourscart.in/wp-content/uploads/2024/01/1705169798847-01-600x540.jpeg"
               }
             }
           ]
@@ -1371,8 +1376,9 @@
                 "After breakfast, depart for Dibrugarh airport/railway station."
               ],
               "images": {
-                "img1": "https://images.pexels.com/photos/29179797/pexels-photo-29179797/free-photo-of-adventurer-in-snowy-arunachal-pradesh-mountains.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                "img2": "https://images.pexels.com/photos/16665662/pexels-photo-16665662/free-photo-of-storm-clouds-over-mountains-and-forest.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                "img1": "https://tourscart.in/wp-content/uploads/2024/01/1705169405780-01-600x540.jpeg",
+                "img2": "https://tourscart.in/wp-content/uploads/2024/01/1705170882651-01-600x540.jpeg",
+                "img3": "https://tourscart.in/wp-content/uploads/2024/01/1705170084136-01-600x540.jpeg"
               }
             }
           ]
@@ -1419,13 +1425,22 @@
       "name": "Hornbill Festival & Dzukou Valley Trek",
       "location": "Kohima, Nagaland, INDIA",
       "duration": "4 Days, 3 Nights",
-      "firstImage":"https://images.pexels.com/photos/2439742/pexels-photo-2439742.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "firstImage": "https://tourscart.in/wp-content/uploads/2023/02/IMG_20191206_163332-01-600x540.jpg",
       "price": "6199",
+      "highlights": [
+        "Traditional Dance and Music: Naga tribes perform traditional dances and music in colorful attire.",
+        "Naga Morungs: Explore traditional tribal huts to learn about Naga customs and traditions.",
+        "Trekking: Dzukou Valley trek, 20 km from Kohima, is a popular short trek.",
+        "Arts and Crafts: Displays include wood carvings, textiles, jewelry, and handmade items.",
+        "Food Stalls: Enjoy Naga cuisine like bamboo shoots, smoked meats, and chutneys.",
+        "Indigenous Games: Traditional Naga games and sports are organized during the festival.",
+        "Competitions: Events like traditional archery and wrestling add excitement to the festival."
+      ],
       "images": [
-        "https://images.pexels.com/photos/30318498/pexels-photo-30318498.jpeg",
-        "https://images.pexels.com/photos/30318497/pexels-photo-30318497.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-        "https://images.pexels.com/photos/30318488/pexels-photo-30318488.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-        "https://images.pexels.com/photos/30318489/pexels-photo-30318489.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+        "https://tourscart.in/wp-content/uploads/2023/01/WhatsApp-Image-2024-08-08-at-12.54.45-PM-600x540.jpeg",
+        "https://tourscart.in/wp-content/uploads/2023/01/WhatsApp-Image-2024-08-01-at-10.52.09-PM-600x540.jpeg",
+        "https://tourscart.in/wp-content/uploads/2023/01/WhatsApp-Image-2024-07-31-at-8.36.25-PM-600x540.jpeg",
+        "https://tourscart.in/wp-content/uploads/2023/02/IMG20191210165357-scaled-e1699009907293-600x540.jpg"
       ],
       "checkInDate": "2024-12-01",
       "checkOutDate": "2024-12-04",
@@ -1437,21 +1452,28 @@
           ],
           "days": [
             {
-              "day": "Day 1",
+              "day": "Day 1 : Arrival Dimapur – Kisama Heritage Village .",
               "description": [
-                "Arrival at Dimapur Railway station, transfer to Kisama Heritage Village. Check in at campsite, explore the Hornbill Festival in afternoon/evening, attend night concert. Overnight stay at Kisama Heritage Village."
+                "On arrival at Dimapur station meet our driver & proceed onward journey to Kisama Heritage Village ,( with pickup & drop option from Kohima/Dimapur).",
+                "On arrival check in Campsite and relax, later spend the afternoon/Evening exploring the festival, attend concert at night .",
+                "Overnight stay at Kisama Heritage Village"
               ],
               "images": {
-                "img1": "https://images.pexels.com/photos/2439742/pexels-photo-2439742.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                "img1": "https://tourscart.in/wp-content/uploads/2023/01/IMG_20231028_095026-600x540.jpg",
+                "img2": "https://tourscart.in/wp-content/uploads/2023/01/IMG_20231028_100610-scaled-e1698847543947-600x540.jpg",
+                "img3": "https://tourscart.in/wp-content/uploads/2023/01/WhatsApp-Image-2024-08-18-at-12.27.54-PM-600x540.jpeg"
               }
             },
             {
-              "day": "Day 2",
+              "day": "Day 2: Jakhama to Dzukou Valley Base Camp",
               "description": [
-                "Jakhama to Dzukou Valley Base Camp. Trek through the stunning landscapes and set up camp at the base."
+                "Early Morning have an early breakfast at your accommodation. Later drive from Jakhama to Viswema Village, the starting point for the Dzukou Valley trek.",
+                "Begin your trek from Viswema Village to the Dzukou Valley base camp. Reach the base camp in the Late afternoon/ early evening settle into your accommodations.Later you can take a short walk to explore the surroundings near the base camp.",
+                "Overnight stay at Dzukou Valley Base Camp"
               ],
               "images": {
-                "img1": "https://images.pexels.com/photos/20805163/pexels-photo-20805163/free-photo-of-butterfly-on-flowers.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                "img2": "https://tourscart.in/wp-content/uploads/2023/10/IMG_20231028_093829-1-600x540.jpg",
+                "img3": "https://tourscart.in/wp-content/uploads/2023/01/WhatsApp-Image-2024-07-31-at-8.36.25-PM-600x540.jpeg"
               }
             }
           ]
@@ -1463,21 +1485,15 @@
           ],
           "days": [
             {
-              "day": "Day 3",
+              "day": "Day 3: Dzukou Valley - to Dimapur - Departure",
               "description": [
-                "Dzukou Valley exploration and return to Kisama Heritage Village. Experience the 'Valley of Flowers of the Northeast' with its vibrant wildflowers and serene hiking trails."
+                "Wake up early to catch the sunrise over Dzukou Valley. Explore Dzukou valley spend the morning exploring the picturesque valley, visit viewpoints, take photos, and enjoy the serene environment later have breakfast at the base camp and begin your trek back via Jakhama/Viswema trekking route .",
+                "Once you reach homestay Jakhama get freshen up and start your journey back to Dimapur."
               ],
               "images": {
-                "img1": "https://images.pexels.com/photos/8061236/pexels-photo-8061236.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-              }
-            },
-            {
-              "day": "Day 4",
-              "description": [
-                "Kisama Heritage Village to Dimapur/Kohima for departure. Final morning at the festival before heading back."
-              ],
-              "images": {
-                "img1": "https://images.pexels.com/photos/14025971/pexels-photo-14025971.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                "img1": "https://tourscart.in/wp-content/uploads/2023/01/WhatsApp-Image-2024-08-08-at-12.54.45-PM-600x540.jpeg",
+                "img2": "https://tourscart.in/wp-content/uploads/2023/01/WhatsApp-Image-2024-08-01-at-10.52.09-PM-600x540.jpeg",
+                "img3": "https://tourscart.in/wp-content/uploads/2023/01/WhatsApp-Image-2024-07-31-at-8.36.25-PM-600x540.jpeg"
               }
             }
           ]
@@ -1526,13 +1542,22 @@
       "name": "EAST SIKKIM - Short Escape",
       "location": "SIKKIM, INDIA",
       "duration": "3 Days, 2 Nights",
-      "firstImage":"https://images.pexels.com/photos/2324780/pexels-photo-2324780.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "firstImage": "https://tourscart.in/wp-content/uploads/2024/07/sahil-pandita-LhI4cZcIwWc-unsplash-600x540.jpg",
       "price": "7999",
       "images": [
-        "https://images.pexels.com/photos/30318498/pexels-photo-30318498.jpeg",
-        "https://images.pexels.com/photos/30318497/pexels-photo-30318497.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-        "https://images.pexels.com/photos/30318488/pexels-photo-30318488.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-        "https://images.pexels.com/photos/30318489/pexels-photo-30318489.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+        "https://tourscart.in/wp-content/uploads/2024/07/unma-desai-uwMlZPLgRk8-unsplash-1-600x540.jpg",
+        "https://tourscart.in/wp-content/uploads/2024/07/bhaskar-palit-I8DKi3ely24-unsplash-1-600x540.jpg",
+        "https://tourscart.in/wp-content/uploads/2024/07/akash-pratap-singh-pO9ygTkhS5o-unsplash-2-600x540.jpg",
+        "https://tourscart.in/wp-content/uploads/2024/07/sahil-pandita-LhI4cZcIwWc-unsplash-600x540.jpg"
+      ],
+      "highlights": [
+        "There are numerous sightseeing spots and attractions in Sikkim that cater to a wide range of interests. Here’s a list of some of the top sightseeing places in Sikkim:",
+        "Gangtok: The capital city of Sikkim, Gangtok is a vibrant town with a mix of modern and traditional elements. Key attractions include the Rumtek Monastery, Enchey Monastery, and Namgyal Institute of Tibetology.",
+        "Nathu La Pass: Located on the India-China border, Nathu La is a high mountain pass that offers breathtaking views of the Himalayas. It’s accessible from Gangtok and requires a permit.",
+        "Tsomgo Lake (Changu Lake): This high-altitude glacial lake is surrounded by rugged terrain and is a popular destination for its pristine beauty.",
+        "Rumtek Monastery: Also known as the Dharma Chakra Centre, it is one of the most important monasteries in Sikkim and is known for its architectural beauty..",
+        "Yuksom: The historical town of Yuksom is where the first Chogyal (monarch) of Sikkim was consecrated. It’s a base for treks to Dzongri and Goecha La.",
+        "Teesta River: The Teesta River offers opportunities for white water rafting and is surrounded by lush landscapes."
       ],
       "checkInDate": "2024-12-01",
       "checkOutDate": "2024-12-03",
@@ -1544,25 +1569,25 @@
           ],
           "days": [
             {
-              "day": "Day 1",
+              "day": "Day 1 - Arrival - Gangtok",
               "description": [
                 "Arrival at NJP or Bagdogra Airport. Transfer to Gangtok, the capital of Sikkim (approximately 4-5 hours). Check into hotel and spend the evening exploring MG Marg, the popular shopping and dining area in Gangtok."
               ],
               "images": {
-                "img1": "https://images.pexels.com/photos/17845104/pexels-photo-17845104/free-photo-of-kanchanjunga-mountain-sunrise.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                "img2": "https://images.pexels.com/photos/3275010/pexels-photo-3275010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                "img3": "https://images.pexels.com/photos/2682181/pexels-photo-2682181.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                "img1": "https://tourscart.in/wp-content/uploads/2024/07/simanta-saha-WSsCiFo76XI-unsplash-600x540.jpg",
+                "img2": "https://tourscart.in/wp-content/uploads/2024/07/swati-kedia-6y0aG3HqzAQ-unsplash-600x540.jpg",
+                "img3": "https://tourscart.in/wp-content/uploads/2024/07/unma-desai-uwMlZPLgRk8-unsplash-1-600x540.jpg"
               }
             },
             {
-              "day": "Day 2",
+              "day": "Day 2 - Gangtok Local",
               "description": [
                 "Gangtok Local Sightseeing. Visit Rumtek Monastery, Enchey Monastery, Namgyal Institute of Tibetology. Optional visit to Tsomgo Lake (Changu Lake) and other local attractions."
               ],
               "images": {
-                "img1": "https://images.pexels.com/photos/2610219/pexels-photo-2610219.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                "img2": "https://images.pexels.com/photos/2324780/pexels-photo-2324780.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                "img3": "https://images.pexels.com/photos/679492/pexels-photo-679492.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                "img1": "https://tourscart.in/wp-content/uploads/2024/07/bhaskar-palit-I8DKi3ely24-unsplash-1-600x540.jpg",
+                "img2": "https://tourscart.in/wp-content/uploads/2024/07/akash-pratap-singh-pO9ygTkhS5o-unsplash-2-600x540.jpg",
+                "img3": "https://tourscart.in/wp-content/uploads/2024/07/sahil-pandita-LhI4cZcIwWc-unsplash-600x540.jpg"
               }
             }
           ]
@@ -1574,14 +1599,13 @@
           ],
           "days": [
             {
-              "day": "Day 3",
+              "day": "Day 3 - Departure - NJP/Bagdogra",
               "description": [
                 "After breakfast, check out from hotel and transfer to NJP/Bagdogra for departure."
               ],
               "images": {
-                "img1": "https://images.pexels.com/photos/250400/pexels-photo-250400.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                "img2": "https://images.pexels.com/photos/953497/pexels-photo-953497.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                "img3": "https://images.pexels.com/photos/8051170/pexels-photo-8051170.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                "img1": "https://tourscart.in/wp-content/uploads/2024/07/simanta-saha-WSsCiFo76XI-unsplash-600x540.jpg",
+                "img2": "https://tourscart.in/wp-content/uploads/2024/07/swati-kedia-6y0aG3HqzAQ-unsplash-600x540.jpg"
               }
             }
           ]
@@ -1626,16 +1650,24 @@
     {
       "id": 12,
       "imageUrl": "https://res.cloudinary.com/roundglass/image/upload/f_auto/ar_4:3,c_fill,w_auto/g_auto,q_auto/v1649765953/rg/collective/media/meghalaya-nongriat-double-decker-living-root-bridge-greenery-people-ashwin-ezhumalai_mmdvms.jpg",
-      "name": "Meghalaya – Of Root Bridges, Rivers and Waterfalls",
+      "name": "Meghalaya–Of Root Bridges, Rivers and Waterfalls",
       "location": "MEGHALAYA, INDIA",
       "duration": "6 Days, 5 Nights",
       "price": "14499",
-      "firstImage":"https://images.pexels.com/photos/27786369/pexels-photo-27786369/free-photo-of-lyngksiar-waterfall.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "highlights": [
+        "Shillong: The capital of Meghalaya, Shillong is often called the “Scotland of the East” due to its picturesque landscapes. Popular attractions in Shillong include Ward’s Lake, Shillong Peak, Don Bosco Museum, and the bustling Police Bazaar.",
+        "Cherrapunji (Sohra): Famous for its record-breaking rainfall and stunning landscapes, Cherrapunji is known for attractions like the Nohkalikai Falls (one of the tallest waterfalls in India), Mawsmai Caves, and the living root bridges in the nearby village of Nongriat..",
+        "Mawsynram: Often competing with Cherrapunji for the title of the wettest place on Earth, Mawsynram is another must-visit destination in Meghalaya.",
+        "Dawki: Located on the border of India and Bangladesh, Dawki is famous for its crystal-clear Umngot River and is a great place for boating and picnics. The suspension bridge at Dawki is also a popular spot for tourists.",
+        "Mawlynnong, known as “Asia’s Cleanest Village”"
+        
+      ],
+      "firstImage": "https://tourscart.in/wp-content/uploads/2024/07/aenic-visuals-mldoyM-TppU-unsplash-1-600x540.jpg",
       "images": [
-        "https://images.pexels.com/photos/30318498/pexels-photo-30318498.jpeg",
-        "https://images.pexels.com/photos/30318497/pexels-photo-30318497.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-        "https://images.pexels.com/photos/30318488/pexels-photo-30318488.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-        "https://images.pexels.com/photos/30318489/pexels-photo-30318489.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+        "https://tourscart.in/wp-content/uploads/2023/10/Mawlynnong-Living-Root-Bridge-1-600x540.jpg.webp",
+        "https://tourscart.in/wp-content/uploads/2023/02/20211007_083619-600x540.jpg.webp",
+        "https://tourscart.in/wp-content/uploads/2024/07/karanjit-borah-2AX3BGNcdhs-unsplash-600x540.jpg",
+        "https://tourscart.in/wp-content/uploads/2023/10/Shillong-City-1-1536x1024-1-600x540.jpg.webp"
       ],
       "checkInDate": "2024-12-01",
       "checkOutDate": "2024-12-06",
@@ -1647,23 +1679,26 @@
           ],
           "days": [
             {
-              "day": "Day 1",
+              "day": "Day 1 -Arrival - Guwahati- Shillong",
               "description": [
-                "Arrival at Guwahati Airport/Railway Station. Drive to Shillong, stop at Umiam Lake for boating and scenic views. Check in to hotel in Shillong and relax."
+                "Tour begins with your arrival at the Airport / Railway Station.Drive to Shillong, the Capital City of Meghalaya and en route, stop at the famous Umiam Lake.",
+                "Enjoy the beautiful and picturesque view of the lake and relish your eyes and you can go for boating at lake, later on move to shillong",
+                "On arrival at Shillong, check in to the hotel and ease up."
               ],
               "images": {
-                "img1": "https://images.pexels.com/photos/12233686/pexels-photo-12233686.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                "img2": "https://images.pexels.com/photos/1403036/pexels-photo-1403036.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                "img1": "https://tourscart.in/wp-content/uploads/2023/02/20211007_083619-600x540.jpg.webp",
+                "img2": "https://tourscart.in/wp-content/uploads/2023/10/Shillong-City-1-1536x1024-1-600x540.jpg.webp"
               }
             },
             {
-              "day": "Day 2",
+              "day": "Day 2 - Shillong Local Sightseeing",
               "description": [
-                "Shillong Local Sightseeing. Visit Elephant falls (three-step waterfall), Wards Lake, Cathedral, local market. Evening visit to Shillong peak for sunset views of the city."
+                "After breakfast we will start sightseeing at Shillong starting by visiting the Elephant falls which is a three-step waterfall , Wards Lake , Cathedral , local market and many ",
+                "more later Visit Shillong peak to view the beautiful city and an amazing sunset.Overnight stay in Shillong"
               ],
               "images": {
-                "img1": "https://images.pexels.com/photos/27786369/pexels-photo-27786369/free-photo-of-lyngksiar-waterfall.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                "img2": "https://images.pexels.com/photos/6064824/pexels-photo-6064824.jpeg?auto=compress&cs=tinysrgb&w=400"
+                "img1": "https://tourscart.in/wp-content/uploads/2023/10/Double_decker_living_root_bridge_01-600x540.jpg.webp",
+                "img2": "https://tourscart.in/wp-content/uploads/2023/12/varun-nambiar-SNmjL8Pycgs-unsplash-1-600x540.jpg"
               }
             }
           ]
@@ -1675,23 +1710,25 @@
           ],
           "days": [
             {
-              "day": "Day 3",
+              "day": "Day 3 - Shillong - Cherapunjee",
               "description": [
                 "Shillong to Cherrapunjee. Visit Latium Canyon, Nohkalikai Falls, Seven Sisters Falls, Mawsmai Falls. Explore Mawsmai Cave with its stalactites and stalagmites. Visit Dainthlen Falls and Wei Sawdong Falls. Overnight stay."
               ],
               "images": {
-                "img1": "https://images.pexels.com/photos/29106676/pexels-photo-29106676/free-photo-of-tranquil-farmer-in-foggy-meadow-meghalaya.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                "img2": "https://images.pexels.com/photos/27820314/pexels-photo-27820314/free-photo-of-the-beauty-of-meghalaya.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                "img1": "https://tourscart.in/wp-content/uploads/2023/02/sukumar-bardoloi-LtBrk8dFutc-unsplash-Copy-600x540.jpg",
+                "img2": "https://tourscart.in/wp-content/uploads/2023/01/mondakranta-saikia-Xqw7XgnvU3w-unsplash-600x540.jpg"
               }
             },
             {
-              "day": "Day 4",
+              "day": "Day 4 -  Nongriat -Double decker root bridge trek - Dawki/Mawlynnong",
               "description": [
-                "Trek to Nongriat Double Decker Root Bridge. Early breakfast, drive to Tyrna village for trek start. 3000+ steps through sacred groves and suspended bridges. Visit rainbow falls. Travel to Dawki-Mawlynnong for overnight stay."
+                "After early breakfast, drive to Tyrna village, which is starting point of the trek.It involves over 3000+ steps of trekking through sacred groves of trees and narrow suspended bridges over rivers.",
+                "The path passes by a number of houses with well-maintained bush fences.You will experience occasional ascents and descents on the forest trail till you reach the gates of Nongriat. Reach the double-decker living root bridges and enjoy a dip in the pool under the supervision of expert. After spending some time at the bridge, move further ahead to the rainbow falls.",
+                "Later Travel to Dawki- Mawlynnong for overnight stay"
               ],
               "images": {
-                "img1": "https://images.pexels.com/photos/29062599/pexels-photo-29062599/free-photo-of-serene-waterfall-in-meghalaya-s-lush-wilderness.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                "img2": "https://images.pexels.com/photos/12233685/pexels-photo-12233685.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                "img1": "https://tourscart.in/wp-content/uploads/2024/07/WhatsApp-Image-2024-07-04-at-10.26.39-PM-600x540.jpeg",
+                "img2": "https://tourscart.in/wp-content/uploads/2024/07/karanjit-borah-2AX3BGNcdhs-unsplash-600x540.jpg"
               }
             }
           ]
@@ -1703,9 +1740,11 @@
           ],
           "days": [
             {
-              "day": "Day 5",
+              "day": "Day 5 - Dawki - Shnongpedeng",
               "description": [
-                "Dawki to Shnongpedeng. Visit Umngot River. Activities include boating, river rafting, kayaking, cliff jumping. Overnight camping at Shnongpedeng or homestay at Dawki."
+                "In the morning, after breakfast travel to Dawki & Shnongpdeng , located in the magnificent Jaintia Hill, Umngot River passes by the village which makes it a attractive place to visit .Relax Overnight stay .",
+                "Activities:- Boating, River Rafting, Kayaking, Cliff Jumping Etc.",
+                "Overnight stay Shnongpdeng Camping / Homestay at Dawki"
               ],
               "images": {
                 "img1": "https://images.pexels.com/photos/19469036/pexels-photo-19469036/free-photo-of-krang-shuri-waterfalls-krang-suri-rd-umlarem-meghalaya-india-most-beautiful-falls-in-meghalaya.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -1713,51 +1752,13 @@
               }
             },
             {
-              "day": "Day 6",
+              "day": "Day 6 - Departure - Guwahati",
               "description": [
-                "Early morning checkout and proceed to Guwahati with sightseeing en route. Tour ends."
+                "Early morning check out from your accommodation proceed onward journey to Guwahati , Sightseeing on way ."
               ],
               "images": {
-                "img1": "https://images.pexels.com/photos/18476582/pexels-photo-18476582/free-photo-of-waterfalls-on-rocks-in-deep-forest.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                "img2": "https://images.pexels.com/photos/12233687/pexels-photo-12233687.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-              }
-            }
-          ]
-        },
-        {
-          "combinedDays": [
-            "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
-            "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg"
-          ],
-          "days": [
-            {
-              "day": "Day 5 - Explore Lingti waterfall on the way to Kaza. Settle in for an overnight stay in the lively town of Kaza.",
-              "description": [
-                "Explore the unique high-altitude villages of Hikkim, Komic, and Langza.",
-                "Visit the iconic Key Monastery, a significant Tibetan Buddhist monastery.",
-                "Immerse in the spiritual and cultural richness of the region.",
-                "Return for an overnight stay in Kaza."
-              ],
-              "images": {
-                "img1": "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
-                "img2": "https://png.pngtree.com/background/20230805/original/pngtree-a-snowy-mountain-adorned-in-pahalgam-valley-located-in-kashmir-india-picture-image_4440125.jpg",
-                "img3": "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg",
-                "img4": "https://png.pngtree.com/background/20230401/original/pngtree-view-from-chitkul-village-in-sangla-valley-vector-picture-image_2229375.jpg"
-              }
-            },
-            {
-              "day": "Day 6 - Visit Chicham Bridge, Head To Chandratal Via Kunzum Pass & Overnight Stay",
-              "description": [
-                "Explore the engineering marvel of Chicham Bridge, the highest bridge in Asia.",
-                "Journey to the mesmerizing Chandratal Lake via the scenic Kunzum Pass.",
-                "Enjoy the surreal beauty of the high-altitude lake.",
-                "Settle in for an overnight stay, surrounded by the tranquillity of Chandratal."
-              ],
-              "images": {
-                "img1": "https://png.pngtree.com/background/20230805/original/pngtree-view-from-pahalgam-valley-in-kashmir-india-india-kashmir-pahalgam-valley-picture-image_4440140.jpg",
-                "img2": "https://png.pngtree.com/background/20230805/original/pngtree-a-snowy-mountain-adorned-in-pahalgam-valley-located-in-kashmir-india-picture-image_4440125.jpg",
-                "img3": "https://png.pngtree.com/background/20230805/original/pngtree-mountain-in-pahalgam-valley-kashmir-travel-india-resort-photo-picture-image_4440110.jpg",
-                "img4": "https://png.pngtree.com/background/20230401/original/pngtree-view-from-chitkul-village-in-sangla-valley-vector-picture-image_2229375.jpg"
+                "img1": "https://tourscart.in/wp-content/uploads/2024/07/karanjit-borah-2AX3BGNcdhs-unsplash-600x540.jpg",
+                "img2": "https://tourscart.in/wp-content/uploads/2023/10/Shillong-City-1-1536x1024-1-600x540.jpg.webp"
               }
             }
           ]
@@ -1803,7 +1804,7 @@
       "id": 13,
       "imageUrl": "https://www.sikkimdarjeelingtourism.com/images/packages/package_banner_1689920458.jpg",
       "name": "Chopta Tungnath",
-      "firstImage":"https://images.pexels.com/photos/29510970/pexels-photo-29510970/free-photo-of-scenic-view-of-tungnath-temple-in-uttarakhand-hills.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "firstImage": "https://images.pexels.com/photos/29510970/pexels-photo-29510970/free-photo-of-scenic-view-of-tungnath-temple-in-uttarakhand-hills.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "location": "Chopta Tungnath, Uttrakhand",
       "duration": "3 Days, 2 Nights",
       "price": "8999",
