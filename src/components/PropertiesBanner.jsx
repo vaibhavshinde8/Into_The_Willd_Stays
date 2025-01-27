@@ -26,7 +26,7 @@ const PropertiesBanner = () => {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="space-y-6 bg-white/60 p-8 rounded-3xl backdrop-blur-lg"
+              className="space-y-6 bg-white p-8 rounded-3xl backdrop-blur-lg"
             >
               <div className="flex items-center gap-4">
                 <Layers className="w-12 h-12 text-black" />

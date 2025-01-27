@@ -112,7 +112,7 @@ const ExploreMoreITW = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="min-h-screen bg-slate-100/50 px-4 sm:px-8 lg:px-14 py-44 scroll-smooth"
+      className="min-h-screen bg-white/70 px-4 sm:px-8 lg:px-14 py-44 scroll-smooth"
     >
       {/* Main Image Gallery */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
