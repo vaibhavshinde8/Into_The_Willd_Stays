@@ -9,6 +9,12 @@
       "price": "9999",
       "checkInDate": "2024-12-01",
       "checkOutDate": "2024-12-03",
+      "highlights": [
+        "Embark on a thrilling journey through Ladakh's wild terrain, towering peaks, breathtaking views, and boundless adventures, creating unforgettable memories at every turn.",
+        "Experience the intriguing phenomenon of Magnetic Hills, where vehicles seem to defy gravity, offering an unforgettable roadside marvel in Ladakh.",
+        "At Sangam Point, witness the mesmerizing convergence of the Zanskar and Indus rivers, a breathtaking natural sight that adds to the beauty of Ladakh landscapes.",
+        "Embark on an unforgettable adventure through Nubra Valley atop a Bactrian camel, immersing yourself in the tranquil beauty of the cold desert"
+      ],
       "itinerary": [
         {
           "day": "Day 1",
@@ -73,7 +79,10 @@
           "day": "Day 3",
           "description": "Trek to Lal Tibba and Camel's Back Road."
         },
-        { "day": "Day 4", "description": "Leisure day and departure." }
+        {
+          "day": "Day 4",
+          "description": "Leisure day and departure."
+        }
       ],
       "inclusions": [
         "Stay in a 3-star hotel with hill view rooms.",
@@ -474,7 +483,8 @@
         "Alcohol consumption subject to hotel rules",
         "Valid photo ID mandatory for all hotel guests"
       ]
-    },{
+    },
+    {
       "id": 8,
       "imageUrl": "https://i0.wp.com/www.makemyride.in/wp-content/uploads/2023/07/divya-agrawal-VV0fF4EoZaI-unsplash-scaled.jpg?resize=1080%2C675&ssl=1",
       "name": "Kashmir Valley Exploration",
@@ -665,7 +675,7 @@
         "Pickup/drop services available from Kohima, Dimapur and Guwahati",
         "Festival showcases traditional dance, music, and Naga culture"
       ],
-     "contact_methods": {
+      "contact_methods": {
         "phone": "+91-9761966485",
         "email": "intothewildstays@gmail.com",
         "whatsapp": "+91-9958838557"
