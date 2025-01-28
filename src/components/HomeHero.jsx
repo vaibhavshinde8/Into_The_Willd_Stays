@@ -70,7 +70,7 @@ const HomeHero = () => {
       style={{ paddingBottom: "106px" }}
     >
       {/* Background Overlay */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 h-2/4 md:h-full">
         {images?.map((img, index) => (
           <motion.img
             key={index}
@@ -84,24 +84,25 @@ const HomeHero = () => {
             transition={{ duration: 1.5 }}
           />
         ))}
-        <div className="absolute inset-0  bg-black bg-opacity-80 "></div>
+        <div className="absolute inset-0  bg-black bg-opacity-50  "></div>
       </div>
 
       {/* Content Container */}
       <div className="relative z-10 w-full max-w-6xl mx-auto px-6 flex-1 flex flex-col justify-center">
         {/* Hero Content */}
         <motion.div
-          className="text-center space-y-8 mb-12"
+          className="text-center space-y-8 mb-48"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
         >
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white mb-8 leading-tight tracking-tight">
             <motion.span
-              className="bg-gradient-to-r from-gray-100 to-cyan-100 bg-clip-text text-transparent inline-block"
+              className="text-[rgba(110,231,183,8)] bg-clip-text text-transparent"
               animate={{
                 backgroundPosition: ["0%", "100%"],
               }}
+             
               transition={{
                 duration: 5,
                 repeat: Infinity,
@@ -113,7 +114,7 @@ const HomeHero = () => {
             <br />
             <span className="drop-shadow-2xl">STAYS</span>
           </h1>
-          <p className="text-lg md:text-2xl lg:text-3xl text-white max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-2xl lg:text-3xl text-white max-w-3xl mx-auto leading-relaxed hidden md:block">
             Embark on a journey of discovery with our curated travel
             experiences. Find your perfect escape, where every destination tells
             a story.

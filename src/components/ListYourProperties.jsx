@@ -20,7 +20,7 @@ const ListYourProperties = () => {
             transition={{ duration: 1, ease: "easeOut" }}
             className="lg:w-1/2 space-y-10"
           >
-            <div className="space-y-6">
+            <div className="space-y-6 ml-4 md:ml-0 text-center">
               <motion.span
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -39,7 +39,7 @@ const ListYourProperties = () => {
               comprehensive support to help you manage your property efficiently
               and maximize your rental income.
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mx-10">
               {[
                 {
                   title: "Global Reach",
@@ -69,7 +69,7 @@ const ListYourProperties = () => {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                   whileHover={{ scale: 1.05 }}
-                  className="bg-gray-100 from-blue-50 to-cyan-50 p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-white/50 max-w-[250px]"
+                  className="bg-gray-100 from-blue-50 to-cyan-50 p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-white/50 max-w-[250px] "
                 >
                   <span className="text-2xl mb-3 block">{benefit.icon}</span>
                   <h3 className="font-bold text-base text-[#0F2642] mb-1">
@@ -82,7 +82,7 @@ const ListYourProperties = () => {
             <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
               <Link
                 to="/contact-us"
-                className="inline-flex items-center px-10 py-5 bg-gradient-to-r from-[#0F2642] to-teal-700 text-white rounded-2xl hover:shadow-2xl transition-all duration-500 shadow-lg text-lg font-medium group"
+                className="inline-flex items-center mx-10 px-10 py-5 bg-gradient-to-r from-[#0F2642] to-teal-700 text-white rounded-2xl hover:shadow-2xl transition-all duration-500 shadow-lg text-lg font-medium group"
               >
                 Contact Us Now
                 <svg

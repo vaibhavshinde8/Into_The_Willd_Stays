@@ -70,16 +70,16 @@ const GuestExperience = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-blue-100 via-cyan-100 to-emerald-100 py-24 relative overflow-hidden">
-      <div className=" mx-auto px-12">
+    <div className="min-h-screen   bg-gradient-to-r from-blue-100 via-cyan-100 to-emerald-100 lg:py-24 relative overflow-hidden">
+      <div className=" mx-auto px-12 my-20">
         <motion.h1
           initial={{ opacity: 0, y: -50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-7xl font-bold text-center mb-24"
         >
-          <span className="bg-gradient-to-r from-cyan-600 to-teal-600 bg-clip-text text-transparent">
-            Our <span className="text-gray-800">Story</span>
+          <span className="bg-gradient-to-r from-cyan-600 to-teal-600 bg-clip-text text-transparent ">
+            Our <span className="text-gray-800 ">Story</span>
           </span>
         </motion.h1>
 
@@ -89,7 +89,7 @@ const GuestExperience = () => {
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="lg:col-span-7 space-y-2 border-2 bg-white border-cyan-400 rounded-2xl my-6 mx-10 p-8 shadow-xl hover:shadow-2xl"
+            className="lg:col-span-7 space-y-2 border-2 bg-white border-cyan-400 rounded-2xl my-6 md:mx-10 p-8 shadow-xl hover:shadow-2xl"
           >
             <motion.div
               initial={{ opacity: 0, y: 20 }}
