@@ -19,7 +19,7 @@ const Events = () => {
       {/* Hero Section with Parallax Effect */}
       <div className="relative h-[85vh] overflow-hidden pt-16">
         <div className="absolute inset-0 bg-[url('https://images.trvl-media.com/lodging/109000000/108380000/108370800/108370765/28b3dc50.jpg?impolicy=resizecrop&rw=1200&ra=fit')] bg-cover bg-center bg-fixed">
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0F2642]/30 via-[#0F2642]/50 to-[#0F2642]/70 backdrop-blur-[2px]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0F2642]/90 via-[#0F2642]/90 to-[#0F2642]/70 backdrop-blur-[2px]" />
         </div>
 
         <motion.div
@@ -28,7 +28,7 @@ const Events = () => {
           transition={{ duration: 1 }}
           className="relative h-full max-w-7xl mx-auto px-4 sm:px-6 flex flex-col items-center justify-center text-center"
         >
-          <span className="text-white/60 font-semibold text-sm sm:text-base md:text-lg tracking-wider mb-2 sm:mb-4">
+          <span className="text-white font-semibold text-sm sm:text-base md:text-lg tracking-wider mb-2 sm:mb-4">
             DISCOVER & EXPLORE
           </span>
           <motion.h1
@@ -38,11 +38,11 @@ const Events = () => {
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-4 sm:mb-6 lg:mb-8 leading-tight px-4"
           >
             {/* Unforgettable <br className="hidden sm:block"/> */}
-            <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-cyan-300 to-cyan-100 bg-clip-text text-transparent">
               Events
             </span>
           </motion.h1>
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-200 max-w-xs sm:max-w-lg md:max-w-2xl mb-6 sm:mb-8 leading-relaxed px-4">
+          <p className="text-white sm:text-lg md:text-xl lg:text-2xl text-gray-200 max-w-xs sm:max-w-lg md:max-w-2xl mb-6 sm:mb-8 leading-relaxed px-4">
             Create unforgettable memories in nature&apos;s most breathtaking
             settings
           </p>

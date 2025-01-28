@@ -114,11 +114,11 @@ const GalleryAndReviews = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <span className="bg-gradient-to-r from-cyan-800 to-emerald-800 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-cyan-900 to-emerald-900 bg-clip-text text-transparent">
               Guest <span className="text-black">Diary</span>
             </span>
           </motion.h1>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+          <p className="text-black text-lg font-semibold max-w-2xl mx-auto">
             Discover what our guests have to say about their memorable
             experiences with us
           </p>

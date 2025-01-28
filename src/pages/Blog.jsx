@@ -19,7 +19,7 @@ const Blog = () => {
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-teal-50/30 to-blue-50/30">
       <div className="relative h-[85vh] overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://images.trvl-media.com/lodging/109000000/108380000/108370800/108370765/28b3dc50.jpg?impolicy=resizecrop&rw=1200&ra=fit')] bg-cover bg-center bg-fixed">
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0F2642]/40 via-[#0F2642]/60 to-[#0F2642]/80 backdrop-blur-sm" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0F2642]/90 via-[#0F2642]/90 to-[#0F2642]/70 backdrop-blur-[2px]" />
         </div>
 
         <motion.div
@@ -32,7 +32,7 @@ const Blog = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
-            className="text-white/60 text-base sm:text-lg md:text-xl font-medium tracking-wider mb-4 sm:mb-6"
+            className="text-white text-base sm:text-lg md:text-xl font-medium tracking-wider mb-4 sm:mb-6"
           >
             DISCOVER OUR STORIES
           </motion.span>
@@ -42,7 +42,7 @@ const Blog = () => {
             transition={{ delay: 0.8, duration: 1 }}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-4 sm:mb-6 lg:mb-8 leading-tight"
           >
-            <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-cyan-300 to-cyan-100 bg-clip-text text-transparent">
               Our Blogs
             </span>
           </motion.h1>
@@ -50,7 +50,7 @@ const Blog = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1, duration: 1 }}
-            className="text-lg sm:text-xl text-gray-200 max-w-2xl"
+            className="text-lg text-white sm:text-xl text-gray-200 max-w-2xl"
           >
             Explore our collection of travel stories and expert insights
           </motion.p>

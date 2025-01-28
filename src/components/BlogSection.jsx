@@ -24,7 +24,7 @@ const BlogSection = () => {
             </span>{" "}
             Our Latest Blogs
           </motion.h1>
-          <p className="text-xl text-gray-700 mb-8 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-xl text-gray-900 font-medium mb-8 leading-relaxed max-w-3xl mx-auto">
             Explore insightful articles, industry trends, and expert
             perspectives that can help you stay informed and inspired.
           </p>

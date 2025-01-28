@@ -89,7 +89,7 @@ const GuestExperience = () => {
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="lg:col-span-7 space-y-2 border-2 border-cyan-400 rounded-2xl my-6 mx-10 p-8 shadow-xl hover:shadow-2xl"
+            className="lg:col-span-7 space-y-2 border-2 border-cyan-400 bg-gray-100 rounded-2xl my-6 mx-10 p-8 shadow-xl hover:shadow-2xl"
           >
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -97,12 +97,12 @@ const GuestExperience = () => {
               viewport={{ once: true }}
               className="space-y-8"
             >
-              <h2 className="text-4xl font-bold bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">
+              <h2 className="text-4xl font-bold bg-gradient-to-r from-cyan-800 to-cyan-800 bg-clip-text text-transparent">
                 Welcome to Our Company
               </h2>
-              <p className="text-[15px] leading-relaxed text-gray-600">
+              <p className="text-[15px] leading-relaxed text-gray-900 font-medium">
                 At{" "}
-                <span className="font-bold bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">
+                <span className="font-bold bg-gradient-to-r from-cyan-800 to-cyan-800 bg-clip-text  text-transparent ">
                   Into The Wild Stays
                 </span>{" "}
                 We offer more than just accommodations. We create memorable
@@ -117,7 +117,7 @@ const GuestExperience = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="text-[15px] leading-relaxed text-gray-600"
+              className="text-[15px] leading-relaxed text-gray-900 font-medium"
             >
               Our philosophy revolves around crafting personalized experiences
               that connect guests with the beauty of the wilderness. With
@@ -130,11 +130,11 @@ const GuestExperience = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
-              className="text-lg leading-relaxed font-medium text-teal-600 italic"
+              className="text-lg leading-relaxed font-medium text-cyan-800 italic "
             >
               Come, escape the chaos, and immerse yourself in the unforgettable
               charm of{" "}
-              <span className="font-bold bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">
+              <span className="font-bold bg-gradient-to-r from-cyan-800 to-cyan-800 bg-clip-text text-transparent">
                 Into the Wild Stays!
               </span>
             </motion.p>

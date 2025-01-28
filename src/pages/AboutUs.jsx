@@ -34,7 +34,7 @@ const AboutUs = () => {
       <div className="relative h-[90vh] overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-[url('https://images.trvl-media.com/lodging/109000000/108380000/108370800/108370765/28b3dc50.jpg?impolicy=resizecrop&rw=1200&ra=fit')] bg-cover bg-center bg-fixed" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0F2642]/40 via-[#0F2642]/60 to-[#0F2642]/80 backdrop-blur-[2px]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0F2642]/90 via-[#0F2642]/90 to-[#0F2642]/70 backdrop-blur-[2px]" />
         </div>
 
         <motion.div
@@ -47,7 +47,7 @@ const AboutUs = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
-            className="text-white/60 font-semibold text-lg md:text-xl tracking-wider mb-4"
+            className="text-white font-semibold text-lg md:text-xl tracking-wider mb-4"
           >
             WELCOME TO INTO THE WILD STAYS
           </motion.span>
@@ -58,7 +58,7 @@ const AboutUs = () => {
             className="text-5xl sm:text-6xl md:text-7xl font-bold text-white mb-6"
           >
             {/* Turning <br /> */}
-            <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-cyan-300 to-cyan-100 bg-clip-text text-transparent">
               About Us
             </span>
           </motion.h1>
@@ -66,7 +66,7 @@ const AboutUs = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.2, duration: 0.8 }}
-            className="text-xl text-gray-200 max-w-2xl text-white/60"
+            className="text-xl text-white max-w-2xl "
           >
             Meet the passionate team behind your extraordinary experiences
           </motion.p>

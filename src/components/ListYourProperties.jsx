@@ -33,7 +33,7 @@ const ListYourProperties = () => {
                 List Your Property With Us
               </h2>
             </div>
-            <p className="text-xl bg-cyan-50 hover:shadow-md p-4 rounded-3xl text-gray-600 leading-relaxed font-light">
+            <p className="text-xl bg-gray-100 hover:shadow-md p-4 rounded-3xl text-gray-900 leading-relaxed font-normal">
               Join our exclusive network of property owners and connect with
               thousands of travelers seeking unique stays. We provide
               comprehensive support to help you manage your property efficiently
@@ -69,13 +69,13 @@ const ListYourProperties = () => {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                   whileHover={{ scale: 1.05 }}
-                  className="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-white/50 max-w-[250px]"
+                  className="bg-gray-100 from-blue-50 to-cyan-50 p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-white/50 max-w-[250px]"
                 >
                   <span className="text-2xl mb-3 block">{benefit.icon}</span>
                   <h3 className="font-bold text-base text-[#0F2642] mb-1">
                     {benefit.title}
                   </h3>
-                  <p className="text-gray-600 text-sm">{benefit.desc}</p>
+                  <p className="text-gray-900 font-normal text-sm">{benefit.desc}</p>
                 </motion.div>
               ))}
             </div>

@@ -25,7 +25,7 @@ import "./exploreMoreITW.css";
 //hello
 
 const ExploreMoreITW = () => {
-  const [openIndex, setOpenIndex] = useState(null);
+
   const [property, setProperty] = useState(null);
   const [loading, setLoading] = useState(true);
   const [activeButton, setActiveButton] = useState(null);
@@ -35,7 +35,17 @@ const ExploreMoreITW = () => {
   const [adults, setAdults] = useState(1);
   const [children, setChildren] = useState(0);
   const { id } = useParams();
+  const [openIndex, setOpenIndex] = useState(null); // For FAQs
+  const [activeSection, setActiveSection] = useState("amenities"); // Track active section
 
+  const scrollToSection = (sectionId) => {
+    setActiveSection(sectionId);
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const toggleFaq = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
   const buttons = [
     { id: "amenities", label: "Amenities" },
     { id: "location", label: "Location" },
@@ -44,9 +54,8 @@ const ExploreMoreITW = () => {
     { id: "Review", label: "Review" },
   ];
 
-  const guestSummary = `${adults} Adult${
-    adults > 1 ? "s" : ""
-  } and ${children} Child${children > 1 ? "ren" : ""}`;
+  const guestSummary = `${adults} Adult${adults > 1 ? "s" : ""
+    } and ${children} Child${children > 1 ? "ren" : ""}`;
   useEffect(() => {
     const fetchProperty = async () => {
       try {
@@ -64,9 +73,7 @@ const ExploreMoreITW = () => {
     fetchProperty();
   }, [id]);
 
-  const toggleFaq = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
+
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -327,11 +334,10 @@ const ExploreMoreITW = () => {
                 key={button.id}
                 href={`#${button.id}`}
                 onClick={() => setActiveButton(button.id)}
-                className={`py-2  rounded font-semibold flex-auto drop-shadow-lg flex items-center justify-center px-4 transition duration-300 ${
-                  activeButton === button.id
+                className={`py-2  rounded font-semibold flex-auto drop-shadow-lg flex items-center justify-center px-4 transition duration-300 ${activeButton === button.id
                     ? "bg-[#163257] text-white"
                     : "bg-white text-gray-600"
-                }`}
+                  }`}
               >
                 {button.label}
               </a>
@@ -382,12 +388,12 @@ const ExploreMoreITW = () => {
           </div>
 
           {/* Amenities Grid */}
-          <div id="amenities" className="mb-12">
+          <div id="amenities" className="mb-12 ">
             <h2 className=" text-2xl ms-4 sm:ms-0  font-bold mb-6 flex items-center gap-3">
               <FaBed className="hidden  sm:block text-blue-500" />
               Amenities
             </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid mt-48 grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {property?.amenities?.map((amenity, idx) => (
                 <motion.div
                   whileHover={{ scale: 1.03 }}
@@ -403,13 +409,13 @@ const ExploreMoreITW = () => {
           {/* Location Section */}
           <div
             id="location"
-            className="mt-12 mb-8 bg-white rounded-xl shadow-md p-6"
+            className=" mb-8 bg-white rounded-xl shadow-md p-6"
           >
             <a
               href={property?.locationlink}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-lg text-blue-500 hover:text-blue-600 transition-all duration-300 hover:translate-x-1"
+              className="inline-flex mt-48 items-center gap-2 text-lg text-blue-500 hover:text-blue-600 transition-all duration-300 hover:translate-x-1"
             >
               <FaMapMarkerAlt />
               View on Google Maps
@@ -419,18 +425,19 @@ const ExploreMoreITW = () => {
           {/* Policies Section */}
           <div
             id="policies"
-            className="mt-16 grid md:grid-cols-2 gap-12 bg-white rounded-xl shadow-md py-8 px-4 sm:px-8"
+            className=" grid md:grid-cols-2 gap-12 bg-white rounded-xl shadow-md py-8 px-4 sm:px-8"
+            
           >
-            <div>
-              <h2 className="text-2xl ms-4 sm:ms-0  font-bold mb-6 flex items-center gap-3">
+            <div >
+              <h2 className="text-2xl ms-4 sm:ms-0  font-bold mb-6 flex items-center gap-3 mt-48">
                 <FcRules className=" hidden sm:block text-blue-500" />
                 Booking Policies
               </h2>
-              <ul className="list-none space-y-3">
+              <ul className="list-none space-y-3 ">
                 {property?.bookingPolicies?.map((policy, idx) => (
                   <li
                     key={idx}
-                    className="flex items-start gap-3 text-gray-700 text-sm sm:text-md"
+                    className="flex items-start gap-3 text-gray-700 text-sm sm:text-md "
                   >
                     <span className="text-blue-500 mt-1">•</span>
                     {policy}
@@ -439,11 +446,11 @@ const ExploreMoreITW = () => {
               </ul>
             </div>
             <div>
-              <h2 className="text-2xl  ms-4 sm:ms-0 font-bold mb-6 flex items-center gap-3">
+              <h2 className="text-2xl  ms-4 sm:ms-0 font-bold mb-6 flex items-center gap-3 mt-48">
                 <FaTimesCircle className="hidden sm:block text-red-500" />
                 Cancellation Policy
               </h2>
-              <ul className="list-none space-y-3">
+              <ul className="list-none space-y-3 ">
                 {property?.cancellationPolicy?.map((policy, idx) => (
                   <li
                     key={idx}
@@ -459,11 +466,11 @@ const ExploreMoreITW = () => {
 
           {/* FAQs Accordion */}
           <div id="faqs" className="mt-16 mb-12">
-            <h2 className="text-2xl ms-4 sm:ms-0 font-bold mb-8 flex items-center gap-3">
-              <FaQuestionCircle className="hidden sm:block text-blue-500" />
-              FAQ
+            <h2 className="text-2xl ms-4 sm:ms-0 font-bold mb-8 flex items-center gap-3 ">
+              
+            
             </h2>
-            <div className="space-y-4">
+            <div className="space-y-4 mt-48">
               {property?.faqs?.map((faq, idx) => (
                 <motion.div
                   key={idx}
@@ -508,10 +515,10 @@ const ExploreMoreITW = () => {
           {/* Feedback section */}
 
           <div
-            className="w-full h-[auto] flex flex-col items-start"
+            className="w-full h-[auto] flex flex-col items-start "
             id="Review"
           >
-            <h1 className=" text-2xl  ms-4 sm:ms-0 font-bold mb-8 flex items-center justify-start ">
+            <h1 className=" text-2xl  ms-4 sm:ms-0 font-bold mb-8 flex items-center justify-start mt-48 ">
               <span>
                 <i className="fa-solid fa-comment hidden sm:block text-blue-500 me-4 "></i>{" "}
               </span>
@@ -529,7 +536,7 @@ const ExploreMoreITW = () => {
                   />
                   <div>
                     <h3 className="text-lg font-semibold text-gray-800">
-                      John Doe
+                      Vaibhav Shinde
                     </h3>
                     <p className="text-sm text-gray-500">2 days ago</p>
                   </div>
@@ -561,7 +568,7 @@ const ExploreMoreITW = () => {
                   />
                   <div>
                     <h3 className="text-lg font-semibold text-gray-800">
-                      Piter charl
+                      Shaikh Aamir
                     </h3>
                     <p className="text-sm text-gray-500">4 days ago</p>
                   </div>

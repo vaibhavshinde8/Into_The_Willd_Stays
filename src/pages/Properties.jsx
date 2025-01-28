@@ -176,7 +176,7 @@ const Properties = () => {
       {/* Hero Section */}
       <div className="relative h-[80vh] overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://images.trvl-media.com/lodging/109000000/108380000/108370800/108370765/28b3dc50.jpg?impolicy=resizecrop&rw=1200&ra=fit')] bg-cover bg-center bg-fixed transform scale-105">
-          <div className="absolute inset-0 bg-gradient-to-b from-gray-900/20 to-gray-900/60" />
+          <div className="absolute inset-0 bg-gradient-to-b from-gray-900/100 to-gray-900/60" />
         </div>
 
         <motion.div
@@ -186,7 +186,7 @@ const Properties = () => {
           className="relative h-full max-w-7xl mx-auto px-4 flex flex-col items-center justify-center text-center"
         >
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
-            <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-cyan-300 to-cyan-100 bg-clip-text text-transparent">
               Discover
               <br />
               <span className="text-white/60">Your Perfect Stay</span>
@@ -304,11 +304,9 @@ const Properties = () => {
                   className="w-full md:w-56 h-12 px-4 py-2 bg-white border border-gray-300 text-gray-900 rounded-lg text-left flex items-center justify-between hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-cyan-400"
                 >
                   <span className="text-sm w-full">
-                    {`${searchParams.adults} Adult${
-                      searchParams.adults > 1 ? "s" : ""
-                    } and ${searchParams.children} Child${
-                      searchParams.children > 1 ? "ren" : ""
-                    }`}
+                    {`${searchParams.adults} Adult${searchParams.adults > 1 ? "s" : ""
+                      } and ${searchParams.children} Child${searchParams.children > 1 ? "ren" : ""
+                      }`}
                   </span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -469,98 +467,98 @@ const Properties = () => {
             <div className="grid gap-6 md:gap-8">
               {isLoading
                 ? // Show 3 shimmer effects while loading
-                  [...Array(3)]?.map((_, index) => (
-                    <PropertyShimmer key={index} />
-                  ))
+                [...Array(3)]?.map((_, index) => (
+                  <PropertyShimmer key={index} />
+                ))
                 : // Show actual properties when loaded
-                  filteredProperties?.map((property, index) => (
-                    <motion.div
-                      key={index}
-                      variants={itemVariants}
-                      onMouseEnter={() => setHoveredIndex(index)}
-                      onMouseLeave={() => setHoveredIndex(null)}
-                      className="relative bg-white overflow-hidden shadow-lg transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl rounded-lg border border-gray-200"
-                    >
-                      <Link to={`/property/${property._id}`}>
-                        <div className="flex flex-col md:flex-row h-full">
-                          {/* Image Section */}
-                          <div className="md:w-2/5 relative overflow-hidden h-64 md:h-auto">
-                            <img
-                              src={property.images[0]}
-                              alt={property.name}
-                              className="w-full h-[55vh] object-cover transition-transform duration-700 hover:scale-110 rounded-l-lg md:rounded-l-lg"
-                            />
-                            <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-lg shadow-md">
-                              <div className="flex items-center space-x-1">
-                                <FaStar className="text-yellow-500" />
-                                <span className="font-semibold">
-                                  {property.rating}
-                                </span>
-                                <span className="text-sm text-gray-600">
-                                  ({property.reviews})
-                                </span>
-                              </div>
-                            </div>
-                          </div>
-
-                          {/* Content Section */}
-                          <div className="flex-1 p-6 flex flex-col justify-between">
-                            <div>
-                              <h2 className="text-2xl font-bold text-gray-800 mb-3">
-                                {property.name}
-                              </h2>
-                              <p className="text-gray-600 mb-4">
-                                {property?.description?.length > 250
-                                  ? `${property.description.substring(
-                                      0,
-                                      250
-                                    )}...`
-                                  : property?.description}
-                              </p>
-
-                              <div className="flex flex-wrap gap-3 mb-4">
-                                <span className="flex items-center space-x-2 bg-teal-50 text-teal-700 px-3 py-1 rounded-lg text-sm">
-                                  <FaMapMarkerAlt className="text-teal-500" />
-                                  <span>{property.location}</span>
-                                </span>
-                                <span className="flex items-center space-x-2 bg-blue-50 text-blue-700 px-3 py-1 rounded-lg text-sm">
-                                  <FaBed className="text-blue-500" />
-                                  <span>{property.bedroom} Cottages</span>
-                                </span>
-                                <span className="flex items-center space-x-2 bg-purple-50 text-purple-700 px-3 py-1 rounded-lg text-sm">
-                                  <FaUsers className="text-purple-500" />
-                                  <span>{property.guest} Guests</span>
-                                </span>
-                              </div>
-                            </div>
-
-                            {/* Price and Button Section */}
-                            <div className="flex flex-col md:flex-row items-center justify-between mt-4">
-                              <div className="flex flex-col mb-4 md:mb-0 md:w-1/2">
-                                <span className="text-3xl font-bold text-gray-900">
-                                  ₹{property.price}
-                                </span>
-                                <span className="text-sm text-gray-500">
-                                  per night / Cottage
-                                </span>
-                              </div>
-
-                              <div className="flex flex-col space-y-3 md:w-1/2">
-                                <BookingButton property={property} />
-                              </div>
-                              <Link
-                                to={`/property/${property._id}`}
-                                onClick={() => window.scrollTo(0, 0)}
-                                className="px-8 py-[11px] text-black font-semibold bg-gradient-to-r from-blue-300 to-cyan-300 hover:bg-gradient-to-r hover:from-cyan-400 hover:to-blue-400 hover:transition ease-in-out duration-300 rounded-lg text-center"
-                              >
-                                Details
-                              </Link>
+                filteredProperties?.map((property, index) => (
+                  <motion.div
+                    key={index}
+                    variants={itemVariants}
+                    onMouseEnter={() => setHoveredIndex(index)}
+                    onMouseLeave={() => setHoveredIndex(null)}
+                    className="relative bg-white overflow-hidden shadow-lg transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl rounded-lg border border-gray-200"
+                  >
+                    <Link to={`/property/${property._id}`}>
+                      <div className="flex flex-col md:flex-row h-full">
+                        {/* Image Section */}
+                        <div className="md:w-2/5 relative overflow-hidden h-64 md:h-auto">
+                          <img
+                            src={property.images[0]}
+                            alt={property.name}
+                            className="w-full h-[55vh] object-cover transition-transform duration-700 hover:scale-110 rounded-l-lg md:rounded-l-lg"
+                          />
+                          <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-lg shadow-md">
+                            <div className="flex items-center space-x-1">
+                              <FaStar className="text-yellow-500" />
+                              <span className="font-semibold">
+                                {property.rating}
+                              </span>
+                              <span className="text-sm text-gray-600">
+                                ({property.reviews})
+                              </span>
                             </div>
                           </div>
                         </div>
-                      </Link>
-                    </motion.div>
-                  ))}
+
+                        {/* Content Section */}
+                        <div className="flex-1 p-6 flex flex-col justify-between">
+                          <div>
+                            <h2 className="text-2xl font-bold text-gray-800 mb-3">
+                              {property.name}
+                            </h2>
+                            <p className="text-gray-600 mb-4">
+                              {property?.description?.length > 250
+                                ? `${property.description.substring(
+                                  0,
+                                  250
+                                )}...`
+                                : property?.description}
+                            </p>
+
+                            <div className="flex flex-wrap gap-3 mb-4">
+                              <span className="flex items-center space-x-2 bg-teal-50 text-teal-700 px-3 py-1 rounded-lg text-sm">
+                                <FaMapMarkerAlt className="text-teal-500" />
+                                <span>{property.location}</span>
+                              </span>
+                              <span className="flex items-center space-x-2 bg-blue-50 text-blue-700 px-3 py-1 rounded-lg text-sm">
+                                <FaBed className="text-blue-500" />
+                                <span>{property.bedroom} Cottages</span>
+                              </span>
+                              <span className="flex items-center space-x-2 bg-purple-50 text-purple-700 px-3 py-1 rounded-lg text-sm">
+                                <FaUsers className="text-purple-500" />
+                                <span>{property.guest} Guests</span>
+                              </span>
+                            </div>
+                          </div>
+
+                          {/* Price and Button Section */}
+                          <div className="flex flex-col md:flex-row items-center justify-between mt-4">
+                            <div className="flex flex-col mb-4 md:mb-0 md:w-1/2">
+                              <span className="text-3xl font-bold text-gray-900">
+                                ₹{property.price}
+                              </span>
+                              <span className="text-sm text-gray-500">
+                                per night / Cottage
+                              </span>
+                            </div>
+
+                            <div className="flex flex-col space-y-3 md:w-1/2">
+                              <BookingButton property={property} />
+                            </div>
+                            <Link
+                              to={`/property/${property._id}`}
+                              onClick={() => window.scrollTo(0, 0)}
+                              className="px-8 py-[11px] text-black font-semibold bg-gradient-to-r from-blue-300 to-cyan-300 hover:bg-gradient-to-r hover:from-cyan-400 hover:to-blue-400 hover:transition ease-in-out duration-300 rounded-lg text-center"
+                            >
+                              Details
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    </Link>
+                  </motion.div>
+                ))}
             </div>
           </motion.div>
         </div>

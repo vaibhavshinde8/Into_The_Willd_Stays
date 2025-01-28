@@ -67,7 +67,7 @@ const ContactUs = () => {
       <div className="relative h-[90vh] overflow-hidden ">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-[url('https://images.trvl-media.com/lodging/109000000/108380000/108370800/108370765/28b3dc50.jpg?impolicy=resizecrop&rw=1200&ra=fit')] bg-cover bg-center bg-fixed" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0F2642]/40 via-[#0F2642]/60 to-[#0F2642]/80 backdrop-blur-[2px]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0F2642]/90 via-[#0F2642]/90 to-[#0F2642]/70 backdrop-blur-[2px]" />
         </div>
 
         <motion.div
@@ -77,11 +77,11 @@ const ContactUs = () => {
           className="relative h-full flex flex-col items-center justify-center text-center px-4"
         >
           <h1 className="text-6xl md:text-7xl font-bold text-white mb-6 ">
-            <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-cyan-300 to-cyan-100 bg-clip-text text-transparent">
               Let's Connect
             </span>
           </h1>
-          <p className="text-xl font-semibold text-white/60 max-w-2xl ">
+          <p className="text-xl font-semibold text-white max-w-2xl ">
             We're here to help turn your travel dreams into reality
           </p>
         </motion.div>

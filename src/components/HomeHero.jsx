@@ -84,7 +84,7 @@ const HomeHero = () => {
             transition={{ duration: 1.5 }}
           />
         ))}
-        <div className="absolute inset-0  bg-black bg-opacity-60"></div>
+        <div className="absolute inset-0  bg-black bg-opacity-80 "></div>
       </div>
 
       {/* Content Container */}
@@ -98,7 +98,7 @@ const HomeHero = () => {
         >
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white mb-8 leading-tight tracking-tight">
             <motion.span
-              className="bg-gradient-to-r from-blue-400 to-cyan-500 bg-clip-text text-transparent inline-block"
+              className="bg-gradient-to-r from-cyan-200 to-cyan-100 bg-clip-text text-transparent inline-block"
               animate={{
                 backgroundPosition: ["0%", "100%"],
               }}
