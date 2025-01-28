@@ -13,6 +13,10 @@ import footerImg from "../assets/footer-img.png";
 import { FaWhatsapp } from "react-icons/fa";
 
 const Footer = () => {
+  const instagramGradient = {
+    background:
+      "linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45)",
+  };
   return (
     <footer className="bg-[#000000] text-[#D1D1D1]">
       {/* Main Footer Content */}
@@ -30,7 +34,7 @@ const Footer = () => {
               Experience luxury and comfort at our premium locations. <br />
               Book your perfect stay with us today.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 items-center">
               <a
                 href="https://www.facebook.com/profile.php?id=61557269590045"
                 target="_blank"
@@ -47,14 +51,20 @@ const Footer = () => {
               >
                 <Twitter size={25} />
               </a> */}
-              <a
-                href="https://www.instagram.com/intothewildstays/profilecard/?igsh=cGt4dTRvenNvZ25h"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#db2247] hover:text-[#db2247] hover:scale-110 duration-300 ease-in-out transition-colors"
+
+              <div
+                className="w-8 h-8 rounded-full shadow-lg transition-transform hover:scale-105 flex items-center justify-center"
+                style={instagramGradient}
               >
-                <Instagram size={25} />
-              </a>
+                <a
+                  href="https://www.instagram.com/intothewildstays/profilecard/?igsh=cGt4dTRvenNvZ25h"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className=""
+                >
+                  <Instagram size={22} />
+                </a>
+              </div>
               <a
                 href="https://wa.me/9761966485"
                 target="_blank"
