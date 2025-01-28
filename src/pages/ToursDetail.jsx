@@ -70,7 +70,7 @@ const ToursDetail = () => {
       // Define scroll thresholds for different devices
       if (windowWidth >= 1025) {
         // For laptops and larger screens
-        if (scrollPosition > 1150 && scrollPosition < 1900) {
+        if (scrollPosition > 900 && scrollPosition < 1900) {
           setShowForm(true);
           console.log("Form is visible on laptops/desktops");
         } else {
@@ -477,7 +477,7 @@ const ToursDetail = () => {
               {tour.highlights?.map((item, index) => (
                 <h2
                   key={index}
-                  className=" text-gray-600 mb-3 pl-4 border-l-4 border-blue-500"
+                  className="  font-semibold mb-3 pl-4 border-l-4 border-blue-500"
                 >
                   {item}
                 </h2>
@@ -513,7 +513,7 @@ const ToursDetail = () => {
                         value={tourFormData.name}
                         onChange={handleChange}
                         required
-                        className="w-full border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
+                        className="w-full border border-gray-800 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
                       />
                     </div>
                     <div>
@@ -524,11 +524,11 @@ const ToursDetail = () => {
                         value={tourFormData.email}
                         onChange={handleChange}
                         required
-                        className="w-full border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
+                        className="w-full border border-gray-800 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
                       />
                     </div>
                     <div className="flex space-x-2">
-                      <select className="w-1/4 border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500">
+                      <select className="w-1/4 border border-gray-800 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500">
                         <option value="+91">+91</option>
                       </select>
                       <input
@@ -538,7 +538,7 @@ const ToursDetail = () => {
                         value={tourFormData.phone}
                         onChange={handleChange}
                         placeholder="Your Phone*"
-                        className="w-3/4 border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
+                        className="w-3/4 border border-gray-800 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
                         title="Please enter a valid 10-digit phone number"
                         required
                       />
@@ -551,7 +551,7 @@ const ToursDetail = () => {
                         value={tourFormData.date}
                         onChange={handleChange}
                         placeholder="Travel Date*"
-                        className="w-full border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
+                        className="w-full border border-gray-800 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
                         min={new Date().toISOString().split("T")[0]} // Set today's date as the minimum
                       />
 
@@ -562,7 +562,7 @@ const ToursDetail = () => {
                         name="message"
                         value={tourFormData.message}
                         onChange={handleChange}
-                        className="w-full border border-gray-300 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
+                        className="w-full border border-gray-800 rounded-md p-3 text-sm focus:ring-orange-500 focus:border-orange-500"
                         rows="3"
                       ></textarea>
                     </div>
@@ -603,95 +603,94 @@ const ToursDetail = () => {
                 Itinerary
               </h2>
               {tour.itinerary?.map((item, index) => (
-  <div key={index}>
-    {item.days.map((day, dayIndex) => (
-      <div
-        key={dayIndex}
-        className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 sm:p-4 shadow-lg hover:shadow-xl transition-all duration-300 mb-4 border border-gray-500"
-      >
-        <div
-          className="flex items-center justify-between cursor-pointer"
-          onClick={() => toggleAccordion(`${index}-${dayIndex}`)}
-        >
-          <h3 className="text-black font-semibold">
-            <span className="bg-gradient-to-r from-[#05dce3] to-[#05dce3] text-white font-bold px-2 py-1 rounded-md shadow-md mr-2">
-              {day.day.slice(0, 5)}
-            </span>
-            {day.day.slice(5)}
-          </h3>
-
-          <span
-            className={`transform transition-transform duration-300 ${
-              expandedDay === `${index}-${dayIndex}` ? "rotate-180" : ""
-            }`}
-          >
-            ⌄
-          </span>
-        </div>
-        {expandedDay === `${index}-${dayIndex}` && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="mt-4"
-          >
-            <div className="text-sm sm:text-lg leading-relaxed text-gray-800 mb-4 bg-gray-50 p-3 sm:p-4 rounded-lg shadow-inner">
-              {Array.isArray(day.description) ? (
-                <ul className="space-y-2 sm:space-y-3 text-[#0F2642]">
-                  {day.description.map((desc, descIndex) => (
-                    <li
-                      key={descIndex}
-                      className="flex items-start text-sm sm:text-base leading-normal"
+                <div key={index}>
+                  {item.days.map((day, dayIndex) => (
+                    <div
+                      key={dayIndex}
+                      className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 sm:p-4 shadow-lg hover:shadow-xl transition-all duration-300 mb-4 border border-gray-500"
                     >
-                      <span className="mr-2 sm:mr-3 flex-shrink-0 text-blue-500">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 16 16"
-                          className="w-4 h-4 sm:w-5 sm:h-5"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M8.146 11.854a.5.5 0 0 1-.708-.708L10.293 8 7.438 5.146a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3z"
-                          />
-                        </svg>
-                      </span>
-                      <span>{desc}</span>
-                    </li>
-                  ))}
-                </ul>
-              ) : (
-                <p className="text-sm sm:text-base md:text-lg text-[#0F2642] leading-normal">
-                  {day.description}
-                </p>
-              )}
-            </div>
+                      <div
+                        className="flex items-center justify-between cursor-pointer"
+                        onClick={() => toggleAccordion(`${index}-${dayIndex}`)}
+                      >
+                        <h3 className="text-black font-semibold">
+                          <span className="bg-gradient-to-r from-[#05dce3] to-[#05dce3] text-white font-bold px-2 py-1 rounded-md shadow-md mr-2">
+                            {day.day.slice(0, 5)}
+                          </span>
+                          {day.day.slice(5)}
+                        </h3>
 
-            {/* Horizontal Image Row */}
-            <div className="flex space-x-4 overflow-x-auto scrollbar-hide">
-              {Object.values(day.images).map((image, imgIndex) => (
-                <div key={imgIndex} className="w-40 h-40 sm:w-52 sm:h-52">
-                  <img
-                    className="w-full h-full object-cover rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105"
-                    src={image}
-                    alt={`Day ${dayIndex + 1} Image ${imgIndex + 1}`}
-                    onLoad={() => {
-                      // Trigger re-render or animation recalculation here if needed
-                    }}
-                    onClick={() =>
-                      openModal(Object.values(day.images), imgIndex)
-                    }
-                  />
+                        <span
+                          className={`transform transition-transform duration-300 ${expandedDay === `${index}-${dayIndex}` ? "rotate-180" : ""
+                            }`}
+                        >
+                          ⌄
+                        </span>
+                      </div>
+                      {expandedDay === `${index}-${dayIndex}` && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: "auto" }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.3 }}
+                          className="mt-4"
+                        >
+                          <div className="text-sm sm:text-lg leading-relaxed text-gray-800 mb-4 bg-gray-50 p-3 sm:p-4 rounded-lg shadow-inner">
+                            {Array.isArray(day.description) ? (
+                              <ul className="space-y-2 sm:space-y-3 text-[#0F2642]">
+                                {day.description.map((desc, descIndex) => (
+                                  <li
+                                    key={descIndex}
+                                    className="flex items-start text-sm sm:text-base leading-normal"
+                                  >
+                                    <span className="mr-2 sm:mr-3 flex-shrink-0 text-blue-500">
+                                      <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="currentColor"
+                                        viewBox="0 0 16 16"
+                                        className="w-4 h-4 sm:w-5 sm:h-5"
+                                      >
+                                        <path
+                                          fillRule="evenodd"
+                                          d="M8.146 11.854a.5.5 0 0 1-.708-.708L10.293 8 7.438 5.146a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3z"
+                                        />
+                                      </svg>
+                                    </span>
+                                    <span>{desc}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            ) : (
+                              <p className="text-sm sm:text-base md:text-lg text-[#0F2642] leading-normal">
+                                {day.description}
+                              </p>
+                            )}
+                          </div>
+
+                          {/* Horizontal Image Row */}
+                          <div className="flex space-x-4 overflow-x-auto scrollbar-hide">
+                            {Object.values(day.images).map((image, imgIndex) => (
+                              <div key={imgIndex} className="w-40 h-40 sm:w-52 sm:h-52">
+                                <img
+                                  className="w-full h-full object-cover rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105"
+                                  src={image}
+                                  alt={`Day ${dayIndex + 1} Image ${imgIndex + 1}`}
+                                  onLoad={() => {
+                                    // Trigger re-render or animation recalculation here if needed
+                                  }}
+                                  onClick={() =>
+                                    openModal(Object.values(day.images), imgIndex)
+                                  }
+                                />
+                              </div>
+                            ))}
+                          </div>
+                        </motion.div>
+                      )}
+                    </div>
+                  ))}
                 </div>
               ))}
-            </div>
-          </motion.div>
-        )}
-      </div>
-    ))}
-  </div>
-))}
 
 
               {/* Popup Modal */}

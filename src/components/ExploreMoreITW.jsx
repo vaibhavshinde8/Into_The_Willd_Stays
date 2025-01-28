@@ -37,7 +37,7 @@ const ExploreMoreITW = () => {
   const { id } = useParams();
   const [openIndex, setOpenIndex] = useState(null); // For FAQs
   const [activeSection, setActiveSection] = useState("amenities"); // Track active section
-
+console.log("property",property);
   const scrollToSection = (sectionId) => {
     setActiveSection(sectionId);
     document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
@@ -53,7 +53,42 @@ const ExploreMoreITW = () => {
     { id: "faqs", label: "FAQ" },
     { id: "Review", label: "Review" },
   ];
-
+  const reviews = [
+    {
+      id: 1,
+      name: "Manjula Singh",
+      date: "2 days ago",
+      avatar: "https://lh3.googleusercontent.com/a-/ALV-UjUUygNmvjTkufn8yf6am1WuEmi0ovqTcXdeiejFFYZthSbZbzn84Q=w54-h54-p-rp-mo-ba2-br100",
+      feedback: `“My stay here was nothing short of magical! The place we stayed at was surrounded by breathtaking mountains, offering serene views that made the experience unforgettable. One of the highlights was witnessing a spectacular sunrise, which felt like nature’s masterpiece.
+  
+  The hospitality provided by the owner Akash was truly exceptional – he was so warm, accommodating, and attentive that it felt like home. He went above and beyond to ensure our comfort and made our stay even more special.”`,
+      rating: 5,
+    },
+    {
+      id: 2,
+      name: "Tushar Bhagwane",
+      date: "4 days ago",
+      avatar: "https://lh3.googleusercontent.com/a-/ALV-UjWx0zD4XwMxOPsGqweH7fI_8W4dvCaHP_tswI4G0yQCJXYkoD-F=w54-h54-p-rp-mo-br100",
+      feedback: `“I had a fantastic stay at this hotel! The rooms were spacious, clean, and well-equipped with everything I needed for a comfortable visit. The staff were incredibly friendly and went above and beyond to ensure I had a great experience. The location is perfect, with easy access to popular attractions, restaurants, and transportation. The breakfast was delicious with a wide variety of options. I would definitely recommend this hotel to anyone looking for a relaxing and enjoyable stay.”`,
+      rating: 5,
+    },
+    {
+      id: 3,
+      name: "Hrishabh Vashishtha",
+      date: "8 days ago",
+      avatar: "https://lh3.googleusercontent.com/a-/ALV-UjUUygNmvjTkufn8yf6am1WuEmi0ovqTcXdeiejFFYZthSbZbzn84Q=w54-h54-p-rp-mo-ba2-br100",
+      feedback: `“Into the Wild is an absolute gem nestled in the heart of the mountains. From the moment you arrive, you're greeted with breathtaking views that stretch across the horizon. The cottage perfectly blends rustic charm with modern comforts, making it an ideal escape from the hustle and bustle of daily life. The peaceful surroundings allow you to truly unwind and connect with nature, whether you're enjoying the serene forest walks or simply relaxing on the porch with a cup of coffee. I will definitely be back!”`,
+      rating: 5,
+    },
+    {
+      id: 4,
+      name: "Anushka Gupta",
+      date: "4 days ago",
+      avatar: "https://lh3.googleusercontent.com/a-/ALV-UjW4FT7S2FeBwYm2577EOgutjkCClkUeXw2WBOoL2po_I-fTeLg7vA=w54-h54-p-rp-mo-br100",
+      feedback: `“We had a great stay at into the wild, the property is at great location and provides a great view. The property managers are great people and are available all the time. They have a really cute cafe and provides great food. The interiors are cozy and thoughtfully designed, with a warm fireplace, comfortable beds, and all the amenities you need for a comfortable stay. The attention to detail is impressive, from the well-stocked kitchen to the little touches that make the cottage feel like a home away from home.”`,
+      rating: 5,
+    },
+  ];
   const guestSummary = `${adults} Adult${adults > 1 ? "s" : ""
     } and ${children} Child${children > 1 ? "ren" : ""}`;
   useEffect(() => {
@@ -334,9 +369,9 @@ const ExploreMoreITW = () => {
                 key={button.id}
                 href={`#${button.id}`}
                 onClick={() => setActiveButton(button.id)}
-                className={`py-2  rounded font-semibold flex-auto drop-shadow-lg flex items-center justify-center px-4 transition duration-300 ${activeButton === button.id
-                    ? "bg-[#163257] text-white"
-                    : "bg-white text-gray-600"
+                className={`py-2  rounded font-semibold flex-auto  flex items-center justify-center px-4 transition duration-300 ${activeButton === button.id
+                  ? "bg-[#163257] text-white"
+                  : "bg-white text-gray-800"
                   }`}
               >
                 {button.label}
@@ -412,13 +447,13 @@ const ExploreMoreITW = () => {
             className=" mb-8 bg-white rounded-xl shadow-md p-6"
           >
             <a
-              href={property?.locationlink}
+
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex mt-48 items-center gap-2 text-lg text-blue-500 hover:text-blue-600 transition-all duration-300 hover:translate-x-1"
             >
               <FaMapMarkerAlt />
-              View on Google Maps
+              {property?.address}
             </a>
           </div>
 
@@ -426,7 +461,7 @@ const ExploreMoreITW = () => {
           <div
             id="policies"
             className=" grid md:grid-cols-2 gap-12 bg-white rounded-xl shadow-md py-8 px-4 sm:px-8"
-            
+
           >
             <div >
               <h2 className="text-2xl ms-4 sm:ms-0  font-bold mb-6 flex items-center gap-3 mt-48">
@@ -467,8 +502,8 @@ const ExploreMoreITW = () => {
           {/* FAQs Accordion */}
           <div id="faqs" className="mt-16 mb-12">
             <h2 className="text-2xl ms-4 sm:ms-0 font-bold mb-8 flex items-center gap-3 ">
-              
-            
+
+
             </h2>
             <div className="space-y-4 mt-48">
               {property?.faqs?.map((faq, idx) => (
@@ -530,23 +565,25 @@ const ExploreMoreITW = () => {
                 {/* User Info */}
                 <div className="flex items-center space-x-4 mb-4">
                   <img
-                    src="https://img.freepik.com/free-photo/confident-handsome-guy-looking-camera_114579-79335.jpg?t=st=1736512295~exp=1736515895~hmac=e34c5fb64d2dbf6fffd1a4b32b83638c99ea4f093018f2afa29ee2522a440fbd&w=740"
+                    src="https://lh3.googleusercontent.com/a-/ALV-UjUUygNmvjTkufn8yf6am1WuEmi0ovqTcXdeiejFFYZthSbZbzn84Q=w54-h54-p-rp-mo-ba2-br100"
                     alt="User Avatar"
                     className="w-12 h-12 rounded-full object-cover"
                   />
                   <div>
                     <h3 className="text-lg font-semibold text-gray-800">
-                      Vaibhav Shinde
+                      Manjula Singh
                     </h3>
                     <p className="text-sm text-gray-500">2 days ago</p>
                   </div>
                 </div>
 
                 {/* Feedback Content */}
-                <p className="text-gray-700 mb-4 text-sm sm:text-md">
-                  “This is one of the best services I've ever used! The team was
-                  very professional, and the overall experience was amazing.
-                  Highly recommended!”
+                <p className="text-gray-700 mb-4 text-sm sm:text-md text-justify sm:text-left">
+                  “My stay here was nothing short of magical! The place we stayed at was surrounded by breathtaking mountains, offering serene views that made the experience unforgettable. One of the highlights was witnessing a spectacular sunrise, which felt like nature’s masterpiece.
+
+                  The hospitality provided by the owner Akash was truly exceptional – he was so warm, accommodating, and attentive that it felt like home. He went above and beyond to ensure our comfort and made our stay even more special.
+
+                  ”
                 </p>
 
                 {/* Rating */}
@@ -562,24 +599,23 @@ const ExploreMoreITW = () => {
                 {/* User Info */}
                 <div className="flex items-center space-x-4 mb-4">
                   <img
-                    src="https://img.freepik.com/free-photo/regretful-young-handsome-man-looking-camera-isolated-white-background_141793-132015.jpg?semt=ais_hybrid"
+                    src="https://lh3.googleusercontent.com/a-/ALV-UjWx0zD4XwMxOPsGqweH7fI_8W4dvCaHP_tswI4G0yQCJXYkoD-F=w54-h54-p-rp-mo-br100"
                     alt="User Avatar"
                     className="w-12 h-12 rounded-full object-cover "
                   />
                   <div>
                     <h3 className="text-lg font-semibold text-gray-800">
-                      Shaikh Aamir
+                    Tushar Bhagwane
                     </h3>
                     <p className="text-sm text-gray-500">4 days ago</p>
                   </div>
                 </div>
 
                 {/* Feedback Content */}
-                <p className="text-gray-700 mb-4 text-sm sm:text-md">
-                  “This is one of the best services I've ever used! The team was
-                  very professional, and the overall experience was amazing.
-                  Highly recommended!”
-                </p>
+                <p className="text-gray-700 mb-4 text-sm sm:text-md text-justify sm:text-left">
+  “I had a fantastic stay at this hotel! The rooms were spacious, clean, and well-equipped with everything I needed for a comfortable visit. The staff were incredibly friendly and went above and beyond to ensure I had a great experience. The location is perfect, with easy access to popular attractions, restaurants, and transportation. The breakfast was delicious with a wide variety of options. I would definitely recommend this hotel to anyone looking for a relaxing and enjoyable”
+</p>
+
 
                 {/* Rating */}
                 <div className="flex items-center space-x-1">
@@ -591,6 +627,73 @@ const ExploreMoreITW = () => {
                 </div>
               </div>
             </div>
+            <div className="flex flex-col sm:flex-row items-center gap-4 mt-8  w-full">
+              <div className=" flex-auto  bg-white p-6 rounded-xl shadow-md border border-gray-200">
+                {/* User Info */}
+                <div className="flex items-center space-x-4 mb-4">
+                  <img
+                    src="https://lh3.googleusercontent.com/a-/ALV-UjUUygNmvjTkufn8yf6am1WuEmi0ovqTcXdeiejFFYZthSbZbzn84Q=w54-h54-p-rp-mo-ba2-br100"
+                    alt="User Avatar"
+                    className="w-12 h-12 rounded-full object-cover"
+                  />
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-800">
+                    Hrishabh Vashishtha
+                    </h3>
+                    <p className="text-sm text-gray-500">8 days ago</p>
+                  </div>
+                </div>
+
+                {/* Feedback Content */}
+                <p className="text-gray-700 mb-4 text-sm sm:text-md text-justify sm:text-left">
+                  “Into the Wild is an absolute gem nestled in the heart of the mountains. From the moment you arrive, you're greeted with breathtaking views that stretch across the horizon. The cottage perfectly blends rustic charm with modern comforts, making it an ideal escape from the hustle and bustle of daily life. The peaceful surroundings allow you to truly unwind and connect with nature, whether you're enjoying the serene forest walks or simply relaxing on the porch with a cup of coffee. I will definitely be back!”
+                </p>
+
+                {/* Rating */}
+                <div className="flex items-center space-x-1">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <span key={star} className="text-yellow-500 text-xl">
+                      ★
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div className=" flex-auto  bg-white p-6 rounded-xl shadow-md border border-gray-200">
+                {/* User Info */}
+                <div className="flex items-center space-x-4 mb-4">
+                  <img
+                    src="https://lh3.googleusercontent.com/a-/ALV-UjW4FT7S2FeBwYm2577EOgutjkCClkUeXw2WBOoL2po_I-fTeLg7vA=w54-h54-p-rp-mo-br100"
+                    alt="User Avatar"
+                    className="w-12 h-12 rounded-full object-cover "
+                  />
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-800">
+                    Anushka Gupta
+                    </h3>
+                    <p className="text-sm text-gray-500">4 days ago</p>
+                  </div>
+                </div>
+
+                {/* Feedback Content */}
+                <p className="text-gray-700 mb-4 text-sm sm:text-md text-justify sm:text-left">
+  “We had a great stay at into the wild, the property is at great location and provides a great view. The property managers are great people and are available all the time. They have a really cute cafe and provides great food.
+  The interiors are cozy and thoughtfully designed, with a warm fireplace, comfortable beds, and all the amenities you need for a comfortable stay. The attention to detail is impressive, from the well-stocked kitchen to the little touches that make the cottage feel like a home away from home.
+”
+</p>
+
+
+                {/* Rating */}
+                <div className="flex items-center space-x-1">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <span key={star} className="text-yellow-500 text-xl">
+                      ★
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+            
+            
           </div>
         </div>
 
@@ -612,20 +715,21 @@ const ExploreMoreITW = () => {
             {/* Price and Booking Button Row */}
             <div className="flex justify-between items-center">
               {/* Price Header */}
-              <div className="text-center">
-                <div className="flex justify-center items-center gap-1">
-                  <span className="text-3xl font-bold text-neutral-800">
-                    From
-                  </span>
-                  <FaRupeeSign className="text-neutral-600 text-2xl" />
-                  <span className="text-3xl font-bold text-neutral-800">
-                    {property.price}
-                  </span>
-                  <b className="text-gray-400 text-sm">/Night</b>
-                </div>
-                {/* <p className="text-neutral-500 text-sm mt-1">per night</p> */}
+              <div className="flex items-center space-x-2 mt-2">
+                <span className="text-2xl font-bold text-gray-800">
+                  {property.price}
+                </span>
+                <b className="text-gray-400 text-sm">/Night</b>
+                <span className="line-through text-gray-500 text-sm">
+                  INR {property.price * 120 / 100}
+                </span>
+                <span className="bg-green-100 text-green-600 text-xs font-medium px-2 py-1 rounded">
+                  SAVE INR {property.price * 120 / 100 - property.price}
+                </span>
               </div>
             </div>
+
+
 
             {/* Booking Details */}
             <div className="space-y-4">

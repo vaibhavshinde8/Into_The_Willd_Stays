@@ -41,7 +41,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="text-[#214eca] hover:text-[#214eca] hover:scale-110 duration-300 ease-in-out transition-colors"
               >
-                <Facebook size={25} />
+                <img width="30" height="30" src="https://img.icons8.com/tiny-color/50/facebook-new.png" alt="facebook-new"/>
               </a>
               {/* <a
                 href="#"
@@ -71,7 +71,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="text-[#1c9e18] hover:text-[#1c9e18] hover:scale-110 duration-300 ease-in-out transition-colors"
               >
-                <FaWhatsapp size={25} />
+               <img width="36" height="36" src="https://img.icons8.com/color/48/whatsapp--v1.png" alt="whatsapp--v1"/>
               </a>
             </div>
           </div>

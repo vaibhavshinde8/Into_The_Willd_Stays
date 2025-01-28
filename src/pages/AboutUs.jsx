@@ -215,30 +215,7 @@ const AboutUs = () => {
       </div>
 
       {/* Gallery Section */}
-      <div className="py-24 bg-gradient-to-br from-gray-50 via-teal-50/30 to-blue-50/30">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {[Image3, Image4, Image5, Image6, Image7]?.map((image, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={`rounded-3xl overflow-hidden shadow-xl ${
-                  index === 0 ? "md:col-span-2" : ""
-                }`}
-              >
-                <img
-                  src={image}
-                  alt={`Gallery ${index + 1}`}
-                  className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
-                />
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </div>
+     
     </div>
   );
 };

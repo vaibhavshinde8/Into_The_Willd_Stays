@@ -104,7 +104,7 @@ const ContactUs = () => {
                 </div>
                 <h3 className="text-xl font-semibold">Visit Us</h3>
               </div>
-              <p className="text-gray-600">
+              <p className="text-gray-900">
                 Into The Wild Stays,
                 <br /> Near Ambar Eco park Dhanolti,
                 <br /> 248001
@@ -122,13 +122,13 @@ const ContactUs = () => {
               <div className="space-y-2">
                 <a
                   href="tel:+919761966485"
-                  className="block text-gray-600 hover:text-blue-500"
+                  className="block text-gray-900 hover:text-blue-500"
                 >
                   +91 9761966485
                 </a>
                 <a
                   href="tel:+919958838557"
-                  className="block text-gray-600 hover:text-blue-500"
+                  className="block text-gray-900 hover:text-blue-500"
                 >
                   +91 9958838557
                 </a>
@@ -145,7 +145,7 @@ const ContactUs = () => {
               </div>
               <a
                 href="mailto:intothewildstays@outlook.com"
-                className="text-gray-600 hover:text-purple-500"
+                className="text-gray-900 hover:text-purple-500"
               >
                 intothewildstays@gmail.com
               </a>
@@ -173,7 +173,7 @@ const ContactUs = () => {
                     onChange={handleInputChange}
                     required
                     className={`w-full px-4 py-3 rounded-lg border ${
-                      errors.name ? "border-red-500" : "border-gray-200"
+                      errors.name ? "border-red-500" : "border-gray-800"
                     } focus:ring-2 focus:ring-teal-500 focus:border-transparent`}
                     placeholder="Your Name"
                   />
@@ -192,7 +192,7 @@ const ContactUs = () => {
                     onChange={handleInputChange}
                     required
                     className={`w-full px-4 py-3 rounded-lg border ${
-                      errors.email ? "border-red-500" : "border-gray-200"
+                      errors.email ? "border-red-500" : "border-gray-800"
                     } focus:ring-2 focus:ring-teal-500 focus:border-transparent`}
                     placeholder="example@gmail.com"
                   />
@@ -213,7 +213,7 @@ const ContactUs = () => {
                   onChange={handleInputChange}
                   required
                   className={`w-full px-4 py-3 rounded-lg border ${
-                    errors.phone ? "border-red-500" : "border-gray-200"
+                    errors.phone ? "border-red-500" : "border-gray-800"
                   } focus:ring-2 focus:ring-teal-500 focus:border-transparent`}
                   placeholder="Enter Your Contact Number"
                 />
@@ -232,7 +232,7 @@ const ContactUs = () => {
                   onChange={handleInputChange}
                   required
                   rows="5"
-                  className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-800 focus:ring-2 focus:ring-teal-500 focus:border-transparent"
                   placeholder="Tell us what you're looking for..."
                 ></textarea>
               </div>
