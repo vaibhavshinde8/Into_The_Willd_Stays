@@ -66,11 +66,10 @@ const HomeHero = () => {
 
   return (
     <div
-      className="relative min-h-screen flex flex-col justify-between items-center overflow-hidden  md:pt-32"
-      style={{ paddingBottom: "106px" }}
+      className="relative h-[400px] sm:h-[1000px] sm:min-h-screen flex flex-col justify-between items-center overflow-hidden  md:pt-32  sm:pb-[106px]"
     >
       {/* Background Overlay */}
-      <div className="absolute inset-0 z-0 h-2/4 md:h-full">
+      <div className="absolute inset-0 z-0 h-full md:h-full">
         {images?.map((img, index) => (
           <motion.img
             key={index}
@@ -91,7 +90,7 @@ const HomeHero = () => {
       <div className="relative z-10 w-full max-w-6xl mx-auto px-6 flex-1 flex flex-col justify-center">
         {/* Hero Content */}
         <motion.div
-          className="text-center space-y-8 mb-48"
+          className="text-center space-y-8 mt-20 sm:mt-0  sm:mb-48"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
