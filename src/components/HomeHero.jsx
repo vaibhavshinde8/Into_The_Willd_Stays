@@ -98,7 +98,7 @@ const HomeHero = () => {
         >
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white mb-8 leading-tight tracking-tight">
             <motion.span
-              className="text-[rgba(110,231,183,8)] bg-clip-text text-transparent"
+              className="text-[#68E8F9] bg-clip-text "
               animate={{
                 backgroundPosition: ["0%", "100%"],
               }}
