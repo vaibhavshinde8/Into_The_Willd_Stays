@@ -14,7 +14,7 @@ import "swiper/css/pagination";
 
 import "../index.css";
 // import required modules
-import { EffectFade, Navigation, Pagination } from "swiper/modules";
+import { EffectFade, Navigation, Pagination, Autoplay } from "swiper/modules";
 
 const ToursDetail = () => {
   const { id } = useParams();
@@ -144,58 +144,94 @@ const ToursDetail = () => {
 
           {/* Itinerary */}
           <section>
-            <h2 className="text-3xl font-bold text-[#0F2642] mb-8 text-center">
-              Itinerary
-            </h2>
-            <div>
+  <h2 className="text-3xl font-bold text-[#0F2642] mb-8 text-center">
+    Itinerary
+  </h2>
+  <div></div>
+  <div className="space-y-6">
+    {tour.itinerary?.map((item, index) => (
+      <div
+        key={index}
+        className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-all duration-300"
+      >
+        {/* Accordion Header */}
+        <div
+          className="flex items-center justify-between cursor-pointer"
+          onClick={() => toggleAccordion(index)}
+        >
+          <h3 className="font-bold text-[#0F2642] text-lg sm:text-xl">
+            {item.day}
+          </h3>
+          <span
+            className={`transform transition-transform duration-300 ${
+              expandedDay === index ? "rotate-180" : ""
+            }`}
+          >
+            ⌄
+          </span>
+        </div>
 
+        {/* Accordion Content */}
+        {expandedDay === index && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+            className="mt-4"
+          >
+            {/* Description */}
+            <div className="text-sm sm:text-lg leading-relaxed text-gray-800 mb-4 bg-gray-50 p-3 sm:p-4 rounded-lg shadow-inner">
+              {Array.isArray(item.description) ? (
+                <ul className="space-y-2 sm:space-y-3 text-[#0F2642]">
+                  {item.description.map((desc, idx) => (
+                    <li
+                      key={idx}
+                      className="flex items-start text-sm sm:text-base md:text-lg leading-normal"
+                    >
+                      {/* Custom Icon */}
+                      <span className="mr-2 sm:mr-3 flex-shrink-0 text-blue-500">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="currentColor"
+                          viewBox="0 0 16 16"
+                          className="w-4 h-4 sm:w-5 sm:h-5"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M8.146 11.854a.5.5 0 0 1-.708-.708L10.293 8 7.438 5.146a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3z"
+                          />
+                        </svg>
+                      </span>
+                      {/* Description Text */}
+                      <span>{desc}</span>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="text-sm sm:text-base md:text-lg text-[#0F2642] leading-normal">
+                  {item.description}
+                </p>
+              )}
             </div>
-            <div className="space-y-6">
-              {tour.itinerary?.map((item, index) => (
-                <div
-                  key={index}
-                  className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
-                >
-                  {/* Accordion Header */}
-                  <div
-                    className="flex items-center justify-between cursor-pointer"
-                    onClick={() => toggleAccordion(index)}
-                  >
-                    <h3 className="font-bold text-[#0F2642] text-xl">
-                      {item.day}
-                    </h3>
-                    <span
-                      className={`transform transition-transform duration-300 ${expandedDay === index ? "rotate-180" : ""}`}
-                    >
-                      ⌄
-                    </span>
-                  </div>
 
-                  {/* Accordion Content */}
-                  {expandedDay === index && (
-                    <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: "auto" }}
-                      exit={{ opacity: 0, height: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="mt-4"
-                    >
-                      <p className="text-lg leading-relaxed text-gray-700 mb-4">
-                        {item.description}
-                      </p>
-
-                      <Swiper
-                        spaceBetween={30}
-                        effect={"fade"}
-                        navigation={true}
-                        pagination={{
-                          clickable: true,
-                        }}
-                        modules={[EffectFade, Navigation, Pagination]}
-                        className="mySwiper h-[400px] rounded-lg"
-                      >
-                        {/* Dynamically render images from the itinerary JSON */}
-                        {Object.values(item.images).map((image, idx) => (
+            {/* Swiper Images */}
+            <Swiper
+              spaceBetween={20}
+              effect={"fade"}
+              navigation={true}
+              pagination={{
+                clickable: true,
+              }}
+              autoplay={{
+                delay: 3000, // Slide duration in milliseconds
+                disableOnInteraction: false, // Keeps autoplay running even after user interaction
+              }}
+              modules={[EffectFade, Navigation, Pagination, Autoplay]} // Include Autoplay module
+              className="mySwiper h-[250px] sm:h-[400px] rounded-lg"
+            >
+              {/* Dynamically render images from the itinerary JSON */}
+              {Object.values(item.images).map((image, idx) => (
                 <SwiperSlide key={idx}>
                   <img
                     className="w-full h-full object-cover rounded-lg transition-transform duration-300 hover:scale-105"
@@ -204,15 +240,15 @@ const ToursDetail = () => {
                   />
                 </SwiperSlide>
               ))}
-                      </Swiper>
-                    </motion.div>
-                  )}
-                </div>
-              ))}
+            </Swiper>
+          </motion.div>
+        )}
+      </div>
+    ))}
+  </div>
+</section>
 
 
-            </div>
-          </section>
 
           {/* Inclusions & Exclusions */}
           <div className="grid md:grid-cols-2 gap-12">
