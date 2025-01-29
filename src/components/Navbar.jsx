@@ -397,7 +397,7 @@ export default function Navbar() {
                 </a>
                 <a
                   href="tel:+919958838557"
-                  className="hover:text-yellow-300 transition-colors"
+                  className="hover:text-yellow-300 transition-colors hidden sm:inline"
                 >
                   +91-9958838557
                 </a>
