@@ -31,7 +31,6 @@ const ExploreMoreITW = () => {
   const [activeButton, setActiveButton] = useState(null);
   const [selectedCheckInDate, setSelectedCheckInDate] = useState(new Date());
   const [selectedCheckOutDate, setSelectedCheckOutDate] = useState(new Date());
-
   const [adults, setAdults] = useState(1);
   const [children, setChildren] = useState(0);
   const { id } = useParams();
@@ -53,42 +52,80 @@ console.log("property",property);
     { id: "faqs", label: "FAQ" },
     { id: "Review", label: "Review" },
   ];
-  const reviews = [
-    {
-      id: 1,
-      name: "Manjula Singh",
-      date: "2 days ago",
-      avatar: "https://lh3.googleusercontent.com/a-/ALV-UjUUygNmvjTkufn8yf6am1WuEmi0ovqTcXdeiejFFYZthSbZbzn84Q=w54-h54-p-rp-mo-ba2-br100",
-      feedback: `“My stay here was nothing short of magical! The place we stayed at was surrounded by breathtaking mountains, offering serene views that made the experience unforgettable. One of the highlights was witnessing a spectacular sunrise, which felt like nature’s masterpiece.
+
   
-  The hospitality provided by the owner Akash was truly exceptional – he was so warm, accommodating, and attentive that it felt like home. He went above and beyond to ensure our comfort and made our stay even more special.”`,
-      rating: 5,
-    },
-    {
-      id: 2,
-      name: "Tushar Bhagwane",
-      date: "4 days ago",
-      avatar: "https://lh3.googleusercontent.com/a-/ALV-UjWx0zD4XwMxOPsGqweH7fI_8W4dvCaHP_tswI4G0yQCJXYkoD-F=w54-h54-p-rp-mo-br100",
-      feedback: `“I had a fantastic stay at this hotel! The rooms were spacious, clean, and well-equipped with everything I needed for a comfortable visit. The staff were incredibly friendly and went above and beyond to ensure I had a great experience. The location is perfect, with easy access to popular attractions, restaurants, and transportation. The breakfast was delicious with a wide variety of options. I would definitely recommend this hotel to anyone looking for a relaxing and enjoyable stay.”`,
-      rating: 5,
-    },
-    {
-      id: 3,
-      name: "Hrishabh Vashishtha",
-      date: "8 days ago",
-      avatar: "https://lh3.googleusercontent.com/a-/ALV-UjUUygNmvjTkufn8yf6am1WuEmi0ovqTcXdeiejFFYZthSbZbzn84Q=w54-h54-p-rp-mo-ba2-br100",
-      feedback: `“Into the Wild is an absolute gem nestled in the heart of the mountains. From the moment you arrive, you're greeted with breathtaking views that stretch across the horizon. The cottage perfectly blends rustic charm with modern comforts, making it an ideal escape from the hustle and bustle of daily life. The peaceful surroundings allow you to truly unwind and connect with nature, whether you're enjoying the serene forest walks or simply relaxing on the porch with a cup of coffee. I will definitely be back!”`,
-      rating: 5,
-    },
-    {
-      id: 4,
-      name: "Anushka Gupta",
-      date: "4 days ago",
-      avatar: "https://lh3.googleusercontent.com/a-/ALV-UjW4FT7S2FeBwYm2577EOgutjkCClkUeXw2WBOoL2po_I-fTeLg7vA=w54-h54-p-rp-mo-br100",
-      feedback: `“We had a great stay at into the wild, the property is at great location and provides a great view. The property managers are great people and are available all the time. They have a really cute cafe and provides great food. The interiors are cozy and thoughtfully designed, with a warm fireplace, comfortable beds, and all the amenities you need for a comfortable stay. The attention to detail is impressive, from the well-stocked kitchen to the little touches that make the cottage feel like a home away from home.”`,
-      rating: 5,
-    },
-  ];
+  const reviews = {
+    IntoTheWildStays : [
+      {
+        id: 1,
+        name: "Manjula Singh",
+        date: "2 days ago",
+        avatar: "https://lh3.googleusercontent.com/a-/ALV-UjUUygNmvjTkufn8yf6am1WuEmi0ovqTcXdeiejFFYZthSbZbzn84Q=w54-h54-p-rp-mo-ba2-br100",
+        feedback: `“My stay here was nothing short of magical! The place we stayed at was surrounded by breathtaking mountains, offering serene views that made the experience unforgettable. One of the highlights was witnessing a spectacular sunrise, which felt like nature’s masterpiece.
+    
+    The hospitality provided by the owner Akash was truly exceptional – he was so warm, accommodating, and attentive that it felt like home. He went above and beyond to ensure our comfort and made our stay even more special.”`,
+        rating: 5,
+      },
+      {
+        id: 2,
+        name: "Tushar Bhagwane",
+        date: "4 days ago",
+        avatar: "https://lh3.googleusercontent.com/a-/ALV-UjWx0zD4XwMxOPsGqweH7fI_8W4dvCaHP_tswI4G0yQCJXYkoD-F=w54-h54-p-rp-mo-br100",
+        feedback: `“I had a fantastic stay at this hotel! The rooms were spacious, clean, and well-equipped with everything I needed for a comfortable visit. The staff were incredibly friendly and went above and beyond to ensure I had a great experience. The location is perfect, with easy access to popular attractions, restaurants, and transportation. The breakfast was delicious with a wide variety of options. I would definitely recommend this hotel to anyone looking for a relaxing and enjoyable stay.”`,
+        rating: 5,
+      }
+    ],
+    ITWTapovanRiseCottages : [
+      {
+        id: 1,
+        name: "Shweta Jha",
+        date: "3 weeks ago",
+        avatar: "https://lh3.googleusercontent.com/a-/ALV-UjVJMTqVydZnsZ3-wUaW1eJzC1kDLaOQDMZ75zAe9x-0KWGSU7iW=w36-h36-p-rp-mo-br100",
+        feedback: `“Great location, beautiful surrounding atmosphere, great staff. Lovely  and great first impression of this cottage . Everything about the hotel was exceptional. It was clean, stylish, roomy with excellent service….. Food was good and great value for money and service was attentive and efficient. Room itself was well equipped and comfortable. I was very pleased with my stay. I hope to be back for a longer visit soon…
+
+Thanks  a lot deepak ji for everything.🙏🏻😊❤️
+
+.would like to recommend this to many of my friends and relatives….”`,
+        rating: 5,
+      },
+      {
+        id: 2,
+        name: "Hritu Sharma",
+        date: "a month ago",
+        avatar: "https://lh3.googleusercontent.com/a-/ALV-UjWxIduVycbNc0Sq02qHQmsMcAoU0-6AU4BMYuGBJttWA8lZI1Nr8g=w36-h36-p-rp-mo-br100",
+        feedback: `“Best & Budget friendly place to stay in Rishikesh with the feel of camping, bone fire, music and all other activities.
+
+Walk-in from main road and very safe place. Owner and all staff's behaviour is so nice and humble.
+
+Rooms and open area is well cleaned and very peaceful place and mountain view.”`,
+        rating: 5,
+      }
+    ],
+    ITWMastanaMusafir : [
+      {
+        id: 1,
+        name: "Aadi Raina",
+        date: "a monthb ago",
+        avatar: "https://lh3.googleusercontent.com/a-/ALV-UjVA_eucprNOoafs8A8sEhBaVQ4uKLAtZ1wV2PPlAjIu0N1qmt3u=w36-h36-p-rp-mo-br100",
+        feedback: `“i had a fantastic stay! the staff were incredibly friendly.  Everything about the place was exceptional. It was clean, stylish, roomy with excellent service. Food was good and great value for money and service was attentive and efficient. Room itself was well equipped and comfortable. Highly recommended. ❤️”`,
+        rating: 5,
+      },
+      {
+        id: 2,
+        name: "Olivier Guillard",
+        date: "3 month ago",
+        avatar: "https://lh3.googleusercontent.com/a-/ALV-UjUMCa3moxmQtqs4d0MBExw6HcX1gcr-upY6GwSMX9PGAFAd1V5Mxw=w36-h36-p-rp-mo-ba5-br100",
+        feedback: `“This was one of the best paneer butter masala I've ever had, I strongly recommend. I also ordered fried vegetables, papad and parathas.”`,
+        rating: 5,
+      }
+    ],
+
+    
+   
+  }
+
+  const propertyNameForReview = property?.name?.replaceAll(" ", "") || ""
+  console.log(propertyNameForReview)
   const guestSummary = `${adults} Adult${adults > 1 ? "s" : ""
     } and ${children} Child${children > 1 ? "ren" : ""}`;
   useEffect(() => {
@@ -560,138 +597,40 @@ console.log("property",property);
               Feedback Section
             </h1>
 
-            <div className="flex flex-col sm:flex-row items-center gap-4  w-full">
-              <div className=" flex-auto  bg-white p-6 rounded-xl shadow-md border border-gray-200">
+            <div className="flex flex-col sm:flex-row items-start gap-4 sm:h-[380px]  ">
+              {reviews[propertyNameForReview]?.map((review)=>  <div className=" flex-auto  bg-white p-6 rounded-xl shadow-md border border-gray-200 sm:w-[50%] w-full  h-full">
                 {/* User Info */}
-                <div className="flex items-center space-x-4 mb-4">
+                <div className="flex items-center space-x-4 mb-4 h-[10%]">
                   <img
-                    src="https://lh3.googleusercontent.com/a-/ALV-UjUUygNmvjTkufn8yf6am1WuEmi0ovqTcXdeiejFFYZthSbZbzn84Q=w54-h54-p-rp-mo-ba2-br100"
+                    src={review.avatar}
                     alt="User Avatar"
                     className="w-12 h-12 rounded-full object-cover"
                   />
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-800">
-                      Manjula Singh
+                    <h3 className="text-lg font-semibold text-gray-800 ">
+                      {review.name}
                     </h3>
-                    <p className="text-sm text-gray-500">2 days ago</p>
+                    <p className="text-sm text-gray-500">{review.data}</p>
                   </div>
                 </div>
 
                 {/* Feedback Content */}
-                <p className="text-gray-700 mb-4 text-sm sm:text-md text-justify sm:text-left">
-                  “My stay here was nothing short of magical! The place we stayed at was surrounded by breathtaking mountains, offering serene views that made the experience unforgettable. One of the highlights was witnessing a spectacular sunrise, which felt like nature’s masterpiece.
-
-                  The hospitality provided by the owner Akash was truly exceptional – he was so warm, accommodating, and attentive that it felt like home. He went above and beyond to ensure our comfort and made our stay even more special.
-
-                  ”
+                <p className="text-gray-700 mb-4 text-sm sm:text-md text-justify sm:text-left h-[70%]">
+                {review.feedback}
                 </p>
 
                 {/* Rating */}
-                <div className="flex items-center space-x-1">
+                <div className="flex items-center space-x-1 h-[20%]">
                   {[1, 2, 3, 4, 5].map((star) => (
                     <span key={star} className="text-yellow-500 text-xl">
                       ★
                     </span>
                   ))}
                 </div>
-              </div>
-              <div className=" flex-auto  bg-white p-6 rounded-xl shadow-md border border-gray-200">
-                {/* User Info */}
-                <div className="flex items-center space-x-4 mb-4">
-                  <img
-                    src="https://lh3.googleusercontent.com/a-/ALV-UjWx0zD4XwMxOPsGqweH7fI_8W4dvCaHP_tswI4G0yQCJXYkoD-F=w54-h54-p-rp-mo-br100"
-                    alt="User Avatar"
-                    className="w-12 h-12 rounded-full object-cover "
-                  />
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-800">
-                    Tushar Bhagwane
-                    </h3>
-                    <p className="text-sm text-gray-500">4 days ago</p>
-                  </div>
-                </div>
-
-                {/* Feedback Content */}
-                <p className="text-gray-700 mb-4 text-sm sm:text-md text-justify sm:text-left">
-  “I had a fantastic stay at this hotel! The rooms were spacious, clean, and well-equipped with everything I needed for a comfortable visit. The staff were incredibly friendly and went above and beyond to ensure I had a great experience. The location is perfect, with easy access to popular attractions, restaurants, and transportation. The breakfast was delicious with a wide variety of options. I would definitely recommend this hotel to anyone looking for a relaxing and enjoyable”
-</p>
-
-
-                {/* Rating */}
-                <div className="flex items-center space-x-1">
-                  {[1, 2, 3, 4, 5].map((star) => (
-                    <span key={star} className="text-yellow-500 text-xl">
-                      ★
-                    </span>
-                  ))}
-                </div>
-              </div>
+              </div>)}
+              
             </div>
-            <div className="flex flex-col sm:flex-row items-center gap-4 mt-8  w-full">
-              <div className=" flex-auto  bg-white p-6 rounded-xl shadow-md border border-gray-200">
-                {/* User Info */}
-                <div className="flex items-center space-x-4 mb-4">
-                  <img
-                    src="https://lh3.googleusercontent.com/a-/ALV-UjUUygNmvjTkufn8yf6am1WuEmi0ovqTcXdeiejFFYZthSbZbzn84Q=w54-h54-p-rp-mo-ba2-br100"
-                    alt="User Avatar"
-                    className="w-12 h-12 rounded-full object-cover"
-                  />
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-800">
-                    Hrishabh Vashishtha
-                    </h3>
-                    <p className="text-sm text-gray-500">8 days ago</p>
-                  </div>
-                </div>
-
-                {/* Feedback Content */}
-                <p className="text-gray-700 mb-4 text-sm sm:text-md text-justify sm:text-left">
-                  “Into the Wild is an absolute gem nestled in the heart of the mountains. From the moment you arrive, you're greeted with breathtaking views that stretch across the horizon. The cottage perfectly blends rustic charm with modern comforts, making it an ideal escape from the hustle and bustle of daily life. The peaceful surroundings allow you to truly unwind and connect with nature, whether you're enjoying the serene forest walks or simply relaxing on the porch with a cup of coffee. I will definitely be back!”
-                </p>
-
-                {/* Rating */}
-                <div className="flex items-center space-x-1">
-                  {[1, 2, 3, 4, 5].map((star) => (
-                    <span key={star} className="text-yellow-500 text-xl">
-                      ★
-                    </span>
-                  ))}
-                </div>
-              </div>
-              <div className=" flex-auto  bg-white p-6 rounded-xl shadow-md border border-gray-200">
-                {/* User Info */}
-                <div className="flex items-center space-x-4 mb-4">
-                  <img
-                    src="https://lh3.googleusercontent.com/a-/ALV-UjW4FT7S2FeBwYm2577EOgutjkCClkUeXw2WBOoL2po_I-fTeLg7vA=w54-h54-p-rp-mo-br100"
-                    alt="User Avatar"
-                    className="w-12 h-12 rounded-full object-cover "
-                  />
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-800">
-                    Anushka Gupta
-                    </h3>
-                    <p className="text-sm text-gray-500">4 days ago</p>
-                  </div>
-                </div>
-
-                {/* Feedback Content */}
-                <p className="text-gray-700 mb-4 text-sm sm:text-md text-justify sm:text-left">
-  “We had a great stay at into the wild, the property is at great location and provides a great view. The property managers are great people and are available all the time. They have a really cute cafe and provides great food.
-  The interiors are cozy and thoughtfully designed, with a warm fireplace, comfortable beds, and all the amenities you need for a comfortable stay. The attention to detail is impressive, from the well-stocked kitchen to the little touches that make the cottage feel like a home away from home.
-”
-</p>
-
-
-                {/* Rating */}
-                <div className="flex items-center space-x-1">
-                  {[1, 2, 3, 4, 5].map((star) => (
-                    <span key={star} className="text-yellow-500 text-xl">
-                      ★
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
+            
             
             
           </div>
