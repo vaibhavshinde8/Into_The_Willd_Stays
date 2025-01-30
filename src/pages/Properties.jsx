@@ -516,7 +516,7 @@ const Properties = () => {
                           </span>
                           <span className="flex items-center space-x-1 sm:space-x-2 bg-blue-50 text-blue-700 px-2 sm:px-3 py-1 rounded-md sm:rounded-lg text-xs sm:text-sm">
                             <FaBed className="text-blue-500 flex-shrink-0" />
-                            <span>{property.bedroom} Cottages</span>
+                            <span>{property.bedroom} {property?.cottage ? "Cottages" : "Rooms"}</span>
                           </span>
                           <span className="flex items-center space-x-1 sm:space-x-2 bg-purple-50 text-purple-700 px-2 sm:px-3 py-1 rounded-md sm:rounded-lg text-xs sm:text-sm">
                             <FaUsers className="text-purple-500 flex-shrink-0" />
@@ -532,7 +532,7 @@ const Properties = () => {
                             ₹{property.price}
                           </span>
                           <span className="text-xs sm:text-sm text-gray-500">
-                            per night / Cottage
+                            per night / {property?.cottage ? "Cottage" : "Room"}
                           </span>
                         </div>
 
