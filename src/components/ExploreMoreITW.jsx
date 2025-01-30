@@ -36,7 +36,7 @@ const ExploreMoreITW = () => {
   const { id } = useParams();
   const [openIndex, setOpenIndex] = useState(null); // For FAQs
   const [activeSection, setActiveSection] = useState("amenities"); // Track active section
-console.log("property",property);
+  console.log("property", property);
   const scrollToSection = (sectionId) => {
     setActiveSection(sectionId);
     document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
@@ -53,9 +53,9 @@ console.log("property",property);
     { id: "Review", label: "Review" },
   ];
 
-  
+
   const reviews = {
-    IntoTheWildStays : [
+    IntoTheWildStays: [
       {
         id: 1,
         name: "Manjula Singh",
@@ -75,7 +75,7 @@ console.log("property",property);
         rating: 5,
       }
     ],
-    ITWTapovanRiseCottages : [
+    ITWTapovanRiseCottages: [
       {
         id: 1,
         name: "Shweta Jha",
@@ -101,7 +101,7 @@ Rooms and open area is well cleaned and very peaceful place and mountain view.�
         rating: 5,
       }
     ],
-    ITWMastanaMusafir : [
+    ITWMastanaMusafir: [
       {
         id: 1,
         name: "Aadi Raina",
@@ -115,17 +115,82 @@ Rooms and open area is well cleaned and very peaceful place and mountain view.�
         name: "Olivier Guillard",
         date: "3 month ago",
         avatar: "https://lh3.googleusercontent.com/a-/ALV-UjUMCa3moxmQtqs4d0MBExw6HcX1gcr-upY6GwSMX9PGAFAd1V5Mxw=w36-h36-p-rp-mo-ba5-br100",
-        feedback: `“This was one of the best paneer butter masala I've ever had, I strongly recommend. I also ordered fried vegetables, papad and parathas.”`,
+        feedback: `“This was one of the best paneer butter masala I've ever had, I strongly recommend. I also ordered fried vegetables, papad and parathas. Even though I don't usually write reviews, I just had to share my wonderful experience.”`,
+        rating: 5,
+      }
+    ],
+    "ITW:PinesAndTails": [
+      {
+        id: 1,
+        name: "manish rathore",
+        date: "a monthb ago",
+        avatar: "https://lh3.googleusercontent.com/a-/ALV-UjWAyMr0qVH4_8n21vsJraxjHqz_wEyldxnY2MHklO0JqjjGCfsw=w54-h54-p-rp-mo-br100",
+        feedback: `“My stay was amazing at Into the Wilds!
+The Cottage was very good,washroom was spacious and the view from my window and balcony was stunning.
+Food was delicious,Thanks to Trilok(Head Chef) for this. The staff were really friendly.
+If you're looking for a peaceful getaway surrounded by nature, Into The Wild Cottages is the place to go!”`,
+        rating: 5,
+      },
+      {
+        id: 2,
+        name: "Bunny",
+        date: "3 month ago",
+        avatar: "https://lh3.googleusercontent.com/a-/ALV-UjWzekqZQVqqrnzbLdop2eXfnUb--K_2y_SUmtDzIs9lpP4yIppH=w54-h54-p-rp-mo-ba4-br100",
+        feedback: `“Nice and cozy place to chill
+French fries were good and momos also delicious
+Everything is freshly made
+The vibe of the cafe is amazing
+Love the place
+Thank you”`,
+        rating: 5,
+      }
+
+    ],
+    "ITW:SunandSandVilla": [
+      {
+        id: 1,
+        name: "Rajat Sharma",
+        date: "a monthb ago",
+        avatar: "https://lh3.googleusercontent.com/a-/ALV-UjWfhfXkPNVUNWGSMayOR9RqYcyoEH8iKKWKAtHxLbqAzpNDbJ85Ow=w54-h54-p-rp-mo-ba2-br100",
+        feedback: `“Located just 300 metres before Eco Park, Dhanaulti - Into the wild home stay is easily one of the best vibrant stays in the area. The rooms are spacious , the cottages are designed in a way which is modern yet keeps you super close to the nature. The stay offers absolutely beautiful Mountain View’s in the front and backside offers you Himalaya views on a clear sky day!”`,
+        rating: 5,
+      },
+      {
+        id: 2,
+        name: "Arvind Nagar",
+        date: "3 month ago",
+        avatar: "https://lh3.googleusercontent.com/a-/ALV-UjXcVgO6RVm6QTkIEvCG4fDM4693d-jm2kS5Eji3CbgzhzcTVZLy=w54-h54-p-rp-mo-ba2-br100",
+        feedback: `“The location and view itself worth every single penny. We enjoyed our stay in the property and loved the hospitality of the staf and super most Uncle ji took good take care of us like family. Will definitely recommend to my acquaintances and will come back soon.”`,
+        rating: 5,
+      }
+    ],
+    ITWTheRudramAura: [
+      {
+        id: 1,
+        name: "Aadi Raina",
+        date: "a monthb ago",
+        avatar: "https://lh3.googleusercontent.com/a-/ALV-UjUiPYj94ra9LMSK_zdaPBiWGKgJ4tiRClMczHtXnkUHZZ8KlkDt=w54-h54-p-rp-mo-br100",
+        feedback: `“Beautiful place where you can spend good time with family and friends. Cottages are spacious and you can have a blissful view of the valley from watch tower. The paintings and wall art in cafe and cottages are very detailed and are very impressive.”`,
+        rating: 5,
+      },
+      {
+        id: 2,
+        name: "SHIVAM MISHRA",
+        date: "3 month ago",
+        avatar: "https://lh3.googleusercontent.com/a-/ALV-UjVtHJlom4jAmFJh851wQLMKq_OWJHGUSw7S8qRq9SLF_pPd5oq2=w54-h54-p-rp-mo-br100",
+        feedback: `“My stay at Into The Wild Cottages in Dhanaulti was amazing! The rooms were cozy and the view from my window was stunning. I could see the sunrise and sunset every day. The food, especially the honey chilli potatoes and momos, were delicious. The staff were really friendly and made me feel at home. Even though I don't usually write reviews, I just had to share my wonderful experience.”`,
         rating: 5,
       }
     ],
 
-    
-   
+
+
+
+
   }
 
   const propertyNameForReview = property?.name?.replaceAll(" ", "") || ""
-  console.log(propertyNameForReview)
+  console.log("propertyNameForReview", propertyNameForReview)
   const guestSummary = `${adults} Adult${adults > 1 ? "s" : ""
     } and ${children} Child${children > 1 ? "ren" : ""}`;
   useEffect(() => {
@@ -598,7 +663,7 @@ Rooms and open area is well cleaned and very peaceful place and mountain view.�
             </h1>
 
             <div className="flex flex-col sm:flex-row items-start gap-4 sm:h-[380px]  ">
-              {reviews[propertyNameForReview]?.map((review)=>  <div className=" flex-auto  bg-white p-6 rounded-xl shadow-md border border-gray-200 sm:w-[50%] w-full  h-full">
+              {reviews[propertyNameForReview]?.map((review) => <div className=" flex-auto  bg-white p-6 rounded-xl shadow-md border border-gray-200 sm:w-[50%] w-full  h-full">
                 {/* User Info */}
                 <div className="flex items-center space-x-4 mb-4 h-[10%]">
                   <img
@@ -616,7 +681,7 @@ Rooms and open area is well cleaned and very peaceful place and mountain view.�
 
                 {/* Feedback Content */}
                 <p className="text-gray-700 mb-4 text-sm sm:text-md text-justify sm:text-left h-[70%]">
-                {review.feedback}
+                  {review.feedback}
                 </p>
 
                 {/* Rating */}
@@ -628,11 +693,11 @@ Rooms and open area is well cleaned and very peaceful place and mountain view.�
                   ))}
                 </div>
               </div>)}
-              
+
             </div>
-            
-            
-            
+
+
+
           </div>
         </div>
 

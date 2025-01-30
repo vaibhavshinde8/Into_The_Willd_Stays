@@ -103,13 +103,13 @@ const testData = [
 
 const GalleryAndReviews = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-r from-blue-100 via-cyan-100 to-emerald-100 py-20  lg:px-32">
+    <div className=" bg-gradient-to-r from-blue-100 via-cyan-100 to-emerald-100 py-20  lg:px-32">
       <div className="absolute inset-0 backdrop-blur-md bg-white/40"></div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-20">
+        <div className="text-center ">
           <motion.h1
-            className="text-5xl md:text-6xl font-bold mb-6"
+            className="text-4xl md:text-6xl font-bold mb-6"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -148,7 +148,7 @@ const GalleryAndReviews = () => {
           }}
         >
           {testData?.map((item, index) => (
-            <SwiperSlide key={index} className="py-12 px-10">
+            <SwiperSlide key={index} className="py-12 pl-4 pr-4">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}

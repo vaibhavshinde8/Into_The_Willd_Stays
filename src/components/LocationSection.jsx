@@ -50,12 +50,12 @@ const LocationSection = () => {
           transition={{ duration: 0.8 }}
         >
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-cyan-800 to-emerald-800 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-cyan-800 to-cyan-800 bg-clip-text text-transparent">
               Explore
             </span>{" "}
             <span className="text-gray-800">Destinations</span>
           </h1>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-800 font-semibold text-lg max-w-2xl mx-auto">
             Discover extraordinary places that promise unforgettable experiences
             and breathtaking landscapes
           </p>

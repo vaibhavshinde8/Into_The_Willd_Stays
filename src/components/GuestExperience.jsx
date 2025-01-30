@@ -70,13 +70,13 @@ const GuestExperience = () => {
   };
 
   return (
-    <div className="min-h-screen   bg-gradient-to-r from-blue-100 via-cyan-100 to-emerald-100 lg:py-24 relative overflow-hidden">
-      <div className=" mx-auto px-12 my-20">
+    <div className="min-h-screen   bg-gradient-to-r from-blue-100 via-cyan-100 to-emerald-100    relative overflow-hidden">
+      <div className=" mx-auto px-6 my-10">
         <motion.h1
           initial={{ opacity: 0, y: -50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-7xl font-bold text-center mb-24"
+          className="text-6xl font-bold text-center mb-12"
         >
           <span className="bg-gradient-to-r from-cyan-600 to-teal-600 bg-clip-text text-transparent ">
             Our <span className="text-gray-800 ">Story</span>

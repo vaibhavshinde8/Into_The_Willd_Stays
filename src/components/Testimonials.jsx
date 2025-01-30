@@ -36,10 +36,10 @@ const Testimonials = () => {
   };
 
   return (
-    <div className="bg-gradient-to-r from-blue-100 via-cyan-100 to-emerald-100 py-24 px-8 rounded-3xl">
+    <div className="bg-gradient-to-r from-blue-100 via-cyan-100 to-emerald-100  px-8 rounded-3xl">
       <div className="max-w-7xl mx-auto">
         <motion.h1
-          className="text-5xl md:text-7xl font-bold mb-20 text-center"
+          className="text-5xl md:text-7xl font-bold  text-center"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}

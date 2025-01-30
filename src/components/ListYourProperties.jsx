@@ -4,7 +4,7 @@ import heroImage4 from "../assets/banner/b4.jpeg";
 
 const ListYourProperties = () => {
   return (
-    <section className="relative py-32 bg-gradient-to-r from-blue-100 via-cyan-100 to-emerald-100 overflow-hidden">
+    <section className="relative py-0  bg-gradient-to-r from-blue-100 via-cyan-100 to-emerald-100 overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 bg-grid-slate-100/50 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] -z-10" />
       <div className="absolute -top-40 -right-40 w-80 h-80 bg-teal-100 rounded-full blur-3xl opacity-30" />

@@ -66,18 +66,17 @@ const HomeHero = () => {
 
   return (
     <div
-      className="relative h-[400px] sm:h-[1000px] sm:min-h-screen flex flex-col justify-between items-center overflow-hidden  md:pt-32  sm:pb-[106px]"
+      className="relative h-[400px]  sm:h-[1000px] sm:min-h-screen flex flex-col justify-between items-center overflow-hidden  md:pt-32  sm:pb-[106px]"
     >
       {/* Background Overlay */}
-      <div className="absolute inset-0 z-0 h-full md:h-full">
+      <div className="absolute inset-0 z-0 h-full md:h-full ">
         {images?.map((img, index) => (
           <motion.img
             key={index}
             src={img}
             alt={`Background ${index + 1}`}
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-              index === currentImageIndex ? "opacity-100" : "opacity-0"
-            }`}
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000  ${index === currentImageIndex ? " bg-black  opacity-70" : "opacity-0"
+              }`}
             initial={{ opacity: 0 }}
             animate={{ opacity: index === currentImageIndex ? 1 : 0 }}
             transition={{ duration: 1.5 }}
@@ -87,7 +86,7 @@ const HomeHero = () => {
       </div>
 
       {/* Content Container */}
-      <div className="relative z-10 w-full max-w-6xl mx-auto px-6 flex-1 flex flex-col justify-center">
+      <div className="relative z-10   w-full max-w-6xl mx-auto px-6 flex-1 flex flex-col justify-center">
         {/* Hero Content */}
         <motion.div
           className="text-center space-y-8 mt-20 sm:mt-0  sm:mb-48"
@@ -101,7 +100,7 @@ const HomeHero = () => {
               animate={{
                 backgroundPosition: ["0%", "100%"],
               }}
-             
+
               transition={{
                 duration: 5,
                 repeat: Infinity,
@@ -199,14 +198,12 @@ const HomeHero = () => {
                 </label>
                 <button
                   onClick={toggleGuestDropdown}
-                  className="w-full md:w-56 h-12 px-4 py-2 bg-white border border-gray-300 text-gray-900 rounded-lg text-left flex items-center justify-between hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+                  className="w-full lg:w-48 h-12 px-4 py-4 bg-white border border-gray-300 text-gray-900 rounded-lg text-left flex items-center justify-between hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-cyan-400"
                 >
                   <span className="text-sm w-full">
-                    {`${searchParams.adults} Adult${
-                      searchParams.adults > 1 ? "s" : ""
-                    } and ${searchParams.children} Child${
-                      searchParams.children > 1 ? "ren" : ""
-                    }`}
+                    {`${searchParams.adults} Adult${searchParams.adults > 1 ? "s" : ""
+                      } and ${searchParams.children} Child${searchParams.children > 1 ? "ren" : ""
+                      }`}
                   </span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -287,9 +284,9 @@ const HomeHero = () => {
                       <button
                         onClick={closeGuestDropdown}
                         className="w-full h-10 bg-gradient-to-r  from-cyan-500 to-blue-500 text-white font-medium
-            hover:from-cyan-600 hover:to-blue-600 transition-all duration-300
-            flex items-center justify-center space-x-3 
-            rounded-2xl shadow-lg hover:shadow-cyan-500/30"
+                              hover:from-cyan-600 hover:to-blue-600 transition-all duration-300
+                                flex items-center justify-center space-x-3 
+                                       rounded-2xl shadow-lg hover:shadow-cyan-500/30"
                       >
                         Done
                       </button>
@@ -299,13 +296,13 @@ const HomeHero = () => {
               </div>
 
               {/* Search Button */}
-              <div className="md:col-span-1 lg:w-40 ml-12">
+              <div className="md:col-span-1 mt-1 lg:w-40 ">
                 <label className="block text-white mb-3 text-sm font-medium">
                   &nbsp;
                 </label>
                 <button
                   onClick={handleSearch}
-                  className="w-full h-[3.55rem]  bg-gradient-to-r text-lg from-cyan-500 to-blue-500 text-white font-medium
+                  className="w-full h-[3.15rem]  bg-gradient-to-r text-lg from-cyan-500 to-blue-500 text-white font-medium
                   hover:from-cyan-600 hover:to-blue-600 transition-all duration-300
                   flex items-center justify-center space-x-3 
                   rounded-2xl shadow-lg hover:shadow-cyan-500/30"

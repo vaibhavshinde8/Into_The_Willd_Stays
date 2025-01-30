@@ -415,7 +415,7 @@ export default function Navbar() {
           </div>
 
           {/* Right Side: Social Media Icons */}
-          <div className="flex space-x-6">
+          <div className="flex space-x-6 hidden sm:flex">
             <a
               href="https://www.facebook.com/profile.php?id=61557269590045"
               target="_blank"
