@@ -12,6 +12,7 @@ export const BlogPost = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  
   if (!blog)
     return (
       <div className="container mx-auto py-8">
