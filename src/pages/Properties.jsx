@@ -296,12 +296,12 @@ const Properties = () => {
 
             {/* Adults */}
             <div className="md:col-span-1 w-full">
-              <label className="block text-gray-700 mb-2 text-sm">Guests</label>
+              <label className="block text-gray-700 mb-2 text-sm ">Guests</label>
               <div className="relative">
                 {/* Dropdown Button */}
                 <button
                   onClick={toggleGuestDropdown}
-                  className="w-full md:w-56 h-12 px-4 py-2 bg-white border border-gray-300 text-gray-900 rounded-lg text-left flex items-center justify-between hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+                  className="w-full md:w-56 h-12 px-4 py-2 bg-white border border-gray-300 text-gray-900 rounded-lg text-left flex items-center justify-between hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded-3xl"
                 >
                   <span className="text-sm w-full">
                     {`${searchParams.adults} Adult${searchParams.adults > 1 ? "s" : ""

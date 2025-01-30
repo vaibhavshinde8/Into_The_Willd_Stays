@@ -29,7 +29,7 @@ const ListYourProperties = () => {
               >
                 BECOME A HOST
               </motion.span>
-              <h2 className="text-5xl lg:text-6xl font-bold bg-gradient-to-r from-[#0F2642] to-teal-600 bg-clip-text text-transparent">
+              <h2 className="text-4xl lg:text-6xl font-bold bg-gradient-to-r from-[#0F2642] to-teal-600 bg-clip-text text-transparent">
                 List Your Property With Us
               </h2>
             </div>
@@ -69,7 +69,7 @@ const ListYourProperties = () => {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                   whileHover={{ scale: 1.05 }}
-                  className="bg-gray-100 from-blue-50 to-cyan-50 p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-white/50 max-w-[250px] "
+                  className="bg-gray-100 from-blue-50 to-cyan-50 p-6 text-center rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-white/50 max-w-[250px] "
                 >
                   <span className="text-2xl mb-3 block">{benefit.icon}</span>
                   <h3 className="font-bold text-base text-[#0F2642] mb-1">
@@ -82,7 +82,7 @@ const ListYourProperties = () => {
             <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
               <Link
                 to="/contact-us"
-                className="inline-flex items-center mx-10 px-10 py-5 bg-gradient-to-r from-[#0F2642] to-teal-700 text-white rounded-2xl hover:shadow-2xl transition-all duration-500 shadow-lg text-lg font-medium group"
+                className="inline-flex items-center mx-10 px-10 py-5 bg-gradient-to-r from-[#0F2642] to-teal-700 text-white rounded-2xl hover:shadow-2xl transition-all duration-500 shadow-lg text-lg font-medium group mb-10"
               >
                 Contact Us Now
                 <svg
@@ -109,7 +109,7 @@ const ListYourProperties = () => {
             transition={{ duration: 1, ease: "easeOut" }}
             className="lg:w-1/2"
           >
-            <div className="relative">
+            <div className="relative mb-10">
               <div className="absolute inset-0 bg-gradient-to-r from-indigo-400 to-indigo-500 transform rotate-6 rounded-[2rem] blur-sm" />
               <motion.img
                 whileHover={{ scale: 1.03 }}

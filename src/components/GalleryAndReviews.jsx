@@ -138,7 +138,7 @@ const GalleryAndReviews = () => {
             slideShadows: true,
           }}
           pagination={{ clickable: true }}
-          navigation={true}
+          navigation={false}
           modules={[EffectCoverflow, Pagination, Navigation]}
           className="mySwiper"
           breakpoints={{
