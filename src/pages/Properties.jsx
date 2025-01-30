@@ -540,8 +540,9 @@ const Properties = () => {
                           <BookingButton property={property} />
                           <Link
                             to={`/property/${property._id}`}
+                            style={{marginTop:"0px"}}
                             onClick={() => window.scrollTo(0, 0)}
-                            className="px-4 mb-8 sm:px-6 pt-4 pb-2 text-sm sm:text-base font-semibold bg-gradient-to-r from-blue-300 to-cyan-300 hover:bg-gradient-to-r hover:from-cyan-400 hover:to-blue-400 transition-all duration-300 rounded-lg text-center"
+                            className="px-4 mb-8 mt-0 h-full pt-2 sm:px-6 pb-2 text-sm sm:text-base font-semibold bg-gradient-to-r from-blue-300 to-cyan-300 hover:bg-gradient-to-r hover:from-cyan-400 hover:to-blue-400 transition-all duration-300 rounded-lg text-center"
                           >
                             View Details
                           </Link>
