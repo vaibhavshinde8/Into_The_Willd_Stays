@@ -536,7 +536,7 @@ const Properties = () => {
                           </span>
                         </div>
 
-                        <div className="flex items-center w-full h-full sm:w-auto space-y-2 sm:space-y-3">
+                        <div className="flex items-center justify-end w-full h-full sm:w-auto space-y-2 sm:space-y-3">
                           <BookingButton property={property} />
                           <Link
                             to={`/property/${property._id}`}
