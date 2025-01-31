@@ -661,7 +661,7 @@ Thank you"`,
           </div>
 
           {/* FAQs Accordion */}
-          <div className="mt-16 mb-12 mb-20">
+          <div className="mt-16 mb-12">
             <h2 className="text-2xl ms-4 sm:ms-0 font-bold mb-8 flex items-center gap-3 ">
 
 
@@ -726,11 +726,13 @@ Thank you"`,
             </h1>
 
             {/* Carousel */}
-            <Slider {...settings} className="w-full flex gap-4">
+            <Slider {...settings} className="w-full ">
               {reviews[propertyNameForReview]?.map((review, index) => (
-                <div
+
+                <div className="p-2 ">
+                  <div
                   key={index}
-                  className="bg-white w-[45%] p-6 rounded-xl shadow-md border border-gray-200 mx-2"
+                  className="bg-white  p-6 rounded-xl shadow-md border border-gray-200 " 
                 >
                   {/* User Info */}
                   <div className="flex  items-center space-x-4 mb-4">
@@ -759,6 +761,8 @@ Thank you"`,
                     ))}
                   </div>
                 </div>
+                </div>
+                
               ))}
             </Slider>
           </div>
