@@ -25,6 +25,19 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 //hello
+import image1 from "../assets/image1.jpg"
+import image2 from "../assets/image2.jpg"
+import image3 from "../assets/image3.jpg"
+import image4 from "../assets/image4.jpg"
+import image5 from "../assets/image5.jpg"
+import image6 from "../assets/image6.jpg"
+import image7 from "../assets/image7.jpg"
+import image9 from "../assets/image9.jpg"
+import image10 from "../assets/image10.jpg"
+import image11 from "../assets/image11.jpg"
+import image12 from "../assets/image12.jpg"
+import image13 from "../assets/image13.jpg"
+
 
 const ExploreMoreITW = () => {
 
@@ -80,17 +93,33 @@ const ExploreMoreITW = () => {
         date: "2 days ago",
         avatar: "https://lh3.googleusercontent.com/a-/ALV-UjUUygNmvjTkufn8yf6am1WuEmi0ovqTcXdeiejFFYZthSbZbzn84Q=w54-h54-p-rp-mo-ba2-br100",
         feedback: `"My stay here was nothing short of magical! The place we stayed at was surrounded by breathtaking mountains, offering serene views that made the experience unforgettable. One of the highlights was witnessing a spectacular sunrise, which felt like nature's masterpiece.
-    
     The hospitality provided by the owner Akash was truly exceptional – he was so warm, accommodating, and attentive that it felt like home. He went above and beyond to ensure our comfort and made our stay even more special."`,
+        type:"feedback",
         rating: 5,
+
       },
+      {
+        id: 3,
+        avatar: image2,
+        type:"image"
+      }
+
+      ,
       {
         id: 2,
         name: "Tushar Bhagwane",
         date: "4 days ago",
         avatar: "https://lh3.googleusercontent.com/a-/ALV-UjWx0zD4XwMxOPsGqweH7fI_8W4dvCaHP_tswI4G0yQCJXYkoD-F=w54-h54-p-rp-mo-br100",
-        feedback: `"I had a fantastic stay at this hotel! The rooms were spacious, clean, and well-equipped with everything I needed for a comfortable visit. The staff were incredibly friendly and went above and beyond to ensure I had a great experience. The location is perfect, with easy access to popular attractions, restaurants, and transportation. The breakfast was delicious with a wide variety of options. I would definitely recommend this hotel to anyone looking for a relaxing and enjoyable stay."`,
+        feedback: `"I had a fantastic stay at this hotel! The rooms were spacious, clean, and well-equipped with everything I needed for a comfortable visit. The staff were incredibly friendly and went above and beyond to ensure I had a great experience. The location is perfect, with easy access to popular attractions, restaurants, and transportation. The breakfast was delicious with a wide variety of options. I would definitely recommend this hotel to anyone looking for a relaxing and enjoyable stay.stay even more special."`,
         rating: 5,
+        type:"feedback"
+      }
+      ,
+
+      {
+        id: 3,
+        avatar: image1,
+        type:"image"
       }
     ],
     ITWTapovanRiseCottages: [
@@ -105,6 +134,12 @@ Thanks  a lot deepak ji for everything.🙏🏻😊❤️
 
 .would like to recommend this to many of my friends and relatives…."`,
         rating: 5,
+        type:"feedback",
+      },
+      {
+        id: 3,
+        avatar: image3,
+        type:"image"
       },
       {
         id: 2,
@@ -117,6 +152,13 @@ Walk-in from main road and very safe place. Owner and all staff's behaviour is s
 
 Rooms and open area is well cleaned and very peaceful place and mountain view."`,
         rating: 5,
+        type:"feedback",
+      }
+      ,
+      {
+        id: 3,
+        avatar: image4,
+        type:"image"
       }
     ],
     ITWMastanaMusafir: [
@@ -127,6 +169,12 @@ Rooms and open area is well cleaned and very peaceful place and mountain view."`
         avatar: "https://lh3.googleusercontent.com/a-/ALV-UjVA_eucprNOoafs8A8sEhBaVQ4uKLAtZ1wV2PPlAjIu0N1qmt3u=w36-h36-p-rp-mo-br100",
         feedback: `"i had a fantastic stay! the staff were incredibly friendly.  Everything about the place was exceptional. It was clean, stylish, roomy with excellent service. Food was good and great value for money and service was attentive and efficient. Room itself was well equipped and comfortable. Highly recommended. ❤️"`,
         rating: 5,
+        type:"feedback",
+      },
+      {
+        id: 3,
+        avatar: image5,
+        type:"image"
       },
       {
         id: 2,
@@ -135,7 +183,13 @@ Rooms and open area is well cleaned and very peaceful place and mountain view."`
         avatar: "https://lh3.googleusercontent.com/a-/ALV-UjUMCa3moxmQtqs4d0MBExw6HcX1gcr-upY6GwSMX9PGAFAd1V5Mxw=w36-h36-p-rp-mo-ba5-br100",
         feedback: `"This was one of the best paneer butter masala I've ever had, I strongly recommend. I also ordered fried vegetables, papad and parathas. Even though I don't usually write reviews, I just had to share my wonderful experience."`,
         rating: 5,
-      }
+        type:"feedback",
+      },
+      {
+        id: 3,
+        avatar: image6,
+        type:"image"
+      },
     ],
     "ITW:PinesAndTails": [
       {
@@ -148,6 +202,12 @@ The Cottage was very good,washroom was spacious and the view from my window and 
 Food was delicious,Thanks to Trilok(Head Chef) for this. The staff were really friendly.
 If you're looking for a peaceful getaway surrounded by nature, Into The Wild Cottages is the place to go!"`,
         rating: 5,
+        type:"feedback",
+      },
+      {
+        id: 3,
+        avatar: image7,
+        type:"image"
       },
       {
         id: 2,
@@ -161,7 +221,13 @@ The vibe of the cafe is amazing
 Love the place
 Thank you"`,
         rating: 5,
-      }
+        type:"feedback",
+      },
+      {
+        id: 3,
+        avatar: image9,
+        type:"image"
+      },
 
     ],
     "ITW:SunandSandVilla": [
@@ -172,6 +238,12 @@ Thank you"`,
         avatar: "https://lh3.googleusercontent.com/a-/ALV-UjWfhfXkPNVUNWGSMayOR9RqYcyoEH8iKKWKAtHxLbqAzpNDbJ85Ow=w54-h54-p-rp-mo-ba2-br100",
         feedback: `"Located just 300 metres before Eco Park, Dhanaulti - Into the wild home stay is easily one of the best vibrant stays in the area. The rooms are spacious , the cottages are designed in a way which is modern yet keeps you super close to the nature. The stay offers absolutely beautiful Mountain View's in the front and backside offers you Himalaya views on a clear sky day!"`,
         rating: 5,
+        type:"feedback",
+      },
+      {
+        id: 3,
+        avatar: image10,
+        type:"image"
       },
       {
         id: 2,
@@ -180,7 +252,13 @@ Thank you"`,
         avatar: "https://lh3.googleusercontent.com/a-/ALV-UjXcVgO6RVm6QTkIEvCG4fDM4693d-jm2kS5Eji3CbgzhzcTVZLy=w54-h54-p-rp-mo-ba2-br100",
         feedback: `"The location and view itself worth every single penny. We enjoyed our stay in the property and loved the hospitality of the staf and super most Uncle ji took good take care of us like family. Will definitely recommend to my acquaintances and will come back soon."`,
         rating: 5,
-      }
+        type:"feedback",
+      },
+      {
+        id: 3,
+        avatar: image11,
+        type:"image"
+      },
     ],
     ITWTheRudramAura: [
       {
@@ -190,6 +268,12 @@ Thank you"`,
         avatar: "https://lh3.googleusercontent.com/a-/ALV-UjUiPYj94ra9LMSK_zdaPBiWGKgJ4tiRClMczHtXnkUHZZ8KlkDt=w54-h54-p-rp-mo-br100",
         feedback: `"Beautiful place where you can spend good time with family and friends. Cottages are spacious and you can have a blissful view of the valley from watch tower. The paintings and wall art in cafe and cottages are very detailed and are very impressive."`,
         rating: 5,
+        type:"feedback",
+      },
+      {
+        id: 3,
+        avatar: image12,
+        type:"image"
       },
       {
         id: 2,
@@ -198,14 +282,52 @@ Thank you"`,
         avatar: "https://lh3.googleusercontent.com/a-/ALV-UjVtHJlom4jAmFJh851wQLMKq_OWJHGUSw7S8qRq9SLF_pPd5oq2=w54-h54-p-rp-mo-br100",
         feedback: `"My stay at Into The Wild Cottages in Dhanaulti was amazing! The rooms were cozy and the view from my window was stunning. I could see the sunrise and sunset every day. The food, especially the honey chilli potatoes and momos, were delicious. The staff were really friendly and made me feel at home. Even though I don't usually write reviews, I just had to share my wonderful experience."`,
         rating: 5,
-      }
+        type:"feedback",
+      },
+      {
+        id: 3,
+        avatar: image13,
+        type:"image"
+      },
+    ],
+    "Me:namHomestay(Majuli)": [
+      {
+        id: 1,
+        name: "Aadi Raina",
+        date: "a monthb ago",
+        avatar: "https://lh3.googleusercontent.com/a-/ALV-UjUiPYj94ra9LMSK_zdaPBiWGKgJ4tiRClMczHtXnkUHZZ8KlkDt=w54-h54-p-rp-mo-br100",
+        feedback: `"Beautiful place where you can spend good time with family and friends. Cottages are spacious and you can have a blissful view of the valley from watch tower. The paintings and wall art in cafe and cottages are very detailed and are very impressive."`,
+        rating: 5,
+        type:"feedback",
+      },
+      {
+        id: 3,
+        avatar: image12,
+        type:"image"
+      },
+      {
+        id: 2,
+        name: "SHIVAM MISHRA",
+        date: "3 month ago",
+        avatar: "https://lh3.googleusercontent.com/a-/ALV-UjVtHJlom4jAmFJh851wQLMKq_OWJHGUSw7S8qRq9SLF_pPd5oq2=w54-h54-p-rp-mo-br100",
+        feedback: `"My stay at Into The Wild Cottages in Dhanaulti was amazing! The rooms were cozy and the view from my window was stunning. I could see the sunrise and sunset every day. The food, especially the honey chilli potatoes and momos, were delicious. The staff were really friendly and made me feel at home. Even though I don't usually write reviews, I just had to share my wonderful experience."`,
+        rating: 5,
+        type:"feedback",
+      },
+      {
+        id: 3,
+        avatar: image13,
+        type:"image"
+      },
     ],
 
 
 
 
 
+
   }
+  
 
   const propertyNameForReview = property?.name?.replaceAll(" ", "") || ""
   console.log("propertyNameForReview", propertyNameForReview)
@@ -727,44 +849,54 @@ Thank you"`,
 
             {/* Carousel */}
             <Slider {...settings} className="w-full ">
-              {reviews[propertyNameForReview]?.map((review, index) => (
+  {reviews[propertyNameForReview]?.map((review, index) => (
+    <div key={index} className="p-2">
+      {review.type === "image" ? (
+        // If type is "image", render an image
+        <div className="flex justify-center" style={{height:"360px"}}>
+          <img
+            src={review.avatar}
+            alt="Review Image"
+            className="rounded-lg object-fill  w-full h-full"
+          />
+        </div>
+      ) : (
+        // If type is "feedback", render the review card
+        <div style={{height:"360px"}} className="bg-white p-6 rounded-xl shadow-md border border-gray-200 h-full">
+          {/* User Info */}
+          <div className="flex items-center space-x-4 mb-4">
+            <img
+              src={review.avatar}
+              alt="User Avatar"
+              className="w-12 h-12 rounded-full object-cover"
+            />
+            <div>
+              <h3 className="text-lg font-semibold text-gray-800">
+                {review.name}
+              </h3>
+              <p className="text-sm text-gray-500">{review.date}</p>
+            </div>
+          </div>
 
-                <div className="p-2 ">
-                  <div
-                  key={index}
-                  className="bg-white  p-6 rounded-xl shadow-md border border-gray-200 " 
-                >
-                  {/* User Info */}
-                  <div className="flex  items-center space-x-4 mb-4">
-                    <img
-                      src={review.avatar}
-                      alt="User Avatar"
-                      className="w-12 h-12 rounded-full object-cover"
-                    />
-                    <div>
-                      <h3 className="text-lg font-semibold text-gray-800">
-                        {review.name}
-                      </h3>
-                      <p className="text-sm text-gray-500">{review.data}</p>
-                    </div>
-                  </div>
+          {/* Feedback Content */}
+          <p className="text-gray-700 mb-4 text-sm sm:text-md text-justify sm:text-left">
+            {review.feedback}
+          </p>
 
-                  {/* Feedback Content */}
-                  <p className="text-gray-700 mb-4 text-sm sm:text-md text-justify sm:text-left">
-                    {review.feedback}
-                  </p>
+          {/* Rating */}
+          <div className="flex items-center space-x-1">
+            {[...Array(review.rating)].map((_, star) => (
+              <span key={star} className="text-yellow-500 text-xl">
+                ★
+              </span>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  ))}
+</Slider>
 
-                  {/* Rating */}
-                  <div className="flex items-center space-x-1">
-                    {[1, 2, 3, 4, 5].map((star) => (
-                      <span key={star} className="text-yellow-500 text-xl">★</span>
-                    ))}
-                  </div>
-                </div>
-                </div>
-                
-              ))}
-            </Slider>
           </div>
         </div>
 
