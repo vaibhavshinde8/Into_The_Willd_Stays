@@ -282,7 +282,8 @@ Thank you"`,
                   controls
                   autoPlay
                   loop
-                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-105 "
+                  muted
+                  className="w-full h-full object-cover transition-transform duration-300  "
                 />
               </motion.div>
             ) : (
@@ -501,7 +502,7 @@ Thank you"`,
                 key={button.id}
                 href={`#${button.id}`}
                 onClick={() => setActiveButton(button.id)}
-                className={`py-2  rounded font-semibold flex-auto  flex items-center justify-center px-4 transition duration-300 ${activeButton === button.id
+                className={`py-2  rounded font-semibold flex-auto border-2 border-gray-200 shadow-lg flex items-center justify-center px-4 transition duration-300 ${activeButton === button.id
                   ? "bg-[#163257] text-white"
                   : "bg-white text-gray-800"
                   }`}
