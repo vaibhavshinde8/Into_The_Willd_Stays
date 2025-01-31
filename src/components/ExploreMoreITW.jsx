@@ -25,22 +25,20 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 //hello
-import image1 from "../assets/image1.jpg"
-import image2 from "../assets/image2.jpg"
-import image3 from "../assets/image3.jpg"
-import image4 from "../assets/image4.jpg"
-import image5 from "../assets/image5.jpg"
-import image6 from "../assets/image6.jpg"
-import image7 from "../assets/image7.jpg"
-import image9 from "../assets/image9.jpg"
-import image10 from "../assets/image10.jpg"
-import image11 from "../assets/image11.jpg"
-import image12 from "../assets/image12.jpg"
-import image13 from "../assets/image13.jpg"
-
+import image1 from "../assets/image1.jpg";
+import image2 from "../assets/image2.jpg";
+import image3 from "../assets/image3.jpg";
+import image4 from "../assets/image4.jpg";
+import image5 from "../assets/image5.jpg";
+import image6 from "../assets/image6.jpg";
+import image7 from "../assets/image7.jpg";
+import image9 from "../assets/image9.jpg";
+import image10 from "../assets/image10.jpg";
+import image11 from "../assets/image11.jpg";
+import image12 from "../assets/image12.jpg";
+import image13 from "../assets/image13.jpg";
 
 const ExploreMoreITW = () => {
-
   const [property, setProperty] = useState(null);
   const [loading, setLoading] = useState(true);
   const [activeButton, setActiveButton] = useState(null);
@@ -91,104 +89,105 @@ const ExploreMoreITW = () => {
         id: 1,
         name: "Manjula Singh",
         date: "2 days ago",
-        avatar: "https://lh3.googleusercontent.com/a-/ALV-UjUUygNmvjTkufn8yf6am1WuEmi0ovqTcXdeiejFFYZthSbZbzn84Q=w54-h54-p-rp-mo-ba2-br100",
+        avatar:
+          "https://lh3.googleusercontent.com/a-/ALV-UjUUygNmvjTkufn8yf6am1WuEmi0ovqTcXdeiejFFYZthSbZbzn84Q=w54-h54-p-rp-mo-ba2-br100",
         feedback: `"My stay here was nothing short of magical! The place we stayed at was surrounded by breathtaking mountains, offering serene views that made the experience unforgettable. One of the highlights was witnessing a spectacular sunrise, which felt like nature's masterpiece.
     The hospitality provided by the owner Akash was truly exceptional – he was so warm, accommodating, and attentive that it felt like home. He went above and beyond to ensure our comfort and made our stay even more special."`,
-        type:"feedback",
+        type: "feedback",
         rating: 5,
-
       },
       {
         id: 3,
         avatar: image2,
-        type:"image"
-      }
+        type: "image",
+      },
 
-      ,
       {
         id: 2,
         name: "Tushar Bhagwane",
         date: "4 days ago",
-        avatar: "https://lh3.googleusercontent.com/a-/ALV-UjWx0zD4XwMxOPsGqweH7fI_8W4dvCaHP_tswI4G0yQCJXYkoD-F=w54-h54-p-rp-mo-br100",
+        avatar:
+          "https://lh3.googleusercontent.com/a-/ALV-UjWx0zD4XwMxOPsGqweH7fI_8W4dvCaHP_tswI4G0yQCJXYkoD-F=w54-h54-p-rp-mo-br100",
         feedback: `"I had a fantastic stay at this hotel! The rooms were spacious, clean, and well-equipped with everything I needed for a comfortable visit. The staff were incredibly friendly and went above and beyond to ensure I had a great experience. The location is perfect, with easy access to popular attractions, restaurants, and transportation. The breakfast was delicious with a wide variety of options. I would definitely recommend this hotel to anyone looking for a relaxing and enjoyable stay.stay even more special."`,
         rating: 5,
-        type:"feedback"
-      }
-      ,
-
+        type: "feedback",
+      },
       {
         id: 3,
         avatar: image1,
-        type:"image"
-      }
+        type: "image",
+      },
     ],
     ITWTapovanRiseCottages: [
       {
         id: 1,
         name: "Shweta Jha",
         date: "3 weeks ago",
-        avatar: "https://lh3.googleusercontent.com/a-/ALV-UjVJMTqVydZnsZ3-wUaW1eJzC1kDLaOQDMZ75zAe9x-0KWGSU7iW=w36-h36-p-rp-mo-br100",
+        avatar:
+          "https://lh3.googleusercontent.com/a-/ALV-UjVJMTqVydZnsZ3-wUaW1eJzC1kDLaOQDMZ75zAe9x-0KWGSU7iW=w36-h36-p-rp-mo-br100",
         feedback: `"Great location, beautiful surrounding atmosphere, great staff. Lovely  and great first impression of this cottage . Everything about the hotel was exceptional. It was clean, stylish, roomy with excellent service….. Food was good and great value for money and service was attentive and efficient. Room itself was well equipped and comfortable. I was very pleased with my stay. I hope to be back for a longer visit soon…
 
 Thanks  a lot deepak ji for everything.🙏🏻😊❤️
 
 .would like to recommend this to many of my friends and relatives…."`,
         rating: 5,
-        type:"feedback",
+        type: "feedback",
       },
       {
         id: 3,
         avatar: image3,
-        type:"image"
+        type: "image",
       },
       {
         id: 2,
         name: "Hritu Sharma",
         date: "a month ago",
-        avatar: "https://lh3.googleusercontent.com/a-/ALV-UjWxIduVycbNc0Sq02qHQmsMcAoU0-6AU4BMYuGBJttWA8lZI1Nr8g=w36-h36-p-rp-mo-br100",
+        avatar:
+          "https://lh3.googleusercontent.com/a-/ALV-UjWxIduVycbNc0Sq02qHQmsMcAoU0-6AU4BMYuGBJttWA8lZI1Nr8g=w36-h36-p-rp-mo-br100",
         feedback: `"Best & Budget friendly place to stay in Rishikesh with the feel of camping, bone fire, music and all other activities.
 
 Walk-in from main road and very safe place. Owner and all staff's behaviour is so nice and humble.
 
 Rooms and open area is well cleaned and very peaceful place and mountain view."`,
         rating: 5,
-        type:"feedback",
-      }
-      ,
+        type: "feedback",
+      },
       {
         id: 3,
         avatar: image4,
-        type:"image"
-      }
+        type: "image",
+      },
     ],
     ITWMastanaMusafir: [
       {
         id: 1,
         name: "Aadi Raina",
         date: "a monthb ago",
-        avatar: "https://lh3.googleusercontent.com/a-/ALV-UjVA_eucprNOoafs8A8sEhBaVQ4uKLAtZ1wV2PPlAjIu0N1qmt3u=w36-h36-p-rp-mo-br100",
+        avatar:
+          "https://lh3.googleusercontent.com/a-/ALV-UjVA_eucprNOoafs8A8sEhBaVQ4uKLAtZ1wV2PPlAjIu0N1qmt3u=w36-h36-p-rp-mo-br100",
         feedback: `"i had a fantastic stay! the staff were incredibly friendly.  Everything about the place was exceptional. It was clean, stylish, roomy with excellent service. Food was good and great value for money and service was attentive and efficient. Room itself was well equipped and comfortable. Highly recommended. ❤️"`,
         rating: 5,
-        type:"feedback",
+        type: "feedback",
       },
       {
         id: 3,
         avatar: image5,
-        type:"image"
+        type: "image",
       },
       {
         id: 2,
         name: "Olivier Guillard",
         date: "3 month ago",
-        avatar: "https://lh3.googleusercontent.com/a-/ALV-UjUMCa3moxmQtqs4d0MBExw6HcX1gcr-upY6GwSMX9PGAFAd1V5Mxw=w36-h36-p-rp-mo-ba5-br100",
+        avatar:
+          "https://lh3.googleusercontent.com/a-/ALV-UjUMCa3moxmQtqs4d0MBExw6HcX1gcr-upY6GwSMX9PGAFAd1V5Mxw=w36-h36-p-rp-mo-ba5-br100",
         feedback: `"This was one of the best paneer butter masala I've ever had, I strongly recommend. I also ordered fried vegetables, papad and parathas. Even though I don't usually write reviews, I just had to share my wonderful experience."`,
         rating: 5,
-        type:"feedback",
+        type: "feedback",
       },
       {
         id: 3,
         avatar: image6,
-        type:"image"
+        type: "image",
       },
     ],
     "ITW:PinesAndTails": [
@@ -196,24 +195,26 @@ Rooms and open area is well cleaned and very peaceful place and mountain view."`
         id: 1,
         name: "manish rathore",
         date: "a monthb ago",
-        avatar: "https://lh3.googleusercontent.com/a-/ALV-UjWAyMr0qVH4_8n21vsJraxjHqz_wEyldxnY2MHklO0JqjjGCfsw=w54-h54-p-rp-mo-br100",
+        avatar:
+          "https://lh3.googleusercontent.com/a-/ALV-UjWAyMr0qVH4_8n21vsJraxjHqz_wEyldxnY2MHklO0JqjjGCfsw=w54-h54-p-rp-mo-br100",
         feedback: `"My stay was amazing at Into the Wilds!
 The Cottage was very good,washroom was spacious and the view from my window and balcony was stunning.
 Food was delicious,Thanks to Trilok(Head Chef) for this. The staff were really friendly.
 If you're looking for a peaceful getaway surrounded by nature, Into The Wild Cottages is the place to go!"`,
         rating: 5,
-        type:"feedback",
+        type: "feedback",
       },
       {
         id: 3,
         avatar: image7,
-        type:"image"
+        type: "image",
       },
       {
         id: 2,
         name: "Bunny",
         date: "3 month ago",
-        avatar: "https://lh3.googleusercontent.com/a-/ALV-UjWzekqZQVqqrnzbLdop2eXfnUb--K_2y_SUmtDzIs9lpP4yIppH=w54-h54-p-rp-mo-ba4-br100",
+        avatar:
+          "https://lh3.googleusercontent.com/a-/ALV-UjWzekqZQVqqrnzbLdop2eXfnUb--K_2y_SUmtDzIs9lpP4yIppH=w54-h54-p-rp-mo-ba4-br100",
         feedback: `"Nice and cozy place to chill
 French fries were good and momos also delicious
 Everything is freshly made
@@ -221,43 +222,44 @@ The vibe of the cafe is amazing
 Love the place
 Thank you"`,
         rating: 5,
-        type:"feedback",
+        type: "feedback",
       },
       {
         id: 3,
         avatar: image9,
-        type:"image"
+        type: "image",
       },
-
     ],
     "ITW:SunandSandVilla": [
       {
         id: 1,
         name: "Rajat Sharma",
         date: "a monthb ago",
-        avatar: "https://lh3.googleusercontent.com/a-/ALV-UjWfhfXkPNVUNWGSMayOR9RqYcyoEH8iKKWKAtHxLbqAzpNDbJ85Ow=w54-h54-p-rp-mo-ba2-br100",
+        avatar:
+          "https://lh3.googleusercontent.com/a-/ALV-UjWfhfXkPNVUNWGSMayOR9RqYcyoEH8iKKWKAtHxLbqAzpNDbJ85Ow=w54-h54-p-rp-mo-ba2-br100",
         feedback: `"Located just 300 metres before Eco Park, Dhanaulti - Into the wild home stay is easily one of the best vibrant stays in the area. The rooms are spacious , the cottages are designed in a way which is modern yet keeps you super close to the nature. The stay offers absolutely beautiful Mountain View's in the front and backside offers you Himalaya views on a clear sky day!"`,
         rating: 5,
-        type:"feedback",
+        type: "feedback",
       },
       {
         id: 3,
         avatar: image10,
-        type:"image"
+        type: "image",
       },
       {
         id: 2,
         name: "Arvind Nagar",
         date: "3 month ago",
-        avatar: "https://lh3.googleusercontent.com/a-/ALV-UjXcVgO6RVm6QTkIEvCG4fDM4693d-jm2kS5Eji3CbgzhzcTVZLy=w54-h54-p-rp-mo-ba2-br100",
+        avatar:
+          "https://lh3.googleusercontent.com/a-/ALV-UjXcVgO6RVm6QTkIEvCG4fDM4693d-jm2kS5Eji3CbgzhzcTVZLy=w54-h54-p-rp-mo-ba2-br100",
         feedback: `"The location and view itself worth every single penny. We enjoyed our stay in the property and loved the hospitality of the staf and super most Uncle ji took good take care of us like family. Will definitely recommend to my acquaintances and will come back soon."`,
         rating: 5,
-        type:"feedback",
+        type: "feedback",
       },
       {
         id: 3,
         avatar: image11,
-        type:"image"
+        type: "image",
       },
     ],
     ITWTheRudramAura: [
@@ -265,29 +267,31 @@ Thank you"`,
         id: 1,
         name: "Aadi Raina",
         date: "a monthb ago",
-        avatar: "https://lh3.googleusercontent.com/a-/ALV-UjUiPYj94ra9LMSK_zdaPBiWGKgJ4tiRClMczHtXnkUHZZ8KlkDt=w54-h54-p-rp-mo-br100",
+        avatar:
+          "https://lh3.googleusercontent.com/a-/ALV-UjUiPYj94ra9LMSK_zdaPBiWGKgJ4tiRClMczHtXnkUHZZ8KlkDt=w54-h54-p-rp-mo-br100",
         feedback: `"Beautiful place where you can spend good time with family and friends. Cottages are spacious and you can have a blissful view of the valley from watch tower. The paintings and wall art in cafe and cottages are very detailed and are very impressive."`,
         rating: 5,
-        type:"feedback",
+        type: "feedback",
       },
       {
         id: 3,
         avatar: image12,
-        type:"image"
+        type: "image",
       },
       {
         id: 2,
         name: "SHIVAM MISHRA",
         date: "3 month ago",
-        avatar: "https://lh3.googleusercontent.com/a-/ALV-UjVtHJlom4jAmFJh851wQLMKq_OWJHGUSw7S8qRq9SLF_pPd5oq2=w54-h54-p-rp-mo-br100",
+        avatar:
+          "https://lh3.googleusercontent.com/a-/ALV-UjVtHJlom4jAmFJh851wQLMKq_OWJHGUSw7S8qRq9SLF_pPd5oq2=w54-h54-p-rp-mo-br100",
         feedback: `"My stay at Into The Wild Cottages in Dhanaulti was amazing! The rooms were cozy and the view from my window was stunning. I could see the sunrise and sunset every day. The food, especially the honey chilli potatoes and momos, were delicious. The staff were really friendly and made me feel at home. Even though I don't usually write reviews, I just had to share my wonderful experience."`,
         rating: 5,
-        type:"feedback",
+        type: "feedback",
       },
       {
         id: 3,
         avatar: image13,
-        type:"image"
+        type: "image",
       },
     ],
     "Me:namHomestay(Majuli)": [
@@ -295,44 +299,40 @@ Thank you"`,
         id: 1,
         name: "Aadi Raina",
         date: "a monthb ago",
-        avatar: "https://lh3.googleusercontent.com/a-/ALV-UjUiPYj94ra9LMSK_zdaPBiWGKgJ4tiRClMczHtXnkUHZZ8KlkDt=w54-h54-p-rp-mo-br100",
+        avatar:
+          "https://lh3.googleusercontent.com/a-/ALV-UjUiPYj94ra9LMSK_zdaPBiWGKgJ4tiRClMczHtXnkUHZZ8KlkDt=w54-h54-p-rp-mo-br100",
         feedback: `"Beautiful place where you can spend good time with family and friends. Cottages are spacious and you can have a blissful view of the valley from watch tower. The paintings and wall art in cafe and cottages are very detailed and are very impressive."`,
         rating: 5,
-        type:"feedback",
+        type: "feedback",
       },
       {
         id: 3,
         avatar: image12,
-        type:"image"
+        type: "image",
       },
       {
         id: 2,
         name: "SHIVAM MISHRA",
         date: "3 month ago",
-        avatar: "https://lh3.googleusercontent.com/a-/ALV-UjVtHJlom4jAmFJh851wQLMKq_OWJHGUSw7S8qRq9SLF_pPd5oq2=w54-h54-p-rp-mo-br100",
+        avatar:
+          "https://lh3.googleusercontent.com/a-/ALV-UjVtHJlom4jAmFJh851wQLMKq_OWJHGUSw7S8qRq9SLF_pPd5oq2=w54-h54-p-rp-mo-br100",
         feedback: `"My stay at Into The Wild Cottages in Dhanaulti was amazing! The rooms were cozy and the view from my window was stunning. I could see the sunrise and sunset every day. The food, especially the honey chilli potatoes and momos, were delicious. The staff were really friendly and made me feel at home. Even though I don't usually write reviews, I just had to share my wonderful experience."`,
         rating: 5,
-        type:"feedback",
+        type: "feedback",
       },
       {
         id: 3,
         avatar: image13,
-        type:"image"
+        type: "image",
       },
     ],
+  };
 
-
-
-
-
-
-  }
-  
-
-  const propertyNameForReview = property?.name?.replaceAll(" ", "") || ""
-  console.log("propertyNameForReview", propertyNameForReview)
-  const guestSummary = `${adults} Adult${adults > 1 ? "s" : ""
-    } and ${children} Child${children > 1 ? "ren" : ""}`;
+  const propertyNameForReview = property?.name?.replaceAll(" ", "") || "";
+  console.log("propertyNameForReview", propertyNameForReview);
+  const guestSummary = `${adults} Adult${
+    adults > 1 ? "s" : ""
+  } and ${children} Child${children > 1 ? "ren" : ""}`;
   useEffect(() => {
     const fetchProperty = async () => {
       try {
@@ -350,19 +350,20 @@ Thank you"`,
     fetchProperty();
   }, [id]);
 
-
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   // Prepare images array
   const images = property?.images || [];
-  const hasVideo = images.some((img) => img.endsWith('.mp4'));
+  const hasVideo = images.some((img) => img.endsWith(".mp4"));
 
   // If there's a video, replace the first image with the video
   const displayImages = hasVideo
-    ? [images.find((img) => img.endsWith('.mp4')), ...images.filter((img) => !img.endsWith('.mp4'))]
+    ? [
+        images.find((img) => img.endsWith(".mp4")),
+        ...images.filter((img) => !img.endsWith(".mp4")),
+      ]
     : images;
 
   if (loading) {
@@ -411,7 +412,7 @@ Thank you"`,
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
         {displayImages.length > 0 && (
           <>
-            {displayImages[0].endsWith('.mp4') ? (
+            {displayImages[0].endsWith(".mp4") ? (
               // If the first item is a video
               <motion.div
                 whileHover={{ scale: 1.02 }}
@@ -422,7 +423,7 @@ Thank you"`,
                   controls
                   autoPlay
                   loop
-                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-105 "
+                  className="w-full h-full object-cover transition-transform duration-300 "
                 />
               </motion.div>
             ) : (
@@ -641,10 +642,11 @@ Thank you"`,
                 key={button.id}
                 href={`#${button.id}`}
                 onClick={() => setActiveButton(button.id)}
-                className={`py-2 border-2 shadow-lg rounded font-semibold flex-auto  flex items-center justify-center px-4 transition duration-300 ${activeButton === button.id
-                  ? "bg-[#163257] text-white"
-                  : "bg-white text-gray-800"
-                  }`}
+                className={`py-2 border-2 shadow-lg rounded font-semibold flex-auto  flex items-center justify-center px-4 transition duration-300 ${
+                  activeButton === button.id
+                    ? "bg-[#163257] text-white"
+                    : "bg-white text-gray-800"
+                }`}
               >
                 {button.label}
               </a>
@@ -656,9 +658,9 @@ Thank you"`,
             <div className="bg-white shadow-md px-2 sm:px-6 sm:py-6 py-3 rounded-xl">
               <div className="flex items-center gap-3 mb-2">
                 <FaHome className="text-blue-500  hidden sm:block text-xl" />
-                <h3 className="font-semibold text-sm ">{
-                  property?.cottage ? "Cottages" : "Rooms"
-                }</h3>
+                <h3 className="font-semibold text-sm ">
+                  {property?.cottage ? "Cottages" : "Rooms"}
+                </h3>
               </div>
               <p className="text-gray-700 text-sm ">
                 {property?.bedroom} {property?.cottage ? "Cottages" : "Rooms"}
@@ -670,7 +672,8 @@ Thank you"`,
                 <h3 className="font-semibold text-sm">Guest Capacity</h3>
               </div>
               <p className="text-gray-700 text-sm">
-                {property?.guestCapacity} persons per {property?.cottage ? "cottage" : "room"}
+                {property?.guestCapacity} persons per{" "}
+                {property?.cottage ? "cottage" : "room"}
               </p>
             </div>
             <div className="bg-white shadow-md  px-2 sm:px-6  sm:py-6 py-3 rounded-xl">
@@ -691,7 +694,10 @@ Thank you"`,
             </div>
           </div>
 
-          <div id="amenities" className="prose max-w-none flex flex-col gap-2 mb-12 shadow-md rounded-xl p-3">
+          <div
+            id="amenities"
+            className="prose max-w-none flex flex-col gap-2 mb-12 shadow-md rounded-xl p-3"
+          >
             <h2 className="text-lg font-semibold">Description</h2>
             <p className="text-sm sm:text-md">{property?.description}</p>
           </div>
@@ -708,17 +714,13 @@ Thank you"`,
                   whileHover={{ scale: 1.03 }}
                   key={idx}
                   className="paddingY-320 flex items-center gap-3 px-4  py-3 sm:py-4 bg-white  rounded-xl shadow-md hover:bg-gray-100 transition-all duration-300"
-
                 >
                   <IoMdSunny className="text-blue-500 hidden-before-320" />
                   <p className="text-xs sm:text-md font-semibold ">{amenity}</p>
-                  <div id="location" ></div>
+                  <div id="location"></div>
                 </motion.div>
-
               ))}
-
             </div>
-
           </div>
           {/* Location Section */}
 
@@ -727,7 +729,6 @@ Thank you"`,
             className=" mb-8 bg-white rounded-xl shadow-md p-6"
           >
             <a
-
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-lg text-blue-500 hover:text-blue-600 transition-all duration-300 hover:translate-x-1"
@@ -738,12 +739,8 @@ Thank you"`,
           </div>
 
           {/* Policies Section */}
-          <div
-
-            className=" grid md:grid-cols-2 gap-12 bg-white rounded-xl shadow-md py-8 px-4 sm:px-8"
-
-          >
-            <div >
+          <div className=" grid md:grid-cols-2 gap-12 bg-white rounded-xl shadow-md py-8 px-4 sm:px-8">
+            <div>
               <h2 className="text-2xl ms-4 sm:ms-0  font-bold mb-6 flex items-center gap-3 mt-20">
                 <FcRules className=" hidden sm:block text-blue-500" />
                 Booking Policies
@@ -777,24 +774,18 @@ Thank you"`,
                 ))}
                 <div id="faqs"></div>
               </ul>
-
             </div>
-
           </div>
 
           {/* FAQs Accordion */}
           <div className="mt-16 mb-12">
-            <h2 className="text-2xl ms-4 sm:ms-0 font-bold mb-8 flex items-center gap-3 ">
-
-
-            </h2>
+            <h2 className="text-2xl ms-4 sm:ms-0 font-bold mb-8 flex items-center gap-3 "></h2>
             <div className="space-y-4 ">
               {property?.faqs?.map((faq, idx) => (
                 <motion.div
                   key={idx}
                   initial={false}
                   className="border rounded-xl overflow-hidden shadow-md bg-white"
-
                 >
                   <div
                     className="flex justify-between gap-2 items-center p-5 cursor-pointer bg-gray-50 hover:bg-gray-100 transition-colors duration-300"
@@ -802,7 +793,6 @@ Thank you"`,
                   >
                     <h3 className="font-semibold text-sm sm:text-lg  ">
                       {faq.question}
-
                     </h3>
                     {openIndex === idx ? (
                       <FaArrowAltCircleUp className="text-blue-500 text-xl w-8" />
@@ -818,7 +808,6 @@ Thank you"`,
                         exit={{ height: 0 }}
                         transition={{ duration: 0.3 }}
                         className="overflow-hidden"
-
                       >
                         <div className="p-5 bg-white">
                           <p className="text-gray-700 text-sm sm:text-md">
@@ -828,11 +817,9 @@ Thank you"`,
                       </motion.div>
                     )}
                   </AnimatePresence>
-                  <div id="Review" ></div>
+                  <div id="Review"></div>
                 </motion.div>
-
               ))}
-
             </div>
           </div>
 
@@ -849,54 +836,59 @@ Thank you"`,
 
             {/* Carousel */}
             <Slider {...settings} className="w-full ">
-  {reviews[propertyNameForReview]?.map((review, index) => (
-    <div key={index} className="p-2">
-      {review.type === "image" ? (
-        // If type is "image", render an image
-        <div className="flex justify-center" style={{height:"360px"}}>
-          <img
-            src={review.avatar}
-            alt="Review Image"
-            className="rounded-lg object-fill  w-full h-full"
-          />
-        </div>
-      ) : (
-        // If type is "feedback", render the review card
-        <div style={{height:"360px"}} className="bg-white p-6 rounded-xl shadow-md border border-gray-200 h-full">
-          {/* User Info */}
-          <div className="flex items-center space-x-4 mb-4">
-            <img
-              src={review.avatar}
-              alt="User Avatar"
-              className="w-12 h-12 rounded-full object-cover"
-            />
-            <div>
-              <h3 className="text-lg font-semibold text-gray-800">
-                {review.name}
-              </h3>
-              <p className="text-sm text-gray-500">{review.date}</p>
-            </div>
-          </div>
+              {reviews[propertyNameForReview]?.map((review, index) => (
+                <div key={index} className="p-2">
+                  {review.type === "image" ? (
+                    // If type is "image", render an image
+                    <div
+                      className="flex justify-center"
+                      style={{ height: "360px" }}
+                    >
+                      <img
+                        src={review.avatar}
+                        alt="Review Image"
+                        className="rounded-lg object-fill  w-full h-full"
+                      />
+                    </div>
+                  ) : (
+                    // If type is "feedback", render the review card
+                    <div
+                      style={{ height: "360px" }}
+                      className="bg-white p-6 rounded-xl shadow-md border border-gray-200 h-full"
+                    >
+                      {/* User Info */}
+                      <div className="flex items-center space-x-4 mb-4">
+                        <img
+                          src={review.avatar}
+                          alt="User Avatar"
+                          className="w-12 h-12 rounded-full object-cover"
+                        />
+                        <div>
+                          <h3 className="text-lg font-semibold text-gray-800">
+                            {review.name}
+                          </h3>
+                          <p className="text-sm text-gray-500">{review.date}</p>
+                        </div>
+                      </div>
 
-          {/* Feedback Content */}
-          <p className="text-gray-700 mb-4 text-sm sm:text-md text-justify sm:text-left">
-            {review.feedback}
-          </p>
+                      {/* Feedback Content */}
+                      <p className="text-gray-700 mb-4 text-sm sm:text-md text-justify sm:text-left">
+                        {review.feedback}
+                      </p>
 
-          {/* Rating */}
-          <div className="flex items-center space-x-1">
-            {[...Array(review.rating)].map((_, star) => (
-              <span key={star} className="text-yellow-500 text-xl">
-                ★
-              </span>
-            ))}
-          </div>
-        </div>
-      )}
-    </div>
-  ))}
-</Slider>
-
+                      {/* Rating */}
+                      <div className="flex items-center space-x-1">
+                        {[...Array(review.rating)].map((_, star) => (
+                          <span key={star} className="text-yellow-500 text-xl">
+                            ★
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </Slider>
           </div>
         </div>
 
@@ -924,15 +916,13 @@ Thank you"`,
                 </span>
                 <b className="text-gray-400 text-sm">/Night</b>
                 <span className="line-through text-gray-500 text-sm">
-                  INR {property.price * 120 / 100}
+                  INR {(property.price * 120) / 100}
                 </span>
                 <span className="bg-green-100 text-green-600 text-xs font-medium px-2 py-1 rounded">
-                  SAVE INR {property.price * 120 / 100 - property.price}
+                  SAVE INR {(property.price * 120) / 100 - property.price}
                 </span>
               </div>
             </div>
-
-
 
             {/* Booking Details */}
             <div className="space-y-4">
