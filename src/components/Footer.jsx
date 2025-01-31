@@ -11,15 +11,116 @@ import {
 } from "lucide-react";
 import footerImg from "../assets/footer-img.png";
 import { FaWhatsapp } from "react-icons/fa";
-
+import { useState } from "react";
 const Footer = () => {
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    timePeriod: "",
+    expertise: "",
+    location: "",
+  });
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Form submitted:", formData);
+    setIsOpen(false);
+  };
+
   const instagramGradient = {
     background:
       "linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45)",
+
   };
   return (
-    <footer className="bg-[#000000] text-[#D1D1D1]">
+    <footer className="bg-[#000000] text-[#D1D1D1] z-20">
       {/* Main Footer Content */}
+      {isOpen && (
+        <div className="fixed z-50 inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 " >
+          <div className="bg-white p-6 shadow-lg rounded-lg max-w-lg w-full">
+            <h2 className="text-2xl text-black font-bold mb-4">Join Volunteer With Us</h2>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <input
+                type="text"
+                name="name"
+                placeholder="Full Name"
+                value={formData.name}
+                onChange={handleChange}
+                className="w-full p-2 border border-gray-600 rounded "
+                required
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                value={formData.email}
+                onChange={handleChange}
+                className="w-full p-2 border border-gray-600 rounded"
+                required
+              />
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Phone Number"
+                value={formData.phone}
+                onChange={handleChange}
+                className="w-full p-2 border border-gray-600 rounded"
+                required
+              />
+              <input
+                type="text"
+                name="timePeriod"
+                placeholder="Time Period (e.g., 3 months)"
+                value={formData.timePeriod}
+                onChange={handleChange}
+                className="w-full p-2 border border-gray-600 rounded"
+                required
+              />
+              <input
+                type="text"
+                name="expertise"
+                placeholder="Expertise (e.g., Teaching, Event Planning)"
+                value={formData.expertise}
+                onChange={handleChange}
+                className="w-full p-2 border border-gray-600 rounded"
+                required
+              />
+              <input
+                type="text"
+                name="location"
+                placeholder="Location"
+                value={formData.location}
+                onChange={handleChange}
+                className="w-full p-2 border border-gray-600 rounded"
+                required
+              />
+              <div className="flex justify-between">
+                <button
+                  type="button"
+                  onClick={() => setIsOpen(false)}
+                  className="bg-gray-800 text-white p-2 rounded hover:bg-gray-600"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  className=" text-white p-2 rounded hover:bg-blue-600 bg-gradient-to-r from-cyan-900 to-cyan-900 "
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
       <div className="relative lg:bottom-[13px] bottom-1">
         <img className="invert object-cover" src={footerImg} alt="" />
       </div>
@@ -106,6 +207,14 @@ const Footer = () => {
                 >
                   Contact Us
                 </a>
+              </li>
+              <li>
+              <button
+        onClick={() => setIsOpen(true)}
+        className="hover:text-[#F77706] transition-colors"
+      >
+        Volunteer With Us
+      </button>
               </li>
               {/* <li>
                 <a href="#" className="hover:text-[#F77706] transition-colors">
