@@ -39,10 +39,10 @@ const locations = [
 
 const LocationSection = () => {
   return (
-    <div className="z-10min-h-screen bg-gradient-to-r from-blue-100 via-cyan-100 to-emerald-100 py-24 px-6 lg:px-32 relative overflow-hidden">
+    <div className=" bg-gradient-to-r from-blue-100 via-cyan-100 to-emerald-100 py-24 px-6 lg:px-32 relative overflow-hidden">
       <div className="absolute inset-0 backdrop-blur-sm bg-white/20"></div>
 
-      <div className="relative z-10 max-w-7xl mx-auto">
+      <div className="relative  max-w-7xl mx-auto">
         <motion.div
           className="text-center mb-20"
           initial={{ opacity: 0, y: -50 }}
@@ -50,7 +50,7 @@ const LocationSection = () => {
           transition={{ duration: 0.8 }}
         >
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-cyan-800 to-cyan-800 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-cyan-900 to-cyan-900 bg-clip-text text-transparent">
               Explore
             </span>{" "}
             <span className="text-gray-800">Destinations</span>

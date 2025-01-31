@@ -478,13 +478,17 @@ const Properties = () => {
                 <Link to={`/property/${property._id}`}>
                   <div className="flex flex-col md:flex-row h-full">
                     {/* Image Section */}
-                    <div className="md:w-2/5 relative overflow-hidden  h-48 sm:h-56 md:h-64 lg:h-[55vh]">
+                    <div className="md:w-2/5 relative overflow-hidden h-48 sm:h-56 md:h-64 lg:h-[55vh]">
                       <img
                         src={property.images[0]}
                         alt={property.name}
+<<<<<<< HEAD
+                        className="w-full h-full object-cover md:mt-4  lg:mt-0 transition-transform duration-700 hover:scale-110 md:rounded-l-lg"
+=======
                         className="w-full h-full object-cover  transition-transform duration-700 hover:scale-110 md:rounded-tl-lg"
+>>>>>>> 269028f379877ef55c9146220578af2d6f57dd88
                       />
-                      <div className="absolute top-3 left-3 sm:top-4 sm:left-4 bg-white/90 backdrop-blur-sm px-2 sm:px-3 py-1 rounded-md sm:rounded-lg shadow-sm sm:shadow-md">
+                      <div className="absolute top-3 left-3 sm:top-4  sm:left-4 bg-white/90 backdrop-blur-sm px-2 sm:px-3 py-1 rounded-md sm:rounded-lg shadow-sm sm:shadow-md">
                         <div className="flex items-center space-x-1 text-sm sm:text-base">
                           <FaStar className="text-yellow-500" />
                           <span className="font-semibold">
