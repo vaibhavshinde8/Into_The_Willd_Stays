@@ -26,13 +26,13 @@ const Checkout = () => {
                 <div>
                   <h3 className="text-lg font-semibold">CHECK IN</h3>
                   <h1 className="font-bold">
-                    06 February <br /> 2025
+                    06 February 2025
                   </h1>
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold">CHECK OUT</h3>
                   <h1 className="font-bold">
-                    08 February <br /> 2025
+                    08 February 2025
                   </h1>
                 </div>
               </div>
@@ -102,15 +102,15 @@ const Checkout = () => {
                     <h1>07 February 2025</h1>
                     <p>Rs. 20000</p>
                 </div>
-                <div className="flex justify-between items-center gap-16">
-                    <h1>Total</h1>
+                <div className="flex justify-between font-semibold items-center gap-16">
+                    <h1>Subtotal</h1>
                     <p>Rs. 38000</p>
                 </div>
                 <div className="flex justify-between items-center gap-16">
                     <h1>Tax (18%)</h1>
                     <p>Rs. 1000</p>
                 </div>
-                <div className="flex justify-between items-center gap-16 border-t-2">
+                <div className="flex justify-between font-semibold items-center gap-16 border-t-2">
                     <h1>Total</h1>
                     <p>Rs. 50000</p>
                 </div>
