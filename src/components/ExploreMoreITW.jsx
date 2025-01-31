@@ -21,7 +21,9 @@ import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import { BASE_URL } from "../utils/baseurl";
 import "./exploreMoreITW.css";
-
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 //hello
 
 const ExploreMoreITW = () => {
@@ -52,7 +54,23 @@ const ExploreMoreITW = () => {
     { id: "faqs", label: "FAQ" },
     { id: "Review", label: "Review" },
   ];
-
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 2, // Show 2 reviews at a time
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    responsive: [
+      {
+        breakpoint: 768, // Tablet & Mobile
+        settings: {
+          slidesToShow: 1, // Show 1 review at a time on small screens
+        },
+      },
+    ],
+  };
 
   const reviews = {
     IntoTheWildStays: [
@@ -282,8 +300,7 @@ Thank you"`,
                   controls
                   autoPlay
                   loop
-                  muted
-                  className="w-full h-full object-cover transition-transform duration-300  "
+                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-105 "
                 />
               </motion.div>
             ) : (
@@ -502,7 +519,7 @@ Thank you"`,
                 key={button.id}
                 href={`#${button.id}`}
                 onClick={() => setActiveButton(button.id)}
-                className={`py-2  rounded font-semibold flex-auto border-2 border-gray-200 shadow-lg flex items-center justify-center px-4 transition duration-300 ${activeButton === button.id
+                className={`py-2  rounded font-semibold flex-auto  flex items-center justify-center px-4 transition duration-300 ${activeButton === button.id
                   ? "bg-[#163257] text-white"
                   : "bg-white text-gray-800"
                   }`}
@@ -522,10 +539,10 @@ Thank you"`,
                 }</h3>
               </div>
               <p className="text-gray-700 text-sm ">
-              {property?.bedroom} {property?.cottage ? "Cottages" : "Rooms"}
+                {property?.bedroom} {property?.cottage ? "Cottages" : "Rooms"}
               </p>
             </div>
-            <div  className="bg-white shadow-md px-2 sm:px-6 sm:py-6 py-3 rounded-xl">
+            <div className="bg-white shadow-md px-2 sm:px-6 sm:py-6 py-3 rounded-xl">
               <div className="flex items-center gap-3 mb-2">
                 <FaUserFriends className="text-blue-500  hidden sm:block text-xl" />
                 <h3 className="font-semibold text-sm">Guest Capacity</h3>
@@ -534,7 +551,7 @@ Thank you"`,
                 {property?.guestCapacity} persons per {property?.cottage ? "cottage" : "room"}
               </p>
             </div>
-            <div  className="bg-white shadow-md  px-2 sm:px-6  sm:py-6 py-3 rounded-xl">
+            <div className="bg-white shadow-md  px-2 sm:px-6  sm:py-6 py-3 rounded-xl">
               <div className="flex items-center gap-3 mb-2">
                 <FaUsers className="text-blue-500 text-xl hidden sm:block" />
                 <h3 className="font-semibold text-sm">Maximum Capacity</h3>
@@ -554,35 +571,35 @@ Thank you"`,
 
           <div id="amenities" className="prose max-w-none flex flex-col gap-2 mb-12 shadow-md rounded-xl p-3">
             <h2 className="text-lg font-semibold">Description</h2>
-            <p  className="text-sm sm:text-md">{property?.description}</p>
+            <p className="text-sm sm:text-md">{property?.description}</p>
           </div>
 
           {/* Amenities Grid */}
-          <div  className="mb-12 ">
+          <div className="mb-12 ">
             <h2 className=" text-2xl ms-4 sm:ms-0  font-bold mb-6 flex items-center gap-3">
               <FaBed className="hidden  sm:block text-blue-500" />
               Amenities
             </h2>
-            <div  className="grid  grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid  grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {property?.amenities?.map((amenity, idx) => (
                 <motion.div
                   whileHover={{ scale: 1.03 }}
                   key={idx}
                   className="paddingY-320 flex items-center gap-3 px-4  py-3 sm:py-4 bg-white  rounded-xl shadow-md hover:bg-gray-100 transition-all duration-300"
-                 
+
                 >
                   <IoMdSunny className="text-blue-500 hidden-before-320" />
                   <p className="text-xs sm:text-md font-semibold ">{amenity}</p>
-                  <div  id="location" ></div>
+                  <div id="location" ></div>
                 </motion.div>
-                
+
               ))}
-              
+
             </div>
-            
+
           </div>
           {/* Location Section */}
-         
+
           <div
             id="policies"
             className=" mb-8 bg-white rounded-xl shadow-md p-6"
@@ -600,7 +617,7 @@ Thank you"`,
 
           {/* Policies Section */}
           <div
-            
+
             className=" grid md:grid-cols-2 gap-12 bg-white rounded-xl shadow-md py-8 px-4 sm:px-8"
 
           >
@@ -622,11 +639,11 @@ Thank you"`,
               </ul>
             </div>
             <div>
-              <h2  className="text-2xl  ms-4 sm:ms-0 font-bold mb-6 flex items-center gap-3  mt-20">
+              <h2 className="text-2xl  ms-4 sm:ms-0 font-bold mb-6 flex items-center gap-3  mt-20">
                 <FaTimesCircle className="hidden sm:block text-red-500" />
                 Cancellation Policy
               </h2>
-              <ul  className="list-none space-y-3 ">
+              <ul className="list-none space-y-3 ">
                 {property?.cancellationPolicy?.map((policy, idx) => (
                   <li
                     key={idx}
@@ -636,12 +653,15 @@ Thank you"`,
                     {policy}
                   </li>
                 ))}
+                <div id="faqs"></div>
               </ul>
+
             </div>
+
           </div>
 
           {/* FAQs Accordion */}
-          <div id="faqs" className="mt-16 mb-12 ">
+          <div className="mt-16 mb-12">
             <h2 className="text-2xl ms-4 sm:ms-0 font-bold mb-8 flex items-center gap-3 ">
 
 
@@ -652,6 +672,7 @@ Thank you"`,
                   key={idx}
                   initial={false}
                   className="border rounded-xl overflow-hidden shadow-md bg-white"
+
                 >
                   <div
                     className="flex justify-between gap-2 items-center p-5 cursor-pointer bg-gray-50 hover:bg-gray-100 transition-colors duration-300"
@@ -659,6 +680,7 @@ Thank you"`,
                   >
                     <h3 className="font-semibold text-sm sm:text-lg  ">
                       {faq.question}
+
                     </h3>
                     {openIndex === idx ? (
                       <FaArrowAltCircleUp className="text-blue-500 text-xl w-8" />
@@ -674,6 +696,7 @@ Thank you"`,
                         exit={{ height: 0 }}
                         transition={{ duration: 0.3 }}
                         className="overflow-hidden"
+
                       >
                         <div className="p-5 bg-white">
                           <p className="text-gray-700 text-sm sm:text-md">
@@ -683,60 +706,65 @@ Thank you"`,
                       </motion.div>
                     )}
                   </AnimatePresence>
+                  <div id="Review" ></div>
                 </motion.div>
+
               ))}
+
             </div>
           </div>
 
           {/* Feedback section */}
 
-          <div
-            className="w-full h-[auto] flex flex-col items-start "
-            id="Review"
-          >
-            <h1 className=" text-2xl  ms-4 sm:ms-0 font-bold mb-8 flex items-center justify-start  ">
+          <div className="w-full h-auto flex flex-col items-start">
+            {/* Heading */}
+            <h1 className="text-2xl ms-4 sm:ms-0 font-bold mb-8 flex items-center justify-start">
               <span>
-                <i className="fa-solid fa-comment hidden sm:block text-blue-500 me-4 "></i>{" "}
+                <i className="fa-solid fa-comment hidden sm:block text-blue-500 me-4"></i>
               </span>
               Feedback Section
             </h1>
 
-            <div className="flex flex-col sm:flex-row items-start gap-4 sm:h-[380px]  ">
-              {reviews[propertyNameForReview]?.map((review) => <div className=" flex-auto  bg-white p-6 rounded-xl shadow-md border border-gray-200 sm:w-[50%] w-full  h-full">
-                {/* User Info */}
-                <div className="flex items-center space-x-4 mb-4 h-[10%]">
-                  <img
-                    src={review.avatar}
-                    alt="User Avatar"
-                    className="w-12 h-12 rounded-full object-cover"
-                  />
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-800 ">
-                      {review.name}
-                    </h3>
-                    <p className="text-sm text-gray-500">{review.data}</p>
+            {/* Carousel */}
+            <Slider {...settings} className="w-full ">
+              {reviews[propertyNameForReview]?.map((review, index) => (
+
+                <div className="p-2 ">
+                  <div
+                  key={index}
+                  className="bg-white  p-6 rounded-xl shadow-md border border-gray-200 " 
+                >
+                  {/* User Info */}
+                  <div className="flex  items-center space-x-4 mb-4">
+                    <img
+                      src={review.avatar}
+                      alt="User Avatar"
+                      className="w-12 h-12 rounded-full object-cover"
+                    />
+                    <div>
+                      <h3 className="text-lg font-semibold text-gray-800">
+                        {review.name}
+                      </h3>
+                      <p className="text-sm text-gray-500">{review.data}</p>
+                    </div>
+                  </div>
+
+                  {/* Feedback Content */}
+                  <p className="text-gray-700 mb-4 text-sm sm:text-md text-justify sm:text-left">
+                    {review.feedback}
+                  </p>
+
+                  {/* Rating */}
+                  <div className="flex items-center space-x-1">
+                    {[1, 2, 3, 4, 5].map((star) => (
+                      <span key={star} className="text-yellow-500 text-xl">★</span>
+                    ))}
                   </div>
                 </div>
-
-                {/* Feedback Content */}
-                <p className="text-gray-700 mb-4 text-sm sm:text-md text-justify sm:text-left h-[70%]">
-                  {review.feedback}
-                </p>
-
-                {/* Rating */}
-                <div className="flex items-center space-x-1 h-[20%]">
-                  {[1, 2, 3, 4, 5].map((star) => (
-                    <span key={star} className="text-yellow-500 text-xl">
-                      ★
-                    </span>
-                  ))}
                 </div>
-              </div>)}
-
-            </div>
-
-
-
+                
+              ))}
+            </Slider>
           </div>
         </div>
 
