@@ -641,7 +641,7 @@ Thank you"`,
                 key={button.id}
                 href={`#${button.id}`}
                 onClick={() => setActiveButton(button.id)}
-                className={`py-2  rounded font-semibold flex-auto  flex items-center justify-center px-4 transition duration-300 ${activeButton === button.id
+                className={`py-2 border-2 shadow-lg rounded font-semibold flex-auto  flex items-center justify-center px-4 transition duration-300 ${activeButton === button.id
                   ? "bg-[#163257] text-white"
                   : "bg-white text-gray-800"
                   }`}
