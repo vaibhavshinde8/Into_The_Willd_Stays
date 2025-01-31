@@ -542,7 +542,7 @@ const Properties = () => {
                             to={`/property/${property._id}`}
                             style={{marginTop:"0px"}}
                             onClick={() => window.scrollTo(0, 0)}
-                            className="px-4 mb-8 mt-0 pt-[0.75rem] pb-[0.75rem] sm:pt-[0.6rem] sm:pb-[0.6rem]  sm:px-6  text-sm sm:text-base font-semibold bg-gradient-to-r from-blue-300 to-cyan-300 hover:bg-gradient-to-r hover:from-cyan-400 hover:to-blue-400 transition-all duration-300 rounded-lg text-center"
+                            className="hidden px-4 mb-8 mt-0 pt-[0.75rem] pb-[0.75rem] sm:pt-[0.6rem] sm:pb-[0.6rem]  sm:px-6  text-sm sm:text-base font-semibold bg-gradient-to-r from-blue-300 to-cyan-300 hover:bg-gradient-to-r hover:from-cyan-400 hover:to-blue-400 transition-all duration-300 rounded-lg text-center"
                           >
                             View Details
                           </Link>
