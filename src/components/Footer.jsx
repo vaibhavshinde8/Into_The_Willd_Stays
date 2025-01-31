@@ -40,12 +40,20 @@ const Footer = () => {
       "linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45)",
 
   };
+  const phoneNumber = "9761966485";
+  const getWhatsAppLink = () => {
+    // Check if mobile device
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    return isMobile
+      ? `whatsapp://send?phone=${phoneNumber}`
+      : `https://web.whatsapp.com/send?phone=${phoneNumber}`;
+  };
   return (
     <footer className="bg-[#000000] text-[#D1D1D1] z-20">
       {/* Main Footer Content */}
       {isOpen && (
         <div className="fixed z-50 inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 " >
-          <div className="bg-white p-6 shadow-lg rounded-lg max-w-lg w-full">
+          <div className="bg-white p-6 shadow-lg text-black rounded-lg max-w-lg w-full">
             <h2 className="text-2xl text-black font-bold mb-4">Join Volunteer With Us</h2>
             <form onSubmit={handleSubmit} className="space-y-4">
               <input
@@ -167,7 +175,7 @@ const Footer = () => {
                 </a>
               </div>
               <a
-                href="https://wa.me/9761966485"
+                href={getWhatsAppLink()}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#1c9e18] hover:text-[#1c9e18] hover:scale-110 duration-300 ease-in-out transition-colors"
