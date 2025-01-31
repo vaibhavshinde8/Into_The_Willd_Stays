@@ -66,7 +66,7 @@ const HomeHero = () => {
 
   return (
     <div
-      className="relative h-[400px]  sm:h-[1000px] sm:min-h-screen flex flex-col justify-between items-center overflow-hidden  md:pt-32  sm:pb-[106px]"
+      className="relative h-[400px]  sm:h-[770px] sm:min-h-screen flex flex-col justify-between items-center overflow-hidden  md:pt-32  sm:pb-[106px]"
     >
       {/* Background Overlay */}
       <div className="absolute inset-0 z-0 h-full md:h-full ">
@@ -75,21 +75,22 @@ const HomeHero = () => {
             key={index}
             src={img}
             alt={`Background ${index + 1}`}
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000  ${index === currentImageIndex ? " bg-black  opacity-70" : "opacity-0"
+            className={`absolute inset-0 w-full h-full  object-cover transition-opacity duration-1000  ${index === currentImageIndex ? " bg-black  opacity-70" : "opacity-0"
               }`}
+              
             initial={{ opacity: 0 }}
             animate={{ opacity: index === currentImageIndex ? 1 : 0 }}
             transition={{ duration: 1.5 }}
           />
         ))}
-        <div className="absolute inset-0  bg-black bg-opacity-70  "></div>
+        <div  className="absolute inset-0  bg-black bg-opacity-70  "></div>
       </div>
 
       {/* Content Container */}
       <div className="relative z-10   w-full max-w-6xl mx-auto px-6 flex-1 flex flex-col justify-center">
         {/* Hero Content */}
         <motion.div
-          className="text-center space-y-8 mt-20 sm:mt-0  sm:mb-48"
+          className="text-center space-y-8 mt-20 sm:mt-0  sm:mb-20"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
