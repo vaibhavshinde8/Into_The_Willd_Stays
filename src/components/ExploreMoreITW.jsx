@@ -524,7 +524,7 @@ Thank you"`,
               {property?.bedroom} {property?.cottage ? "Cottages" : "Rooms"}
               </p>
             </div>
-            <div className="bg-white shadow-md px-2 sm:px-6 sm:py-6 py-3 rounded-xl">
+            <div  className="bg-white shadow-md px-2 sm:px-6 sm:py-6 py-3 rounded-xl">
               <div className="flex items-center gap-3 mb-2">
                 <FaUserFriends className="text-blue-500  hidden sm:block text-xl" />
                 <h3 className="font-semibold text-sm">Guest Capacity</h3>
@@ -533,7 +533,7 @@ Thank you"`,
                 {property?.guestCapacity} persons per {property?.cottage ? "cottage" : "room"}
               </p>
             </div>
-            <div className="bg-white shadow-md  px-2 sm:px-6  sm:py-6 py-3 rounded-xl">
+            <div  className="bg-white shadow-md  px-2 sm:px-6  sm:py-6 py-3 rounded-xl">
               <div className="flex items-center gap-3 mb-2">
                 <FaUsers className="text-blue-500 text-xl hidden sm:block" />
                 <h3 className="font-semibold text-sm">Maximum Capacity</h3>
@@ -551,40 +551,46 @@ Thank you"`,
             </div>
           </div>
 
-          <div className="prose max-w-none flex flex-col gap-2 mb-12 shadow-md rounded-xl p-3">
+          <div id="amenities" className="prose max-w-none flex flex-col gap-2 mb-12 shadow-md rounded-xl p-3">
             <h2 className="text-lg font-semibold">Description</h2>
-            <p className="text-sm sm:text-md">{property?.description}</p>
+            <p  className="text-sm sm:text-md">{property?.description}</p>
           </div>
 
           {/* Amenities Grid */}
-          <div id="amenities" className="mb-12 ">
+          <div  className="mb-12 ">
             <h2 className=" text-2xl ms-4 sm:ms-0  font-bold mb-6 flex items-center gap-3">
               <FaBed className="hidden  sm:block text-blue-500" />
               Amenities
             </h2>
-            <div className="grid mt-48 grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div  className="grid  grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {property?.amenities?.map((amenity, idx) => (
                 <motion.div
                   whileHover={{ scale: 1.03 }}
                   key={idx}
                   className="paddingY-320 flex items-center gap-3 px-4  py-3 sm:py-4 bg-white  rounded-xl shadow-md hover:bg-gray-100 transition-all duration-300"
+                 
                 >
                   <IoMdSunny className="text-blue-500 hidden-before-320" />
                   <p className="text-xs sm:text-md font-semibold ">{amenity}</p>
+                  <div  id="location" ></div>
                 </motion.div>
+                
               ))}
+              
             </div>
+            
           </div>
           {/* Location Section */}
+         
           <div
-            id="location"
+            id="policies"
             className=" mb-8 bg-white rounded-xl shadow-md p-6"
           >
             <a
 
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex mt-48 items-center gap-2 text-lg text-blue-500 hover:text-blue-600 transition-all duration-300 hover:translate-x-1"
+              className="inline-flex items-center gap-2 text-lg text-blue-500 hover:text-blue-600 transition-all duration-300 hover:translate-x-1"
             >
               <FaMapMarkerAlt />
               {property?.address}
@@ -593,12 +599,12 @@ Thank you"`,
 
           {/* Policies Section */}
           <div
-            id="policies"
+            
             className=" grid md:grid-cols-2 gap-12 bg-white rounded-xl shadow-md py-8 px-4 sm:px-8"
 
           >
             <div >
-              <h2 className="text-2xl ms-4 sm:ms-0  font-bold mb-6 flex items-center gap-3 mt-48">
+              <h2 className="text-2xl ms-4 sm:ms-0  font-bold mb-6 flex items-center gap-3 mt-20">
                 <FcRules className=" hidden sm:block text-blue-500" />
                 Booking Policies
               </h2>
@@ -615,11 +621,11 @@ Thank you"`,
               </ul>
             </div>
             <div>
-              <h2 className="text-2xl  ms-4 sm:ms-0 font-bold mb-6 flex items-center gap-3 mt-48">
+              <h2  className="text-2xl  ms-4 sm:ms-0 font-bold mb-6 flex items-center gap-3  mt-20">
                 <FaTimesCircle className="hidden sm:block text-red-500" />
                 Cancellation Policy
               </h2>
-              <ul className="list-none space-y-3 ">
+              <ul  className="list-none space-y-3 ">
                 {property?.cancellationPolicy?.map((policy, idx) => (
                   <li
                     key={idx}
@@ -634,12 +640,12 @@ Thank you"`,
           </div>
 
           {/* FAQs Accordion */}
-          <div id="faqs" className="mt-16 mb-12">
+          <div id="faqs" className="mt-16 mb-12 ">
             <h2 className="text-2xl ms-4 sm:ms-0 font-bold mb-8 flex items-center gap-3 ">
 
 
             </h2>
-            <div className="space-y-4 mt-48">
+            <div className="space-y-4 ">
               {property?.faqs?.map((faq, idx) => (
                 <motion.div
                   key={idx}
@@ -687,7 +693,7 @@ Thank you"`,
             className="w-full h-[auto] flex flex-col items-start "
             id="Review"
           >
-            <h1 className=" text-2xl  ms-4 sm:ms-0 font-bold mb-8 flex items-center justify-start mt-48 ">
+            <h1 className=" text-2xl  ms-4 sm:ms-0 font-bold mb-8 flex items-center justify-start  ">
               <span>
                 <i className="fa-solid fa-comment hidden sm:block text-blue-500 me-4 "></i>{" "}
               </span>
