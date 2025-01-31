@@ -526,8 +526,8 @@ const Properties = () => {
                       </div>
 
                       {/* Price and Button Section */}
-                      <div className="flex flex-col items-center md:flex-row  justify-between mt-3 sm:mt-4">
-                        <div className="flex flex-col  sm:mb-0 md:w-1/2">
+                      <div className="flex flex-col items-start sm:items-center md:flex-row  justify-between mt-3 sm:mt-4">
+                        <div className="flex flex-col ps-4 sm:ps-0  sm:mb-0 md:w-1/2">
                           <span className="text-2xl sm:text-3xl font-bold text-gray-900">
                             ₹{property.price}
                           </span>
@@ -536,13 +536,13 @@ const Properties = () => {
                           </span>
                         </div>
 
-                        <div className="flex items-center w-full sm:w-auto space-y-2 sm:space-y-3">
+                        <div className="flex items-center w-full h-full sm:w-auto space-y-2 sm:space-y-3">
                           <BookingButton property={property} />
                           <Link
                             to={`/property/${property._id}`}
                             style={{marginTop:"0px"}}
                             onClick={() => window.scrollTo(0, 0)}
-                            className="px-4 mb-8 mt-0 h-full pt-2 sm:px-6 pb-2 text-sm sm:text-base font-semibold bg-gradient-to-r from-blue-300 to-cyan-300 hover:bg-gradient-to-r hover:from-cyan-400 hover:to-blue-400 transition-all duration-300 rounded-lg text-center"
+                            className="px-4 mb-8 mt-0 pt-[0.75rem] pb-[0.75rem] sm:pt-[0.6rem] sm:pb-[0.6rem]  sm:px-6  text-sm sm:text-base font-semibold bg-gradient-to-r from-blue-300 to-cyan-300 hover:bg-gradient-to-r hover:from-cyan-400 hover:to-blue-400 transition-all duration-300 rounded-lg text-center"
                           >
                             View Details
                           </Link>
