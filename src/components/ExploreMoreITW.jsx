@@ -282,7 +282,8 @@ Thank you"`,
                   controls
                   autoPlay
                   loop
-                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-105 "
+                  muted
+                  className="w-full h-full object-cover transition-transform duration-300  "
                 />
               </motion.div>
             ) : (
