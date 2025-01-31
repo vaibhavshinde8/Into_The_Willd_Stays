@@ -526,7 +526,7 @@ const Properties = () => {
                       </div>
 
                       {/* Price and Button Section */}
-                      <div className="flex flex-col items-start sm:items-center md:flex-row  justify-between mt-3 sm:mt-4">
+                      <div className="flex  items-start sm:items-center md:flex-row  justify-between mt-3 sm:mt-4">
                         <div className="flex flex-col ps-4 sm:ps-0  sm:mb-0 md:w-1/2">
                           <span className="text-2xl sm:text-3xl font-bold text-gray-900">
                             ₹{property.price}
@@ -536,7 +536,7 @@ const Properties = () => {
                           </span>
                         </div>
 
-                        <div className="flex items-center justify-end w-full h-full sm:w-auto space-y-2 sm:space-y-3">
+                        <div className="flex items-center justify-end  w-full h-full sm:w-auto space-y-2 sm:space-y-3">
                           <BookingButton property={property} />
                           <Link
                             to={`/property/${property._id}`}
