@@ -478,7 +478,7 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8 items-center">
+          <div className="hidden lg:flex space-x-8 items-center">
             <Link
               to="/properties"
               className="text-gray-100 hover:text-[#ffffff] px-3 py-2 text-lg font-semibold transition duration-300"
@@ -592,7 +592,7 @@ export default function Navbar() {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden flex items-center">
+          <div className="lg:hidden flex items-center">
             <button
               onClick={toggleMenu}
               className="p-2 rounded-full text-gray-100 hover:text-[#ffffff] hover:bg-gray-100"
@@ -615,7 +615,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden fixed inset-0 bg-[#0F2642] z-50 flex flex-col items-center justify-center"
+            className="lg:hidden fixed inset-0 bg-[#0F2642] z-50 flex flex-col items-center justify-center"
           >
             <button
               onClick={toggleMenu}
