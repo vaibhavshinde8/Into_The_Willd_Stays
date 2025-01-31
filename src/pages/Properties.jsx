@@ -482,7 +482,11 @@ const Properties = () => {
                       <img
                         src={property.images[0]}
                         alt={property.name}
+<<<<<<< HEAD
                         className="w-full h-full object-cover md:mt-4  lg:mt-0 transition-transform duration-700 hover:scale-110 md:rounded-l-lg"
+=======
+                        className="w-full h-full object-cover  transition-transform duration-700 hover:scale-110 md:rounded-tl-lg"
+>>>>>>> 269028f379877ef55c9146220578af2d6f57dd88
                       />
                       <div className="absolute top-3 left-3 sm:top-4  sm:left-4 bg-white/90 backdrop-blur-sm px-2 sm:px-3 py-1 rounded-md sm:rounded-lg shadow-sm sm:shadow-md">
                         <div className="flex items-center space-x-1 text-sm sm:text-base">
@@ -516,7 +520,7 @@ const Properties = () => {
                           </span>
                           <span className="flex items-center space-x-1 sm:space-x-2 bg-blue-50 text-blue-700 px-2 sm:px-3 py-1 rounded-md sm:rounded-lg text-xs sm:text-sm">
                             <FaBed className="text-blue-500 flex-shrink-0" />
-                            <span>{property.bedroom} Cottages</span>
+                            <span>{property.bedroom} {property?.cottage ? "Cottages" : "Rooms"}</span>
                           </span>
                           <span className="flex items-center space-x-1 sm:space-x-2 bg-purple-50 text-purple-700 px-2 sm:px-3 py-1 rounded-md sm:rounded-lg text-xs sm:text-sm">
                             <FaUsers className="text-purple-500 flex-shrink-0" />
@@ -526,23 +530,23 @@ const Properties = () => {
                       </div>
 
                       {/* Price and Button Section */}
-                      <div className="flex flex-col items-center md:flex-row  justify-between mt-3 sm:mt-4">
-                        <div className="flex flex-col  sm:mb-0 md:w-1/2">
+                      <div className="flex flex-col items-start sm:items-center md:flex-row  justify-between mt-3 sm:mt-4">
+                        <div className="flex flex-col ps-4 sm:ps-0  sm:mb-0 md:w-1/2">
                           <span className="text-2xl sm:text-3xl font-bold text-gray-900">
                             ₹{property.price}
                           </span>
                           <span className="text-xs sm:text-sm text-gray-500">
-                            per night / Cottage
+                            per night / {property?.cottage ? "Cottage" : "Room"}
                           </span>
                         </div>
 
-                        <div className="flex items-center w-full sm:w-auto space-y-2 sm:space-y-3">
+                        <div className="flex items-center justify-end w-full h-full sm:w-auto space-y-2 sm:space-y-3">
                           <BookingButton property={property} />
                           <Link
                             to={`/property/${property._id}`}
                             style={{marginTop:"0px"}}
                             onClick={() => window.scrollTo(0, 0)}
-                            className="px-4 mb-8 mt-0 h-full pt-2 sm:px-6 pb-2 text-sm sm:text-base font-semibold bg-gradient-to-r from-blue-300 to-cyan-300 hover:bg-gradient-to-r hover:from-cyan-400 hover:to-blue-400 transition-all duration-300 rounded-lg text-center"
+                            className="hidden px-4 mb-8 mt-0 pt-[0.75rem] pb-[0.75rem] sm:pt-[0.6rem] sm:pb-[0.6rem]  sm:px-6  text-sm sm:text-base font-semibold bg-gradient-to-r from-blue-300 to-cyan-300 hover:bg-gradient-to-r hover:from-cyan-400 hover:to-blue-400 transition-all duration-300 rounded-lg text-center"
                           >
                             View Details
                           </Link>
