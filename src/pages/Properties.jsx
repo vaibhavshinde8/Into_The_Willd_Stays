@@ -482,7 +482,7 @@ const Properties = () => {
                       <img
                         src={property.images[0]}
                         alt={property.name}
-                        className="w-full h-full object-cover mt-4 transition-transform duration-700 hover:scale-110 md:rounded-l-lg"
+                        className="w-full h-full object-cover  transition-transform duration-700 hover:scale-110 md:rounded-tl-lg"
                       />
                       <div className="absolute top-3 left-3 sm:top-4 sm:left-4 bg-white/90 backdrop-blur-sm px-2 sm:px-3 py-1 rounded-md sm:rounded-lg shadow-sm sm:shadow-md">
                         <div className="flex items-center space-x-1 text-sm sm:text-base">
