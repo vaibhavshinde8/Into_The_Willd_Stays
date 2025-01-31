@@ -17,7 +17,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { motion, AnimatePresence } from "framer-motion";
 import BookingButton from "./BookingButton";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { BASE_URL } from "../utils/baseurl";
 import "./exploreMoreITW.css";
@@ -37,6 +37,7 @@ import image10 from "../assets/image10.jpg";
 import image11 from "../assets/image11.jpg";
 import image12 from "../assets/image12.jpg";
 import image13 from "../assets/image13.jpg";
+import { toast } from "react-toastify";
 
 const ExploreMoreITW = () => {
   const [property, setProperty] = useState(null);
@@ -53,8 +54,8 @@ const ExploreMoreITW = () => {
   const scrollToSection = (sectionId) => {
     setActiveSection(sectionId);
     document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
-  };
-
+  }; 
+  const [showLoginPopup, setShowLoginPopup] = useState(false); // State to control login modal visibility
   const toggleFaq = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
@@ -330,9 +331,8 @@ Thank you"`,
 
   const propertyNameForReview = property?.name?.replaceAll(" ", "") || "";
   console.log("propertyNameForReview", propertyNameForReview);
-  const guestSummary = `${adults} Adult${
-    adults > 1 ? "s" : ""
-  } and ${children} Child${children > 1 ? "ren" : ""}`;
+  const guestSummary = `${adults} Adult${adults > 1 ? "s" : ""
+    } and ${children} Child${children > 1 ? "ren" : ""}`;
   useEffect(() => {
     const fetchProperty = async () => {
       try {
@@ -361,10 +361,34 @@ Thank you"`,
   // If there's a video, replace the first image with the video
   const displayImages = hasVideo
     ? [
-        images.find((img) => img.endsWith(".mp4")),
-        ...images.filter((img) => !img.endsWith(".mp4")),
-      ]
+      images.find((img) => img.endsWith(".mp4")),
+      ...images.filter((img) => !img.endsWith(".mp4")),
+    ]
     : images;
+
+  const navigate = useNavigate(); // Initialize useNavigate
+
+  const handleBookNow = () => {
+    const token = localStorage.getItem("token"); 
+    if (!token) {
+      setShowLoginPopup(true); 
+      return;
+    }
+    if(selectedCheckInDate>=selectedCheckOutDate){
+      // console.log("Check out date should be greater than check in date")
+      toast.error("Check out date should be greater than check in date");
+      return;
+    }
+    const bookingData = {
+      checkIn: selectedCheckInDate,
+      checkOut: selectedCheckOutDate,
+      adults,
+      children,
+      tour:true,
+      property,
+    };
+    navigate("/checkout", { state: bookingData }); // Navigate to Checkout with state
+  };
 
   if (loading) {
     return (
@@ -624,6 +648,7 @@ Thank you"`,
                 <div>
                   <button
                     type="button"
+                    onClick={handleBookNow} // Update onClick to handleBookNow
                     className="w-full py-3 bg-[#112641] text-white 
                        rounded-xl hover:bg-white hover:text-[#112641] hover:border-[#112641] hover:border
                        transition-colors duration-300 
@@ -642,11 +667,10 @@ Thank you"`,
                 key={button.id}
                 href={`#${button.id}`}
                 onClick={() => setActiveButton(button.id)}
-                className={`py-2 border-2 shadow-lg rounded font-semibold flex-auto  flex items-center justify-center px-4 transition duration-300 ${
-                  activeButton === button.id
+                className={`py-2 border-2 shadow-lg rounded font-semibold flex-auto  flex items-center justify-center px-4 transition duration-300 ${activeButton === button.id
                     ? "bg-[#163257] text-white"
                     : "bg-white text-gray-800"
-                }`}
+                  }`}
               >
                 {button.label}
               </a>
@@ -1032,13 +1056,63 @@ Thank you"`,
               </motion.div>
             </div>
             {/* Booking Button */}
+            {/* <div>
+              <BookingButton property={property}/>
+            </div> */}
             <div>
-              <BookingButton property={property} />
+              <button
+                type="button"
+                onClick={handleBookNow} // Update onClick to handleBookNow
+                className="w-full py-3 bg-[#112641] text-white 
+                       rounded-xl hover:bg-white hover:text-[#112641] hover:border-[#112641] hover:border
+                       transition-colors duration-300 
+                       font-medium tracking-wide"
+              >
+                Book Now
+              </button>
             </div>
           </motion.div>
         </div>
       </div>
+      {showLoginPopup && (
+        <LoginPopup
+          onClose={() => setShowLoginPopup(false)}
+          onLogin={() => {
+            setShowLoginPopup(false);
+            navigate("/login");
+          }}
+        />
+      )}
     </motion.div>
+  );
+};
+
+const LoginPopup = ({ onClose, onLogin }) => {
+  return (
+    <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex justify-center items-center z-50">
+      <div className="bg-white/90 p-8 rounded-2xl shadow-2xl max-w-md w-full border border-gray-200">
+        <h2 className="text-2xl font-bold mb-6 text-center bg-gradient-to-r from-[#0F2642] to-blue-600 bg-clip-text text-transparent">
+          Login Required
+        </h2>
+        <p className="text-center mb-8 text-gray-600">You need to log in to proceed.</p>
+        <div className="flex justify-between space-x-4">
+          <button
+            type="button"
+            onClick={onClose}
+            className="w-full px-6 py-3 bg-gray-100 text-gray-800 rounded-xl hover:bg-gray-200 transition duration-200 font-medium"
+          >
+            Cancel
+          </button>
+          <button
+            type="button"
+            onClick={onLogin}
+            className="w-full px-6 py-3 bg-[#0F2642] text-white rounded-xl hover:bg-[#1a3b66] transition duration-200 font-medium"
+          >
+            Log In
+          </button>
+        </div>
+      </div>
+    </div>
   );
 };
 
