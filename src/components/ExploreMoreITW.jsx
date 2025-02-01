@@ -198,10 +198,9 @@ Rooms and open area is well cleaned and very peaceful place and mountain view."`
         date: "a monthb ago",
         avatar:
           "https://lh3.googleusercontent.com/a-/ALV-UjWAyMr0qVH4_8n21vsJraxjHqz_wEyldxnY2MHklO0JqjjGCfsw=w54-h54-p-rp-mo-br100",
-        feedback: `"My stay was amazing at Into the Wilds!
-The Cottage was very good,washroom was spacious and the view from my window and balcony was stunning.
-Food was delicious,Thanks to Trilok(Head Chef) for this. The staff were really friendly.
-If you're looking for a peaceful getaway surrounded by nature, Into The Wild Cottages is the place to go!"`,
+        feedback: `"My stay with Pine and Tail Property was an incredible experience! The property was nestled in a beautiful location, surrounded by stunning views that brought a sense of peace and relaxation. Watching the sunrise from the property was absolutely breathtaking—like something out of a dream.
+
+The team at Pine and Tail Property provided outstanding hospitality. "`,
         rating: 5,
         type: "feedback",
       },
@@ -216,12 +215,9 @@ If you're looking for a peaceful getaway surrounded by nature, Into The Wild Cot
         date: "3 month ago",
         avatar:
           "https://lh3.googleusercontent.com/a-/ALV-UjWzekqZQVqqrnzbLdop2eXfnUb--K_2y_SUmtDzIs9lpP4yIppH=w54-h54-p-rp-mo-ba4-br100",
-        feedback: `"Nice and cozy place to chill
-French fries were good and momos also delicious
-Everything is freshly made
-The vibe of the cafe is amazing
-Love the place
-Thank you"`,
+        feedback: `"Staying with Pine and Tail Property was an unforgettable experience! The property was surrounded by stunning natural beauty, with peaceful views that made every moment feel special. One of the most memorable parts was watching the sunrise—it was truly a breathtaking sight that I’ll never forget.
+
+The hospitality from the Pine and Tail Property team was beyond amazing. "`,
         rating: 5,
         type: "feedback",
       },
@@ -238,39 +234,48 @@ Thank you"`,
         date: "a monthb ago",
         avatar:
           "https://lh3.googleusercontent.com/a-/ALV-UjWfhfXkPNVUNWGSMayOR9RqYcyoEH8iKKWKAtHxLbqAzpNDbJ85Ow=w54-h54-p-rp-mo-ba2-br100",
-        feedback: `"Located just 300 metres before Eco Park, Dhanaulti - Into the wild home stay is easily one of the best vibrant stays in the area. The rooms are spacious , the cottages are designed in a way which is modern yet keeps you super close to the nature. The stay offers absolutely beautiful Mountain View's in the front and backside offers you Himalaya views on a clear sky day!"`,
+        feedback: `"My stay with Sun and Sand Property was absolutely unforgettable! The property was perfectly located, offering stunning views of the beach and the soothing sound of waves in the background. Waking up to a breathtaking sunrise over the water was a highlight of the trip—it felt like a scene from a dream.
+
+The hospitality from the Sun and Sand Property team was exceptional. "`,
         rating: 5,
         type: "feedback",
       },
-      {
-        id: 3,
-        avatar: image10,
-        type: "image",
-      },
+    
       {
         id: 2,
         name: "Arvind Nagar",
         date: "3 month ago",
         avatar:
           "https://lh3.googleusercontent.com/a-/ALV-UjXcVgO6RVm6QTkIEvCG4fDM4693d-jm2kS5Eji3CbgzhzcTVZLy=w54-h54-p-rp-mo-ba2-br100",
-        feedback: `"The location and view itself worth every single penny. We enjoyed our stay in the property and loved the hospitality of the staf and super most Uncle ji took good take care of us like family. Will definitely recommend to my acquaintances and will come back soon."`,
+        feedback: `"Staying with Sun and Sand Property was an incredible experience! The property was right by the beach, offering stunning ocean views and a peaceful, relaxing atmosphere. Watching the sunrise over the water was truly magical—a moment I’ll cherish forever.
+
+The team at Sun and Sand Property provided outstanding hospitality. "`,
         rating: 5,
         type: "feedback",
       },
+
       {
-        id: 3,
-        avatar: image11,
-        type: "image",
+        id: 2,
+        name: "Vaibhav Shinde",
+        date: "3 month ago",
+        avatar:
+          "https://lh3.googleusercontent.com/a-/ALV-UjXcQTkIEvCG4fDM4693d-jm2kS5Eji3CbgzhzcTVZLy=w54-h54-p-rp-mo-ba2-br100",
+        feedback: `"My experience with Sun and sand villa was absolutely amazing! The property was surrounded by lush greenery and towering trees, offering a peaceful retreat in nature. The views were spectacular, and waking up to the sounds of the forest felt like pure bliss.
+
+The hospitality from the PinesAndTails team was truly exceptional. "`,
+        rating: 5,
+        type: "feedback",
       },
+    
     ],
     ITWTheRudramAura: [
       {
         id: 1,
-        name: "Aadi Raina",
+        name: "Akshad Ghate",
         date: "a monthb ago",
         avatar:
           "https://lh3.googleusercontent.com/a-/ALV-UjUiPYj94ra9LMSK_zdaPBiWGKgJ4tiRClMczHtXnkUHZZ8KlkDt=w54-h54-p-rp-mo-br100",
-        feedback: `"Beautiful place where you can spend good time with family and friends. Cottages are spacious and you can have a blissful view of the valley from watch tower. The paintings and wall art in cafe and cottages are very detailed and are very impressive."`,
+        feedback: `"The Rudram Property in Rishikesh has received positive reviews from guests. The property is praised for its cleanliness and hygiene standards, with guests noting that not even a single dust particle was present. The staff is courteous and welcoming, and the food served is fresh and healthy. The property offers yoga classes and Ayurvedic treatments, which guests have found to be relaxing and rejuvenating. However, some guests have faced issues with power fluctuations and the geyser not working well. "`,
         rating: 5,
         type: "feedback",
       },
@@ -281,11 +286,11 @@ Thank you"`,
       },
       {
         id: 2,
-        name: "SHIVAM MISHRA",
+        name: "Vishal Mishra",
         date: "3 month ago",
         avatar:
           "https://lh3.googleusercontent.com/a-/ALV-UjVtHJlom4jAmFJh851wQLMKq_OWJHGUSw7S8qRq9SLF_pPd5oq2=w54-h54-p-rp-mo-br100",
-        feedback: `"My stay at Into The Wild Cottages in Dhanaulti was amazing! The rooms were cozy and the view from my window was stunning. I could see the sunrise and sunset every day. The food, especially the honey chilli potatoes and momos, were delicious. The staff were really friendly and made me feel at home. Even though I don't usually write reviews, I just had to share my wonderful experience."`,
+        feedback: `"This place is very peaceful, it’s simple and peaceful. The food served is very fresh. The staff is also very good and helpful. We have tried shirodhara & abhyang over here. It’s good have stayed at this place 3 and our experience was same. Rooms and bathrooms are clean as well. Parents have also liked this place for stay it’s simple basic but worth. Feels like home"`,
         rating: 5,
         type: "feedback",
       },
@@ -298,11 +303,11 @@ Thank you"`,
     "Me:namHomestay(Majuli)": [
       {
         id: 1,
-        name: "Aadi Raina",
+        name: "Ram Pershad",
         date: "a monthb ago",
         avatar:
-          "https://lh3.googleusercontent.com/a-/ALV-UjUiPYj94ra9LMSK_zdaPBiWGKgJ4tiRClMczHtXnkUHZZ8KlkDt=w54-h54-p-rp-mo-br100",
-        feedback: `"Beautiful place where you can spend good time with family and friends. Cottages are spacious and you can have a blissful view of the valley from watch tower. The paintings and wall art in cafe and cottages are very detailed and are very impressive."`,
+          "https://lh3.googleusercontent.com/a-/ALV-UjWE3bGnK6ATaJ3gqP1wPSBDsJ0oPV43SofR4UiwnBC9GvdJWgb3Gg=w54-h54-p-rp-mo-ba3-br100",
+        feedback: `"This place is a treat. The food was absolutely delicious, with every meal full of flavor and made with care. The hosts were incredibly warm and welcoming, often going out of their way to ensure we felt at home. Highly recommended for anyone looking for a cozy, memorable stay with amazing food and hosts! No better people to explore Majuli with,  such a beautiful community."`,
         rating: 5,
         type: "feedback",
       },
@@ -313,11 +318,11 @@ Thank you"`,
       },
       {
         id: 2,
-        name: "SHIVAM MISHRA",
+        name: "Abhishek Sutar",
         date: "3 month ago",
         avatar:
-          "https://lh3.googleusercontent.com/a-/ALV-UjVtHJlom4jAmFJh851wQLMKq_OWJHGUSw7S8qRq9SLF_pPd5oq2=w54-h54-p-rp-mo-br100",
-        feedback: `"My stay at Into The Wild Cottages in Dhanaulti was amazing! The rooms were cozy and the view from my window was stunning. I could see the sunrise and sunset every day. The food, especially the honey chilli potatoes and momos, were delicious. The staff were really friendly and made me feel at home. Even though I don't usually write reviews, I just had to share my wonderful experience."`,
+          "https://lh3.googleusercontent.com/a-/ALV-UjXXQvnSyn0J2GU53-PLZvMvTeog1NNCQ4zVmLmhJXaNwHTjp0Gy=w54-h54-p-rp-mo-br100",
+        feedback: `"What a lovely homestay!!! Cynthia and her family took such a good care of us during our stay and provided amazing meals even during our camping days along the river. Would surely recommend a stay here if in Majuli. The area is much less busy than the side of the island and it was very interesting to learn about Mising traditions. Thank you so much!!"`,
         rating: 5,
         type: "feedback",
       },
