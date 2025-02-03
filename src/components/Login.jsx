@@ -83,7 +83,7 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen from-emerald-50 via-teal-50 to-cyan-50 flex items-center justify-center lg:gap-10 px-4 pt-12 relative bg-[url('https://img.freepik.com/free-vector/realistic-travel-background-with-elements_52683-77784.jpg?t=st=1736251246~exp=1736254846~hmac=a60f9b0dd6328af546bb696700ed00883117f58cfa9390ea245fd07678b7d008&w=996')] bg-no-repeat bg-center bg-cover">
+    <div className="min-h-screen from-emerald-50 via-teal-50 to-cyan-50 flex items-center justify-center lg:gap-10 px-4 pt-12 relative bg-[url('https://img.freepik.com/free-vector/realistic-travel-background-with-elements_52683-77784.jpg?t=st=1738601839~exp=1738605439~hmac=a4df82a4c810598e3a09e9746fd480103f3c5ecbbc482be4a319e4a09f6ec20e&w=996')] bg-no-repeat bg-center bg-cover">
       <div className="hidden lg:flex items-center">
         <img className="w-56" src={bgLogo} alt="" />
         <h1 className="text-4xl font-bold">IntoTheWildStays</h1>

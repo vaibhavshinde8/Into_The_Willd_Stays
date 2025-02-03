@@ -452,6 +452,7 @@ The hospitality from the PinesAndTails team was truly exceptional. "`,
                   controls
                   autoPlay
                   loop
+                  muted
                   className="w-full h-full object-cover transition-transform duration-300 "
                 />
               </motion.div>
@@ -491,7 +492,7 @@ The hospitality from the PinesAndTails team was truly exceptional. "`,
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
         {/* Left Column - Property Details */}
         <div className="lg:col-span-2">
-          <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start">
+          <div className="flex flex-col md:flex-row lg:justify-between lg:items-start">
             <div>
               <h1 className="lg:text-5xl md:text-3xl text-2xl font-extrabold mb-4 text-gray-800">
                 {property?.name}
