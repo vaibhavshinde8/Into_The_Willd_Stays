@@ -216,7 +216,7 @@ const Checkout = () => {
         <h1 className="text-2xl font-semibold">Review Your Booking</h1>
         <h2 className="text-xl">INFORMATION</h2>
       </div>
-      <div className="flex justify-between flex-col md:flex-row">
+      <div className="flex justify-between flex-col md:flex-row gap-8">
         <div className="space-y-4">
           <div className="flex mt-4 gap-12 border-b-2 py-12 flex-col md:flex-row">
             <div>
@@ -374,7 +374,7 @@ const Checkout = () => {
           </div>
         </div>
         <div>
-          <div className="p-5 shadow-xl space-y-6">
+          <div className="p-5 shadow-lg space-y-6">
             <h1 className="text-2xl py-2 border-b-2 font-semibold">
               Your Reservation
             </h1>
