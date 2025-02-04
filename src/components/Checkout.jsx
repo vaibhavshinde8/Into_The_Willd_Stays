@@ -211,7 +211,7 @@ const Checkout = () => {
   };
 
   return (
-    <div className="md:pb-6 text-black md:pt-36 md:mx-56 mx-8">
+    <div className="md:pb-6 text-black md:pt-36 md:mx-44 mx-8">
       <div className="flex flex-col gap-2">
         <h1 className="text-2xl font-semibold">Review Your Booking</h1>
         <h2 className="text-xl">INFORMATION</h2>
@@ -312,7 +312,7 @@ const Checkout = () => {
               </h2>
             </div>
           </div>
-          <div className="px-10 py-8 shadow-xl space-y-3">
+          <div className="px-10 py-8 shadow-xl rounded-lg space-y-3">
             <h1 className="text-2xl">Guest Details</h1>
             <div>
               <form
@@ -375,7 +375,7 @@ const Checkout = () => {
           </div>
         </div>
         <div>
-          <div className="p-5 shadow-lg space-y-6">
+          <div className="p-5 shadow-lg rounded-lg space-y-6">
             <h1 className="text-2xl py-2 border-b-2 font-semibold">
               Your Reservation
             </h1>
