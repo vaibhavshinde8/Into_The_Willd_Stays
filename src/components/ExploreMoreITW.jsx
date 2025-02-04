@@ -669,7 +669,7 @@ The hospitality from the PinesAndTails team was truly exceptional. "`,
             </div>
           </div>
 
-          <div className="w-full flex sticky overflow-x-scroll top-44 sm:top-28  gap-4  sm:gap-8 py-4 mb-4 no-scrollbar">
+          <div className="w-full flex z-50 sticky overflow-x-scroll top-28 sm:top-28  gap-4  sm:gap-8 py-4 mb-4 no-scrollbar">
             {buttons.map((button) => (
               <a
                 key={button.id}
@@ -748,7 +748,7 @@ The hospitality from the PinesAndTails team was truly exceptional. "`,
                   className="paddingY-320 flex items-center gap-3 px-4  py-3 sm:py-4 bg-white  rounded-xl shadow-md hover:bg-gray-100 transition-all duration-300"
                 >
                   <IoMdSunny className="text-blue-500 hidden-before-320" />
-                  <p className="text-xs sm:text-md font-semibold ">{amenity}</p>
+                  <p className="text-xs md:text-[15px] font-semibold ">{amenity}</p>
                   <div id="location"></div>
                 </motion.div>
               ))}
