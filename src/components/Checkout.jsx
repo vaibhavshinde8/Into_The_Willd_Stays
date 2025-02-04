@@ -279,7 +279,10 @@ const Checkout = () => {
                       -
                     </button>
                     <span className="mx-2">{adults}</span>
-                    <button className="border-2 px-2 hover:bg-gray-200 duration-300" onClick={() => handleAdultsChange(adults + 1)}>
+                    <button
+                      className="border-2 px-2 hover:bg-gray-200 duration-300"
+                      onClick={() => handleAdultsChange(adults + 1)}
+                    >
                       +
                     </button>
                   </div>
@@ -290,12 +293,16 @@ const Checkout = () => {
                     <button
                       onClick={() =>
                         handleChildrenChange(Math.max(0, children - 1))
-                      } className="border-2 px-2 hover:bg-gray-200 duration-300"
+                      }
+                      className="border-2 px-2 hover:bg-gray-200 duration-300"
                     >
                       -
                     </button>
                     <span className="mx-2">{children}</span>
-                    <button className="border-2 px-2 hover:bg-gray-200 duration-300" onClick={() => handleChildrenChange(children + 1)}>
+                    <button
+                      className="border-2 px-2 hover:bg-gray-200 duration-300"
+                      onClick={() => handleChildrenChange(children + 1)}
+                    >
                       +
                     </button>
                   </div>
@@ -363,7 +370,8 @@ const Checkout = () => {
                   >
                     Special Requirements
                   </label>
-                  <textarea rows={1}
+                  <textarea
+                    rows={1}
                     className="border-2 px-2 py-1"
                     placeholder="Special Requirements"
                     value={specialRequirements}
@@ -407,7 +415,7 @@ const Checkout = () => {
 
             <div className="flex items-center gap-3 border-2 px-3 py-2">
               <input
-              className="h-5 w-5  border-gray-300 text-blue-600 focus:ring-blue-500 cursor-pointer rounded-full"
+                className="h-5 w-5  border-gray-300 text-blue-600 focus:ring-blue-500 cursor-pointer rounded-full"
                 type="checkbox"
                 checked={razorpayChecked}
                 onChange={() => setRazorpayChecked(!razorpayChecked)}
