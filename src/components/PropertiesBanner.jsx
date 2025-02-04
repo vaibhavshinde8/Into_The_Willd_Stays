@@ -4,7 +4,7 @@ import { Layers, ArrowRight } from "lucide-react";
 
 const PropertiesBanner = () => {
   return (
-    <div className="relative h-[50vh] bg-gradient-to-br from-blue-50 to-blue-100 overflow-hidden lg:px-32 ">
+    <div className="relative h-[70vh] md:h-[65vh] lg:h-[50vh] bg-gradient-to-br from-blue-50 to-blue-100 overflow-hidden lg:px-32 ">
       {/* Background Image */}
       <div
         className="absolute inset-0 z-0 "

@@ -96,6 +96,8 @@ const EditProfileModal = ({ isOpen, onClose, user, onSave }) => {
               type="tel"
               id="phone"
               name="phone"
+              maxlength="10" 
+              pattern="[0-9]{1,10}" 
               value={formData.phone}
               onChange={handleChange}
               className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-[#0F2642] focus:border-[#0F2642]"
