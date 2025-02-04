@@ -812,7 +812,7 @@ The hospitality from the PinesAndTails team was truly exceptional. "`,
           {/* FAQs Accordion */}
           <div className="mt-16 mb-12">
             <h2 className="text-2xl ms-4 sm:ms-0 font-bold mb-8 flex items-center gap-3 ">
-
+                 <FaQuestionCircle className="text-blue-500"/> FAQ's
 
             </h2>
             <div className="space-y-4 ">
