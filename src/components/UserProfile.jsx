@@ -96,8 +96,8 @@ const EditProfileModal = ({ isOpen, onClose, user, onSave }) => {
               type="tel"
               id="phone"
               name="phone"
-              maxlength="10" 
-              pattern="[0-9]{1,10}" 
+              maxlength="10"
+              pattern="[0-9]{1,10}"
               value={formData.phone}
               onChange={handleChange}
               className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-[#0F2642] focus:border-[#0F2642]"
@@ -202,7 +202,6 @@ const UserProfile = () => {
     fetchBookings();
   }, []);
 
-  
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
     console.log("storedUser", storedUser);
@@ -317,12 +316,12 @@ const UserProfile = () => {
         </div>
         {/* Edit Profile Button */}
         <button
-              onClick={() => setIsEditModalOpen(true)}
-              className="w-full flex items-center justify-center bg-[#0F2642] text-white py-2 rounded-md hover:bg-[#0F2642]/90 transition-colors space-x-2"
-            >
-              <Edit className="w-5 h-5" />
-              <span>Edit Profile</span>
-            </button>
+          onClick={() => setIsEditModalOpen(true)}
+          className="w-full flex items-center justify-center bg-[#0F2642] text-white py-2 rounded-md hover:bg-[#0F2642]/90 transition-colors space-x-2"
+        >
+          <Edit className="w-5 h-5" />
+          <span>Edit Profile</span>
+        </button>
         {/* Bookings Section */}
         <div className="p-6 space-y-4">
           <h2 className="text-xl font-bold text-[#0F2642]">Your Bookings</h2>
