@@ -10,6 +10,7 @@ import {
   FaHome,
   FaUsers,
   FaUserFriends,
+
 } from "react-icons/fa";
 import { IoMdSunny } from "react-icons/io";
 import { FcRules } from "react-icons/fc";
@@ -233,6 +234,7 @@ Thank you"`,
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
 
   // Prepare images array
   const images = property?.images || [];
@@ -663,8 +665,7 @@ Thank you"`,
           {/* FAQs Accordion */}
           <div className="mt-16 mb-12">
             <h2 className="text-2xl ms-4 sm:ms-0 font-bold mb-8 flex items-center gap-3 ">
-
-
+            <FaQuestionCircle className="text-blue-500"/>  FAQ
             </h2>
             <div className="space-y-4 ">
               {property?.faqs?.map((faq, idx) => (
