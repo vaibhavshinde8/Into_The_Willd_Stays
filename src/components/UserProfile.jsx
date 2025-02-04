@@ -242,7 +242,7 @@ const UserProfile = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white flex items-center justify-center p-4 lg:pt-28">
+    <div className="min-h-screen  flex items-center justify-center p-4 lg:pt-28 bg-[url('https://iili.io/2tGzdep.jpg')] bg-no-repeat bg-center bg-cover">
       <div className="w-full max-w-md mx-auto">
         <div className="bg-white shadow-xl rounded-xl overflow-hidden border border-[#0F2642]/10">
           {/* Navigation Header */}
