@@ -12,6 +12,7 @@ import {
 import footerImg from "../assets/footer-img.png";
 import { FaWhatsapp } from "react-icons/fa";
 import { useState } from "react";
+import { toast } from "react-toastify";
 const Footer = () => {
 
   const [formData, setFormData] = useState({
@@ -33,6 +34,15 @@ const Footer = () => {
     e.preventDefault();
     console.log("Form submitted:", formData);
     setIsOpen(false);
+    toast.success('Submitted Successfully! We will reach you shortly');
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      timePeriod: "",
+      expertise: "",
+      location: "",
+    });
   };
 
   const instagramGradient = {
@@ -77,6 +87,7 @@ const Footer = () => {
               <input
                 type="tel"
                 name="phone"
+                maxLength={10}
                 placeholder="Phone Number"
                 value={formData.phone}
                 onChange={handleChange}
