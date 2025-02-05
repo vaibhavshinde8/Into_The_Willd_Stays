@@ -37,7 +37,7 @@ const PropertyShimmer = () => (
   </div>
 );
 
-const locations = ["Assam", "Dhanolti", "Goa", "Tehri", "Majuli", "Rishikesh"];
+const locations = ["Assam", "Dhanolti", "Goa", "Tehri", "Rishikesh"];
 
 const Properties = () => {
   const navigate = useNavigate();

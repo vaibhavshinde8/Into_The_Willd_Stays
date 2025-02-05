@@ -242,7 +242,7 @@ const UserProfile = () => {
   };
 
   return (
-    <div className="min-h-screen  flex items-center justify-center p-4 lg:pt-28 bg-[url('https://iili.io/2tGzdep.jpg')] bg-no-repeat bg-center bg-cover">
+    <div className="flex items-center justify-center p-4 lg:pt-28 bg-[url('https://iili.io/2tGzdep.jpg')] bg-no-repeat bg-center bg-cover">
       <div className="w-full max-w-md mx-auto">
         <div className="bg-white shadow-xl rounded-xl overflow-hidden border border-[#0F2642]/10">
           {/* Navigation Header */}
@@ -331,7 +331,7 @@ const UserProfile = () => {
             </div>
           )}
           {bookings.length > 0 && (
-            <div className="overflow-x-auto md:overflow-x-visible">
+            <div className="overflow-x-auto md:overflow-x-scroll">
               <table className="min-w-full bg-white border border-gray-300">
                 <thead>
                   <tr className="bg-[#0F2642] text-white">

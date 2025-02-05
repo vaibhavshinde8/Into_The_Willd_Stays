@@ -15,7 +15,7 @@ import "swiper/css/pagination";
 
 const MostViewedProperties = () => {
   const [selectedLocation, setSelectedLocation] = useState("All");
-  const locations = ["All", "Dhanolti", "Tehri", "Majuli", "Goa"];
+  const locations = ["All", "Dhanolti", "Tehri", "Assam", "Goa"];
   const [properties, setProperties] = useState([]);
   const [loading, setLoading] = useState(true);
 
