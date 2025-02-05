@@ -171,7 +171,7 @@ const GalleryAndReviews = () => {
                     </div>
                   </div>
                 ) : (
-                  <div className="p-8 h-[480px] flex flex-col bg-gradient-to-br from-white/95 to-white/90 backdrop-blur-xl rounded-3xl border-2 border-[#0F2642]/10 hover:border-[#0F2642]/30 transition-all duration-300">
+                  <div className="p-8 h-[520px] flex flex-col bg-gradient-to-br from-white/95 to-white/90 backdrop-blur-xl rounded-3xl border-2 border-[#0F2642]/10 hover:border-[#0F2642]/30 transition-all duration-300">
                     <div className="flex items-center justify-between mb-6">
                       <Quote className="w-12 h-12 text-[#0F2642] opacity-80" />
                       <div className="flex space-x-1 text-amber-400">
