@@ -106,10 +106,11 @@ const Checkout = () => {
       };
 
       const response = await axios.post(`${BASE_URL}/booking/new-booking`, submissionData);
+      // console.log(response.data);
       initPayment(response.data.order, response.data.booking._id);
     } catch (error) {
-      console.error(error);
-      toast.error("Payment failed. Please try again.");
+      // console.error(error);
+      toast.error(error.response.data.message||"Payment failed. Please try again.");
     } finally {
       setLoading(false);
     }
