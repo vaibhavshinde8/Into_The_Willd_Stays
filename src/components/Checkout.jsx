@@ -1,8 +1,8 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import img1 from "../assets/majuli/majuli1.jpeg";
 import razorPay from "../assets/razorpay.png";
 import { BadgeCheck } from "lucide-react";
-import { useLocation,useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { BASE_URL } from "../utils/baseurl";
@@ -15,13 +15,17 @@ const Checkout = () => {
   console.log(bookingData);
   const [razorpayChecked, setRazorpayChecked] = useState(false);
   const user = JSON.parse(localStorage.getItem("user") || "null");
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [specialRequirements, setSpecialRequirements] = useState("");
-  const [selectedCheckInDate, setSelectedCheckInDate] = useState(new Date(bookingData?.checkIn));
-  const [selectedCheckOutDate, setSelectedCheckOutDate] = useState(new Date(bookingData?.checkOut));
+  const [selectedCheckInDate, setSelectedCheckInDate] = useState(
+    new Date(bookingData?.checkIn)
+  );
+  const [selectedCheckOutDate, setSelectedCheckOutDate] = useState(
+    new Date(bookingData?.checkOut)
+  );
   const [adults, setAdults] = useState(bookingData?.adults || 1);
   const [children, setChildren] = useState(bookingData?.children || 0);
 
@@ -29,7 +33,7 @@ const Checkout = () => {
     const script = document.createElement("script");
     script.src = "https://checkout.razorpay.com/v1/checkout.js";
     script.async = true;
-    script.onload = () => { };
+    script.onload = () => {};
     document.body.appendChild(script);
   };
 
@@ -37,7 +41,6 @@ const Checkout = () => {
     loadRazorpayScript();
   }, []);
 
- 
   const checkInDate = new Date(bookingData?.checkIn);
   const checkOutDate = new Date(bookingData?.checkOut);
   const numberOfGuests = bookingData?.adults + bookingData?.children;
@@ -52,20 +55,33 @@ const Checkout = () => {
     currentDate.setDate(currentDate.getDate() + i);
     billingDetails.push({
       date: currentDate.toLocaleDateString(),
-      amount: dailyRate * numberOfRooms
+      amount: dailyRate * numberOfRooms,
     });
   }
 
-  const totalAmount = (billingDetails.reduce((total, bill) => total + bill.amount, 0)).toFixed(1);
+  const totalAmount = billingDetails
+    .reduce((total, bill) => total + bill.amount, 0)
+    .toFixed(1);
   const tax = (0.18 * totalAmount).toFixed(1);
   const finalAmount = (parseFloat(totalAmount) + parseFloat(tax)).toFixed(1);
   const payAmount = (finalAmount * 0.2).toFixed(1);
   const formatDate = (date) => {
     const day = date.getDate();
-    const suffix = day % 10 === 1 && day !== 11 ? 'st' : day % 10 === 2 && day !== 12 ? 'nd' : day % 10 === 3 && day !== 13 ? 'rd' : 'th';
-    const options = { month: 'long', year: 'numeric' };
-    const formattedDate = new Intl.DateTimeFormat('en-US', options).format(date);
-    return `${day}${suffix} ${formattedDate.split(' ')[0]}, ${formattedDate.split(' ')[1]}`;
+    const suffix =
+      day % 10 === 1 && day !== 11
+        ? "st"
+        : day % 10 === 2 && day !== 12
+        ? "nd"
+        : day % 10 === 3 && day !== 13
+        ? "rd"
+        : "th";
+    const options = { month: "long", year: "numeric" };
+    const formattedDate = new Intl.DateTimeFormat("en-US", options).format(
+      date
+    );
+    return `${day}${suffix} ${formattedDate.split(" ")[0]}, ${
+      formattedDate.split(" ")[1]
+    }`;
   };
 
   const handlePayment = async () => {
@@ -73,7 +89,9 @@ const Checkout = () => {
     try {
       // Prepare the data for the API call
       if (!fullName || !email || !phone) {
-        toast.error("Please fill in all required fields (Full Name, Email, Phone).");
+        toast.error(
+          "Please fill in all required fields (Full Name, Email, Phone)."
+        );
         setLoading(false);
         return; // Exit the function if validation fails
       }
@@ -83,7 +101,7 @@ const Checkout = () => {
         setLoading(false);
         return;
       }
-      if(checkOutDate <= checkInDate){
+      if (checkOutDate <= checkInDate) {
         toast.error("Check-out date must be after check-in date");
         setLoading(false);
         return;
@@ -102,7 +120,7 @@ const Checkout = () => {
           specialRequirements: specialRequirements,
         },
         property: bookingData.property ? bookingData.property._id : null,
-        tour: bookingData.tour ? 'Tour' : null
+        tour: bookingData.tour ? "Tour" : null,
       };
 
       const response = await axios.post(`${BASE_URL}/booking/new-booking`, submissionData);
@@ -191,21 +209,27 @@ const Checkout = () => {
   };
 
   return (
-    <div className="md:pb-6 text-black md:pt-36 md:mx-56 mx-8">
+    <div className="md:pb-6 text-black md:pt-36 md:mx-44 mx-8">
       <div className="flex flex-col gap-2">
         <h1 className="text-2xl font-semibold">Review Your Booking</h1>
         <h2 className="text-xl">INFORMATION</h2>
       </div>
-      <div className="flex justify-between flex-col md:flex-row">
+      <div className="flex justify-between flex-col md:flex-row gap-8">
         <div className="space-y-4">
           <div className="flex mt-4 gap-12 border-b-2 py-12 flex-col md:flex-row">
             <div>
-              <img className="h-60 rounded-xl" src={bookingData.property.images[0]} alt="" />
+              <img
+                className="h-60 rounded-xl"
+                src={bookingData.property.images[0]}
+                alt=""
+              />
             </div>
             <div className="space-y-3">
               <div>
                 <h2>Home Stays</h2>
-                <h1 className="text-3xl font-semibold">{bookingData?.property?.name}</h1>
+                <h1 className="text-3xl font-semibold">
+                  {bookingData?.property?.name}
+                </h1>
               </div>
               <h2>{bookingData?.property?.location}</h2>
               <div className="flex gap-8">
@@ -237,35 +261,70 @@ const Checkout = () => {
                 </div>
               </div>
               <h1 className="text-xl">
-                {adults} Adult{adults > 1 ? 's' : ''}, {children} Child{children > 1 ? 'ren' : ''}
+                {adults} Adult{adults > 1 ? "s" : ""}, {children} Child
+                {children > 1 ? "ren" : ""}
               </h1>
               <div className="flex gap-4">
                 <div className="flex flex-col">
                   <label className="font-semibold">Adults</label>
                   <div className="flex items-center">
-                    <button onClick={() => handleAdultsChange(Math.max(1, adults - 1))}>-</button>
+                    <button
+                      onClick={() =>
+                        handleAdultsChange(Math.max(1, adults - 1))
+                      }
+                      className="border-2 px-2 hover:bg-gray-200 duration-300"
+                    >
+                      -
+                    </button>
                     <span className="mx-2">{adults}</span>
-                    <button onClick={() => handleAdultsChange(adults + 1)}>+</button>
+                    <button
+                      className="border-2 px-2 hover:bg-gray-200 duration-300"
+                      onClick={() => handleAdultsChange(adults + 1)}
+                    >
+                      +
+                    </button>
                   </div>
                 </div>
                 <div className="flex flex-col">
                   <label className="font-semibold">Children</label>
                   <div className="flex items-center">
-                    <button onClick={() => handleChildrenChange(Math.max(0, children - 1))}>-</button>
+                    <button
+                      onClick={() =>
+                        handleChildrenChange(Math.max(0, children - 1))
+                      }
+                      className="border-2 px-2 hover:bg-gray-200 duration-300"
+                    >
+                      -
+                    </button>
                     <span className="mx-2">{children}</span>
-                    <button onClick={() => handleChildrenChange(children + 1)}>+</button>
+                    <button
+                      className="border-2 px-2 hover:bg-gray-200 duration-300"
+                      onClick={() => handleChildrenChange(children + 1)}
+                    >
+                      +
+                    </button>
                   </div>
                 </div>
               </div>
               {/* Display guest capacity and number of rooms booked */}
-              <h2 className="text-lg">Guest Capacity/{bookingData?.property?.cottage ? "Cottage" : "Room"}: {guestCapacity}</h2>
-              <h2 className="text-lg">Number of Rooms Booked: {numberOfRooms}</h2>
+              <h2 className="text-lg">
+                Guest Capacity/
+                {bookingData?.property?.cottage ? "Cottage" : "Room"}:{" "}
+                {guestCapacity}
+              </h2>
+              <h2 className="text-lg">
+                Number of Rooms Booked: {numberOfRooms}
+              </h2>
             </div>
           </div>
-          <div className="px-10 py-8 shadow-xl space-y-3">
+          <div className="px-10 py-8 shadow-xl rounded-lg space-y-3">
             <h1 className="text-2xl">Guest Details</h1>
             <div>
-              <form action="" method="post" className="grid md:grid-cols-2 grid-cols-1 gap-4">
+              <form
+                action=""
+                method="post"
+                className="grid md:grid-cols-2 grid-cols-1 gap-4"
+              >
                 <div className="flex flex-col gap-1">
                   <label className="font-semibold" htmlFor="fullName">
                     Full Name*
@@ -303,10 +362,14 @@ const Checkout = () => {
                   />
                 </div>
                 <div className="flex flex-col gap-1">
-                  <label className="font-semibold" htmlFor="specialRequirements">
+                  <label
+                    className="font-semibold"
+                    htmlFor="specialRequirements"
+                  >
                     Special Requirements
                   </label>
                   <textarea
+                    rows={1}
                     className="border-2 px-2 py-1"
                     placeholder="Special Requirements"
                     value={specialRequirements}
@@ -316,13 +379,17 @@ const Checkout = () => {
               </form>
             </div>
           </div>
-         
         </div>
         <div>
-          <div className="p-5 shadow-xl space-y-6">
-            <h1 className="text-2xl py-2 border-b-2 font-semibold">Your Reservation</h1>
+          <div className="p-5 shadow-lg rounded-lg space-y-6">
+            <h1 className="text-2xl py-2 border-b-2 font-semibold">
+              Your Reservation
+            </h1>
             {billingDetails.map((bill, index) => (
-              <div key={index} className="flex justify-between items-center gap-16">
+              <div
+                key={index}
+                className="flex justify-between items-center gap-16"
+              >
                 <h1>{formatDate(new Date(bill.date))}</h1>
                 <p>Rs. {bill.amount}</p>
               </div>
@@ -346,6 +413,7 @@ const Checkout = () => {
 
             <div className="flex items-center gap-3 border-2 px-3 py-2">
               <input
+                className="h-5 w-5  border-gray-300 text-blue-600 focus:ring-blue-500 cursor-pointer rounded-full"
                 type="checkbox"
                 checked={razorpayChecked}
                 onChange={() => setRazorpayChecked(!razorpayChecked)}
@@ -354,7 +422,11 @@ const Checkout = () => {
             </div>
             <div>
               <button
-                className={`px-4 py-2 rounded-lg shadow-lg font-semibold text-white bg-cyan-600 hover:bg-cyan-800 ${loading || !razorpayChecked ? 'opacity-50 cursor-not-allowed' : ''}`}
+                className={`px-4 py-2 rounded-lg shadow-lg font-semibold text-white bg-cyan-600 hover:bg-cyan-800 ${
+                  loading || !razorpayChecked
+                    ? "opacity-50 cursor-not-allowed"
+                    : ""
+                }`}
                 onClick={handlePayment}
                 disabled={loading || !razorpayChecked}
               >

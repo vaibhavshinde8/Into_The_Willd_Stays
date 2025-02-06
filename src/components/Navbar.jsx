@@ -159,7 +159,7 @@ const PropertyListingModal = ({ isOpen, onClose }) => {
         <div className="bg-gradient-to-r from-[#0F2642] to-[#1a3b66] p-6 relative">
           <button
             onClick={onClose}
-            className="absolute right-4 top-4 text-white/80 hover:text-white transition-colors"
+            className="absolute right-[7px] top-[7px] text-white/80 hover:text-white transition-colors"
           >
             <X className="w-6 h-6" />
           </button>
@@ -311,7 +311,7 @@ const PropertyListingModal = ({ isOpen, onClose }) => {
             )}
           </AnimatePresence>
 
-          <div className="flex justify-between pt-4">
+          <div className="flex gap-4 justify-between pt-4">
             {currentStep > 1 && (
               <button
                 type="button"
@@ -420,7 +420,7 @@ export default function Navbar() {
           </div>
 
           {/* Right Side: Social Media Icons */}
-          <div className="flex space-x-6 hidden sm:flex">
+          <div className=" space-x-6 hidden sm:flex">
             <a
               href="https://www.facebook.com/profile.php?id=61557269590045"
               target="_blank"

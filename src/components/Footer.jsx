@@ -12,8 +12,8 @@ import {
 import footerImg from "../assets/footer-img.png";
 import { FaWhatsapp } from "react-icons/fa";
 import { useState } from "react";
+import { toast } from "react-toastify";
 const Footer = () => {
-
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -33,12 +33,20 @@ const Footer = () => {
     e.preventDefault();
     console.log("Form submitted:", formData);
     setIsOpen(false);
+    toast.success("Submitted Successfully! We will reach you shortly");
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      timePeriod: "",
+      expertise: "",
+      location: "",
+    });
   };
 
   const instagramGradient = {
     background:
       "linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45)",
-
   };
   const phoneNumber = "9761966485";
   const getWhatsAppLink = () => {
@@ -52,9 +60,11 @@ const Footer = () => {
     <footer className="bg-[#000000] text-[#D1D1D1] z-20">
       {/* Main Footer Content */}
       {isOpen && (
-        <div className="fixed z-50 inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 " >
+        <div className="fixed z-50 inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 ">
           <div className="bg-white p-6 shadow-lg text-black rounded-lg max-w-lg w-full">
-            <h2 className="text-2xl text-black font-bold mb-4">Join Volunteer With Us</h2>
+            <h2 className="text-2xl text-black font-bold mb-4">
+              Join Volunteer With Us
+            </h2>
             <form onSubmit={handleSubmit} className="space-y-4">
               <input
                 type="text"
@@ -77,6 +87,7 @@ const Footer = () => {
               <input
                 type="tel"
                 name="phone"
+                maxLength={10}
                 placeholder="Phone Number"
                 value={formData.phone}
                 onChange={handleChange}
@@ -150,7 +161,12 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="text-[#214eca] hover:text-[#214eca] hover:scale-110 duration-300 ease-in-out transition-colors"
               >
-                <img width="30" height="30" src="https://img.icons8.com/tiny-color/50/facebook-new.png" alt="facebook-new"/>
+                <img
+                  width="30"
+                  height="30"
+                  src="https://img.icons8.com/tiny-color/50/facebook-new.png"
+                  alt="facebook-new"
+                />
               </a>
               {/* <a
                 href="#"
@@ -180,7 +196,12 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="text-[#1c9e18] hover:text-[#1c9e18] hover:scale-110 duration-300 ease-in-out transition-colors"
               >
-               <img width="36" height="36" src="https://img.icons8.com/color/48/whatsapp--v1.png" alt="whatsapp--v1"/>
+                <img
+                  width="36"
+                  height="36"
+                  src="https://img.icons8.com/color/48/whatsapp--v1.png"
+                  alt="whatsapp--v1"
+                />
               </a>
             </div>
           </div>
@@ -217,12 +238,12 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-              <button
-        onClick={() => setIsOpen(true)}
-        className="hover:text-[#F77706] transition-colors"
-      >
-        Volunteer With Us
-      </button>
+                <button
+                  onClick={() => setIsOpen(true)}
+                  className="hover:text-[#F77706] transition-colors"
+                >
+                  Volunteer With Us
+                </button>
               </li>
               {/* <li>
                 <a href="#" className="hover:text-[#F77706] transition-colors">
