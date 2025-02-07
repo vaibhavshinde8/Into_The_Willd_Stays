@@ -15,6 +15,7 @@ import TourBanner from "../components/TourBanner";
 import axios from "axios";
 import { BASE_URL } from "../utils/baseurl";
 
+
 const PropertyShimmer = () => (
   <div className="bg-white shadow-md animate-pulse rounded-lg">
     <div className="flex flex-col md:flex-row h-full">
@@ -37,7 +38,9 @@ const PropertyShimmer = () => (
   </div>
 );
 
+
 const locations = ["Dhanolti", "Goa", "Tehri", "Majuli", "Rishikesh"];
+
 
 const Properties = () => {
   const navigate = useNavigate();
@@ -52,6 +55,7 @@ const Properties = () => {
     adults: 1,
     children: 0,
   });
+
 
   useEffect(() => {
     const fetchProperties = async () => {
@@ -69,6 +73,7 @@ const Properties = () => {
     fetchProperties();
   }, []);
 
+
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
     console.log(urlParams);
@@ -81,6 +86,7 @@ const Properties = () => {
     const children = urlParams.get("children")
       ? parseInt(urlParams.get("children"))
       : 0;
+
 
     // Check if parameters are stored in sessionStorage
     const storedParams = sessionStorage.getItem("searchParams");
@@ -113,6 +119,7 @@ const Properties = () => {
     handleFilterChange({ location: searchParams.location }); // Filter when Explore button is clicked
   };
 
+
   const handleFilterChange = ({ location }) => {
     let filtered = properties;
     console.log(location);
@@ -126,9 +133,11 @@ const Properties = () => {
     setFilteredProperties(filtered);
   };
 
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -139,6 +148,7 @@ const Properties = () => {
       },
     },
   };
+
 
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
@@ -152,13 +162,16 @@ const Properties = () => {
   };
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
+
   const toggleGuestDropdown = () => {
     setIsDropdownOpen((prev) => !prev);
   };
 
+
   const closeGuestDropdown = () => {
     setIsDropdownOpen(false);
   };
+
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -168,8 +181,10 @@ const Properties = () => {
     }));
   };
 
+
   // Get today's date in YYYY-MM-DD format
   const today = new Date().toISOString().split("T")[0];
+
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -178,6 +193,7 @@ const Properties = () => {
         <div className="absolute inset-0 bg-[url('https://images.trvl-media.com/lodging/109000000/108380000/108370800/108370765/28b3dc50.jpg?impolicy=resizecrop&rw=1200&ra=fit')] bg-cover bg-center bg-fixed transform scale-105">
           <div className="absolute inset-0 bg-gradient-to-b from-gray-900/100 to-gray-900/60" />
         </div>
+
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -198,6 +214,7 @@ const Properties = () => {
           </p>
         </motion.div>
       </div>
+
 
       {/* Search Form */}
       <motion.div
@@ -229,6 +246,7 @@ const Properties = () => {
                 ))}
               </select>
             </div>
+
 
             {/* Check-in */}
             <div className="md:col-span-1">
@@ -262,6 +280,7 @@ const Properties = () => {
               </div>
             </div>
 
+
             {/* Check-out */}
             <div className="md:col-span-1">
               <label className="block text-gray-700 mb-2 text-sm">
@@ -294,6 +313,7 @@ const Properties = () => {
               </div>
             </div>
 
+
             {/* Adults */}
             <div className="md:col-span-1 w-full">
               <label className="block text-gray-700 mb-2 text-sm ">Guests</label>
@@ -321,6 +341,7 @@ const Properties = () => {
                     />
                   </svg>
                 </button>
+
 
                 {/* Dropdown Content */}
                 {isDropdownOpen && (
@@ -369,6 +390,7 @@ const Properties = () => {
                       </div>
                     </div>
 
+
                     {/* Children */}
                     <div className="flex justify-between items-center mb-2">
                       <div>
@@ -410,13 +432,14 @@ const Properties = () => {
                       </div>
                     </div>
 
+
                     {/* Done Button */}
                     <div className="mt-2">
                       <button
                         onClick={closeGuestDropdown}
                         className="w-full h-[50px] py-3 bg-[#0F2642] text-white border border-white
                 hover:bg-[#0F2642]
-                flex items-center justify-center space-x-3 
+                flex items-center justify-center space-x-3
                 rounded-3xl"
                       >
                         Done
@@ -427,13 +450,14 @@ const Properties = () => {
               </div>
             </div>
 
+
             {/* Search Button */}
             <div className="md:col-span-1 col-span-1 flex items-end ">
               <button
                 onClick={handleSearch}
                 className="w-full h-[50px] py-3 bg-[#0F2642] text-white border border-white
                 hover:bg-[#0F2642]
-                flex items-center justify-center space-x-3 
+                flex items-center justify-center space-x-3
                 rounded-3xl"
               >
                 <FaSearch />
@@ -443,6 +467,7 @@ const Properties = () => {
           </div>
         </div>
       </motion.div>
+
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
@@ -456,6 +481,7 @@ const Properties = () => {
         />
       </div>
     </div>
+
 
     {/* Properties List */}
     <motion.div
@@ -497,6 +523,7 @@ const Properties = () => {
                       </div>
                     </div>
 
+
                     {/* Content Section */}
                     <div className="flex-1 p-4 sm:p-6 flex flex-col justify-between">
                       <div>
@@ -508,6 +535,7 @@ const Properties = () => {
                             ? `${property.description.substring(0, 200)}...`
                             : property?.description}
                         </p>
+
 
                         <div className="flex flex-wrap gap-2 sm:gap-3 mb-3 sm:mb-4">
                           <span className="flex items-center space-x-1 sm:space-x-2 bg-teal-50 text-teal-700 px-2 sm:px-3 py-1 rounded-md sm:rounded-lg text-xs sm:text-sm">
@@ -525,6 +553,7 @@ const Properties = () => {
                         </div>
                       </div>
 
+
                       {/* Price and Button Section */}
                       <div className="flex  items-start sm:items-center md:flex-row  justify-between mt-3 sm:mt-4">
                         <div className="flex flex-col ps-4 sm:ps-0  sm:mb-0 md:w-1/2">
@@ -535,6 +564,7 @@ const Properties = () => {
                             per night / {property?.cottage ? "Cottage" : "Room"}
                           </span>
                         </div>
+
 
                         <div className="flex items-center justify-end  w-full h-full sm:w-auto space-y-2 sm:space-y-3">
                           <BookingButton property={property} />
@@ -558,9 +588,14 @@ const Properties = () => {
   </div>
 </div>
 
+
       <TourBanner />
     </div>
   );
 };
 
+
 export default Properties;
+
+
+
