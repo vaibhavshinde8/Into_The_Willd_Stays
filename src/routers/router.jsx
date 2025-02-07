@@ -16,6 +16,7 @@ import Events from "../pages/Events";
 import EventDetail from "../pages/EventDetail";
 import ToursDetail from "../pages/ToursDetail";
 import NotFound from "../pages/NotFound";
+import Checkout from "../components/Checkout";
 
 const blogs = [];
 
@@ -48,10 +49,10 @@ const router = createBrowserRouter([
         path: "/property/:id",
         element: <ExploreMoreITW />,
       },
-      // {
-      //   path: "/amenities",
-      //   element: <Amenities />,
-      // },
+      {
+        path: "/checkout",
+        element: <Checkout/>,
+      },
       {
         path: "/about-us",
         element: <AboutUs />,

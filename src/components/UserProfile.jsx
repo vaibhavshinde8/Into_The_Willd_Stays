@@ -96,6 +96,8 @@ const EditProfileModal = ({ isOpen, onClose, user, onSave }) => {
               type="tel"
               id="phone"
               name="phone"
+              maxlength="10"
+              pattern="[0-9]{1,10}"
               value={formData.phone}
               onChange={handleChange}
               className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-[#0F2642] focus:border-[#0F2642]"
@@ -200,7 +202,6 @@ const UserProfile = () => {
     fetchBookings();
   }, []);
 
-  
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
     console.log("storedUser", storedUser);
@@ -241,7 +242,7 @@ const UserProfile = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white flex items-center justify-center p-4 lg:pt-28">
+    <div className="flex items-center justify-center p-4 lg:pt-28 bg-[url('https://iili.io/2tGzdep.jpg')] bg-no-repeat bg-center bg-cover">
       <div className="w-full max-w-md mx-auto">
         <div className="bg-white shadow-xl rounded-xl overflow-hidden border border-[#0F2642]/10">
           {/* Navigation Header */}
@@ -315,12 +316,12 @@ const UserProfile = () => {
         </div>
         {/* Edit Profile Button */}
         <button
-              onClick={() => setIsEditModalOpen(true)}
-              className="w-full flex items-center justify-center bg-[#0F2642] text-white py-2 rounded-md hover:bg-[#0F2642]/90 transition-colors space-x-2"
-            >
-              <Edit className="w-5 h-5" />
-              <span>Edit Profile</span>
-            </button>
+          onClick={() => setIsEditModalOpen(true)}
+          className="w-full flex items-center justify-center bg-[#0F2642] text-white py-2 rounded-md hover:bg-[#0F2642]/90 transition-colors space-x-2"
+        >
+          <Edit className="w-5 h-5" />
+          <span>Edit Profile</span>
+        </button>
         {/* Bookings Section */}
         <div className="p-6 space-y-4">
           <h2 className="text-xl font-bold text-[#0F2642]">Your Bookings</h2>
@@ -330,7 +331,7 @@ const UserProfile = () => {
             </div>
           )}
           {bookings.length > 0 && (
-            <div className="overflow-x-auto md:overflow-x-visible">
+            <div className="overflow-x-auto md:overflow-x-scroll">
               <table className="min-w-full bg-white border border-gray-300">
                 <thead>
                   <tr className="bg-[#0F2642] text-white">

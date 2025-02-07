@@ -159,7 +159,7 @@ const PropertyListingModal = ({ isOpen, onClose }) => {
         <div className="bg-gradient-to-r from-[#0F2642] to-[#1a3b66] p-6 relative">
           <button
             onClick={onClose}
-            className="absolute right-4 top-4 text-white/80 hover:text-white transition-colors"
+            className="absolute right-[7px] top-[7px] text-white/80 hover:text-white transition-colors"
           >
             <X className="w-6 h-6" />
           </button>
@@ -311,7 +311,7 @@ const PropertyListingModal = ({ isOpen, onClose }) => {
             )}
           </AnimatePresence>
 
-          <div className="flex justify-between pt-4">
+          <div className="flex gap-4 justify-between pt-4">
             {currentStep > 1 && (
               <button
                 type="button"
@@ -380,6 +380,11 @@ export default function Navbar() {
 
   const token = localStorage.getItem("token");
 
+  const instagramGradient = {
+    background:
+      "linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45)",
+  };
+
   return (
     <nav className="w-full z-50 bg-gradient-to-b from-black via-gray-900 to-transparent  transition-all font-ethereal duration-300 fixed ">
       <div className="bg-gradient-to-r from-[#0F2642] to-[#0F2642] text-white text-sm sm:text-base">
@@ -415,30 +420,45 @@ export default function Navbar() {
           </div>
 
           {/* Right Side: Social Media Icons */}
-          <div className="flex space-x-6 hidden sm:flex">
+          <div className=" space-x-6 hidden sm:flex">
             <a
               href="https://www.facebook.com/profile.php?id=61557269590045"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-yellow-300 hover:scale-110 duration-300 ease-in-out transition-all"
             >
-              <Facebook size={24} />
+              <img
+                width="30"
+                height="30"
+                src="https://img.icons8.com/tiny-color/50/facebook-new.png"
+                alt="facebook-new"
+              />
             </a>
-            <a
-              href="https://www.instagram.com/intothewildstays/profilecard/?igsh=cGt4dTRvenNvZ25h"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-yellow-300 hover:scale-110 duration-300 ease-in-out transition-all"
+            <div
+              className="w-8 h-8 rounded-full shadow-lg transition-transform hover:scale-105 flex items-center justify-center"
+              style={instagramGradient}
             >
-              <Instagram size={24} />
-            </a>
+              <a
+                href="https://www.instagram.com/intothewildstays/profilecard/?igsh=cGt4dTRvenNvZ25h"
+                target="_blank"
+                rel="noopener noreferrer"
+                className=""
+              >
+                <Instagram size={22} />
+              </a>
+            </div>
             <a
               href="https://wa.me/9761966485"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-yellow-300 hover:scale-110 duration-300 ease-in-out transition-all"
             >
-              <FaWhatsapp size={24} />
+              <img
+                width="30"
+                height="30"
+                src="https://img.icons8.com/color/48/whatsapp--v1.png"
+                alt="whatsapp--v1"
+              />
             </a>
           </div>
         </div>
@@ -458,7 +478,7 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8 items-center">
+          <div className="hidden lg:flex space-x-8 items-center">
             <Link
               to="/properties"
               className="text-gray-100 hover:text-[#ffffff] px-3 py-2 text-lg font-semibold transition duration-300"
@@ -572,7 +592,7 @@ export default function Navbar() {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden flex items-center">
+          <div className="lg:hidden flex items-center">
             <button
               onClick={toggleMenu}
               className="p-2 rounded-full text-gray-100 hover:text-[#ffffff] hover:bg-gray-100"
@@ -595,7 +615,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden fixed inset-0 bg-[#0F2642] z-50 flex flex-col items-center justify-center"
+            className="lg:hidden fixed inset-0 bg-[#0F2642] z-50 flex flex-col items-center justify-center"
           >
             <button
               onClick={toggleMenu}

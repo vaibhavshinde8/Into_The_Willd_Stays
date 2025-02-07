@@ -38,8 +38,7 @@ const PropertyShimmer = () => (
   </div>
 );
 
-
-const locations = ["Dhanolti", "Goa", "Tehri", "Majuli", "Rishikesh"];
+const locations = ["Assam", "Dhanolti", "Goa", "Tehri", "Rishikesh"];
 
 
 const Properties = () => {
@@ -269,7 +268,7 @@ const Properties = () => {
                   value={searchParams.checkIn}
                   onChange={handleInputChange}
                   min={today} // Prevent past dates
-                  className="w-full h-[46px] pl-10 pr-4 py-3 bg-white border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-3xl cursor-pointer"
+                  className="w-full h-[46px] text-[13px] md:text-[17px] pl-10 pr-4 py-3 bg-white border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-3xl cursor-pointer"
                 />
                 <div
                   className="absolute inset-0"
@@ -302,7 +301,7 @@ const Properties = () => {
                   value={searchParams.checkOut}
                   onChange={handleInputChange}
                   min={searchParams.checkIn || today} // Prevent past dates and ensure check-out is after check-in
-                  className="w-full h-[46px] pl-10 pr-4 py-3 bg-white border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-3xl cursor-pointer"
+                  className="w-full text-[13px] md:text-[17px] h-[46px] pl-10 pr-4 py-3 bg-white border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-3xl cursor-pointer"
                 />
                 <div
                   className="absolute inset-0"
@@ -321,7 +320,7 @@ const Properties = () => {
                 {/* Dropdown Button */}
                 <button
                   onClick={toggleGuestDropdown}
-                  className="w-full md:w-56 h-12 px-4 py-2 bg-white border border-gray-300 text-gray-900 rounded-lg text-left flex items-center justify-between hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded-3xl"
+                  className="w-full md:w-56 h-12 px-4 py-2 bg-white border border-gray-300 text-gray-900 text-left flex items-center justify-between hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded-3xl"
                 >
                   <span className="text-sm w-full">
                     {`${searchParams.adults} Adult${searchParams.adults > 1 ? "s" : ""
