@@ -86,7 +86,7 @@ const ExploreMoreITW = () => {
   };
 
   const reviews = {
-    IntoTheWildStays: [
+    IntoTheWildsStays: [
       {
         id: 1,
         name: "Manjula Singh",
@@ -120,7 +120,7 @@ const ExploreMoreITW = () => {
         type: "image",
       },
     ],
-    ITWTapovanRiseCottages: [
+    "ITW:TapovanRiseCottages": [
       {
         id: 1,
         name: "Shweta Jha",
@@ -160,7 +160,7 @@ Rooms and open area is well cleaned and very peaceful place and mountain view."`
         type: "image",
       },
     ],
-    ITWMastanaMusafir: [
+    "ITW:MastanaMusafir": [
       {
         id: 1,
         name: "Aadi Raina",
@@ -192,7 +192,7 @@ Rooms and open area is well cleaned and very peaceful place and mountain view."`
         type: "image",
       },
     ],
-    "ITW:PinesAndTails": [
+    "ITW:PineTales": [
       {
         id: 1,
         name: "manish rathore",
@@ -269,7 +269,7 @@ The hospitality from the PinesAndTails team was truly exceptional. "`,
       },
     
     ],
-    ITWTheRudramAura: [
+    "ITW:TheRudramAuraStay": [
       {
         id: 1,
         name: "Akshad Ghate",
