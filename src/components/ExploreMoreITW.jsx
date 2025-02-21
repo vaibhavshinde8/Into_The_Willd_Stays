@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect,useRef } from "react";
 import {
   FaArrowAltCircleDown,
   FaArrowAltCircleUp,
@@ -26,6 +26,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 //hello
+import { Play, Pause } from "lucide-react";
 import image1 from "../assets/image1.jpg";
 import image2 from "../assets/image2.jpg";
 import image3 from "../assets/image3.jpg";
@@ -45,7 +46,9 @@ const ExploreMoreITW = () => {
   const [loading, setLoading] = useState(true);
   const [activeButton, setActiveButton] = useState(null);
   const [selectedCheckInDate, setSelectedCheckInDate] = useState(new Date());
-  const [selectedCheckOutDate, setSelectedCheckOutDate] = useState(new Date());
+  const [selectedCheckOutDate, setSelectedCheckOutDate] = useState(
+    new Date(new Date().setDate(new Date().getDate() + 1))
+  );
   const [adults, setAdults] = useState(1);
   const [children, setChildren] = useState(0);
   const { id } = useParams();
@@ -55,7 +58,7 @@ const ExploreMoreITW = () => {
   const scrollToSection = (sectionId) => {
     setActiveSection(sectionId);
     document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
-  }; 
+  };
   const [showLoginPopup, setShowLoginPopup] = useState(false); // State to control login modal visibility
   const toggleFaq = (index) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -241,7 +244,7 @@ The hospitality from the Sun and Sand Property team was exceptional. "`,
         rating: 5,
         type: "feedback",
       },
-    
+
       {
         id: 2,
         name: "Arvind Nagar",
@@ -267,7 +270,7 @@ The hospitality from the PinesAndTails team was truly exceptional. "`,
         rating: 5,
         type: "feedback",
       },
-    
+
     ],
     "ITW:TheRudramAuraStay": [
       {
@@ -364,7 +367,8 @@ The hospitality from the PinesAndTails team was truly exceptional. "`,
   // Prepare images array
   const images = property?.images || [];
   const hasVideo = images.some((img) => img.endsWith(".mp4"));
-
+  const [isPlaying, setIsPlaying] = useState(false);
+  const videoRef = useRef(null);
   // If there's a video, replace the first image with the video
   const displayImages = hasVideo
     ? [
@@ -376,12 +380,12 @@ The hospitality from the PinesAndTails team was truly exceptional. "`,
   const navigate = useNavigate(); // Initialize useNavigate
 
   const handleBookNow = () => {
-    const token = localStorage.getItem("token"); 
+    const token = localStorage.getItem("token");
     if (!token) {
-      setShowLoginPopup(true); 
+      setShowLoginPopup(true);
       return;
     }
-    if(selectedCheckInDate>=selectedCheckOutDate){
+    if (selectedCheckInDate >= selectedCheckOutDate) {
       // console.log("Check out date should be greater than check in date")
       toast.error("Check out date should be greater than check in date");
       return;
@@ -391,10 +395,20 @@ The hospitality from the PinesAndTails team was truly exceptional. "`,
       checkOut: selectedCheckOutDate,
       adults,
       children,
-      tour:true,
+      tour: true,
       property,
     };
     navigate("/checkout", { state: bookingData }); // Navigate to Checkout with state
+  };
+  const togglePlayPause = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause();
+      } else {
+        videoRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
   };
 
   if (loading) {
@@ -447,16 +461,28 @@ The hospitality from the PinesAndTails team was truly exceptional. "`,
               // If the first item is a video
               <motion.div
                 whileHover={{ scale: 1.02 }}
-                className="h-[450px] overflow-hidden rounded-xl shadow-lg"
+                className="relative h-[450px] overflow-hidden rounded-xl shadow-lg"
               >
                 <video
+                  ref={videoRef}
                   src={displayImages[0]}
                   controls
-                  autoPlay
                   loop
                   muted
-                  className="w-full h-full object-cover transition-transform duration-300 "
+                  className="w-full h-full object-cover transition-transform duration-300"
                 />
+
+                {/* Play/Pause Button */}
+                <button
+                  onClick={togglePlayPause}
+                  className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 hover:bg-opacity-50 transition-opacity duration-300 rounded-xl"
+                >
+                  {isPlaying ? (
+                    <Pause className="text-white w-12 h-12" />
+                  ) : (
+                    <Play className="text-white w-12 h-12" />
+                  )}
+                </button>
               </motion.div>
             ) : (
               // If the first item is an image
@@ -676,8 +702,8 @@ The hospitality from the PinesAndTails team was truly exceptional. "`,
                 href={`#${button.id}`}
                 onClick={() => setActiveButton(button.id)}
                 className={`py-2 border-2 shadow-lg rounded font-semibold flex-auto  flex items-center justify-center px-4 transition duration-300 ${activeButton === button.id
-                    ? "bg-[#163257] text-white"
-                    : "bg-white text-gray-800"
+                  ? "bg-[#163257] text-white"
+                  : "bg-white text-gray-800"
                   }`}
               >
                 {button.label}
@@ -812,7 +838,7 @@ The hospitality from the PinesAndTails team was truly exceptional. "`,
           {/* FAQs Accordion */}
           <div className="mt-16 mb-12">
             <h2 className="text-2xl ms-4 sm:ms-0 font-bold mb-8 flex items-center gap-3 ">
-                 <FaQuestionCircle className="text-blue-500"/> FAQ's
+              <FaQuestionCircle className="text-blue-500" /> FAQ's
 
             </h2>
             <div className="space-y-4 ">
@@ -971,7 +997,10 @@ The hospitality from the PinesAndTails team was truly exceptional. "`,
                   <h3 className="text-lg font-semibold">Check In</h3>
                   <DatePicker
                     selected={selectedCheckInDate}
-                    onChange={(date) => setSelectedCheckInDate(date)}
+                    onChange={(date) => {
+                      setSelectedCheckInDate(date);
+                      setSelectedCheckOutDate(new Date(date.getTime() + 86400000)); // Set check-out to next day
+                    }}
                     dateFormat="dd MMM yyyy"
                     className="hidden1 border rounded p-2 w-full text-[#112641] font-semibold"
                     minDate={new Date()}
@@ -991,7 +1020,7 @@ The hospitality from the PinesAndTails team was truly exceptional. "`,
                     onChange={(date) => setSelectedCheckOutDate(date)}
                     dateFormat="dd MMM yyyy"
                     className="hidden1 border rounded p-2 w-full text-[#112641] font-semibold"
-                    minDate={selectedCheckInDate || new Date()}
+                    minDate={new Date(selectedCheckInDate.getTime() + 86400000)}
                   />
                 </motion.div>
               </div>
